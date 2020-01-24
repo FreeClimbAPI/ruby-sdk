@@ -1,0 +1,31 @@
+# OpenapiClient::MessageResultAllOf
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**account_id** | **String** | String that uniquely identifies this account resource. | [optional] 
+**message_id** | **String** | String that uniquely identifies this message resource | [optional] 
+**status** | **String** | Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received | [optional] 
+**from** | **String** | Phone number in E.164 format that sent the message. | [optional] 
+**to** | **String** | Phone number in E.164 format that received the message. | [optional] 
+**text** | **String** | Message contents | [optional] 
+**direction** | **String** | Noting whether the message was inbound or outbound | [optional] 
+**notification_url** | **String** | URL invoked when message sent | [optional] 
+
+## Code Sample
+
+```ruby
+require 'OpenapiClient'
+
+instance = OpenapiClient::MessageResultAllOf.new(account_id: null,
+                                 message_id: null,
+                                 status: null,
+                                 from: null,
+                                 to: null,
+                                 text: null,
+                                 direction: null,
+                                 notification_url: null)
+```
+
+

@@ -1,0 +1,41 @@
+# OpenapiClient::IncomingNumberResult
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**uri** | **String** | The URI for this resource, relative to /apiserver. | [optional] 
+**date_created** | **String** | The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). | [optional] 
+**date_updated** | **String** | The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). | [optional] 
+**revision** | **Integer** | Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated. | [optional] 
+**phone_number_id** | **String** | String that uniquely identifies this phone number resource. | [optional] 
+**account_id** | **String** | ID of the account that owns this phone number. | [optional] 
+**application_id** | **String** | ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. | [optional] 
+**phone_number** | **String** | Phone number in E.164 format. | [optional] 
+**_alias** | **String** | Description for this phone number. Typically the conventionally-formatted version of the phone number. | [optional] 
+**region** | **String** | State or province of this phone number. | [optional] 
+**country** | **String** | Country of this phone number. | [optional] 
+**voice_enabled** | **Boolean** | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional] 
+**sms_enabled** | **Boolean** | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional] 
+
+## Code Sample
+
+```ruby
+require 'OpenapiClient'
+
+instance = OpenapiClient::IncomingNumberResult.new(uri: null,
+                                 date_created: null,
+                                 date_updated: null,
+                                 revision: null,
+                                 phone_number_id: null,
+                                 account_id: null,
+                                 application_id: null,
+                                 phone_number: null,
+                                 _alias: null,
+                                 region: null,
+                                 country: null,
+                                 voice_enabled: null,
+                                 sms_enabled: null)
+```
+
+
