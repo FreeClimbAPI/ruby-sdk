@@ -53,7 +53,7 @@ describe 'DefaultApi' do
 
     before do
       uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/IncomingPhoneNumbers"
-      @stub = stub_request(:any, uri_template).to_return(:body => ResponseMocks::INCOMING_PHONE_NUMBER, :status => 200, :headers => {})
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::INCOMING_PHONE_NUMBER, :status => 200, :headers => {})
       opts = {
         buy_incoming_number_request: OpenapiClient::BuyIncomingNumberRequest.new # BuyIncomingNumberRequest | Incoming Number transaction details
       }
@@ -80,7 +80,7 @@ describe 'DefaultApi' do
   describe 'create_a_conference test' do
     before do
       uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Conferences"
-      @stub = stub_request(:any, uri_template).to_return(:body => ResponseMocks::CONFERENCE_RESULT, :status => 200, :headers => {})
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::CONFERENCE_RESULT, :status => 200, :headers => {})
       opts = {
         create_conference_request: OpenapiClient::CreateConferenceRequest.new # CreateConferenceRequest | Conference to create
       }
@@ -107,7 +107,7 @@ describe 'DefaultApi' do
   describe 'create_a_queue test' do
     before do
       uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Queues"
-      @stub = stub_request(:any, uri_template).to_return(:body => ResponseMocks::QUEUE_RESULT, :status => 200, :headers => {})
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::QUEUE_RESULT, :status => 200, :headers => {})
       opts = {
         queue_request: OpenapiClient::QueueRequest.new # QueueRequest | Queue details used to create a queue
       }
@@ -133,7 +133,7 @@ describe 'DefaultApi' do
   describe 'create_an_application test' do
     before do
       uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Applications"
-      @stub = stub_request(:any, uri_template).to_return(:body => ResponseMocks::APPLICATION_RESULT, :status => 200, :headers => {})
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::APPLICATION_RESULT, :status => 200, :headers => {})
       opts = {
         queue_request: OpenapiClient::QueueRequest.new # QueueRequest | Queue details used to create a queue
       }
@@ -157,8 +157,20 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_a_recording test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Recordings/{recordingId}"
+      @stub = stub_request(:delete, uri_template).to_return(:status => 204, :headers => {})
+      recording_id = 'MOCK_RECORDING_ID' # String | String that uniquely identifies this recording resource.
+
+      @result = @api_instance.delete_a_recording(ACCOUNT_ID, recording_id)
+    end
+   
+    it 'should respond with nothing' do
+      expect(@result).to be_nil
+    end
+
+    it 'should make a DELETE request to /Accounts/{accountId}/Recordings/{recordingId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -169,8 +181,20 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_an_application test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Applications/{applicationId}"
+      @stub = stub_request(:delete, uri_template).to_return(:status => 204, :headers => {})
+      application_id = 'MOCK_APPLICATION_ID' # String | String that uniquely identifies this application resource.
+
+      @result = @api_instance.delete_an_application(ACCOUNT_ID, application_id)
+    end
+   
+    it 'should respond with nothing' do
+      expect(@result).to be_nil
+    end
+
+    it 'should make a DELETE request to /Accounts/{accountId}/Applications/{applicationId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -181,8 +205,21 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_an_incoming_number test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}"
+      @stub = stub_request(:delete, uri_template).to_return(:status => 204, :headers => {})
+      phone_number_id = 'phone_number_id_example' # String | String that uniquely identifies this phone number resource.
+
+      #Delete an Incoming Number
+      @result = @api_instance.delete_an_incoming_number(ACCOUNT_ID, phone_number_id)
+    end
+   
+    it 'should respond with nothing' do
+      expect(@result).to be_nil
+    end
+
+    it 'should make a DELETE request to /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -195,8 +232,24 @@ describe 'DefaultApi' do
   # @option opts [DequeueMemberRequest] :dequeue_member_request Dequeue member request details
   # @return [QueueMember]
   describe 'dequeue_a_member test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Queues/{queueId}/Members/{callId}"
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::QUEUE_MEMBER_RESULT, :status => 200, :headers => {})
+      queue_id = 'MOCK_QUEUE_ID' # String | String that uniquely identifies the Queue that the Member belongs to.
+      call_id = 'MOCK_CALL_ID' # String | ID if the Call that the Member belongs to
+      opts = {
+        dequeue_member_request: OpenapiClient::DequeueMemberRequest.new # DequeueMemberRequest | Dequeue member request details
+      }
+
+      @result = @api_instance.dequeue_a_member(ACCOUNT_ID, queue_id, call_id, opts)
+    end
+   
+    it 'should respond with a queue member' do
+      expect(@result).to be_instance_of(OpenapiClient::QueueMember)
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/Queues/{queueId}/Members/{callId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -208,8 +261,23 @@ describe 'DefaultApi' do
   # @option opts [DequeueMemberRequest] :dequeue_member_request Dequeue head member request details
   # @return [QueueMember]
   describe 'dequeue_head_member test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Queues/{queueId}/Members/Front"
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::QUEUE_MEMBER_RESULT, :status => 200, :headers => {})
+      queue_id = 'MOCK_QUEUE_ID' # String | String that uniquely identifies the Queue that the Member belongs to.
+      opts = {
+        dequeue_member_request: OpenapiClient::DequeueMemberRequest.new # DequeueMemberRequest | Dequeue member request details
+      }
+
+      @result = @api_instance.dequeue_head_member(ACCOUNT_ID, queue_id, opts)
+    end
+   
+    it 'should respond with a queue member' do
+      expect(@result).to be_instance_of(OpenapiClient::QueueMember)
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/Queues/{queueId}/Members/{callId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -220,8 +288,16 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [File]
   describe 'download_a_recording_file test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Recordings/{recordingId}/Download"
+      @stub = stub_request(:get, uri_template).with(:headers => {'Accept' => 'audio/x-wav'}).to_return(:status => 200, :headers => {})
+      recording_id = 'MOCK_RECORDING_ID' # String | String that uniquely identifies this recording resource.
+
+      @result = @api_instance.download_a_recording_file(ACCOUNT_ID, recording_id)
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/Recordings/{recordingId}/Download' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -232,11 +308,26 @@ describe 'DefaultApi' do
   # @option opts [FilterLogsRequest] :filter_logs_request Filter logs request paramters
   # @return [LogList]
   describe 'filter_logs test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Logs"
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::LOG_LIST_RESULT, :status => 200, :headers => {})
+      opts = {
+        filter_logs_request: OpenapiClient::FilterLogsRequest.new # FilterLogsRequest | Filter logs request paramters
+      }
+      
+      @result = @api_instance.filter_logs(ACCOUNT_ID, opts)
+    end
+   
+    it 'should respond with a list of logs' do
+      expect(@result).to be_instance_of(OpenapiClient::LogList)
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/Logs' do
+      expect(@stub).to have_been_requested
     end
   end
 
+  
   # unit tests for get_a_call
   # Get a Call
   # @param account_id ID of the account that created this call.
