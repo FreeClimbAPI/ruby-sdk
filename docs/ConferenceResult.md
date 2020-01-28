@@ -1,4 +1,4 @@
-# OpenapiClient::ConferenceResult
+# Freeclimb::ConferenceResult
 
 ## Properties
 
@@ -22,9 +22,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::ConferenceResult.new(uri: null,
+instance = Freeclimb::ConferenceResult.new(uri: null,
                                  date_created: null,
                                  date_updated: null,
                                  revision: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::BuyIncomingNumberRequest
+# Freeclimb::BuyIncomingNumberRequest
 
 ## Properties
 
@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::BuyIncomingNumberRequest.new(phone_number: null,
+instance = Freeclimb::BuyIncomingNumberRequest.new(phone_number: null,
                                  _alias: null,
                                  application_id: null,
                                  request_id: null)

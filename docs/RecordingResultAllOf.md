@@ -1,4 +1,4 @@
-# OpenapiClient::RecordingResultAllOf
+# Freeclimb::RecordingResultAllOf
 
 ## Properties
 
@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::RecordingResultAllOf.new(recording_id: null,
+instance = Freeclimb::RecordingResultAllOf.new(recording_id: null,
                                  account_id: null,
                                  call_id: null,
                                  duration_sec: null,

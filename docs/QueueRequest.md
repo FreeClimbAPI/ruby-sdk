@@ -1,4 +1,4 @@
-# OpenapiClient::QueueRequest
+# Freeclimb::QueueRequest
 
 ## Properties
 
@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::QueueRequest.new(_alias: null,
+instance = Freeclimb::QueueRequest.new(_alias: null,
                                  max_size: null,
                                  request_id: null)
 ```

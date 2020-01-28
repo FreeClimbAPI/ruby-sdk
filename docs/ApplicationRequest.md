@@ -1,4 +1,4 @@
-# OpenapiClient::ApplicationRequest
+# Freeclimb::ApplicationRequest
 
 ## Properties
 
@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::ApplicationRequest.new(_alias: null,
+instance = Freeclimb::ApplicationRequest.new(_alias: null,
                                  voice_url: null,
                                  voice_fallback_url: null,
                                  call_connect_url: null,

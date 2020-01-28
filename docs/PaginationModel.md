@@ -1,4 +1,4 @@
-# OpenapiClient::PaginationModel
+# Freeclimb::PaginationModel
 
 ## Properties
 
@@ -15,9 +15,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::PaginationModel.new(total: null,
+instance = Freeclimb::PaginationModel.new(total: null,
                                  start: null,
                                  _end: null,
                                  page: null,

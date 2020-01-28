@@ -1,4 +1,4 @@
-# OpenapiClient::AccountResultAllOf
+# Freeclimb::AccountResultAllOf
 
 ## Properties
 
@@ -15,9 +15,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::AccountResultAllOf.new(account_id: null,
+instance = Freeclimb::AccountResultAllOf.new(account_id: null,
                                  auth_token: null,
                                  _alias: null,
                                  label: null,

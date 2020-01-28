@@ -1,4 +1,4 @@
-# OpenapiClient::FilterLogsRequest
+# Freeclimb::FilterLogsRequest
 
 ## Properties
 
@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::FilterLogsRequest.new(pql: null,
+instance = Freeclimb::FilterLogsRequest.new(pql: null,
                                  request_id: null)
 ```
 

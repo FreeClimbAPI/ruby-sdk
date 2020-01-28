@@ -12,14 +12,14 @@ OpenAPI Generator version: 4.2.2
 
 require 'spec_helper'
 
-describe OpenapiClient::Configuration do
-  let(:config) { OpenapiClient::Configuration.default }
+describe Freeclimb::Configuration do
+  let(:config) { Freeclimb::Configuration.default }
 
   before(:each) do
     # uncomment below to setup host and base_path
     # require 'URI'
     # uri = URI.parse("https://www.freeclimb.com/apiserver")
-    # OpenapiClient.configure do |c|
+    # Freeclimb.configure do |c|
     #   c.host = uri.host
     #   c.base_path = uri.path
     # end

@@ -1,4 +1,4 @@
-# OpenapiClient::MessageRequestAllOf
+# Freeclimb::MessageRequestAllOf
 
 ## Properties
 
@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::MessageRequestAllOf.new(from: null,
+instance = Freeclimb::MessageRequestAllOf.new(from: null,
                                  to: null,
                                  text: null,
                                  notification_url: null,

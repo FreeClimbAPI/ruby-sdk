@@ -1,4 +1,4 @@
-# OpenapiClient::IncomingNumberResultAllOf
+# Freeclimb::IncomingNumberResultAllOf
 
 ## Properties
 
@@ -17,9 +17,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::IncomingNumberResultAllOf.new(phone_number_id: null,
+instance = Freeclimb::IncomingNumberResultAllOf.new(phone_number_id: null,
                                  account_id: null,
                                  application_id: null,
                                  phone_number: null,

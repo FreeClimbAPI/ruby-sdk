@@ -1,4 +1,4 @@
-# OpenapiClient::AvailableNumber
+# Freeclimb::AvailableNumber
 
 ## Properties
 
@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::AvailableNumber.new(phone_number: null,
+instance = Freeclimb::AvailableNumber.new(phone_number: null,
                                  voice_enabled: null,
                                  sms_enabled: null,
                                  _alias: null,

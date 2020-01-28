@@ -1,4 +1,4 @@
-# OpenapiClient::DequeueMemberRequest
+# Freeclimb::DequeueMemberRequest
 
 ## Properties
 
@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::DequeueMemberRequest.new(request_id: null)
+instance = Freeclimb::DequeueMemberRequest.new(request_id: null)
 ```
 
 

@@ -1,4 +1,4 @@
-# OpenapiClient::ApplicationResult
+# Freeclimb::ApplicationResult
 
 ## Properties
 
@@ -21,9 +21,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::ApplicationResult.new(uri: null,
+instance = Freeclimb::ApplicationResult.new(uri: null,
                                  date_created: null,
                                  date_updated: null,
                                  revision: null,

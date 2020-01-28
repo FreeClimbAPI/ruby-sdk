@@ -1,4 +1,4 @@
-# OpenapiClient::CreateConferenceRequest
+# Freeclimb::CreateConferenceRequest
 
 ## Properties
 
@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::CreateConferenceRequest.new(_alias: null,
+instance = Freeclimb::CreateConferenceRequest.new(_alias: null,
                                  play_beep: null,
                                  record: null,
                                  wait_url: null,

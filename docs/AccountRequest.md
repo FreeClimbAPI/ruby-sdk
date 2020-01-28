@@ -1,4 +1,4 @@
-# OpenapiClient::AccountRequest
+# Freeclimb::AccountRequest
 
 ## Properties
 
@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::AccountRequest.new(_alias: null,
+instance = Freeclimb::AccountRequest.new(_alias: null,
                                  label: null,
                                  request_id: null)
 ```

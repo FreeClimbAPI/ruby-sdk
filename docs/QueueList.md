@@ -1,4 +1,4 @@
-# OpenapiClient::QueueList
+# Freeclimb::QueueList
 
 ## Properties
 
@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::QueueList.new(total: null,
+instance = Freeclimb::QueueList.new(total: null,
                                  start: null,
                                  _end: null,
                                  page: null,

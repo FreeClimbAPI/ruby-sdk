@@ -1,4 +1,4 @@
-# OpenapiClient::AvailableNumberList
+# Freeclimb::AvailableNumberList
 
 ## Properties
 
@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::AvailableNumberList.new(total: null,
+instance = Freeclimb::AvailableNumberList.new(total: null,
                                  start: null,
                                  _end: null,
                                  page: null,

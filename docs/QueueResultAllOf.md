@@ -1,4 +1,4 @@
-# OpenapiClient::QueueResultAllOf
+# Freeclimb::QueueResultAllOf
 
 ## Properties
 
@@ -15,9 +15,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::QueueResultAllOf.new(account_id: null,
+instance = Freeclimb::QueueResultAllOf.new(account_id: null,
                                  queue_id: null,
                                  _alias: null,
                                  max_size: null,

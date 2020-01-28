@@ -1,4 +1,4 @@
-# OpenapiClient::MessageRequest
+# Freeclimb::MessageRequest
 
 ## Properties
 
@@ -18,9 +18,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::MessageRequest.new(uri: null,
+instance = Freeclimb::MessageRequest.new(uri: null,
                                  date_created: null,
                                  date_updated: null,
                                  revision: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::LogListAllOf
+# Freeclimb::LogListAllOf
 
 ## Properties
 
@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'OpenapiClient'
+require 'Freeclimb'
 
-instance = OpenapiClient::LogListAllOf.new(logs: null)
+instance = Freeclimb::LogListAllOf.new(logs: null)
 ```
 
 

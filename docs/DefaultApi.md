@@ -1,4 +1,4 @@
-# OpenapiClient::DefaultApi
+# Freeclimb::DefaultApi
 
 All URIs are relative to *https://www.freeclimb.com/apiserver*
 
@@ -63,25 +63,25 @@ Buy a Phone Number
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that owns this phone number.
 opts = {
-  buy_incoming_number_request: OpenapiClient::BuyIncomingNumberRequest.new # BuyIncomingNumberRequest | Incoming Number transaction details
+  buy_incoming_number_request: Freeclimb::BuyIncomingNumberRequest.new # BuyIncomingNumberRequest | Incoming Number transaction details
 }
 
 begin
   #Buy a Phone Number
   result = api_instance.buy_a_phone_number(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->buy_a_phone_number: #{e}"
 end
 ```
@@ -118,25 +118,25 @@ Create a Conference
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this Conference.
 opts = {
-  create_conference_request: OpenapiClient::CreateConferenceRequest.new # CreateConferenceRequest | Conference to create
+  create_conference_request: Freeclimb::CreateConferenceRequest.new # CreateConferenceRequest | Conference to create
 }
 
 begin
   #Create a Conference
   result = api_instance.create_a_conference(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->create_a_conference: #{e}"
 end
 ```
@@ -173,25 +173,25 @@ Create a Queue
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this Queue.
 opts = {
-  queue_request: OpenapiClient::QueueRequest.new # QueueRequest | Queue details used to create a queue
+  queue_request: Freeclimb::QueueRequest.new # QueueRequest | Queue details used to create a queue
 }
 
 begin
   #Create a Queue
   result = api_instance.create_a_queue(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->create_a_queue: #{e}"
 end
 ```
@@ -228,25 +228,25 @@ Create an application
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this application.
 opts = {
-  application_request: OpenapiClient::ApplicationRequest.new # ApplicationRequest | Application Details
+  application_request: Freeclimb::ApplicationRequest.new # ApplicationRequest | Application Details
 }
 
 begin
   #Create an application
   result = api_instance.create_an_application(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->create_an_application: #{e}"
 end
 ```
@@ -283,22 +283,22 @@ Delete a Recording
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this recording.
 recording_id = 'recording_id_example' # String | String that uniquely identifies this recording resource.
 
 begin
   #Delete a Recording
   api_instance.delete_a_recording(account_id, recording_id)
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->delete_a_recording: #{e}"
 end
 ```
@@ -335,22 +335,22 @@ Delete an application
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this application.
 application_id = 'application_id_example' # String | String that uniquely identifies this application resource.
 
 begin
   #Delete an application
   api_instance.delete_an_application(account_id, application_id)
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->delete_an_application: #{e}"
 end
 ```
@@ -387,22 +387,22 @@ Delete an Incoming Number
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that owns this phone number.
 phone_number_id = 'phone_number_id_example' # String | String that uniquely identifies this phone number resource.
 
 begin
   #Delete an Incoming Number
   api_instance.delete_an_incoming_number(account_id, phone_number_id)
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->delete_an_incoming_number: #{e}"
 end
 ```
@@ -439,27 +439,27 @@ Dequeue a Member
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created the Queue
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
 call_id = 'call_id_example' # String | ID if the Call that the Member belongs to
 opts = {
-  dequeue_member_request: OpenapiClient::DequeueMemberRequest.new # DequeueMemberRequest | Dequeue member request details
+  dequeue_member_request: Freeclimb::DequeueMemberRequest.new # DequeueMemberRequest | Dequeue member request details
 }
 
 begin
   #Dequeue a Member
   result = api_instance.dequeue_a_member(account_id, queue_id, call_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->dequeue_a_member: #{e}"
 end
 ```
@@ -498,26 +498,26 @@ Dequeue Head Member
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this queue.
 queue_id = 'queue_id_example' # String | String that uniquely identifies this queue resource.
 opts = {
-  dequeue_member_request: OpenapiClient::DequeueMemberRequest.new # DequeueMemberRequest | Dequeue head member request details
+  dequeue_member_request: Freeclimb::DequeueMemberRequest.new # DequeueMemberRequest | Dequeue head member request details
 }
 
 begin
   #Dequeue Head Member
   result = api_instance.dequeue_head_member(account_id, queue_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->dequeue_head_member: #{e}"
 end
 ```
@@ -555,15 +555,15 @@ Download a Recording File
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this recording.
 recording_id = 'recording_id_example' # String | String that uniquely identifies this recording resource.
 
@@ -571,7 +571,7 @@ begin
   #Download a Recording File
   result = api_instance.download_a_recording_file(account_id, recording_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->download_a_recording_file: #{e}"
 end
 ```
@@ -608,25 +608,25 @@ Filter Logs
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that this log was generated under.
 opts = {
-  filter_logs_request: OpenapiClient::FilterLogsRequest.new # FilterLogsRequest | Filter logs request paramters
+  filter_logs_request: Freeclimb::FilterLogsRequest.new # FilterLogsRequest | Filter logs request paramters
 }
 
 begin
   #Filter Logs
   result = api_instance.filter_logs(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->filter_logs: #{e}"
 end
 ```
@@ -663,15 +663,15 @@ Get a Call
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this call.
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
 
@@ -679,7 +679,7 @@ begin
   #Get a Call
   result = api_instance.get_a_call(account_id, call_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_a_call: #{e}"
 end
 ```
@@ -716,15 +716,15 @@ Get a Conference
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this conference.
 conference_id = 'conference_id_example' # String | A string that uniquely identifies this conference resource.
 
@@ -732,7 +732,7 @@ begin
   #Get a Conference
   result = api_instance.get_a_conference(account_id, conference_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_a_conference: #{e}"
 end
 ```
@@ -769,15 +769,15 @@ Get a Member
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this Queue
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
 call_id = 'call_id_example' # String | ID of the Call that the Member belongs to
@@ -786,7 +786,7 @@ begin
   #Get a Member
   result = api_instance.get_a_member(account_id, queue_id, call_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_a_member: #{e}"
 end
 ```
@@ -824,15 +824,15 @@ Get a Participant
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this participant.
 conference_id = 'conference_id_example' # String | ID of the conference this participant is in.
 call_id = 'call_id_example' # String | ID of the Call associated with this participant.
@@ -841,7 +841,7 @@ begin
   #Get a Participant
   result = api_instance.get_a_participant(account_id, conference_id, call_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_a_participant: #{e}"
 end
 ```
@@ -879,15 +879,15 @@ Get a Queue
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this queue.
 queue_id = 'queue_id_example' # String | A string that uniquely identifies this queue resource.
 
@@ -895,7 +895,7 @@ begin
   #Get a Queue
   result = api_instance.get_a_queue(account_id, queue_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_a_queue: #{e}"
 end
 ```
@@ -932,15 +932,15 @@ Get a Recording
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this recording.
 recording_id = 'recording_id_example' # String | String that uniquely identifies this recording resource.
 
@@ -948,7 +948,7 @@ begin
   #Get a Recording
   result = api_instance.get_a_recording(account_id, recording_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_a_recording: #{e}"
 end
 ```
@@ -985,22 +985,22 @@ Get an Account
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | String that uniquely identifies this account resource.
 
 begin
   #Get an Account
   result = api_instance.get_an_account(account_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_an_account: #{e}"
 end
 ```
@@ -1036,15 +1036,15 @@ Get an Application
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this application.
 application_id = 'application_id_example' # String | A string that uniquely identifies this application resource.
 
@@ -1052,7 +1052,7 @@ begin
   #Get an Application
   result = api_instance.get_an_application(account_id, application_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_an_application: #{e}"
 end
 ```
@@ -1089,15 +1089,15 @@ Get an Incoming Number
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that owns this phone number.
 phone_number_id = 'phone_number_id_example' # String | String that uniquely identifies this phone number resource.
 
@@ -1105,7 +1105,7 @@ begin
   #Get an Incoming Number
   result = api_instance.get_an_incoming_number(account_id, phone_number_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_an_incoming_number: #{e}"
 end
 ```
@@ -1142,15 +1142,15 @@ Get an SMS Message
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | String that uniquely identifies this account resource.
 message_id = 'message_id_example' # String | String that uniquely identifies this Message resource.
 
@@ -1158,7 +1158,7 @@ begin
   #Get an SMS Message
   result = api_instance.get_an_sms_message(account_id, message_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_an_sms_message: #{e}"
 end
 ```
@@ -1195,15 +1195,15 @@ Get Head Member
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this Queue
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
 
@@ -1211,7 +1211,7 @@ begin
   #Get Head Member
   result = api_instance.get_head_member(account_id, queue_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_head_member: #{e}"
 end
 ```
@@ -1248,15 +1248,15 @@ List Active Queues
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this Queue.
 opts = {
   _alias: '_alias_example' # String | Return only the Queue resources with aliases that exactly match this name.
@@ -1266,7 +1266,7 @@ begin
   #List Active Queues
   result = api_instance.list_active_queues(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_active_queues: #{e}"
 end
 ```
@@ -1303,22 +1303,22 @@ List All Account Logs
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that these Logs were generated under.
 
 begin
   #List All Account Logs
   result = api_instance.list_all_account_logs(account_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_all_account_logs: #{e}"
 end
 ```
@@ -1354,15 +1354,15 @@ List applications
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this application.
 opts = {
   _alias: '_alias_example' # String | Return only applications with aliases that exactly match this value.
@@ -1372,7 +1372,7 @@ begin
   #List applications
   result = api_instance.list_an_application(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_an_application: #{e}"
 end
 ```
@@ -1409,15 +1409,15 @@ List available numbers
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 opts = {
   _alias: '_alias_example', # String | Filter on numbers based on the formatted string of the phone number.
   phone_number: 'phone_number_example' # String | PCRE-compatible regular expression to filter against `phoneNumber` field, which is in E.164 format.
@@ -1427,7 +1427,7 @@ begin
   #List available numbers
   result = api_instance.list_available_numbers(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_available_numbers: #{e}"
 end
 ```
@@ -1464,15 +1464,15 @@ List Call Logs
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this call.
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
 
@@ -1480,7 +1480,7 @@ begin
   #List Call Logs
   result = api_instance.list_call_logs(account_id, call_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_call_logs: #{e}"
 end
 ```
@@ -1517,15 +1517,15 @@ List Call Recordings
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this call.
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
 opts = {
@@ -1536,7 +1536,7 @@ begin
   #List Call Recordings
   result = api_instance.list_call_recordings(account_id, call_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_call_recordings: #{e}"
 end
 ```
@@ -1574,15 +1574,15 @@ List Calls
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this call.
 opts = {
   to: 'to_example', # String | Only show Calls to this phone number.
@@ -1597,7 +1597,7 @@ begin
   #List Calls
   result = api_instance.list_calls(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_calls: #{e}"
 end
 ```
@@ -1639,15 +1639,15 @@ List Conferences
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this conference.
 opts = {
   status: 'status_example', # String | Only show conferences that currently have the specified status. Valid values: `empty`, `populated`, `inProgress`, or `terminated`.
@@ -1660,7 +1660,7 @@ begin
   #List Conferences
   result = api_instance.list_conferences(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_conferences: #{e}"
 end
 ```
@@ -1700,15 +1700,15 @@ List Incoming Numbers
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that owns this phone number.
 opts = {
   phone_number: 'phone_number_example', # String | Only show incoming phone number resources that match this PCRE-compatible regular expression.
@@ -1719,7 +1719,7 @@ begin
   #List Incoming Numbers
   result = api_instance.list_incoming_numbers(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_incoming_numbers: #{e}"
 end
 ```
@@ -1757,15 +1757,15 @@ List Members
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this Queue
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
 
@@ -1773,7 +1773,7 @@ begin
   #List Members
   result = api_instance.list_members(account_id, queue_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_members: #{e}"
 end
 ```
@@ -1810,15 +1810,15 @@ List Participants
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this participant.
 conference_id = 'conference_id_example' # String | ID of the conference this participant is in.
 opts = {
@@ -1830,7 +1830,7 @@ begin
   #List Participants
   result = api_instance.list_participants(account_id, conference_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_participants: #{e}"
 end
 ```
@@ -1869,15 +1869,15 @@ List Recordings
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this recording.
 opts = {
   call_id: 'call_id_example', # String | Show only Recordings made during the Call with this ID.
@@ -1889,7 +1889,7 @@ begin
   #List Recordings
   result = api_instance.list_recordings(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_recordings: #{e}"
 end
 ```
@@ -1928,15 +1928,15 @@ List SMS Messages
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id2 = 'account_id_example' # String | ID of the account that sent this message.
 opts = {
   to: 'to_example', # String | Only show Messages to this phone number.
@@ -1951,7 +1951,7 @@ begin
   #List SMS Messages
   result = api_instance.list_sms_messages(account_id2, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_sms_messages: #{e}"
 end
 ```
@@ -1993,25 +1993,25 @@ Make a Call
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this call.
 opts = {
-  make_call_request: OpenapiClient::MakeCallRequest.new # MakeCallRequest | Call details for making a call
+  make_call_request: Freeclimb::MakeCallRequest.new # MakeCallRequest | Call details for making a call
 }
 
 begin
   #Make a Call
   result = api_instance.make_a_call(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->make_a_call: #{e}"
 end
 ```
@@ -2048,15 +2048,15 @@ Remove a Participant
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this participant.
 conference_id = 'conference_id_example' # String | ID of the conference this participant is in.
 call_id = 'call_id_example' # String | ID of the Call associated with this participant.
@@ -2064,7 +2064,7 @@ call_id = 'call_id_example' # String | ID of the Call associated with this parti
 begin
   #Remove a Participant
   api_instance.remove_a_participant(account_id, conference_id, call_id)
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->remove_a_participant: #{e}"
 end
 ```
@@ -2102,25 +2102,25 @@ Send an SMS Message
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that sent this message.
 opts = {
-  message_request: OpenapiClient::MessageRequest.new # MessageRequest | Details to create a message
+  message_request: Freeclimb::MessageRequest.new # MessageRequest | Details to create a message
 }
 
 begin
   #Send an SMS Message
   result = api_instance.send_an_sms_message(account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->send_an_sms_message: #{e}"
 end
 ```
@@ -2157,15 +2157,15 @@ Stream a Recording File
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this recording.
 recording_id = 'recording_id_example' # String | String that uniquely identifies this recording resource.
 
@@ -2173,7 +2173,7 @@ begin
   #Stream a Recording File
   result = api_instance.stream_a_recording_file(account_id, recording_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->stream_a_recording_file: #{e}"
 end
 ```
@@ -2210,26 +2210,26 @@ Update a Conference
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this conference.
 conference_id = 'conference_id_example' # String | String that uniquely identifies this conference resource.
 opts = {
-  update_conference_request: OpenapiClient::UpdateConferenceRequest.new # UpdateConferenceRequest | Conference Details to update
+  update_conference_request: Freeclimb::UpdateConferenceRequest.new # UpdateConferenceRequest | Conference Details to update
 }
 
 begin
   #Update a Conference
   result = api_instance.update_a_conference(account_id, conference_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_a_conference: #{e}"
 end
 ```
@@ -2267,25 +2267,25 @@ Update a Live Call
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this call.
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
 opts = {
-  update_call_request: OpenapiClient::UpdateCallRequest.new # UpdateCallRequest | Call details to update
+  update_call_request: Freeclimb::UpdateCallRequest.new # UpdateCallRequest | Call details to update
 }
 
 begin
   #Update a Live Call
   api_instance.update_a_live_call(account_id, call_id, opts)
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_a_live_call: #{e}"
 end
 ```
@@ -2323,27 +2323,27 @@ Update a Participant
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this participant.
 conference_id = 'conference_id_example' # String | ID of the conference this participant is in.
 call_id = 'call_id_example' # String | ID of the Call associated with this participant.
 opts = {
-  update_conference_participant_request: OpenapiClient::UpdateConferenceParticipantRequest.new # UpdateConferenceParticipantRequest | Conference participant details to update
+  update_conference_participant_request: Freeclimb::UpdateConferenceParticipantRequest.new # UpdateConferenceParticipantRequest | Conference participant details to update
 }
 
 begin
   #Update a Participant
   result = api_instance.update_a_participant(account_id, conference_id, call_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_a_participant: #{e}"
 end
 ```
@@ -2382,26 +2382,26 @@ Update a Queue
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this queue.
 queue_id = 'queue_id_example' # String | A string that uniquely identifies this Queue resource.
 opts = {
-  queue_request: OpenapiClient::QueueRequest.new # QueueRequest | Queue Details to update
+  queue_request: Freeclimb::QueueRequest.new # QueueRequest | Queue Details to update
 }
 
 begin
   #Update a Queue
   result = api_instance.update_a_queue(account_id, queue_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_a_queue: #{e}"
 end
 ```
@@ -2439,24 +2439,24 @@ Manage an account
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | String that uniquely identifies this account resource.
 opts = {
-  account_request: OpenapiClient::AccountRequest.new # AccountRequest | Account details to update
+  account_request: Freeclimb::AccountRequest.new # AccountRequest | Account details to update
 }
 
 begin
   #Manage an account
   api_instance.update_an_account(account_id, opts)
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_an_account: #{e}"
 end
 ```
@@ -2493,26 +2493,26 @@ Update an application
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that created this application.
 application_id = 'application_id_example' # String | A string that uniquely identifies this application resource.
 opts = {
-  application_request: OpenapiClient::ApplicationRequest.new # ApplicationRequest | Application details to update.
+  application_request: Freeclimb::ApplicationRequest.new # ApplicationRequest | Application details to update.
 }
 
 begin
   #Update an application
   result = api_instance.update_an_application(account_id, application_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_an_application: #{e}"
 end
 ```
@@ -2550,26 +2550,26 @@ Update an Incoming Number
 
 ```ruby
 # load the gem
-require 'openapi_client'
+require 'freeclimb'
 # setup authorization
-OpenapiClient.configure do |config|
+Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = Freeclimb::DefaultApi.new
 account_id = 'account_id_example' # String | ID of the account that owns this phone number.
 phone_number_id = 'phone_number_id_example' # String | String that uniquely identifies this phone number resource.
 opts = {
-  incoming_number_request: OpenapiClient::IncomingNumberRequest.new # IncomingNumberRequest | Incoming Number details to update
+  incoming_number_request: Freeclimb::IncomingNumberRequest.new # IncomingNumberRequest | Incoming Number details to update
 }
 
 begin
   #Update an Incoming Number
   result = api_instance.update_an_incoming_number(account_id, phone_number_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_an_incoming_number: #{e}"
 end
 ```
