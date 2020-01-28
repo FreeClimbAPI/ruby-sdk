@@ -127,4 +127,297 @@ module ResponseMocks
     "start":0,
     "total":5
   }'
+
+  CALL_RESULT = '{
+    "uri":"/Accounts/{account_id}/Calls/CA721d58cbeb725da23534375643ff8113f3050241",
+    "revision":1,
+    "dateCreated":"Thu, 13 Oct 2019 17:51:56 GMT",
+    "dateUpdated":"Thu, 13 Oct 2019 19:51:50 GMT",
+    "callId":"CA721d58cbeb725da23534375643ff8113f3050241",
+    "parentCallId":"CA78d058cbeb725da23534375643ff8113f30593ef",
+    "accountId":"{account_id}",
+    "from":"+12093231234",
+    "to":"+12098900611",
+    "phoneNumberId":"PN234f58cbeb725da23534375643ff8113f30500ab",
+    "status":"queued",
+    "startTime":"Thu, 13 Oct 2019 17:51:56 GMT",
+    "connectTime":"Thu, 13 Oct 2019 17:51:59 GMT",
+    "endTime":"Thu, 13 Oct 2019 17:59:54 GMT",
+    "duration":478,
+    "connectDuration": 475,
+    "direction":"outboundDial",
+    "answeredBy":"human",
+    "subresourceUris":{
+      "logs":"/Accounts/{account_id}/Calls/CA721d58cbeb725da23534375643ff8113f3050241/Logs",
+      "recordings":"/Accounts/{account_id}/Calls/CA721d58cbeb725da23534375643ff8113f3050241/Recordings"
+    }
+  }'
+  CONFERENCE_PARTICIPANT_RESULT = '{
+    "accountId":"{account_id}",
+    "conferenceId":"CFd0cc3ab95118aaa597039793a1692313fa9c4936",
+    "callId":"CAef219e4e9152a4b31888620cf391adcae5b6f18c",
+    "uri":"/Accounts/{account_id}/Conferences/CFd0cc3ab95118aaa597039793a1692313fa9c4936/Participants/CAef219e4e9152a4b31888620cf391adcae5b6f18c",
+    "dateCreated":"Thu, 13 Oct 2019 18:23:31 GMT",
+    "dateUpdated":"Thu, 13 Oct 2019 18:23:31 GMT",
+    "revision":1,
+    "talk":true,
+    "listen":true,
+    "startConfOnEnter":true
+  }'
+
+  ACCOUNT_RESULT = '{
+    "uri":"/Accounts/{accountId}",
+    "revision":1,
+    "dateCreated":"Thu, 13 Oct 2019 16:59:34 GMT",
+    "dateUpdated":"Thu, 13 Oct 2019 16:59:34 GMT",
+    "accountId":"{account_id}",
+    "authToken":"428e487a035b837ac2f47f2236ec553550ed2628",
+    "alias":"boostrap account",
+    "label":"customer service",
+    "type":"trial",
+    "status":"active",
+    "subresourceUris":
+    {
+      "applications":"/Accounts/{account_id}/Applications",
+      "calls":"/Accounts/{account_id}/Calls",
+      "availablePhoneNumbers":"/Accounts/{account_id}/AvailablePhoneNumbers",
+      "conferences":"/Accounts/{account_id}/Conferences",
+      "incomingPhoneNumbers":"/Accounts/{account_id}/IncomingPhoneNumbers",
+      "logs":"/Accounts/{account_id}/Logs",
+      "recordings":"/Accounts/{account_id}/Recordings",
+      "queues":"/Accounts/{account_id}/Queues"
+    }
+  }'
+
+  MESSAGE_RESULT = '{
+    "uri":"/Accounts/{account_id}/Messages/SM721d58cbeb725da23534375643ff8113f3050241",
+    "revision":1,
+    "dateCreated":"Thu, 13 Oct 2019 17:51:56 GMT",
+    "dateUpdated":"Thu, 13 Oct 2019 19:51:50 GMT",
+    "messageId":"SM721d58cbeb725da23534375643ff8113f3050241",
+    "accountId":"{account_id}",
+    "from":"+12093231234",
+    "to":"+12098900611",
+    "text":"SMS message sent during a phone call.",
+    "direction":"outbound",
+    "notificationUrl": "http://myapp.com/message-status-notification",
+    "status": "sent"
+  }'
+
+  QUEUE_LIST_RESULT = '{
+    "total":1,
+    "start":0,
+    "end":0,
+    "page":0,
+    "numPages":1,
+    "pageSize":100,
+    "nextPageUri":null,
+    "queues":[
+      {
+        "uri":"/Accounts/{account_id}/Queues/QUeda6c00620d92ec306fa8780aa824352fcd1367a",
+        "dateCreated":"Thu, 13 Oct 2019 18:31:48 GMT",
+        "dateUpdated":"Thu, 13 Oct 2019 18:31:48 GMT",
+        "revision":1,
+        "accountId":"{account_id}",
+        "queueId":"QUeda6c00620d92ec306fa8780aa824352fcd1367a",
+        "alias":"the number",
+        "maxSize":100,
+        "currentSize":0,
+        "averageWaitTime":0,
+        "subresourceUris":{
+          "members":"/Accounts/{account_id}/Queues/QUeda6c00620d92ec306fa8780aa824352fcd1367a/Members"
+        }
+      }
+    ]
+  }'
+
+  APPLICATION_LIST_RESULT = '{
+    "total":1,
+    "start":0,
+    "end":0,
+    "page":0,
+    "numPages":1,
+    "pageSize":100,
+    "nextPageUri":null,
+    "applications":[
+      {
+        "uri":"/Accounts/{account_id}/Applications/APec9ba3847dd3c0327abb2fa5f385a1a6195e2870",
+        "revision":1,
+        "dateCreated":"Thu, 13 Oct 2019 17:49:21 GMT",
+        "dateUpdated":"Thu, 13 Oct 2019 17:49:21 GMT",
+        "applicationId":"APec9ba3847dd3c0327abb2fa5f385a1a6195e2870",
+        "accountId":"{account_id}",
+        "alias":"SampleApplication",
+        "voiceUrl":"http://myapp.com/inbound-call",
+        "voiceFallbackUrl":"http://myapp.com/inbound-call-fallback",
+        "callConnectUrl":"http://myapp.com/outbound-connect",
+        "statusCallbackUrl":"http://myapp.com/call-status",
+        "smsUrl":"http://myapp.com/inbound-sms",
+        "smsFallbackUrl":"http://myapp.com/inbound-sms-fallback"
+      }
+    ]
+  }'
+
+  AVAILABLE_NUMBER_LIST = '{
+    "total":35,
+    "start":0,
+    "end":19,
+    "page":0,
+    "numPages":2,
+    "pageSize":100,
+    "nextPageUri":"/AvailablePhoneNumbers?cursor=82402c5eefa67219b554e22c63cfb1b92ade8744",
+    "availablePhoneNumbers":[
+      {
+        "phoneNumber":"+14135513872",
+        "voiceEnabled":true,
+        "smsEnabled":true,
+        "alias":"(413) 551-3872",
+        "region":"MA",
+        "country":"US"
+      },
+      {
+        "phoneNumber":"+19135513873",
+        "voiceEnabled":true,
+        "smsEnabled":true,
+        "alias":"(913) 551-3873",
+        "region":"KS",
+        "country":"US"
+      }
+    ]
+  }'
+
+  RECORDING_LIST_RESULT = '{
+    "total":1,
+    "start":1,
+    "end":0,
+    "page":0,
+    "numPages":1,
+    "pageSize":100,
+    "nextPageUri":null,
+    "recordings":[
+      {
+        "uri":"/Accounts/{account_id}/Recordings/RE2849364d11dacd7c1e64afb3fd8c8f707a2080b4",
+        "dateCreated":"Thu, 13 Oct 2019 18:49:11 GMT",
+        "dateUpdated":"Thu, 13 Oct 2019 18:49:11 GMT",
+        "revision":1,
+        "recordingId":"RE2849364d11dacd7c1e64afb3fd8c8f707a2080b4",
+        "accountId":"{account_id}",
+        "callId":"CA600933ba07a208317820ddabe8aa0c33e4cbd675",
+        "durationSec":3
+      }
+    ]
+  }'
+
+  CALL_LIST_RESULT = '{
+    "total":1,
+    "start":0,
+    "end":0,
+    "page":0,
+    "numPages":1,
+    "pageSize":100,
+    "nextPageUri":null,
+    "calls":[
+      {
+        "uri":"/Accounts/{account_id}/Calls/CA771fa1c54cdac17a8c1f0a66cdd1d5dae11b98a1",
+        "revision":1,
+        "dateCreated":"Thu, 13 Oct 2019 17:56:15 GMT",
+        "dateUpdated":"Thu, 13 Oct 2019 17:56:15 GMT",
+        "callId":"CA771fa1c54cdac17a8c1f0a66cdd1d5dae11b98a1",
+        "parentCallId":null,
+        "accountId":"{account_id}",
+        "from":"+12098231234",
+        "to":"+12098900611",
+        "phoneNumberId":"PNfffda1c54cdac17a8c1f0a66cdd1d5dae11b123d",
+        "status":"queued",
+        "startTime":"Thu, 24 Oct 2019 12:21:15 GMT",
+        "connectTime":"Thu, 24 Oct 2019 12:21:18 GMT",
+        "endTime":"Thu, 24 Oct 2019 12:32:18 GMT",
+        "duration":663,
+        "connectDuration":660,
+        "direction":"outboundAPI",
+        "answeredBy":"human",
+        "subresourceUris":{
+          "logs":"/Accounts/{account_id}/Calls/CA771fa1c54cdac17a8c1f0a66cdd1d5dae11b98a1/Logs",
+          "recordings":"/Accounts/{account_id}/Calls/CA771fa1c54cdac17a8c1f0a66cdd1d5dae11b98a1/Recordings"
+        }
+      }
+    ]
+  }'
+
+  CONFERNECE_LIST_RESULT = '{
+    "total":1,
+    "start":0,
+    "end":0,
+    "page":0,
+    "numPages":1,
+    "pageSize":100,
+    "nextPageUri":null,
+    "conferences":[
+      {
+        "uri":"/Accounts/{account_id}/Conferences/CFf85f0cb5b546b737c9b807f037b008c8ab621b6e",
+        "revision":1,
+        "dateCreated":"Thu, 13 Oct 2019 18:19:39 GMT",
+        "dateUpdated":"Thu, 13 Oct 2019 18:19:39 GMT",
+        "conferenceId":"CFf85f0cb5b546b737c9b807f037b008c8ab621b6e",
+        "accountId":"{account_id}",
+        "alias":"the number",
+        "playBeep":"always",
+        "record":false,
+        "status":"empty",
+        "waitUrl":"http://myapp/waitaudio",
+        "statusCallbackUrl":"http://myserver/confstatuscallback",
+        "subresourceUris":{
+          "participants":"/Accounts/{account_id}/Conferences/CFf85f0cb5b546b737c9b807f037b008c8ab621b6e/Participants",
+          "recordings":"/Accounts/{account_id}/Conferences/CFf85f0cb5b546b737c9b807f037b008c8ab621b6e/Recordings"
+        }
+      }
+    ]
+  }'
+
+  INCOMING_PHONE_NUMBER_LIST_RESULT = '{
+    "total":1,
+    "start":0,
+    "end":0,
+    "page":0,
+    "numPages":1,
+    "pageSize":100,
+    "nextPageUri":null,
+    "incomingPhoneNumbers":[
+      {
+        "uri":"/Accounts/{accountId}/IncomingPhoneNumbers/PN280479a655d90ab71b24d8258ee07210aff8f7b3",
+        "dateCreated":"Thu, 13 Oct 2019 17:44:22 GMT",
+        "dateUpdated":"Thu, 13 Oct 2019 17:44:23 GMT",
+        "revision":1,
+        "phoneNumberId":"PN280479a655d90ab71b24d8258ee07210aff8f7b3",
+        "accountId":"{account_id}",
+        "applicationId":"APfc31da0abae9482a9da39751ea4ef69ebde32dfe",
+        "phoneNumber":"+14195533872",
+        "alias":"(419) 553-3872",
+        "region":"OH",
+        "country":"US",
+        "voiceEnabled":true,
+        "smsEnabled":true
+      }
+    ]
+  }'
+
+  QUEUE_MEMBER_RESULT = '{
+    "total":1,
+    "start":0,
+    "end":0,
+    "page":0,
+    "numPages":1,
+    "pageSize":100,
+    "nextPageUri":null,
+    "queueMembers":[
+      {
+        "uri":"/Accounts/{account_id}/Queues/QUeda341f1fba015aa029a3342f23a3ae0c45e302b/Members/CAb933917ae0d3547bd65da77a4aa50e0329850401",
+        "callId":"CAb933917ae0d3547bd65da77a4aa50e0329850401",
+        "waitTime":0,
+        "position":1,
+        "dateEnqueued":"Thu, 13 Oct 2019 18:28:58 GMT"
+      }
+    ]
+  }'
+
 end

@@ -335,8 +335,20 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [CallResult]
   describe 'get_a_call test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Calls/{callId}"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::CALL_RESULT, :status => 200, :headers => {})
+      call_id = 'MOCK_CALL_ID' # String | String that uniquely identifies this call resource.
+
+      @result = @api_instance.get_a_call(ACCOUNT_ID, call_id)
+    end
+   
+    it 'should respond with a call result' do
+      expect(@result).to be_instance_of(OpenapiClient::CallResult)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Calls/{callId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -347,8 +359,20 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [ConferenceResult]
   describe 'get_a_conference test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Conferences/{conferenceId}"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::CONFERENCE_RESULT, :status => 200, :headers => {})
+      conference_id = 'MOCK_CONFERENCE_ID' # String | A string that uniquely identifies this conference resource.
+
+      @result = @api_instance.get_a_conference(ACCOUNT_ID, conference_id)
+    end
+
+    it 'should respond with a conference result' do
+      expect(@result).to be_instance_of(OpenapiClient::ConferenceResult)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Conferences/{conferenceId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -360,8 +384,20 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [QueueMember]
   describe 'get_a_member test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Queues/{queueId}/Members/{callId}"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::QUEUE_MEMBER_RESULT, :status => 200, :headers => {})
+      queue_id = 'MOCK_QUEUE_ID' # String | String that uniquely identifies the Queue that the Member belongs to.
+      call_id = 'MOCK_CALL_ID' # String | ID of the Call that the Member belongs to
+      @result = @api_instance.get_a_member(ACCOUNT_ID, queue_id, call_id)
+    end
+
+    it 'should respond with a queue member result' do
+      expect(@result).to be_instance_of(OpenapiClient::QueueMember)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Queues/{queueId}/Members/{callId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -373,8 +409,21 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [ConferenceParticipantResult]
   describe 'get_a_participant test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Conferences/{ConferenceId}/Participants/{callId}"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::CONFERENCE_PARTICIPANT_RESULT, :status => 200, :headers => {})
+      conference_id = 'MOCK_CONFERENCE_ID' # String | ID of the conference this participant is in.
+      call_id = 'MOCK_CALL_ID' # String | ID of the Call associated with this participant.
+      
+      @result = @api_instance.get_a_participant(ACCOUNT_ID, conference_id, call_id)
+    end
+
+    it 'should respond with a Conference participant result' do
+      expect(@result).to be_instance_of(OpenapiClient::ConferenceParticipantResult)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Conferences/{ConferenceId}/Participants/{callId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -385,8 +434,20 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [QueueResult]
   describe 'get_a_queue test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Queues/{queueId}"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::QUEUE_RESULT, :status => 200, :headers => {})
+      queue_id = 'MOCK_QUEUE_ID' # String | A string that uniquely identifies this queue resource.
+
+      @result = @api_instance.get_a_queue(ACCOUNT_ID, queue_id)
+    end
+
+    it 'should respond with a queue result' do
+      expect(@result).to be_instance_of(OpenapiClient::QueueResult)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Queues/{queueId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -397,8 +458,20 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [RecordingResult]
   describe 'get_a_recording test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Recordings/{recordingId}"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::QUEUE_RESULT, :status => 200, :headers => {})
+      recording_id = 'MOCK_RECORDING_ID' # String | String that uniquely identifies this recording resource.
+
+      @result = @api_instance.get_a_recording(ACCOUNT_ID, recording_id)
+    end
+
+    it 'should respond with a Recording result' do
+      expect(@result).to be_instance_of(OpenapiClient::RecordingResult)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Recordings/{recordingId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -408,8 +481,19 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [AccountResult]
   describe 'get_an_account test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::ACCOUNT_RESULT, :status => 200, :headers => {})
+
+      @result = @api_instance.get_an_account(ACCOUNT_ID)
+    end
+
+    it 'should respond with an Account result' do
+      expect(@result).to be_instance_of(OpenapiClient::AccountResult)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -420,8 +504,20 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [ApplicationResult]
   describe 'get_an_application test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Applications/{applicationId}"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::APPLICATION_RESULT, :status => 200, :headers => {})
+
+      application_id = 'MOCK_APPLICATION_ID' # String | A string that uniquely identifies this application resource.
+      @result = @api_instance.get_an_application(ACCOUNT_ID, application_id)
+    end
+
+    it 'should respond with an Application result' do
+      expect(@result).to be_instance_of(OpenapiClient::ApplicationResult)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Applications/{applicationId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -432,8 +528,20 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [IncomingNumberResult]
   describe 'get_an_incoming_number test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::INCOMING_PHONE_NUMBER, :status => 200, :headers => {})
+
+      phone_number_id = 'MOCK_PHONE_NUMBER_ID' # String | String that uniquely identifies this phone number resource.
+      @result = @api_instance.get_an_incoming_number(ACCOUNT_ID, phone_number_id)
+    end
+
+    it 'should respond with an Application result' do
+      expect(@result).to be_instance_of(OpenapiClient::IncomingNumberResult)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Applications/{applicationId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -444,8 +552,21 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [MessageResult]
   describe 'get_an_sms_message test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Messages/{messageId}"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::MESSAGE_RESULT, :status => 200, :headers => {})
+
+      message_id = 'MOCK_MESSAGE_ID' # String | String that uniquely identifies this Message resource.
+
+      @result = @api_instance.get_an_sms_message(ACCOUNT_ID, message_id)
+    end
+
+    it 'should respond with a Message result' do
+      expect(@result).to be_instance_of(OpenapiClient::MessageResult)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Messages/{messageId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -456,8 +577,21 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [QueueMember]
   describe 'get_head_member test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Queues/{queueId}/Members/Front"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::QUEUE_MEMBER_RESULT, :status => 200, :headers => {})
+
+      queue_id = 'MOCK_QUEUE_ID' # String | String that uniquely identifies this Message resource.
+
+      @result = @api_instance.get_head_member(ACCOUNT_ID, queue_id)
+    end
+
+    it 'should respond with a Queue Member result' do
+      expect(@result).to be_instance_of(OpenapiClient::QueueMember)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Queues/{queueId}/Members/Front' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -468,8 +602,19 @@ describe 'DefaultApi' do
   # @option opts [String] :_alias Return only the Queue resources with aliases that exactly match this name.
   # @return [QueueList]
   describe 'list_active_queues test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Queues"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::QUEUE_LIST_RESULT, :status => 200, :headers => {})
+
+      @result = @api_instance.list_active_queues(ACCOUNT_ID)
+    end
+
+    it 'should respond with a Queue List result' do
+      expect(@result).to be_instance_of(OpenapiClient::QueueList)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Queues' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -479,8 +624,19 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [LogList]
   describe 'list_all_account_logs test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Logs"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::LOG_LIST_RESULT, :status => 200, :headers => {})
+
+      @result = @api_instance.list_all_account_logs(ACCOUNT_ID)
+    end
+
+    it 'should respond with a Queue Member result' do
+      expect(@result).to be_instance_of(OpenapiClient::LogList)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Logs' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -491,8 +647,19 @@ describe 'DefaultApi' do
   # @option opts [String] :_alias Return only applications with aliases that exactly match this value.
   # @return [ApplicationList]
   describe 'list_an_application test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Applications"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::APPLICATION_LIST_RESULT, :status => 200, :headers => {})
+
+      @result = @api_instance.list_an_application(ACCOUNT_ID)
+    end
+
+    it 'should respond with a Application List result' do
+      expect(@result).to be_instance_of(OpenapiClient::ApplicationList)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Applications' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -503,8 +670,24 @@ describe 'DefaultApi' do
   # @option opts [String] :phone_number PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format.
   # @return [AvailableNumberList]
   describe 'list_available_numbers test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/AvailablePhoneNumbers?alias=MOCK_ALIAS&phoneNumber=MOCK_PHONE_NUMBER"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::AVAILABLE_NUMBER_LIST, :status => 200, :headers => {})
+
+      opts = {
+        _alias: 'MOCK_ALIAS', # String | Filter on numbers based on the formatted string of the phone number.
+        phone_number: 'MOCK_PHONE_NUMBER' # String | PCRE-compatible regular expression to filter against `phoneNumber` field, which is in E.164 format.
+      }
+      
+      @result = @api_instance.list_available_numbers(opts)
+    end
+
+    it 'should respond with a Available Number List result' do
+      expect(@result).to be_instance_of(OpenapiClient::AvailableNumberList)
+    end
+
+    it 'should make a GET request to /AvailablePhoneNumbers' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -515,8 +698,20 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [LogList]
   describe 'list_call_logs test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Calls/{callId}/Logs"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::LOG_LIST_RESULT, :status => 200, :headers => {})
+
+      call_id = 'MOCK_CALL_ID' # String | String that uniquely identifies this call resource.
+      @result = @api_instance.list_call_logs(ACCOUNT_ID, call_id)
+    end
+
+    it 'should respond with a Logs List result' do
+      expect(@result).to be_instance_of(OpenapiClient::LogList)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Calls/{callId}/Logs' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -528,8 +723,20 @@ describe 'DefaultApi' do
   # @option opts [String] :date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
   # @return [RecordingList]
   describe 'list_call_recordings test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Calls/{callId}/Recordings"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::RECORDING_LIST_RESULT, :status => 200, :headers => {})
+
+      call_id = 'MOCK_CALL_ID' # String | String that uniquely identifies this call resource.
+      @result = @api_instance.list_call_recordings(ACCOUNT_ID, call_id)
+    end
+
+    it 'should respond with a Recording List result' do
+      expect(@result).to be_instance_of(OpenapiClient::RecordingList)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Calls/{callId}/Recordings' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -545,8 +752,19 @@ describe 'DefaultApi' do
   # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
   # @return [CallList]
   describe 'list_calls test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Calls"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::CALL_LIST_RESULT, :status => 200, :headers => {})
+
+      @result = @api_instance.list_calls(ACCOUNT_ID)
+    end
+
+    it 'should respond with a Call List result' do
+      expect(@result).to be_instance_of(OpenapiClient::CallList)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Calls' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -560,8 +778,19 @@ describe 'DefaultApi' do
   # @option opts [String] :date_updated Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*.
   # @return [ConferenceList]
   describe 'list_conferences test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Conferences"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::CONFERNECE_LIST_RESULT, :status => 200, :headers => {})
+
+      @result = @api_instance.list_conferences(ACCOUNT_ID)
+    end
+
+    it 'should respond with a Conferences List result' do
+      expect(@result).to be_instance_of(OpenapiClient::ConferenceList)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Conferences' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -573,8 +802,19 @@ describe 'DefaultApi' do
   # @option opts [String] :_alias Only show incoming phone numbers with aliases that exactly match this value.
   # @return [IncomingNumberList]
   describe 'list_incoming_numbers test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/IncomingPhoneNumbers"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::INCOMING_PHONE_NUMBER_LIST_RESULT, :status => 200, :headers => {})
+
+      @result = @api_instance.list_incoming_numbers(ACCOUNT_ID)
+    end
+
+    it 'should respond with a Incoming Phone Number List result' do
+      expect(@result).to be_instance_of(OpenapiClient::IncomingNumberList)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/IncomingPhoneNumbers' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -585,8 +825,20 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [QueueMemberList]
   describe 'list_members test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Queues/{queueId}/Members"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::QUEUE_MEMBER_RESULT, :status => 200, :headers => {})
+
+      queue_id = 'MOCK_QUEUE_ID'
+      @result = @api_instance.list_members(ACCOUNT_ID, queue_id)
+    end
+
+    it 'should respond with a Queue Member List result' do
+      expect(@result).to be_instance_of(OpenapiClient::QueueMemberList)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Queues/{queueId}/Members' do
+      expect(@stub).to have_been_requested
     end
   end
 
