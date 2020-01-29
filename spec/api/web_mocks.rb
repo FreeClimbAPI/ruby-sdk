@@ -420,4 +420,54 @@ module ResponseMocks
     ]
   }'
 
+  PARTICIPANT_LIST_RESULT = '{
+    "total":1,
+    "start":1,
+    "end":1,
+    "page":1,
+    "numPages":1,
+    "pageSize":100,
+    "nextPageUri":null,
+    "participants":[
+      {
+        "accountId":"{account_id}",
+        "conferenceId":"CFd0cc3ab95118aaa597039793a1692313fa9c4936",
+        "callId":"CAef219e4e9152a4b31888620cf391adcae5b6f18c",
+        "uri":"/Accounts/{account_id}/Conferences/CFd0cc3ab95118aaa597039793a1692313fa9c4936/Participants/CAef219e4e9152a4b31888620cf391adcae5b6f18c",
+        "dateCreated":"Thu, 13 Oct 2019 18:23:31 GMT",
+        "dateUpdated":"Thu, 13 Oct 2019 18:23:31 GMT",
+        "revision":1,
+        "talk":true,
+        "listen":true,
+        "startConfOnEnter":true
+      }
+    ]
+  }'
+
+  MESSAGE_LIST_RESULT = '{
+    "total":1,
+    "start":0,
+    "end":0,
+    "page":0,
+    "numPages":1,
+    "pageSize":100,
+    "nextPageUri":null,
+    "messages":[
+      {
+        "uri":"/Accounts/{account_id}/Messages/SM771fa1c54cdac17a8c1f0a66cdd1d5dae11b98a1",
+        "revision":1,
+        "dateCreated":"Thu, 13 Oct 2019 17:56:15 GMT",
+        "dateUpdated":"Thu, 13 Oct 2019 17:56:15 GMT",
+        "messageId":"SM771fa1c54cdac17a8c1f0a66cdd1d5dae11b98a1",
+        "accountId":"{account_id}",
+        "from":"+12098231234",
+        "to":"+12098900611",
+        "text":"Outbound SMS message",
+        "direction":"outbound",
+        "notificationUrl": "http://myapp.com/message-status-notification",
+        "status": "sent"
+      }
+    ]
+  }'
+
 end

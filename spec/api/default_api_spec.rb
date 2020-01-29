@@ -851,8 +851,20 @@ describe 'DefaultApi' do
   # @option opts [Boolean] :listen Only show Participants with the listen privilege.
   # @return [ConferenceParticipantList]
   describe 'list_participants test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Conferences/{conferenceId}/Participants"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::PARTICIPANT_LIST_RESULT, :status => 200, :headers => {})
+
+      conference_id = 'MOCK_CONFERENCE_ID'
+      @result = @api_instance.list_participants(ACCOUNT_ID, conference_id)
+    end
+
+    it 'should respond with a Conference Participant List result' do
+      expect(@result).to be_instance_of(Freeclimb::ConferenceParticipantList)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Conferences/{conferenceId}/Participants' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -865,8 +877,19 @@ describe 'DefaultApi' do
   # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
   # @return [RecordingList]
   describe 'list_recordings test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Recordings"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::RECORDING_LIST_RESULT, :status => 200, :headers => {})
+
+      @result = @api_instance.list_recordings(ACCOUNT_ID)
+    end
+
+    it 'should respond with a Recordings List result' do
+      expect(@result).to be_instance_of(Freeclimb::RecordingList)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Recordings' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -882,8 +905,19 @@ describe 'DefaultApi' do
   # @option opts [String] :account_id String that uniquely identifies this account resource.
   # @return [MessagesList]
   describe 'list_sms_messages test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Messages"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::MESSAGE_RESULT, :status => 200, :headers => {})
+
+      @result = @api_instance.list_sms_messages(ACCOUNT_ID)
+    end
+
+    it 'should respond with a Messages List result' do
+      expect(@result).to be_instance_of(Freeclimb::MessagesList)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Messages' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -894,8 +928,19 @@ describe 'DefaultApi' do
   # @option opts [MakeCallRequest] :make_call_request Call details for making a call
   # @return [CallResult]
   describe 'make_a_call test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Calls"
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::CALL_RESULT, :status => 200, :headers => {})
+
+      @result = @api_instance.make_a_call(ACCOUNT_ID)
+    end
+
+    it 'should respond with a Call Result result' do
+      expect(@result).to be_instance_of(Freeclimb::CallResult)
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/Calls' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -907,8 +952,21 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'remove_a_participant test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}"
+      @stub = stub_request(:delete, uri_template).to_return(:status => 204, :headers => {})
+
+      conference_id = 'MOCK_CONFERENCE_ID'
+      call_id = 'CALL_ID'
+      @result = @api_instance.remove_a_participant(ACCOUNT_ID, conference_id, call_id)
+    end
+
+    it 'should respond with nil' do
+      expect(@result).to be_nil
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/Calls' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -919,8 +977,28 @@ describe 'DefaultApi' do
   # @option opts [MessageRequest] :message_request Details to create a message
   # @return [MessageResult]
   describe 'send_an_sms_message test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Messages"
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::CALL_RESULT, :status => 200, :headers => {})
+
+      request_body = Freeclimb::MessageRequest.new
+      request_body.to = 'MOCK_TO_NUMBER'
+      request_body.from ='MOCK_FROM_NUMBER'
+      request_body.text = 'MOCK_TEXT'
+
+      opts = {
+        message_request: request_body # MessageRequest | Details to create a message
+      }
+
+      @result = @api_instance.send_an_sms_message(ACCOUNT_ID, opts)
+    end
+
+    it 'should respond with Message result' do
+      expect(@result).to be_instance_of(Freeclimb::MessageResult)
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/Messages' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -931,8 +1009,16 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [File]
   describe 'stream_a_recording_file test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Recordings/{recordingId}/Stream"
+      @stub = stub_request(:get, uri_template).to_return(:body => ResponseMocks::CALL_RESULT, :status => 200, :headers => {})
+
+      recording_id = 'MOCK_RECORDING_ID'
+      @result = @api_instance.stream_a_recording_file(ACCOUNT_ID, recording_id)
+    end
+
+    it 'should make a GET request to /Accounts/{accountId}/Recordings/{recordingId}/Stream' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -944,8 +1030,20 @@ describe 'DefaultApi' do
   # @option opts [UpdateConferenceRequest] :update_conference_request Conference Details to update
   # @return [ConferenceResult]
   describe 'update_a_conference test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Conferences/{conferenceId}"
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::CONFERENCE_RESULT, :status => 200, :headers => {})
+
+      conference_id = 'MOCK_CONFERENCE_ID'
+      @result = @api_instance.update_a_conference(ACCOUNT_ID, conference_id)
+    end
+
+    it 'should respond with a Conference result' do
+      expect(@result).to be_instance_of(Freeclimb::ConferenceResult)
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/Conferences/{conferenceId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -957,8 +1055,16 @@ describe 'DefaultApi' do
   # @option opts [UpdateCallRequest] :update_call_request Call details to update
   # @return [nil]
   describe 'update_a_live_call test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Calls/{callId}"
+      @stub = stub_request(:post, uri_template).to_return(:body => '{}', :status => 202, :headers => {})
+
+      call_id = 'MOCK_CALL_ID'
+      @result = @api_instance.update_a_live_call(ACCOUNT_ID, call_id)
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/Calls/{callId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -971,8 +1077,21 @@ describe 'DefaultApi' do
   # @option opts [UpdateConferenceParticipantRequest] :update_conference_participant_request Conference participant details to update
   # @return [ConferenceParticipantResult]
   describe 'update_a_participant test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}"
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::CONFERENCE_PARTICIPANT_RESULT, :status => 200, :headers => {})
+
+      conference_id = 'MOCK_CONFERENCE_ID'
+      call_id = 'MOCK_CALL_ID'
+      @result = @api_instance.update_a_participant(ACCOUNT_ID, conference_id, call_id)
+    end
+
+    it 'should respond with a Conference Participant result' do
+      expect(@result).to be_instance_of(Freeclimb::ConferenceParticipantResult)
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -984,8 +1103,20 @@ describe 'DefaultApi' do
   # @option opts [QueueRequest] :queue_request Queue Details to update
   # @return [QueueResult]
   describe 'update_a_queue test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Queues/{queueId}"
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::QUEUE_RESULT, :status => 200, :headers => {})
+
+      queue_id = 'MOCK_QUEUE_ID'
+      @result = @api_instance.update_a_queue(ACCOUNT_ID, queue_id)
+    end
+
+    it 'should respond with a Queue result' do
+      expect(@result).to be_instance_of(Freeclimb::QueueResult)
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/Queues/{queueId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -996,8 +1127,19 @@ describe 'DefaultApi' do
   # @option opts [AccountRequest] :account_request Account details to update
   # @return [nil]
   describe 'update_an_account test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}"
+      @stub = stub_request(:post, uri_template).to_return(:status => 204, :headers => {})
+
+      @result = @api_instance.update_an_account(ACCOUNT_ID)
+    end
+
+    it 'should respond an empty body' do
+      expect(@result).to be_nil
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -1009,8 +1151,20 @@ describe 'DefaultApi' do
   # @option opts [ApplicationRequest] :application_request Application details to update.
   # @return [ApplicationResult]
   describe 'update_an_application test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Applications/{applicationId}"
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::APPLICATION_RESULT, :status => 200, :headers => {})
+
+      application_id = 'MOCK_APPLICAION_ID'
+      @result = @api_instance.update_an_application(ACCOUNT_ID, application_id)
+    end
+
+    it 'should respond with an Application result' do
+      expect(@result).to be_instance_of(Freeclimb::ApplicationResult)
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/Applications/{application_id}' do
+      expect(@stub).to have_been_requested
     end
   end
 
@@ -1022,8 +1176,20 @@ describe 'DefaultApi' do
   # @option opts [IncomingNumberRequest] :incoming_number_request Incoming Number details to update
   # @return [IncomingNumberResult]
   describe 'update_an_incoming_number test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    before do
+      uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}"
+      @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::APPLICATION_RESULT, :status => 200, :headers => {})
+
+      phoneNumberId = 'MOCK_PHONE_NUMBER'
+      @result = @api_instance.update_an_incoming_number(ACCOUNT_ID, phoneNumberId)
+    end
+
+    it 'should respond with an Incoming Number result' do
+      expect(@result).to be_instance_of(Freeclimb::IncomingNumberResult)
+    end
+
+    it 'should make a POST request to /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}' do
+      expect(@stub).to have_been_requested
     end
   end
 

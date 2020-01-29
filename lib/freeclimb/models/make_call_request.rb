@@ -126,8 +126,6 @@ module Freeclimb
 
       if attributes.key?(:'parent_call_id')
         self.parent_call_id = attributes[:'parent_call_id']
-      else
-        self.parent_call_id = 'null'
       end
     end
 
