@@ -27,39 +27,8 @@ describe 'QueueMember' do
     # run after each test
   end
 
-  describe 'test an instance of QueueMember' do
-    it 'should create an instance of QueueMember' do
-      expect(@instance).to be_instance_of(Freeclimb::QueueMember)
-    end
+  it 'should create an instance of QueueMember' do
+    expect(@instance).to be_instance_of(Freeclimb::QueueMember)
   end
-  describe 'test attribute "uri"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "call_id"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "wait_time"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "position"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "date_enqueued"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
+  
 end

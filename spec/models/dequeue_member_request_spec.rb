@@ -27,15 +27,8 @@ describe 'DequeueMemberRequest' do
     # run after each test
   end
 
-  describe 'test an instance of DequeueMemberRequest' do
-    it 'should create an instance of DequeueMemberRequest' do
-      expect(@instance).to be_instance_of(Freeclimb::DequeueMemberRequest)
-    end
+  it 'should create an instance of DequeueMemberRequest' do
+    expect(@instance).to be_instance_of(Freeclimb::DequeueMemberRequest)
   end
-  describe 'test attribute "request_id"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
+  
 end

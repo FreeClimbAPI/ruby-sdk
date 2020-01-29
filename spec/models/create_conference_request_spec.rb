@@ -27,49 +27,8 @@ describe 'CreateConferenceRequest' do
     # run after each test
   end
 
-  describe 'test an instance of CreateConferenceRequest' do
-    it 'should create an instance of CreateConferenceRequest' do
-      expect(@instance).to be_instance_of(Freeclimb::CreateConferenceRequest)
-    end
+  it 'should create an instance of CreateConferenceRequest' do
+    expect(@instance).to be_instance_of(Freeclimb::CreateConferenceRequest)
   end
-  describe 'test attribute "_alias"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "play_beep"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["always", "never", "entryOnly", "exitOnly"])
-      # validator.allowable_values.each do |value|
-      #   expect { @instance.play_beep = value }.not_to raise_error
-      # end
-    end
-  end
-
-  describe 'test attribute "record"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "wait_url"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "status_callback_url"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "request_id"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
+  
 end

@@ -27,21 +27,7 @@ describe 'FilterLogsRequest' do
     # run after each test
   end
 
-  describe 'test an instance of FilterLogsRequest' do
-    it 'should create an instance of FilterLogsRequest' do
-      expect(@instance).to be_instance_of(Freeclimb::FilterLogsRequest)
-    end
+  it 'should create an instance of FilterLogsRequest' do
+    expect(@instance).to be_instance_of(Freeclimb::FilterLogsRequest)
   end
-  describe 'test attribute "pql"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "request_id"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
 end

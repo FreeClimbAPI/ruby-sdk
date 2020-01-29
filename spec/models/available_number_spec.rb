@@ -27,45 +27,7 @@ describe 'AvailableNumber' do
     # run after each test
   end
 
-  describe 'test an instance of AvailableNumber' do
-    it 'should create an instance of AvailableNumber' do
-      expect(@instance).to be_instance_of(Freeclimb::AvailableNumber)
-    end
+  it 'should create an instance of AvailableNumber' do
+    expect(@instance).to be_instance_of(Freeclimb::AvailableNumber)
   end
-  describe 'test attribute "phone_number"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "voice_enabled"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "sms_enabled"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "_alias"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "region"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "country"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
 end

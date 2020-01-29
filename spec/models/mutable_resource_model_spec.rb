@@ -27,33 +27,8 @@ describe 'MutableResourceModel' do
     # run after each test
   end
 
-  describe 'test an instance of MutableResourceModel' do
-    it 'should create an instance of MutableResourceModel' do
-      expect(@instance).to be_instance_of(Freeclimb::MutableResourceModel)
-    end
+  it 'should create an instance of MutableResourceModel' do
+    expect(@instance).to be_instance_of(Freeclimb::MutableResourceModel)
   end
-  describe 'test attribute "uri"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "date_created"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "date_updated"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "revision"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
+  
 end

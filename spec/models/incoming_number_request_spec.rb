@@ -27,27 +27,7 @@ describe 'IncomingNumberRequest' do
     # run after each test
   end
 
-  describe 'test an instance of IncomingNumberRequest' do
-    it 'should create an instance of IncomingNumberRequest' do
-      expect(@instance).to be_instance_of(Freeclimb::IncomingNumberRequest)
-    end
+  it 'should create an instance of IncomingNumberRequest' do
+    expect(@instance).to be_instance_of(Freeclimb::IncomingNumberRequest)
   end
-  describe 'test attribute "application_id"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "_alias"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "request_id"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
 end
