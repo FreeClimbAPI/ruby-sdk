@@ -1,41 +1,21 @@
 module Percl
   class OutDial < JSONable
+    attr_accessor :ifMachine
+    attr_accessor :ifMachineUrl
+    attr_accessor :sendDigits
+    attr_accessor :statusCallbackUrl
+    attr_accessor :timeout
     def initialize(actionUrl, callConnectUrl, callingNumber, destination)
       @actionUrl = actionUrl
       @callConnectUrl = callConnectUrl
       @callingNumber = callingNumber
       @destination = destination
     end
-
-    def set_if_machine(ifMachine)
-      @ifMachine = ifMachine
-    end
-
-    def set_if_machine_url(ifUrl)
-      @ifMachineUrl = ifUrl
-    end
-
-    def set_send_digits(digits)
-      @sendDigits = digits
-    end
-
-    def set_status_callback_url(scu)
-      @statusCallbackUrl = scu
-    end
-
-    def set_timeout(timeout)
-      @timeout = timeout
-    end
   end
 
   class Hangup < JSONable
-    def set_call_id(callId)
-      @callId = callId
-    end
-
-    def set_reason(reason)
-      @reason = reason
-    end
+    attr_accessor :callId
+    attr_accessor :reason
   end
 
   class Pause < JSONable
@@ -51,12 +31,9 @@ module Percl
   end
     
   class SendDigits < JSONable
+    attr_accessor :pauseMs
     def initialize(digits)
       @digits = digits
-    end
-
-    def set_pause_ms(pause)
-      @pauseMs = pause
     end
   end
 

@@ -1,28 +1,16 @@
 module Percl
   class CreateConference < JSONable
+
+    attr_accessor :alias
+    attr_accessor :playBeep
+    attr_accessor :record
+    attr_accessor :waitUrl
+    attr_accessor :statusCallbackUrl
+
     def initialize(actionUrl)
       @actionUrl = actionUrl
     end
 
-    def set_alias(aliasName)
-      @alias = aliasName
-    end
-
-    def set_play_beep(playBeep)
-      @playBeep = playBeep
-    end
-
-    def set_record(record)
-      @record = record
-    end
-
-    def set_wait_url(waitUrl)
-      @waitUrl = waitUrl
-    end
-
-    def set_status_callback_url(scb)
-      @statusCallbackUrl = scb
-    end
   end
 
   class TerminateConference < JSONable

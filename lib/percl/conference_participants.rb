@@ -1,41 +1,19 @@
 module Percl
   class AddToConference < JSONable
+    attr_accessor :startConfOnEnter
+    attr_accessor :talk
+    attr_accessor :listen
+    attr_accessor :allowCallControl
+    attr_accessor :callControlSequence
+    attr_accessor :callControlUrl
+    attr_accessor :leaveConferenceUrl
+    attr_accessor :notificationUrl
+
     def initialize(confId, callId)
       @conferenceID = confId
       @callId = callId
     end
 
-    def set_start_conf_on_enter(bool)
-      @startConfOnEnter = bool
-    end
-
-    def set_talk(talk)
-      @talk = talk
-    end
-
-    def set_listen(listen)
-      @listen = listen
-    end
-
-    def set_allow_call_control(allow)
-      @allowCallControl = allow
-    end
-
-    def set_call_control_sequence(sequence)
-      @callControlSequence = sequence
-    end
-
-    def set_call_control_url(url)
-      @callControlUrl = url
-    end
-
-    def set_leave_conference_url(url)
-      @leaveConferenceUrl = url
-    end
-
-    def set_notification_url(url)
-      @notificationUrl = url
-    end
   end
 
   class RemoveFromConference < JSONable
@@ -45,22 +23,18 @@ module Percl
   end
 
   class SetListen < JSONable
+    attr_accessor :listen    
+
     def initialize(callId)
       @callId = callId
-    end
-
-    def set_listen(listen)
-      @listen = listen
     end
   end
 
   class SetTalk < JSONable
+    attr_accessor :talk
+    
     def initialize(callId)
       @callId = callId
-    end
-
-    def set_talk(talk)
-      @talk = talk
     end
   end
 end
