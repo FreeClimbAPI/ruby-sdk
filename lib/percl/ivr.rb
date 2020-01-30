@@ -56,4 +56,5 @@ module Percl
       @actionUrl = actionUrl
       @grammarFile = grammarFile
     end
+  end
 end
