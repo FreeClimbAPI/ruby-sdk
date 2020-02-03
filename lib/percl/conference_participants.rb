@@ -10,7 +10,7 @@ module Percl
     attr_accessor :notificationUrl
 
     def initialize(confId, callId)
-      @conferenceID = confId
+      @conferenceId = confId
       @callId = callId
     end
 

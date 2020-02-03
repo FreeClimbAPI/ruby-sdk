@@ -196,7 +196,7 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      status_validator = EnumAttributeValidator.new('String', ["new", "queued", "rejected", "sending", "sent", "failed", "received"])
+      status_validator = EnumAttributeValidator.new('String', ["new", "queued", "rejected", "sending", "sent", "failed", "received", "undelivered"])
       return false unless status_validator.valid?(@status)
       true
     end
@@ -204,7 +204,7 @@ module Freeclimb
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('String', ["new", "queued", "rejected", "sending", "sent", "failed", "received"])
+      validator = EnumAttributeValidator.new('String', ["new", "queued", "rejected", "sending", "sent", "failed", "received", "undelivered"])
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end

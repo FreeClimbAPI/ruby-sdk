@@ -38,8 +38,6 @@ module Percl
   end
 
   class Reject < JSONable
-    def set_reason(reason)
-      @reason = reason
-    end
+    attr_accessor :reason
   end
 end

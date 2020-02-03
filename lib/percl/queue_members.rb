@@ -2,10 +2,10 @@ module Percl
   class Enqueue < JSONable
     attr_accessor :notificationUrl
 
-    def initialize(queueId, waitUrl, notificationUrl)
+    def initialize(queueId, waitUrl, actionUrl)
       @queueId = queueId
       @waitUrl = waitUrl
-      @notificationUrl = notificationUrl
+      @actionUrl = actionUrl
     end
 
   end
