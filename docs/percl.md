@@ -252,3 +252,123 @@ Name | Type | Description  | Notes
 **conferenceId** | **String** | ID of the conference to terminate.
 
 
+## Percl::AddToConference
+
+The `AddToConference` command adds a Participant to a Conference. If this Participant currently is in another Conference, the Participant is first removed from that Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via `AddToConference`.
+
+### Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  # Assuming Conference is already created
+  add = Percl::AddToConference.new('MOCK_CONF_ID', 'MOCK_CALL_ID')
+  script = Percl::Script.new
+  script.add(add)
+  script.to_json
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**conferenceId** | **String** | ID of the Conference to which to add the Participant (Call leg). Conference must exist or an error will result.
+**callId** | **String** | ID of the Call that will be added to the specified Conference. The Call must be in progress or an error will result. If the Call is part of an existing Conference, it is first removed from that Conference and is then moved to the new one.
+**startConfOnEnter** | **Boolean** | Flag that indicates whether a Conference starts upon entry of this particular Participant. This is usually set to `true` for moderators and `false` for all other Participants. | [optional]
+**talk** | **Boolean** | If `true`, the Participant joins the Conference with talk privileges. This may be modified later via the REST API or `SetTalk` PerCL command. | [optional]
+**listen** | **Boolean** | If `true`, the Participant joins the Conference with listen privileges. This may be modified later via the REST API or `SetListen` PerCL command. | [optional]
+**allowCallControl** | **Boolean** | If `true`, Call control will be enabled for this Participant's Call leg. | [optional]
+**callControlSequence** | **String** | Defines a sequence of digits that, when entered by this caller, invokes the `callControlUrl`. Only digits plus '*', and '#' may be used. | [`required` if allowCallControl is `true`]
+**callControlUrl** | **String** | URL to be invoked when this Participant enters the digit sequence defined in the `callControlSequence` attribute. |  [`required` if allowCallControl is `true`]
+**leaveConferenceUrl** | **String** | URL to be invoked when the Participant leaves the Conference. | [optional]
+**notificationUrl** | **String** | When the Participant enters the Conference, this URL will be invoked using an HTTP POST request with the standard request parameters. | [optional]
+
+
+## Percl::RemoveFromConference
+
+The `RemoveFromConference` command removes a Participant from a Conference but does not hang up. Instead, the Call is simply unbridged and what happens next with the Call is determined by the PerCL returned in response to the `leaveConferenceUrl` attribute.
+
+## Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  # Assuming Conference is already created and participant is in conference
+  remove = Percl::RemoveFromConference.new('MOCK_CALL_ID')
+  script = Percl::Script.new
+  script.add(remove)
+  script.to_json
+end
+```
+
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**callId** | **String** | ID of the Call leg to be removed from the Conference. The Call must be in a Conference or an error will be triggered.
+
+
+
+## Percl::SetListen
+
+The `SetListen` command enables or disables the listen privilege for a Conference Participant provided both calls are in the same conference. The Participant can hear what the other participants are saying only if this privilege is enabled.
+
+### Example
+
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  # Assuming Conference is already created and participant is in conference
+  listen = Percl::SetListen.new('MOCK_CALL_ID')
+  script = Percl::Script.new
+  script.add(listen)
+  script.to_json
+end
+```
+
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**callId** | **String** | ID of the call leg that is to be assigned the listen privilege. The Call must be in a Conference or an error will be triggered.
+**listen** | **Boolean** | Specifying `false` will silence the Conference for this Participant. | [optional]
+
+
+## Percl::SetTalk
+
+The `SetTalk` command enables or disables the talk privilege for a Participant in a Conference provided both calls are in the same conference. If 'true', no audio from that Participant is shared with the other Participants of the Conference.
+
+### Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  # Assuming Conference is already created and participant is in conference
+  talk = Percl::SetTalk.new('MOCK_CALL_ID')
+  script = Percl::Script.new
+  script.add(talk)
+  script.to_json
+end
+```
+
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**callId** | **String** | ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.
+**talk** | **Boolean** | Specifying `false` mutes the Participant. | [optional]
