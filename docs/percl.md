@@ -32,12 +32,7 @@ require 'freeclimb'
 require 'json'
 
 post '/voice' do 
-  action_url = 'action_url_example'
-  call_connect_url = 'call_connect_url_example'
-  calling_number = 'calling_number_example'
-  destination = 'destination_example'
-
-  out_dial = Percl::OutDial.new(action_url, call_connect_url, calling_number, destination)
+  out_dial = Percl::OutDial.new('MOCK_ACTION_URL', 'MOCK_CALL_CONNECT_URL', 'MOCK_CALLING_NUMBER', 'MOCK_DESTINATION')
   script = Percl::Script.new
   script.add(out_dial)
   script.to_json
@@ -195,7 +190,7 @@ Name | Type | Description  | Notes
 
 The CreateConference command does exactly what its name implies — it creates an unpopulated Conference (one without any Participants). Once created, a Conference remains in FreeClimb until explicitly terminated by a customer. Once a Conference has been terminated, it can no longer be used.
 
-## Example
+### Example
 
 ```ruby
 # load the gems
@@ -211,7 +206,7 @@ post '/voice' do
 end
 ```
 
-## Parameters
+### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -293,7 +288,7 @@ Name | Type | Description  | Notes
 
 The `RemoveFromConference` command removes a Participant from a Conference but does not hang up. Instead, the Call is simply unbridged and what happens next with the Call is determined by the PerCL returned in response to the `leaveConferenceUrl` attribute.
 
-## Example
+### Example
 
 ```ruby
 # load the gems
@@ -372,3 +367,119 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **callId** | **String** | ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.
 **talk** | **Boolean** | Specifying `false` mutes the Participant. | [optional]
+
+## Percl::Enqueue
+
+The `Enqueue` command adds the current Call to a call Queue. If the specified Queue does not exist, it is created and then the Call is added to it. The default maximum length of the queue is 100. This can be modified using the REST API.
+
+### Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  # Assuming Queue is already created
+  enqueue = Percl::Enqueue.new('MOCK_QUEUE_ID', 'MOCK_WAIT_URL', 'MOCK_ACTION_URL')
+  script = Percl::Script.new
+  script.add(enqueue)
+  script.to_json
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**queueId** | **String** | ID of the Queue to which to add the Call. If the Queue does not exist, it will be created. The ID must start with QU followed by 40 hex characters.
+**waitUrl** | **String** | Specifies a URL pointing to a PerCL script containing actions to be executed while the caller is waiting in the Queue. Once the script returned by the `waitUrl` runs out of commands to execute, FreeClimb will re-request the `waitUrl` and start over, essentially looping the script indefinitely.
+**actionUrl** | **String** | A request is made to this URL when the Call leaves the Queue, which can occur if enqueue of the Call fails or when the call is dequeued via the `Dequeue` command, the REST API (POST to Queue Member resource), or the caller hangs up.
+**notificationUrl** | **String** | URL to be invoked when the call enters the queue. The request to the URL contains the standard request parameters.This is a notification only; any PerCL returned will be ignored. | [optional]
+
+
+## Percl::Dequeue
+
+The `Dequeue` command transfers control of a Call that is in a Queue so that the waiting caller exits the Queue. Execution continues with the first command in the PerCL script returned by the `actionUrl` specified in the `Enqueue` command.
+
+
+### Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  # Assuming call is in queue
+  dequeue = Percl::Dequeue.new
+  script = Percl::Script.new
+  script.add(dequeue)
+  script.to_json
+end
+```
+
+### Parameters
+none
+
+
+## Percl::RecordUtterance
+
+The `RecordUtterance` command records the caller's voice and returns the URL of a file containing the audio recording.
+
+`RecordUtterance` is blocking and is a terminal command. As such, the `actionUrl` property is required, and control of the Call picks up using the PerCL returned in response to the `actionUrl`. Recording information is returned in the `actionUrl` request.
+
+### Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  record = Percl::RecordUtterance.new('MOCK_ACTION_URL')
+  script = Percl::Script.new
+  script.add(record)
+  script.to_json
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**actionUrl** | **String** | URL to which information on the completed recording is submitted. The PerCL received in response is then used to continue with Call processing.
+**silenceTimeoutMs** | **Integer** | Interval of silence that should elapse before ending the recording. | [optional]
+**finishOnKey** | **String** | Key that triggers the end of the recording. any digit, '#', or '*' | [optional]
+**maxLengthSec** | **Integer** | Maximum length for the command execution in seconds. | [optional]
+**playBeep** | **Boolean** | Indicates whether to play a beep sound before the start of the recording. If set to `false`, no beep is played. | [optional]
+**autoStart** | **Boolean** | If `false`, recording begins immediately after the RecordUtterance command is processed. If `true`, recording begins when audio is present and if audio begins before the `maxLengthSec` timeout. If no audio begins before `maxLengthSec`, no recording is generated. | [optional]
+
+
+## Percl::StartRecordCall
+
+The `StartRecordCall` command records the current call and returns the URL of a file containing the audio recording when recording completes.
+
+`StartRecordCall` is non-blocking. After recording of the current call begins, control of the call moves to the PerCL command that follows `StartRecordCall` in the current PerCL script.
+
+### Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  record = Percl::StartRecordCall.new
+  script = Percl::Script.new
+  script.add(record)
+  script.to_json
+end
+```
+
+### Parameters
+none
