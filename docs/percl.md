@@ -12,11 +12,12 @@ send_digits.pauseMs = '500'
 ## Documentation for PerCL Responses
 Class | Description
 ------------ | -------------
-[*Percl::OutDial*](percl.md#outdial) | The OutDial command is used to call a phone number 
-*Percl::Hangup* | The Hangup command terminates a Call
-*Percl::Pause* | The Pause command halts execution of the current PerCL script for a specified number of millisecond
-*Percl::Redirect* | The Redirect command transfers control of a Call to the PerCL at a different URL
-*Percl::SendDigits* | The SendDigits command plays DTMF tones on a live Call. This is useful for navigating through IVR menus or dialing extensions
+[*Percl::OutDial*](percl.md#percl::outdial) | The OutDial command is used to call a phone number 
+[*Percl::Hangup*](percl.md#percl::hangup) | The Hangup command terminates a Call
+[*Percl::Pause*](percl.md#percl::pause) | The Pause command halts execution of the current PerCL script for a specified number of millisecond
+[*Percl::Redirect*](percl.md#percl::redirect) | The Redirect command transfers control of a Call to the PerCL at a different URL
+[*Percl::SendDigits*](percl.md#percl::senddigits) | The SendDigits command plays DTMF tones on a live Call. This is useful for navigating through IVR menus or dialing extensions
+
 
 
 ## Percl::OutDial
@@ -483,3 +484,197 @@ end
 
 ### Parameters
 none
+
+
+## Percl::PlayEarlyMedia
+
+`PlayEarlyMedia` is relevant only when present as the very first command in the PerCL script returned for an incoming Call. In such cases, the command is executed before FreeClimb attempts to connect the call. The audio file it uses can be stored in any location that is accessible via URL.
+
+### Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  media = Percl::PlayEarlyMedia.new('MOCK_FILE_URL')
+  script = Percl::Script.new
+  script.add(media)
+  script.to_json
+end
+```
+
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**file** | **String** | URL of the audio file to be played to the caller. The URL can be the `recordingUrl` generated from the `RecordUtterance` or `StartRecordCall` PerCL commands or any accessible URL. FreeClimb will respect Cache-Control headers for this file. Use these to limit repeated requests for unchanged audio. If no Cache-Control header is provided, the file will be cached for seven days by default.
+
+
+## Percl::Play
+
+The `Play` command plays an audio file back to the caller. The audio file may be located at any location accessible via a URL. `Play` can exist as a stand-alone command or as a nested command. It does not allow barge-in unless nested within a `GetSpeech` command. The file will always be played to completion unless nested.
+
+
+### Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  play = Percl::Play.new('MOCK_FILE_URL')
+  script = Percl::Script.new
+  script.add(play)
+  script.to_json
+end
+```
+
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**file** | **String** | URL of the audio file to be played to the caller. The URL can be the `recordingUrl` generated from the `RecordUtterance` or `StartRecordCall` PerCL commands. 
+**loop** | **Integer** | Number of times the audio file is played. Specifying '0' causes the Play action to loop until the Call is hung up. | [optional]
+**conferenceId** | **String** | ID of the Conference the audio should be rendered to. If this is not specified, the audio is by default rendered to the caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error. | [optional]
+
+
+## Percl::Say
+
+The `Say` command provides Text-To-Speech (TTS) support. It converts text to speech and then renders it in a female voice back to the caller. `Say` is useful in cases where it's difficult to pre-record a prompt for any reason. `Say` does not allow barge-in unless nested within a `GetSpeech` command. The file will always be played to completion unless nested.
+
+When translating text to speech, the `Say` action will make assumptions about how to pronounce numbers, dates, times, amounts of money and other abbreviations.
+
+### Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  say = Percl::Say.new('Hello, World!')
+  script = Percl::Script.new
+  script.add(say)
+  script.to_json
+end
+```
+
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**text** | **String** | The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.
+**loop** | **Integer** | Number of times the text is said. Specifying '0' causes the `Say` action to loop until the Call is hung up. | [optional]
+**language** | **String** | Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below. | [optional]
+**conferenceId** | **String** | ID of the Conference the speech should be rendered to. If this is not specified, the speech is by default rendered to the Caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error. | [optional]
+**enforcePCI** | **Boolean** | Parameter `enforcePCI` will not log the 'text' as required by PCI compliance.
+
+
+## Percl::GetDigits
+
+The `GetDigits` command collects DTMF inputs from the caller. It is only supported only when there is a single party on the Call.
+
+`GetDigits` is a Terminal Command — any actions following it are never executed. When the Caller is done entering the digits, FreeClimb submits that data to the provided `actionUrl` using an HTTP POST request. Your server will be required to respond to the FreeClimb Webhook with PerCL to continue handling the call.
+
+### Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  digits = Percl::GetDigits.new('MOCK_ACTION_URL')
+  script = Percl::Script.new
+  script.add(digits)
+  script.to_json
+end
+```
+
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**actionUrl** | **String** | When the Caller has finished entering digits, FreeClimb will make an HTTP POST request to this URL. A PerCL response is expected to continue handling the Call. Make sure to keep “http://“ in the URL.
+**initialTimeoutMs** | **Integer** | Maximum time in milliseconds that FreeClimb will wait for the Caller to press the first digit before making a determination that a `timeout` has occurred and moving on to make the request to the `actionUrl` to submit the results of the `GetDigits` command. This timeout interval begins when all nested commands have been fully executed. | [optional]
+**digitTimeoutMs** | **Integer** | Maximum time in milliseconds that FreeClimb will wait for the Caller to press any digit after the last digit entered, before making a determination that a `timeout` has occurred and moving on to make the request to the actionUrl to submit the results of the `GetDigits` command. This timeout interval begins and resets after each digit entered. | [optional]
+**finishOnKey** | **String** | Digit that causes the input sequence to be deemed complete. This attribute defers to the `timeout` attribute – so, if a `timeout` occurs, then the command terminates regardless of the value of `finishOnKey`. | [optional]
+**minDigits** | **Integer** | Minimum number of digits expected in the input. If specified, FreeClimb will return the collected digits only if the Caller has entered at least that many digits. | [optional]
+**maxDigits** | **Integer** | Maximum number of digits expected in the input. If the terminating digit is not entered and the caller has entered the maximum number of digits allowed, the `GetDigits` command terminates regardless of the value of `finishOnKey`. | [optional]
+**prompts** | **String** | JSON array of PerCL commands to nest within the `GetDigits` command. The `Say`, `Play`, and `Pause` commands can be used. The nested actions are executed while FreeClimb is waiting for input from the Caller. | [optional]
+**enforcePCI** | **Boolean** | Parameter `enforcePCI` obscures the result as required by PCI compliance.
+
+
+## Percl::GetSpeech
+
+The `GetSpeech` command enables the Caller to respond to the application using a supported language. Unlike DTMF entry, which implicitly restricts the user to using the available buttons on the phone key pad, speech input allows for flexible audio inputs based on grammar. FreeClimb supports grammars written using GRXML compatible with the Microsoft Speech Platform.
+
+`GetSpeech` is only supported on a single call leg. It is not supported when there are two or more call legs connected (as in within a Conference).
+
+### Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  speech = Percl::GetSpeech.new('MOCK_ACTION_URL', 'MOCK_GRAMMAR_FILE')
+  script = Percl::Script.new
+  script.add(speech)
+  script.to_json
+end
+```
+
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**actionUrl** | **String** | When the caller has finished speaking or the command has timed out, FreeClimb will make a POST request to this URL. A PerCL response is expected to continue handling the call.
+**grammarFile** | **String** | The grammar file to use for speech recognition. If grammarType is set to URL, this attribute is specified as a download URL.
+**grammarType** | **String** | The grammar file type to use for speech recognition. A value of 'URL' indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of 'BUILTIN' indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files. | [optional]
+**grammarRule** | **String** | The grammar rule within the specified grammar file to use for speech recognition. This attribute is optional if `grammarType` is `URL` and ignored if `grammarType` is `BUILTIN`. | [optional if `grammarType` is `URL`]
+**playBeep** | **Boolean** | Indicates whether a beep should be played just before speech recognition is initiated so that the speaker can start to speak. | [optional]
+**prompts** | **Percl Commands Array** | The JSON array of PerCL commands to nest within the `GetSpeech` command. The `Say`, `Play`, and `Pause` commands can be used. The nested actions are executed while FreeClimb is waiting for input from the caller. This allows for playing menu options to the caller and to prompt for the expected input. These commands stop executing when the caller begins to input speech. | [optional]
+**noInputTimeoutMs** | **Integer** | When recognition is started and there is no speech detected for `noInputTimeoutMs` milliseconds, the recognizer will terminate the recognition operation. | [optional]
+**recognitionTimeoutMs** | **Integer** | When playback of prompts ends and there is no match for `recognitionTimeoutMs` milliseconds, the recognizer will terminate the recognition operation. | [optional]
+**confidenceThreshold** | **Float** | When a recognition resource recognizes a spoken phrase, it associates a confidence level with that match. Parameter `confidenceThreshold` specifies what confidence level is considered a successful match. Values are between 0.0 and 1.0. | [optional]
+**sensitivityLevel** | **Float** | The speech recognizer supports a variable level of sound sensitivity. The sensitivityLevel attribute allows for filtering out background noise, so it is not mistaken for speech. Values are between 0.0 and 1.0 | [optional]
+**speechCompleteTimeoutMs** | **Integer** | Parameter `speechCompleteTimeoutMs` specifies the length of silence required following user speech before the speech recognizer finalizes a result. This timeout applies when the recognizer currently has a complete match against an active grammar. Reasonable speech complete timeout values are typically in the range of 0.3 seconds to 1.0 seconds. | [optional]
+**speechIncompleteTimeoutMs** | **Integer** | Parameter `speechIncompleteTimeoutMs` specifies the length of silence following user speech after which a recognizer finalizes a result. This timeout applies when the speech prior to the silence is an incomplete match of all active grammars. Timeout `speechIncompleteTimeoutMs` is usually longer than `speechCompleteTimeoutMs` to allow users to pause mid-utterance. | [optional]
+**enforcePCI** | **Boolean** | Parameter enforcePCI will not log the 'text' as required by PCI compliance. | [optional]
+
+
+## Percl::Sms
+
+The `Sms` command can be used to send an SMS message to a phone number during a phone call.
+
+International SMS is disabled by default.
+
+### Example
+
+```ruby
+# load the gems
+require 'sinatra'
+require 'freeclimb'
+require 'json'
+
+post '/voice' do 
+  sms = Percl::Sms.new('MOCK_TO_NUMBER', 'MOCK_FROM_NUMBER', 'MOCK_TEXT')
+  script = Percl::Script.new
+  script.add(sms)
+  script.to_json
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**to** | **String** | E.164 representation of the phone number to which the message will be sent. Must be within FreeClimb's service area and E.164 formatting (e.g., +18003608245).
+**from** | **String** | E.164 representation of the phone number to use as the sender. This must be an incoming phone number you have purchased from FreeClimb.
+**text** | **String** | Text contained in the message (maximum 160 characters).
+**notificationUrl** | **String** | When the message changes status, this URL will be invoked using HTTP POST with the messageStatus parameters. This is a notification only; any PerCL returned will be ignored.

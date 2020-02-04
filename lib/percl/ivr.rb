@@ -48,7 +48,10 @@ module Percl
     attr_accessor :playBeep
     attr_accessor :prompts
     attr_accessor :noInputTimeoutMs
+    attr_accessor :recognitionTimeoutMs
     attr_accessor :confidenceThreshold
+    attr_accessor :speechCompleteTimeoutMs
+    attr_accessor :speechIncompleteTimeoutMs
     attr_accessor :sensitivityLevel
     attr_accessor :enforcePCI
 
