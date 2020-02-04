@@ -144,6 +144,12 @@ describe 'ivr' do
       it 'should have enforePCI' do
         expect(@instance).to respond_to(:enforcePCI)
       end
+      it 'should have speechCompleteTimeoutMs' do
+        expect(@instance).to respond_to(:speechCompleteTimeoutMs)
+      end
+      it 'should have speechIncompleteTimeoutMs' do
+        expect(@instance).to respond_to(:speechIncompleteTimeoutMs)
+      end
     end
   end
 end
