@@ -12,11 +12,28 @@ send_digits.pauseMs = '500'
 ## Documentation for PerCL Responses
 Class | Description
 ------------ | -------------
-[*Percl::OutDial*](percl.md#percl::outdial) | The OutDial command is used to call a phone number 
-[*Percl::Hangup*](percl.md#percl::hangup) | The Hangup command terminates a Call
-[*Percl::Pause*](percl.md#percl::pause) | The Pause command halts execution of the current PerCL script for a specified number of millisecond
-[*Percl::Redirect*](percl.md#percl::redirect) | The Redirect command transfers control of a Call to the PerCL at a different URL
-[*Percl::SendDigits*](percl.md#percl::senddigits) | The SendDigits command plays DTMF tones on a live Call. This is useful for navigating through IVR menus or dialing extensions
+[*Percl::OutDial*](percl.md#percl::outdial) | The `OutDial` command is used to call a phone number 
+[*Percl::Hangup*](percl.md#percl::hangup) | The `Hangup` command terminates a Call
+[*Percl::Pause*](percl.md#percl::pause) | The `Pause` command halts execution of the current PerCL script for a specified number of millisecond
+[*Percl::Redirect*](percl.md#percl::redirect) | The `Redirect` command transfers control of a Call to the PerCL at a different URL
+[*Percl::SendDigits*](percl.md#percl::senddigits) | The `SendDigits` command plays DTMF tones on a live Call. This is useful for navigating through IVR menus or dialing extensions
+[*Percl::Reject*](percl.md#percl::reject) | The `Reject` command blocks an incoming Call.
+[*Percl::CreateConference*](percl.md#percl::createConference) | The `CreateConference` command does exactly what its name implies — it creates an unpopulated Conference (one without any Participants).
+[*Percl::TerminateConference*](percl.md#percl::terminateConference) | The `TerminateConference` command terminates an existing Conference.
+[*Percl::AddToConference*](percl.md#percl::addToConference) | The `AddToConference` command adds a Participant to a Conference.
+[*Percl::RemoveFromConference*](percl.md#percl::removeFromConference) | The `RemoveFromConference` command removes a Participant from a Conference but does not hang up.
+[*Percl::SetListen*](percl.md#percl::setListen) | The `SetListen` command enables or disables the listen privilege for a Conference Participant provided both calls are in the same conference. 
+[*Percl::SetTalk*](percl.md#percl::setTalk) | The `SetTalk` command enables or disables the talk privilege for a Participant in a Conference provided both calls are in the same conference.
+[*Percl::Enqueue*](percl.md#percl::enqueue) | The `Enqueue` command adds the current Call to a call Queue.
+[*Percl::Dequeue*](percl.md#percl::dequeue) | The `Dequeue` command transfers control of a Call that is in a Queue so that the waiting caller exits the Queue.
+[*Percl::RecordUtterance*](percl.md#percl::recordUtterance) | The `RecordUtterance` command records the caller's voice and returns the URL of a file containing the audio recording.
+[*Percl::StartRecordCall*](percl.md#percl::startRecordCall) | The `StartRecordCall` command records the current call and returns the URL of a file containing the audio recording when recording completes.
+[*Percl::PlayEarlyMedia*](percl.md#percl::playEarlyMedia) | The `PlayEarlyMedia` command plays A media file before attempting to connect a call
+[*Percl::Play*](percl.md#percl::play) | the `Play` command plays an audio file back to the caller.
+[*Percl::Say*](percl.md#percl::say) | The `Say` command provides Text-To-Speech (TTS) support. It converts text to speech and then renders it in a female voice back to the caller.
+[*Percl::GetDigits*](percl.md#percl::getDigits) | The `GetDigits` command collects DTMF inputs from the caller.
+[*Percl::GetSpeech*](percl.md#percl::getSpeech) | The `GetSpeech` command enables the Caller to respond to the application using a supported language.
+[*Percl::Sms*](percl.md#percl::Sms) | The `Sms` command can be used to send an SMS message to a phone number during a phone call.
 
 
 
@@ -189,7 +206,7 @@ Name | Type | Description  | Notes
 
 ## Percl::CreateConference
 
-The CreateConference command does exactly what its name implies — it creates an unpopulated Conference (one without any Participants). Once created, a Conference remains in FreeClimb until explicitly terminated by a customer. Once a Conference has been terminated, it can no longer be used.
+The `CreateConference` command does exactly what its name implies — it creates an unpopulated Conference (one without any Participants). Once created, a Conference remains in FreeClimb until explicitly terminated by a customer. Once a Conference has been terminated, it can no longer be used.
 
 ### Example
 
