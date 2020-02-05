@@ -2,7 +2,7 @@
 
 The Performance Command Language (PerCL) defines a set of instructions, written in JSON format, that express telephony actions to be performed in response to an event on the FreeClimb platform. FreeClimb communicates with the application server when events associated with the application occur, so the webserver can instruct FreeClimb how to handle such events using PerCL scripts.
 
-When creating a Percl object, required parameters must be used in the contructer while optional parameters must be set direclty on the given Percl object. Example:
+When creating a Percl object, required parameters must be used in the constructer while optional parameters must be set direclty on the given Percl object. Example:
 ```ruby
 digits = '630'
 send_digits = Percl::SendDigits.new(digits)

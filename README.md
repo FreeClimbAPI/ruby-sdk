@@ -53,30 +53,28 @@ ruby -Ilib script.rb
 Please follow the [installation](#installation) procedure and then run the following code:
 
 ```ruby
-# Load the gem
+# load the gem
 require 'freeclimb'
-
-# Setup authorization
+# setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR_USERNAME'
-  config.password = 'YOUR_PASSWORD'
+  config.username = '<Account ID>'
+  config.password = '<Auth Token>'
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that owns this phone number.
+account_id = '<Account ID>' # String | ID of the account that created this Conference.
 opts = {
-  buy_incoming_number_request: Freeclimb::BuyIncomingNumberRequest.new # BuyIncomingNumberRequest | Incoming Number transaction details
+  create_conference_request: Freeclimb::CreateConferenceRequest.new(_alias: 'alias_example') # CreateConferenceRequest | Conference to create
 }
 
 begin
-  #Buy a Phone Number
-  result = api_instance.buy_a_phone_number(account_id, opts)
+  #Create a Conference
+  result = api_instance.create_a_conference(account_id, opts)
   p result
 rescue Freeclimb::ApiError => e
-  puts "Exception when calling DefaultApi->buy_a_phone_number: #{e}"
+  puts "Exception when calling DefaultApi->create_a_conference: #{e}"
 end
-
 ```
 
 ## Documentation for API Endpoints
@@ -135,7 +133,7 @@ Class | Method | HTTP request | Description
 ## Documentation for PerCL Responses
 The Performance Command Language (PerCL) defines a set of instructions, written in JSON format, that express telephony actions to be performed in response to an event on the FreeClimb platform. FreeClimb communicates with the application server when events associated with the application occur, so the webserver can instruct FreeClimb how to handle such events using PerCL scripts.
 
-When creating a Percl object, required parameters must be used in the contructer while optional parameters must be set direclty on the given Percl object. Example:
+When creating a Percl object, required parameters must be used in the constructer while optional parameters must be set direclty on the given Percl object. Example:
 ```ruby
 digits = '630'
 send_digits = Percl::SendDigits.new(digits)
