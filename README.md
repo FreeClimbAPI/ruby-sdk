@@ -53,28 +53,29 @@ ruby -Ilib script.rb
 Please follow the [installation](#installation) procedure and then run the following code:
 
 ```ruby
-# load the gem
+# Load the gem
 require 'freeclimb'
-# setup authorization
+
+# Setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = '<Account ID>'
-  config.password = '<Auth Token>'
+  config.username = 'YOUR_USERNAME'
+  config.password = 'YOUR_PASSWORD'
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = '<Account ID>' # String | ID of the account that created this Conference.
 opts = {
-  create_conference_request: Freeclimb::CreateConferenceRequest.new(_alias: 'alias_example') # CreateConferenceRequest | Conference to create
+  buy_incoming_number_request: Freeclimb::BuyIncomingNumberRequest.new # BuyIncomingNumberRequest | Incoming Number transaction details
 }
 
 begin
-  #Create a Conference
-  result = api_instance.create_a_conference(account_id, opts)
+  #Buy a Phone Number
+  result = api_instance.buy_a_phone_number(opts)
   p result
 rescue Freeclimb::ApiError => e
-  puts "Exception when calling DefaultApi->create_a_conference: #{e}"
+  puts "Exception when calling DefaultApi->buy_a_phone_number: #{e}"
 end
+
 ```
 
 ## Documentation for API Endpoints
@@ -164,7 +165,6 @@ Class | Description
 [*Percl::GetDigits*](percl.md#percl::getDigits) | The `GetDigits` command collects DTMF inputs from the caller.
 [*Percl::GetSpeech*](percl.md#percl::getSpeech) | The `GetSpeech` command enables the Caller to respond to the application using a supported language.
 [*Percl::Sms*](percl.md#percl::Sms) | The `Sms` command can be used to send an SMS message to a phone number during a phone call.
-
 
 ## Documentation for Models
 

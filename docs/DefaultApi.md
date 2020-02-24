@@ -55,7 +55,7 @@ Method | HTTP request | Description
 
 ## buy_a_phone_number
 
-> IncomingNumberResult buy_a_phone_number(account_id, opts)
+> IncomingNumberResult buy_a_phone_number(opts)
 
 Buy a Phone Number
 
@@ -72,14 +72,13 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that owns this phone number.
 opts = {
   buy_incoming_number_request: Freeclimb::BuyIncomingNumberRequest.new # BuyIncomingNumberRequest | Incoming Number transaction details
 }
 
 begin
   #Buy a Phone Number
-  result = api_instance.buy_a_phone_number(account_id, opts)
+  result = api_instance.buy_a_phone_number(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->buy_a_phone_number: #{e}"
@@ -91,7 +90,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that owns this phone number. | 
  **buy_incoming_number_request** | [**BuyIncomingNumberRequest**](BuyIncomingNumberRequest.md)| Incoming Number transaction details | [optional] 
 
 ### Return type
@@ -110,7 +108,7 @@ Name | Type | Description  | Notes
 
 ## create_a_conference
 
-> ConferenceResult create_a_conference(account_id, opts)
+> ConferenceResult create_a_conference(opts)
 
 Create a Conference
 
@@ -127,14 +125,13 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this Conference.
 opts = {
   create_conference_request: Freeclimb::CreateConferenceRequest.new # CreateConferenceRequest | Conference to create
 }
 
 begin
   #Create a Conference
-  result = api_instance.create_a_conference(account_id, opts)
+  result = api_instance.create_a_conference(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->create_a_conference: #{e}"
@@ -146,7 +143,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this Conference. | 
  **create_conference_request** | [**CreateConferenceRequest**](CreateConferenceRequest.md)| Conference to create | [optional] 
 
 ### Return type
@@ -165,7 +161,7 @@ Name | Type | Description  | Notes
 
 ## create_a_queue
 
-> QueueResult create_a_queue(account_id, opts)
+> QueueResult create_a_queue(opts)
 
 Create a Queue
 
@@ -182,14 +178,13 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this Queue.
 opts = {
   queue_request: Freeclimb::QueueRequest.new # QueueRequest | Queue details used to create a queue
 }
 
 begin
   #Create a Queue
-  result = api_instance.create_a_queue(account_id, opts)
+  result = api_instance.create_a_queue(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->create_a_queue: #{e}"
@@ -201,7 +196,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this Queue. | 
  **queue_request** | [**QueueRequest**](QueueRequest.md)| Queue details used to create a queue | [optional] 
 
 ### Return type
@@ -220,7 +214,7 @@ Name | Type | Description  | Notes
 
 ## create_an_application
 
-> ApplicationResult create_an_application(account_id, opts)
+> ApplicationResult create_an_application(opts)
 
 Create an application
 
@@ -237,14 +231,13 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this application.
 opts = {
   application_request: Freeclimb::ApplicationRequest.new # ApplicationRequest | Application Details
 }
 
 begin
   #Create an application
-  result = api_instance.create_an_application(account_id, opts)
+  result = api_instance.create_an_application(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->create_an_application: #{e}"
@@ -256,7 +249,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this application. | 
  **application_request** | [**ApplicationRequest**](ApplicationRequest.md)| Application Details | [optional] 
 
 ### Return type
@@ -275,7 +267,7 @@ Name | Type | Description  | Notes
 
 ## delete_a_recording
 
-> delete_a_recording(account_id, recording_id)
+> delete_a_recording(recording_id)
 
 Delete a Recording
 
@@ -292,12 +284,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this recording.
 recording_id = 'recording_id_example' # String | String that uniquely identifies this recording resource.
 
 begin
   #Delete a Recording
-  api_instance.delete_a_recording(account_id, recording_id)
+  api_instance.delete_a_recording(recording_id)
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->delete_a_recording: #{e}"
 end
@@ -308,7 +299,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this recording. | 
  **recording_id** | **String**| String that uniquely identifies this recording resource. | 
 
 ### Return type
@@ -327,7 +317,7 @@ nil (empty response body)
 
 ## delete_an_application
 
-> delete_an_application(account_id, application_id)
+> delete_an_application(application_id)
 
 Delete an application
 
@@ -344,12 +334,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this application.
 application_id = 'application_id_example' # String | String that uniquely identifies this application resource.
 
 begin
   #Delete an application
-  api_instance.delete_an_application(account_id, application_id)
+  api_instance.delete_an_application(application_id)
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->delete_an_application: #{e}"
 end
@@ -360,7 +349,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this application. | 
  **application_id** | **String**| String that uniquely identifies this application resource. | 
 
 ### Return type
@@ -379,7 +367,7 @@ nil (empty response body)
 
 ## delete_an_incoming_number
 
-> delete_an_incoming_number(account_id, phone_number_id)
+> delete_an_incoming_number(phone_number_id)
 
 Delete an Incoming Number
 
@@ -396,12 +384,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that owns this phone number.
 phone_number_id = 'phone_number_id_example' # String | String that uniquely identifies this phone number resource.
 
 begin
   #Delete an Incoming Number
-  api_instance.delete_an_incoming_number(account_id, phone_number_id)
+  api_instance.delete_an_incoming_number(phone_number_id)
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->delete_an_incoming_number: #{e}"
 end
@@ -412,7 +399,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that owns this phone number. | 
  **phone_number_id** | **String**| String that uniquely identifies this phone number resource. | 
 
 ### Return type
@@ -431,7 +417,7 @@ nil (empty response body)
 
 ## dequeue_a_member
 
-> QueueMember dequeue_a_member(account_id, queue_id, call_id, opts)
+> QueueMember dequeue_a_member(queue_id, call_id, opts)
 
 Dequeue a Member
 
@@ -448,7 +434,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created the Queue
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
 call_id = 'call_id_example' # String | ID if the Call that the Member belongs to
 opts = {
@@ -457,7 +442,7 @@ opts = {
 
 begin
   #Dequeue a Member
-  result = api_instance.dequeue_a_member(account_id, queue_id, call_id, opts)
+  result = api_instance.dequeue_a_member(queue_id, call_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->dequeue_a_member: #{e}"
@@ -469,7 +454,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created the Queue | 
  **queue_id** | **String**| String that uniquely identifies the Queue that the Member belongs to. | 
  **call_id** | **String**| ID if the Call that the Member belongs to | 
  **dequeue_member_request** | [**DequeueMemberRequest**](DequeueMemberRequest.md)| Dequeue member request details | [optional] 
@@ -490,7 +474,7 @@ Name | Type | Description  | Notes
 
 ## dequeue_head_member
 
-> QueueMember dequeue_head_member(account_id, queue_id, opts)
+> QueueMember dequeue_head_member(queue_id, opts)
 
 Dequeue Head Member
 
@@ -507,7 +491,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this queue.
 queue_id = 'queue_id_example' # String | String that uniquely identifies this queue resource.
 opts = {
   dequeue_member_request: Freeclimb::DequeueMemberRequest.new # DequeueMemberRequest | Dequeue head member request details
@@ -515,7 +498,7 @@ opts = {
 
 begin
   #Dequeue Head Member
-  result = api_instance.dequeue_head_member(account_id, queue_id, opts)
+  result = api_instance.dequeue_head_member(queue_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->dequeue_head_member: #{e}"
@@ -527,7 +510,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this queue. | 
  **queue_id** | **String**| String that uniquely identifies this queue resource. | 
  **dequeue_member_request** | [**DequeueMemberRequest**](DequeueMemberRequest.md)| Dequeue head member request details | [optional] 
 
@@ -547,7 +529,7 @@ Name | Type | Description  | Notes
 
 ## download_a_recording_file
 
-> File download_a_recording_file(account_id, recording_id)
+> File download_a_recording_file(recording_id)
 
 Download a Recording File
 
@@ -564,12 +546,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this recording.
 recording_id = 'recording_id_example' # String | String that uniquely identifies this recording resource.
 
 begin
   #Download a Recording File
-  result = api_instance.download_a_recording_file(account_id, recording_id)
+  result = api_instance.download_a_recording_file(recording_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->download_a_recording_file: #{e}"
@@ -581,7 +562,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this recording. | 
  **recording_id** | **String**| String that uniquely identifies this recording resource. | 
 
 ### Return type
@@ -600,7 +580,7 @@ Name | Type | Description  | Notes
 
 ## filter_logs
 
-> LogList filter_logs(account_id, opts)
+> LogList filter_logs(opts)
 
 Filter Logs
 
@@ -617,14 +597,13 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that this log was generated under.
 opts = {
   filter_logs_request: Freeclimb::FilterLogsRequest.new # FilterLogsRequest | Filter logs request paramters
 }
 
 begin
   #Filter Logs
-  result = api_instance.filter_logs(account_id, opts)
+  result = api_instance.filter_logs(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->filter_logs: #{e}"
@@ -636,7 +615,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that this log was generated under. | 
  **filter_logs_request** | [**FilterLogsRequest**](FilterLogsRequest.md)| Filter logs request paramters | [optional] 
 
 ### Return type
@@ -655,7 +633,7 @@ Name | Type | Description  | Notes
 
 ## get_a_call
 
-> CallResult get_a_call(account_id, call_id)
+> CallResult get_a_call(call_id)
 
 Get a Call
 
@@ -672,12 +650,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this call.
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
 
 begin
   #Get a Call
-  result = api_instance.get_a_call(account_id, call_id)
+  result = api_instance.get_a_call(call_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_a_call: #{e}"
@@ -689,7 +666,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this call. | 
  **call_id** | **String**| String that uniquely identifies this call resource. | 
 
 ### Return type
@@ -708,7 +684,7 @@ Name | Type | Description  | Notes
 
 ## get_a_conference
 
-> ConferenceResult get_a_conference(account_id, conference_id)
+> ConferenceResult get_a_conference(conference_id)
 
 Get a Conference
 
@@ -725,12 +701,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this conference.
 conference_id = 'conference_id_example' # String | A string that uniquely identifies this conference resource.
 
 begin
   #Get a Conference
-  result = api_instance.get_a_conference(account_id, conference_id)
+  result = api_instance.get_a_conference(conference_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_a_conference: #{e}"
@@ -742,7 +717,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this conference. | 
  **conference_id** | **String**| A string that uniquely identifies this conference resource. | 
 
 ### Return type
@@ -761,7 +735,7 @@ Name | Type | Description  | Notes
 
 ## get_a_member
 
-> QueueMember get_a_member(account_id, queue_id, call_id)
+> QueueMember get_a_member(queue_id, call_id)
 
 Get a Member
 
@@ -778,13 +752,12 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this Queue
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
 call_id = 'call_id_example' # String | ID of the Call that the Member belongs to
 
 begin
   #Get a Member
-  result = api_instance.get_a_member(account_id, queue_id, call_id)
+  result = api_instance.get_a_member(queue_id, call_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_a_member: #{e}"
@@ -796,7 +769,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this Queue | 
  **queue_id** | **String**| String that uniquely identifies the Queue that the Member belongs to. | 
  **call_id** | **String**| ID of the Call that the Member belongs to | 
 
@@ -816,7 +788,7 @@ Name | Type | Description  | Notes
 
 ## get_a_participant
 
-> ConferenceParticipantResult get_a_participant(account_id, conference_id, call_id)
+> ConferenceParticipantResult get_a_participant(conference_id, call_id)
 
 Get a Participant
 
@@ -833,13 +805,12 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this participant.
 conference_id = 'conference_id_example' # String | ID of the conference this participant is in.
 call_id = 'call_id_example' # String | ID of the Call associated with this participant.
 
 begin
   #Get a Participant
-  result = api_instance.get_a_participant(account_id, conference_id, call_id)
+  result = api_instance.get_a_participant(conference_id, call_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_a_participant: #{e}"
@@ -851,7 +822,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this participant. | 
  **conference_id** | **String**| ID of the conference this participant is in. | 
  **call_id** | **String**| ID of the Call associated with this participant. | 
 
@@ -871,7 +841,7 @@ Name | Type | Description  | Notes
 
 ## get_a_queue
 
-> QueueResult get_a_queue(account_id, queue_id)
+> QueueResult get_a_queue(queue_id)
 
 Get a Queue
 
@@ -888,12 +858,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this queue.
 queue_id = 'queue_id_example' # String | A string that uniquely identifies this queue resource.
 
 begin
   #Get a Queue
-  result = api_instance.get_a_queue(account_id, queue_id)
+  result = api_instance.get_a_queue(queue_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_a_queue: #{e}"
@@ -905,7 +874,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this queue. | 
  **queue_id** | **String**| A string that uniquely identifies this queue resource. | 
 
 ### Return type
@@ -924,7 +892,7 @@ Name | Type | Description  | Notes
 
 ## get_a_recording
 
-> RecordingResult get_a_recording(account_id, recording_id)
+> RecordingResult get_a_recording(recording_id)
 
 Get a Recording
 
@@ -941,12 +909,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this recording.
 recording_id = 'recording_id_example' # String | String that uniquely identifies this recording resource.
 
 begin
   #Get a Recording
-  result = api_instance.get_a_recording(account_id, recording_id)
+  result = api_instance.get_a_recording(recording_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_a_recording: #{e}"
@@ -958,7 +925,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this recording. | 
  **recording_id** | **String**| String that uniquely identifies this recording resource. | 
 
 ### Return type
@@ -977,7 +943,7 @@ Name | Type | Description  | Notes
 
 ## get_an_account
 
-> AccountResult get_an_account(account_id)
+> AccountResult get_an_account
 
 Get an Account
 
@@ -994,11 +960,10 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | String that uniquely identifies this account resource.
 
 begin
   #Get an Account
-  result = api_instance.get_an_account(account_id)
+  result = api_instance.get_an_account
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_an_account: #{e}"
@@ -1007,10 +972,7 @@ end
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **String**| String that uniquely identifies this account resource. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -1028,7 +990,7 @@ Name | Type | Description  | Notes
 
 ## get_an_application
 
-> ApplicationResult get_an_application(account_id, application_id)
+> ApplicationResult get_an_application(application_id)
 
 Get an Application
 
@@ -1045,12 +1007,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this application.
 application_id = 'application_id_example' # String | A string that uniquely identifies this application resource.
 
 begin
   #Get an Application
-  result = api_instance.get_an_application(account_id, application_id)
+  result = api_instance.get_an_application(application_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_an_application: #{e}"
@@ -1062,7 +1023,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this application. | 
  **application_id** | **String**| A string that uniquely identifies this application resource. | 
 
 ### Return type
@@ -1081,7 +1041,7 @@ Name | Type | Description  | Notes
 
 ## get_an_incoming_number
 
-> IncomingNumberResult get_an_incoming_number(account_id, phone_number_id)
+> IncomingNumberResult get_an_incoming_number(phone_number_id)
 
 Get an Incoming Number
 
@@ -1098,12 +1058,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that owns this phone number.
 phone_number_id = 'phone_number_id_example' # String | String that uniquely identifies this phone number resource.
 
 begin
   #Get an Incoming Number
-  result = api_instance.get_an_incoming_number(account_id, phone_number_id)
+  result = api_instance.get_an_incoming_number(phone_number_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_an_incoming_number: #{e}"
@@ -1115,7 +1074,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that owns this phone number. | 
  **phone_number_id** | **String**| String that uniquely identifies this phone number resource. | 
 
 ### Return type
@@ -1134,7 +1092,7 @@ Name | Type | Description  | Notes
 
 ## get_an_sms_message
 
-> MessageResult get_an_sms_message(account_id, message_id)
+> MessageResult get_an_sms_message(message_id)
 
 Get an SMS Message
 
@@ -1151,12 +1109,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | String that uniquely identifies this account resource.
 message_id = 'message_id_example' # String | String that uniquely identifies this Message resource.
 
 begin
   #Get an SMS Message
-  result = api_instance.get_an_sms_message(account_id, message_id)
+  result = api_instance.get_an_sms_message(message_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_an_sms_message: #{e}"
@@ -1168,7 +1125,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| String that uniquely identifies this account resource. | 
  **message_id** | **String**| String that uniquely identifies this Message resource. | 
 
 ### Return type
@@ -1187,7 +1143,7 @@ Name | Type | Description  | Notes
 
 ## get_head_member
 
-> QueueMember get_head_member(account_id, queue_id)
+> QueueMember get_head_member(queue_id)
 
 Get Head Member
 
@@ -1204,12 +1160,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this Queue
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
 
 begin
   #Get Head Member
-  result = api_instance.get_head_member(account_id, queue_id)
+  result = api_instance.get_head_member(queue_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_head_member: #{e}"
@@ -1221,7 +1176,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this Queue | 
  **queue_id** | **String**| String that uniquely identifies the Queue that the Member belongs to. | 
 
 ### Return type
@@ -1240,7 +1194,7 @@ Name | Type | Description  | Notes
 
 ## list_active_queues
 
-> QueueList list_active_queues(account_id, opts)
+> QueueList list_active_queues(opts)
 
 List Active Queues
 
@@ -1257,14 +1211,13 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this Queue.
 opts = {
   _alias: '_alias_example' # String | Return only the Queue resources with aliases that exactly match this name.
 }
 
 begin
   #List Active Queues
-  result = api_instance.list_active_queues(account_id, opts)
+  result = api_instance.list_active_queues(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_active_queues: #{e}"
@@ -1276,7 +1229,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this Queue. | 
  **_alias** | **String**| Return only the Queue resources with aliases that exactly match this name. | [optional] 
 
 ### Return type
@@ -1295,7 +1247,7 @@ Name | Type | Description  | Notes
 
 ## list_all_account_logs
 
-> LogList list_all_account_logs(account_id)
+> LogList list_all_account_logs
 
 List All Account Logs
 
@@ -1312,11 +1264,10 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that these Logs were generated under.
 
 begin
   #List All Account Logs
-  result = api_instance.list_all_account_logs(account_id)
+  result = api_instance.list_all_account_logs
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_all_account_logs: #{e}"
@@ -1325,10 +1276,7 @@ end
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that these Logs were generated under. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -1346,7 +1294,7 @@ Name | Type | Description  | Notes
 
 ## list_an_application
 
-> ApplicationList list_an_application(account_id, opts)
+> ApplicationList list_an_application(opts)
 
 List applications
 
@@ -1363,14 +1311,13 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this application.
 opts = {
   _alias: '_alias_example' # String | Return only applications with aliases that exactly match this value.
 }
 
 begin
   #List applications
-  result = api_instance.list_an_application(account_id, opts)
+  result = api_instance.list_an_application(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_an_application: #{e}"
@@ -1382,7 +1329,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this application. | 
  **_alias** | **String**| Return only applications with aliases that exactly match this value. | [optional] 
 
 ### Return type
@@ -1456,7 +1402,7 @@ Name | Type | Description  | Notes
 
 ## list_call_logs
 
-> LogList list_call_logs(account_id, call_id)
+> LogList list_call_logs(call_id)
 
 List Call Logs
 
@@ -1473,12 +1419,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this call.
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
 
 begin
   #List Call Logs
-  result = api_instance.list_call_logs(account_id, call_id)
+  result = api_instance.list_call_logs(call_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_call_logs: #{e}"
@@ -1490,7 +1435,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this call. | 
  **call_id** | **String**| String that uniquely identifies this call resource. | 
 
 ### Return type
@@ -1509,7 +1453,7 @@ Name | Type | Description  | Notes
 
 ## list_call_recordings
 
-> RecordingList list_call_recordings(account_id, call_id, opts)
+> RecordingList list_call_recordings(call_id, opts)
 
 List Call Recordings
 
@@ -1526,7 +1470,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this call.
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
 opts = {
   date_created: 'date_created_example' # String | Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
@@ -1534,7 +1477,7 @@ opts = {
 
 begin
   #List Call Recordings
-  result = api_instance.list_call_recordings(account_id, call_id, opts)
+  result = api_instance.list_call_recordings(call_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_call_recordings: #{e}"
@@ -1546,7 +1489,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this call. | 
  **call_id** | **String**| String that uniquely identifies this call resource. | 
  **date_created** | **String**| Only show recordings created on the specified date, in the form *YYYY-MM-DD*. | [optional] 
 
@@ -1566,7 +1508,7 @@ Name | Type | Description  | Notes
 
 ## list_calls
 
-> CallList list_calls(account_id, opts)
+> CallList list_calls(opts)
 
 List Calls
 
@@ -1583,7 +1525,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this call.
 opts = {
   to: 'to_example', # String | Only show Calls to this phone number.
   from: 'from_example', # String | Only show Calls from this phone number.
@@ -1595,7 +1536,7 @@ opts = {
 
 begin
   #List Calls
-  result = api_instance.list_calls(account_id, opts)
+  result = api_instance.list_calls(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_calls: #{e}"
@@ -1607,7 +1548,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this call. | 
  **to** | **String**| Only show Calls to this phone number. | [optional] 
  **from** | **String**| Only show Calls from this phone number. | [optional] 
  **status** | **String**| Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional] 
@@ -1631,7 +1571,7 @@ Name | Type | Description  | Notes
 
 ## list_conferences
 
-> ConferenceList list_conferences(account_id, opts)
+> ConferenceList list_conferences(opts)
 
 List Conferences
 
@@ -1648,7 +1588,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this conference.
 opts = {
   status: 'status_example', # String | Only show conferences that currently have the specified status. Valid values: `empty`, `populated`, `inProgress`, or `terminated`.
   _alias: '_alias_example', # String | List Conferences whose alias exactly matches this string.
@@ -1658,7 +1597,7 @@ opts = {
 
 begin
   #List Conferences
-  result = api_instance.list_conferences(account_id, opts)
+  result = api_instance.list_conferences(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_conferences: #{e}"
@@ -1670,7 +1609,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this conference. | 
  **status** | **String**| Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;. | [optional] 
  **_alias** | **String**| List Conferences whose alias exactly matches this string. | [optional] 
  **date_created** | **String**| Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. | [optional] 
@@ -1692,7 +1630,7 @@ Name | Type | Description  | Notes
 
 ## list_incoming_numbers
 
-> IncomingNumberList list_incoming_numbers(account_id, opts)
+> IncomingNumberList list_incoming_numbers(opts)
 
 List Incoming Numbers
 
@@ -1709,7 +1647,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that owns this phone number.
 opts = {
   phone_number: 'phone_number_example', # String | Only show incoming phone number resources that match this PCRE-compatible regular expression.
   _alias: '_alias_example' # String | Only show incoming phone numbers with aliases that exactly match this value.
@@ -1717,7 +1654,7 @@ opts = {
 
 begin
   #List Incoming Numbers
-  result = api_instance.list_incoming_numbers(account_id, opts)
+  result = api_instance.list_incoming_numbers(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_incoming_numbers: #{e}"
@@ -1729,7 +1666,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that owns this phone number. | 
  **phone_number** | **String**| Only show incoming phone number resources that match this PCRE-compatible regular expression. | [optional] 
  **_alias** | **String**| Only show incoming phone numbers with aliases that exactly match this value. | [optional] 
 
@@ -1749,7 +1685,7 @@ Name | Type | Description  | Notes
 
 ## list_members
 
-> QueueMemberList list_members(account_id, queue_id)
+> QueueMemberList list_members(queue_id)
 
 List Members
 
@@ -1766,12 +1702,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this Queue
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
 
 begin
   #List Members
-  result = api_instance.list_members(account_id, queue_id)
+  result = api_instance.list_members(queue_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_members: #{e}"
@@ -1783,7 +1718,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this Queue | 
  **queue_id** | **String**| String that uniquely identifies the Queue that the Member belongs to. | 
 
 ### Return type
@@ -1802,7 +1736,7 @@ Name | Type | Description  | Notes
 
 ## list_participants
 
-> ConferenceParticipantList list_participants(account_id, conference_id, opts)
+> ConferenceParticipantList list_participants(conference_id, opts)
 
 List Participants
 
@@ -1819,7 +1753,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this participant.
 conference_id = 'conference_id_example' # String | ID of the conference this participant is in.
 opts = {
   talk: true, # Boolean | Only show Participants with the talk privilege.
@@ -1828,7 +1761,7 @@ opts = {
 
 begin
   #List Participants
-  result = api_instance.list_participants(account_id, conference_id, opts)
+  result = api_instance.list_participants(conference_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_participants: #{e}"
@@ -1840,7 +1773,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this participant. | 
  **conference_id** | **String**| ID of the conference this participant is in. | 
  **talk** | **Boolean**| Only show Participants with the talk privilege. | [optional] 
  **listen** | **Boolean**| Only show Participants with the listen privilege. | [optional] 
@@ -1861,7 +1793,7 @@ Name | Type | Description  | Notes
 
 ## list_recordings
 
-> RecordingList list_recordings(account_id, opts)
+> RecordingList list_recordings(opts)
 
 List Recordings
 
@@ -1878,7 +1810,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this recording.
 opts = {
   call_id: 'call_id_example', # String | Show only Recordings made during the Call with this ID.
   conference_id: 'conference_id_example', # String | Show only Recordings made during the conference with this ID.
@@ -1887,7 +1818,7 @@ opts = {
 
 begin
   #List Recordings
-  result = api_instance.list_recordings(account_id, opts)
+  result = api_instance.list_recordings(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_recordings: #{e}"
@@ -1899,7 +1830,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this recording. | 
  **call_id** | **String**| Show only Recordings made during the Call with this ID. | [optional] 
  **conference_id** | **String**| Show only Recordings made during the conference with this ID. | [optional] 
  **date_created** | **String**| Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] 
@@ -1920,7 +1850,7 @@ Name | Type | Description  | Notes
 
 ## list_sms_messages
 
-> MessagesList list_sms_messages(account_id2, opts)
+> MessagesList list_sms_messages(opts)
 
 List SMS Messages
 
@@ -1937,7 +1867,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id2 = 'account_id_example' # String | ID of the account that sent this message.
 opts = {
   to: 'to_example', # String | Only show Messages to this phone number.
   from: 'from_example', # String | Only show Messages from this phone number.
@@ -1949,7 +1878,7 @@ opts = {
 
 begin
   #List SMS Messages
-  result = api_instance.list_sms_messages(account_id2, opts)
+  result = api_instance.list_sms_messages(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->list_sms_messages: #{e}"
@@ -1961,7 +1890,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id2** | **String**| ID of the account that sent this message. | 
  **to** | **String**| Only show Messages to this phone number. | [optional] 
  **from** | **String**| Only show Messages from this phone number. | [optional] 
  **begin_time** | **String**| Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. | [optional] 
@@ -1985,7 +1913,7 @@ Name | Type | Description  | Notes
 
 ## make_a_call
 
-> CallResult make_a_call(account_id, opts)
+> CallResult make_a_call(opts)
 
 Make a Call
 
@@ -2002,14 +1930,13 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this call.
 opts = {
   make_call_request: Freeclimb::MakeCallRequest.new # MakeCallRequest | Call details for making a call
 }
 
 begin
   #Make a Call
-  result = api_instance.make_a_call(account_id, opts)
+  result = api_instance.make_a_call(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->make_a_call: #{e}"
@@ -2021,7 +1948,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this call. | 
  **make_call_request** | [**MakeCallRequest**](MakeCallRequest.md)| Call details for making a call | [optional] 
 
 ### Return type
@@ -2040,7 +1966,7 @@ Name | Type | Description  | Notes
 
 ## remove_a_participant
 
-> remove_a_participant(account_id, conference_id, call_id)
+> remove_a_participant(conference_id, call_id)
 
 Remove a Participant
 
@@ -2057,13 +1983,12 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this participant.
 conference_id = 'conference_id_example' # String | ID of the conference this participant is in.
 call_id = 'call_id_example' # String | ID of the Call associated with this participant.
 
 begin
   #Remove a Participant
-  api_instance.remove_a_participant(account_id, conference_id, call_id)
+  api_instance.remove_a_participant(conference_id, call_id)
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->remove_a_participant: #{e}"
 end
@@ -2074,7 +1999,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this participant. | 
  **conference_id** | **String**| ID of the conference this participant is in. | 
  **call_id** | **String**| ID of the Call associated with this participant. | 
 
@@ -2094,7 +2018,7 @@ nil (empty response body)
 
 ## send_an_sms_message
 
-> MessageResult send_an_sms_message(account_id, opts)
+> MessageResult send_an_sms_message(opts)
 
 Send an SMS Message
 
@@ -2111,14 +2035,13 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that sent this message.
 opts = {
   message_request: Freeclimb::MessageRequest.new # MessageRequest | Details to create a message
 }
 
 begin
   #Send an SMS Message
-  result = api_instance.send_an_sms_message(account_id, opts)
+  result = api_instance.send_an_sms_message(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->send_an_sms_message: #{e}"
@@ -2130,7 +2053,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that sent this message. | 
  **message_request** | [**MessageRequest**](MessageRequest.md)| Details to create a message | [optional] 
 
 ### Return type
@@ -2149,7 +2071,7 @@ Name | Type | Description  | Notes
 
 ## stream_a_recording_file
 
-> File stream_a_recording_file(account_id, recording_id)
+> File stream_a_recording_file(recording_id)
 
 Stream a Recording File
 
@@ -2166,12 +2088,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this recording.
 recording_id = 'recording_id_example' # String | String that uniquely identifies this recording resource.
 
 begin
   #Stream a Recording File
-  result = api_instance.stream_a_recording_file(account_id, recording_id)
+  result = api_instance.stream_a_recording_file(recording_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->stream_a_recording_file: #{e}"
@@ -2183,7 +2104,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this recording. | 
  **recording_id** | **String**| String that uniquely identifies this recording resource. | 
 
 ### Return type
@@ -2202,7 +2122,7 @@ Name | Type | Description  | Notes
 
 ## update_a_conference
 
-> ConferenceResult update_a_conference(account_id, conference_id, opts)
+> ConferenceResult update_a_conference(conference_id, opts)
 
 Update a Conference
 
@@ -2219,7 +2139,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this conference.
 conference_id = 'conference_id_example' # String | String that uniquely identifies this conference resource.
 opts = {
   update_conference_request: Freeclimb::UpdateConferenceRequest.new # UpdateConferenceRequest | Conference Details to update
@@ -2227,7 +2146,7 @@ opts = {
 
 begin
   #Update a Conference
-  result = api_instance.update_a_conference(account_id, conference_id, opts)
+  result = api_instance.update_a_conference(conference_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_a_conference: #{e}"
@@ -2239,7 +2158,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this conference. | 
  **conference_id** | **String**| String that uniquely identifies this conference resource. | 
  **update_conference_request** | [**UpdateConferenceRequest**](UpdateConferenceRequest.md)| Conference Details to update | [optional] 
 
@@ -2259,7 +2177,7 @@ Name | Type | Description  | Notes
 
 ## update_a_live_call
 
-> update_a_live_call(account_id, call_id, opts)
+> update_a_live_call(call_id, opts)
 
 Update a Live Call
 
@@ -2276,7 +2194,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this call.
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
 opts = {
   update_call_request: Freeclimb::UpdateCallRequest.new # UpdateCallRequest | Call details to update
@@ -2284,7 +2201,7 @@ opts = {
 
 begin
   #Update a Live Call
-  api_instance.update_a_live_call(account_id, call_id, opts)
+  api_instance.update_a_live_call(call_id, opts)
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_a_live_call: #{e}"
 end
@@ -2295,7 +2212,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this call. | 
  **call_id** | **String**| String that uniquely identifies this call resource. | 
  **update_call_request** | [**UpdateCallRequest**](UpdateCallRequest.md)| Call details to update | [optional] 
 
@@ -2315,7 +2231,7 @@ nil (empty response body)
 
 ## update_a_participant
 
-> ConferenceParticipantResult update_a_participant(account_id, conference_id, call_id, opts)
+> ConferenceParticipantResult update_a_participant(conference_id, call_id, opts)
 
 Update a Participant
 
@@ -2332,7 +2248,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this participant.
 conference_id = 'conference_id_example' # String | ID of the conference this participant is in.
 call_id = 'call_id_example' # String | ID of the Call associated with this participant.
 opts = {
@@ -2341,7 +2256,7 @@ opts = {
 
 begin
   #Update a Participant
-  result = api_instance.update_a_participant(account_id, conference_id, call_id, opts)
+  result = api_instance.update_a_participant(conference_id, call_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_a_participant: #{e}"
@@ -2353,7 +2268,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this participant. | 
  **conference_id** | **String**| ID of the conference this participant is in. | 
  **call_id** | **String**| ID of the Call associated with this participant. | 
  **update_conference_participant_request** | [**UpdateConferenceParticipantRequest**](UpdateConferenceParticipantRequest.md)| Conference participant details to update | [optional] 
@@ -2374,7 +2288,7 @@ Name | Type | Description  | Notes
 
 ## update_a_queue
 
-> QueueResult update_a_queue(account_id, queue_id, opts)
+> QueueResult update_a_queue(queue_id, opts)
 
 Update a Queue
 
@@ -2391,7 +2305,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this queue.
 queue_id = 'queue_id_example' # String | A string that uniquely identifies this Queue resource.
 opts = {
   queue_request: Freeclimb::QueueRequest.new # QueueRequest | Queue Details to update
@@ -2399,7 +2312,7 @@ opts = {
 
 begin
   #Update a Queue
-  result = api_instance.update_a_queue(account_id, queue_id, opts)
+  result = api_instance.update_a_queue(queue_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_a_queue: #{e}"
@@ -2411,7 +2324,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this queue. | 
  **queue_id** | **String**| A string that uniquely identifies this Queue resource. | 
  **queue_request** | [**QueueRequest**](QueueRequest.md)| Queue Details to update | [optional] 
 
@@ -2431,7 +2343,7 @@ Name | Type | Description  | Notes
 
 ## update_an_account
 
-> update_an_account(account_id, opts)
+> update_an_account(opts)
 
 Manage an account
 
@@ -2448,14 +2360,13 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | String that uniquely identifies this account resource.
 opts = {
   account_request: Freeclimb::AccountRequest.new # AccountRequest | Account details to update
 }
 
 begin
   #Manage an account
-  api_instance.update_an_account(account_id, opts)
+  api_instance.update_an_account(opts)
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_an_account: #{e}"
 end
@@ -2466,7 +2377,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| String that uniquely identifies this account resource. | 
  **account_request** | [**AccountRequest**](AccountRequest.md)| Account details to update | [optional] 
 
 ### Return type
@@ -2485,7 +2395,7 @@ nil (empty response body)
 
 ## update_an_application
 
-> ApplicationResult update_an_application(account_id, application_id, opts)
+> ApplicationResult update_an_application(application_id, opts)
 
 Update an application
 
@@ -2502,7 +2412,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that created this application.
 application_id = 'application_id_example' # String | A string that uniquely identifies this application resource.
 opts = {
   application_request: Freeclimb::ApplicationRequest.new # ApplicationRequest | Application details to update.
@@ -2510,7 +2419,7 @@ opts = {
 
 begin
   #Update an application
-  result = api_instance.update_an_application(account_id, application_id, opts)
+  result = api_instance.update_an_application(application_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_an_application: #{e}"
@@ -2522,7 +2431,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that created this application. | 
  **application_id** | **String**| A string that uniquely identifies this application resource. | 
  **application_request** | [**ApplicationRequest**](ApplicationRequest.md)| Application details to update. | [optional] 
 
@@ -2542,7 +2450,7 @@ Name | Type | Description  | Notes
 
 ## update_an_incoming_number
 
-> IncomingNumberResult update_an_incoming_number(account_id, phone_number_id, opts)
+> IncomingNumberResult update_an_incoming_number(phone_number_id, opts)
 
 Update an Incoming Number
 
@@ -2559,7 +2467,6 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account that owns this phone number.
 phone_number_id = 'phone_number_id_example' # String | String that uniquely identifies this phone number resource.
 opts = {
   incoming_number_request: Freeclimb::IncomingNumberRequest.new # IncomingNumberRequest | Incoming Number details to update
@@ -2567,7 +2474,7 @@ opts = {
 
 begin
   #Update an Incoming Number
-  result = api_instance.update_an_incoming_number(account_id, phone_number_id, opts)
+  result = api_instance.update_an_incoming_number(phone_number_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_an_incoming_number: #{e}"
@@ -2579,7 +2486,6 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **String**| ID of the account that owns this phone number. | 
  **phone_number_id** | **String**| String that uniquely identifies this phone number resource. | 
  **incoming_number_request** | [**IncomingNumberRequest**](IncomingNumberRequest.md)| Incoming Number details to update | [optional] 
 
