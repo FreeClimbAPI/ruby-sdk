@@ -67,8 +67,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -120,8 +120,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -173,8 +173,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -226,8 +226,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -279,8 +279,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -329,8 +329,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -379,8 +379,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -429,8 +429,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -486,8 +486,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -541,8 +541,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -592,8 +592,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -645,8 +645,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -696,8 +696,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -747,8 +747,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -800,8 +800,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -853,8 +853,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -904,8 +904,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -955,8 +955,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1002,8 +1002,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1053,8 +1053,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1104,8 +1104,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1155,8 +1155,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1206,8 +1206,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1259,8 +1259,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1306,8 +1306,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1359,8 +1359,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1414,8 +1414,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1465,8 +1465,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1520,8 +1520,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1583,8 +1583,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1642,8 +1642,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1697,8 +1697,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1748,8 +1748,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1805,8 +1805,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1862,8 +1862,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1925,8 +1925,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -1978,8 +1978,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -2030,8 +2030,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -2083,8 +2083,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -2134,8 +2134,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -2189,8 +2189,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -2243,8 +2243,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -2300,8 +2300,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -2355,8 +2355,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -2407,8 +2407,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
@@ -2462,8 +2462,8 @@ require 'freeclimb'
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'ACCOUNT ID'
+  config.password = 'AUTH TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new

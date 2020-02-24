@@ -59,8 +59,8 @@ require 'freeclimb'
 # Setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR_USERNAME'
-  config.password = 'YOUR_PASSWORD'
+  config.username = 'ACCOUNT_ID'
+  config.password = 'AUTH_TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
