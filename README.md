@@ -48,7 +48,8 @@ Include the Ruby code directly using `-I` as follows:
 ruby -Ilib script.rb
 ```
 
-## Getting Started
+
+## Testing Your Installation
 
 Please follow the [installation](#installation) procedure and then run the following code:
 
@@ -64,16 +65,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-opts = {
-  buy_incoming_number_request: Freeclimb::BuyIncomingNumberRequest.new # BuyIncomingNumberRequest | Incoming Number transaction details
-}
+account_id = 'account_id_example' # String | String that uniquely identifies this account resource.
 
 begin
-  #Buy a Phone Number
-  result = api_instance.buy_a_phone_number(opts)
+  #Get an Account
+  result = api_instance.get_an_account(account_id)
   p result
 rescue Freeclimb::ApiError => e
-  puts "Exception when calling DefaultApi->buy_a_phone_number: #{e}"
+  puts "Exception when calling DefaultApi->get_an_account: #{e}"
 end
 
 ```
