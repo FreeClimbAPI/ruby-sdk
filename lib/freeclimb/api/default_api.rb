@@ -24,6 +24,60 @@ module Freeclimb
         @account_id = account_id
       end
     end
+    # Get an Account
+    # @param [Hash] opts the optional parameters
+    # @return [AccountResult]
+    def get_an_account(opts = {})
+      data, _status_code, _headers = get_an_account_with_http_info(opts)
+      data
+    end
+
+    # Get an Account
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AccountResult, Integer, Hash)>] AccountResult data, response status code and response headers
+    def get_an_account_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_an_account ...'
+      end
+      # resource path
+      local_var_path = '/Accounts/{accountId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'AccountResult' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['fc']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_an_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Buy a Phone Number
     # @param [Hash] opts the optional parameters
     # @option opts [BuyIncomingNumberRequest] :buy_incoming_number_request Incoming Number transaction details
@@ -1050,60 +1104,6 @@ module Freeclimb
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#get_a_recording\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get an Account
-    # @param [Hash] opts the optional parameters
-    # @return [AccountResult]
-    def get_an_account(opts = {})
-      data, _status_code, _headers = get_an_account_with_http_info(opts)
-      data
-    end
-
-    # Get an Account
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(AccountResult, Integer, Hash)>] AccountResult data, response status code and response headers
-    def get_an_account_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DefaultApi.get_an_account ...'
-      end
-      # resource path
-      local_var_path = '/Accounts/{accountId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:body] 
-
-      # return_type
-      return_type = opts[:return_type] || 'AccountResult' 
-
-      # auth_names
-      auth_names = opts[:auth_names] || ['fc']
-
-      new_options = opts.merge(
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DefaultApi#get_an_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
