@@ -17,17 +17,17 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::MakeCallRequest.new(from: null,
-                                 to: null,
-                                 application_id: null,
-                                 send_digits: null,
-                                 if_machine: null,
-                                 if_machine_url: null,
-                                 timeout: null,
-                                 request_id: null,
-                                 parent_call_id: null)
+instance = Freeclimb::MakeCallRequest.new(from: nil,
+                                 to: nil,
+                                 application_id: nil,
+                                 send_digits: nil,
+                                 if_machine: nil,
+                                 if_machine_url: nil,
+                                 timeout: nil,
+                                 request_id: nil,
+                                 parent_call_id: nil)
 ```
 
 

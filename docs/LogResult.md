@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::LogResult.new(timestamp: null,
-                                 level: null,
-                                 request_id: null,
-                                 account_id: null,
-                                 call_id: null,
-                                 message: null,
-                                 metadata: null)
+instance = Freeclimb::LogResult.new(timestamp: nil,
+                                 level: nil,
+                                 request_id: nil,
+                                 account_id: nil,
+                                 call_id: nil,
+                                 message: nil,
+                                 metadata: nil)
 ```
 
 

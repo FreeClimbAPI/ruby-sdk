@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::IncomingNumberRequest.new(application_id: null,
-                                 _alias: null,
-                                 request_id: null)
+instance = Freeclimb::IncomingNumberRequest.new(application_id: nil,
+                                 _alias: nil,
+                                 request_id: nil)
 ```
 
 

@@ -21,4 +21,18 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+# We don't need these test because they are redundant
 spec/models/*_all_of_spec.rb
+
+# We're not using this
+git_push.sh
+
+# Added custom files to .gitignore so we don't want an override
+.gitignore
+
+# Added gem for testing that we don't want overwritten
+Gemfile
+
+# Not using this. Don't generate it
+.travis.yml

@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::FilterLogsRequest.new(pql: null,
-                                 request_id: null)
+instance = Freeclimb::FilterLogsRequest.new(pql: nil,
+                                 request_id: nil)
 ```
 
 

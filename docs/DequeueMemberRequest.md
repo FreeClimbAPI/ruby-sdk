@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::DequeueMemberRequest.new(request_id: null)
+instance = Freeclimb::DequeueMemberRequest.new(request_id: nil)
 ```
 
 

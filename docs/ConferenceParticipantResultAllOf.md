@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::ConferenceParticipantResultAllOf.new(account_id: null,
-                                 conference_id: null,
-                                 call_id: null,
-                                 talk: null,
-                                 listen: null,
-                                 start_conf_on_enter: null)
+instance = Freeclimb::ConferenceParticipantResultAllOf.new(account_id: nil,
+                                 conference_id: nil,
+                                 call_id: nil,
+                                 talk: nil,
+                                 listen: nil,
+                                 start_conf_on_enter: nil)
 ```
 
 

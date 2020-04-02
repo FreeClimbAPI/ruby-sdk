@@ -20,20 +20,20 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::MessageResult.new(uri: null,
-                                 date_created: null,
-                                 date_updated: null,
-                                 revision: null,
-                                 account_id: null,
-                                 message_id: null,
-                                 status: null,
-                                 from: null,
-                                 to: null,
-                                 text: null,
-                                 direction: null,
-                                 notification_url: null)
+instance = Freeclimb::MessageResult.new(uri: nil,
+                                 date_created: nil,
+                                 date_updated: nil,
+                                 revision: nil,
+                                 account_id: nil,
+                                 message_id: nil,
+                                 status: nil,
+                                 from: nil,
+                                 to: nil,
+                                 text: nil,
+                                 direction: nil,
+                                 notification_url: nil)
 ```
 
 
