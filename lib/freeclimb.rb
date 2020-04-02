@@ -15,11 +15,14 @@ require 'freeclimb/api_client'
 require 'freeclimb/api_error'
 require 'freeclimb/version'
 require 'freeclimb/configuration'
-require 'percl/percl'
+require 'freeclimb/models/percl_command'
+
 # Models
 require 'freeclimb/models/account_request'
 require 'freeclimb/models/account_result'
 require 'freeclimb/models/account_result_all_of'
+require 'freeclimb/models/add_to_conference'
+require 'freeclimb/models/add_to_conference_all_of'
 require 'freeclimb/models/application_list'
 require 'freeclimb/models/application_list_all_of'
 require 'freeclimb/models/application_request'
@@ -41,9 +44,18 @@ require 'freeclimb/models/conference_participant_result'
 require 'freeclimb/models/conference_participant_result_all_of'
 require 'freeclimb/models/conference_result'
 require 'freeclimb/models/conference_result_all_of'
+require 'freeclimb/models/create_conference'
+require 'freeclimb/models/create_conference_all_of'
 require 'freeclimb/models/create_conference_request'
+require 'freeclimb/models/dequeue'
 require 'freeclimb/models/dequeue_member_request'
+require 'freeclimb/models/enqueue'
+require 'freeclimb/models/enqueue_all_of'
 require 'freeclimb/models/filter_logs_request'
+require 'freeclimb/models/get_digits'
+require 'freeclimb/models/get_digits_all_of'
+require 'freeclimb/models/get_speech'
+require 'freeclimb/models/get_speech_all_of'
 require 'freeclimb/models/incoming_number_list'
 require 'freeclimb/models/incoming_number_list_all_of'
 require 'freeclimb/models/incoming_number_request'
@@ -60,7 +72,17 @@ require 'freeclimb/models/message_result_all_of'
 require 'freeclimb/models/messages_list'
 require 'freeclimb/models/messages_list_all_of'
 require 'freeclimb/models/mutable_resource_model'
+require 'freeclimb/models/out_dial'
+require 'freeclimb/models/out_dial_all_of'
 require 'freeclimb/models/pagination_model'
+require 'freeclimb/models/pause'
+require 'freeclimb/models/pause_all_of'
+require 'freeclimb/models/percl_command'
+require 'freeclimb/models/percl_script'
+require 'freeclimb/models/play'
+require 'freeclimb/models/play_all_of'
+require 'freeclimb/models/play_early_media'
+require 'freeclimb/models/play_early_media_all_of'
 require 'freeclimb/models/queue_list'
 require 'freeclimb/models/queue_list_all_of'
 require 'freeclimb/models/queue_member'
@@ -69,10 +91,29 @@ require 'freeclimb/models/queue_member_list_all_of'
 require 'freeclimb/models/queue_request'
 require 'freeclimb/models/queue_result'
 require 'freeclimb/models/queue_result_all_of'
+require 'freeclimb/models/record_utterance'
+require 'freeclimb/models/record_utterance_all_of'
 require 'freeclimb/models/recording_list'
 require 'freeclimb/models/recording_list_all_of'
 require 'freeclimb/models/recording_result'
 require 'freeclimb/models/recording_result_all_of'
+require 'freeclimb/models/redirect'
+require 'freeclimb/models/redirect_all_of'
+require 'freeclimb/models/remove_from_conference'
+require 'freeclimb/models/remove_from_conference_all_of'
+require 'freeclimb/models/say'
+require 'freeclimb/models/say_all_of'
+require 'freeclimb/models/send_digits'
+require 'freeclimb/models/send_digits_all_of'
+require 'freeclimb/models/set_listen'
+require 'freeclimb/models/set_listen_all_of'
+require 'freeclimb/models/set_talk'
+require 'freeclimb/models/set_talk_all_of'
+require 'freeclimb/models/sms'
+require 'freeclimb/models/sms_all_of'
+require 'freeclimb/models/start_record_call'
+require 'freeclimb/models/terminate_conference'
+require 'freeclimb/models/terminate_conference_all_of'
 require 'freeclimb/models/update_call_request'
 require 'freeclimb/models/update_conference_participant_request'
 require 'freeclimb/models/update_conference_request'
@@ -95,5 +136,32 @@ module Freeclimb
         Configuration.default
       end
     end
+  end
+
+  def self.percl_list_to_hash(percl_list)
+    percl_list_hash = []
+    percl_list.each_with_index do | command, index |
+      class_name = command.class.name.split('::').last
+      percl_hash = Hash.new
+      if command.respond_to?(:prompts) && command.prompts != nil && command.prompts.any?
+        percl_hash[class_name] = to_hash_with_prompts(command)
+      else
+        percl_hash[class_name] = command.to_hash
+      end
+      percl_list_hash.push(percl_hash)
+    end
+    percl_list_hash
+  end
+
+  def self.to_hash_with_prompts(command)
+    prompts_hash = percl_list_to_hash(command.prompts)
+    command.prompts = nil
+    hash = command.to_hash
+    hash[:prompts] = prompts_hash
+    hash
+  end
+
+  def self.percl_to_json(percl_script)
+    percl_list_to_hash(percl_script.commands).to_json
   end
 end

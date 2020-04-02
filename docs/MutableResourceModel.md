@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::MutableResourceModel.new(uri: null,
-                                 date_created: null,
-                                 date_updated: null,
-                                 revision: null)
+instance = Freeclimb::MutableResourceModel.new(uri: nil,
+                                 date_created: nil,
+                                 date_updated: nil,
+                                 revision: nil)
 ```
 
 

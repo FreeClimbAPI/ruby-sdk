@@ -16,16 +16,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::IncomingNumberList.new(total: null,
-                                 start: null,
-                                 _end: null,
-                                 page: null,
-                                 num_pages: null,
-                                 page_size: null,
-                                 next_page_uri: null,
-                                 incoming_phone_numbers: null)
+instance = Freeclimb::IncomingNumberList.new(total: nil,
+                                 start: nil,
+                                 _end: nil,
+                                 page: nil,
+                                 num_pages: nil,
+                                 page_size: nil,
+                                 next_page_uri: nil,
+                                 incoming_phone_numbers: nil)
 ```
 
 

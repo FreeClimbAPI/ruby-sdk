@@ -17,17 +17,17 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::RecordingResult.new(uri: null,
-                                 date_created: null,
-                                 date_updated: null,
-                                 revision: null,
-                                 recording_id: null,
-                                 account_id: null,
-                                 call_id: null,
-                                 duration_sec: null,
-                                 conference_id: null)
+instance = Freeclimb::RecordingResult.new(uri: nil,
+                                 date_created: nil,
+                                 date_updated: nil,
+                                 revision: nil,
+                                 recording_id: nil,
+                                 account_id: nil,
+                                 call_id: nil,
+                                 duration_sec: nil,
+                                 conference_id: nil)
 ```
 
 

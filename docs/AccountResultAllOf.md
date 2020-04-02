@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::AccountResultAllOf.new(account_id: null,
-                                 auth_token: null,
-                                 _alias: null,
-                                 label: null,
-                                 type: null,
-                                 status: null,
-                                 subresource_uris: null)
+instance = Freeclimb::AccountResultAllOf.new(account_id: nil,
+                                 auth_token: nil,
+                                 _alias: nil,
+                                 label: nil,
+                                 type: nil,
+                                 status: nil,
+                                 subresource_uris: nil)
 ```
 
 

@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::CreateConferenceRequest.new(_alias: null,
-                                 play_beep: null,
-                                 record: null,
-                                 wait_url: null,
-                                 status_callback_url: null,
-                                 request_id: null)
+instance = Freeclimb::CreateConferenceRequest.new(_alias: nil,
+                                 play_beep: nil,
+                                 record: nil,
+                                 wait_url: nil,
+                                 status_callback_url: nil,
+                                 request_id: nil)
 ```
 
 

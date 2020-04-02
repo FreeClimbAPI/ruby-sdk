@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::QueueResultAllOf.new(account_id: null,
-                                 queue_id: null,
-                                 _alias: null,
-                                 max_size: null,
-                                 current_size: null,
-                                 average_wait_time: null,
-                                 subresource_uris: null)
+instance = Freeclimb::QueueResultAllOf.new(account_id: nil,
+                                 queue_id: nil,
+                                 _alias: nil,
+                                 max_size: nil,
+                                 current_size: nil,
+                                 average_wait_time: nil,
+                                 subresource_uris: nil)
 ```
 
 
