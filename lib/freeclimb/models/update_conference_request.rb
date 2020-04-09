@@ -23,9 +23,6 @@ module Freeclimb
     # New status of the conference. Valid values: `empty` or `terminated`. For more information, see **Status Parameter** below.**
     attr_accessor :status
 
-    # ID for this request starting with prefix *RQ* followed by 40 hexadecimal characters. FreeClimb logs generated while processing this request will include this requestId. If it is not provided, FreeClimb will generate a requestId and return it as a header in the response (e.g. X-Pulse-Request-Id: <requestId>).
-    attr_accessor :request_id
-
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -53,8 +50,7 @@ module Freeclimb
       {
         :'_alias' => :'alias',
         :'play_beep' => :'playBeep',
-        :'status' => :'status',
-        :'request_id' => :'requestId'
+        :'status' => :'status'
       }
     end
 
@@ -63,8 +59,7 @@ module Freeclimb
       {
         :'_alias' => :'String',
         :'play_beep' => :'String',
-        :'status' => :'String',
-        :'request_id' => :'String'
+        :'status' => :'String'
       }
     end
 
@@ -102,10 +97,6 @@ module Freeclimb
       if attributes.key?(:'status')
         self.status = attributes[:'status']
       end
-
-      if attributes.key?(:'request_id')
-        self.request_id = attributes[:'request_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -140,8 +131,7 @@ module Freeclimb
       self.class == o.class &&
           _alias == o._alias &&
           play_beep == o.play_beep &&
-          status == o.status &&
-          request_id == o.request_id
+          status == o.status
     end
 
     # @see the `==` method
@@ -153,7 +143,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [_alias, play_beep, status, request_id].hash
+      [_alias, play_beep, status].hash
     end
 
     # Builds the object from hash

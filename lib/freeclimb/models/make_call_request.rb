@@ -35,9 +35,6 @@ module Freeclimb
     # Number of seconds that FreeClimb should allow the phone to ring before assuming there is no answer. Default is 30 seconds. Maximum allowed ring-time is determined by the target phone's provider. Note that most providers limit ring-time to 120 seconds.
     attr_accessor :timeout
 
-    # The requestId for this request starting with prefix \"RQ\" followed by 40 hexadecimal characters. FreeClimb logs generated while processing this request will include this requestId. If it is not provided, FreeClimb will generate a requestId and return it as a header in the response (e.g. `X-Pulse-Request-Id: <requestId>`).
-    attr_accessor :request_id
-
     # The ID of the parent Call in the case that this new Call is meant to be treated as a child of an existing Call. This attribute should be included when possible to reduce latency when adding child calls to Conferences containing the parent Call. A call can only be used as a parent once the call is in progress or as an inbound call that is still ringing.  An outbound call is considered to be in progress once the outdialConnect or outdialApiConnect webhook is invoked.  An inbound call is ringing when the inbound webhook is invoked.
     attr_accessor :parent_call_id
 
@@ -51,7 +48,6 @@ module Freeclimb
         :'if_machine' => :'ifMachine',
         :'if_machine_url' => :'ifMachineUrl',
         :'timeout' => :'timeout',
-        :'request_id' => :'requestId',
         :'parent_call_id' => :'parentCallId'
       }
     end
@@ -66,7 +62,6 @@ module Freeclimb
         :'if_machine' => :'String',
         :'if_machine_url' => :'String',
         :'timeout' => :'Integer',
-        :'request_id' => :'String',
         :'parent_call_id' => :'String'
       }
     end
@@ -120,10 +115,6 @@ module Freeclimb
         self.timeout = attributes[:'timeout']
       end
 
-      if attributes.key?(:'request_id')
-        self.request_id = attributes[:'request_id']
-      end
-
       if attributes.key?(:'parent_call_id')
         self.parent_call_id = attributes[:'parent_call_id']
       end
@@ -169,7 +160,6 @@ module Freeclimb
           if_machine == o.if_machine &&
           if_machine_url == o.if_machine_url &&
           timeout == o.timeout &&
-          request_id == o.request_id &&
           parent_call_id == o.parent_call_id
     end
 
@@ -182,7 +172,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [from, to, application_id, send_digits, if_machine, if_machine_url, timeout, request_id, parent_call_id].hash
+      [from, to, application_id, send_digits, if_machine, if_machine_url, timeout, parent_call_id].hash
     end
 
     # Builds the object from hash

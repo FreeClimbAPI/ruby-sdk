@@ -137,7 +137,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buy_incoming_number_request** | [**BuyIncomingNumberRequest**](BuyIncomingNumberRequest.md)| Incoming Number transaction details |  
+ **buy_incoming_number_request** | [**BuyIncomingNumberRequest**](BuyIncomingNumberRequest.md)| Incoming Number transaction details | [optional] 
 
 ### Return type
 
@@ -464,7 +464,7 @@ nil (empty response body)
 
 ## dequeue_a_member
 
-> QueueMember dequeue_a_member(queue_id, call_id, opts)
+> QueueMember dequeue_a_member(queue_id, call_id)
 
 Dequeue a Member
 
@@ -483,13 +483,10 @@ end
 api_instance = Freeclimb::DefaultApi.new
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
 call_id = 'call_id_example' # String | ID if the Call that the Member belongs to
-opts = {
-  dequeue_member_request: Freeclimb::DequeueMemberRequest.new # DequeueMemberRequest | Dequeue member request details
-}
 
 begin
   #Dequeue a Member
-  result = api_instance.dequeue_a_member(queue_id, call_id, opts)
+  result = api_instance.dequeue_a_member(queue_id, call_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->dequeue_a_member: #{e}"
@@ -503,7 +500,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **queue_id** | **String**| String that uniquely identifies the Queue that the Member belongs to. | 
  **call_id** | **String**| ID if the Call that the Member belongs to | 
- **dequeue_member_request** | [**DequeueMemberRequest**](DequeueMemberRequest.md)| Dequeue member request details | [optional] 
 
 ### Return type
 
@@ -515,13 +511,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
 ## dequeue_head_member
 
-> QueueMember dequeue_head_member(queue_id, opts)
+> QueueMember dequeue_head_member(queue_id)
 
 Dequeue Head Member
 
@@ -539,13 +535,10 @@ end
 
 api_instance = Freeclimb::DefaultApi.new
 queue_id = 'queue_id_example' # String | String that uniquely identifies this queue resource.
-opts = {
-  dequeue_member_request: Freeclimb::DequeueMemberRequest.new # DequeueMemberRequest | Dequeue head member request details
-}
 
 begin
   #Dequeue Head Member
-  result = api_instance.dequeue_head_member(queue_id, opts)
+  result = api_instance.dequeue_head_member(queue_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->dequeue_head_member: #{e}"
@@ -558,7 +551,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **queue_id** | **String**| String that uniquely identifies this queue resource. | 
- **dequeue_member_request** | [**DequeueMemberRequest**](DequeueMemberRequest.md)| Dequeue head member request details | [optional] 
 
 ### Return type
 
@@ -570,7 +562,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

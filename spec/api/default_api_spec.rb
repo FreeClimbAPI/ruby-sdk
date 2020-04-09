@@ -221,7 +221,6 @@ describe 'DefaultApi' do
   # @param queue_id String that uniquely identifies the Queue that the Member belongs to.
   # @param call_id ID if the Call that the Member belongs to
   # @param [Hash] opts the optional parameters
-  # @option opts [DequeueMemberRequest] :dequeue_member_request Dequeue member request details
   # @return [QueueMember]
   describe 'dequeue_a_member test' do
     before do
@@ -229,11 +228,8 @@ describe 'DefaultApi' do
       @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::QUEUE_MEMBER_RESULT, :status => 200, :headers => {})
       queue_id = 'MOCK_QUEUE_ID' # String | String that uniquely identifies the Queue that the Member belongs to.
       call_id = 'MOCK_CALL_ID' # String | ID if the Call that the Member belongs to
-      opts = {
-        dequeue_member_request: Freeclimb::DequeueMemberRequest.new # DequeueMemberRequest | Dequeue member request details
-      }
 
-      @result = @api_instance.dequeue_a_member(queue_id, call_id, opts)
+      @result = @api_instance.dequeue_a_member(queue_id, call_id)
     end
    
     it 'should respond with a queue member' do
@@ -249,18 +245,14 @@ describe 'DefaultApi' do
   # Dequeue Head Member
   # @param queue_id String that uniquely identifies this queue resource.
   # @param [Hash] opts the optional parameters
-  # @option opts [DequeueMemberRequest] :dequeue_member_request Dequeue head member request details
   # @return [QueueMember]
   describe 'dequeue_head_member test' do
     before do
       uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Queues/{queueId}/Members/Front"
       @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::QUEUE_MEMBER_RESULT, :status => 200, :headers => {})
       queue_id = 'MOCK_QUEUE_ID' # String | String that uniquely identifies the Queue that the Member belongs to.
-      opts = {
-        dequeue_member_request: Freeclimb::DequeueMemberRequest.new # DequeueMemberRequest | Dequeue member request details
-      }
 
-      @result = @api_instance.dequeue_head_member(queue_id, opts)
+      @result = @api_instance.dequeue_head_member(queue_id)
     end
    
     it 'should respond with a queue member' do

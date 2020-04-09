@@ -29,9 +29,6 @@ module Freeclimb
     # This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below).
     attr_accessor :status_callback_url
 
-    # The requestId for this request starting with prefix \"RQ\" followed by 40 hexadecimal characters. FreeClimb logs generated while processing this request will include this requestId. If it is not provided, FreeClimb will generate a requestId and return it as a header in the response (e.g., X-Pulse-Request-Id: <requestId>).
-    attr_accessor :request_id
-
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -61,8 +58,7 @@ module Freeclimb
         :'play_beep' => :'playBeep',
         :'record' => :'record',
         :'wait_url' => :'waitUrl',
-        :'status_callback_url' => :'statusCallbackUrl',
-        :'request_id' => :'requestId'
+        :'status_callback_url' => :'statusCallbackUrl'
       }
     end
 
@@ -73,8 +69,7 @@ module Freeclimb
         :'play_beep' => :'String',
         :'record' => :'Boolean',
         :'wait_url' => :'String',
-        :'status_callback_url' => :'String',
-        :'request_id' => :'String'
+        :'status_callback_url' => :'String'
       }
     end
 
@@ -120,10 +115,6 @@ module Freeclimb
       if attributes.key?(:'status_callback_url')
         self.status_callback_url = attributes[:'status_callback_url']
       end
-
-      if attributes.key?(:'request_id')
-        self.request_id = attributes[:'request_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -160,8 +151,7 @@ module Freeclimb
           play_beep == o.play_beep &&
           record == o.record &&
           wait_url == o.wait_url &&
-          status_callback_url == o.status_callback_url &&
-          request_id == o.request_id
+          status_callback_url == o.status_callback_url
     end
 
     # @see the `==` method
@@ -173,7 +163,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [_alias, play_beep, record, wait_url, status_callback_url, request_id].hash
+      [_alias, play_beep, record, wait_url, status_callback_url].hash
     end
 
     # Builds the object from hash

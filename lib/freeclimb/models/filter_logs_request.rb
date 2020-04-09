@@ -17,22 +17,17 @@ module Freeclimb
     # The filter query for retrieving logs. See **Performance Query Language** below.
     attr_accessor :pql
 
-    # RequestId for this request starting with prefix *RQ* followed by 40 hexadecimal characters. FreeClimb logs generated while processing this request will include this requestId. If it is not provided, FreeClimb will generate a requestId and return it as a header in the response (e.g., X-Pulse-Request-Id: <requestId>).
-    attr_accessor :request_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pql' => :'pql',
-        :'request_id' => :'requestId'
+        :'pql' => :'pql'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pql' => :'String',
-        :'request_id' => :'String'
+        :'pql' => :'String'
       }
     end
 
@@ -60,10 +55,6 @@ module Freeclimb
       if attributes.key?(:'pql')
         self.pql = attributes[:'pql']
       end
-
-      if attributes.key?(:'request_id')
-        self.request_id = attributes[:'request_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -89,8 +80,7 @@ module Freeclimb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pql == o.pql &&
-          request_id == o.request_id
+          pql == o.pql
     end
 
     # @see the `==` method
@@ -102,7 +92,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pql, request_id].hash
+      [pql].hash
     end
 
     # Builds the object from hash
