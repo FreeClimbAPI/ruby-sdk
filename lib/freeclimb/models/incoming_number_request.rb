@@ -20,15 +20,11 @@ module Freeclimb
     # Description for this phone number.
     attr_accessor :_alias
 
-    # RequestId for this request starting with prefix `RQ` followed by 40 hexadecimal characters. FreeClimb logs that are generated while processing this request will include this requestId. If it is not provided, FreeClimb will generate a requestId and return it as a header in the response (e.g., `X-Pulse-Request-Id: <requestId>`).
-    attr_accessor :request_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'application_id' => :'applicationId',
-        :'_alias' => :'alias',
-        :'request_id' => :'requestID'
+        :'_alias' => :'alias'
       }
     end
 
@@ -36,8 +32,7 @@ module Freeclimb
     def self.openapi_types
       {
         :'application_id' => :'String',
-        :'_alias' => :'String',
-        :'request_id' => :'String'
+        :'_alias' => :'String'
       }
     end
 
@@ -69,10 +64,6 @@ module Freeclimb
       if attributes.key?(:'_alias')
         self._alias = attributes[:'_alias']
       end
-
-      if attributes.key?(:'request_id')
-        self.request_id = attributes[:'request_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -94,8 +85,7 @@ module Freeclimb
       return true if self.equal?(o)
       self.class == o.class &&
           application_id == o.application_id &&
-          _alias == o._alias &&
-          request_id == o.request_id
+          _alias == o._alias
     end
 
     # @see the `==` method
@@ -107,7 +97,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [application_id, _alias, request_id].hash
+      [application_id, _alias].hash
     end
 
     # Builds the object from hash

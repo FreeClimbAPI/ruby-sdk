@@ -20,15 +20,11 @@ module Freeclimb
     # Group to which this account belongs.
     attr_accessor :label
 
-    # RequestId for this request starting with prefix *RQ* followed by 40 hexadecimal characters. FreeClimb logs generated while processing this request will include this requestId. If it is not provided, FreeClimb will generate a requestId and return it as a header in the response, e.g. X-Pulse-Request-Id: <requestId>
-    attr_accessor :request_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'_alias' => :'alias',
-        :'label' => :'label',
-        :'request_id' => :'requestId'
+        :'label' => :'label'
       }
     end
 
@@ -36,8 +32,7 @@ module Freeclimb
     def self.openapi_types
       {
         :'_alias' => :'String',
-        :'label' => :'String',
-        :'request_id' => :'String'
+        :'label' => :'String'
       }
     end
 
@@ -69,10 +64,6 @@ module Freeclimb
       if attributes.key?(:'label')
         self.label = attributes[:'label']
       end
-
-      if attributes.key?(:'request_id')
-        self.request_id = attributes[:'request_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -94,8 +85,7 @@ module Freeclimb
       return true if self.equal?(o)
       self.class == o.class &&
           _alias == o._alias &&
-          label == o.label &&
-          request_id == o.request_id
+          label == o.label
     end
 
     # @see the `==` method
@@ -107,7 +97,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [_alias, label, request_id].hash
+      [_alias, label].hash
     end
 
     # Builds the object from hash

@@ -17,9 +17,6 @@ module Freeclimb
     # Either `canceled` or `completed`.  Specifying `canceled` attempts to hang up calls that are queued without affecting calls already in progress. Specifying `completed` attempts to hang up a call already in progress.
     attr_accessor :status
 
-    # RequestId for this request starting with prefix `RQ` followed by 40 hexadecimal characters. FreeClimb logs generated while processing this request will include this requestId. If it is not provided, FreeClimb will generate a requestId and return it as a header in the response (e.g. `X-Pulse-Request-Id: <requestId>`).
-    attr_accessor :request_id
-
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -45,16 +42,14 @@ module Freeclimb
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'status' => :'status',
-        :'request_id' => :'requestId'
+        :'status' => :'status'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'status' => :'String',
-        :'request_id' => :'String'
+        :'status' => :'String'
       }
     end
 
@@ -81,10 +76,6 @@ module Freeclimb
 
       if attributes.key?(:'status')
         self.status = attributes[:'status']
-      end
-
-      if attributes.key?(:'request_id')
-        self.request_id = attributes[:'request_id']
       end
     end
 
@@ -123,8 +114,7 @@ module Freeclimb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          status == o.status &&
-          request_id == o.request_id
+          status == o.status
     end
 
     # @see the `==` method
@@ -136,7 +126,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [status, request_id].hash
+      [status].hash
     end
 
     # Builds the object from hash

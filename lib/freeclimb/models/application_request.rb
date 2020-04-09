@@ -35,9 +35,6 @@ module Freeclimb
     # The URL that FreeClimb will request if it times out waiting for a response from the smsUrl. Used for inbound SMS only.  Note: Any PerCL returned will be ignored.
     attr_accessor :sms_fallback_url
 
-    # The requestId for this request starting with prefix \"RQ\" followed by 40 hexadecimal characters. FreeClimb logs generated while processing this request will include this requestId. If it is not provided, FreeClimb will generate a requestId and return it as a header in the response, e.g. X-Pulse-Request-Id: <requestId>
-    attr_accessor :request_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -47,8 +44,7 @@ module Freeclimb
         :'call_connect_url' => :'callConnectUrl',
         :'status_callback_url' => :'statusCallbackUrl',
         :'sms_url' => :'smsUrl',
-        :'sms_fallback_url' => :'smsFallbackUrl',
-        :'request_id' => :'requestId'
+        :'sms_fallback_url' => :'smsFallbackUrl'
       }
     end
 
@@ -61,8 +57,7 @@ module Freeclimb
         :'call_connect_url' => :'String',
         :'status_callback_url' => :'String',
         :'sms_url' => :'String',
-        :'sms_fallback_url' => :'String',
-        :'request_id' => :'String'
+        :'sms_fallback_url' => :'String'
       }
     end
 
@@ -114,10 +109,6 @@ module Freeclimb
       if attributes.key?(:'sms_fallback_url')
         self.sms_fallback_url = attributes[:'sms_fallback_url']
       end
-
-      if attributes.key?(:'request_id')
-        self.request_id = attributes[:'request_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -144,8 +135,7 @@ module Freeclimb
           call_connect_url == o.call_connect_url &&
           status_callback_url == o.status_callback_url &&
           sms_url == o.sms_url &&
-          sms_fallback_url == o.sms_fallback_url &&
-          request_id == o.request_id
+          sms_fallback_url == o.sms_fallback_url
     end
 
     # @see the `==` method
@@ -157,7 +147,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [_alias, voice_url, voice_fallback_url, call_connect_url, status_callback_url, sms_url, sms_fallback_url, request_id].hash
+      [_alias, voice_url, voice_fallback_url, call_connect_url, status_callback_url, sms_url, sms_fallback_url].hash
     end
 
     # Builds the object from hash

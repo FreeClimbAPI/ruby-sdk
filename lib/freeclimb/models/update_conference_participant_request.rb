@@ -20,15 +20,11 @@ module Freeclimb
     # (Optional) Default is `true`. Setting to `false` silences the Conference for this Participant. FreeClimb returns an error and ignores any other value.
     attr_accessor :listen
 
-    # ID of this request starting with prefix *RQ* followed by 40 hexadecimal characters. FreeClimb logs generated while processing this request include this requestId. If this value is not provided, FreeClimb generates a requestId and returns it as a header in the response (e.g., X-Pulse-Request-Id: <requestId>).
-    attr_accessor :request_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'talk' => :'talk',
-        :'listen' => :'listen',
-        :'request_id' => :'requestId'
+        :'listen' => :'listen'
       }
     end
 
@@ -36,8 +32,7 @@ module Freeclimb
     def self.openapi_types
       {
         :'talk' => :'Boolean',
-        :'listen' => :'Boolean',
-        :'request_id' => :'String'
+        :'listen' => :'Boolean'
       }
     end
 
@@ -69,10 +64,6 @@ module Freeclimb
       if attributes.key?(:'listen')
         self.listen = attributes[:'listen']
       end
-
-      if attributes.key?(:'request_id')
-        self.request_id = attributes[:'request_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -94,8 +85,7 @@ module Freeclimb
       return true if self.equal?(o)
       self.class == o.class &&
           talk == o.talk &&
-          listen == o.listen &&
-          request_id == o.request_id
+          listen == o.listen
     end
 
     # @see the `==` method
@@ -107,7 +97,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [talk, listen, request_id].hash
+      [talk, listen].hash
     end
 
     # Builds the object from hash

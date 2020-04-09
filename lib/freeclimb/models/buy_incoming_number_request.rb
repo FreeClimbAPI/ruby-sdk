@@ -23,16 +23,12 @@ module Freeclimb
     # ID of the application that should handle phone calls to the number.
     attr_accessor :application_id
 
-    # RequestId for this request starting with prefix `RQ` followed by 40 hexadecimal characters. FreeClimb logs generated while processing this request will include this requestId. If it is not provided, FreeClimb will generate a requestId and return it as a header in the response, (e.g., `X-Pulse-Request-Id: <requestId>`).
-    attr_accessor :request_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'phone_number' => :'phoneNumber',
         :'_alias' => :'alias',
-        :'application_id' => :'applicationId',
-        :'request_id' => :'requestId'
+        :'application_id' => :'applicationId'
       }
     end
 
@@ -41,8 +37,7 @@ module Freeclimb
       {
         :'phone_number' => :'String',
         :'_alias' => :'String',
-        :'application_id' => :'String',
-        :'request_id' => :'String'
+        :'application_id' => :'String'
       }
     end
 
@@ -78,10 +73,6 @@ module Freeclimb
       if attributes.key?(:'application_id')
         self.application_id = attributes[:'application_id']
       end
-
-      if attributes.key?(:'request_id')
-        self.request_id = attributes[:'request_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -109,8 +100,7 @@ module Freeclimb
       self.class == o.class &&
           phone_number == o.phone_number &&
           _alias == o._alias &&
-          application_id == o.application_id &&
-          request_id == o.request_id
+          application_id == o.application_id
     end
 
     # @see the `==` method
@@ -122,7 +112,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [phone_number, _alias, application_id, request_id].hash
+      [phone_number, _alias, application_id].hash
     end
 
     # Builds the object from hash

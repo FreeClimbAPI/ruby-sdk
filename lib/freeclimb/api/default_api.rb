@@ -488,7 +488,6 @@ module Freeclimb
     # @param queue_id [String] String that uniquely identifies the Queue that the Member belongs to.
     # @param call_id [String] ID if the Call that the Member belongs to
     # @param [Hash] opts the optional parameters
-    # @option opts [DequeueMemberRequest] :dequeue_member_request Dequeue member request details
     # @return [QueueMember]
     def dequeue_a_member(queue_id, call_id, opts = {})
       data, _status_code, _headers = dequeue_a_member_with_http_info(queue_id, call_id, opts)
@@ -499,7 +498,6 @@ module Freeclimb
     # @param queue_id [String] String that uniquely identifies the Queue that the Member belongs to.
     # @param call_id [String] ID if the Call that the Member belongs to
     # @param [Hash] opts the optional parameters
-    # @option opts [DequeueMemberRequest] :dequeue_member_request Dequeue member request details
     # @return [Array<(QueueMember, Integer, Hash)>] QueueMember data, response status code and response headers
     def dequeue_a_member_with_http_info(queue_id, call_id, opts = {})
       if @api_client.config.debugging
@@ -523,14 +521,12 @@ module Freeclimb
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(opts[:'dequeue_member_request']) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'QueueMember' 
@@ -557,7 +553,6 @@ module Freeclimb
     # Dequeue Head Member
     # @param queue_id [String] String that uniquely identifies this queue resource.
     # @param [Hash] opts the optional parameters
-    # @option opts [DequeueMemberRequest] :dequeue_member_request Dequeue head member request details
     # @return [QueueMember]
     def dequeue_head_member(queue_id, opts = {})
       data, _status_code, _headers = dequeue_head_member_with_http_info(queue_id, opts)
@@ -567,7 +562,6 @@ module Freeclimb
     # Dequeue Head Member
     # @param queue_id [String] String that uniquely identifies this queue resource.
     # @param [Hash] opts the optional parameters
-    # @option opts [DequeueMemberRequest] :dequeue_member_request Dequeue head member request details
     # @return [Array<(QueueMember, Integer, Hash)>] QueueMember data, response status code and response headers
     def dequeue_head_member_with_http_info(queue_id, opts = {})
       if @api_client.config.debugging
@@ -587,14 +581,12 @@ module Freeclimb
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(opts[:'dequeue_member_request']) 
+      post_body = opts[:body] 
 
       # return_type
       return_type = opts[:return_type] || 'QueueMember' 

@@ -38,9 +38,6 @@ module Freeclimb
     # When the Message changes status, this URL is invoked using HTTP POST with the messageStatus parameters.  **Note:** This is a notification only; any PerCL returned is ignored.
     attr_accessor :notification_url
 
-    # RequestId for this request, starting with prefix *RQ* followed by 40 hexadecimal characters. FreeClimb logs generated while processing this request include this requestId. If it is not provided, FreeClimb will generate a requestId and return it as a header in the response (e.g., X-Pulse-Request-Id: <requestId>).
-    attr_accessor :request_id
-
     # String that uniquely identifies this account resource.
     attr_accessor :account_id
 
@@ -55,7 +52,6 @@ module Freeclimb
         :'to' => :'to',
         :'text' => :'text',
         :'notification_url' => :'notificationUrl',
-        :'request_id' => :'requestId',
         :'account_id' => :'accountId'
       }
     end
@@ -71,7 +67,6 @@ module Freeclimb
         :'to' => :'String',
         :'text' => :'String',
         :'notification_url' => :'String',
-        :'request_id' => :'String',
         :'account_id' => :'String'
       }
     end
@@ -137,10 +132,6 @@ module Freeclimb
         self.notification_url = attributes[:'notification_url']
       end
 
-      if attributes.key?(:'request_id')
-        self.request_id = attributes[:'request_id']
-      end
-
       if attributes.key?(:'account_id')
         self.account_id = attributes[:'account_id']
       end
@@ -187,7 +178,6 @@ module Freeclimb
           to == o.to &&
           text == o.text &&
           notification_url == o.notification_url &&
-          request_id == o.request_id &&
           account_id == o.account_id
     end
 
@@ -200,7 +190,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, from, to, text, notification_url, request_id, account_id].hash
+      [uri, date_created, date_updated, revision, from, to, text, notification_url, account_id].hash
     end
 
     # Builds the object from hash

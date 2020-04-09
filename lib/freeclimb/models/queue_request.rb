@@ -20,15 +20,11 @@ module Freeclimb
     # Maximum number of calls this queue can hold. Default is 100. Maximum is 1000. **Note:** Reducing the maxSize of a Queue causes the Queue to reject incoming requests until it shrinks below the new value of maxSize.
     attr_accessor :max_size
 
-    # RequestId for this request, starting with prefix *RQ* followed by 40 hexadecimal characters. FreeClimb logs generated while processing this request include this requestId. If this parameter is not provided, FreeClimb generates a requestId and returns it as a header in the response (e.g., X-Pulse-Request-Id: <requestId>).
-    attr_accessor :request_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'_alias' => :'alias',
-        :'max_size' => :'maxSize',
-        :'request_id' => :'requestId'
+        :'max_size' => :'maxSize'
       }
     end
 
@@ -36,8 +32,7 @@ module Freeclimb
     def self.openapi_types
       {
         :'_alias' => :'String',
-        :'max_size' => :'Integer',
-        :'request_id' => :'String'
+        :'max_size' => :'Integer'
       }
     end
 
@@ -69,10 +64,6 @@ module Freeclimb
       if attributes.key?(:'max_size')
         self.max_size = attributes[:'max_size']
       end
-
-      if attributes.key?(:'request_id')
-        self.request_id = attributes[:'request_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -94,8 +85,7 @@ module Freeclimb
       return true if self.equal?(o)
       self.class == o.class &&
           _alias == o._alias &&
-          max_size == o.max_size &&
-          request_id == o.request_id
+          max_size == o.max_size
     end
 
     # @see the `==` method
@@ -107,7 +97,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [_alias, max_size, request_id].hash
+      [_alias, max_size].hash
     end
 
     # Builds the object from hash
