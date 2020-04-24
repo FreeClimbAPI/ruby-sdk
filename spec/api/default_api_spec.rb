@@ -52,11 +52,9 @@ describe 'DefaultApi' do
     before do
       uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/IncomingPhoneNumbers"
       @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::INCOMING_PHONE_NUMBER, :status => 200, :headers => {})
-      opts = {
-        buy_incoming_number_request: Freeclimb::BuyIncomingNumberRequest.new # BuyIncomingNumberRequest | Incoming Number transaction details
-      }
+      buy_incoming_number_request = Freeclimb::BuyIncomingNumberRequest.new # BuyIncomingNumberRequest | Incoming Number transaction details
       #Buy a Phone Number
-      @result = @api_instance.buy_a_phone_number(opts)
+      @result = @api_instance.buy_a_phone_number(buy_incoming_number_request)
     end
    
 
@@ -292,11 +290,9 @@ describe 'DefaultApi' do
     before do
       uri_template = Addressable::Template.new "#{API_SERVER}/Accounts/{accountId}/Logs"
       @stub = stub_request(:post, uri_template).to_return(:body => ResponseMocks::LOG_LIST_RESULT, :status => 200, :headers => {})
-      opts = {
-        filter_logs_request: Freeclimb::FilterLogsRequest.new # FilterLogsRequest | Filter logs request paramters
-      }
+      filter_logs_request = Freeclimb::FilterLogsRequest.new # FilterLogsRequest | Filter logs request paramters
       
-      @result = @api_instance.filter_logs(opts)
+      @result = @api_instance.filter_logs(filter_logs_request)
     end
    
     it 'should respond with a list of logs' do
@@ -941,11 +937,7 @@ describe 'DefaultApi' do
       request_body.from ='MOCK_FROM_NUMBER'
       request_body.text = 'MOCK_TEXT'
 
-      opts = {
-        message_request: request_body # MessageRequest | Details to create a message
-      }
-
-      @result = @api_instance.send_an_sms_message(opts)
+      @result = @api_instance.send_an_sms_message(request_body)
     end
 
     it 'should respond with Message result' do
@@ -1012,7 +1004,8 @@ describe 'DefaultApi' do
       @stub = stub_request(:post, uri_template).to_return(:body => '{}', :status => 202, :headers => {})
 
       call_id = 'MOCK_CALL_ID'
-      @result = @api_instance.update_a_live_call(call_id)
+      call_request = Freeclimb::UpdateCallRequest.new
+      @result = @api_instance.update_a_live_call(call_id, call_request)
     end
 
     it 'should make a POST request to /Accounts/{accountId}/Calls/{callId}' do

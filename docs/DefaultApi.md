@@ -102,7 +102,7 @@ This endpoint does not need any parameter.
 
 ## buy_a_phone_number
 
-> IncomingNumberResult buy_a_phone_number(opts)
+> IncomingNumberResult buy_a_phone_number(buy_incoming_number_request)
 
 Buy a Phone Number
 
@@ -119,13 +119,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-opts = {
-  buy_incoming_number_request: Freeclimb::BuyIncomingNumberRequest.new # BuyIncomingNumberRequest | Incoming Number transaction details
-}
+buy_incoming_number_request = Freeclimb::BuyIncomingNumberRequest.new # BuyIncomingNumberRequest | Incoming Number transaction details
 
 begin
   #Buy a Phone Number
-  result = api_instance.buy_a_phone_number(opts)
+  result = api_instance.buy_a_phone_number(buy_incoming_number_request)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->buy_a_phone_number: #{e}"
@@ -137,7 +135,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buy_incoming_number_request** | [**BuyIncomingNumberRequest**](BuyIncomingNumberRequest.md)| Incoming Number transaction details | [optional] 
+ **buy_incoming_number_request** | [**BuyIncomingNumberRequest**](BuyIncomingNumberRequest.md)| Incoming Number transaction details | 
 
 ### Return type
 
@@ -619,7 +617,7 @@ Name | Type | Description  | Notes
 
 ## filter_logs
 
-> LogList filter_logs(opts)
+> LogList filter_logs(filter_logs_request)
 
 Filter Logs
 
@@ -636,13 +634,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-opts = {
-  filter_logs_request: Freeclimb::FilterLogsRequest.new # FilterLogsRequest | Filter logs request paramters
-}
+filter_logs_request = Freeclimb::FilterLogsRequest.new # FilterLogsRequest | Filter logs request paramters
 
 begin
   #Filter Logs
-  result = api_instance.filter_logs(opts)
+  result = api_instance.filter_logs(filter_logs_request)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->filter_logs: #{e}"
@@ -654,7 +650,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter_logs_request** | [**FilterLogsRequest**](FilterLogsRequest.md)| Filter logs request paramters | [optional] 
+ **filter_logs_request** | [**FilterLogsRequest**](FilterLogsRequest.md)| Filter logs request paramters | 
 
 ### Return type
 
@@ -2010,7 +2006,7 @@ nil (empty response body)
 
 ## send_an_sms_message
 
-> MessageResult send_an_sms_message(opts)
+> MessageResult send_an_sms_message(message_request)
 
 Send an SMS Message
 
@@ -2027,13 +2023,11 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-opts = {
-  message_request: Freeclimb::MessageRequest.new # MessageRequest | Details to create a message
-}
+message_request = Freeclimb::MessageRequest.new # MessageRequest | Details to create a message
 
 begin
   #Send an SMS Message
-  result = api_instance.send_an_sms_message(opts)
+  result = api_instance.send_an_sms_message(message_request)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->send_an_sms_message: #{e}"
@@ -2045,7 +2039,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **message_request** | [**MessageRequest**](MessageRequest.md)| Details to create a message | [optional] 
+ **message_request** | [**MessageRequest**](MessageRequest.md)| Details to create a message | 
 
 ### Return type
 
@@ -2169,7 +2163,7 @@ Name | Type | Description  | Notes
 
 ## update_a_live_call
 
-> update_a_live_call(call_id, opts)
+> update_a_live_call(call_id, update_call_request)
 
 Update a Live Call
 
@@ -2187,13 +2181,11 @@ end
 
 api_instance = Freeclimb::DefaultApi.new
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
-opts = {
-  update_call_request: Freeclimb::UpdateCallRequest.new # UpdateCallRequest | Call details to update
-}
+update_call_request = Freeclimb::UpdateCallRequest.new # UpdateCallRequest | Call details to update
 
 begin
   #Update a Live Call
-  api_instance.update_a_live_call(call_id, opts)
+  api_instance.update_a_live_call(call_id, update_call_request)
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->update_a_live_call: #{e}"
 end
@@ -2205,7 +2197,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **String**| String that uniquely identifies this call resource. | 
- **update_call_request** | [**UpdateCallRequest**](UpdateCallRequest.md)| Call details to update | [optional] 
+ **update_call_request** | [**UpdateCallRequest**](UpdateCallRequest.md)| Call details to update | 
 
 ### Return type
 
