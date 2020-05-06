@@ -79,21 +79,25 @@ module Freeclimb
     end
 
     # Buy a Phone Number
+    # @param buy_incoming_number_request [BuyIncomingNumberRequest] Incoming Number transaction details
     # @param [Hash] opts the optional parameters
-    # @option opts [BuyIncomingNumberRequest] :buy_incoming_number_request Incoming Number transaction details
     # @return [IncomingNumberResult]
-    def buy_a_phone_number(opts = {})
-      data, _status_code, _headers = buy_a_phone_number_with_http_info(opts)
+    def buy_a_phone_number(buy_incoming_number_request, opts = {})
+      data, _status_code, _headers = buy_a_phone_number_with_http_info(buy_incoming_number_request, opts)
       data
     end
 
     # Buy a Phone Number
+    # @param buy_incoming_number_request [BuyIncomingNumberRequest] Incoming Number transaction details
     # @param [Hash] opts the optional parameters
-    # @option opts [BuyIncomingNumberRequest] :buy_incoming_number_request Incoming Number transaction details
     # @return [Array<(IncomingNumberResult, Integer, Hash)>] IncomingNumberResult data, response status code and response headers
-    def buy_a_phone_number_with_http_info(opts = {})
+    def buy_a_phone_number_with_http_info(buy_incoming_number_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.buy_a_phone_number ...'
+      end
+      # verify the required parameter 'buy_incoming_number_request' is set
+      if @api_client.config.client_side_validation && buy_incoming_number_request.nil?
+        fail ArgumentError, "Missing the required parameter 'buy_incoming_number_request' when calling DefaultApi.buy_a_phone_number"
       end
       # resource path
       local_var_path = '/Accounts/{accountId}/IncomingPhoneNumbers'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
@@ -112,7 +116,7 @@ module Freeclimb
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(opts[:'buy_incoming_number_request']) 
+      post_body = opts[:body] || @api_client.object_to_http_body(buy_incoming_number_request) 
 
       # return_type
       return_type = opts[:return_type] || 'IncomingNumberResult' 
@@ -671,21 +675,25 @@ module Freeclimb
     end
 
     # Filter Logs
+    # @param filter_logs_request [FilterLogsRequest] Filter logs request paramters
     # @param [Hash] opts the optional parameters
-    # @option opts [FilterLogsRequest] :filter_logs_request Filter logs request paramters
     # @return [LogList]
-    def filter_logs(opts = {})
-      data, _status_code, _headers = filter_logs_with_http_info(opts)
+    def filter_logs(filter_logs_request, opts = {})
+      data, _status_code, _headers = filter_logs_with_http_info(filter_logs_request, opts)
       data
     end
 
     # Filter Logs
+    # @param filter_logs_request [FilterLogsRequest] Filter logs request paramters
     # @param [Hash] opts the optional parameters
-    # @option opts [FilterLogsRequest] :filter_logs_request Filter logs request paramters
     # @return [Array<(LogList, Integer, Hash)>] LogList data, response status code and response headers
-    def filter_logs_with_http_info(opts = {})
+    def filter_logs_with_http_info(filter_logs_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.filter_logs ...'
+      end
+      # verify the required parameter 'filter_logs_request' is set
+      if @api_client.config.client_side_validation && filter_logs_request.nil?
+        fail ArgumentError, "Missing the required parameter 'filter_logs_request' when calling DefaultApi.filter_logs"
       end
       # resource path
       local_var_path = '/Accounts/{accountId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
@@ -704,7 +712,7 @@ module Freeclimb
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(opts[:'filter_logs_request']) 
+      post_body = opts[:body] || @api_client.object_to_http_body(filter_logs_request) 
 
       # return_type
       return_type = opts[:return_type] || 'LogList' 
@@ -2273,21 +2281,25 @@ module Freeclimb
     end
 
     # Send an SMS Message
+    # @param message_request [MessageRequest] Details to create a message
     # @param [Hash] opts the optional parameters
-    # @option opts [MessageRequest] :message_request Details to create a message
     # @return [MessageResult]
-    def send_an_sms_message(opts = {})
-      data, _status_code, _headers = send_an_sms_message_with_http_info(opts)
+    def send_an_sms_message(message_request, opts = {})
+      data, _status_code, _headers = send_an_sms_message_with_http_info(message_request, opts)
       data
     end
 
     # Send an SMS Message
+    # @param message_request [MessageRequest] Details to create a message
     # @param [Hash] opts the optional parameters
-    # @option opts [MessageRequest] :message_request Details to create a message
     # @return [Array<(MessageResult, Integer, Hash)>] MessageResult data, response status code and response headers
-    def send_an_sms_message_with_http_info(opts = {})
+    def send_an_sms_message_with_http_info(message_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.send_an_sms_message ...'
+      end
+      # verify the required parameter 'message_request' is set
+      if @api_client.config.client_side_validation && message_request.nil?
+        fail ArgumentError, "Missing the required parameter 'message_request' when calling DefaultApi.send_an_sms_message"
       end
       # resource path
       local_var_path = '/Accounts/{accountId}/Messages'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
@@ -2306,7 +2318,7 @@ module Freeclimb
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(opts[:'message_request']) 
+      post_body = opts[:body] || @api_client.object_to_http_body(message_request) 
 
       # return_type
       return_type = opts[:return_type] || 'MessageResult' 
@@ -2456,26 +2468,30 @@ module Freeclimb
 
     # Update a Live Call
     # @param call_id [String] String that uniquely identifies this call resource.
+    # @param update_call_request [UpdateCallRequest] Call details to update
     # @param [Hash] opts the optional parameters
-    # @option opts [UpdateCallRequest] :update_call_request Call details to update
     # @return [nil]
-    def update_a_live_call(call_id, opts = {})
-      update_a_live_call_with_http_info(call_id, opts)
+    def update_a_live_call(call_id, update_call_request, opts = {})
+      update_a_live_call_with_http_info(call_id, update_call_request, opts)
       nil
     end
 
     # Update a Live Call
     # @param call_id [String] String that uniquely identifies this call resource.
+    # @param update_call_request [UpdateCallRequest] Call details to update
     # @param [Hash] opts the optional parameters
-    # @option opts [UpdateCallRequest] :update_call_request Call details to update
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def update_a_live_call_with_http_info(call_id, opts = {})
+    def update_a_live_call_with_http_info(call_id, update_call_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.update_a_live_call ...'
       end
       # verify the required parameter 'call_id' is set
       if @api_client.config.client_side_validation && call_id.nil?
         fail ArgumentError, "Missing the required parameter 'call_id' when calling DefaultApi.update_a_live_call"
+      end
+      # verify the required parameter 'update_call_request' is set
+      if @api_client.config.client_side_validation && update_call_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_call_request' when calling DefaultApi.update_a_live_call"
       end
       # resource path
       local_var_path = '/Accounts/{accountId}/Calls/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
@@ -2492,7 +2508,7 @@ module Freeclimb
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(opts[:'update_call_request']) 
+      post_body = opts[:body] || @api_client.object_to_http_body(update_call_request) 
 
       # return_type
       return_type = opts[:return_type] 
