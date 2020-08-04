@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::FilterLogsRequest.new(pql: nil)
+instance = Freeclimb::FilterLogsRequest.new(pql: null)
 ```
 
 

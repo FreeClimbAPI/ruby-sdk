@@ -42,6 +42,9 @@ module Freeclimb
     # Maximum time in seconds the `OutDial` command waits for the called party to answer the Call. When a timeout occurs, FreeClimb invokes the `callConnectUrl` Webhook to report that the out-dialed Call has ended with a status of `noAnswer`.
     attr_accessor :timeout
 
+    # Parameter `privacyMode` will not log the `text` as required by PCI compliance.
+    attr_accessor :privacy_mode
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -53,7 +56,8 @@ module Freeclimb
         :'if_machine_url' => :'ifMachineUrl',
         :'send_digits' => :'sendDigits',
         :'status_callback_url' => :'statusCallbackUrl',
-        :'timeout' => :'timeout'
+        :'timeout' => :'timeout',
+        :'privacy_mode' => :'privacyMode'
       }
     end
 
@@ -68,7 +72,8 @@ module Freeclimb
         :'if_machine_url' => :'String',
         :'send_digits' => :'String',
         :'status_callback_url' => :'String',
-        :'timeout' => :'Integer'
+        :'timeout' => :'Integer',
+        :'privacy_mode' => :'Boolean'
       }
     end
 
@@ -139,6 +144,10 @@ module Freeclimb
       if attributes.key?(:'timeout')
         self.timeout = attributes[:'timeout']
       end
+
+      if attributes.key?(:'privacy_mode')
+        self.privacy_mode = attributes[:'privacy_mode']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -187,7 +196,8 @@ module Freeclimb
           if_machine_url == o.if_machine_url &&
           send_digits == o.send_digits &&
           status_callback_url == o.status_callback_url &&
-          timeout == o.timeout && super(o)
+          timeout == o.timeout &&
+          privacy_mode == o.privacy_mode && super(o)
     end
 
     # @see the `==` method
@@ -199,7 +209,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [action_url, call_connect_url, calling_number, destination, if_machine, if_machine_url, send_digits, status_callback_url, timeout].hash
+      [action_url, call_connect_url, calling_number, destination, if_machine, if_machine_url, send_digits, status_callback_url, timeout, privacy_mode].hash
     end
 
     # Builds the object from hash

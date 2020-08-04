@@ -18,18 +18,18 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::ConferenceResultAllOf.new(conference_id: nil,
-                                 account_id: nil,
-                                 _alias: nil,
-                                 play_beep: nil,
-                                 record: nil,
-                                 status: nil,
-                                 wait_url: nil,
-                                 action_url: nil,
-                                 status_callback_url: nil,
-                                 subresource_uris: nil)
+instance = Freeclimb::ConferenceResultAllOf.new(conference_id: null,
+                                 account_id: null,
+                                 _alias: null,
+                                 play_beep: null,
+                                 record: null,
+                                 status: null,
+                                 wait_url: null,
+                                 action_url: null,
+                                 status_callback_url: null,
+                                 subresource_uris: null)
 ```
 
 

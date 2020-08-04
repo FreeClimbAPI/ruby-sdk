@@ -23,23 +23,23 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::CallResultAllOf.new(call_id: nil,
-                                 parent_call_id: nil,
-                                 account_id: nil,
-                                 from: nil,
-                                 to: nil,
-                                 phone_number_id: nil,
-                                 status: nil,
-                                 start_time: nil,
-                                 connect_time: nil,
-                                 end_time: nil,
-                                 duration: nil,
-                                 connect_duration: nil,
-                                 direction: nil,
-                                 answered_by: nil,
-                                 subresource_uris: nil)
+instance = Freeclimb::CallResultAllOf.new(call_id: null,
+                                 parent_call_id: null,
+                                 account_id: null,
+                                 from: null,
+                                 to: null,
+                                 phone_number_id: null,
+                                 status: null,
+                                 start_time: null,
+                                 connect_time: null,
+                                 end_time: null,
+                                 duration: null,
+                                 connect_duration: null,
+                                 direction: null,
+                                 answered_by: null,
+                                 subresource_uris: null)
 ```
 
 

@@ -21,21 +21,21 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::IncomingNumberResult.new(uri: nil,
-                                 date_created: nil,
-                                 date_updated: nil,
-                                 revision: nil,
-                                 phone_number_id: nil,
-                                 account_id: nil,
-                                 application_id: nil,
-                                 phone_number: nil,
-                                 _alias: nil,
-                                 region: nil,
-                                 country: nil,
-                                 voice_enabled: nil,
-                                 sms_enabled: nil)
+instance = Freeclimb::IncomingNumberResult.new(uri: null,
+                                 date_created: null,
+                                 date_updated: null,
+                                 revision: null,
+                                 phone_number_id: null,
+                                 account_id: null,
+                                 application_id: null,
+                                 phone_number: null,
+                                 _alias: null,
+                                 region: null,
+                                 country: null,
+                                 voice_enabled: null,
+                                 sms_enabled: null)
 ```
 
 

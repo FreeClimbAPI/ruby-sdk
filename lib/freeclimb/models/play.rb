@@ -24,12 +24,16 @@ module Freeclimb
     # ID of the Conference the audio should be rendered to. If this is not specified, the audio is by default rendered to the caller associated with the call leg that corresponds to the current PerCL execution context. The call leg associated with this command must be in the specified Conference or the command will return an error.
     attr_accessor :conference_id
 
+    # Parameter `privacyMode` will not log the `text` as required by PCI compliance.
+    attr_accessor :privacy_mode
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'file' => :'file',
         :'loop' => :'loop',
-        :'conference_id' => :'conferenceId'
+        :'conference_id' => :'conferenceId',
+        :'privacy_mode' => :'privacyMode'
       }
     end
 
@@ -38,7 +42,8 @@ module Freeclimb
       {
         :'file' => :'String',
         :'loop' => :'Integer',
-        :'conference_id' => :'String'
+        :'conference_id' => :'String',
+        :'privacy_mode' => :'Boolean'
       }
     end
 
@@ -85,6 +90,10 @@ module Freeclimb
       if attributes.key?(:'conference_id')
         self.conference_id = attributes[:'conference_id']
       end
+
+      if attributes.key?(:'privacy_mode')
+        self.privacy_mode = attributes[:'privacy_mode']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -112,7 +121,8 @@ module Freeclimb
       self.class == o.class &&
           file == o.file &&
           loop == o.loop &&
-          conference_id == o.conference_id && super(o)
+          conference_id == o.conference_id &&
+          privacy_mode == o.privacy_mode && super(o)
     end
 
     # @see the `==` method
@@ -124,7 +134,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [file, loop, conference_id].hash
+      [file, loop, conference_id, privacy_mode].hash
     end
 
     # Builds the object from hash

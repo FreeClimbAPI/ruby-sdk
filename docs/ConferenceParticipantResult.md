@@ -18,18 +18,18 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::ConferenceParticipantResult.new(uri: nil,
-                                 date_created: nil,
-                                 date_updated: nil,
-                                 revision: nil,
-                                 account_id: nil,
-                                 conference_id: nil,
-                                 call_id: nil,
-                                 talk: nil,
-                                 listen: nil,
-                                 start_conf_on_enter: nil)
+instance = Freeclimb::ConferenceParticipantResult.new(uri: null,
+                                 date_created: null,
+                                 date_updated: null,
+                                 revision: null,
+                                 account_id: null,
+                                 conference_id: null,
+                                 call_id: null,
+                                 talk: null,
+                                 listen: null,
+                                 start_conf_on_enter: null)
 ```
 
 

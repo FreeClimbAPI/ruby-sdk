@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::LogListAllOf.new(logs: nil)
+instance = Freeclimb::LogListAllOf.new(logs: null)
 ```
 
 

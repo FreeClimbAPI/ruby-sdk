@@ -50,8 +50,8 @@ module Freeclimb
     # Parameter `speechIncompleteTimeoutMs` specifies the length of silence following user speech after which a recognizer finalizes a result. This timeout applies when the speech prior to the silence is an incomplete match of all active grammars. Timeout `speechIncompleteTimeoutMs` is usually longer than `speechCompleteTimeoutMs` to allow users to pause mid-utterance.
     attr_accessor :speech_incomplete_timeout_ms
 
-    # Parameter enforcePCI will not log the `text` as required by PCI compliance.
-    attr_accessor :enforce_pci
+    # Parameter privacyMode will not log the `text` as required by PCI compliance.
+    attr_accessor :privacy_mode
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -68,7 +68,7 @@ module Freeclimb
         :'sensitivity_level' => :'sensitivityLevel',
         :'speech_complete_timeout_ms' => :'speechCompleteTimeoutMs',
         :'speech_incomplete_timeout_ms' => :'speechIncompleteTimeoutMs',
-        :'enforce_pci' => :'enforcePCI'
+        :'privacy_mode' => :'privacyMode'
       }
     end
 
@@ -87,7 +87,7 @@ module Freeclimb
         :'sensitivity_level' => :'Float',
         :'speech_complete_timeout_ms' => :'Integer',
         :'speech_incomplete_timeout_ms' => :'Integer',
-        :'enforce_pci' => :'Boolean'
+        :'privacy_mode' => :'Boolean'
       }
     end
 
@@ -162,8 +162,8 @@ module Freeclimb
         self.speech_incomplete_timeout_ms = attributes[:'speech_incomplete_timeout_ms']
       end
 
-      if attributes.key?(:'enforce_pci')
-        self.enforce_pci = attributes[:'enforce_pci']
+      if attributes.key?(:'privacy_mode')
+        self.privacy_mode = attributes[:'privacy_mode']
       end
     end
 
@@ -207,7 +207,7 @@ module Freeclimb
           sensitivity_level == o.sensitivity_level &&
           speech_complete_timeout_ms == o.speech_complete_timeout_ms &&
           speech_incomplete_timeout_ms == o.speech_incomplete_timeout_ms &&
-          enforce_pci == o.enforce_pci
+          privacy_mode == o.privacy_mode
     end
 
     # @see the `==` method
@@ -219,7 +219,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [action_url, grammar_type, grammar_file, grammar_rule, play_beep, prompts, no_input_timeout_ms, recognition_timeout_ms, confidence_threshold, sensitivity_level, speech_complete_timeout_ms, speech_incomplete_timeout_ms, enforce_pci].hash
+      [action_url, grammar_type, grammar_file, grammar_rule, play_beep, prompts, no_input_timeout_ms, recognition_timeout_ms, confidence_threshold, sensitivity_level, speech_complete_timeout_ms, speech_incomplete_timeout_ms, privacy_mode].hash
     end
 
     # Builds the object from hash

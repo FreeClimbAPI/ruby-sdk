@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::CreateConferenceRequest.new(_alias: nil,
-                                 play_beep: nil,
-                                 record: nil,
-                                 wait_url: nil,
-                                 status_callback_url: nil)
+instance = Freeclimb::CreateConferenceRequest.new(_alias: null,
+                                 play_beep: null,
+                                 record: null,
+                                 wait_url: null,
+                                 status_callback_url: null)
 ```
 
 

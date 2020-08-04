@@ -12,20 +12,22 @@ Name | Type | Description | Notes
 **if_machine_url** | **String** | This attribute specifies a URL to which FreeClimb will make a POST request when an answering machine or a fax machine is detected. This URL is required if the ifMachine flag is set to redirect. When ifMachine is set to hangup, ifMachineUrl must not be included in the request. For more information, see **ifMachineUrl example** below. | [optional] 
 **timeout** | **Integer** | Number of seconds that FreeClimb should allow the phone to ring before assuming there is no answer. Default is 30 seconds. Maximum allowed ring-time is determined by the target phone&#39;s provider. Note that most providers limit ring-time to 120 seconds. | [optional] 
 **parent_call_id** | **String** | The ID of the parent Call in the case that this new Call is meant to be treated as a child of an existing Call. This attribute should be included when possible to reduce latency when adding child calls to Conferences containing the parent Call. A call can only be used as a parent once the call is in progress or as an inbound call that is still ringing.  An outbound call is considered to be in progress once the outdialConnect or outdialApiConnect webhook is invoked.  An inbound call is ringing when the inbound webhook is invoked. | [optional] 
+**privacy_mode** | **Boolean** | Activate privacy mode in order to obscure log data that can potentially expose private information. | [optional] 
 
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::MakeCallRequest.new(from: nil,
-                                 to: nil,
-                                 application_id: nil,
-                                 send_digits: nil,
-                                 if_machine: nil,
-                                 if_machine_url: nil,
-                                 timeout: nil,
-                                 parent_call_id: nil)
+instance = Freeclimb::MakeCallRequest.new(from: null,
+                                 to: null,
+                                 application_id: null,
+                                 send_digits: null,
+                                 if_machine: null,
+                                 if_machine_url: null,
+                                 timeout: null,
+                                 parent_call_id: null,
+                                 privacy_mode: null)
 ```
 
 

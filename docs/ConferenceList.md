@@ -16,16 +16,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::ConferenceList.new(total: nil,
-                                 start: nil,
-                                 _end: nil,
-                                 page: nil,
-                                 num_pages: nil,
-                                 page_size: nil,
-                                 next_page_uri: nil,
-                                 conferences: nil)
+instance = Freeclimb::ConferenceList.new(total: null,
+                                 start: null,
+                                 _end: null,
+                                 page: null,
+                                 num_pages: null,
+                                 page_size: null,
+                                 next_page_uri: null,
+                                 conferences: null)
 ```
 
 

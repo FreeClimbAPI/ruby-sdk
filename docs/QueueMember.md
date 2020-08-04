@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::QueueMember.new(uri: nil,
-                                 call_id: nil,
-                                 wait_time: nil,
-                                 position: nil,
-                                 date_enqueued: nil)
+instance = Freeclimb::QueueMember.new(uri: null,
+                                 call_id: null,
+                                 wait_time: null,
+                                 position: null,
+                                 date_enqueued: null)
 ```
 
 

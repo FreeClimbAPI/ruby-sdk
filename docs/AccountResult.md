@@ -19,19 +19,19 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::AccountResult.new(uri: nil,
-                                 date_created: nil,
-                                 date_updated: nil,
-                                 revision: nil,
-                                 account_id: nil,
-                                 auth_token: nil,
-                                 _alias: nil,
-                                 label: nil,
-                                 type: nil,
-                                 status: nil,
-                                 subresource_uris: nil)
+instance = Freeclimb::AccountResult.new(uri: null,
+                                 date_created: null,
+                                 date_updated: null,
+                                 revision: null,
+                                 account_id: null,
+                                 auth_token: null,
+                                 _alias: null,
+                                 label: null,
+                                 type: null,
+                                 status: null,
+                                 subresource_uris: null)
 ```
 
 

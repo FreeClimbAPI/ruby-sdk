@@ -18,18 +18,18 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::AddToConference.new(allow_call_control: nil,
-                                 call_control_sequence: nil,
-                                 call_control_url: nil,
-                                 conference_id: nil,
-                                 call_id: nil,
-                                 leave_conference_url: nil,
-                                 listen: nil,
-                                 notification_url: nil,
-                                 start_conf_on_enter: nil,
-                                 talk: nil)
+instance = Freeclimb::AddToConference.new(allow_call_control: null,
+                                 call_control_sequence: null,
+                                 call_control_url: null,
+                                 conference_id: null,
+                                 call_id: null,
+                                 leave_conference_url: null,
+                                 listen: null,
+                                 notification_url: null,
+                                 start_conf_on_enter: null,
+                                 talk: null)
 ```
 
 

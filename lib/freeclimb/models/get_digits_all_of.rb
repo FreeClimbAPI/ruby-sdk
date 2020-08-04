@@ -38,6 +38,9 @@ module Freeclimb
     # JSON array of PerCL commands to nest within the `GetDigits` command. The `Say`, `Play`, and `Pause` commands can be used. The nested actions are executed while FreeClimb is waiting for input from the Caller.
     attr_accessor :prompts
 
+    # Parameter `privacyMode` will not log the `text` as required by PCI compliance.
+    attr_accessor :privacy_mode
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -48,7 +51,8 @@ module Freeclimb
         :'initial_timeout_ms' => :'initialTimeoutMs',
         :'max_digits' => :'maxDigits',
         :'min_digits' => :'minDigits',
-        :'prompts' => :'prompts'
+        :'prompts' => :'prompts',
+        :'privacy_mode' => :'privacyMode'
       }
     end
 
@@ -62,7 +66,8 @@ module Freeclimb
         :'initial_timeout_ms' => :'String',
         :'max_digits' => :'Integer',
         :'min_digits' => :'Integer',
-        :'prompts' => :'Array<PerclCommand>'
+        :'prompts' => :'Array<PerclCommand>',
+        :'privacy_mode' => :'Boolean'
       }
     end
 
@@ -120,6 +125,10 @@ module Freeclimb
           self.prompts = value
         end
       end
+
+      if attributes.key?(:'privacy_mode')
+        self.privacy_mode = attributes[:'privacy_mode']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -152,7 +161,8 @@ module Freeclimb
           initial_timeout_ms == o.initial_timeout_ms &&
           max_digits == o.max_digits &&
           min_digits == o.min_digits &&
-          prompts == o.prompts
+          prompts == o.prompts &&
+          privacy_mode == o.privacy_mode
     end
 
     # @see the `==` method
@@ -164,7 +174,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [action_url, digit_timeout_ms, finish_on_key, flush_buffer, initial_timeout_ms, max_digits, min_digits, prompts].hash
+      [action_url, digit_timeout_ms, finish_on_key, flush_buffer, initial_timeout_ms, max_digits, min_digits, prompts, privacy_mode].hash
     end
 
     # Builds the object from hash

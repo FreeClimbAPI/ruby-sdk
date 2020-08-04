@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::RecordingResultAllOf.new(recording_id: nil,
-                                 account_id: nil,
-                                 call_id: nil,
-                                 duration_sec: nil,
-                                 conference_id: nil)
+instance = Freeclimb::RecordingResultAllOf.new(recording_id: null,
+                                 account_id: null,
+                                 call_id: null,
+                                 duration_sec: null,
+                                 conference_id: null)
 ```
 
 

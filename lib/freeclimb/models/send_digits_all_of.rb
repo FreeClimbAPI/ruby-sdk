@@ -20,11 +20,15 @@ module Freeclimb
     # Pause between digits in milliseconds. Valid values are 100-1000 milliseconds and will be adjusted by FreeClimb to satisfy the constraint.
     attr_accessor :pause_ms
 
+    # Parameter `privacyMode` will not log the `text` as required by PCI compliance.
+    attr_accessor :privacy_mode
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'digits' => :'digits',
-        :'pause_ms' => :'pauseMs'
+        :'pause_ms' => :'pauseMs',
+        :'privacy_mode' => :'privacyMode'
       }
     end
 
@@ -32,7 +36,8 @@ module Freeclimb
     def self.openapi_types
       {
         :'digits' => :'String',
-        :'pause_ms' => :'Integer'
+        :'pause_ms' => :'Integer',
+        :'privacy_mode' => :'Boolean'
       }
     end
 
@@ -64,6 +69,10 @@ module Freeclimb
       if attributes.key?(:'pause_ms')
         self.pause_ms = attributes[:'pause_ms']
       end
+
+      if attributes.key?(:'privacy_mode')
+        self.privacy_mode = attributes[:'privacy_mode']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -90,7 +99,8 @@ module Freeclimb
       return true if self.equal?(o)
       self.class == o.class &&
           digits == o.digits &&
-          pause_ms == o.pause_ms
+          pause_ms == o.pause_ms &&
+          privacy_mode == o.privacy_mode
     end
 
     # @see the `==` method
@@ -102,7 +112,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [digits, pause_ms].hash
+      [digits, pause_ms, privacy_mode].hash
     end
 
     # Builds the object from hash

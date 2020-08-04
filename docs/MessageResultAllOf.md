@@ -16,16 +16,16 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'freeclimb'
+require 'Freeclimb'
 
-instance = Freeclimb::MessageResultAllOf.new(account_id: nil,
-                                 message_id: nil,
-                                 status: nil,
-                                 from: nil,
-                                 to: nil,
-                                 text: nil,
-                                 direction: nil,
-                                 notification_url: nil)
+instance = Freeclimb::MessageResultAllOf.new(account_id: null,
+                                 message_id: null,
+                                 status: null,
+                                 from: null,
+                                 to: null,
+                                 text: null,
+                                 direction: null,
+                                 notification_url: null)
 ```
 
 
