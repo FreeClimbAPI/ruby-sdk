@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::Enqueue.new(action_url: null,
-                                 notification_url: null,
-                                 queue_id: null,
-                                 wait_url: null)
+instance = Freeclimb::Enqueue.new(action_url: nil,
+                                 notification_url: nil,
+                                 queue_id: nil,
+                                 wait_url: nil)
 ```
 
 

@@ -15,6 +15,7 @@ require 'freeclimb/api_client'
 require 'freeclimb/api_error'
 require 'freeclimb/version'
 require 'freeclimb/configuration'
+require 'freeclimb/models/percl_command'
 
 # Models
 require 'freeclimb/models/account_request'
@@ -134,5 +135,32 @@ module Freeclimb
         Configuration.default
       end
     end
+  end
+
+  def self.percl_list_to_hash(percl_list)
+    percl_list_hash = []
+    percl_list.each_with_index do | command, index |
+      class_name = command.class.name.split('::').last
+      percl_hash = Hash.new
+      if command.respond_to?(:prompts) && command.prompts != nil && command.prompts.any?
+        percl_hash[class_name] = to_hash_with_prompts(command)
+      else
+        percl_hash[class_name] = command.to_hash
+      end
+      percl_list_hash.push(percl_hash)
+    end
+    percl_list_hash
+  end
+
+  def self.to_hash_with_prompts(command)
+    prompts_hash = percl_list_to_hash(command.prompts)
+    command.prompts = nil
+    hash = command.to_hash
+    hash[:prompts] = prompts_hash
+    hash
+  end
+
+  def self.percl_to_json(percl_script)
+    percl_list_to_hash(percl_script.commands).to_json
   end
 end

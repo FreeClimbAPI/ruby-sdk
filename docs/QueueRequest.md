@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::QueueRequest.new(_alias: null,
-                                 max_size: null)
+instance = Freeclimb::QueueRequest.new(_alias: nil,
+                                 max_size: nil)
 ```
 
 

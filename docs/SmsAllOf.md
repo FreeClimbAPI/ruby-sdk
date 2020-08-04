@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::SmsAllOf.new(to: null,
-                                 from: null,
-                                 text: null,
-                                 notification_url: null)
+instance = Freeclimb::SmsAllOf.new(to: nil,
+                                 from: nil,
+                                 text: nil,
+                                 notification_url: nil)
 ```
 
 

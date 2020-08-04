@@ -16,10 +16,68 @@ module Freeclimb
   class DefaultApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default, common_params)
+    def initialize(api_client = ApiClient.default, account_id = nil)
       @api_client = api_client
-      @common_params = common_params
+      if account_id.nil?
+        @account_id = api_client.config.username
+      else
+        @account_id = account_id
+      end
     end
+    # Get an Account
+    # @param [Hash] opts the optional parameters
+    # @return [AccountResult]
+    def get_an_account(opts = {})
+      data, _status_code, _headers = get_an_account_with_http_info(opts)
+      data
+    end
+
+    # Get an Account
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AccountResult, Integer, Hash)>] AccountResult data, response status code and response headers
+    def get_an_account_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_an_account ...'
+      end
+      # resource path
+      local_var_path = '/Accounts/{accountId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'AccountResult' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['fc']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_an_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Buy a Phone Number
     # @param buy_incoming_number_request [BuyIncomingNumberRequest] Incoming Number transaction details
     # @param [Hash] opts the optional parameters
@@ -42,7 +100,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'buy_incoming_number_request' when calling DefaultApi.buy_a_phone_number"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/IncomingPhoneNumbers'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/IncomingPhoneNumbers'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -100,7 +158,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.create_a_conference ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Conferences'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Conferences'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -158,7 +216,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.create_a_queue ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Queues'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Queues'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -216,7 +274,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.create_an_application ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Applications'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Applications'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -278,7 +336,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'recording_id' when calling DefaultApi.delete_a_recording"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Recordings/{recordingId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'recordingId' + '}', CGI.escape(recording_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Recordings/{recordingId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'recordingId' + '}', CGI.escape(recording_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -336,7 +394,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'application_id' when calling DefaultApi.delete_an_application"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'applicationId' + '}', CGI.escape(application_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'applicationId' + '}', CGI.escape(application_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -394,7 +452,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'phone_number_id' when calling DefaultApi.delete_an_incoming_number"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'phoneNumberId' + '}', CGI.escape(phone_number_id.to_s))
+      local_var_path = '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'phoneNumberId' + '}', CGI.escape(phone_number_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -458,7 +516,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'call_id' when calling DefaultApi.dequeue_a_member"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Queues/{queueId}/Members/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Queues/{queueId}/Members/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -518,7 +576,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'queue_id' when calling DefaultApi.dequeue_head_member"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Queues/{queueId}/Members/Front'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Queues/{queueId}/Members/Front'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -578,7 +636,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'recording_id' when calling DefaultApi.download_a_recording_file"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Recordings/{recordingId}/Download'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'recordingId' + '}', CGI.escape(recording_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Recordings/{recordingId}/Download'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'recordingId' + '}', CGI.escape(recording_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -638,7 +696,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'filter_logs_request' when calling DefaultApi.filter_logs"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -700,7 +758,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'call_id' when calling DefaultApi.get_a_call"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Calls/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Calls/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -760,7 +818,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'conference_id' when calling DefaultApi.get_a_conference"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -826,7 +884,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'call_id' when calling DefaultApi.get_a_member"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Queues/{queueId}/Members/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Queues/{queueId}/Members/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -892,7 +950,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'call_id' when calling DefaultApi.get_a_participant"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -952,7 +1010,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'queue_id' when calling DefaultApi.get_a_queue"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Queues/{queueId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Queues/{queueId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1012,7 +1070,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'recording_id' when calling DefaultApi.get_a_recording"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Recordings/{recordingId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'recordingId' + '}', CGI.escape(recording_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Recordings/{recordingId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'recordingId' + '}', CGI.escape(recording_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1050,60 +1108,6 @@ module Freeclimb
       return data, status_code, headers
     end
 
-    # Get an Account
-    # @param [Hash] opts the optional parameters
-    # @return [AccountResult]
-    def get_an_account(opts = {})
-      data, _status_code, _headers = get_an_account_with_http_info(opts)
-      data
-    end
-
-    # Get an Account
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(AccountResult, Integer, Hash)>] AccountResult data, response status code and response headers
-    def get_an_account_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DefaultApi.get_an_account ...'
-      end
-      # resource path
-      local_var_path = '/Accounts/{accountId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:body] 
-
-      # return_type
-      return_type = opts[:return_type] || 'AccountResult' 
-
-      # auth_names
-      auth_names = opts[:auth_names] || ['fc']
-
-      new_options = opts.merge(
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DefaultApi#get_an_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Get an Application
     # @param application_id [String] A string that uniquely identifies this application resource.
     # @param [Hash] opts the optional parameters
@@ -1126,7 +1130,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'application_id' when calling DefaultApi.get_an_application"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'applicationId' + '}', CGI.escape(application_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'applicationId' + '}', CGI.escape(application_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1186,7 +1190,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'phone_number_id' when calling DefaultApi.get_an_incoming_number"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'phoneNumberId' + '}', CGI.escape(phone_number_id.to_s))
+      local_var_path = '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'phoneNumberId' + '}', CGI.escape(phone_number_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1246,7 +1250,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'message_id' when calling DefaultApi.get_an_sms_message"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Messages/{messageId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'messageId' + '}', CGI.escape(message_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Messages/{messageId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'messageId' + '}', CGI.escape(message_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1306,7 +1310,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'queue_id' when calling DefaultApi.get_head_member"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Queues/{queueId}/Members/Front'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Queues/{queueId}/Members/Front'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1362,7 +1366,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_active_queues ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Queues'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Queues'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1417,7 +1421,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_all_account_logs ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1473,7 +1477,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_an_application ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Applications'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Applications'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1594,7 +1598,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'call_id' when calling DefaultApi.list_call_logs"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Calls/{callId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Calls/{callId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1656,7 +1660,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'call_id' when calling DefaultApi.list_call_recordings"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Calls/{callId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Calls/{callId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1723,7 +1727,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_calls ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Calls'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Calls'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1791,7 +1795,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_conferences ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Conferences'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Conferences'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1853,7 +1857,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_incoming_numbers ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/IncomingPhoneNumbers'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/IncomingPhoneNumbers'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1915,7 +1919,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'queue_id' when calling DefaultApi.list_members"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Queues/{queueId}/Members'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Queues/{queueId}/Members'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1979,7 +1983,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'conference_id' when calling DefaultApi.list_participants"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}/Participants'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}/Participants'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2041,7 +2045,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_recordings ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2110,7 +2114,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_sms_messages ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Messages'.sub('{' + 'accountId' + '}', CGI.escape(account_id2.to_s))
+      local_var_path = '/Accounts/{accountId}/Messages'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2172,7 +2176,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.make_a_call ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Calls'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Calls'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2240,7 +2244,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'call_id' when calling DefaultApi.remove_a_participant"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2298,7 +2302,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'message_request' when calling DefaultApi.send_an_sms_message"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Messages'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Messages'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2360,7 +2364,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'recording_id' when calling DefaultApi.stream_a_recording_file"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Recordings/{recordingId}/Stream'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'recordingId' + '}', CGI.escape(recording_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Recordings/{recordingId}/Stream'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'recordingId' + '}', CGI.escape(recording_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2422,7 +2426,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'conference_id' when calling DefaultApi.update_a_conference"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2490,7 +2494,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'update_call_request' when calling DefaultApi.update_a_live_call"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Calls/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Calls/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2558,7 +2562,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'call_id' when calling DefaultApi.update_a_participant"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s)).sub('{' + 'callId' + '}', CGI.escape(call_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2622,7 +2626,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'queue_id' when calling DefaultApi.update_a_queue"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Queues/{queueId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Queues/{queueId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'queueId' + '}', CGI.escape(queue_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2680,7 +2684,7 @@ module Freeclimb
         @api_client.config.logger.debug 'Calling API: DefaultApi.update_an_account ...'
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2742,7 +2746,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'application_id' when calling DefaultApi.update_an_application"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'applicationId' + '}', CGI.escape(application_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'applicationId' + '}', CGI.escape(application_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2806,7 +2810,7 @@ module Freeclimb
         fail ArgumentError, "Missing the required parameter 'phone_number_id' when calling DefaultApi.update_an_incoming_number"
       end
       # resource path
-      local_var_path = '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'phoneNumberId' + '}', CGI.escape(phone_number_id.to_s))
+      local_var_path = '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape(@account_id.to_s)).sub('{' + 'phoneNumberId' + '}', CGI.escape(phone_number_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}

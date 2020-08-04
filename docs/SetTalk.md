@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::SetTalk.new(call_id: null,
-                                 talk: null)
+instance = Freeclimb::SetTalk.new(call_id: nil,
+                                 talk: nil)
 ```
 
 

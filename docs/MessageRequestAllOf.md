@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::MessageRequestAllOf.new(from: null,
-                                 to: null,
-                                 text: null,
-                                 notification_url: null,
-                                 account_id: null)
+instance = Freeclimb::MessageRequestAllOf.new(from: nil,
+                                 to: nil,
+                                 text: nil,
+                                 notification_url: nil,
+                                 account_id: nil)
 ```
 
 

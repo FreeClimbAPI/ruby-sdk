@@ -21,21 +21,21 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::GetSpeech.new(action_url: null,
-                                 grammar_type: null,
-                                 grammar_file: null,
-                                 grammar_rule: null,
-                                 play_beep: null,
-                                 prompts: null,
-                                 no_input_timeout_ms: null,
-                                 recognition_timeout_ms: null,
-                                 confidence_threshold: null,
-                                 sensitivity_level: null,
-                                 speech_complete_timeout_ms: null,
-                                 speech_incomplete_timeout_ms: null,
-                                 privacy_mode: null)
+instance = Freeclimb::GetSpeech.new(action_url: nil,
+                                 grammar_type: nil,
+                                 grammar_file: nil,
+                                 grammar_rule: nil,
+                                 play_beep: nil,
+                                 prompts: nil,
+                                 no_input_timeout_ms: nil,
+                                 recognition_timeout_ms: nil,
+                                 confidence_threshold: nil,
+                                 sensitivity_level: nil,
+                                 speech_complete_timeout_ms: nil,
+                                 speech_incomplete_timeout_ms: nil,
+                                 privacy_mode: nil)
 ```
 
 

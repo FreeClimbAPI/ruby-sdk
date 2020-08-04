@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
 instance = Freeclimb::StartRecordCall.new()
 ```

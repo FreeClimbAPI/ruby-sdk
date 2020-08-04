@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::SendDigitsAllOf.new(digits: null,
-                                 pause_ms: null,
-                                 privacy_mode: null)
+instance = Freeclimb::SendDigitsAllOf.new(digits: nil,
+                                 pause_ms: nil,
+                                 privacy_mode: nil)
 ```
 
 

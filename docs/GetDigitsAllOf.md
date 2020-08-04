@@ -17,17 +17,17 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::GetDigitsAllOf.new(action_url: null,
-                                 digit_timeout_ms: null,
-                                 finish_on_key: null,
-                                 flush_buffer: null,
-                                 initial_timeout_ms: null,
-                                 max_digits: null,
-                                 min_digits: null,
-                                 prompts: null,
-                                 privacy_mode: null)
+instance = Freeclimb::GetDigitsAllOf.new(action_url: nil,
+                                 digit_timeout_ms: nil,
+                                 finish_on_key: nil,
+                                 flush_buffer: nil,
+                                 initial_timeout_ms: nil,
+                                 max_digits: nil,
+                                 min_digits: nil,
+                                 prompts: nil,
+                                 privacy_mode: nil)
 ```
 
 

@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::PerclScript.new(commands: null)
+instance = Freeclimb::PerclScript.new(commands: nil)
 ```
 
 

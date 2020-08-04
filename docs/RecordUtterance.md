@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::RecordUtterance.new(action_url: null,
-                                 silence_timeout_ms: null,
-                                 finish_on_key: null,
-                                 max_length_sec: null,
-                                 play_beep: null,
-                                 auto_start: null)
+instance = Freeclimb::RecordUtterance.new(action_url: nil,
+                                 silence_timeout_ms: nil,
+                                 finish_on_key: nil,
+                                 max_length_sec: nil,
+                                 play_beep: nil,
+                                 auto_start: nil)
 ```
 
 

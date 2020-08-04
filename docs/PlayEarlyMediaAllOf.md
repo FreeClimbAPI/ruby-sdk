@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::PlayEarlyMediaAllOf.new(file: null)
+instance = Freeclimb::PlayEarlyMediaAllOf.new(file: nil)
 ```
 
 

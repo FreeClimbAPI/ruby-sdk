@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::Say.new(text: null,
-                                 language: null,
-                                 loop: null,
-                                 conference_id: null,
-                                 privacy_mode: null)
+instance = Freeclimb::Say.new(text: nil,
+                                 language: nil,
+                                 loop: nil,
+                                 conference_id: nil,
+                                 privacy_mode: nil)
 ```
 
 

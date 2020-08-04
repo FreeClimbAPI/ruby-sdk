@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::PlayAllOf.new(file: null,
-                                 loop: null,
-                                 conference_id: null,
-                                 privacy_mode: null)
+instance = Freeclimb::PlayAllOf.new(file: nil,
+                                 loop: nil,
+                                 conference_id: nil,
+                                 privacy_mode: nil)
 ```
 
 

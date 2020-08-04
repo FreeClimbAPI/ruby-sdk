@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::ApplicationRequest.new(_alias: null,
-                                 voice_url: null,
-                                 voice_fallback_url: null,
-                                 call_connect_url: null,
-                                 status_callback_url: null,
-                                 sms_url: null,
-                                 sms_fallback_url: null)
+instance = Freeclimb::ApplicationRequest.new(_alias: nil,
+                                 voice_url: nil,
+                                 voice_fallback_url: nil,
+                                 call_connect_url: nil,
+                                 status_callback_url: nil,
+                                 sms_url: nil,
+                                 sms_fallback_url: nil)
 ```
 
 

@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::AvailableNumber.new(phone_number: null,
-                                 voice_enabled: null,
-                                 sms_enabled: null,
-                                 _alias: null,
-                                 region: null,
-                                 country: null)
+instance = Freeclimb::AvailableNumber.new(phone_number: nil,
+                                 voice_enabled: nil,
+                                 sms_enabled: nil,
+                                 _alias: nil,
+                                 region: nil,
+                                 country: nil)
 ```
 
 

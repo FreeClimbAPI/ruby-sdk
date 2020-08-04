@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::RedirectAllOf.new(action_url: null)
+instance = Freeclimb::RedirectAllOf.new(action_url: nil)
 ```
 
 

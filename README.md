@@ -1,6 +1,4 @@
-# freeclimb
-
-Freeclimb - the Ruby gem for the FreeClimb API
+# FreeClimb
 
 FreeClimb is a cloud-based application programming interface (API) that puts the power of the Vail platform in your hands. FreeClimb simplifies the process of creating applications that can use a full range of telephony features without requiring specialized or on-site telephony equipment. Using the FreeClimb REST API to write applications is easy! You have the option to use the language of your choice or hit the API directly. Your application can execute a command by issuing a RESTful request to the FreeClimb API. The base URL to send HTTP requests to the FreeClimb REST API is: /apiserver. FreeClimb authenticates and processes your request.
 
@@ -53,7 +51,7 @@ Include the Ruby code directly using `-I` as follows:
 ruby -Ilib script.rb
 ```
 
-## Getting Started
+## Testing Your Installation
 
 Please follow the [installation](#installation) procedure and then run the following code:
 
@@ -64,21 +62,34 @@ require 'freeclimb'
 # Setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = 'YOUR_USERNAME'
-  config.password = 'YOUR_PASSWORD'
+  config.username = 'ACCOUNT_ID'
+  config.password = 'AUTH_TOKEN'
 end
 
 api_instance = Freeclimb::DefaultApi.new
-buy_incoming_number_request = Freeclimb::BuyIncomingNumberRequest.new # BuyIncomingNumberRequest | Incoming Number transaction details
 
 begin
-  #Buy a Phone Number
-  result = api_instance.buy_a_phone_number(buy_incoming_number_request)
+  #Get an Account
+  result = api_instance.get_an_account
   p result
 rescue Freeclimb::ApiError => e
-  puts "Exception when calling DefaultApi->buy_a_phone_number: #{e}"
+  puts "Exception when calling DefaultApi->get_an_account: #{e}"
 end
 
+```
+## Documentation for PerCL
+
+The Performance Command Language (PerCL) defines a set of instructions, written in JSON format, that express telephony actions to be performed in response to an event on the FreeClimb platform. FreeClimb communicates with the application server when events associated with the application occur, so the webserver can instruct FreeClimb how to handle such events using PerCL scripts.
+PerCL commands are a part of the model schema and can be serialized into JSON like so:
+
+```ruby
+require 'freeclimb'
+
+say = Freeclimb::Say.new(text: "Hello, World")
+play = Freeclimb::Play.new(file: "Example File")
+get_digits = Freeclimb::GetDigits.new(action_url: "Example Action URL", prompts: [say, play])
+percl_script = Freeclimb::PerclScript.new(commands: [get_digits])
+puts Freeclimb::percl_to_json(percl_script)
 ```
 
 ## Documentation for API Endpoints
@@ -87,6 +98,7 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*Freeclimb::DefaultApi* | [**get_an_account**](docs/DefaultApi.md#get_an_account) | **GET** /Accounts/{accountId} | Get an Account
 *Freeclimb::DefaultApi* | [**buy_a_phone_number**](docs/DefaultApi.md#buy_a_phone_number) | **POST** /Accounts/{accountId}/IncomingPhoneNumbers | Buy a Phone Number
 *Freeclimb::DefaultApi* | [**create_a_conference**](docs/DefaultApi.md#create_a_conference) | **POST** /Accounts/{accountId}/Conferences | Create a Conference
 *Freeclimb::DefaultApi* | [**create_a_queue**](docs/DefaultApi.md#create_a_queue) | **POST** /Accounts/{accountId}/Queues | Create a Queue
@@ -104,7 +116,6 @@ Class | Method | HTTP request | Description
 *Freeclimb::DefaultApi* | [**get_a_participant**](docs/DefaultApi.md#get_a_participant) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Get a Participant
 *Freeclimb::DefaultApi* | [**get_a_queue**](docs/DefaultApi.md#get_a_queue) | **GET** /Accounts/{accountId}/Queues/{queueId} | Get a Queue
 *Freeclimb::DefaultApi* | [**get_a_recording**](docs/DefaultApi.md#get_a_recording) | **GET** /Accounts/{accountId}/Recordings/{recordingId} | Get a Recording
-*Freeclimb::DefaultApi* | [**get_an_account**](docs/DefaultApi.md#get_an_account) | **GET** /Accounts/{accountId} | Get an Account
 *Freeclimb::DefaultApi* | [**get_an_application**](docs/DefaultApi.md#get_an_application) | **GET** /Accounts/{accountId}/Applications/{applicationId} | Get an Application
 *Freeclimb::DefaultApi* | [**get_an_incoming_number**](docs/DefaultApi.md#get_an_incoming_number) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number
 *Freeclimb::DefaultApi* | [**get_an_sms_message**](docs/DefaultApi.md#get_an_sms_message) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message

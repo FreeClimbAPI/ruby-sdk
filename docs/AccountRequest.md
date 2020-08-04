@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::AccountRequest.new(_alias: null,
-                                 label: null)
+instance = Freeclimb::AccountRequest.new(_alias: nil,
+                                 label: nil)
 ```
 
 

@@ -17,17 +17,17 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::MessageRequest.new(uri: null,
-                                 date_created: null,
-                                 date_updated: null,
-                                 revision: null,
-                                 from: null,
-                                 to: null,
-                                 text: null,
-                                 notification_url: null,
-                                 account_id: null)
+instance = Freeclimb::MessageRequest.new(uri: nil,
+                                 date_created: nil,
+                                 date_updated: nil,
+                                 revision: nil,
+                                 from: nil,
+                                 to: nil,
+                                 text: nil,
+                                 notification_url: nil,
+                                 account_id: nil)
 ```
 
 

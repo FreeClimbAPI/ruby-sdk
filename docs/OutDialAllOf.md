@@ -18,18 +18,18 @@ Name | Type | Description | Notes
 ## Code Sample
 
 ```ruby
-require 'Freeclimb'
+require 'freeclimb'
 
-instance = Freeclimb::OutDialAllOf.new(action_url: null,
-                                 call_connect_url: null,
-                                 calling_number: null,
-                                 destination: null,
-                                 if_machine: null,
-                                 if_machine_url: null,
-                                 send_digits: null,
-                                 status_callback_url: null,
-                                 timeout: null,
-                                 privacy_mode: null)
+instance = Freeclimb::OutDialAllOf.new(action_url: nil,
+                                 call_connect_url: nil,
+                                 calling_number: nil,
+                                 destination: nil,
+                                 if_machine: nil,
+                                 if_machine_url: nil,
+                                 send_digits: nil,
+                                 status_callback_url: nil,
+                                 timeout: nil,
+                                 privacy_mode: nil)
 ```
 
 
