@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **sensitivity_level** | **Float** | The speech recognizer supports a variable level of sound sensitivity. The sensitivityLevel attribute allows for filtering out background noise, so it is not mistaken for speech. Values are between 0.0 and 1.0  | [optional] 
 **speech_complete_timeout_ms** | **Integer** | Parameter &#x60;speechCompleteTimeoutMs&#x60; specifies the length of silence required following user speech before the speech recognizer finalizes a result. This timeout applies when the recognizer currently has a complete match against an active grammar. Reasonable speech complete timeout values are typically in the range of 0.3 seconds to 1.0 seconds. | [optional] 
 **speech_incomplete_timeout_ms** | **Integer** | Parameter &#x60;speechIncompleteTimeoutMs&#x60; specifies the length of silence following user speech after which a recognizer finalizes a result. This timeout applies when the speech prior to the silence is an incomplete match of all active grammars. Timeout &#x60;speechIncompleteTimeoutMs&#x60; is usually longer than &#x60;speechCompleteTimeoutMs&#x60; to allow users to pause mid-utterance. | [optional] 
-**enforce_pci** | **Boolean** | Parameter enforcePCI will not log the &#x60;text&#x60; as required by PCI compliance. | [optional] 
+**privacy_mode** | **Boolean** | Parameter privacyMode will not log the &#x60;text&#x60; as required by PCI compliance. | [optional] 
 
 ## Code Sample
 
@@ -35,7 +35,7 @@ instance = Freeclimb::GetSpeech.new(action_url: nil,
                                  sensitivity_level: nil,
                                  speech_complete_timeout_ms: nil,
                                  speech_incomplete_timeout_ms: nil,
-                                 enforce_pci: nil)
+                                 privacy_mode: nil)
 ```
 
 

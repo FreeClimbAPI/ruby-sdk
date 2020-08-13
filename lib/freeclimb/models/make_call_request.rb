@@ -38,6 +38,9 @@ module Freeclimb
     # The ID of the parent Call in the case that this new Call is meant to be treated as a child of an existing Call. This attribute should be included when possible to reduce latency when adding child calls to Conferences containing the parent Call. A call can only be used as a parent once the call is in progress or as an inbound call that is still ringing.  An outbound call is considered to be in progress once the outdialConnect or outdialApiConnect webhook is invoked.  An inbound call is ringing when the inbound webhook is invoked.
     attr_accessor :parent_call_id
 
+    # Activate privacy mode in order to obscure log data that can potentially expose private information.
+    attr_accessor :privacy_mode
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -48,7 +51,8 @@ module Freeclimb
         :'if_machine' => :'ifMachine',
         :'if_machine_url' => :'ifMachineUrl',
         :'timeout' => :'timeout',
-        :'parent_call_id' => :'parentCallId'
+        :'parent_call_id' => :'parentCallId',
+        :'privacy_mode' => :'privacyMode'
       }
     end
 
@@ -62,7 +66,8 @@ module Freeclimb
         :'if_machine' => :'String',
         :'if_machine_url' => :'String',
         :'timeout' => :'Integer',
-        :'parent_call_id' => :'String'
+        :'parent_call_id' => :'String',
+        :'privacy_mode' => :'Boolean'
       }
     end
 
@@ -118,6 +123,10 @@ module Freeclimb
       if attributes.key?(:'parent_call_id')
         self.parent_call_id = attributes[:'parent_call_id']
       end
+
+      if attributes.key?(:'privacy_mode')
+        self.privacy_mode = attributes[:'privacy_mode']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -160,7 +169,8 @@ module Freeclimb
           if_machine == o.if_machine &&
           if_machine_url == o.if_machine_url &&
           timeout == o.timeout &&
-          parent_call_id == o.parent_call_id
+          parent_call_id == o.parent_call_id &&
+          privacy_mode == o.privacy_mode
     end
 
     # @see the `==` method
@@ -172,7 +182,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [from, to, application_id, send_digits, if_machine, if_machine_url, timeout, parent_call_id].hash
+      [from, to, application_id, send_digits, if_machine, if_machine_url, timeout, parent_call_id, privacy_mode].hash
     end
 
     # Builds the object from hash

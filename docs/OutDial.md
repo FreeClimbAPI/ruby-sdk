@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **send_digits** | **String** | DTMF tones to play to the outdialed Call. This is typically used to dial a number and then dial an extension. | [optional] 
 **status_callback_url** | **String** | When the outdialed Call leg terminates, FreeClimb sends a &#x60;callStatus&#x60; Webhook to the &#x60;statusCallbackUrl&#x60;. This is a notification only; any PerCL command returned is ignored. | [optional] 
 **timeout** | **Integer** | Maximum time in seconds the &#x60;OutDial&#x60; command waits for the called party to answer the Call. When a timeout occurs, FreeClimb invokes the &#x60;callConnectUrl&#x60; Webhook to report that the out-dialed Call has ended with a status of &#x60;noAnswer&#x60;. | [optional] 
+**privacy_mode** | **Boolean** | Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance. | [optional] 
 
 ## Code Sample
 
@@ -27,7 +28,8 @@ instance = Freeclimb::OutDial.new(action_url: nil,
                                  if_machine_url: nil,
                                  send_digits: nil,
                                  status_callback_url: nil,
-                                 timeout: nil)
+                                 timeout: nil,
+                                 privacy_mode: nil)
 ```
 
 

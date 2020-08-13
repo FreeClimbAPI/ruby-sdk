@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **max_digits** | **Integer** | Maximum number of digits expected in the input. If the terminating digit is not entered and the caller has entered the maximum number of digits allowed, the &#x60;GetDigits&#x60; command terminates regardless of the value of &#x60;finishOnKey&#x60;. | [optional] 
 **min_digits** | **Integer** | Minimum number of digits expected in the input. If specified, FreeClimb will return the collected digits only if the Caller has entered at least that many digits. | [optional] 
 **prompts** | [**Array&lt;PerclCommand&gt;**](PerclCommand.md) | JSON array of PerCL commands to nest within the &#x60;GetDigits&#x60; command. The &#x60;Say&#x60;, &#x60;Play&#x60;, and &#x60;Pause&#x60; commands can be used. The nested actions are executed while FreeClimb is waiting for input from the Caller. | [optional] 
+**privacy_mode** | **Boolean** | Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance. | [optional] 
 
 ## Code Sample
 
@@ -25,7 +26,8 @@ instance = Freeclimb::GetDigitsAllOf.new(action_url: nil,
                                  initial_timeout_ms: nil,
                                  max_digits: nil,
                                  min_digits: nil,
-                                 prompts: nil)
+                                 prompts: nil,
+                                 privacy_mode: nil)
 ```
 
 
