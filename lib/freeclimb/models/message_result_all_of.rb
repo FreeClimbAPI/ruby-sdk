@@ -20,7 +20,7 @@ module Freeclimb
     # String that uniquely identifies this message resource
     attr_accessor :message_id
 
-    # Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received
+    # Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received, undelivered, expired, deleted, and unknown
     attr_accessor :status
 
     # Phone number in E.164 format that sent the message.
@@ -152,7 +152,7 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      status_validator = EnumAttributeValidator.new('String', ["new", "queued", "rejected", "sending", "sent", "failed", "received", "undelivered"])
+      status_validator = EnumAttributeValidator.new('String', ["new", "queued", "rejected", "sending", "sent", "failed", "received", "undelivered", "expired", "deleted", "unknown"])
       return false unless status_validator.valid?(@status)
       true
     end
@@ -160,7 +160,7 @@ module Freeclimb
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('String', ["new", "queued", "rejected", "sending", "sent", "failed", "received", "undelivered"])
+      validator = EnumAttributeValidator.new('String', ["new", "queued", "rejected", "sending", "sent", "failed", "received", "undelivered", "expired", "deleted", "unknown"])
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end
