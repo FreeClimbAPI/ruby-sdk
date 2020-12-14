@@ -32,6 +32,9 @@ module Freeclimb
     # If `false`, recording begins immediately after the RecordUtterance command is processed. If `true`, recording begins when audio is present and if audio begins before the `maxLengthSec` timeout. If no audio begins before `maxLengthSec`, no recording is generated.
     attr_accessor :auto_start
 
+    # Parameter `privacyMode` will not log the `text` as required by PCI compliance.
+    attr_accessor :privacy_mode
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -40,7 +43,8 @@ module Freeclimb
         :'finish_on_key' => :'finishOnKey',
         :'max_length_sec' => :'maxLengthSec',
         :'play_beep' => :'playBeep',
-        :'auto_start' => :'autoStart'
+        :'auto_start' => :'autoStart',
+        :'privacy_mode' => :'privacyMode'
       }
     end
 
@@ -52,7 +56,8 @@ module Freeclimb
         :'finish_on_key' => :'String',
         :'max_length_sec' => :'Integer',
         :'play_beep' => :'Boolean',
-        :'auto_start' => :'Boolean'
+        :'auto_start' => :'Boolean',
+        :'privacy_mode' => :'Boolean'
       }
     end
 
@@ -100,6 +105,10 @@ module Freeclimb
       if attributes.key?(:'auto_start')
         self.auto_start = attributes[:'auto_start']
       end
+
+      if attributes.key?(:'privacy_mode')
+        self.privacy_mode = attributes[:'privacy_mode']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -130,7 +139,8 @@ module Freeclimb
           finish_on_key == o.finish_on_key &&
           max_length_sec == o.max_length_sec &&
           play_beep == o.play_beep &&
-          auto_start == o.auto_start
+          auto_start == o.auto_start &&
+          privacy_mode == o.privacy_mode
     end
 
     # @see the `==` method
@@ -142,7 +152,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [action_url, silence_timeout_ms, finish_on_key, max_length_sec, play_beep, auto_start].hash
+      [action_url, silence_timeout_ms, finish_on_key, max_length_sec, play_beep, auto_start, privacy_mode].hash
     end
 
     # Builds the object from hash

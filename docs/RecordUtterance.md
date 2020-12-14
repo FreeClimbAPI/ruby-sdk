@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **max_length_sec** | **Integer** | Maximum length for the command execution in seconds. | [optional] 
 **play_beep** | **Boolean** | Indicates whether to play a beep sound before the start of the recording. If set to &#x60;false&#x60;, no beep is played. | [optional] 
 **auto_start** | **Boolean** | If &#x60;false&#x60;, recording begins immediately after the RecordUtterance command is processed. If &#x60;true&#x60;, recording begins when audio is present and if audio begins before the &#x60;maxLengthSec&#x60; timeout. If no audio begins before &#x60;maxLengthSec&#x60;, no recording is generated. | [optional] 
+**privacy_mode** | **Boolean** | Parameter &#x60;privacyMode&#x60; will not log the &#x60;text&#x60; as required by PCI compliance. | [optional] 
 
 ## Code Sample
 
@@ -21,7 +22,8 @@ instance = Freeclimb::RecordUtterance.new(action_url: nil,
                                  finish_on_key: nil,
                                  max_length_sec: nil,
                                  play_beep: nil,
-                                 auto_start: nil)
+                                 auto_start: nil,
+                                 privacy_mode: nil)
 ```
 
 
