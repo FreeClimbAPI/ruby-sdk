@@ -255,3 +255,6 @@ Class | Method | HTTP request | Description
 
 - **Type**: HTTP basic authentication
 
+## Getting Help
+
+If you are experiencing difficulties, [contact support](https://freeclimb.com/support).
