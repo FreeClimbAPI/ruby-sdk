@@ -13,22 +13,21 @@ OpenAPI Generator version: 4.3.0-SNAPSHOT
 require 'date'
 
 module Freeclimb
-  # The `Redirect` command transfers control of a Call to the PerCL at a different URL. `Redirect` is a terminal command, so any actions following it are never executed. The maximum number of redirections allowed during the life time of a Call is 256. This is intended to prevent a Call from possibly looping infinitely due to errors in PerCL being generated.
-  class Redirect < PerclCommand
-    # URL to request a new PerCL script to continue with the current Call's processing. When `Redirect` invokes the `actionUrl`, an `inbound` Webhook is sent. This request therefore looks identical to the initial request (made to the `voiceUrl` of the number that was called) for an inbound Call.
-    attr_accessor :action_url
+  class HangupAllOf
+    # The user defined reason for the hangup. In general, applications should use a set of enumerated values that are predefined to cover all exit points of the Call flows for the given application.
+    attr_accessor :reason
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'action_url' => :'actionUrl'
+        :'reason' => :'reason'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'action_url' => :'String'
+        :'reason' => :'String'
       }
     end
 
@@ -38,53 +37,37 @@ module Freeclimb
       ])
     end
 
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-      :'PerclCommand',
-      :'RedirectAllOf'
-      ]
-    end
-
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::Redirect` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::HangupAllOf` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::Redirect`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::HangupAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      # call parent's initialize
-      super(attributes)
-
-      if attributes.key?(:'action_url')
-        self.action_url = attributes[:'action_url']
+      if attributes.key?(:'reason')
+        self.reason = attributes[:'reason']
       end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
-      if @action_url.nil?
-        invalid_properties.push('invalid value for "action_url", action_url cannot be nil.')
-      end
-
+      invalid_properties = Array.new
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @action_url.nil?
-      true && super
+      true
     end
 
     # Checks equality by comparing each attribute.
@@ -92,7 +75,7 @@ module Freeclimb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          action_url == o.action_url && super(o)
+          reason == o.reason
     end
 
     # @see the `==` method
@@ -104,7 +87,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [action_url].hash
+      [reason].hash
     end
 
     # Builds the object from hash
@@ -119,7 +102,6 @@ module Freeclimb
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
-      super(attributes)
       self.class.openapi_types.each_pair do |key, type|
         if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the attribute
@@ -191,7 +173,7 @@ module Freeclimb
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = super
+      hash = {}
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?
