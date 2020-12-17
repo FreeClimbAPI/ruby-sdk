@@ -14,7 +14,7 @@ require 'date'
 
 module Freeclimb
   class RedirectAllOf
-    # Reason for the rejection. This can be any string value. In general, applications should use a set of enumerated values that are predefined to cover all exit points of the call flows for the given application.
+    # URL to request a new PerCL script to continue with the current Call's processing. When `Redirect` invokes the `actionUrl`, an `inbound` Webhook is sent. This request therefore looks identical to the initial request (made to the `voiceUrl` of the number that was called) for an inbound Call.
     attr_accessor :action_url
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -61,12 +61,17 @@ module Freeclimb
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @action_url.nil?
+        invalid_properties.push('invalid value for "action_url", action_url cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @action_url.nil?
       true
     end
 

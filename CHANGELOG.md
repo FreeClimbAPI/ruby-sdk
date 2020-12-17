@@ -7,6 +7,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 None
 
+<a name="2.1.0"></a>
+## [2.1.0] - 2020-12-16
+### Added
+- Add `Reject` PerCL command
+- Add `Hangup` PerCL command
+
+### Fixed
+- Updated description and requirement of `action_url` attribute of `Redirect` PerCL command
+
 <a name="2.0.3"></a>
 ## [2.0.3] - 2020-12-16
 ### Added
