@@ -171,7 +171,7 @@ module ResponseMocks
     "dateCreated":"Thu, 13 Oct 2019 16:59:34 GMT",
     "dateUpdated":"Thu, 13 Oct 2019 16:59:34 GMT",
     "accountId":"{account_id}",
-    "authToken":"428e487a035b837ac2f47f2236ec553550ed2628",
+    "apiKey":"428e487a035b837ac2f47f2236ec553550ed2628",
     "alias":"boostrap account",
     "label":"customer service",
     "type":"trial",

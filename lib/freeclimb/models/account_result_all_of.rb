@@ -61,7 +61,7 @@ module Freeclimb
     def self.attribute_map
       {
         :'account_id' => :'accountId',
-        :'auth_token' => :'authToken',
+        :'auth_token' => :'apiKey',
         :'_alias' => :'alias',
         :'label' => :'label',
         :'type' => :'type',
