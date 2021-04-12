@@ -186,7 +186,7 @@ module Freeclimb
     end
 
     # Gets Basic Auth token string
-    def basic_auth_token
+    def basic_api_key
       'Basic ' + ["#{username}:#{password}"].pack('m').delete("\r\n")
     end
 
@@ -198,7 +198,7 @@ module Freeclimb
             type: 'basic',
             in: 'header',
             key: 'Authorization',
-            value: basic_auth_token
+            value: basic_api_key
           },
       }
     end
