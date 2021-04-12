@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **String** | String that uniquely identifies this account resource. | [optional] 
-**auth_token** | **String** | The authorization token assigned to this account. This token must be kept a secret by the customer. | [optional] 
+**api_key** | **String** | The authorization token assigned to this account. This token must be kept a secret by the customer. | [optional] 
 **_alias** | **String** | A description for this account. | [optional] 
 **label** | **String** | A string that identifies a category or group to which the account belongs. | [optional] 
 **type** | **String** | The type of this account. It is one of: trial or full. | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 require 'freeclimb'
 
 instance = Freeclimb::AccountResultAllOf.new(account_id: nil,
-                                 auth_token: nil,
+                                 api_key: nil,
                                  _alias: nil,
                                  label: nil,
                                  type: nil,

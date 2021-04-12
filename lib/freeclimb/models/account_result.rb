@@ -30,7 +30,7 @@ module Freeclimb
     attr_accessor :account_id
 
     # The authorization token assigned to this account. This token must be kept a secret by the customer.
-    attr_accessor :auth_token
+    attr_accessor :api_key
 
     # A description for this account.
     attr_accessor :_alias
@@ -77,7 +77,7 @@ module Freeclimb
         :'date_updated' => :'dateUpdated',
         :'revision' => :'revision',
         :'account_id' => :'accountId',
-        :'auth_token' => :'authToken',
+        :'api_key' => :'apiKey',
         :'_alias' => :'alias',
         :'label' => :'label',
         :'type' => :'type',
@@ -94,7 +94,7 @@ module Freeclimb
         :'date_updated' => :'String',
         :'revision' => :'Integer',
         :'account_id' => :'String',
-        :'auth_token' => :'String',
+        :'api_key' => :'String',
         :'_alias' => :'String',
         :'label' => :'String',
         :'type' => :'String',
@@ -152,8 +152,8 @@ module Freeclimb
         self.account_id = attributes[:'account_id']
       end
 
-      if attributes.key?(:'auth_token')
-        self.auth_token = attributes[:'auth_token']
+      if attributes.key?(:'api_key')
+        self.api_key = attributes[:'api_key']
       end
 
       if attributes.key?(:'_alias')
@@ -212,7 +212,7 @@ module Freeclimb
           date_updated == o.date_updated &&
           revision == o.revision &&
           account_id == o.account_id &&
-          auth_token == o.auth_token &&
+          api_key == o.api_key &&
           _alias == o._alias &&
           label == o.label &&
           type == o.type &&
@@ -229,7 +229,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, account_id, auth_token, _alias, label, type, status, subresource_uris].hash
+      [uri, date_created, date_updated, revision, account_id, api_key, _alias, label, type, status, subresource_uris].hash
     end
 
     # Builds the object from hash
