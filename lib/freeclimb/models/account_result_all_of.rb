@@ -17,7 +17,7 @@ module Freeclimb
     # String that uniquely identifies this account resource.
     attr_accessor :account_id
 
-    # The API key assigned to this account. This token must be kept a secret by the customer.
+    # The API key assigned to this account. This key must be kept a secret by the customer.
     attr_accessor :api_key
 
     # A description for this account.

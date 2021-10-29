@@ -146,10 +146,6 @@ module Freeclimb
         invalid_properties.push('invalid value for "conference_id", conference_id cannot be nil.')
       end
 
-      if @call_id.nil?
-        invalid_properties.push('invalid value for "call_id", call_id cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -157,7 +153,6 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       return false if @conference_id.nil?
-      return false if @call_id.nil?
       true
     end
 
