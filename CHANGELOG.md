@@ -8,7 +8,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 None
 
 <a name="3.0.1"></a>
-## [3.0.1] - 2021-1-29
+## [3.0.1] - 2021-11-02
 ### Added
 - Add `active` property to CallResult
 
