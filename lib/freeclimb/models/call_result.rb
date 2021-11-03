@@ -44,6 +44,9 @@ module Freeclimb
     # If the Call was inbound, this is the ID of the IncomingPhoneNumber that received the Call (DNIS). If the Call was outbound, this is the ID of the phone number from which the Call was placed (ANI).
     attr_accessor :phone_number_id
 
+    # Whether the call is currently active or has concluded.
+    attr_accessor :active
+
     # * `queued` &ndash; Call is ready and waiting in line before going out. * `ringing` &ndash; Call is currently ringing. * `inProgress` &ndash; Call was answered and is currently in progress. * `canceled` &ndash; Call was hung up while it was queued or ringing. * `completed` &ndash; Call was answered and has ended normally. * `busy` &ndash; Caller received a busy signal. * `failed` &ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * `noAnswer` &ndash; Call ended without being answered.
     attr_accessor :status
 
@@ -106,6 +109,7 @@ module Freeclimb
         :'from' => :'from',
         :'to' => :'to',
         :'phone_number_id' => :'phoneNumberId',
+        :'active' => :'active',
         :'status' => :'status',
         :'start_time' => :'startTime',
         :'connect_time' => :'connectTime',
@@ -131,6 +135,7 @@ module Freeclimb
         :'from' => :'String',
         :'to' => :'String',
         :'phone_number_id' => :'String',
+        :'active' => :'Boolean',
         :'status' => :'String',
         :'start_time' => :'String',
         :'connect_time' => :'String',
@@ -212,6 +217,12 @@ module Freeclimb
         self.phone_number_id = attributes[:'phone_number_id']
       end
 
+      if attributes.key?(:'active')
+        self.active = attributes[:'active']
+      else
+        self.active = false
+      end
+
       if attributes.key?(:'status')
         self.status = attributes[:'status']
       end
@@ -289,6 +300,7 @@ module Freeclimb
           from == o.from &&
           to == o.to &&
           phone_number_id == o.phone_number_id &&
+          active == o.active &&
           status == o.status &&
           start_time == o.start_time &&
           connect_time == o.connect_time &&
@@ -309,7 +321,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, call_id, parent_call_id, account_id, from, to, phone_number_id, status, start_time, connect_time, end_time, duration, connect_duration, direction, answered_by, subresource_uris].hash
+      [uri, date_created, date_updated, revision, call_id, parent_call_id, account_id, from, to, phone_number_id, active, status, start_time, connect_time, end_time, duration, connect_duration, direction, answered_by, subresource_uris].hash
     end
 
     # Builds the object from hash
