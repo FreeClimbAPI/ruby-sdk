@@ -1701,6 +1701,7 @@ module Freeclimb
 
     # List Calls
     # @param [Hash] opts the optional parameters
+    # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (default to false)
     # @option opts [String] :to Only show Calls to this phone number.
     # @option opts [String] :from Only show Calls from this phone number.
     # @option opts [String] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
@@ -1715,6 +1716,7 @@ module Freeclimb
 
     # List Calls
     # @param [Hash] opts the optional parameters
+    # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (default to false)
     # @option opts [String] :to Only show Calls to this phone number.
     # @option opts [String] :from Only show Calls from this phone number.
     # @option opts [String] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
@@ -1731,6 +1733,7 @@ module Freeclimb
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'active'] = opts[:'active'] if !opts[:'active'].nil?
       query_params[:'to'] = opts[:'to'] if !opts[:'to'].nil?
       query_params[:'from'] = opts[:'from'] if !opts[:'from'].nil?
       query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?

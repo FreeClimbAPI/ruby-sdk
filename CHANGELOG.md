@@ -7,6 +7,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 None
 
+<a name="3.0.2"></a>
+## [3.0.1] - 2021-12-01
+### Added
+- Add `active` property to Call List API Request
+
+
 <a name="3.0.1"></a>
 ## [3.0.1] - 2021-11-02
 ### Added
