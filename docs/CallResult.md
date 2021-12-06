@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **from** | **String** | Phone number that initiated this Call. | [optional] 
 **to** | **String** | Phone number that received this Call. | [optional] 
 **phone_number_id** | **String** | If the Call was inbound, this is the ID of the IncomingPhoneNumber that received the Call (DNIS). If the Call was outbound, this is the ID of the phone number from which the Call was placed (ANI). | [optional] 
-**active** | **Boolean** | Whether the call is currently active or has concluded. | [optional] [default to false]
 **status** | **String** | * &#x60;queued&#x60; &amp;ndash; Call is ready and waiting in line before going out. * &#x60;ringing&#x60; &amp;ndash; Call is currently ringing. * &#x60;inProgress&#x60; &amp;ndash; Call was answered and is currently in progress. * &#x60;canceled&#x60; &amp;ndash; Call was hung up while it was queued or ringing. * &#x60;completed&#x60; &amp;ndash; Call was answered and has ended normally. * &#x60;busy&#x60; &amp;ndash; Caller received a busy signal. * &#x60;failed&#x60; &amp;ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * &#x60;noAnswer&#x60; &amp;ndash; Call ended without being answered. | [optional] 
 **start_time** | **String** | Start time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed. | [optional] 
 **connect_time** | **String** | Time the Call was answered (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed. | [optional] 
@@ -40,7 +39,6 @@ instance = Freeclimb::CallResult.new(uri: nil,
                                  from: nil,
                                  to: nil,
                                  phone_number_id: nil,
-                                 active: nil,
                                  status: nil,
                                  start_time: nil,
                                  connect_time: nil,

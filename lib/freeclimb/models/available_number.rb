@@ -23,9 +23,6 @@ module Freeclimb
     # Indicates whether the phone number can send and receive SMS messages.
     attr_accessor :sms_enabled
 
-    # A nicely-formatted version of the phone number.
-    attr_accessor :_alias
-
     # The state or province of this phone number.
     attr_accessor :region
 
@@ -38,7 +35,6 @@ module Freeclimb
         :'phone_number' => :'phoneNumber',
         :'voice_enabled' => :'voiceEnabled',
         :'sms_enabled' => :'smsEnabled',
-        :'_alias' => :'alias',
         :'region' => :'region',
         :'country' => :'country'
       }
@@ -50,7 +46,6 @@ module Freeclimb
         :'phone_number' => :'String',
         :'voice_enabled' => :'Boolean',
         :'sms_enabled' => :'Boolean',
-        :'_alias' => :'String',
         :'region' => :'String',
         :'country' => :'String'
       }
@@ -89,10 +84,6 @@ module Freeclimb
         self.sms_enabled = attributes[:'sms_enabled']
       end
 
-      if attributes.key?(:'_alias')
-        self._alias = attributes[:'_alias']
-      end
-
       if attributes.key?(:'region')
         self.region = attributes[:'region']
       end
@@ -123,7 +114,6 @@ module Freeclimb
           phone_number == o.phone_number &&
           voice_enabled == o.voice_enabled &&
           sms_enabled == o.sms_enabled &&
-          _alias == o._alias &&
           region == o.region &&
           country == o.country
     end
@@ -137,7 +127,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [phone_number, voice_enabled, sms_enabled, _alias, region, country].hash
+      [phone_number, voice_enabled, sms_enabled, region, country].hash
     end
 
     # Builds the object from hash

@@ -1171,6 +1171,12 @@ module Freeclimb
     # Get an Incoming Number
     # @param phone_number_id [String] String that uniquely identifies this phone number resource.
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :region State or province of this phone number.
+    # @option opts [String] :country Country of this phone number.
+    # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (default to true)
+    # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (default to true)
+    # @option opts [String] :application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
+    # @option opts [Boolean] :has_application Indication of whether the phone number has an application linked to it. (default to false)
     # @return [IncomingNumberResult]
     def get_an_incoming_number(phone_number_id, opts = {})
       data, _status_code, _headers = get_an_incoming_number_with_http_info(phone_number_id, opts)
@@ -1180,6 +1186,12 @@ module Freeclimb
     # Get an Incoming Number
     # @param phone_number_id [String] String that uniquely identifies this phone number resource.
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :region State or province of this phone number.
+    # @option opts [String] :country Country of this phone number.
+    # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
+    # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
+    # @option opts [String] :application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
+    # @option opts [Boolean] :has_application Indication of whether the phone number has an application linked to it.
     # @return [Array<(IncomingNumberResult, Integer, Hash)>] IncomingNumberResult data, response status code and response headers
     def get_an_incoming_number_with_http_info(phone_number_id, opts = {})
       if @api_client.config.debugging
@@ -1194,6 +1206,12 @@ module Freeclimb
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'region'] = opts[:'region'] if !opts[:'region'].nil?
+      query_params[:'country'] = opts[:'country'] if !opts[:'country'].nil?
+      query_params[:'voiceEnabled'] = opts[:'voice_enabled'] if !opts[:'voice_enabled'].nil?
+      query_params[:'smsEnabled'] = opts[:'sms_enabled'] if !opts[:'sms_enabled'].nil?
+      query_params[:'applicationId'] = opts[:'application_id'] if !opts[:'application_id'].nil?
+      query_params[:'hasApplication'] = opts[:'has_application'] if !opts[:'has_application'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -1518,8 +1536,11 @@ module Freeclimb
 
     # List available numbers
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :_alias Filter on numbers based on the formatted string of the phone number.
     # @option opts [String] :phone_number PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format.
+    # @option opts [String] :region State or province of this phone number.
+    # @option opts [String] :country Country of this phone number.
+    # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (default to true)
+    # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (default to true)
     # @return [AvailableNumberList]
     def list_available_numbers(opts = {})
       data, _status_code, _headers = list_available_numbers_with_http_info(opts)
@@ -1528,8 +1549,11 @@ module Freeclimb
 
     # List available numbers
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :_alias Filter on numbers based on the formatted string of the phone number.
     # @option opts [String] :phone_number PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format.
+    # @option opts [String] :region State or province of this phone number.
+    # @option opts [String] :country Country of this phone number.
+    # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
+    # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
     # @return [Array<(AvailableNumberList, Integer, Hash)>] AvailableNumberList data, response status code and response headers
     def list_available_numbers_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -1540,8 +1564,11 @@ module Freeclimb
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'alias'] = opts[:'_alias'] if !opts[:'_alias'].nil?
       query_params[:'phoneNumber'] = opts[:'phone_number'] if !opts[:'phone_number'].nil?
+      query_params[:'region'] = opts[:'region'] if !opts[:'region'].nil?
+      query_params[:'country'] = opts[:'country'] if !opts[:'country'].nil?
+      query_params[:'voiceEnabled'] = opts[:'voice_enabled'] if !opts[:'voice_enabled'].nil?
+      query_params[:'smsEnabled'] = opts[:'sms_enabled'] if !opts[:'sms_enabled'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -1716,7 +1743,7 @@ module Freeclimb
 
     # List Calls
     # @param [Hash] opts the optional parameters
-    # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (default to false)
+    # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
     # @option opts [String] :to Only show Calls to this phone number.
     # @option opts [String] :from Only show Calls from this phone number.
     # @option opts [String] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.

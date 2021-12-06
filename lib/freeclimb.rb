@@ -15,7 +15,6 @@ require 'freeclimb/api_client'
 require 'freeclimb/api_error'
 require 'freeclimb/version'
 require 'freeclimb/configuration'
-require 'freeclimb/utils'
 require 'freeclimb/models/percl_command'
 
 # Models
