@@ -8,10 +8,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 None
 
 <a name="3.0.2"></a>
-## [3.0.1] - 2021-12-01
-### Added
-- Add `active` property to Call List API Request
-
+## [3.0.2] - 2021-12-06
+### Changed
+-remove alias from accepted query parameters when listing AvailablePhoneNumbers
+-Add country, region, smsEnabled, and voiceEnabled as accepted query parameters for AvailablePhoneNumbers
+-Add smsEnabled to AvailablePhoneNumbers response schema
+-Add applicationId, country, region, smsEnabled, voiceEnabled, and hasApplication as accepted query parameters for IncomingPhoneNumber.
 
 <a name="3.0.1"></a>
 ## [3.0.1] - 2021-11-02
