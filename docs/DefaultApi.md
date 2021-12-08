@@ -1029,7 +1029,7 @@ Name | Type | Description  | Notes
 
 ## get_an_incoming_number
 
-> IncomingNumberResult get_an_incoming_number(phone_number_id)
+> IncomingNumberResult get_an_incoming_number(phone_number_id, opts)
 
 Get an Incoming Number
 
@@ -1047,10 +1047,18 @@ end
 
 api_instance = Freeclimb::DefaultApi.new
 phone_number_id = 'phone_number_id_example' # String | String that uniquely identifies this phone number resource.
+opts = {
+  region: 'region_example', # String | State or province of this phone number.
+  country: 'country_example', # String | Country of this phone number.
+  voice_enabled: true, # Boolean | Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
+  sms_enabled: true, # Boolean | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
+  application_id: 'application_id_example', # String | ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
+  has_application: false # Boolean | Indication of whether the phone number has an application linked to it.
+}
 
 begin
   #Get an Incoming Number
-  result = api_instance.get_an_incoming_number(phone_number_id)
+  result = api_instance.get_an_incoming_number(phone_number_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Exception when calling DefaultApi->get_an_incoming_number: #{e}"
@@ -1063,6 +1071,12 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **phone_number_id** | **String**| String that uniquely identifies this phone number resource. | 
+ **region** | **String**| State or province of this phone number. | [optional] 
+ **country** | **String**| Country of this phone number. | [optional] 
+ **voice_enabled** | **Boolean**| Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional] [default to true]
+ **sms_enabled** | **Boolean**| Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional] [default to true]
+ **application_id** | **String**| ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. | [optional] 
+ **has_application** | **Boolean**| Indication of whether the phone number has an application linked to it. | [optional] [default to false]
 
 ### Return type
 
@@ -1353,8 +1367,11 @@ end
 
 api_instance = Freeclimb::DefaultApi.new
 opts = {
-  _alias: '_alias_example', # String | Filter on numbers based on the formatted string of the phone number.
-  phone_number: 'phone_number_example' # String | PCRE-compatible regular expression to filter against `phoneNumber` field, which is in E.164 format.
+  phone_number: 'phone_number_example', # String | PCRE-compatible regular expression to filter against `phoneNumber` field, which is in E.164 format.
+  region: 'region_example', # String | State or province of this phone number.
+  country: 'country_example', # String | Country of this phone number.
+  voice_enabled: true, # Boolean | Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
+  sms_enabled: true # Boolean | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
 }
 
 begin
@@ -1371,8 +1388,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_alias** | **String**| Filter on numbers based on the formatted string of the phone number. | [optional] 
  **phone_number** | **String**| PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format. | [optional] 
+ **region** | **String**| State or province of this phone number. | [optional] 
+ **country** | **String**| Country of this phone number. | [optional] 
+ **voice_enabled** | **Boolean**| Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional] [default to true]
+ **sms_enabled** | **Boolean**| Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional] [default to true]
 
 ### Return type
 
@@ -1514,7 +1534,7 @@ end
 
 api_instance = Freeclimb::DefaultApi.new
 opts = {
-  active: true, # Boolean | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
+  active: false, # Boolean | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
   to: 'to_example', # String | Only show Calls to this phone number.
   from: 'from_example', # String | Only show Calls from this phone number.
   status: 'status_example', # String | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`.
@@ -1537,7 +1557,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **active** | **Boolean** | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. | [optional][default to false] 
+ **active** | **Boolean**| If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. | [optional] [default to false]
  **to** | **String**| Only show Calls to this phone number. | [optional] 
  **from** | **String**| Only show Calls from this phone number. | [optional] 
  **status** | **String**| Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional] 

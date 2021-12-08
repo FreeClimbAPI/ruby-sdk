@@ -13,6 +13,7 @@ OpenAPI Generator version: 4.3.0-SNAPSHOT
 require 'date'
 
 module Freeclimb
+  # An individual command used in a PerCLScript.
   class PerclCommand
     attr_accessor :command
 
