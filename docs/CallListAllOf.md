@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**calls** | [**Array&lt;CallResult&gt;**](CallResult.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **calls** | [**Array&lt;CallResult&gt;**](CallResult.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::CallListAllOf.new(calls: nil)
+instance = Freeclimb::CallListAllOf.new(
+  calls: null
+)
 ```
-
 

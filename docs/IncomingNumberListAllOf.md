@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**incoming_phone_numbers** | [**Array&lt;IncomingNumberResult&gt;**](IncomingNumberResult.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **incoming_phone_numbers** | [**Array&lt;IncomingNumberResult&gt;**](IncomingNumberResult.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::IncomingNumberListAllOf.new(incoming_phone_numbers: nil)
+instance = Freeclimb::IncomingNumberListAllOf.new(
+  incoming_phone_numbers: null
+)
 ```
-
 

@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**recordings** | [**Array&lt;RecordingResult&gt;**](RecordingResult.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **recordings** | [**Array&lt;RecordingResult&gt;**](RecordingResult.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::RecordingListAllOf.new(recordings: nil)
+instance = Freeclimb::RecordingListAllOf.new(
+  recordings: null
+)
 ```
-
 

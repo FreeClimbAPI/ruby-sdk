@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**applications** | [**Array&lt;ApplicationResult&gt;**](ApplicationResult.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **applications** | [**Array&lt;ApplicationResult&gt;**](ApplicationResult.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::ApplicationListAllOf.new(applications: nil)
+instance = Freeclimb::ApplicationListAllOf.new(
+  applications: null
+)
 ```
-
 
