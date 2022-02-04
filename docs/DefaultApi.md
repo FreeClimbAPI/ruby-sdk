@@ -71,12 +71,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 buy_incoming_number_request = Freeclimb::BuyIncomingNumberRequest.new({phone_number: 'phone_number_example'}) # BuyIncomingNumberRequest | Incoming Number transaction details
 
+
 begin
+
   # Buy a Phone Number
-  result = api_instance.buy_a_phone_number(account_id, buy_incoming_number_request)
+  result = api_instance.buy_a_phone_number(buy_incoming_number_request)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->buy_a_phone_number: #{e}"
@@ -92,7 +94,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Buy a Phone Number
-  data, status_code, headers = api_instance.buy_a_phone_number_with_http_info(account_id, buy_incoming_number_request)
+  data, status_code, headers = api_instance.buy_a_phone_number_with_http_info(buy_incoming_number_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <IncomingNumberResult>
@@ -105,8 +107,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **buy_incoming_number_request** | [**BuyIncomingNumberRequest**](BuyIncomingNumberRequest.md) | Incoming Number transaction details |  |
+
 
 ### Return type
 
@@ -141,14 +144,15 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 opts = {
   create_conference_request: Freeclimb::CreateConferenceRequest.new # CreateConferenceRequest | Conference to create
 }
 
 begin
+
   # Create a Conference
-  result = api_instance.create_a_conference(account_id, opts)
+  result = api_instance.create_a_conference(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->create_a_conference: #{e}"
@@ -164,7 +168,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Create a Conference
-  data, status_code, headers = api_instance.create_a_conference_with_http_info(account_id, opts)
+  data, status_code, headers = api_instance.create_a_conference_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ConferenceResult>
@@ -177,8 +181,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **create_conference_request** | [**CreateConferenceRequest**](CreateConferenceRequest.md) | Conference to create | [optional] |
+
 
 ### Return type
 
@@ -213,14 +218,15 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 opts = {
   queue_request: Freeclimb::QueueRequest.new # QueueRequest | Queue details used to create a queue
 }
 
 begin
+
   # Create a Queue
-  result = api_instance.create_a_queue(account_id, opts)
+  result = api_instance.create_a_queue(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->create_a_queue: #{e}"
@@ -236,7 +242,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Create a Queue
-  data, status_code, headers = api_instance.create_a_queue_with_http_info(account_id, opts)
+  data, status_code, headers = api_instance.create_a_queue_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <QueueResult>
@@ -249,8 +255,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **queue_request** | [**QueueRequest**](QueueRequest.md) | Queue details used to create a queue | [optional] |
+
 
 ### Return type
 
@@ -285,14 +292,15 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 opts = {
   application_request: Freeclimb::ApplicationRequest.new # ApplicationRequest | Application Details
 }
 
 begin
+
   # Create an application
-  result = api_instance.create_an_application(account_id, opts)
+  result = api_instance.create_an_application(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->create_an_application: #{e}"
@@ -308,7 +316,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Create an application
-  data, status_code, headers = api_instance.create_an_application_with_http_info(account_id, opts)
+  data, status_code, headers = api_instance.create_an_application_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ApplicationResult>
@@ -321,8 +329,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **application_request** | [**ApplicationRequest**](ApplicationRequest.md) | Application Details | [optional] |
+
 
 ### Return type
 
@@ -357,12 +366,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 recording_id = 'recording_id_example' # String | String that uniquely identifies this recording resource.
 
+
 begin
+
   # Delete a Recording
-  api_instance.delete_a_recording(account_id, recording_id)
+  api_instance.delete_a_recording(recording_id)
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->delete_a_recording: #{e}"
 end
@@ -377,7 +388,7 @@ This returns an Array which contains the response data (`nil` in this case), sta
 ```ruby
 begin
   # Delete a Recording
-  data, status_code, headers = api_instance.delete_a_recording_with_http_info(account_id, recording_id)
+  data, status_code, headers = api_instance.delete_a_recording_with_http_info(recording_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -390,8 +401,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **recording_id** | **String** | String that uniquely identifies this recording resource. |  |
+
 
 ### Return type
 
@@ -426,12 +438,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 application_id = 'application_id_example' # String | String that uniquely identifies this application resource.
 
+
 begin
+
   # Delete an application
-  api_instance.delete_an_application(account_id, application_id)
+  api_instance.delete_an_application(application_id)
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->delete_an_application: #{e}"
 end
@@ -446,7 +460,7 @@ This returns an Array which contains the response data (`nil` in this case), sta
 ```ruby
 begin
   # Delete an application
-  data, status_code, headers = api_instance.delete_an_application_with_http_info(account_id, application_id)
+  data, status_code, headers = api_instance.delete_an_application_with_http_info(application_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -459,8 +473,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **application_id** | **String** | String that uniquely identifies this application resource. |  |
+
 
 ### Return type
 
@@ -495,12 +510,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 phone_number_id = 'phone_number_id_example' # String | String that uniquely identifies this phone number resource.
 
+
 begin
+
   # Delete an Incoming Number
-  api_instance.delete_an_incoming_number(account_id, phone_number_id)
+  api_instance.delete_an_incoming_number(phone_number_id)
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->delete_an_incoming_number: #{e}"
 end
@@ -515,7 +532,7 @@ This returns an Array which contains the response data (`nil` in this case), sta
 ```ruby
 begin
   # Delete an Incoming Number
-  data, status_code, headers = api_instance.delete_an_incoming_number_with_http_info(account_id, phone_number_id)
+  data, status_code, headers = api_instance.delete_an_incoming_number_with_http_info(phone_number_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -528,8 +545,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **phone_number_id** | **String** | String that uniquely identifies this phone number resource. |  |
+
 
 ### Return type
 
@@ -564,13 +582,16 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
+
 call_id = 'call_id_example' # String | ID if the Call that the Member belongs to
 
+
 begin
+
   # Dequeue a Member
-  result = api_instance.dequeue_a_member(account_id, queue_id, call_id)
+  result = api_instance.dequeue_a_member(queue_id, call_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->dequeue_a_member: #{e}"
@@ -586,7 +607,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Dequeue a Member
-  data, status_code, headers = api_instance.dequeue_a_member_with_http_info(account_id, queue_id, call_id)
+  data, status_code, headers = api_instance.dequeue_a_member_with_http_info(queue_id, call_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <QueueMember>
@@ -599,9 +620,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **queue_id** | **String** | String that uniquely identifies the Queue that the Member belongs to. |  |
+
 | **call_id** | **String** | ID if the Call that the Member belongs to |  |
+
 
 ### Return type
 
@@ -636,12 +659,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 queue_id = 'queue_id_example' # String | String that uniquely identifies this queue resource.
 
+
 begin
+
   # Dequeue Head Member
-  result = api_instance.dequeue_head_member(account_id, queue_id)
+  result = api_instance.dequeue_head_member(queue_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->dequeue_head_member: #{e}"
@@ -657,7 +682,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Dequeue Head Member
-  data, status_code, headers = api_instance.dequeue_head_member_with_http_info(account_id, queue_id)
+  data, status_code, headers = api_instance.dequeue_head_member_with_http_info(queue_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <QueueMember>
@@ -670,8 +695,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **queue_id** | **String** | String that uniquely identifies this queue resource. |  |
+
 
 ### Return type
 
@@ -706,12 +732,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 recording_id = 'recording_id_example' # String | String that uniquely identifies this recording resource.
 
+
 begin
+
   # Download a Recording File
-  result = api_instance.download_a_recording_file(account_id, recording_id)
+  result = api_instance.download_a_recording_file(recording_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->download_a_recording_file: #{e}"
@@ -727,7 +755,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Download a Recording File
-  data, status_code, headers = api_instance.download_a_recording_file_with_http_info(account_id, recording_id)
+  data, status_code, headers = api_instance.download_a_recording_file_with_http_info(recording_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => File
@@ -740,8 +768,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **recording_id** | **String** | String that uniquely identifies this recording resource. |  |
+
 
 ### Return type
 
@@ -776,12 +805,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 filter_logs_request = Freeclimb::FilterLogsRequest.new({pql: 'pql_example'}) # FilterLogsRequest | Filter logs request paramters
 
+
 begin
+
   # Filter Logs
-  result = api_instance.filter_logs(account_id, filter_logs_request)
+  result = api_instance.filter_logs(filter_logs_request)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->filter_logs: #{e}"
@@ -797,7 +828,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Filter Logs
-  data, status_code, headers = api_instance.filter_logs_with_http_info(account_id, filter_logs_request)
+  data, status_code, headers = api_instance.filter_logs_with_http_info(filter_logs_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <LogList>
@@ -810,8 +841,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **filter_logs_request** | [**FilterLogsRequest**](FilterLogsRequest.md) | Filter logs request paramters |  |
+
 
 ### Return type
 
@@ -846,12 +878,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
 
+
 begin
+
   # Get a Call
-  result = api_instance.get_a_call(account_id, call_id)
+  result = api_instance.get_a_call(call_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->get_a_call: #{e}"
@@ -867,7 +901,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Get a Call
-  data, status_code, headers = api_instance.get_a_call_with_http_info(account_id, call_id)
+  data, status_code, headers = api_instance.get_a_call_with_http_info(call_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CallResult>
@@ -880,8 +914,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **call_id** | **String** | String that uniquely identifies this call resource. |  |
+
 
 ### Return type
 
@@ -916,12 +951,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 conference_id = 'conference_id_example' # String | A string that uniquely identifies this conference resource.
 
+
 begin
+
   # Get a Conference
-  result = api_instance.get_a_conference(account_id, conference_id)
+  result = api_instance.get_a_conference(conference_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->get_a_conference: #{e}"
@@ -937,7 +974,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Get a Conference
-  data, status_code, headers = api_instance.get_a_conference_with_http_info(account_id, conference_id)
+  data, status_code, headers = api_instance.get_a_conference_with_http_info(conference_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ConferenceResult>
@@ -950,8 +987,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **conference_id** | **String** | A string that uniquely identifies this conference resource. |  |
+
 
 ### Return type
 
@@ -986,13 +1024,16 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
+
 call_id = 'call_id_example' # String | ID of the Call that the Member belongs to
 
+
 begin
+
   # Get a Member
-  result = api_instance.get_a_member(account_id, queue_id, call_id)
+  result = api_instance.get_a_member(queue_id, call_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->get_a_member: #{e}"
@@ -1008,7 +1049,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Get a Member
-  data, status_code, headers = api_instance.get_a_member_with_http_info(account_id, queue_id, call_id)
+  data, status_code, headers = api_instance.get_a_member_with_http_info(queue_id, call_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <QueueMember>
@@ -1021,9 +1062,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **queue_id** | **String** | String that uniquely identifies the Queue that the Member belongs to. |  |
+
 | **call_id** | **String** | ID of the Call that the Member belongs to |  |
+
 
 ### Return type
 
@@ -1058,13 +1101,16 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 conference_id = 'conference_id_example' # String | ID of the conference this participant is in.
+
 call_id = 'call_id_example' # String | ID of the Call associated with this participant.
 
+
 begin
+
   # Get a Participant
-  result = api_instance.get_a_participant(account_id, conference_id, call_id)
+  result = api_instance.get_a_participant(conference_id, call_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->get_a_participant: #{e}"
@@ -1080,7 +1126,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Get a Participant
-  data, status_code, headers = api_instance.get_a_participant_with_http_info(account_id, conference_id, call_id)
+  data, status_code, headers = api_instance.get_a_participant_with_http_info(conference_id, call_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ConferenceParticipantResult>
@@ -1093,9 +1139,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **conference_id** | **String** | ID of the conference this participant is in. |  |
+
 | **call_id** | **String** | ID of the Call associated with this participant. |  |
+
 
 ### Return type
 
@@ -1130,12 +1178,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 queue_id = 'queue_id_example' # String | A string that uniquely identifies this queue resource.
 
+
 begin
+
   # Get a Queue
-  result = api_instance.get_a_queue(account_id, queue_id)
+  result = api_instance.get_a_queue(queue_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->get_a_queue: #{e}"
@@ -1151,7 +1201,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Get a Queue
-  data, status_code, headers = api_instance.get_a_queue_with_http_info(account_id, queue_id)
+  data, status_code, headers = api_instance.get_a_queue_with_http_info(queue_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <QueueResult>
@@ -1164,8 +1214,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **queue_id** | **String** | A string that uniquely identifies this queue resource. |  |
+
 
 ### Return type
 
@@ -1200,12 +1251,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 recording_id = 'recording_id_example' # String | String that uniquely identifies this recording resource.
 
+
 begin
+
   # Get a Recording
-  result = api_instance.get_a_recording(account_id, recording_id)
+  result = api_instance.get_a_recording(recording_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->get_a_recording: #{e}"
@@ -1221,7 +1274,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Get a Recording
-  data, status_code, headers = api_instance.get_a_recording_with_http_info(account_id, recording_id)
+  data, status_code, headers = api_instance.get_a_recording_with_http_info(recording_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <RecordingResult>
@@ -1234,8 +1287,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **recording_id** | **String** | String that uniquely identifies this recording resource. |  |
+
 
 ### Return type
 
@@ -1270,11 +1324,12 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 
 begin
+
   # Get an Account
-  result = api_instance.get_an_account(account_id)
+  result = api_instance.get_an_account()
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->get_an_account: #{e}"
@@ -1290,7 +1345,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Get an Account
-  data, status_code, headers = api_instance.get_an_account_with_http_info(account_id)
+  data, status_code, headers = api_instance.get_an_account_with_http_info()
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AccountResult>
@@ -1303,7 +1358,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 
 ### Return type
 
@@ -1338,12 +1393,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 application_id = 'application_id_example' # String | A string that uniquely identifies this application resource.
 
+
 begin
+
   # Get an Application
-  result = api_instance.get_an_application(account_id, application_id)
+  result = api_instance.get_an_application(application_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->get_an_application: #{e}"
@@ -1359,7 +1416,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Get an Application
-  data, status_code, headers = api_instance.get_an_application_with_http_info(account_id, application_id)
+  data, status_code, headers = api_instance.get_an_application_with_http_info(application_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ApplicationResult>
@@ -1372,8 +1429,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **application_id** | **String** | A string that uniquely identifies this application resource. |  |
+
 
 ### Return type
 
@@ -1408,12 +1466,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 phone_number_id = 'phone_number_id_example' # String | String that uniquely identifies this phone number resource.
 
+
 begin
+
   # Get an Incoming Number
-  result = api_instance.get_an_incoming_number(account_id, phone_number_id)
+  result = api_instance.get_an_incoming_number(phone_number_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->get_an_incoming_number: #{e}"
@@ -1429,7 +1489,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Get an Incoming Number
-  data, status_code, headers = api_instance.get_an_incoming_number_with_http_info(account_id, phone_number_id)
+  data, status_code, headers = api_instance.get_an_incoming_number_with_http_info(phone_number_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <IncomingNumberResult>
@@ -1442,8 +1502,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **phone_number_id** | **String** | String that uniquely identifies this phone number resource. |  |
+
 
 ### Return type
 
@@ -1478,12 +1539,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 message_id = 'message_id_example' # String | String that uniquely identifies this Message resource.
 
+
 begin
+
   # Get an SMS Message
-  result = api_instance.get_an_sms_message(account_id, message_id)
+  result = api_instance.get_an_sms_message(message_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->get_an_sms_message: #{e}"
@@ -1499,7 +1562,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Get an SMS Message
-  data, status_code, headers = api_instance.get_an_sms_message_with_http_info(account_id, message_id)
+  data, status_code, headers = api_instance.get_an_sms_message_with_http_info(message_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <MessageResult>
@@ -1512,8 +1575,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **message_id** | **String** | String that uniquely identifies this Message resource. |  |
+
 
 ### Return type
 
@@ -1548,12 +1612,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
 
+
 begin
+
   # Get Head Member
-  result = api_instance.get_head_member(account_id, queue_id)
+  result = api_instance.get_head_member(queue_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->get_head_member: #{e}"
@@ -1569,7 +1635,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Get Head Member
-  data, status_code, headers = api_instance.get_head_member_with_http_info(account_id, queue_id)
+  data, status_code, headers = api_instance.get_head_member_with_http_info(queue_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <QueueMember>
@@ -1582,8 +1648,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **queue_id** | **String** | String that uniquely identifies the Queue that the Member belongs to. |  |
+
 
 ### Return type
 
@@ -1618,14 +1685,15 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 opts = {
   _alias: '_alias_example' # String | Return only the Queue resources with aliases that exactly match this name.
 }
 
 begin
+
   # List Active Queues
-  result = api_instance.list_active_queues(account_id, opts)
+  result = api_instance.list_active_queues(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_active_queues: #{e}"
@@ -1641,7 +1709,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # List Active Queues
-  data, status_code, headers = api_instance.list_active_queues_with_http_info(account_id, opts)
+  data, status_code, headers = api_instance.list_active_queues_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <QueueList>
@@ -1654,8 +1722,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **_alias** | **String** | Return only the Queue resources with aliases that exactly match this name. | [optional] |
+
 
 ### Return type
 
@@ -1690,11 +1759,12 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 
 begin
+
   # List All Account Logs
-  result = api_instance.list_all_account_logs(account_id)
+  result = api_instance.list_all_account_logs()
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_all_account_logs: #{e}"
@@ -1710,7 +1780,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # List All Account Logs
-  data, status_code, headers = api_instance.list_all_account_logs_with_http_info(account_id)
+  data, status_code, headers = api_instance.list_all_account_logs_with_http_info()
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <LogList>
@@ -1723,7 +1793,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 
 ### Return type
 
@@ -1758,14 +1828,15 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 opts = {
   _alias: '_alias_example' # String | Return only applications with aliases that exactly match this value.
 }
 
 begin
+
   # List applications
-  result = api_instance.list_an_application(account_id, opts)
+  result = api_instance.list_an_application(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_an_application: #{e}"
@@ -1781,7 +1852,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # List applications
-  data, status_code, headers = api_instance.list_an_application_with_http_info(account_id, opts)
+  data, status_code, headers = api_instance.list_an_application_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ApplicationList>
@@ -1794,8 +1865,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **_alias** | **String** | Return only applications with aliases that exactly match this value. | [optional] |
+
 
 ### Return type
 
@@ -1830,6 +1902,7 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
+
 opts = {
   phone_number: 'phone_number_example', # String | PCRE-compatible regular expression to filter against `phoneNumber` field, which is in E.164 format.
   region: 'region_example', # String | State or province of this phone number.
@@ -1844,6 +1917,7 @@ opts = {
 }
 
 begin
+
   # List available numbers
   result = api_instance.list_available_numbers(opts)
   p result
@@ -1874,16 +1948,27 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+
 | **phone_number** | **String** | PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format. | [optional] |
+
 | **region** | **String** | State or province of this phone number. | [optional] |
+
 | **country** | **String** | Country of this phone number. | [optional] |
+
 | **voice_enabled** | **Boolean** | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional][default to true] |
+
 | **sms_enabled** | **Boolean** | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional][default to true] |
+
 | **capabilities_voice** | **Boolean** |  | [optional] |
+
 | **capabilities_sms** | **Boolean** |  | [optional] |
+
 | **capabilities_toll_free** | **Boolean** |  | [optional] |
+
 | **capabilities_ten_dlc** | **Boolean** |  | [optional] |
+
 | **capabilities_short_code** | **Boolean** |  | [optional] |
+
 
 ### Return type
 
@@ -1918,12 +2003,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
 
+
 begin
+
   # List Call Logs
-  result = api_instance.list_call_logs(account_id, call_id)
+  result = api_instance.list_call_logs(call_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_call_logs: #{e}"
@@ -1939,7 +2026,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # List Call Logs
-  data, status_code, headers = api_instance.list_call_logs_with_http_info(account_id, call_id)
+  data, status_code, headers = api_instance.list_call_logs_with_http_info(call_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <LogList>
@@ -1952,8 +2039,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **call_id** | **String** | String that uniquely identifies this call resource. |  |
+
 
 ### Return type
 
@@ -1988,15 +2076,17 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
+
 opts = {
   date_created: 'date_created_example' # String | Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
 }
 
 begin
+
   # List Call Recordings
-  result = api_instance.list_call_recordings(account_id, call_id, opts)
+  result = api_instance.list_call_recordings(call_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_call_recordings: #{e}"
@@ -2012,7 +2102,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # List Call Recordings
-  data, status_code, headers = api_instance.list_call_recordings_with_http_info(account_id, call_id, opts)
+  data, status_code, headers = api_instance.list_call_recordings_with_http_info(call_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <RecordingList>
@@ -2025,9 +2115,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **call_id** | **String** | String that uniquely identifies this call resource. |  |
+
 | **date_created** | **String** | Only show recordings created on the specified date, in the form *YYYY-MM-DD*. | [optional] |
+
 
 ### Return type
 
@@ -2062,7 +2154,7 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 opts = {
   active: true, # Boolean | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
   to: 'to_example', # String | Only show Calls to this phone number.
@@ -2074,8 +2166,9 @@ opts = {
 }
 
 begin
+
   # List Calls
-  result = api_instance.list_calls(account_id, opts)
+  result = api_instance.list_calls(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_calls: #{e}"
@@ -2091,7 +2184,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # List Calls
-  data, status_code, headers = api_instance.list_calls_with_http_info(account_id, opts)
+  data, status_code, headers = api_instance.list_calls_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CallList>
@@ -2104,14 +2197,21 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **active** | **Boolean** | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. | [optional][default to false] |
+
 | **to** | **String** | Only show Calls to this phone number. | [optional] |
+
 | **from** | **String** | Only show Calls from this phone number. | [optional] |
+
 | **status** | **String** | Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional] |
+
 | **start_time** | **String** | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
+
 | **end_time** | **String** | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. | [optional] |
+
 | **parent_call_id** | **String** | Only show Calls spawned by the call with this ID. | [optional] |
+
 
 ### Return type
 
@@ -2146,7 +2246,7 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 opts = {
   status: 'status_example', # String | Only show conferences that currently have the specified status. Valid values: `empty`, `populated`, `inProgress`, or `terminated`.
   _alias: '_alias_example', # String | List Conferences whose alias exactly matches this string.
@@ -2155,8 +2255,9 @@ opts = {
 }
 
 begin
+
   # List Conferences
-  result = api_instance.list_conferences(account_id, opts)
+  result = api_instance.list_conferences(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_conferences: #{e}"
@@ -2172,7 +2273,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # List Conferences
-  data, status_code, headers = api_instance.list_conferences_with_http_info(account_id, opts)
+  data, status_code, headers = api_instance.list_conferences_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ConferenceList>
@@ -2185,11 +2286,15 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **status** | **String** | Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;. | [optional] |
+
 | **_alias** | **String** | List Conferences whose alias exactly matches this string. | [optional] |
+
 | **date_created** | **String** | Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. | [optional] |
+
 | **date_updated** | **String** | Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. | [optional] |
+
 
 ### Return type
 
@@ -2224,7 +2329,7 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 opts = {
   phone_number: 'phone_number_example', # String | Only show incoming phone number resources that match this PCRE-compatible regular expression.
   _alias: '_alias_example', # String | Only show incoming phone numbers with aliases that exactly match this value.
@@ -2242,8 +2347,9 @@ opts = {
 }
 
 begin
+
   # List Incoming Numbers
-  result = api_instance.list_incoming_numbers(account_id, opts)
+  result = api_instance.list_incoming_numbers(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_incoming_numbers: #{e}"
@@ -2259,7 +2365,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # List Incoming Numbers
-  data, status_code, headers = api_instance.list_incoming_numbers_with_http_info(account_id, opts)
+  data, status_code, headers = api_instance.list_incoming_numbers_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <IncomingNumberList>
@@ -2272,20 +2378,33 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **phone_number** | **String** | Only show incoming phone number resources that match this PCRE-compatible regular expression. | [optional] |
+
 | **_alias** | **String** | Only show incoming phone numbers with aliases that exactly match this value. | [optional] |
+
 | **region** | **String** | State or province of this phone number. | [optional] |
+
 | **country** | **String** | Country of this phone number. | [optional] |
+
 | **application_id** | **String** | ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. | [optional] |
+
 | **has_application** | **Boolean** | Indication of whether the phone number has an application linked to it. | [optional][default to false] |
+
 | **voice_enabled** | **Boolean** | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional][default to true] |
+
 | **sms_enabled** | **Boolean** | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional][default to true] |
+
 | **capabilities_voice** | **Boolean** |  | [optional] |
+
 | **capabilities_sms** | **Boolean** |  | [optional] |
+
 | **capabilities_toll_free** | **Boolean** |  | [optional] |
+
 | **capabilities_ten_dlc** | **Boolean** |  | [optional] |
+
 | **capabilities_short_code** | **Boolean** |  | [optional] |
+
 
 ### Return type
 
@@ -2320,12 +2439,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 queue_id = 'queue_id_example' # String | String that uniquely identifies the Queue that the Member belongs to.
 
+
 begin
+
   # List Members
-  result = api_instance.list_members(account_id, queue_id)
+  result = api_instance.list_members(queue_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_members: #{e}"
@@ -2341,7 +2462,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # List Members
-  data, status_code, headers = api_instance.list_members_with_http_info(account_id, queue_id)
+  data, status_code, headers = api_instance.list_members_with_http_info(queue_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <QueueMemberList>
@@ -2354,8 +2475,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **queue_id** | **String** | String that uniquely identifies the Queue that the Member belongs to. |  |
+
 
 ### Return type
 
@@ -2390,16 +2512,18 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 conference_id = 'conference_id_example' # String | ID of the conference this participant is in.
+
 opts = {
   talk: true, # Boolean | Only show Participants with the talk privilege.
   listen: true # Boolean | Only show Participants with the listen privilege.
 }
 
 begin
+
   # List Participants
-  result = api_instance.list_participants(account_id, conference_id, opts)
+  result = api_instance.list_participants(conference_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_participants: #{e}"
@@ -2415,7 +2539,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # List Participants
-  data, status_code, headers = api_instance.list_participants_with_http_info(account_id, conference_id, opts)
+  data, status_code, headers = api_instance.list_participants_with_http_info(conference_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ConferenceParticipantList>
@@ -2428,10 +2552,13 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **conference_id** | **String** | ID of the conference this participant is in. |  |
+
 | **talk** | **Boolean** | Only show Participants with the talk privilege. | [optional] |
+
 | **listen** | **Boolean** | Only show Participants with the listen privilege. | [optional] |
+
 
 ### Return type
 
@@ -2466,7 +2593,7 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 opts = {
   call_id: 'call_id_example', # String | Show only Recordings made during the Call with this ID.
   conference_id: 'conference_id_example', # String | Show only Recordings made during the conference with this ID.
@@ -2474,8 +2601,9 @@ opts = {
 }
 
 begin
+
   # List Recordings
-  result = api_instance.list_recordings(account_id, opts)
+  result = api_instance.list_recordings(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_recordings: #{e}"
@@ -2491,7 +2619,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # List Recordings
-  data, status_code, headers = api_instance.list_recordings_with_http_info(account_id, opts)
+  data, status_code, headers = api_instance.list_recordings_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <RecordingList>
@@ -2504,10 +2632,13 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **call_id** | **String** | Show only Recordings made during the Call with this ID. | [optional] |
+
 | **conference_id** | **String** | Show only Recordings made during the conference with this ID. | [optional] |
+
 | **date_created** | **String** | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] |
+
 
 ### Return type
 
@@ -2542,7 +2673,7 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 opts = {
   to: 'to_example', # String | Only show Messages to this phone number.
   from: 'from_example', # String | Only show Messages from this phone number.
@@ -2552,8 +2683,9 @@ opts = {
 }
 
 begin
+
   # List SMS Messages
-  result = api_instance.list_sms_messages(account_id, opts)
+  result = api_instance.list_sms_messages(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_sms_messages: #{e}"
@@ -2569,7 +2701,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # List SMS Messages
-  data, status_code, headers = api_instance.list_sms_messages_with_http_info(account_id, opts)
+  data, status_code, headers = api_instance.list_sms_messages_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <MessagesList>
@@ -2582,12 +2714,17 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **to** | **String** | Only show Messages to this phone number. | [optional] |
+
 | **from** | **String** | Only show Messages from this phone number. | [optional] |
+
 | **begin_time** | **String** | Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. | [optional] |
+
 | **end_time** | **String** | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. | [optional] |
+
 | **direction** | **String** | Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional] |
+
 
 ### Return type
 
@@ -2622,14 +2759,15 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 opts = {
   make_call_request: Freeclimb::MakeCallRequest.new({from: 'from_example', to: 'to_example'}) # MakeCallRequest | Call details for making a call
 }
 
 begin
+
   # Make a Call
-  result = api_instance.make_a_call(account_id, opts)
+  result = api_instance.make_a_call(opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->make_a_call: #{e}"
@@ -2645,7 +2783,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Make a Call
-  data, status_code, headers = api_instance.make_a_call_with_http_info(account_id, opts)
+  data, status_code, headers = api_instance.make_a_call_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CallResult>
@@ -2658,8 +2796,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **make_call_request** | [**MakeCallRequest**](MakeCallRequest.md) | Call details for making a call | [optional] |
+
 
 ### Return type
 
@@ -2694,13 +2833,16 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 conference_id = 'conference_id_example' # String | ID of the conference this participant is in.
+
 call_id = 'call_id_example' # String | ID of the Call associated with this participant.
 
+
 begin
+
   # Remove a Participant
-  api_instance.remove_a_participant(account_id, conference_id, call_id)
+  api_instance.remove_a_participant(conference_id, call_id)
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->remove_a_participant: #{e}"
 end
@@ -2715,7 +2857,7 @@ This returns an Array which contains the response data (`nil` in this case), sta
 ```ruby
 begin
   # Remove a Participant
-  data, status_code, headers = api_instance.remove_a_participant_with_http_info(account_id, conference_id, call_id)
+  data, status_code, headers = api_instance.remove_a_participant_with_http_info(conference_id, call_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -2728,9 +2870,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **conference_id** | **String** | ID of the conference this participant is in. |  |
+
 | **call_id** | **String** | ID of the Call associated with this participant. |  |
+
 
 ### Return type
 
@@ -2765,12 +2909,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 message_request = Freeclimb::MessageRequest.new({from: 'from_example', to: 'to_example', text: 'text_example'}) # MessageRequest | Details to create a message
 
+
 begin
+
   # Send an SMS Message
-  result = api_instance.send_an_sms_message(account_id, message_request)
+  result = api_instance.send_an_sms_message(message_request)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->send_an_sms_message: #{e}"
@@ -2786,7 +2932,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Send an SMS Message
-  data, status_code, headers = api_instance.send_an_sms_message_with_http_info(account_id, message_request)
+  data, status_code, headers = api_instance.send_an_sms_message_with_http_info(message_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <MessageResult>
@@ -2799,8 +2945,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **message_request** | [**MessageRequest**](MessageRequest.md) | Details to create a message |  |
+
 
 ### Return type
 
@@ -2835,12 +2982,14 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 recording_id = 'recording_id_example' # String | String that uniquely identifies this recording resource.
 
+
 begin
+
   # Stream a Recording File
-  result = api_instance.stream_a_recording_file(account_id, recording_id)
+  result = api_instance.stream_a_recording_file(recording_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->stream_a_recording_file: #{e}"
@@ -2856,7 +3005,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Stream a Recording File
-  data, status_code, headers = api_instance.stream_a_recording_file_with_http_info(account_id, recording_id)
+  data, status_code, headers = api_instance.stream_a_recording_file_with_http_info(recording_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => File
@@ -2869,8 +3018,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **recording_id** | **String** | String that uniquely identifies this recording resource. |  |
+
 
 ### Return type
 
@@ -2905,15 +3055,17 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 conference_id = 'conference_id_example' # String | String that uniquely identifies this conference resource.
+
 opts = {
   update_conference_request: Freeclimb::UpdateConferenceRequest.new # UpdateConferenceRequest | Conference Details to update
 }
 
 begin
+
   # Update a Conference
-  result = api_instance.update_a_conference(account_id, conference_id, opts)
+  result = api_instance.update_a_conference(conference_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->update_a_conference: #{e}"
@@ -2929,7 +3081,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Update a Conference
-  data, status_code, headers = api_instance.update_a_conference_with_http_info(account_id, conference_id, opts)
+  data, status_code, headers = api_instance.update_a_conference_with_http_info(conference_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ConferenceResult>
@@ -2942,9 +3094,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **conference_id** | **String** | String that uniquely identifies this conference resource. |  |
+
 | **update_conference_request** | [**UpdateConferenceRequest**](UpdateConferenceRequest.md) | Conference Details to update | [optional] |
+
 
 ### Return type
 
@@ -2979,13 +3133,16 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
+
 update_call_request = Freeclimb::UpdateCallRequest.new({status: 'canceled'}) # UpdateCallRequest | Call details to update
 
+
 begin
+
   # Update a Live Call
-  api_instance.update_a_live_call(account_id, call_id, update_call_request)
+  api_instance.update_a_live_call(call_id, update_call_request)
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->update_a_live_call: #{e}"
 end
@@ -3000,7 +3157,7 @@ This returns an Array which contains the response data (`nil` in this case), sta
 ```ruby
 begin
   # Update a Live Call
-  data, status_code, headers = api_instance.update_a_live_call_with_http_info(account_id, call_id, update_call_request)
+  data, status_code, headers = api_instance.update_a_live_call_with_http_info(call_id, update_call_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -3013,9 +3170,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **call_id** | **String** | String that uniquely identifies this call resource. |  |
+
 | **update_call_request** | [**UpdateCallRequest**](UpdateCallRequest.md) | Call details to update |  |
+
 
 ### Return type
 
@@ -3050,16 +3209,19 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 conference_id = 'conference_id_example' # String | ID of the conference this participant is in.
+
 call_id = 'call_id_example' # String | ID of the Call associated with this participant.
+
 opts = {
   update_conference_participant_request: Freeclimb::UpdateConferenceParticipantRequest.new # UpdateConferenceParticipantRequest | Conference participant details to update
 }
 
 begin
+
   # Update a Participant
-  result = api_instance.update_a_participant(account_id, conference_id, call_id, opts)
+  result = api_instance.update_a_participant(conference_id, call_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->update_a_participant: #{e}"
@@ -3075,7 +3237,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Update a Participant
-  data, status_code, headers = api_instance.update_a_participant_with_http_info(account_id, conference_id, call_id, opts)
+  data, status_code, headers = api_instance.update_a_participant_with_http_info(conference_id, call_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ConferenceParticipantResult>
@@ -3088,10 +3250,13 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **conference_id** | **String** | ID of the conference this participant is in. |  |
+
 | **call_id** | **String** | ID of the Call associated with this participant. |  |
+
 | **update_conference_participant_request** | [**UpdateConferenceParticipantRequest**](UpdateConferenceParticipantRequest.md) | Conference participant details to update | [optional] |
+
 
 ### Return type
 
@@ -3126,15 +3291,17 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 queue_id = 'queue_id_example' # String | A string that uniquely identifies this Queue resource.
+
 opts = {
   queue_request: Freeclimb::QueueRequest.new # QueueRequest | Queue Details to update
 }
 
 begin
+
   # Update a Queue
-  result = api_instance.update_a_queue(account_id, queue_id, opts)
+  result = api_instance.update_a_queue(queue_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->update_a_queue: #{e}"
@@ -3150,7 +3317,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Update a Queue
-  data, status_code, headers = api_instance.update_a_queue_with_http_info(account_id, queue_id, opts)
+  data, status_code, headers = api_instance.update_a_queue_with_http_info(queue_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <QueueResult>
@@ -3163,9 +3330,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **queue_id** | **String** | A string that uniquely identifies this Queue resource. |  |
+
 | **queue_request** | [**QueueRequest**](QueueRequest.md) | Queue Details to update | [optional] |
+
 
 ### Return type
 
@@ -3200,14 +3369,15 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 opts = {
   account_request: Freeclimb::AccountRequest.new # AccountRequest | Account details to update
 }
 
 begin
+
   # Manage an account
-  api_instance.update_an_account(account_id, opts)
+  api_instance.update_an_account(opts)
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->update_an_account: #{e}"
 end
@@ -3222,7 +3392,7 @@ This returns an Array which contains the response data (`nil` in this case), sta
 ```ruby
 begin
   # Manage an account
-  data, status_code, headers = api_instance.update_an_account_with_http_info(account_id, opts)
+  data, status_code, headers = api_instance.update_an_account_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -3235,8 +3405,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **account_request** | [**AccountRequest**](AccountRequest.md) | Account details to update | [optional] |
+
 
 ### Return type
 
@@ -3271,15 +3442,17 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 application_id = 'application_id_example' # String | A string that uniquely identifies this application resource.
+
 opts = {
   application_request: Freeclimb::ApplicationRequest.new # ApplicationRequest | Application details to update.
 }
 
 begin
+
   # Update an application
-  result = api_instance.update_an_application(account_id, application_id, opts)
+  result = api_instance.update_an_application(application_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->update_an_application: #{e}"
@@ -3295,7 +3468,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Update an application
-  data, status_code, headers = api_instance.update_an_application_with_http_info(account_id, application_id, opts)
+  data, status_code, headers = api_instance.update_an_application_with_http_info(application_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ApplicationResult>
@@ -3308,9 +3481,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **application_id** | **String** | A string that uniquely identifies this application resource. |  |
+
 | **application_request** | [**ApplicationRequest**](ApplicationRequest.md) | Application details to update. | [optional] |
+
 
 ### Return type
 
@@ -3345,15 +3520,17 @@ Freeclimb.configure do |config|
 end
 
 api_instance = Freeclimb::DefaultApi.new
-account_id = 'account_id_example' # String | ID of the account
+
 phone_number_id = 'phone_number_id_example' # String | String that uniquely identifies this phone number resource.
+
 opts = {
   incoming_number_request: Freeclimb::IncomingNumberRequest.new # IncomingNumberRequest | Incoming Number details to update
 }
 
 begin
+
   # Update an Incoming Number
-  result = api_instance.update_an_incoming_number(account_id, phone_number_id, opts)
+  result = api_instance.update_an_incoming_number(phone_number_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->update_an_incoming_number: #{e}"
@@ -3369,7 +3546,7 @@ This returns an Array which contains the response data, status code and headers.
 ```ruby
 begin
   # Update an Incoming Number
-  data, status_code, headers = api_instance.update_an_incoming_number_with_http_info(account_id, phone_number_id, opts)
+  data, status_code, headers = api_instance.update_an_incoming_number_with_http_info(phone_number_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <IncomingNumberResult>
@@ -3382,9 +3559,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | ID of the account |  |
+
 | **phone_number_id** | **String** | String that uniquely identifies this phone number resource. |  |
+
 | **incoming_number_request** | [**IncomingNumberRequest**](IncomingNumberRequest.md) | Incoming Number details to update | [optional] |
+
 
 ### Return type
 
