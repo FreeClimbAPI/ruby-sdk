@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**length** | **Integer** | Length in milliseconds. FreeClimb will wait silently before continuing on. | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **length** | **Integer** | Length in milliseconds. FreeClimb will wait silently before continuing on. |  |
 
-## Code Sample
+## Example
 
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::Pause.new(length: nil)
+instance = Freeclimb::Pause.new(
+  length: null
+)
 ```
-
 

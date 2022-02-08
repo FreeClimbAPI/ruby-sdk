@@ -32,7 +32,6 @@ git_push.sh
 .gitignore
 
 # Added gem for testing that we don't want overwritten
-Gemfile
 
 # Not using this. Don't generate it
 .travis.yml

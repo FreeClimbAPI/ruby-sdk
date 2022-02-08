@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**available_phone_numbers** | [**Array&lt;AvailableNumber&gt;**](AvailableNumber.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **available_phone_numbers** | [**Array&lt;AvailableNumber&gt;**](AvailableNumber.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::AvailableNumberListAllOf.new(available_phone_numbers: nil)
+instance = Freeclimb::AvailableNumberListAllOf.new(
+  available_phone_numbers: null
+)
 ```
-
 

@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**command** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **command** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::PerclCommand.new(command: nil)
+instance = Freeclimb::PerclCommand.new(
+  command: null
+)
 ```
-
 

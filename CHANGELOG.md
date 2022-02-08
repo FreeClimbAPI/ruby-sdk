@@ -7,6 +7,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 None
 
+<a name="3.0.3"></a>
+## [3.0.3] - 2022-02-08
+### Added
+- Add capabilities query functionality for searching AvailableNumbers and IncomingNumbers
+- Enable unit testing
+
 <a name="3.0.2"></a>
 ## [3.0.2] - 2021-12-06
 ### Changed

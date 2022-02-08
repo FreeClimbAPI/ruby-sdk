@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**conferences** | [**Array&lt;ConferenceResult&gt;**](ConferenceResult.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **conferences** | [**Array&lt;ConferenceResult&gt;**](ConferenceResult.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::ConferenceListAllOf.new(conferences: nil)
+instance = Freeclimb::ConferenceListAllOf.new(
+  conferences: null
+)
 ```
-
 

@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**application_id** | **String** | ID of the Application that should handle calls to this number. | [optional] 
-**_alias** | **String** | Description for this phone number. | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **application_id** | **String** | ID of the Application that should handle calls to this number. | [optional] |
+| **_alias** | **String** | Description for this phone number. | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::IncomingNumberRequest.new(application_id: nil,
-                                 _alias: nil)
+instance = Freeclimb::IncomingNumberRequest.new(
+  application_id: null,
+  _alias: null
+)
 ```
-
 

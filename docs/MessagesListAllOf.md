@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**messages** | [**Array&lt;MessageResult&gt;**](MessageResult.md) | Array of messages | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **messages** | [**Array&lt;MessageResult&gt;**](MessageResult.md) | Array of messages | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::MessagesListAllOf.new(messages: nil)
+instance = Freeclimb::MessagesListAllOf.new(
+  messages: null
+)
 ```
-
 
