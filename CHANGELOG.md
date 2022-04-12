@@ -7,6 +7,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 None
 
+<a name="4.0.0"></a>
+## [4.0.0] - 2022-03-03
+### Changed
+- Prefer keyword argument initialization for all models
+- Rename api->list_an_application to list->list_applications
+- Use new openapi-generator version (5.4.0)
+- Remove floating `Freeclimb::percl_to_json` and added it to `PerclScript` as `to_json` method
+
 <a name="3.0.3"></a>
 ## [3.0.3] - 2022-02-08
 ### Added

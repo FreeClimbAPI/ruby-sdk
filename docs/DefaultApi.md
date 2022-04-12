@@ -28,7 +28,7 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**get_head_member**](DefaultApi.md#get_head_member) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member |
 | [**list_active_queues**](DefaultApi.md#list_active_queues) | **GET** /Accounts/{accountId}/Queues | List Active Queues |
 | [**list_all_account_logs**](DefaultApi.md#list_all_account_logs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs |
-| [**list_an_application**](DefaultApi.md#list_an_application) | **GET** /Accounts/{accountId}/Applications | List applications |
+| [**list_applications**](DefaultApi.md#list_applications) | **GET** /Accounts/{accountId}/Applications | List applications |
 | [**list_available_numbers**](DefaultApi.md#list_available_numbers) | **GET** /AvailablePhoneNumbers | List available numbers |
 | [**list_call_logs**](DefaultApi.md#list_call_logs) | **GET** /Accounts/{accountId}/Calls/{callId}/Logs | List Call Logs |
 | [**list_call_recordings**](DefaultApi.md#list_call_recordings) | **GET** /Accounts/{accountId}/Calls/{callId}/Recordings | List Call Recordings |
@@ -53,8 +53,6 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 
 
 ## buy_a_phone_number
-
-> <IncomingNumberResult> buy_a_phone_number(account_id, buy_incoming_number_request)
 
 Buy a Phone Number
 
@@ -126,8 +124,6 @@ end
 
 
 ## create_a_conference
-
-> <ConferenceResult> create_a_conference(account_id, opts)
 
 Create a Conference
 
@@ -201,8 +197,6 @@ end
 
 ## create_a_queue
 
-> <QueueResult> create_a_queue(account_id, opts)
-
 Create a Queue
 
 ### Examples
@@ -274,8 +268,6 @@ end
 
 
 ## create_an_application
-
-> <ApplicationResult> create_an_application(account_id, opts)
 
 Create an application
 
@@ -349,8 +341,6 @@ end
 
 ## delete_a_recording
 
-> delete_a_recording(account_id, recording_id)
-
 Delete a Recording
 
 ### Examples
@@ -420,8 +410,6 @@ nil (empty response body)
 
 
 ## delete_an_application
-
-> delete_an_application(account_id, application_id)
 
 Delete an application
 
@@ -493,8 +481,6 @@ nil (empty response body)
 
 ## delete_an_incoming_number
 
-> delete_an_incoming_number(account_id, phone_number_id)
-
 Delete an Incoming Number
 
 ### Examples
@@ -564,8 +550,6 @@ nil (empty response body)
 
 
 ## dequeue_a_member
-
-> <QueueMember> dequeue_a_member(account_id, queue_id, call_id)
 
 Dequeue a Member
 
@@ -642,8 +626,6 @@ end
 
 ## dequeue_head_member
 
-> <QueueMember> dequeue_head_member(account_id, queue_id)
-
 Dequeue Head Member
 
 ### Examples
@@ -714,8 +696,6 @@ end
 
 
 ## download_a_recording_file
-
-> File download_a_recording_file(account_id, recording_id)
 
 Download a Recording File
 
@@ -788,8 +768,6 @@ end
 
 ## filter_logs
 
-> <LogList> filter_logs(account_id, filter_logs_request)
-
 Filter Logs
 
 ### Examples
@@ -860,8 +838,6 @@ end
 
 
 ## get_a_call
-
-> <CallResult> get_a_call(account_id, call_id)
 
 Get a Call
 
@@ -934,8 +910,6 @@ end
 
 ## get_a_conference
 
-> <ConferenceResult> get_a_conference(account_id, conference_id)
-
 Get a Conference
 
 ### Examples
@@ -1006,8 +980,6 @@ end
 
 
 ## get_a_member
-
-> <QueueMember> get_a_member(account_id, queue_id, call_id)
 
 Get a Member
 
@@ -1084,8 +1056,6 @@ end
 
 ## get_a_participant
 
-> <ConferenceParticipantResult> get_a_participant(account_id, conference_id, call_id)
-
 Get a Participant
 
 ### Examples
@@ -1161,8 +1131,6 @@ end
 
 ## get_a_queue
 
-> <QueueResult> get_a_queue(account_id, queue_id)
-
 Get a Queue
 
 ### Examples
@@ -1233,8 +1201,6 @@ end
 
 
 ## get_a_recording
-
-> <RecordingResult> get_a_recording(account_id, recording_id)
 
 Get a Recording
 
@@ -1307,8 +1273,6 @@ end
 
 ## get_an_account
 
-> <AccountResult> get_an_account(account_id)
-
 Get an Account
 
 ### Examples
@@ -1375,8 +1339,6 @@ end
 
 
 ## get_an_application
-
-> <ApplicationResult> get_an_application(account_id, application_id)
 
 Get an Application
 
@@ -1449,8 +1411,6 @@ end
 
 ## get_an_incoming_number
 
-> <IncomingNumberResult> get_an_incoming_number(account_id, phone_number_id)
-
 Get an Incoming Number
 
 ### Examples
@@ -1521,8 +1481,6 @@ end
 
 
 ## get_an_sms_message
-
-> <MessageResult> get_an_sms_message(account_id, message_id)
 
 Get an SMS Message
 
@@ -1595,8 +1553,6 @@ end
 
 ## get_head_member
 
-> <QueueMember> get_head_member(account_id, queue_id)
-
 Get Head Member
 
 ### Examples
@@ -1667,8 +1623,6 @@ end
 
 
 ## list_active_queues
-
-> <QueueList> list_active_queues(account_id, opts)
 
 List Active Queues
 
@@ -1742,8 +1696,6 @@ end
 
 ## list_all_account_logs
 
-> <LogList> list_all_account_logs(account_id)
-
 List All Account Logs
 
 ### Examples
@@ -1809,9 +1761,7 @@ end
 - **Accept**: application/json
 
 
-## list_an_application
-
-> <ApplicationList> list_an_application(account_id, opts)
+## list_applications
 
 List applications
 
@@ -1836,28 +1786,28 @@ opts = {
 begin
 
   # List applications
-  result = api_instance.list_an_application(opts)
+  result = api_instance.list_applications(opts)
   p result
 rescue Freeclimb::ApiError => e
-  puts "Error when calling DefaultApi->list_an_application: #{e}"
+  puts "Error when calling DefaultApi->list_applications: #{e}"
 end
 ```
 
-#### Using the list_an_application_with_http_info variant
+#### Using the list_applications_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ApplicationList>, Integer, Hash)> list_an_application_with_http_info(account_id, opts)
+> <Array(<ApplicationList>, Integer, Hash)> list_applications_with_http_info(account_id, opts)
 
 ```ruby
 begin
   # List applications
-  data, status_code, headers = api_instance.list_an_application_with_http_info(opts)
+  data, status_code, headers = api_instance.list_applications_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ApplicationList>
 rescue Freeclimb::ApiError => e
-  puts "Error when calling DefaultApi->list_an_application_with_http_info: #{e}"
+  puts "Error when calling DefaultApi->list_applications_with_http_info: #{e}"
 end
 ```
 
@@ -1884,8 +1834,6 @@ end
 
 
 ## list_available_numbers
-
-> <AvailableNumberList> list_available_numbers(opts)
 
 List available numbers
 
@@ -1986,8 +1934,6 @@ end
 
 ## list_call_logs
 
-> <LogList> list_call_logs(account_id, call_id)
-
 List Call Logs
 
 ### Examples
@@ -2058,8 +2004,6 @@ end
 
 
 ## list_call_recordings
-
-> <RecordingList> list_call_recordings(account_id, call_id, opts)
 
 List Call Recordings
 
@@ -2136,8 +2080,6 @@ end
 
 
 ## list_calls
-
-> <CallList> list_calls(account_id, opts)
 
 List Calls
 
@@ -2229,8 +2171,6 @@ end
 
 ## list_conferences
 
-> <ConferenceList> list_conferences(account_id, opts)
-
 List Conferences
 
 ### Examples
@@ -2311,8 +2251,6 @@ end
 
 
 ## list_incoming_numbers
-
-> <IncomingNumberList> list_incoming_numbers(account_id, opts)
 
 List Incoming Numbers
 
@@ -2422,8 +2360,6 @@ end
 
 ## list_members
 
-> <QueueMemberList> list_members(account_id, queue_id)
-
 List Members
 
 ### Examples
@@ -2494,8 +2430,6 @@ end
 
 
 ## list_participants
-
-> <ConferenceParticipantList> list_participants(account_id, conference_id, opts)
 
 List Participants
 
@@ -2576,8 +2510,6 @@ end
 
 ## list_recordings
 
-> <RecordingList> list_recordings(account_id, opts)
-
 List Recordings
 
 ### Examples
@@ -2656,8 +2588,6 @@ end
 
 ## list_sms_messages
 
-> <MessagesList> list_sms_messages(account_id, opts)
-
 List SMS Messages
 
 ### Examples
@@ -2679,7 +2609,7 @@ opts = {
   from: 'from_example', # String | Only show Messages from this phone number.
   begin_time: 'begin_time_example', # String | Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
   end_time: 'end_time_example', # String | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
-  direction: 'direction_example' # String | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb.
+  direction: 'inbound' # String | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb.
 }
 
 begin
@@ -2741,8 +2671,6 @@ end
 
 
 ## make_a_call
-
-> <CallResult> make_a_call(account_id, opts)
 
 Make a Call
 
@@ -2815,8 +2743,6 @@ end
 
 
 ## remove_a_participant
-
-> remove_a_participant(account_id, conference_id, call_id)
 
 Remove a Participant
 
@@ -2892,8 +2818,6 @@ nil (empty response body)
 
 ## send_an_sms_message
 
-> <MessageResult> send_an_sms_message(account_id, message_request)
-
 Send an SMS Message
 
 ### Examples
@@ -2965,8 +2889,6 @@ end
 
 ## stream_a_recording_file
 
-> File stream_a_recording_file(account_id, recording_id)
-
 Stream a Recording File
 
 ### Examples
@@ -3037,8 +2959,6 @@ end
 
 
 ## update_a_conference
-
-> <ConferenceResult> update_a_conference(account_id, conference_id, opts)
 
 Update a Conference
 
@@ -3116,8 +3036,6 @@ end
 
 ## update_a_live_call
 
-> update_a_live_call(account_id, call_id, update_call_request)
-
 Update a Live Call
 
 ### Examples
@@ -3191,8 +3109,6 @@ nil (empty response body)
 
 
 ## update_a_participant
-
-> <ConferenceParticipantResult> update_a_participant(account_id, conference_id, call_id, opts)
 
 Update a Participant
 
@@ -3274,8 +3190,6 @@ end
 
 ## update_a_queue
 
-> <QueueResult> update_a_queue(account_id, queue_id, opts)
-
 Update a Queue
 
 ### Examples
@@ -3352,8 +3266,6 @@ end
 
 ## update_an_account
 
-> update_an_account(account_id, opts)
-
 Manage an account
 
 ### Examples
@@ -3424,8 +3336,6 @@ nil (empty response body)
 
 
 ## update_an_application
-
-> <ApplicationResult> update_an_application(account_id, application_id, opts)
 
 Update an application
 
@@ -3502,8 +3412,6 @@ end
 
 
 ## update_an_incoming_number
-
-> <IncomingNumberResult> update_an_incoming_number(account_id, phone_number_id, opts)
 
 Update an Incoming Number
 

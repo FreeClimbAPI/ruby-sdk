@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    freeclimb (3.0.3)
+    freeclimb (4.0.0)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM
@@ -78,12 +78,11 @@ GEM
       ethon (>= 0.9.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-
+    unicode-display_width (1.5.0)
     webmock (3.14.0)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-
 
 PLATFORMS
   ruby
@@ -97,7 +96,6 @@ DEPENDENCIES
   rubocop (~> 0.66.0)
   rusty_camel (~> 1.0.4)
   webmock (~> 3.14)
-
 
 BUNDLED WITH
    2.3.6
