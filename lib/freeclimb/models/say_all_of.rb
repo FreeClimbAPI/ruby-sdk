@@ -88,6 +88,8 @@ module Freeclimb
 
       if attributes.key?(:'loop')
         self.loop = attributes[:'loop']
+      else
+        self.loop = 1
       end
 
       if attributes.key?(:'conference_id')

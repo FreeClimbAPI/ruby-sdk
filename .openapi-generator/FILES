@@ -63,6 +63,8 @@ docs/MutableResourceModel.md
 docs/OutDial.md
 docs/OutDialAllOf.md
 docs/PaginationModel.md
+docs/Park.md
+docs/ParkAllOf.md
 docs/Pause.md
 docs/PauseAllOf.md
 docs/PerclCommand.md
@@ -104,6 +106,7 @@ docs/SmsAllOf.md
 docs/StartRecordCall.md
 docs/TerminateConference.md
 docs/TerminateConferenceAllOf.md
+docs/Unpark.md
 docs/UpdateCallRequest.md
 docs/UpdateConferenceParticipantRequest.md
 docs/UpdateConferenceRequest.md
@@ -172,6 +175,8 @@ lib/freeclimb/models/mutable_resource_model.rb
 lib/freeclimb/models/out_dial.rb
 lib/freeclimb/models/out_dial_all_of.rb
 lib/freeclimb/models/pagination_model.rb
+lib/freeclimb/models/park.rb
+lib/freeclimb/models/park_all_of.rb
 lib/freeclimb/models/pause.rb
 lib/freeclimb/models/pause_all_of.rb
 lib/freeclimb/models/percl_command.rb
@@ -213,6 +218,7 @@ lib/freeclimb/models/sms_all_of.rb
 lib/freeclimb/models/start_record_call.rb
 lib/freeclimb/models/terminate_conference.rb
 lib/freeclimb/models/terminate_conference_all_of.rb
+lib/freeclimb/models/unpark.rb
 lib/freeclimb/models/update_call_request.rb
 lib/freeclimb/models/update_conference_participant_request.rb
 lib/freeclimb/models/update_conference_request.rb
