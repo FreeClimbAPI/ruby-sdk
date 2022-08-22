@@ -14,6 +14,7 @@ OpenAPI Generator version: 5.4.0
 require 'freeclimb'
 require 'webmock/rspec'
 require 'factory_bot'
+require 'facets/string/camelcase'
 
 include WebMock::API
 
