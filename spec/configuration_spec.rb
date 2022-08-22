@@ -17,7 +17,7 @@ describe Freeclimb::Configuration do
 
   before(:each) do
     # uncomment below to setup host and base_path
-    require 'URI'
+    require 'uri'
     uri = URI.parse("https://www.freeclimb.com/apiserver")
     Freeclimb.configure do |c|
       c.host = uri.host
