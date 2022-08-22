@@ -7,6 +7,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 None
 
+<a name="4.0.1"></a>
+## [4.0.1] - 2022-07-20
+### Added
+- Add `Park` PerCL command
+- Add `Unpark` PerCL command
+### Changed
+- Default loop value for Say command is set to `1`
+
 <a name="4.0.0"></a>
 ## [4.0.0] - 2022-03-03
 ### Changed
