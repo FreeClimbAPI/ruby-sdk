@@ -9,12 +9,7 @@ None
 <a name="4.0.2"></a>
 ## [4.0.2] - 2022-10-07
 ### Added
-- Add `play_ beep` enum to update conference request
-### Changed
-- Call `status` enum `INPROGRESS` to `IN_PROGRESS`
-- Call `status` enum `NOANSWER` to `NO_ANSWER`
-- Conference `play_beep` enum `ENTRYONLY` to `ENTRY_ONLY`
-- Conference `play_beep` enum `EXITONLY` to `EXIT_ONLY`
+- Add `playBeep` enum to `update_conference_request`
 
 <a name="4.0.1"></a>
 ## [4.0.1] - 2022-07-20
