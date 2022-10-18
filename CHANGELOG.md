@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 None
+<a name="4.0.2"></a>
+## [4.0.2] - 2022-10-07
+### Added
+- Add `playBeep` enum to `update_conference_request`
 
 <a name="4.0.1"></a>
 ## [4.0.1] - 2022-07-20

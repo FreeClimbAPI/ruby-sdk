@@ -115,9 +115,21 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      play_beep_validator = EnumAttributeValidator.new('String', ["always", "never", "entryOnly", "exitOnly"])
+      return false unless play_beep_validator.valid?(@play_beep)
       status_validator = EnumAttributeValidator.new('String', ["empty", "terminated"])
       return false unless status_validator.valid?(@status)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] play_beep Object to be assigned
+    def play_beep=(play_beep)
+      validator = EnumAttributeValidator.new('String', ["always", "never", "entryOnly", "exitOnly"])
+      unless validator.valid?(play_beep)
+        fail ArgumentError, "invalid value for \"play_beep\", must be one of #{validator.allowable_values}."
+      end
+      @play_beep = play_beep
     end
 
     # Custom attribute writer method checking allowed values (enum).

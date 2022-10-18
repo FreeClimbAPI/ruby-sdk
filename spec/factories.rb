@@ -71,7 +71,7 @@ FactoryBot.define do
     end
     factory :update_conference_request, class: Freeclimb::UpdateConferenceRequest do
         _alias { "TEST_ALIAS" }
-        play_beep { "TEST_PLAY_BEEP" }
+        play_beep { "always" }
         status { "empty" }
     end
     factory :update_call_request, class: Freeclimb::UpdateCallRequest do
