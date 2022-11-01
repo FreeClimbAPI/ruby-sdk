@@ -1024,6 +1024,7 @@ describe 'DefaultApi' do
   # @option opts [Boolean] :capabilities_toll_free 
   # @option opts [Boolean] :capabilities_ten_dlc 
   # @option opts [Boolean] :capabilities_short_code 
+  # @option opts [Boolean] :offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
   # @return [IncomingNumberList]
   describe 'list_incoming_numbers test' do
     it 'should work' do
@@ -1041,20 +1042,21 @@ describe 'DefaultApi' do
       capabilities_toll_free = build_value(:capabilities_toll_free)
       capabilities_ten_dlc = build_value(:capabilities_ten_dlc)
       capabilities_short_code = build_value(:capabilities_short_code)
+      offnet = build_value(:offnet)
       local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
       stub = stub_request(:GET.downcase, local_var_path)
         .with(
           body: {},
           query: build_query_parameters({
-           :phone_number => phone_number, :_alias => _alias, :region => region, :country => country, :application_id => application_id, :has_application => has_application, :voice_enabled => voice_enabled, :sms_enabled => sms_enabled, :capabilities_voice => capabilities_voice, :capabilities_sms => capabilities_sms, :capabilities_toll_free => capabilities_toll_free, :capabilities_ten_dlc => capabilities_ten_dlc, :capabilities_short_code => capabilities_short_code,
+           :phone_number => phone_number, :_alias => _alias, :region => region, :country => country, :application_id => application_id, :has_application => has_application, :voice_enabled => voice_enabled, :sms_enabled => sms_enabled, :capabilities_voice => capabilities_voice, :capabilities_sms => capabilities_sms, :capabilities_toll_free => capabilities_toll_free, :capabilities_ten_dlc => capabilities_ten_dlc, :capabilities_short_code => capabilities_short_code, :offnet => offnet,
           })
         )
         .to_return(status: 200, body: "", headers: {})
       @api_instance.list_incoming_numbers(
         
         {
-          :phone_number => phone_number,:_alias => _alias,:region => region,:country => country,:application_id => application_id,:has_application => has_application,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,
+          :phone_number => phone_number,:_alias => _alias,:region => region,:country => country,:application_id => application_id,:has_application => has_application,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,:offnet => offnet,
         }
       )
 
