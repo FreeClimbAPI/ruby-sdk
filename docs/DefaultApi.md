@@ -2281,7 +2281,8 @@ opts = {
   capabilities_sms: true, # Boolean | 
   capabilities_toll_free: true, # Boolean | 
   capabilities_ten_dlc: true, # Boolean | 
-  capabilities_short_code: true # Boolean | 
+  capabilities_short_code: true, # Boolean | 
+  offnet: true # Boolean | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
 }
 
 begin
@@ -2342,6 +2343,8 @@ end
 | **capabilities_ten_dlc** | **Boolean** |  | [optional] |
 
 | **capabilities_short_code** | **Boolean** |  | [optional] |
+
+| **offnet** | **Boolean** | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. | [optional] |
 
 
 ### Return type

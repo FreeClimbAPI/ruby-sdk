@@ -1947,6 +1947,7 @@ module Freeclimb
     # @option opts [Boolean] :capabilities_toll_free 
     # @option opts [Boolean] :capabilities_ten_dlc 
     # @option opts [Boolean] :capabilities_short_code 
+    # @option opts [Boolean] :offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
     # @return [IncomingNumberList]
     def list_incoming_numbers(opts = {})
       data, _status_code, _headers = list_incoming_numbers_with_http_info(opts)
@@ -1968,6 +1969,7 @@ module Freeclimb
     # @option opts [Boolean] :capabilities_toll_free 
     # @option opts [Boolean] :capabilities_ten_dlc 
     # @option opts [Boolean] :capabilities_short_code 
+    # @option opts [Boolean] :offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
     # @return [Array<(IncomingNumberList, Integer, Hash)>] IncomingNumberList data, response status code and response headers
     def list_incoming_numbers_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -1991,6 +1993,7 @@ module Freeclimb
       query_params[:'capabilities.tollFree'] = opts[:'capabilities_toll_free'] if !opts[:'capabilities_toll_free'].nil?
       query_params[:'capabilities.tenDLC'] = opts[:'capabilities_ten_dlc'] if !opts[:'capabilities_ten_dlc'].nil?
       query_params[:'capabilities.shortCode'] = opts[:'capabilities_short_code'] if !opts[:'capabilities_short_code'].nil?
+      query_params[:'offnet'] = opts[:'offnet'] if !opts[:'offnet'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

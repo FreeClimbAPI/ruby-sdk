@@ -59,6 +59,9 @@ module Freeclimb
     # Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
     attr_accessor :sms_enabled
 
+    # The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource.
+    attr_accessor :offnet
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -76,7 +79,8 @@ module Freeclimb
         :'region' => :'region',
         :'country' => :'country',
         :'voice_enabled' => :'voiceEnabled',
-        :'sms_enabled' => :'smsEnabled'
+        :'sms_enabled' => :'smsEnabled',
+        :'offnet' => :'offnet'
       }
     end
 
@@ -102,7 +106,8 @@ module Freeclimb
         :'region' => :'String',
         :'country' => :'String',
         :'voice_enabled' => :'Boolean',
-        :'sms_enabled' => :'Boolean'
+        :'sms_enabled' => :'Boolean',
+        :'offnet' => :'Boolean'
       }
     end
 
@@ -118,7 +123,8 @@ module Freeclimb
         :'region',
         :'country',
         :'voice_enabled',
-        :'sms_enabled'
+        :'sms_enabled',
+        :'offnet'
       ])
     end
 
@@ -204,6 +210,10 @@ module Freeclimb
       if attributes.key?(:'sms_enabled')
         self.sms_enabled = attributes[:'sms_enabled']
       end
+
+      if attributes.key?(:'offnet')
+        self.offnet = attributes[:'offnet']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -238,7 +248,8 @@ module Freeclimb
           region == o.region &&
           country == o.country &&
           voice_enabled == o.voice_enabled &&
-          sms_enabled == o.sms_enabled
+          sms_enabled == o.sms_enabled &&
+          offnet == o.offnet
     end
 
     # @see the `==` method
@@ -250,7 +261,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, capabilities, campaign_id, phone_number_id, account_id, application_id, phone_number, _alias, region, country, voice_enabled, sms_enabled].hash
+      [uri, date_created, date_updated, revision, capabilities, campaign_id, phone_number_id, account_id, application_id, phone_number, _alias, region, country, voice_enabled, sms_enabled, offnet].hash
     end
 
     # Builds the object from hash
