@@ -8,8 +8,8 @@
 | **queue_id** | **String** | A string that uniquely identifies this Queue resource. | [optional] |
 | **_alias** | **String** | A description for this Queue. | [optional] |
 | **max_size** | **Integer** | The maximum number of Calls permitted in the Queue. Default is 100. Maximum is 1000. | [optional] |
-| **current_size** | **String** | Count of Calls currently in the Queue. | [optional] |
-| **average_wait_time** | **String** | Average wait time (in seconds) of all Calls in the Queue. | [optional] |
+| **current_size** | **Integer** | Count of Calls currently in the Queue. | [optional] |
+| **average_queue_removal_time** | **Integer** | The average amount of time (in seconds) for a call to be removed from the queue. | [optional] |
 | **subresource_uris** | **Object** | List of subresources for this Queue (which includes Queue members). | [optional] |
 
 ## Example
@@ -23,7 +23,7 @@ instance = Freeclimb::QueueResultAllOf.new(
   _alias: null,
   max_size: null,
   current_size: null,
-  average_wait_time: null,
+  average_queue_removal_time: null,
   subresource_uris: null
 )
 ```
