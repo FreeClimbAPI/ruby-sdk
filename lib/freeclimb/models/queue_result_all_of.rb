@@ -30,8 +30,8 @@ module Freeclimb
     # Count of Calls currently in the Queue.
     attr_accessor :current_size
 
-    # Average wait time (in seconds) of all Calls in the Queue.
-    attr_accessor :average_wait_time
+    # The average amount of time (in seconds) for a call to be removed from the queue.
+    attr_accessor :average_queue_removal_time
 
     # List of subresources for this Queue (which includes Queue members).
     attr_accessor :subresource_uris
@@ -44,7 +44,7 @@ module Freeclimb
         :'_alias' => :'alias',
         :'max_size' => :'maxSize',
         :'current_size' => :'currentSize',
-        :'average_wait_time' => :'averageWaitTime',
+        :'average_queue_removal_time' => :'averageQueueRemovalTime',
         :'subresource_uris' => :'subresourceUris'
       }
     end
@@ -61,8 +61,8 @@ module Freeclimb
         :'queue_id' => :'String',
         :'_alias' => :'String',
         :'max_size' => :'Integer',
-        :'current_size' => :'String',
-        :'average_wait_time' => :'String',
+        :'current_size' => :'Integer',
+        :'average_queue_removal_time' => :'Integer',
         :'subresource_uris' => :'Object'
       }
     end
@@ -75,7 +75,7 @@ module Freeclimb
         :'_alias',
         :'max_size',
         :'current_size',
-        :'average_wait_time',
+        :'average_queue_removal_time',
         :'subresource_uris'
       ])
     end
@@ -115,8 +115,8 @@ module Freeclimb
         self.current_size = attributes[:'current_size']
       end
 
-      if attributes.key?(:'average_wait_time')
-        self.average_wait_time = attributes[:'average_wait_time']
+      if attributes.key?(:'average_queue_removal_time')
+        self.average_queue_removal_time = attributes[:'average_queue_removal_time']
       end
 
       if attributes.key?(:'subresource_uris')
@@ -147,7 +147,7 @@ module Freeclimb
           _alias == o._alias &&
           max_size == o.max_size &&
           current_size == o.current_size &&
-          average_wait_time == o.average_wait_time &&
+          average_queue_removal_time == o.average_queue_removal_time &&
           subresource_uris == o.subresource_uris
     end
 
@@ -160,7 +160,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_id, queue_id, _alias, max_size, current_size, average_wait_time, subresource_uris].hash
+      [account_id, queue_id, _alias, max_size, current_size, average_queue_removal_time, subresource_uris].hash
     end
 
     # Builds the object from hash
