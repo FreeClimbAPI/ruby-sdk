@@ -20,11 +20,19 @@ require 'facets/string/snakecase'
 describe 'DefaultApi' do
   before do
     # run before each test
+
+    Freeclimb.configure do |config|
+      # Configure HTTP basic authorization: fc
+      config.host = 'http://127.0.0.1:4010'
+      config.username = 'ACCOUNT_ID'
+      config.password = 'API_KEY'
+    end
+
     @api_instance = Freeclimb::DefaultApi.new
-    @scheme = @api_instance.api_client.config.scheme
-    @host = @api_instance.api_client.config.host
-    @base_path = @api_instance.api_client.config.base_path
-    @base_url = "#{@scheme}://#{@host}#{@base_path}"
+    # @scheme = @api_instance.api_client.config.scheme
+    # @host = @api_instance.api_client.config.host
+    # @base_path = @api_instance.api_client.config.base_path
+    # @base_url = "#{@scheme}://#{@host}#{@base_path}"
   end
 
   after do
@@ -46,25 +54,27 @@ describe 'DefaultApi' do
   describe 'buy_a_phone_number test' do
     it 'should work' do
       
-      buy_incoming_number_request = build_value(:buy_incoming_number_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+      # buy_incoming_number_request = build_value(:buy_incoming_number_request)
+      # local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  buy_incoming_number_request.to_body.to_json,
-          query: build_query_parameters({
+      # stub = stub_request(:POST.downcase, local_var_path)
+      #   .with(
+      #     body:  buy_incoming_number_request.to_body.to_json,
+      #     query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.buy_a_phone_number(
-        buy_incoming_number_request,
-        {
+      #     })
+      #   )
+      #   .to_return(status: 200, body: "", headers: {})
+      # @api_instance.buy_a_phone_number(
+      #   buy_incoming_number_request,
+      #   {
           
-        }
-      )
-
-      expect(stub).to have_been_requested
+      #   }
+      # )
+      buy_incoming_number_request = Freeclimb::BuyIncomingNumberRequest.new({phone_number: 'phone_number_example'})
+      result = api_instance.buy_a_phone_number(buy_incoming_number_request)
+      expect(result).to be_a Freeclimb::IncomingNumberResult
+      # expect(stub).to have_been_requested
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -74,1492 +84,1492 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [CreateConferenceRequest] :create_conference_request Conference to create
   # @return [ConferenceResult]
-  describe 'create_a_conference test' do
-    it 'should work' do
+  # describe 'create_a_conference test' do
+  #   it 'should work' do
       
-      create_conference_request = build_value(:create_conference_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     create_conference_request = build_value(:create_conference_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Conferences'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  create_conference_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  create_conference_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.create_a_conference(
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.create_a_conference(
         
-        {
-          :create_conference_request => create_conference_request,
-        }
-      )
+  #       {
+  #         :create_conference_request => create_conference_request,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for create_a_queue
-  # Create a Queue
-  # @param [Hash] opts the optional parameters
-  # @option opts [QueueRequest] :queue_request Queue details used to create a queue
-  # @return [QueueResult]
-  describe 'create_a_queue test' do
-    it 'should work' do
+  # # unit tests for create_a_queue
+  # # Create a Queue
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [QueueRequest] :queue_request Queue details used to create a queue
+  # # @return [QueueResult]
+  # describe 'create_a_queue test' do
+  #   it 'should work' do
       
-      queue_request = build_value(:queue_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     queue_request = build_value(:queue_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Queues'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  queue_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  queue_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.create_a_queue(
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.create_a_queue(
         
-        {
-          :queue_request => queue_request,
-        }
-      )
+  #       {
+  #         :queue_request => queue_request,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for create_an_application
-  # Create an application
-  # @param [Hash] opts the optional parameters
-  # @option opts [ApplicationRequest] :application_request Application Details
-  # @return [ApplicationResult]
-  describe 'create_an_application test' do
-    it 'should work' do
+  # # unit tests for create_an_application
+  # # Create an application
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [ApplicationRequest] :application_request Application Details
+  # # @return [ApplicationResult]
+  # describe 'create_an_application test' do
+  #   it 'should work' do
       
-      application_request = build_value(:application_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Applications'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     application_request = build_value(:application_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Applications'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  application_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  application_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.create_an_application(
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.create_an_application(
         
-        {
-          :application_request => application_request,
-        }
-      )
+  #       {
+  #         :application_request => application_request,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for delete_a_recording
-  # Delete a Recording
-  # @param recording_id String that uniquely identifies this recording resource.
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'delete_a_recording test' do
-    it 'should work' do
+  # # unit tests for delete_a_recording
+  # # Delete a Recording
+  # # @param recording_id String that uniquely identifies this recording resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [nil]
+  # describe 'delete_a_recording test' do
+  #   it 'should work' do
       
-      recording_id = build_value(:recording_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Recordings/{recordingId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'recordingId' + '}', CGI.escape('TEST_' + 'recordingId'.snakecase.upcase))
+  #     recording_id = build_value(:recording_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Recordings/{recordingId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'recordingId' + '}', CGI.escape('TEST_' + 'recordingId'.snakecase.upcase))
 
-      stub = stub_request(:DELETE.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:DELETE.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.delete_a_recording(
-        recording_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.delete_a_recording(
+  #       recording_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for delete_an_application
-  # Delete an application
-  # @param application_id String that uniquely identifies this application resource.
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'delete_an_application test' do
-    it 'should work' do
+  # # unit tests for delete_an_application
+  # # Delete an application
+  # # @param application_id String that uniquely identifies this application resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [nil]
+  # describe 'delete_an_application test' do
+  #   it 'should work' do
       
-      application_id = build_value(:application_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'applicationId' + '}', CGI.escape('TEST_' + 'applicationId'.snakecase.upcase))
+  #     application_id = build_value(:application_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'applicationId' + '}', CGI.escape('TEST_' + 'applicationId'.snakecase.upcase))
 
-      stub = stub_request(:DELETE.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:DELETE.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.delete_an_application(
-        application_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.delete_an_application(
+  #       application_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for delete_an_incoming_number
-  # Delete an Incoming Number
-  # @param phone_number_id String that uniquely identifies this phone number resource.
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'delete_an_incoming_number test' do
-    it 'should work' do
+  # # unit tests for delete_an_incoming_number
+  # # Delete an Incoming Number
+  # # @param phone_number_id String that uniquely identifies this phone number resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [nil]
+  # describe 'delete_an_incoming_number test' do
+  #   it 'should work' do
       
-      phone_number_id = build_value(:phone_number_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'phoneNumberId' + '}', CGI.escape('TEST_' + 'phoneNumberId'.snakecase.upcase))
+  #     phone_number_id = build_value(:phone_number_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'phoneNumberId' + '}', CGI.escape('TEST_' + 'phoneNumberId'.snakecase.upcase))
 
-      stub = stub_request(:DELETE.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:DELETE.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.delete_an_incoming_number(
-        phone_number_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.delete_an_incoming_number(
+  #       phone_number_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for dequeue_a_member
-  # Dequeue a Member
-  # @param queue_id String that uniquely identifies the Queue that the Member belongs to.
-  # @param call_id ID if the Call that the Member belongs to
-  # @param [Hash] opts the optional parameters
-  # @return [QueueMember]
-  describe 'dequeue_a_member test' do
-    it 'should work' do
+  # # unit tests for dequeue_a_member
+  # # Dequeue a Member
+  # # @param queue_id String that uniquely identifies the Queue that the Member belongs to.
+  # # @param call_id ID if the Call that the Member belongs to
+  # # @param [Hash] opts the optional parameters
+  # # @return [QueueMember]
+  # describe 'dequeue_a_member test' do
+  #   it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      call_id = build_value(:call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
+  #     queue_id = build_value(:queue_id)
+  #     call_id = build_value(:call_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.dequeue_a_member(
-        queue_id,call_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.dequeue_a_member(
+  #       queue_id,call_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for dequeue_head_member
-  # Dequeue Head Member
-  # @param queue_id String that uniquely identifies this queue resource.
-  # @param [Hash] opts the optional parameters
-  # @return [QueueMember]
-  describe 'dequeue_head_member test' do
-    it 'should work' do
+  # # unit tests for dequeue_head_member
+  # # Dequeue Head Member
+  # # @param queue_id String that uniquely identifies this queue resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [QueueMember]
+  # describe 'dequeue_head_member test' do
+  #   it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members/Front'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
+  #     queue_id = build_value(:queue_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members/Front'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.dequeue_head_member(
-        queue_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.dequeue_head_member(
+  #       queue_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for download_a_recording_file
-  # Download a Recording File
-  # @param recording_id String that uniquely identifies this recording resource.
-  # @param [Hash] opts the optional parameters
-  # @return [File]
-  describe 'download_a_recording_file test' do
-    it 'should work' do
+  # # unit tests for download_a_recording_file
+  # # Download a Recording File
+  # # @param recording_id String that uniquely identifies this recording resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [File]
+  # describe 'download_a_recording_file test' do
+  #   it 'should work' do
       
-      recording_id = build_value(:recording_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Recordings/{recordingId}/Download'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'recordingId' + '}', CGI.escape('TEST_' + 'recordingId'.snakecase.upcase))
+  #     recording_id = build_value(:recording_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Recordings/{recordingId}/Download'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'recordingId' + '}', CGI.escape('TEST_' + 'recordingId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.download_a_recording_file(
-        recording_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.download_a_recording_file(
+  #       recording_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for filter_logs
-  # Filter Logs
-  # @param filter_logs_request Filter logs request paramters
-  # @param [Hash] opts the optional parameters
-  # @return [LogList]
-  describe 'filter_logs test' do
-    it 'should work' do
+  # # unit tests for filter_logs
+  # # Filter Logs
+  # # @param filter_logs_request Filter logs request paramters
+  # # @param [Hash] opts the optional parameters
+  # # @return [LogList]
+  # describe 'filter_logs test' do
+  #   it 'should work' do
       
-      filter_logs_request = build_value(:filter_logs_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     filter_logs_request = build_value(:filter_logs_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  filter_logs_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  filter_logs_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.filter_logs(
-        filter_logs_request,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.filter_logs(
+  #       filter_logs_request,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for get_a_call
-  # Get a Call
-  # @param call_id String that uniquely identifies this call resource.
-  # @param [Hash] opts the optional parameters
-  # @return [CallResult]
-  describe 'get_a_call test' do
-    it 'should work' do
+  # # unit tests for get_a_call
+  # # Get a Call
+  # # @param call_id String that uniquely identifies this call resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [CallResult]
+  # describe 'get_a_call test' do
+  #   it 'should work' do
       
-      call_id = build_value(:call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Calls/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
+  #     call_id = build_value(:call_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Calls/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_a_call(
-        call_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.get_a_call(
+  #       call_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for get_a_conference
-  # Get a Conference
-  # @param conference_id A string that uniquely identifies this conference resource.
-  # @param [Hash] opts the optional parameters
-  # @return [ConferenceResult]
-  describe 'get_a_conference test' do
-    it 'should work' do
+  # # unit tests for get_a_conference
+  # # Get a Conference
+  # # @param conference_id A string that uniquely identifies this conference resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [ConferenceResult]
+  # describe 'get_a_conference test' do
+  #   it 'should work' do
       
-      conference_id = build_value(:conference_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase))
+  #     conference_id = build_value(:conference_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_a_conference(
-        conference_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.get_a_conference(
+  #       conference_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for get_a_member
-  # Get a Member
-  # @param queue_id String that uniquely identifies the Queue that the Member belongs to.
-  # @param call_id ID of the Call that the Member belongs to
-  # @param [Hash] opts the optional parameters
-  # @return [QueueMember]
-  describe 'get_a_member test' do
-    it 'should work' do
+  # # unit tests for get_a_member
+  # # Get a Member
+  # # @param queue_id String that uniquely identifies the Queue that the Member belongs to.
+  # # @param call_id ID of the Call that the Member belongs to
+  # # @param [Hash] opts the optional parameters
+  # # @return [QueueMember]
+  # describe 'get_a_member test' do
+  #   it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      call_id = build_value(:call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
+  #     queue_id = build_value(:queue_id)
+  #     call_id = build_value(:call_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_a_member(
-        queue_id,call_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.get_a_member(
+  #       queue_id,call_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for get_a_participant
-  # Get a Participant
-  # @param conference_id ID of the conference this participant is in.
-  # @param call_id ID of the Call associated with this participant.
-  # @param [Hash] opts the optional parameters
-  # @return [ConferenceParticipantResult]
-  describe 'get_a_participant test' do
-    it 'should work' do
+  # # unit tests for get_a_participant
+  # # Get a Participant
+  # # @param conference_id ID of the conference this participant is in.
+  # # @param call_id ID of the Call associated with this participant.
+  # # @param [Hash] opts the optional parameters
+  # # @return [ConferenceParticipantResult]
+  # describe 'get_a_participant test' do
+  #   it 'should work' do
       
-      conference_id = build_value(:conference_id)
-      call_id = build_value(:call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
+  #     conference_id = build_value(:conference_id)
+  #     call_id = build_value(:call_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_a_participant(
-        conference_id,call_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.get_a_participant(
+  #       conference_id,call_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for get_a_queue
-  # Get a Queue
-  # @param queue_id A string that uniquely identifies this queue resource.
-  # @param [Hash] opts the optional parameters
-  # @return [QueueResult]
-  describe 'get_a_queue test' do
-    it 'should work' do
+  # # unit tests for get_a_queue
+  # # Get a Queue
+  # # @param queue_id A string that uniquely identifies this queue resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [QueueResult]
+  # describe 'get_a_queue test' do
+  #   it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
+  #     queue_id = build_value(:queue_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_a_queue(
-        queue_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.get_a_queue(
+  #       queue_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for get_a_recording
-  # Get a Recording
-  # @param recording_id String that uniquely identifies this recording resource.
-  # @param [Hash] opts the optional parameters
-  # @return [RecordingResult]
-  describe 'get_a_recording test' do
-    it 'should work' do
+  # # unit tests for get_a_recording
+  # # Get a Recording
+  # # @param recording_id String that uniquely identifies this recording resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [RecordingResult]
+  # describe 'get_a_recording test' do
+  #   it 'should work' do
       
-      recording_id = build_value(:recording_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Recordings/{recordingId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'recordingId' + '}', CGI.escape('TEST_' + 'recordingId'.snakecase.upcase))
+  #     recording_id = build_value(:recording_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Recordings/{recordingId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'recordingId' + '}', CGI.escape('TEST_' + 'recordingId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_a_recording(
-        recording_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.get_a_recording(
+  #       recording_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for get_an_account
-  # Get an Account
-  # @param [Hash] opts the optional parameters
-  # @return [AccountResult]
-  describe 'get_an_account test' do
-    it 'should work' do
+  # # unit tests for get_an_account
+  # # Get an Account
+  # # @param [Hash] opts the optional parameters
+  # # @return [AccountResult]
+  # describe 'get_an_account test' do
+  #   it 'should work' do
       
-      local_var_path = @base_url + '/Accounts/{accountId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     local_var_path = @base_url + '/Accounts/{accountId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_an_account(
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.get_an_account(
         
-        {
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for get_an_application
-  # Get an Application
-  # @param application_id A string that uniquely identifies this application resource.
-  # @param [Hash] opts the optional parameters
-  # @return [ApplicationResult]
-  describe 'get_an_application test' do
-    it 'should work' do
+  # # unit tests for get_an_application
+  # # Get an Application
+  # # @param application_id A string that uniquely identifies this application resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [ApplicationResult]
+  # describe 'get_an_application test' do
+  #   it 'should work' do
       
-      application_id = build_value(:application_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'applicationId' + '}', CGI.escape('TEST_' + 'applicationId'.snakecase.upcase))
+  #     application_id = build_value(:application_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'applicationId' + '}', CGI.escape('TEST_' + 'applicationId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_an_application(
-        application_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.get_an_application(
+  #       application_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for get_an_incoming_number
-  # Get an Incoming Number
-  # @param phone_number_id String that uniquely identifies this phone number resource.
-  # @param [Hash] opts the optional parameters
-  # @return [IncomingNumberResult]
-  describe 'get_an_incoming_number test' do
-    it 'should work' do
+  # # unit tests for get_an_incoming_number
+  # # Get an Incoming Number
+  # # @param phone_number_id String that uniquely identifies this phone number resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [IncomingNumberResult]
+  # describe 'get_an_incoming_number test' do
+  #   it 'should work' do
       
-      phone_number_id = build_value(:phone_number_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'phoneNumberId' + '}', CGI.escape('TEST_' + 'phoneNumberId'.snakecase.upcase))
+  #     phone_number_id = build_value(:phone_number_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'phoneNumberId' + '}', CGI.escape('TEST_' + 'phoneNumberId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_an_incoming_number(
-        phone_number_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.get_an_incoming_number(
+  #       phone_number_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for get_an_sms_message
-  # Get an SMS Message
-  # @param message_id String that uniquely identifies this Message resource.
-  # @param [Hash] opts the optional parameters
-  # @return [MessageResult]
-  describe 'get_an_sms_message test' do
-    it 'should work' do
+  # # unit tests for get_an_sms_message
+  # # Get an SMS Message
+  # # @param message_id String that uniquely identifies this Message resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [MessageResult]
+  # describe 'get_an_sms_message test' do
+  #   it 'should work' do
       
-      message_id = build_value(:message_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Messages/{messageId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'messageId' + '}', CGI.escape('TEST_' + 'messageId'.snakecase.upcase))
+  #     message_id = build_value(:message_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Messages/{messageId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'messageId' + '}', CGI.escape('TEST_' + 'messageId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_an_sms_message(
-        message_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.get_an_sms_message(
+  #       message_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for get_head_member
-  # Get Head Member
-  # @param queue_id String that uniquely identifies the Queue that the Member belongs to.
-  # @param [Hash] opts the optional parameters
-  # @return [QueueMember]
-  describe 'get_head_member test' do
-    it 'should work' do
+  # # unit tests for get_head_member
+  # # Get Head Member
+  # # @param queue_id String that uniquely identifies the Queue that the Member belongs to.
+  # # @param [Hash] opts the optional parameters
+  # # @return [QueueMember]
+  # describe 'get_head_member test' do
+  #   it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members/Front'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
+  #     queue_id = build_value(:queue_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members/Front'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_head_member(
-        queue_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.get_head_member(
+  #       queue_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_active_queues
-  # List Active Queues
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :_alias Return only the Queue resources with aliases that exactly match this name.
-  # @return [QueueList]
-  describe 'list_active_queues test' do
-    it 'should work' do
+  # # unit tests for list_active_queues
+  # # List Active Queues
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [String] :_alias Return only the Queue resources with aliases that exactly match this name.
+  # # @return [QueueList]
+  # describe 'list_active_queues test' do
+  #   it 'should work' do
       
-      _alias = build_value(:_alias)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     _alias = build_value(:_alias)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Queues'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :_alias => _alias,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_active_queues(
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
+  #          :_alias => _alias,
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_active_queues(
         
-        {
-          :_alias => _alias,
-        }
-      )
+  #       {
+  #         :_alias => _alias,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_all_account_logs
-  # List All Account Logs
-  # @param [Hash] opts the optional parameters
-  # @return [LogList]
-  describe 'list_all_account_logs test' do
-    it 'should work' do
+  # # unit tests for list_all_account_logs
+  # # List All Account Logs
+  # # @param [Hash] opts the optional parameters
+  # # @return [LogList]
+  # describe 'list_all_account_logs test' do
+  #   it 'should work' do
       
-      local_var_path = @base_url + '/Accounts/{accountId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_all_account_logs(
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_all_account_logs(
         
-        {
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_applications
-  # List applications
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :_alias Return only applications with aliases that exactly match this value.
-  # @return [ApplicationList]
-  describe 'list_applications test' do
-    it 'should work' do
+  # # unit tests for list_applications
+  # # List applications
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [String] :_alias Return only applications with aliases that exactly match this value.
+  # # @return [ApplicationList]
+  # describe 'list_applications test' do
+  #   it 'should work' do
       
-      _alias = build_value(:_alias)
-      local_var_path = @base_url + '/Accounts/{accountId}/Applications'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     _alias = build_value(:_alias)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Applications'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :_alias => _alias,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_applications(
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
+  #          :_alias => _alias,
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_applications(
         
-        {
-          :_alias => _alias,
-        }
-      )
+  #       {
+  #         :_alias => _alias,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_available_numbers
-  # List available numbers
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :phone_number PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format.
-  # @option opts [String] :region State or province of this phone number.
-  # @option opts [String] :country Country of this phone number.
-  # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
-  # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
-  # @option opts [Boolean] :capabilities_voice 
-  # @option opts [Boolean] :capabilities_sms 
-  # @option opts [Boolean] :capabilities_toll_free 
-  # @option opts [Boolean] :capabilities_ten_dlc 
-  # @option opts [Boolean] :capabilities_short_code 
-  # @return [AvailableNumberList]
-  describe 'list_available_numbers test' do
-    it 'should work' do
+  # # unit tests for list_available_numbers
+  # # List available numbers
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [String] :phone_number PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format.
+  # # @option opts [String] :region State or province of this phone number.
+  # # @option opts [String] :country Country of this phone number.
+  # # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
+  # # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
+  # # @option opts [Boolean] :capabilities_voice 
+  # # @option opts [Boolean] :capabilities_sms 
+  # # @option opts [Boolean] :capabilities_toll_free 
+  # # @option opts [Boolean] :capabilities_ten_dlc 
+  # # @option opts [Boolean] :capabilities_short_code 
+  # # @return [AvailableNumberList]
+  # describe 'list_available_numbers test' do
+  #   it 'should work' do
       
-      phone_number = build_value(:phone_number)
-      region = build_value(:region)
-      country = build_value(:country)
-      voice_enabled = build_value(:voice_enabled)
-      sms_enabled = build_value(:sms_enabled)
-      capabilities_voice = build_value(:capabilities_voice)
-      capabilities_sms = build_value(:capabilities_sms)
-      capabilities_toll_free = build_value(:capabilities_toll_free)
-      capabilities_ten_dlc = build_value(:capabilities_ten_dlc)
-      capabilities_short_code = build_value(:capabilities_short_code)
-      local_var_path = @base_url + '/AvailablePhoneNumbers'
+  #     phone_number = build_value(:phone_number)
+  #     region = build_value(:region)
+  #     country = build_value(:country)
+  #     voice_enabled = build_value(:voice_enabled)
+  #     sms_enabled = build_value(:sms_enabled)
+  #     capabilities_voice = build_value(:capabilities_voice)
+  #     capabilities_sms = build_value(:capabilities_sms)
+  #     capabilities_toll_free = build_value(:capabilities_toll_free)
+  #     capabilities_ten_dlc = build_value(:capabilities_ten_dlc)
+  #     capabilities_short_code = build_value(:capabilities_short_code)
+  #     local_var_path = @base_url + '/AvailablePhoneNumbers'
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :phone_number => phone_number, :region => region, :country => country, :voice_enabled => voice_enabled, :sms_enabled => sms_enabled, :capabilities_voice => capabilities_voice, :capabilities_sms => capabilities_sms, :capabilities_toll_free => capabilities_toll_free, :capabilities_ten_dlc => capabilities_ten_dlc, :capabilities_short_code => capabilities_short_code,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_available_numbers(
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
+  #          :phone_number => phone_number, :region => region, :country => country, :voice_enabled => voice_enabled, :sms_enabled => sms_enabled, :capabilities_voice => capabilities_voice, :capabilities_sms => capabilities_sms, :capabilities_toll_free => capabilities_toll_free, :capabilities_ten_dlc => capabilities_ten_dlc, :capabilities_short_code => capabilities_short_code,
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_available_numbers(
         
-        {
-          :phone_number => phone_number,:region => region,:country => country,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,
-        }
-      )
+  #       {
+  #         :phone_number => phone_number,:region => region,:country => country,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_call_logs
-  # List Call Logs
-  # @param call_id String that uniquely identifies this call resource.
-  # @param [Hash] opts the optional parameters
-  # @return [LogList]
-  describe 'list_call_logs test' do
-    it 'should work' do
+  # # unit tests for list_call_logs
+  # # List Call Logs
+  # # @param call_id String that uniquely identifies this call resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [LogList]
+  # describe 'list_call_logs test' do
+  #   it 'should work' do
       
-      call_id = build_value(:call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Calls/{callId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
+  #     call_id = build_value(:call_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Calls/{callId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_call_logs(
-        call_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_call_logs(
+  #       call_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_call_recordings
-  # List Call Recordings
-  # @param call_id String that uniquely identifies this call resource.
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
-  # @return [RecordingList]
-  describe 'list_call_recordings test' do
-    it 'should work' do
+  # # unit tests for list_call_recordings
+  # # List Call Recordings
+  # # @param call_id String that uniquely identifies this call resource.
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [String] :date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
+  # # @return [RecordingList]
+  # describe 'list_call_recordings test' do
+  #   it 'should work' do
       
-      call_id = build_value(:call_id)
-      date_created = build_value(:date_created)
-      local_var_path = @base_url + '/Accounts/{accountId}/Calls/{callId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
+  #     call_id = build_value(:call_id)
+  #     date_created = build_value(:date_created)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Calls/{callId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :date_created => date_created,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_call_recordings(
-        call_id,
-        {
-          :date_created => date_created,
-        }
-      )
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
+  #          :date_created => date_created,
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_call_recordings(
+  #       call_id,
+  #       {
+  #         :date_created => date_created,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_calls
-  # List Calls
-  # @param [Hash] opts the optional parameters
-  # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
-  # @option opts [String] :to Only show Calls to this phone number.
-  # @option opts [String] :from Only show Calls from this phone number.
-  # @option opts [String] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
-  # @option opts [String] :start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
-  # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
-  # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
-  # @return [CallList]
-  describe 'list_calls test' do
-    it 'should work' do
+  # # unit tests for list_calls
+  # # List Calls
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
+  # # @option opts [String] :to Only show Calls to this phone number.
+  # # @option opts [String] :from Only show Calls from this phone number.
+  # # @option opts [String] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
+  # # @option opts [String] :start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
+  # # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
+  # # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
+  # # @return [CallList]
+  # describe 'list_calls test' do
+  #   it 'should work' do
       
-      active = build_value(:active)
-      to = build_value(:to)
-      from = build_value(:from)
-      status = build_value(:status)
-      start_time = build_value(:start_time)
-      end_time = build_value(:end_time)
-      parent_call_id = build_value(:parent_call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Calls'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     active = build_value(:active)
+  #     to = build_value(:to)
+  #     from = build_value(:from)
+  #     status = build_value(:status)
+  #     start_time = build_value(:start_time)
+  #     end_time = build_value(:end_time)
+  #     parent_call_id = build_value(:parent_call_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Calls'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :active => active, :to => to, :from => from, :status => status, :start_time => start_time, :end_time => end_time, :parent_call_id => parent_call_id,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_calls(
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
+  #          :active => active, :to => to, :from => from, :status => status, :start_time => start_time, :end_time => end_time, :parent_call_id => parent_call_id,
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_calls(
         
-        {
-          :active => active,:to => to,:from => from,:status => status,:start_time => start_time,:end_time => end_time,:parent_call_id => parent_call_id,
-        }
-      )
+  #       {
+  #         :active => active,:to => to,:from => from,:status => status,:start_time => start_time,:end_time => end_time,:parent_call_id => parent_call_id,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_conferences
-  # List Conferences
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :status Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;.
-  # @option opts [String] :_alias List Conferences whose alias exactly matches this string.
-  # @option opts [String] :date_created Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*.
-  # @option opts [String] :date_updated Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*.
-  # @return [ConferenceList]
-  describe 'list_conferences test' do
-    it 'should work' do
+  # # unit tests for list_conferences
+  # # List Conferences
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [String] :status Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;.
+  # # @option opts [String] :_alias List Conferences whose alias exactly matches this string.
+  # # @option opts [String] :date_created Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*.
+  # # @option opts [String] :date_updated Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*.
+  # # @return [ConferenceList]
+  # describe 'list_conferences test' do
+  #   it 'should work' do
       
-      status = build_value(:status)
-      _alias = build_value(:_alias)
-      date_created = build_value(:date_created)
-      date_updated = build_value(:date_updated)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     status = build_value(:status)
+  #     _alias = build_value(:_alias)
+  #     date_created = build_value(:date_created)
+  #     date_updated = build_value(:date_updated)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Conferences'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :status => status, :_alias => _alias, :date_created => date_created, :date_updated => date_updated,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_conferences(
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
+  #          :status => status, :_alias => _alias, :date_created => date_created, :date_updated => date_updated,
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_conferences(
         
-        {
-          :status => status,:_alias => _alias,:date_created => date_created,:date_updated => date_updated,
-        }
-      )
+  #       {
+  #         :status => status,:_alias => _alias,:date_created => date_created,:date_updated => date_updated,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_incoming_numbers
-  # List Incoming Numbers
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :phone_number Only show incoming phone number resources that match this PCRE-compatible regular expression.
-  # @option opts [String] :_alias Only show incoming phone numbers with aliases that exactly match this value.
-  # @option opts [String] :region State or province of this phone number.
-  # @option opts [String] :country Country of this phone number.
-  # @option opts [String] :application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
-  # @option opts [Boolean] :has_application Indication of whether the phone number has an application linked to it.
-  # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
-  # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
-  # @option opts [Boolean] :capabilities_voice 
-  # @option opts [Boolean] :capabilities_sms 
-  # @option opts [Boolean] :capabilities_toll_free 
-  # @option opts [Boolean] :capabilities_ten_dlc 
-  # @option opts [Boolean] :capabilities_short_code 
-  # @option opts [Boolean] :offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
-  # @return [IncomingNumberList]
-  describe 'list_incoming_numbers test' do
-    it 'should work' do
+  # # unit tests for list_incoming_numbers
+  # # List Incoming Numbers
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [String] :phone_number Only show incoming phone number resources that match this PCRE-compatible regular expression.
+  # # @option opts [String] :_alias Only show incoming phone numbers with aliases that exactly match this value.
+  # # @option opts [String] :region State or province of this phone number.
+  # # @option opts [String] :country Country of this phone number.
+  # # @option opts [String] :application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
+  # # @option opts [Boolean] :has_application Indication of whether the phone number has an application linked to it.
+  # # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
+  # # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
+  # # @option opts [Boolean] :capabilities_voice 
+  # # @option opts [Boolean] :capabilities_sms 
+  # # @option opts [Boolean] :capabilities_toll_free 
+  # # @option opts [Boolean] :capabilities_ten_dlc 
+  # # @option opts [Boolean] :capabilities_short_code 
+  # # @option opts [Boolean] :offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
+  # # @return [IncomingNumberList]
+  # describe 'list_incoming_numbers test' do
+  #   it 'should work' do
       
-      phone_number = build_value(:phone_number)
-      _alias = build_value(:_alias)
-      region = build_value(:region)
-      country = build_value(:country)
-      application_id = build_value(:application_id)
-      has_application = build_value(:has_application)
-      voice_enabled = build_value(:voice_enabled)
-      sms_enabled = build_value(:sms_enabled)
-      capabilities_voice = build_value(:capabilities_voice)
-      capabilities_sms = build_value(:capabilities_sms)
-      capabilities_toll_free = build_value(:capabilities_toll_free)
-      capabilities_ten_dlc = build_value(:capabilities_ten_dlc)
-      capabilities_short_code = build_value(:capabilities_short_code)
-      offnet = build_value(:offnet)
-      local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     phone_number = build_value(:phone_number)
+  #     _alias = build_value(:_alias)
+  #     region = build_value(:region)
+  #     country = build_value(:country)
+  #     application_id = build_value(:application_id)
+  #     has_application = build_value(:has_application)
+  #     voice_enabled = build_value(:voice_enabled)
+  #     sms_enabled = build_value(:sms_enabled)
+  #     capabilities_voice = build_value(:capabilities_voice)
+  #     capabilities_sms = build_value(:capabilities_sms)
+  #     capabilities_toll_free = build_value(:capabilities_toll_free)
+  #     capabilities_ten_dlc = build_value(:capabilities_ten_dlc)
+  #     capabilities_short_code = build_value(:capabilities_short_code)
+  #     offnet = build_value(:offnet)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :phone_number => phone_number, :_alias => _alias, :region => region, :country => country, :application_id => application_id, :has_application => has_application, :voice_enabled => voice_enabled, :sms_enabled => sms_enabled, :capabilities_voice => capabilities_voice, :capabilities_sms => capabilities_sms, :capabilities_toll_free => capabilities_toll_free, :capabilities_ten_dlc => capabilities_ten_dlc, :capabilities_short_code => capabilities_short_code, :offnet => offnet,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_incoming_numbers(
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
+  #          :phone_number => phone_number, :_alias => _alias, :region => region, :country => country, :application_id => application_id, :has_application => has_application, :voice_enabled => voice_enabled, :sms_enabled => sms_enabled, :capabilities_voice => capabilities_voice, :capabilities_sms => capabilities_sms, :capabilities_toll_free => capabilities_toll_free, :capabilities_ten_dlc => capabilities_ten_dlc, :capabilities_short_code => capabilities_short_code, :offnet => offnet,
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_incoming_numbers(
         
-        {
-          :phone_number => phone_number,:_alias => _alias,:region => region,:country => country,:application_id => application_id,:has_application => has_application,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,:offnet => offnet,
-        }
-      )
+  #       {
+  #         :phone_number => phone_number,:_alias => _alias,:region => region,:country => country,:application_id => application_id,:has_application => has_application,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,:offnet => offnet,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_members
-  # List Members
-  # @param queue_id String that uniquely identifies the Queue that the Member belongs to.
-  # @param [Hash] opts the optional parameters
-  # @return [QueueMemberList]
-  describe 'list_members test' do
-    it 'should work' do
+  # # unit tests for list_members
+  # # List Members
+  # # @param queue_id String that uniquely identifies the Queue that the Member belongs to.
+  # # @param [Hash] opts the optional parameters
+  # # @return [QueueMemberList]
+  # describe 'list_members test' do
+  #   it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
+  #     queue_id = build_value(:queue_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_members(
-        queue_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_members(
+  #       queue_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_participants
-  # List Participants
-  # @param conference_id ID of the conference this participant is in.
-  # @param [Hash] opts the optional parameters
-  # @option opts [Boolean] :talk Only show Participants with the talk privilege.
-  # @option opts [Boolean] :listen Only show Participants with the listen privilege.
-  # @return [ConferenceParticipantList]
-  describe 'list_participants test' do
-    it 'should work' do
+  # # unit tests for list_participants
+  # # List Participants
+  # # @param conference_id ID of the conference this participant is in.
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [Boolean] :talk Only show Participants with the talk privilege.
+  # # @option opts [Boolean] :listen Only show Participants with the listen privilege.
+  # # @return [ConferenceParticipantList]
+  # describe 'list_participants test' do
+  #   it 'should work' do
       
-      conference_id = build_value(:conference_id)
-      talk = build_value(:talk)
-      listen = build_value(:listen)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}/Participants'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase))
+  #     conference_id = build_value(:conference_id)
+  #     talk = build_value(:talk)
+  #     listen = build_value(:listen)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}/Participants'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :talk => talk, :listen => listen,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_participants(
-        conference_id,
-        {
-          :talk => talk,:listen => listen,
-        }
-      )
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
+  #          :talk => talk, :listen => listen,
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_participants(
+  #       conference_id,
+  #       {
+  #         :talk => talk,:listen => listen,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_recordings
-  # List Recordings
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
-  # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
-  # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
-  # @return [RecordingList]
-  describe 'list_recordings test' do
-    it 'should work' do
+  # # unit tests for list_recordings
+  # # List Recordings
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
+  # # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
+  # # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+  # # @return [RecordingList]
+  # describe 'list_recordings test' do
+  #   it 'should work' do
       
-      call_id = build_value(:call_id)
-      conference_id = build_value(:conference_id)
-      date_created = build_value(:date_created)
-      local_var_path = @base_url + '/Accounts/{accountId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     call_id = build_value(:call_id)
+  #     conference_id = build_value(:conference_id)
+  #     date_created = build_value(:date_created)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :call_id => call_id, :conference_id => conference_id, :date_created => date_created,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_recordings(
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
+  #          :call_id => call_id, :conference_id => conference_id, :date_created => date_created,
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_recordings(
         
-        {
-          :call_id => call_id,:conference_id => conference_id,:date_created => date_created,
-        }
-      )
+  #       {
+  #         :call_id => call_id,:conference_id => conference_id,:date_created => date_created,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for list_sms_messages
-  # List SMS Messages
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :to Only show Messages to this phone number.
-  # @option opts [String] :from Only show Messages from this phone number.
-  # @option opts [String] :begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
-  # @option opts [String] :end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
-  # @option opts [String] :direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb.
-  # @return [MessagesList]
-  describe 'list_sms_messages test' do
-    it 'should work' do
+  # # unit tests for list_sms_messages
+  # # List SMS Messages
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [String] :to Only show Messages to this phone number.
+  # # @option opts [String] :from Only show Messages from this phone number.
+  # # @option opts [String] :begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
+  # # @option opts [String] :end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
+  # # @option opts [String] :direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb.
+  # # @return [MessagesList]
+  # describe 'list_sms_messages test' do
+  #   it 'should work' do
       
-      to = build_value(:to)
-      from = build_value(:from)
-      begin_time = build_value(:begin_time)
-      end_time = build_value(:end_time)
-      direction = build_value(:direction)
-      local_var_path = @base_url + '/Accounts/{accountId}/Messages'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     to = build_value(:to)
+  #     from = build_value(:from)
+  #     begin_time = build_value(:begin_time)
+  #     end_time = build_value(:end_time)
+  #     direction = build_value(:direction)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Messages'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :to => to, :from => from, :begin_time => begin_time, :end_time => end_time, :direction => direction,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_sms_messages(
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
+  #          :to => to, :from => from, :begin_time => begin_time, :end_time => end_time, :direction => direction,
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.list_sms_messages(
         
-        {
-          :to => to,:from => from,:begin_time => begin_time,:end_time => end_time,:direction => direction,
-        }
-      )
+  #       {
+  #         :to => to,:from => from,:begin_time => begin_time,:end_time => end_time,:direction => direction,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for make_a_call
-  # Make a Call
-  # @param [Hash] opts the optional parameters
-  # @option opts [MakeCallRequest] :make_call_request Call details for making a call
-  # @return [CallResult]
-  describe 'make_a_call test' do
-    it 'should work' do
+  # # unit tests for make_a_call
+  # # Make a Call
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [MakeCallRequest] :make_call_request Call details for making a call
+  # # @return [CallResult]
+  # describe 'make_a_call test' do
+  #   it 'should work' do
       
-      make_call_request = build_value(:make_call_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Calls'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     make_call_request = build_value(:make_call_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Calls'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  make_call_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  make_call_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.make_a_call(
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.make_a_call(
         
-        {
-          :make_call_request => make_call_request,
-        }
-      )
+  #       {
+  #         :make_call_request => make_call_request,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for remove_a_participant
-  # Remove a Participant
-  # @param conference_id ID of the conference this participant is in.
-  # @param call_id ID of the Call associated with this participant.
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'remove_a_participant test' do
-    it 'should work' do
+  # # unit tests for remove_a_participant
+  # # Remove a Participant
+  # # @param conference_id ID of the conference this participant is in.
+  # # @param call_id ID of the Call associated with this participant.
+  # # @param [Hash] opts the optional parameters
+  # # @return [nil]
+  # describe 'remove_a_participant test' do
+  #   it 'should work' do
       
-      conference_id = build_value(:conference_id)
-      call_id = build_value(:call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
+  #     conference_id = build_value(:conference_id)
+  #     call_id = build_value(:call_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
 
-      stub = stub_request(:DELETE.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:DELETE.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.remove_a_participant(
-        conference_id,call_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.remove_a_participant(
+  #       conference_id,call_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for send_an_sms_message
-  # Send an SMS Message
-  # @param message_request Details to create a message
-  # @param [Hash] opts the optional parameters
-  # @return [MessageResult]
-  describe 'send_an_sms_message test' do
-    it 'should work' do
+  # # unit tests for send_an_sms_message
+  # # Send an SMS Message
+  # # @param message_request Details to create a message
+  # # @param [Hash] opts the optional parameters
+  # # @return [MessageResult]
+  # describe 'send_an_sms_message test' do
+  #   it 'should work' do
       
-      message_request = build_value(:message_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Messages'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     message_request = build_value(:message_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Messages'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  message_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  message_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.send_an_sms_message(
-        message_request,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.send_an_sms_message(
+  #       message_request,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for stream_a_recording_file
-  # Stream a Recording File
-  # @param recording_id String that uniquely identifies this recording resource.
-  # @param [Hash] opts the optional parameters
-  # @return [File]
-  describe 'stream_a_recording_file test' do
-    it 'should work' do
+  # # unit tests for stream_a_recording_file
+  # # Stream a Recording File
+  # # @param recording_id String that uniquely identifies this recording resource.
+  # # @param [Hash] opts the optional parameters
+  # # @return [File]
+  # describe 'stream_a_recording_file test' do
+  #   it 'should work' do
       
-      recording_id = build_value(:recording_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Recordings/{recordingId}/Stream'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'recordingId' + '}', CGI.escape('TEST_' + 'recordingId'.snakecase.upcase))
+  #     recording_id = build_value(:recording_id)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Recordings/{recordingId}/Stream'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'recordingId' + '}', CGI.escape('TEST_' + 'recordingId'.snakecase.upcase))
 
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
+  #     stub = stub_request(:GET.downcase, local_var_path)
+  #       .with(
+  #         body: {},
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.stream_a_recording_file(
-        recording_id,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.stream_a_recording_file(
+  #       recording_id,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for update_a_conference
-  # Update a Conference
-  # @param conference_id String that uniquely identifies this conference resource.
-  # @param [Hash] opts the optional parameters
-  # @option opts [UpdateConferenceRequest] :update_conference_request Conference Details to update
-  # @return [ConferenceResult]
-  describe 'update_a_conference test' do
-    it 'should work' do
+  # # unit tests for update_a_conference
+  # # Update a Conference
+  # # @param conference_id String that uniquely identifies this conference resource.
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [UpdateConferenceRequest] :update_conference_request Conference Details to update
+  # # @return [ConferenceResult]
+  # describe 'update_a_conference test' do
+  #   it 'should work' do
       
-      conference_id = build_value(:conference_id)
-      update_conference_request = build_value(:update_conference_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase))
+  #     conference_id = build_value(:conference_id)
+  #     update_conference_request = build_value(:update_conference_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  update_conference_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  update_conference_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_a_conference(
-        conference_id,
-        {
-          :update_conference_request => update_conference_request,
-        }
-      )
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.update_a_conference(
+  #       conference_id,
+  #       {
+  #         :update_conference_request => update_conference_request,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for update_a_live_call
-  # Update a Live Call
-  # @param call_id String that uniquely identifies this call resource.
-  # @param update_call_request Call details to update
-  # @param [Hash] opts the optional parameters
-  # @return [nil]
-  describe 'update_a_live_call test' do
-    it 'should work' do
+  # # unit tests for update_a_live_call
+  # # Update a Live Call
+  # # @param call_id String that uniquely identifies this call resource.
+  # # @param update_call_request Call details to update
+  # # @param [Hash] opts the optional parameters
+  # # @return [nil]
+  # describe 'update_a_live_call test' do
+  #   it 'should work' do
       
-      call_id = build_value(:call_id)
-      update_call_request = build_value(:update_call_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Calls/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
+  #     call_id = build_value(:call_id)
+  #     update_call_request = build_value(:update_call_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Calls/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  update_call_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  update_call_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_a_live_call(
-        call_id,update_call_request,
-        {
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.update_a_live_call(
+  #       call_id,update_call_request,
+  #       {
           
-        }
-      )
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for update_a_participant
-  # Update a Participant
-  # @param conference_id ID of the conference this participant is in.
-  # @param call_id ID of the Call associated with this participant.
-  # @param [Hash] opts the optional parameters
-  # @option opts [UpdateConferenceParticipantRequest] :update_conference_participant_request Conference participant details to update
-  # @return [ConferenceParticipantResult]
-  describe 'update_a_participant test' do
-    it 'should work' do
+  # # unit tests for update_a_participant
+  # # Update a Participant
+  # # @param conference_id ID of the conference this participant is in.
+  # # @param call_id ID of the Call associated with this participant.
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [UpdateConferenceParticipantRequest] :update_conference_participant_request Conference participant details to update
+  # # @return [ConferenceParticipantResult]
+  # describe 'update_a_participant test' do
+  #   it 'should work' do
       
-      conference_id = build_value(:conference_id)
-      call_id = build_value(:call_id)
-      update_conference_participant_request = build_value(:update_conference_participant_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
+  #     conference_id = build_value(:conference_id)
+  #     call_id = build_value(:call_id)
+  #     update_conference_participant_request = build_value(:update_conference_participant_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  update_conference_participant_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  update_conference_participant_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_a_participant(
-        conference_id,call_id,
-        {
-          :update_conference_participant_request => update_conference_participant_request,
-        }
-      )
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.update_a_participant(
+  #       conference_id,call_id,
+  #       {
+  #         :update_conference_participant_request => update_conference_participant_request,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for update_a_queue
-  # Update a Queue
-  # @param queue_id A string that uniquely identifies this Queue resource.
-  # @param [Hash] opts the optional parameters
-  # @option opts [QueueRequest] :queue_request Queue Details to update
-  # @return [QueueResult]
-  describe 'update_a_queue test' do
-    it 'should work' do
+  # # unit tests for update_a_queue
+  # # Update a Queue
+  # # @param queue_id A string that uniquely identifies this Queue resource.
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [QueueRequest] :queue_request Queue Details to update
+  # # @return [QueueResult]
+  # describe 'update_a_queue test' do
+  #   it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      queue_request = build_value(:queue_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
+  #     queue_id = build_value(:queue_id)
+  #     queue_request = build_value(:queue_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  queue_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  queue_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_a_queue(
-        queue_id,
-        {
-          :queue_request => queue_request,
-        }
-      )
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.update_a_queue(
+  #       queue_id,
+  #       {
+  #         :queue_request => queue_request,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for update_an_account
-  # Manage an account
-  # @param [Hash] opts the optional parameters
-  # @option opts [AccountRequest] :account_request Account details to update
-  # @return [nil]
-  describe 'update_an_account test' do
-    it 'should work' do
+  # # unit tests for update_an_account
+  # # Manage an account
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [AccountRequest] :account_request Account details to update
+  # # @return [nil]
+  # describe 'update_an_account test' do
+  #   it 'should work' do
       
-      account_request = build_value(:account_request)
-      local_var_path = @base_url + '/Accounts/{accountId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
+  #     account_request = build_value(:account_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  account_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  account_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_an_account(
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.update_an_account(
         
-        {
-          :account_request => account_request,
-        }
-      )
+  #       {
+  #         :account_request => account_request,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for update_an_application
-  # Update an application
-  # @param application_id A string that uniquely identifies this application resource.
-  # @param [Hash] opts the optional parameters
-  # @option opts [ApplicationRequest] :application_request Application details to update.
-  # @return [ApplicationResult]
-  describe 'update_an_application test' do
-    it 'should work' do
+  # # unit tests for update_an_application
+  # # Update an application
+  # # @param application_id A string that uniquely identifies this application resource.
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [ApplicationRequest] :application_request Application details to update.
+  # # @return [ApplicationResult]
+  # describe 'update_an_application test' do
+  #   it 'should work' do
       
-      application_id = build_value(:application_id)
-      application_request = build_value(:application_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'applicationId' + '}', CGI.escape('TEST_' + 'applicationId'.snakecase.upcase))
+  #     application_id = build_value(:application_id)
+  #     application_request = build_value(:application_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'applicationId' + '}', CGI.escape('TEST_' + 'applicationId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  application_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  application_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_an_application(
-        application_id,
-        {
-          :application_request => application_request,
-        }
-      )
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.update_an_application(
+  #       application_id,
+  #       {
+  #         :application_request => application_request,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
-  # unit tests for update_an_incoming_number
-  # Update an Incoming Number
-  # @param phone_number_id String that uniquely identifies this phone number resource.
-  # @param [Hash] opts the optional parameters
-  # @option opts [IncomingNumberRequest] :incoming_number_request Incoming Number details to update
-  # @return [IncomingNumberResult]
-  describe 'update_an_incoming_number test' do
-    it 'should work' do
+  # # unit tests for update_an_incoming_number
+  # # Update an Incoming Number
+  # # @param phone_number_id String that uniquely identifies this phone number resource.
+  # # @param [Hash] opts the optional parameters
+  # # @option opts [IncomingNumberRequest] :incoming_number_request Incoming Number details to update
+  # # @return [IncomingNumberResult]
+  # describe 'update_an_incoming_number test' do
+  #   it 'should work' do
       
-      phone_number_id = build_value(:phone_number_id)
-      incoming_number_request = build_value(:incoming_number_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'phoneNumberId' + '}', CGI.escape('TEST_' + 'phoneNumberId'.snakecase.upcase))
+  #     phone_number_id = build_value(:phone_number_id)
+  #     incoming_number_request = build_value(:incoming_number_request)
+  #     local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'phoneNumberId' + '}', CGI.escape('TEST_' + 'phoneNumberId'.snakecase.upcase))
 
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  incoming_number_request.to_body.to_json,
-          query: build_query_parameters({
+  #     stub = stub_request(:POST.downcase, local_var_path)
+  #       .with(
+  #         body:  incoming_number_request.to_body.to_json,
+  #         query: build_query_parameters({
           
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_an_incoming_number(
-        phone_number_id,
-        {
-          :incoming_number_request => incoming_number_request,
-        }
-      )
+  #         })
+  #       )
+  #       .to_return(status: 200, body: "", headers: {})
+  #     @api_instance.update_an_incoming_number(
+  #       phone_number_id,
+  #       {
+  #         :incoming_number_request => incoming_number_request,
+  #       }
+  #     )
 
-      expect(stub).to have_been_requested
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  #     expect(stub).to have_been_requested
+  #     # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+  #   end
+  # end
 
 end

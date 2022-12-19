@@ -2101,7 +2101,7 @@ opts = {
   active: true, # Boolean | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
   to: 'to_example', # String | Only show Calls to this phone number.
   from: 'from_example', # String | Only show Calls from this phone number.
-  status: 'status_example', # String | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`.
+  status: Freeclimb::CallStatus::QUEUED, # CallStatus | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`.
   start_time: 'start_time_example', # String | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
   end_time: 'end_time_example', # String | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
   parent_call_id: 'parent_call_id_example' # String | Only show Calls spawned by the call with this ID.
@@ -2146,7 +2146,7 @@ end
 
 | **from** | **String** | Only show Calls from this phone number. | [optional] |
 
-| **status** | **String** | Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional] |
+| **status** | [**CallStatus**](.md) | Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional] |
 
 | **start_time** | **String** | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
 
@@ -2612,7 +2612,7 @@ opts = {
   from: 'from_example', # String | Only show Messages from this phone number.
   begin_time: 'begin_time_example', # String | Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
   end_time: 'end_time_example', # String | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
-  direction: 'inbound' # String | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb.
+  direction: Freeclimb::MessageDirection::INBOUND # MessageDirection | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb.
 }
 
 begin
@@ -2656,7 +2656,7 @@ end
 
 | **end_time** | **String** | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. | [optional] |
 
-| **direction** | **String** | Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional] |
+| **direction** | [**MessageDirection**](.md) | Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional] |
 
 
 ### Return type
@@ -3057,7 +3057,7 @@ api_instance = Freeclimb::DefaultApi.new
 
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
 
-update_call_request = Freeclimb::UpdateCallRequest.new({status: 'canceled'}) # UpdateCallRequest | Call details to update
+update_call_request = Freeclimb::UpdateCallRequest.new({status: Freeclimb::UpdateCallRequestStatus::CANCELED}) # UpdateCallRequest | Call details to update
 
 
 begin

@@ -27,7 +27,6 @@ module Freeclimb
     # E.164 representation of the phone number to Call. 
     attr_accessor :destination
 
-    # Specifies how FreeClimb should handle this OutDial if an answering machine answers the Call. Valid values: `redirect` invokes the ifMachineUrl for instructions. `hangup` hangs up the Call. The ifMachineUrl will not be invoked.
     attr_accessor :if_machine
 
     # When the `ifMachine` flag is set to `redirect`, this attribute specifies a URL to which FreeClimb makes a POST request when an answering machine or a fax machine is detected. This URL is required if the `ifMachine` flag is set to `redirect`. Otherwise, it should not be included.
@@ -73,7 +72,7 @@ module Freeclimb
         :'call_connect_url' => :'String',
         :'calling_number' => :'Float',
         :'destination' => :'Float',
-        :'if_machine' => :'String',
+        :'if_machine' => :'IfMachine',
         :'if_machine_url' => :'String',
         :'send_digits' => :'String',
         :'status_callback_url' => :'String',

@@ -15,30 +15,7 @@ require 'time'
 
 module Freeclimb
   class UpdateCallRequest
-    # Either `canceled` or `completed`.  Specifying `canceled` attempts to hang up calls that are queued without affecting calls already in progress. Specifying `completed` attempts to hang up a call already in progress.
     attr_accessor :status
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -55,7 +32,7 @@ module Freeclimb
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'status' => :'String'
+        :'status' => :'UpdateCallRequestStatus'
       }
     end
 
@@ -100,19 +77,7 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       return false if @status.nil?
-      status_validator = EnumAttributeValidator.new('String', ["canceled", "completed"])
-      return false unless status_validator.valid?(@status)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] status Object to be assigned
-    def status=(status)
-      validator = EnumAttributeValidator.new('String', ["canceled", "completed"])
-      unless validator.valid?(status)
-        fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
-      end
-      @status = status
     end
 
     # Checks equality by comparing each attribute.

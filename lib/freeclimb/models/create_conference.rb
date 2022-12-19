@@ -22,7 +22,6 @@ module Freeclimb
     # Descriptive name for the Conference. 
     attr_accessor :_alias
 
-    # Indicates whether to play a beep when a Participant enters or leaves the Conference. either `always`, `never`, `entryOnly`, or `exitOnly`. Leaving this unset will make conference default to `always` 
     attr_accessor :play_beep
 
     # When set to `true`, the entire Conference is recorded. The `statusCallbackUrl` of the Conference will receive a `conferenceRecordingEnded` Webhook when the Conference transitions from the `inProgress` to empty state.
@@ -56,9 +55,9 @@ module Freeclimb
       {
         :'action_url' => :'String',
         :'_alias' => :'Boolean',
-        :'play_beep' => :'String',
+        :'play_beep' => :'PlayBeep',
         :'record' => :'Boolean',
-        :'status_callback_url' => :'Boolean',
+        :'status_callback_url' => :'String',
         :'wait_url' => :'String'
       }
     end
@@ -105,6 +104,8 @@ module Freeclimb
 
       if attributes.key?(:'play_beep')
         self.play_beep = attributes[:'play_beep']
+      else
+        self.play_beep = 'always'
       end
 
       if attributes.key?(:'record')

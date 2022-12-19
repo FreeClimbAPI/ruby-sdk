@@ -19,7 +19,6 @@ module Freeclimb
     # When the caller has finished speaking or the command has timed out, FreeClimb will make a POST request to this URL. A PerCL response is expected to continue handling the call.
     attr_accessor :action_url
 
-    # The grammar file type to use for speech recognition. A value of 'URL' indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of `BUILTIN` indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files.
     attr_accessor :grammar_type
 
     # The grammar file to use for speech recognition. If grammarType is set to URL, this attribute is specified as a download URL.
@@ -83,10 +82,10 @@ module Freeclimb
     def self.openapi_types
       {
         :'action_url' => :'String',
-        :'grammar_type' => :'Integer',
+        :'grammar_type' => :'GrammarType',
         :'grammar_file' => :'String',
-        :'grammar_rule' => :'Boolean',
-        :'play_beep' => :'String',
+        :'grammar_rule' => :'String',
+        :'play_beep' => :'Boolean',
         :'prompts' => :'Array<PerclCommand>',
         :'no_input_timeout_ms' => :'Integer',
         :'recognition_timeout_ms' => :'Integer',

@@ -18,7 +18,6 @@ module Freeclimb
     # A description for this Conference. Maximum 64 characters.
     attr_accessor :_alias
 
-    # Controls when a beep is played. Valid values: `always`, `never`, `entryOnly`, `exitOnly`.
     attr_accessor :play_beep
 
     # Setting to `true` records the entire Conference.
@@ -29,28 +28,6 @@ module Freeclimb
 
     # This URL is invoked when the status of the Conference changes. For more information, see **statusCallbackUrl** (below).
     attr_accessor :status_callback_url
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -72,7 +49,7 @@ module Freeclimb
     def self.openapi_types
       {
         :'_alias' => :'String',
-        :'play_beep' => :'String',
+        :'play_beep' => :'PlayBeep',
         :'record' => :'Boolean',
         :'wait_url' => :'String',
         :'status_callback_url' => :'String'
@@ -133,19 +110,7 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      play_beep_validator = EnumAttributeValidator.new('String', ["always", "never", "entryOnly", "exitOnly"])
-      return false unless play_beep_validator.valid?(@play_beep)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] play_beep Object to be assigned
-    def play_beep=(play_beep)
-      validator = EnumAttributeValidator.new('String', ["always", "never", "entryOnly", "exitOnly"])
-      unless validator.valid?(play_beep)
-        fail ArgumentError, "invalid value for \"play_beep\", must be one of #{validator.allowable_values}."
-      end
-      @play_beep = play_beep
     end
 
     # Checks equality by comparing each attribute.
