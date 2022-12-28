@@ -30,9 +30,7 @@ describe 'DefaultApi' do
       config.server_index = nil
       config.username = 'ACCOUNT_ID'
       config.password = 'API_KEY'
-      #puts "Config: #{config.inspect}"
       @api_client = Freeclimb::ApiClient.new(config)
-      #puts "Api Client: #{@api_client.inspect}"
     end
 
     @api_instance = Freeclimb::DefaultApi.new(@api_client)
