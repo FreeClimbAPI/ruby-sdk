@@ -34,10 +34,6 @@ describe Freeclimb::LogResult do
   describe 'test attribute "level"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["info", "warning", "error"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.level = value }.not_to raise_error
-      # end
     end
   end
 

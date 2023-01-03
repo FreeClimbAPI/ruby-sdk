@@ -70,10 +70,6 @@ describe Freeclimb::ConferenceResult do
   describe 'test attribute "play_beep"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["always", "never", "entryOnly", "exitOnly"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.play_beep = value }.not_to raise_error
-      # end
     end
   end
 
@@ -86,10 +82,6 @@ describe Freeclimb::ConferenceResult do
   describe 'test attribute "status"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["creating", "empty", "populated", "inProgress", "terminated"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.status = value }.not_to raise_error
-      # end
     end
   end
 
