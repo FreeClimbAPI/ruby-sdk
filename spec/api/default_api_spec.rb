@@ -28,8 +28,9 @@ describe 'DefaultApi' do
       config.server_index = nil
       config.username = 'ACCOUNT_ID'
       config.password = 'API_KEY'
-      @api_client = Freeclimb::ApiClient.new(config)
     end
+
+    @api_client = Freeclimb::ApiClient.new
 
     Freeclimb::File = Tempfile
 
