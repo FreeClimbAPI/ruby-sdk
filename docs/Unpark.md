@@ -10,6 +10,6 @@
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::Unpark.new()
+instance = Freeclimb::Unpark::[NAME OF ENUM]
 ```
 

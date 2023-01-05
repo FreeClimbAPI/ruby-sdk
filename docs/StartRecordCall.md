@@ -10,6 +10,6 @@
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::StartRecordCall.new()
+instance = Freeclimb::StartRecordCall::[NAME OF ENUM]
 ```
 
