@@ -25,4 +25,14 @@ describe Freeclimb::IfMachine do
       expect(instance).to be_instance_of(Freeclimb::IfMachine)
     end
   end
+  describe 'test attribute "REDIRECT"' do
+    it 'should work' do
+        expect { Freeclimb::IfMachine::REDIRECT = "redirect" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "HANGUP"' do
+    it 'should work' do
+        expect { Freeclimb::IfMachine::HANGUP = "hangup" }.not_to raise_error
+      end
+    end
 end

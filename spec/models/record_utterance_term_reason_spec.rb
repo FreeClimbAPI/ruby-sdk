@@ -25,4 +25,24 @@ describe Freeclimb::RecordUtteranceTermReason do
       expect(instance).to be_instance_of(Freeclimb::RecordUtteranceTermReason)
     end
   end
+  describe 'test attribute "FINISH_KEY"' do
+    it 'should work' do
+        expect { Freeclimb::RecordUtteranceTermReason::FINISH_KEY = "finishKey" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "TIMEOUT"' do
+    it 'should work' do
+        expect { Freeclimb::RecordUtteranceTermReason::TIMEOUT = "timeout" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "HANGUP"' do
+    it 'should work' do
+        expect { Freeclimb::RecordUtteranceTermReason::HANGUP = "hangup" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "MAX_LENGTH"' do
+    it 'should work' do
+        expect { Freeclimb::RecordUtteranceTermReason::MAX_LENGTH = "maxLength" }.not_to raise_error
+      end
+    end
 end

@@ -25,4 +25,24 @@ describe Freeclimb::QueueResultStatus do
       expect(instance).to be_instance_of(Freeclimb::QueueResultStatus)
     end
   end
+  describe 'test attribute "QUEUE_FULL"' do
+    it 'should work' do
+        expect { Freeclimb::QueueResultStatus::QUEUE_FULL = "queueFull" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "DEQUEUED"' do
+    it 'should work' do
+        expect { Freeclimb::QueueResultStatus::DEQUEUED = "dequeued" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "HANGUP"' do
+    it 'should work' do
+        expect { Freeclimb::QueueResultStatus::HANGUP = "hangup" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "SYSTEM_ERROR"' do
+    it 'should work' do
+        expect { Freeclimb::QueueResultStatus::SYSTEM_ERROR = "systemError" }.not_to raise_error
+      end
+    end
 end

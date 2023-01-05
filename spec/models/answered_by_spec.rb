@@ -25,4 +25,14 @@ describe Freeclimb::AnsweredBy do
       expect(instance).to be_instance_of(Freeclimb::AnsweredBy)
     end
   end
+  describe 'test attribute "HUMAN"' do
+    it 'should work' do
+        expect { Freeclimb::AnsweredBy::HUMAN = "human" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "MACHINE"' do
+    it 'should work' do
+        expect { Freeclimb::AnsweredBy::MACHINE = "machine" }.not_to raise_error
+      end
+    end
 end

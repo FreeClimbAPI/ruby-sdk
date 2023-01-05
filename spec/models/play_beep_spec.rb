@@ -25,4 +25,24 @@ describe Freeclimb::PlayBeep do
       expect(instance).to be_instance_of(Freeclimb::PlayBeep)
     end
   end
+  describe 'test attribute "ALWAYS"' do
+    it 'should work' do
+        expect { Freeclimb::PlayBeep::ALWAYS = "always" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "NEVER"' do
+    it 'should work' do
+        expect { Freeclimb::PlayBeep::NEVER = "never" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "ENTRY_ONLY"' do
+    it 'should work' do
+        expect { Freeclimb::PlayBeep::ENTRY_ONLY = "entryOnly" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "EXIT_ONLY"' do
+    it 'should work' do
+        expect { Freeclimb::PlayBeep::EXIT_ONLY = "exitOnly" }.not_to raise_error
+      end
+    end
 end

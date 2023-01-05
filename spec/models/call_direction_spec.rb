@@ -25,4 +25,19 @@ describe Freeclimb::CallDirection do
       expect(instance).to be_instance_of(Freeclimb::CallDirection)
     end
   end
+  describe 'test attribute "INBOUND"' do
+    it 'should work' do
+        expect { Freeclimb::CallDirection::INBOUND = "inbound" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "OUTBOUND_API"' do
+    it 'should work' do
+        expect { Freeclimb::CallDirection::OUTBOUND_API = "outboundAPI" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "OUTBOUND_DIAL"' do
+    it 'should work' do
+        expect { Freeclimb::CallDirection::OUTBOUND_DIAL = "outboundDial" }.not_to raise_error
+      end
+    end
 end

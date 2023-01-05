@@ -25,4 +25,14 @@ describe Freeclimb::UpdateConferenceRequestStatus do
       expect(instance).to be_instance_of(Freeclimb::UpdateConferenceRequestStatus)
     end
   end
+  describe 'test attribute "EMPTY"' do
+    it 'should work' do
+        expect { Freeclimb::UpdateConferenceRequestStatus::EMPTY = "empty" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "TERMINATED"' do
+    it 'should work' do
+        expect { Freeclimb::UpdateConferenceRequestStatus::TERMINATED = "terminated" }.not_to raise_error
+      end
+    end
 end

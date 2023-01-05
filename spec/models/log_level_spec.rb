@@ -25,4 +25,19 @@ describe Freeclimb::LogLevel do
       expect(instance).to be_instance_of(Freeclimb::LogLevel)
     end
   end
+  describe 'test attribute "INFO"' do
+    it 'should work' do
+        expect { Freeclimb::LogLevel::INFO = "info" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "WARNING"' do
+    it 'should work' do
+        expect { Freeclimb::LogLevel::WARNING = "warning" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "ERROR"' do
+    it 'should work' do
+        expect { Freeclimb::LogLevel::ERROR = "error" }.not_to raise_error
+      end
+    end
 end

@@ -25,4 +25,34 @@ describe Freeclimb::GetSpeechReason do
       expect(instance).to be_instance_of(Freeclimb::GetSpeechReason)
     end
   end
+  describe 'test attribute "ERROR"' do
+    it 'should work' do
+        expect { Freeclimb::GetSpeechReason::ERROR = "error" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "HANGUP"' do
+    it 'should work' do
+        expect { Freeclimb::GetSpeechReason::HANGUP = "hangup" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "DIGIT"' do
+    it 'should work' do
+        expect { Freeclimb::GetSpeechReason::DIGIT = "digit" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "NO_INPUT"' do
+    it 'should work' do
+        expect { Freeclimb::GetSpeechReason::NO_INPUT = "noInput" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "NO_MATCH"' do
+    it 'should work' do
+        expect { Freeclimb::GetSpeechReason::NO_MATCH = "noMatch" }.not_to raise_error
+      end
+    end
+  describe 'test attribute "RECOGNITION"' do
+    it 'should work' do
+        expect { Freeclimb::GetSpeechReason::RECOGNITION = "recognition" }.not_to raise_error
+      end
+    end
 end
