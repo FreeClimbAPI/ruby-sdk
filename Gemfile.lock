@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    freeclimb (4.0.4)
+    freeclimb (4.1.0)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM
