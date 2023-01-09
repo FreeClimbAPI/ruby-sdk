@@ -15,7 +15,7 @@ None
 
 ### Changed
 
-- Enums have been implemented in the csharp sdk
+- Enums have been implemented in the ruby sdk
 - Updated README for enum implementation and testing
 
 <a name="4.0.4"></a>
