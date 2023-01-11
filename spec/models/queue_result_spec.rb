@@ -79,7 +79,7 @@ describe Freeclimb::QueueResult do
     end
   end
 
-  describe 'test attribute "average_wait_time"' do
+  describe 'test attribute "average_queue_removal_time"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

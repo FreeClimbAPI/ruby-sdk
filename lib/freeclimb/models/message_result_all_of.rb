@@ -21,7 +21,6 @@ module Freeclimb
     # String that uniquely identifies this message resource
     attr_accessor :message_id
 
-    # Indicates the state of the message through the message lifecycle including: new, queued, rejected, sending, sent, failed, received, undelivered, expired, deleted, and unknown
     attr_accessor :status
 
     # Phone number in E.164 format that sent the message.
@@ -38,28 +37,6 @@ module Freeclimb
 
     # URL invoked when message sent
     attr_accessor :notification_url
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -85,7 +62,7 @@ module Freeclimb
       {
         :'account_id' => :'String',
         :'message_id' => :'String',
-        :'status' => :'String',
+        :'status' => :'MessageStatus',
         :'from' => :'String',
         :'to' => :'String',
         :'text' => :'String',
@@ -99,7 +76,6 @@ module Freeclimb
       Set.new([
         :'account_id',
         :'message_id',
-        :'status',
         :'from',
         :'to',
         :'text',
@@ -166,19 +142,7 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      status_validator = EnumAttributeValidator.new('String', ["new", "queued", "rejected", "sending", "sent", "failed", "received", "undelivered", "expired", "deleted", "unknown"])
-      return false unless status_validator.valid?(@status)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] status Object to be assigned
-    def status=(status)
-      validator = EnumAttributeValidator.new('String', ["new", "queued", "rejected", "sending", "sent", "failed", "received", "undelivered", "expired", "deleted", "unknown"])
-      unless validator.valid?(status)
-        fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
-      end
-      @status = status
     end
 
     # Checks equality by comparing each attribute.

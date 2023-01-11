@@ -10,6 +10,6 @@
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::Dequeue.new()
+instance = Freeclimb::Dequeue::[NAME OF ENUM]
 ```
 

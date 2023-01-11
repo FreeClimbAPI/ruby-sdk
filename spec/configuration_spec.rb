@@ -20,6 +20,7 @@ describe Freeclimb::Configuration do
     require 'uri'
     uri = URI.parse("https://www.freeclimb.com/apiserver")
     Freeclimb.configure do |c|
+      c.scheme = uri.scheme
       c.host = uri.host
       c.base_path = uri.path
     end
@@ -35,7 +36,7 @@ describe Freeclimb::Configuration do
       [nil, '', '/', '//'].each do |base_path|
         config.base_path = base_path
         # uncomment below to test trailing slashes
-        expect(config.base_url).to eq("https://www.freeclimb.com/apiserver")
+        expect(config.base_url).to eq("https://www.freeclimb.com")
       end
     end
   end

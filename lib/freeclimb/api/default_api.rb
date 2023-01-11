@@ -1794,7 +1794,7 @@ module Freeclimb
     # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (default to false)
     # @option opts [String] :to Only show Calls to this phone number.
     # @option opts [String] :from Only show Calls from this phone number.
-    # @option opts [String] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
+    # @option opts [CallStatus] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
     # @option opts [String] :start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
     # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
     # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
@@ -1809,7 +1809,7 @@ module Freeclimb
     # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
     # @option opts [String] :to Only show Calls to this phone number.
     # @option opts [String] :from Only show Calls from this phone number.
-    # @option opts [String] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
+    # @option opts [CallStatus] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
     # @option opts [String] :start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
     # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
     # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
@@ -2229,7 +2229,7 @@ module Freeclimb
     # @option opts [String] :from Only show Messages from this phone number.
     # @option opts [String] :begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
     # @option opts [String] :end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
-    # @option opts [String] :direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb.
+    # @option opts [MessageDirection] :direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb.
     # @return [MessagesList]
     def list_sms_messages(opts = {})
       data, _status_code, _headers = list_sms_messages_with_http_info(opts)
@@ -2242,15 +2242,11 @@ module Freeclimb
     # @option opts [String] :from Only show Messages from this phone number.
     # @option opts [String] :begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
     # @option opts [String] :end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
-    # @option opts [String] :direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb.
+    # @option opts [MessageDirection] :direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb.
     # @return [Array<(MessagesList, Integer, Hash)>] MessagesList data, response status code and response headers
     def list_sms_messages_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_sms_messages ...'
-      end
-      allowable_values = ["inbound", "outbound"]
-      if @api_client.config.client_side_validation && opts[:'direction'] && !allowable_values.include?(opts[:'direction'])
-        fail ArgumentError, "invalid value for \"direction\", must be one of #{allowable_values}"
       end
       # resource path
       local_var_path = '/Accounts/{accountId}/Messages'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))

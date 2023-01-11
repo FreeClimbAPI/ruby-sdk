@@ -12,8 +12,8 @@
 | **api_key** | **String** | The API key assigned to this account. This key must be kept a secret by the customer. | [optional] |
 | **_alias** | **String** | A description for this account. | [optional] |
 | **label** | **String** | A string that identifies a category or group to which the account belongs. | [optional] |
-| **type** | **String** | The type of this account. It is one of: trial or full. | [optional] |
-| **status** | **String** | The status of this account. It is one of: active, suspended, or closed. | [optional] |
+| **type** | [**AccountType**](AccountType.md) |  | [optional] |
+| **status** | [**AccountStatus**](AccountStatus.md) |  | [optional] |
 | **subresource_uris** | **Object** | The list of subresources for this account. | [optional] |
 
 ## Example

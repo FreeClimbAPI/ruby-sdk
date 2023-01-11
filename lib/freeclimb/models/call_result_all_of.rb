@@ -33,7 +33,6 @@ module Freeclimb
     # If the Call was inbound, this is the ID of the IncomingPhoneNumber that received the Call (DNIS). If the Call was outbound, this is the ID of the phone number from which the Call was placed (ANI).
     attr_accessor :phone_number_id
 
-    # * `queued` &ndash; Call is ready and waiting in line before going out. * `ringing` &ndash; Call is currently ringing. * `inProgress` &ndash; Call was answered and is currently in progress. * `canceled` &ndash; Call was hung up while it was queued or ringing. * `completed` &ndash; Call was answered and has ended normally. * `busy` &ndash; Caller received a busy signal. * `failed` &ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * `noAnswer` &ndash; Call ended without being answered.
     attr_accessor :status
 
     # Start time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed.
@@ -51,36 +50,12 @@ module Freeclimb
     # Length of time that the Call was connected in seconds. Measures time between connectTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls.
     attr_accessor :connect_duration
 
-    # Direction of the Call. `inbound` for Calls into FreeClimb, `outboundAPI` for Calls initiated via the REST API,  `outboundDial` for Calls initiated by the `OutDial` PerCL command.
     attr_accessor :direction
 
-    # If this Call was initiated with answering machine detection, either `human` or `machine`. Empty otherwise.
     attr_accessor :answered_by
 
     # The list of subresources for this Call. These include things like logs and recordings associated with the Call.
     attr_accessor :subresource_uris
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -117,14 +92,14 @@ module Freeclimb
         :'from' => :'String',
         :'to' => :'String',
         :'phone_number_id' => :'String',
-        :'status' => :'String',
+        :'status' => :'CallStatus',
         :'start_time' => :'String',
         :'connect_time' => :'String',
         :'end_time' => :'String',
         :'duration' => :'Integer',
         :'connect_duration' => :'Integer',
-        :'direction' => :'String',
-        :'answered_by' => :'String',
+        :'direction' => :'CallDirection',
+        :'answered_by' => :'AnsweredBy',
         :'subresource_uris' => :'Object'
       }
     end
@@ -138,14 +113,11 @@ module Freeclimb
         :'from',
         :'to',
         :'phone_number_id',
-        :'status',
         :'start_time',
         :'connect_time',
         :'end_time',
         :'duration',
         :'connect_duration',
-        :'direction',
-        :'answered_by',
         :'subresource_uris'
       ])
     end
@@ -236,19 +208,7 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      status_validator = EnumAttributeValidator.new('String', ["queued", "ringing", "inProgress", "canceled", "completed", "busy", "failed", "noAnswer"])
-      return false unless status_validator.valid?(@status)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] status Object to be assigned
-    def status=(status)
-      validator = EnumAttributeValidator.new('String', ["queued", "ringing", "inProgress", "canceled", "completed", "busy", "failed", "noAnswer"])
-      unless validator.valid?(status)
-        fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
-      end
-      @status = status
     end
 
     # Checks equality by comparing each attribute.

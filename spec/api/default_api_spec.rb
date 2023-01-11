@@ -20,11 +20,211 @@ require 'facets/string/snakecase'
 describe 'DefaultApi' do
   before do
     # run before each test
-    @api_instance = Freeclimb::DefaultApi.new
-    @scheme = @api_instance.api_client.config.scheme
-    @host = @api_instance.api_client.config.host
-    @base_path = @api_instance.api_client.config.base_path
-    @base_url = "#{@scheme}://#{@host}#{@base_path}"
+    Freeclimb.configure do |config|
+      # Configure HTTP basic authorization: fc
+      config.scheme = 'http'
+      config.host = 'http://127.0.0.1:4010/'
+      config.base_path = '/'
+      config.server_index = nil
+      config.username = 'ACCOUNT_ID'
+      config.password = 'API_KEY'
+    end
+
+    @api_client = Freeclimb::ApiClient.new
+
+    Freeclimb::File = Tempfile
+
+    @api_instance = Freeclimb::DefaultApi.new(@api_client)
+    
+    @buy_incoming_number_request_buy_a_phone_number_test_value = Freeclimb::BuyIncomingNumberRequest.new({phone_number: 'phone_number_example'})
+    
+    @create_conference_request_create_a_conference_test_value = Freeclimb::CreateConferenceRequest.new({_alias: 'alias_example', play_beep:Freeclimb::PlayBeep::ALWAYS, record: true, wait_url: 'wait_url_example', status_callback_url: 'status_callback_url_example'})
+
+    @queue_request_create_a_queue_test_value = Freeclimb::QueueRequest.new
+
+    @application_request_create_an_application_test_value = Freeclimb::ApplicationRequest.new
+        
+    @recording_id_delete_a_recording_test_value = 'recordingId_example'
+
+    @application_id_delete_an_application_test_value = 'applicationId_example'
+
+    @phone_number_id_delete_an_incoming_number_test_value = 'phoneNumberId_example'
+
+    @queue_id_dequeue_a_member_test_value = 'queueId_example'
+
+    @call_id_dequeue_a_member_test_value = 'callId_example'
+
+    @queue_id_dequeue_head_member_test_value = 'queueId_example'
+
+    @recording_id_download_a_recording_file_test_value = 'recordingId_example'
+
+    @filter_logs_request_filter_logs_test_value = Freeclimb::FilterLogsRequest.new({pql: 'pql_example'})
+
+    @call_id_get_a_call_test_value = 'callId_example'
+
+    @conference_id_get_a_conference_test_value = 'conferenceId_example'
+
+    @queue_id_get_a_member_test_value = 'queueId_example'
+
+    @call_id_get_a_member_test_value = 'callId_example'
+
+    @conference_id_get_a_participant_test_value = 'conferenceId_example'
+
+    @call_id_get_a_participant_test_value = 'callId_example'
+
+    @queue_id_get_a_queue_test_value = 'queueId_example'
+
+    @recording_id_get_a_recording_test_value = 'recordingId_example'
+
+    @application_id_get_an_application_test_value = 'applicationId_example'
+
+    @phone_number_id_get_an_incoming_number_test_value = 'phoneNumberId_example'
+
+    @message_id_get_an_sms_message_test_value = 'messageId_example'
+
+    @queue_id_get_head_member_test_value = 'queueId_example'
+
+    @alias_list_active_queues_test_value = 'alias_example'
+
+    @alias_list_applications_test_value = 'alias_example'
+
+    @phone_number_list_available_numbers_test_value = 'phoneNumberId_example'
+
+    @region_list_available_numbers_test_value = 'region_example'
+
+    @country_list_available_numbers_test_value = 'country_example'
+
+    @voice_enabled_list_available_numbers_test_value = true
+
+    @sms_enabled_list_available_numbers_test_value = true
+
+    @capabilities_voice_list_available_numbers_test_value = true
+
+    @capabilities_sms_list_available_numbers_test_value = true
+
+    @capabilities_toll_free_list_available_numbers_test_value = true
+
+    @capabilities_ten_dlc_list_available_numbers_test_value = true
+
+    @capabilities_short_code_list_available_numbers_test_value = true
+
+    @call_id_list_call_logs_test_value = 'callId_example'
+
+    @call_id_list_call_recordings_test_value = 'callId_example'
+
+    @date_created_list_call_recordings_test_value = 'dateCreated_example'
+
+    @active_list_calls_test_value = false 
+
+    @to_list_calls_test_value = 'to_example'
+
+    @_from_list_calls_test_value = 'from_example'
+
+    @status_list_calls_test_value = Freeclimb::CallStatus::QUEUED
+
+    @start_time_list_calls_test_value = 'startTime_example'
+
+    @end_time_list_calls_test_value = 'endTime_example'
+
+    @parent_call_id_list_calls_test_value = 'parentCallId_example'
+
+    @status_list_conferences_test_value = 'status_example'
+
+    @alias_list_conferences_test_value = 'alias_example'
+
+    @date_created_list_conferences_test_value = 'dateCreated_example'
+
+    @date_updated_list_conferences_test_value = 'dateUpdated_example'
+        
+    @phone_number_list_incoming_numbers_test_value = 'phoneNumberId_example'
+
+    @alias_list_incoming_numbers_test_value = 'alias_example'
+
+    @region_list_incoming_numbers_test_value = 'region_example'
+
+    @country_list_incoming_numbers_test_value = 'country_example'
+
+    @application_id_list_incoming_numbers_test_value = 'applicationId_example'
+
+    @has_application_list_incoming_numbers_test_value = false
+
+    @voice_enabled_list_incoming_numbers_test_value = true
+
+    @sms_enabled_list_incoming_numbers_test_value = true
+
+    @capabilities_voice_list_incoming_numbers_test_value = true
+
+    @capabilities_sms_list_incoming_numbers_test_value = true
+
+    @capabilities_toll_free_list_incoming_numbers_test_value = true
+
+    @capabilities_ten_dlc_list_incoming_numbers_test_value = true
+
+    @capabilities_short_code_list_incoming_numbers_test_value = true
+
+    @queue_id_list_members_test_value = 'queueId_example'
+
+    @conference_id_list_participants_test_value = 'conferenceId_example'
+
+    @talk_list_participants_test_value = true
+
+    @listen_list_participants_test_value = true
+
+    @to_list_sms_messages_test_value='to_example'
+
+    @_from_list_sms_messages_test_value = 'from_example'
+
+    @begin_time_list_sms_messages_test_value = 'beginTime_example'
+
+    @end_time_list_sms_messages_test_value = 'endTime_example'
+
+    @direction_list_sms_messages_test_value = Freeclimb::MessageDirection::INBOUND
+
+    @conference_id_remove_a_participant_test_value = 'conferenceId_example'
+
+    @call_id_remove_a_participant_test_value = 'callId_example'
+
+    @recording_id_stream_a_recording_file_test_value = 'recordingId_example'
+
+    @conference_id_update_a_conference_test_value = 'conferenceId_example'
+
+    @call_id_update_a_live_call_test_value = 'callId_example'
+
+    @conference_id_update_a_participant_test_value = 'conferenceId_example'
+
+    @call_id_update_a_participant_test_value = 'callId_example'
+
+    @queue_id_update_a_queue_test_value = 'queueId_example'
+
+    @application_id_update_an_application_test_value = 'applicationId_example'
+
+    @phone_number_id_update_an_incoming_number_test_value = 'phoneNumberId_example'
+
+    @offnet_list_incoming_numbers_test_value = true
+
+    @call_id_list_recordings_test_value = 'callId_example'
+
+    @conference_id_list_recordings_test_value = 'conferenceId_example'
+
+    @date_created_list_recordings_test_value = 'dateCreated_example'
+
+    @queue_request_update_a_queue_test_value = Freeclimb::QueueRequest.new
+
+    @application_request_update_an_application_test_value = Freeclimb::ApplicationRequest.new
+
+    @make_call_request_make_a_call_test_value = Freeclimb::MakeCallRequest.new({from: 'from_example', to: 'to_example'})
+
+    @message_request_send_an_sms_message_test_value = Freeclimb::MessageRequest.new({from: 'from_example', to: 'to_example', text: 'text_example'})
+
+    @update_conference_request_update_a_conference_test_value = Freeclimb::UpdateConferenceRequest.new({_alias: 'alias_example', play_beep:Freeclimb::PlayBeep::ALWAYS , status: Freeclimb::UpdateConferenceRequestStatus::EMPTY})
+
+    @update_call_request_update_a_live_call_test_value = Freeclimb::UpdateCallRequest.new({status: Freeclimb::UpdateCallRequestStatus::CANCELED})
+    
+    @update_conference_participant_request_update_a_participant_test_value = Freeclimb::UpdateConferenceParticipantRequest.new 
+
+    @account_request_update_an_account_test_value = Freeclimb::AccountRequest.new
+
+    @incoming_number_request_update_an_incoming_number_test_value = Freeclimb::IncomingNumberRequest.new
   end
 
   after do
@@ -46,25 +246,17 @@ describe 'DefaultApi' do
   describe 'buy_a_phone_number test' do
     it 'should work' do
       
-      buy_incoming_number_request = build_value(:buy_incoming_number_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  buy_incoming_number_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.buy_a_phone_number(
+      buy_incoming_number_request = @buy_incoming_number_request_buy_a_phone_number_test_value
+      
+      result = @api_instance.buy_a_phone_number(
         buy_incoming_number_request,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::IncomingNumberResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -77,25 +269,17 @@ describe 'DefaultApi' do
   describe 'create_a_conference test' do
     it 'should work' do
       
-      create_conference_request = build_value(:create_conference_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  create_conference_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.create_a_conference(
+      create_conference_request = @create_conference_request_create_a_conference_test_value
+      
+      result = @api_instance.create_a_conference(
         
         {
           :create_conference_request => create_conference_request,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::ConferenceResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -108,25 +292,17 @@ describe 'DefaultApi' do
   describe 'create_a_queue test' do
     it 'should work' do
       
-      queue_request = build_value(:queue_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  queue_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.create_a_queue(
+      queue_request = @queue_request_create_a_queue_test_value
+      
+      result = @api_instance.create_a_queue(
         
         {
           :queue_request => queue_request,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::QueueResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -139,25 +315,17 @@ describe 'DefaultApi' do
   describe 'create_an_application test' do
     it 'should work' do
       
-      application_request = build_value(:application_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Applications'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  application_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.create_an_application(
+      application_request = @application_request_create_an_application_test_value
+      
+      result = @api_instance.create_an_application(
         
         {
           :application_request => application_request,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::ApplicationResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -170,25 +338,17 @@ describe 'DefaultApi' do
   describe 'delete_a_recording test' do
     it 'should work' do
       
-      recording_id = build_value(:recording_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Recordings/{recordingId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'recordingId' + '}', CGI.escape('TEST_' + 'recordingId'.snakecase.upcase))
-
-      stub = stub_request(:DELETE.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.delete_a_recording(
+      recording_id = @recording_id_delete_a_recording_test_value
+      
+      result = @api_instance.delete_a_recording(
         recording_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      
+      expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -201,25 +361,17 @@ describe 'DefaultApi' do
   describe 'delete_an_application test' do
     it 'should work' do
       
-      application_id = build_value(:application_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'applicationId' + '}', CGI.escape('TEST_' + 'applicationId'.snakecase.upcase))
-
-      stub = stub_request(:DELETE.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.delete_an_application(
+      application_id = @application_id_delete_an_application_test_value
+      
+      result = @api_instance.delete_an_application(
         application_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      
+      expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -232,25 +384,17 @@ describe 'DefaultApi' do
   describe 'delete_an_incoming_number test' do
     it 'should work' do
       
-      phone_number_id = build_value(:phone_number_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'phoneNumberId' + '}', CGI.escape('TEST_' + 'phoneNumberId'.snakecase.upcase))
-
-      stub = stub_request(:DELETE.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.delete_an_incoming_number(
+      phone_number_id = @phone_number_id_delete_an_incoming_number_test_value
+      
+      result = @api_instance.delete_an_incoming_number(
         phone_number_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      
+      expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -264,26 +408,18 @@ describe 'DefaultApi' do
   describe 'dequeue_a_member test' do
     it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      call_id = build_value(:call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.dequeue_a_member(
+      queue_id = @queue_id_dequeue_a_member_test_value
+      call_id = @call_id_dequeue_a_member_test_value
+      
+      result = @api_instance.dequeue_a_member(
         queue_id,call_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::QueueMember
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -296,25 +432,17 @@ describe 'DefaultApi' do
   describe 'dequeue_head_member test' do
     it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members/Front'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.dequeue_head_member(
+      queue_id = @queue_id_dequeue_head_member_test_value
+      
+      result = @api_instance.dequeue_head_member(
         queue_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::QueueMember
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -327,25 +455,17 @@ describe 'DefaultApi' do
   describe 'download_a_recording_file test' do
     it 'should work' do
       
-      recording_id = build_value(:recording_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Recordings/{recordingId}/Download'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'recordingId' + '}', CGI.escape('TEST_' + 'recordingId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.download_a_recording_file(
+      recording_id = @recording_id_download_a_recording_file_test_value
+      
+      result = @api_instance.download_a_recording_file(
         recording_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::File
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -358,25 +478,17 @@ describe 'DefaultApi' do
   describe 'filter_logs test' do
     it 'should work' do
       
-      filter_logs_request = build_value(:filter_logs_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  filter_logs_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.filter_logs(
+      filter_logs_request = @filter_logs_request_filter_logs_test_value
+      
+      result = @api_instance.filter_logs(
         filter_logs_request,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::LogList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -389,25 +501,17 @@ describe 'DefaultApi' do
   describe 'get_a_call test' do
     it 'should work' do
       
-      call_id = build_value(:call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Calls/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_a_call(
+      call_id = @call_id_get_a_call_test_value
+      
+      result = @api_instance.get_a_call(
         call_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::CallResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -420,25 +524,17 @@ describe 'DefaultApi' do
   describe 'get_a_conference test' do
     it 'should work' do
       
-      conference_id = build_value(:conference_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_a_conference(
+      conference_id = @conference_id_get_a_conference_test_value
+      
+      result = @api_instance.get_a_conference(
         conference_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::ConferenceResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -452,26 +548,18 @@ describe 'DefaultApi' do
   describe 'get_a_member test' do
     it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      call_id = build_value(:call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_a_member(
+      queue_id = @queue_id_get_a_member_test_value
+      call_id = @call_id_get_a_member_test_value
+      
+      result = @api_instance.get_a_member(
         queue_id,call_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::QueueMember
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -485,26 +573,18 @@ describe 'DefaultApi' do
   describe 'get_a_participant test' do
     it 'should work' do
       
-      conference_id = build_value(:conference_id)
-      call_id = build_value(:call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_a_participant(
+      conference_id = @conference_id_get_a_participant_test_value
+      call_id = @call_id_get_a_participant_test_value
+      
+      result = @api_instance.get_a_participant(
         conference_id,call_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::ConferenceParticipantResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -517,25 +597,17 @@ describe 'DefaultApi' do
   describe 'get_a_queue test' do
     it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_a_queue(
+      queue_id = @queue_id_get_a_queue_test_value
+      
+      result = @api_instance.get_a_queue(
         queue_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::QueueResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -548,25 +620,17 @@ describe 'DefaultApi' do
   describe 'get_a_recording test' do
     it 'should work' do
       
-      recording_id = build_value(:recording_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Recordings/{recordingId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'recordingId' + '}', CGI.escape('TEST_' + 'recordingId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_a_recording(
+      recording_id = @recording_id_get_a_recording_test_value
+      
+      result = @api_instance.get_a_recording(
         recording_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::RecordingResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -578,24 +642,16 @@ describe 'DefaultApi' do
   describe 'get_an_account test' do
     it 'should work' do
       
-      local_var_path = @base_url + '/Accounts/{accountId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_an_account(
+      
+      result = @api_instance.get_an_account(
         
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::AccountResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -608,25 +664,17 @@ describe 'DefaultApi' do
   describe 'get_an_application test' do
     it 'should work' do
       
-      application_id = build_value(:application_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'applicationId' + '}', CGI.escape('TEST_' + 'applicationId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_an_application(
+      application_id = @application_id_get_an_application_test_value
+      
+      result = @api_instance.get_an_application(
         application_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::ApplicationResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -639,25 +687,17 @@ describe 'DefaultApi' do
   describe 'get_an_incoming_number test' do
     it 'should work' do
       
-      phone_number_id = build_value(:phone_number_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'phoneNumberId' + '}', CGI.escape('TEST_' + 'phoneNumberId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_an_incoming_number(
+      phone_number_id = @phone_number_id_get_an_incoming_number_test_value
+      
+      result = @api_instance.get_an_incoming_number(
         phone_number_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::IncomingNumberResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -670,25 +710,17 @@ describe 'DefaultApi' do
   describe 'get_an_sms_message test' do
     it 'should work' do
       
-      message_id = build_value(:message_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Messages/{messageId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'messageId' + '}', CGI.escape('TEST_' + 'messageId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_an_sms_message(
+      message_id = @message_id_get_an_sms_message_test_value
+      
+      result = @api_instance.get_an_sms_message(
         message_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::MessageResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -701,25 +733,17 @@ describe 'DefaultApi' do
   describe 'get_head_member test' do
     it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members/Front'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.get_head_member(
+      queue_id = @queue_id_get_head_member_test_value
+      
+      result = @api_instance.get_head_member(
         queue_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::QueueMember
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -732,25 +756,17 @@ describe 'DefaultApi' do
   describe 'list_active_queues test' do
     it 'should work' do
       
-      _alias = build_value(:_alias)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :_alias => _alias,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_active_queues(
+      _alias = @_alias_list_active_queues_test_value
+      
+      result = @api_instance.list_active_queues(
         
         {
           :_alias => _alias,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::QueueList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -762,24 +778,16 @@ describe 'DefaultApi' do
   describe 'list_all_account_logs test' do
     it 'should work' do
       
-      local_var_path = @base_url + '/Accounts/{accountId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_all_account_logs(
+      
+      result = @api_instance.list_all_account_logs(
         
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::LogList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -792,25 +800,17 @@ describe 'DefaultApi' do
   describe 'list_applications test' do
     it 'should work' do
       
-      _alias = build_value(:_alias)
-      local_var_path = @base_url + '/Accounts/{accountId}/Applications'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :_alias => _alias,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_applications(
+      _alias = @_alias_list_applications_test_value
+      
+      result = @api_instance.list_applications(
         
         {
           :_alias => _alias,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::ApplicationList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -832,34 +832,26 @@ describe 'DefaultApi' do
   describe 'list_available_numbers test' do
     it 'should work' do
       
-      phone_number = build_value(:phone_number)
-      region = build_value(:region)
-      country = build_value(:country)
-      voice_enabled = build_value(:voice_enabled)
-      sms_enabled = build_value(:sms_enabled)
-      capabilities_voice = build_value(:capabilities_voice)
-      capabilities_sms = build_value(:capabilities_sms)
-      capabilities_toll_free = build_value(:capabilities_toll_free)
-      capabilities_ten_dlc = build_value(:capabilities_ten_dlc)
-      capabilities_short_code = build_value(:capabilities_short_code)
-      local_var_path = @base_url + '/AvailablePhoneNumbers'
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :phone_number => phone_number, :region => region, :country => country, :voice_enabled => voice_enabled, :sms_enabled => sms_enabled, :capabilities_voice => capabilities_voice, :capabilities_sms => capabilities_sms, :capabilities_toll_free => capabilities_toll_free, :capabilities_ten_dlc => capabilities_ten_dlc, :capabilities_short_code => capabilities_short_code,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_available_numbers(
+      phone_number = @phone_number_list_available_numbers_test_value
+      region = @region_list_available_numbers_test_value
+      country = @country_list_available_numbers_test_value
+      voice_enabled = @voice_enabled_list_available_numbers_test_value
+      sms_enabled = @sms_enabled_list_available_numbers_test_value
+      capabilities_voice = @capabilities_voice_list_available_numbers_test_value
+      capabilities_sms = @capabilities_sms_list_available_numbers_test_value
+      capabilities_toll_free = @capabilities_toll_free_list_available_numbers_test_value
+      capabilities_ten_dlc = @capabilities_ten_dlc_list_available_numbers_test_value
+      capabilities_short_code = @capabilities_short_code_list_available_numbers_test_value
+      
+      result = @api_instance.list_available_numbers(
         
         {
           :phone_number => phone_number,:region => region,:country => country,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::AvailableNumberList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -872,25 +864,17 @@ describe 'DefaultApi' do
   describe 'list_call_logs test' do
     it 'should work' do
       
-      call_id = build_value(:call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Calls/{callId}/Logs'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_call_logs(
+      call_id = @call_id_list_call_logs_test_value
+      
+      result = @api_instance.list_call_logs(
         call_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::LogList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -904,26 +888,18 @@ describe 'DefaultApi' do
   describe 'list_call_recordings test' do
     it 'should work' do
       
-      call_id = build_value(:call_id)
-      date_created = build_value(:date_created)
-      local_var_path = @base_url + '/Accounts/{accountId}/Calls/{callId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :date_created => date_created,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_call_recordings(
+      call_id = @call_id_list_call_recordings_test_value
+      date_created = @date_created_list_call_recordings_test_value
+      
+      result = @api_instance.list_call_recordings(
         call_id,
         {
           :date_created => date_created,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::RecordingList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -934,7 +910,7 @@ describe 'DefaultApi' do
   # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
   # @option opts [String] :to Only show Calls to this phone number.
   # @option opts [String] :from Only show Calls from this phone number.
-  # @option opts [String] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
+  # @option opts [CallStatus] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
   # @option opts [String] :start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
   # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
   # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
@@ -942,31 +918,23 @@ describe 'DefaultApi' do
   describe 'list_calls test' do
     it 'should work' do
       
-      active = build_value(:active)
-      to = build_value(:to)
-      from = build_value(:from)
-      status = build_value(:status)
-      start_time = build_value(:start_time)
-      end_time = build_value(:end_time)
-      parent_call_id = build_value(:parent_call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Calls'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :active => active, :to => to, :from => from, :status => status, :start_time => start_time, :end_time => end_time, :parent_call_id => parent_call_id,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_calls(
+      active = @active_list_calls_test_value
+      to = @to_list_calls_test_value
+      from = @from_list_calls_test_value
+      status = @status_list_calls_test_value
+      start_time = @start_time_list_calls_test_value
+      end_time = @end_time_list_calls_test_value
+      parent_call_id = @parent_call_id_list_calls_test_value
+      
+      result = @api_instance.list_calls(
         
         {
           :active => active,:to => to,:from => from,:status => status,:start_time => start_time,:end_time => end_time,:parent_call_id => parent_call_id,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::CallList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -982,28 +950,20 @@ describe 'DefaultApi' do
   describe 'list_conferences test' do
     it 'should work' do
       
-      status = build_value(:status)
-      _alias = build_value(:_alias)
-      date_created = build_value(:date_created)
-      date_updated = build_value(:date_updated)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :status => status, :_alias => _alias, :date_created => date_created, :date_updated => date_updated,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_conferences(
+      status = @status_list_conferences_test_value
+      _alias = @_alias_list_conferences_test_value
+      date_created = @date_created_list_conferences_test_value
+      date_updated = @date_updated_list_conferences_test_value
+      
+      result = @api_instance.list_conferences(
         
         {
           :status => status,:_alias => _alias,:date_created => date_created,:date_updated => date_updated,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::ConferenceList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1029,38 +989,30 @@ describe 'DefaultApi' do
   describe 'list_incoming_numbers test' do
     it 'should work' do
       
-      phone_number = build_value(:phone_number)
-      _alias = build_value(:_alias)
-      region = build_value(:region)
-      country = build_value(:country)
-      application_id = build_value(:application_id)
-      has_application = build_value(:has_application)
-      voice_enabled = build_value(:voice_enabled)
-      sms_enabled = build_value(:sms_enabled)
-      capabilities_voice = build_value(:capabilities_voice)
-      capabilities_sms = build_value(:capabilities_sms)
-      capabilities_toll_free = build_value(:capabilities_toll_free)
-      capabilities_ten_dlc = build_value(:capabilities_ten_dlc)
-      capabilities_short_code = build_value(:capabilities_short_code)
-      offnet = build_value(:offnet)
-      local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :phone_number => phone_number, :_alias => _alias, :region => region, :country => country, :application_id => application_id, :has_application => has_application, :voice_enabled => voice_enabled, :sms_enabled => sms_enabled, :capabilities_voice => capabilities_voice, :capabilities_sms => capabilities_sms, :capabilities_toll_free => capabilities_toll_free, :capabilities_ten_dlc => capabilities_ten_dlc, :capabilities_short_code => capabilities_short_code, :offnet => offnet,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_incoming_numbers(
+      phone_number = @phone_number_list_incoming_numbers_test_value
+      _alias = @_alias_list_incoming_numbers_test_value
+      region = @region_list_incoming_numbers_test_value
+      country = @country_list_incoming_numbers_test_value
+      application_id = @application_id_list_incoming_numbers_test_value
+      has_application = @has_application_list_incoming_numbers_test_value
+      voice_enabled = @voice_enabled_list_incoming_numbers_test_value
+      sms_enabled = @sms_enabled_list_incoming_numbers_test_value
+      capabilities_voice = @capabilities_voice_list_incoming_numbers_test_value
+      capabilities_sms = @capabilities_sms_list_incoming_numbers_test_value
+      capabilities_toll_free = @capabilities_toll_free_list_incoming_numbers_test_value
+      capabilities_ten_dlc = @capabilities_ten_dlc_list_incoming_numbers_test_value
+      capabilities_short_code = @capabilities_short_code_list_incoming_numbers_test_value
+      offnet = @offnet_list_incoming_numbers_test_value
+      
+      result = @api_instance.list_incoming_numbers(
         
         {
           :phone_number => phone_number,:_alias => _alias,:region => region,:country => country,:application_id => application_id,:has_application => has_application,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,:offnet => offnet,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::IncomingNumberList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1073,25 +1025,17 @@ describe 'DefaultApi' do
   describe 'list_members test' do
     it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}/Members'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_members(
+      queue_id = @queue_id_list_members_test_value
+      
+      result = @api_instance.list_members(
         queue_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::QueueMemberList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1106,27 +1050,19 @@ describe 'DefaultApi' do
   describe 'list_participants test' do
     it 'should work' do
       
-      conference_id = build_value(:conference_id)
-      talk = build_value(:talk)
-      listen = build_value(:listen)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}/Participants'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :talk => talk, :listen => listen,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_participants(
+      conference_id = @conference_id_list_participants_test_value
+      talk = @talk_list_participants_test_value
+      listen = @listen_list_participants_test_value
+      
+      result = @api_instance.list_participants(
         conference_id,
         {
           :talk => talk,:listen => listen,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::ConferenceParticipantList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1141,27 +1077,19 @@ describe 'DefaultApi' do
   describe 'list_recordings test' do
     it 'should work' do
       
-      call_id = build_value(:call_id)
-      conference_id = build_value(:conference_id)
-      date_created = build_value(:date_created)
-      local_var_path = @base_url + '/Accounts/{accountId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :call_id => call_id, :conference_id => conference_id, :date_created => date_created,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_recordings(
+      call_id = @call_id_list_recordings_test_value
+      conference_id = @conference_id_list_recordings_test_value
+      date_created = @date_created_list_recordings_test_value
+      
+      result = @api_instance.list_recordings(
         
         {
           :call_id => call_id,:conference_id => conference_id,:date_created => date_created,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::RecordingList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1173,34 +1101,26 @@ describe 'DefaultApi' do
   # @option opts [String] :from Only show Messages from this phone number.
   # @option opts [String] :begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
   # @option opts [String] :end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
-  # @option opts [String] :direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb.
+  # @option opts [MessageDirection] :direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb.
   # @return [MessagesList]
   describe 'list_sms_messages test' do
     it 'should work' do
       
-      to = build_value(:to)
-      from = build_value(:from)
-      begin_time = build_value(:begin_time)
-      end_time = build_value(:end_time)
-      direction = build_value(:direction)
-      local_var_path = @base_url + '/Accounts/{accountId}/Messages'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-           :to => to, :from => from, :begin_time => begin_time, :end_time => end_time, :direction => direction,
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.list_sms_messages(
+      to = @to_list_sms_messages_test_value
+      from = @from_list_sms_messages_test_value
+      begin_time = @begin_time_list_sms_messages_test_value
+      end_time = @end_time_list_sms_messages_test_value
+      direction = @direction_list_sms_messages_test_value
+      
+      result = @api_instance.list_sms_messages(
         
         {
           :to => to,:from => from,:begin_time => begin_time,:end_time => end_time,:direction => direction,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::MessagesList
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1213,25 +1133,17 @@ describe 'DefaultApi' do
   describe 'make_a_call test' do
     it 'should work' do
       
-      make_call_request = build_value(:make_call_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Calls'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  make_call_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.make_a_call(
+      make_call_request = @make_call_request_make_a_call_test_value
+      
+      result = @api_instance.make_a_call(
         
         {
           :make_call_request => make_call_request,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::CallResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1245,26 +1157,18 @@ describe 'DefaultApi' do
   describe 'remove_a_participant test' do
     it 'should work' do
       
-      conference_id = build_value(:conference_id)
-      call_id = build_value(:call_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
-
-      stub = stub_request(:DELETE.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.remove_a_participant(
+      conference_id = @conference_id_remove_a_participant_test_value
+      call_id = @call_id_remove_a_participant_test_value
+      
+      result = @api_instance.remove_a_participant(
         conference_id,call_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      
+      expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1277,25 +1181,17 @@ describe 'DefaultApi' do
   describe 'send_an_sms_message test' do
     it 'should work' do
       
-      message_request = build_value(:message_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Messages'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  message_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.send_an_sms_message(
+      message_request = @message_request_send_an_sms_message_test_value
+      
+      result = @api_instance.send_an_sms_message(
         message_request,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::MessageResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1308,25 +1204,17 @@ describe 'DefaultApi' do
   describe 'stream_a_recording_file test' do
     it 'should work' do
       
-      recording_id = build_value(:recording_id)
-      local_var_path = @base_url + '/Accounts/{accountId}/Recordings/{recordingId}/Stream'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'recordingId' + '}', CGI.escape('TEST_' + 'recordingId'.snakecase.upcase))
-
-      stub = stub_request(:GET.downcase, local_var_path)
-        .with(
-          body: {},
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.stream_a_recording_file(
+      recording_id = @recording_id_stream_a_recording_file_test_value
+      
+      result = @api_instance.stream_a_recording_file(
         recording_id,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::File
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1340,26 +1228,18 @@ describe 'DefaultApi' do
   describe 'update_a_conference test' do
     it 'should work' do
       
-      conference_id = build_value(:conference_id)
-      update_conference_request = build_value(:update_conference_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  update_conference_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_a_conference(
+      conference_id = @conference_id_update_a_conference_test_value
+      update_conference_request = @update_conference_request_update_a_conference_test_value
+      
+      result = @api_instance.update_a_conference(
         conference_id,
         {
           :update_conference_request => update_conference_request,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::ConferenceResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1373,26 +1253,18 @@ describe 'DefaultApi' do
   describe 'update_a_live_call test' do
     it 'should work' do
       
-      call_id = build_value(:call_id)
-      update_call_request = build_value(:update_call_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Calls/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  update_call_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_a_live_call(
+      call_id = @call_id_update_a_live_call_test_value
+      update_call_request = @update_call_request_update_a_live_call_test_value
+      
+      result = @api_instance.update_a_live_call(
         call_id,update_call_request,
         {
           
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      
+      expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1407,27 +1279,19 @@ describe 'DefaultApi' do
   describe 'update_a_participant test' do
     it 'should work' do
       
-      conference_id = build_value(:conference_id)
-      call_id = build_value(:call_id)
-      update_conference_participant_request = build_value(:update_conference_participant_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'conferenceId' + '}', CGI.escape('TEST_' + 'conferenceId'.snakecase.upcase)).sub('{' + 'callId' + '}', CGI.escape('TEST_' + 'callId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  update_conference_participant_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_a_participant(
+      conference_id = @conference_id_update_a_participant_test_value
+      call_id = @call_id_update_a_participant_test_value
+      update_conference_participant_request = @update_conference_participant_request_update_a_participant_test_value
+      
+      result = @api_instance.update_a_participant(
         conference_id,call_id,
         {
           :update_conference_participant_request => update_conference_participant_request,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::ConferenceParticipantResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1441,26 +1305,18 @@ describe 'DefaultApi' do
   describe 'update_a_queue test' do
     it 'should work' do
       
-      queue_id = build_value(:queue_id)
-      queue_request = build_value(:queue_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Queues/{queueId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'queueId' + '}', CGI.escape('TEST_' + 'queueId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  queue_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_a_queue(
+      queue_id = @queue_id_update_a_queue_test_value
+      queue_request = @queue_request_update_a_queue_test_value
+      
+      result = @api_instance.update_a_queue(
         queue_id,
         {
           :queue_request => queue_request,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::QueueResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1473,25 +1329,17 @@ describe 'DefaultApi' do
   describe 'update_an_account test' do
     it 'should work' do
       
-      account_request = build_value(:account_request)
-      local_var_path = @base_url + '/Accounts/{accountId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  account_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_an_account(
+      account_request = @account_request_update_an_account_test_value
+      
+      result = @api_instance.update_an_account(
         
         {
           :account_request => account_request,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      
+      expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1505,26 +1353,18 @@ describe 'DefaultApi' do
   describe 'update_an_application test' do
     it 'should work' do
       
-      application_id = build_value(:application_id)
-      application_request = build_value(:application_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/Applications/{applicationId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'applicationId' + '}', CGI.escape('TEST_' + 'applicationId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  application_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_an_application(
+      application_id = @application_id_update_an_application_test_value
+      application_request = @application_request_update_an_application_test_value
+      
+      result = @api_instance.update_an_application(
         application_id,
         {
           :application_request => application_request,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::ApplicationResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1538,26 +1378,18 @@ describe 'DefaultApi' do
   describe 'update_an_incoming_number test' do
     it 'should work' do
       
-      phone_number_id = build_value(:phone_number_id)
-      incoming_number_request = build_value(:incoming_number_request)
-      local_var_path = @base_url + '/Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId}'.sub('{' + 'accountId' + '}', CGI.escape('TEST_' + 'accountId'.snakecase.upcase)).sub('{' + 'phoneNumberId' + '}', CGI.escape('TEST_' + 'phoneNumberId'.snakecase.upcase))
-
-      stub = stub_request(:POST.downcase, local_var_path)
-        .with(
-          body:  incoming_number_request.to_body.to_json,
-          query: build_query_parameters({
-          
-          })
-        )
-        .to_return(status: 200, body: "", headers: {})
-      @api_instance.update_an_incoming_number(
+      phone_number_id = @phone_number_id_update_an_incoming_number_test_value
+      incoming_number_request = @incoming_number_request_update_an_incoming_number_test_value
+      
+      result = @api_instance.update_an_incoming_number(
         phone_number_id,
         {
           :incoming_number_request => incoming_number_request,
         }
       )
-
-      expect(stub).to have_been_requested
+ 
+      expect(result).to be_a Freeclimb::IncomingNumberResult
+      
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end

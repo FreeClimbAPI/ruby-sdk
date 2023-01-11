@@ -36,13 +36,11 @@ module Freeclimb
     # A description for this Conference.
     attr_accessor :_alias
 
-    # Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always.
     attr_accessor :play_beep
 
     # Flag indicating whether recording is enabled for this Conference.
     attr_accessor :record
 
-    # The status of the Conference. One of: creating, empty, populated, inProgress, or terminated.
     attr_accessor :status
 
     # URL referencing the audio file to be used as default wait music for the Conference when it is in the populated state.
@@ -56,28 +54,6 @@ module Freeclimb
 
     # The list of subresources for this Conference. This includes participants and/or recordings.
     attr_accessor :subresource_uris
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -114,9 +90,9 @@ module Freeclimb
         :'conference_id' => :'String',
         :'account_id' => :'String',
         :'_alias' => :'String',
-        :'play_beep' => :'String',
+        :'play_beep' => :'PlayBeep',
         :'record' => :'Boolean',
-        :'status' => :'String',
+        :'status' => :'ConferenceStatus',
         :'wait_url' => :'String',
         :'action_url' => :'String',
         :'status_callback_url' => :'String',
@@ -130,9 +106,7 @@ module Freeclimb
         :'conference_id',
         :'account_id',
         :'_alias',
-        :'play_beep',
         :'record',
-        :'status',
         :'wait_url',
         :'action_url',
         :'status_callback_url',
@@ -193,6 +167,8 @@ module Freeclimb
 
       if attributes.key?(:'play_beep')
         self.play_beep = attributes[:'play_beep']
+      else
+        self.play_beep = 'always'
       end
 
       if attributes.key?(:'record')
@@ -230,31 +206,7 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      play_beep_validator = EnumAttributeValidator.new('String', ["always", "never", "entryOnly", "exitOnly"])
-      return false unless play_beep_validator.valid?(@play_beep)
-      status_validator = EnumAttributeValidator.new('String', ["creating", "empty", "populated", "inProgress", "terminated"])
-      return false unless status_validator.valid?(@status)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] play_beep Object to be assigned
-    def play_beep=(play_beep)
-      validator = EnumAttributeValidator.new('String', ["always", "never", "entryOnly", "exitOnly"])
-      unless validator.valid?(play_beep)
-        fail ArgumentError, "invalid value for \"play_beep\", must be one of #{validator.allowable_values}."
-      end
-      @play_beep = play_beep
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] status Object to be assigned
-    def status=(status)
-      validator = EnumAttributeValidator.new('String', ["creating", "empty", "populated", "inProgress", "terminated"])
-      unless validator.valid?(status)
-        fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
-      end
-      @status = status
     end
 
     # Checks equality by comparing each attribute.
