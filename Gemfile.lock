@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    freeclimb (4.1.0)
+    freeclimb (4.1.1)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM
@@ -90,6 +90,7 @@ DEPENDENCIES
   rake (~> 13.0.6)
   rspec (~> 3.6, >= 3.6.0)
   rubocop (~> 0.66.0)
+  typhoeus (~> 1.0)
   webmock (~> 3.14)
 
 BUNDLED WITH
