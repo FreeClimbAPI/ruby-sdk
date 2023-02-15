@@ -9,5 +9,4 @@ group :development, :test do
   gem "webmock", "~> 3.14"
   gem "factory_bot", "~> 6.2"
   gem "facets", "~> 3.1"
-  gem "typhoeus", "~> 1.0"
 end
