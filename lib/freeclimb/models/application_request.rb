@@ -70,6 +70,12 @@ module Freeclimb
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'voice_url',
+        :'voice_fallback_url',
+        :'call_connect_url',
+        :'status_callback_url',
+        :'sms_url',
+        :'sms_fallback_url'
       ])
     end
 
