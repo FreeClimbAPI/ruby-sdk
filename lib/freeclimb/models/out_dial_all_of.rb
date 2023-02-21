@@ -70,8 +70,8 @@ module Freeclimb
       {
         :'action_url' => :'String',
         :'call_connect_url' => :'String',
-        :'calling_number' => :'Float',
-        :'destination' => :'Float',
+        :'calling_number' => :'String',
+        :'destination' => :'String',
         :'if_machine' => :'IfMachine',
         :'if_machine_url' => :'String',
         :'send_digits' => :'String',
