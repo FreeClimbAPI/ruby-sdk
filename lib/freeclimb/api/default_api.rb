@@ -1794,7 +1794,7 @@ module Freeclimb
     # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (default to false)
     # @option opts [String] :to Only show Calls to this phone number.
     # @option opts [String] :from Only show Calls from this phone number.
-    # @option opts [CallStatus] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
+    # @option opts [CallStatus] :call_status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
     # @option opts [String] :start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
     # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
     # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
@@ -1809,7 +1809,7 @@ module Freeclimb
     # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
     # @option opts [String] :to Only show Calls to this phone number.
     # @option opts [String] :from Only show Calls from this phone number.
-    # @option opts [CallStatus] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
+    # @option opts [CallStatus] :call_status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
     # @option opts [String] :start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
     # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
     # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
@@ -1826,7 +1826,7 @@ module Freeclimb
       query_params[:'active'] = opts[:'active'] if !opts[:'active'].nil?
       query_params[:'to'] = opts[:'to'] if !opts[:'to'].nil?
       query_params[:'from'] = opts[:'from'] if !opts[:'from'].nil?
-      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
+      query_params[:'callStatus'] = opts[:'call_status'] if !opts[:'call_status'].nil?
       query_params[:'startTime'] = opts[:'start_time'] if !opts[:'start_time'].nil?
       query_params[:'endTime'] = opts[:'end_time'] if !opts[:'end_time'].nil?
       query_params[:'parentCallId'] = opts[:'parent_call_id'] if !opts[:'parent_call_id'].nil?

@@ -45,7 +45,7 @@ module Freeclimb
     # If the Call was inbound, this is the ID of the IncomingPhoneNumber that received the Call (DNIS). If the Call was outbound, this is the ID of the phone number from which the Call was placed (ANI).
     attr_accessor :phone_number_id
 
-    attr_accessor :status
+    attr_accessor :call_status
 
     # Start time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed.
     attr_accessor :start_time
@@ -82,7 +82,7 @@ module Freeclimb
         :'from' => :'from',
         :'to' => :'to',
         :'phone_number_id' => :'phoneNumberId',
-        :'status' => :'status',
+        :'call_status' => :'callStatus',
         :'start_time' => :'startTime',
         :'connect_time' => :'connectTime',
         :'end_time' => :'endTime',
@@ -112,7 +112,7 @@ module Freeclimb
         :'from' => :'String',
         :'to' => :'String',
         :'phone_number_id' => :'String',
-        :'status' => :'CallStatus',
+        :'call_status' => :'CallStatus',
         :'start_time' => :'String',
         :'connect_time' => :'String',
         :'end_time' => :'String',
@@ -205,8 +205,8 @@ module Freeclimb
         self.phone_number_id = attributes[:'phone_number_id']
       end
 
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
+      if attributes.key?(:'call_status')
+        self.call_status = attributes[:'call_status']
       end
 
       if attributes.key?(:'start_time')
@@ -270,7 +270,7 @@ module Freeclimb
           from == o.from &&
           to == o.to &&
           phone_number_id == o.phone_number_id &&
-          status == o.status &&
+          call_status == o.call_status &&
           start_time == o.start_time &&
           connect_time == o.connect_time &&
           end_time == o.end_time &&
@@ -290,7 +290,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, call_id, parent_call_id, account_id, from, to, phone_number_id, status, start_time, connect_time, end_time, duration, connect_duration, direction, answered_by, subresource_uris].hash
+      [uri, date_created, date_updated, revision, call_id, parent_call_id, account_id, from, to, phone_number_id, call_status, start_time, connect_time, end_time, duration, connect_duration, direction, answered_by, subresource_uris].hash
     end
 
     # Builds the object from hash

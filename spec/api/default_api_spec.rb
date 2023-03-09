@@ -120,7 +120,7 @@ describe 'DefaultApi' do
 
     @_from_list_calls_test_value = 'from_example'
 
-    @status_list_calls_test_value = Freeclimb::CallStatus::QUEUED
+    @call_status_list_calls_test_value = Freeclimb::CallStatus::QUEUED
 
     @start_time_list_calls_test_value = 'startTime_example'
 
@@ -910,7 +910,7 @@ describe 'DefaultApi' do
   # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
   # @option opts [String] :to Only show Calls to this phone number.
   # @option opts [String] :from Only show Calls from this phone number.
-  # @option opts [CallStatus] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
+  # @option opts [CallStatus] :call_status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
   # @option opts [String] :start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
   # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
   # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
@@ -921,7 +921,7 @@ describe 'DefaultApi' do
       active = @active_list_calls_test_value
       to = @to_list_calls_test_value
       from = @from_list_calls_test_value
-      status = @status_list_calls_test_value
+      call_status = @call_status_list_calls_test_value
       start_time = @start_time_list_calls_test_value
       end_time = @end_time_list_calls_test_value
       parent_call_id = @parent_call_id_list_calls_test_value
@@ -929,7 +929,7 @@ describe 'DefaultApi' do
       result = @api_instance.list_calls(
         
         {
-          :active => active,:to => to,:from => from,:status => status,:start_time => start_time,:end_time => end_time,:parent_call_id => parent_call_id,
+          :active => active,:to => to,:from => from,:call_status => call_status,:start_time => start_time,:end_time => end_time,:parent_call_id => parent_call_id,
         }
       )
  

@@ -2101,7 +2101,7 @@ opts = {
   active: true, # Boolean | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
   to: 'to_example', # String | Only show Calls to this phone number.
   from: 'from_example', # String | Only show Calls from this phone number.
-  status: Freeclimb::CallStatus::QUEUED, # CallStatus | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`.
+  call_status: Freeclimb::CallStatus::QUEUED, # CallStatus | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`.
   start_time: 'start_time_example', # String | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
   end_time: 'end_time_example', # String | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
   parent_call_id: 'parent_call_id_example' # String | Only show Calls spawned by the call with this ID.
@@ -2146,7 +2146,7 @@ end
 
 | **from** | **String** | Only show Calls from this phone number. | [optional] |
 
-| **status** | [**CallStatus**](.md) | Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional] |
+| **call_status** | [**CallStatus**](.md) | Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional] |
 
 | **start_time** | **String** | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
 
