@@ -85,7 +85,7 @@ describe Freeclimb::CallResult do
     end
   end
 
-  describe 'test attribute "status"' do
+  describe 'test attribute "call_status"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
