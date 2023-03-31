@@ -5,7 +5,7 @@ describe 'SignatureInformation' do
         @request_header = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8"
         @signature_information_object = Freeclimb::SignatureInformation.new(@request_header)
     end
-    describe '#isRequestTimeValid' do
+    describe '#is_request_time_valid' do
         context 'request time is within tolerance threshold' do
             it 'returns true' do
                 tolerance = 5 * 60
@@ -19,7 +19,7 @@ describe 'SignatureInformation' do
             end
         end
     end
-    describe '#isSignatureSafe' do
+    describe '#is_signature_safe' do
         context 'signingSecret exists in signature array' do
             it 'returns true' do
                 requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"

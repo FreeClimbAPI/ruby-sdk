@@ -5,7 +5,7 @@ describe 'RequestVerifier' do
         @request_verifier_object = Freeclimb::RequestVerifier.new()
     end
 
-    describe '#checkRequestBody' do
+    describe '#check_request_body' do
         context 'Request Body is empty' do
             it 'throws "Request Body cannot be empty or null"' do
                 request_header = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8"
@@ -26,7 +26,7 @@ describe 'RequestVerifier' do
         end
     end
 
-    describe '#checkRequestHeader' do
+    describe '#check_request_header' do
         context 'signatures are not present' do
             it 'throws "Error with request header, signatures are not present"' do
                 request_header = "t=1679944186,"
@@ -56,7 +56,7 @@ describe 'RequestVerifier' do
         end
     end
 
-    describe '#checkSigningSecret' do
+    describe '#check_signing_secret' do
         context 'Signing secret is empty' do
             it 'throws "Signing secret cannot be empty or null"' do
                 request_header = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8"
@@ -77,7 +77,7 @@ describe 'RequestVerifier' do
         end
     end
 
-    describe '#checkTolerance' do
+    describe '#check_tolerance' do
         context 'Tolerance value is a negative value' do
             it 'throws "Tolerance value must be a positive integer"' do
                 request_header = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8"
@@ -98,7 +98,7 @@ describe 'RequestVerifier' do
         end
     end
 
-    describe '#verifyTolerance' do
+    describe '#verify_tolerance' do
         context 'Request plus tolerance is not less than the current datetime' do
             it 'throws "Request time exceeded tolerance threshold. Request: 1900871395, CurrentTime: currentTimeValue, tolerance, toleranceValue"' do
                 currentTime = DateTime.now.strftime('%s').to_i
@@ -111,7 +111,7 @@ describe 'RequestVerifier' do
         end
     end
 
-    describe '#verifySignature' do
+    describe '#verify_signature' do
         context 'Signature request is unverified, signing secret does not exist in signatures, potential typo' do
             it 'throws "Unverified signature request, If this request was unexpected, it may be from a bad actor. Please proceed with caution. If the request was exepected, please check any typos or issues with the signingSecret"' do
                 currentTime = DateTime.now.strftime('%s').to_i
@@ -124,7 +124,7 @@ describe 'RequestVerifier' do
         end
     end
 
-    describe '#verifyRequestSignature' do
+    describe '#verify_request_signature' do
         context 'Request is valid' do
             it 'No errors are thrown' do
                 currentTime = DateTime.now.strftime('%s').to_i

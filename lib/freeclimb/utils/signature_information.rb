@@ -1,6 +1,5 @@
 require 'date'
 require 'openssl'
-require 'cgi'
 
 module Freeclimb
     class SignatureInformation

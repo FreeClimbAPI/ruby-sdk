@@ -1,16 +1,15 @@
 module Freeclimb
     class RequestVerifier
         @@DEFAULT_TOLERANCE = 5 * 60 * 1000
-        attr_accessor :info
 
         def verify_request_signature(request_body, request_header, signing_secret, tolerance=DEFAULT_TOLERANCE)
             check_request_body(request_body)
             check_request_header(request_header)
             check_signing_secret(signing_secret)
             check_tolerance(tolerance)
-            @info = Freeclimb::SignatureInformation.new(request_header)
-            verify_tolerance(@info, tolerance)
-            verify_signature(@info, request_body, signing_secret)
+            info = Freeclimb::SignatureInformation.new(request_header)
+            verify_tolerance(info, tolerance)
+            verify_signature(info, request_body, signing_secret)
         end
         
         def check_request_body(request_body)
@@ -22,9 +21,9 @@ module Freeclimb
         def check_request_header(request_header)
             if request_header == "" || request_header == nil
                 raise 'Error with request header, Request header is empty'
-            elsif ! request_header.include? "t"
+            elsif !(request_header.include? "t")
                 raise 'Error with request header, timestamp is not present'
-            elsif ! request_header.include? "v1"
+            elsif !(request_header.include? "v1")
                 raise 'Error with request header, signatures are not present'
             end
         end
