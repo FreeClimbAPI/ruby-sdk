@@ -35,7 +35,7 @@ module Freeclimb
         end
 
         def check_tolerance(tolerance)
-            if tolerance <= 0
+            if tolerance <= 0 || !(tolerance.is_a? Integer)
                 raise 'Tolerance value must be a positive integer'
             end
         end
