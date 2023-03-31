@@ -26,7 +26,9 @@ describe 'SignatureInformation' do
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793"
                 expect(@signature_information_object.is_signature_safe(requestBody, signingSecret)).to be true
             end
-            it 'returns false' do
+        end
+        context 'signingSecret does not exists in signature array' do
+            it 'returns false since it does not match condition of signingSecret being within signature array' do
                 requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7794"
                 expect(@signature_information_object.is_signature_safe(requestBody, signingSecret)).to be false
