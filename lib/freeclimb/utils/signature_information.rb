@@ -4,17 +4,17 @@ require 'cgi'
 
 module Freeclimb
     class SignatureInformation
-        attr_accessor :requestTimestamp
+        attr_accessor :request_timestamp
         attr_accessor :signatures
 
-        def initialize(requestHeader)
-            @requestTimestamp = 0
+        def initialize(request_header)
+            @request_timestamp = 0
             @signatures = []
-            signatureHeader = requestHeader.try(:split, ",")
+            signatureHeader = request_header.try(:split, ",")
             signatureHeader.each { |signature|
                 header, value = signature.try(:split, "=")
                 if header == "t"
-                    @requestTimestamp = value.to_i
+                    @request_timestamp = value.to_i
                 elsif header == "v1"
                     @signatures.append(value)
                 end 
@@ -23,18 +23,18 @@ module Freeclimb
 
         def is_request_time_valid(tolerance)
             currentTime = self.get_current_unix_time()
-            timeCalculation = @requestTimestamp + tolerance
+            timeCalculation = @request_timestamp + tolerance
             return (timeCalculation) < currentTime
         end
 
-        def is_signature_safe(requestBody, signingSecret)
-            hashValue = self.compute_hash(requestBody, signingSecret)
+        def is_signature_safe(request_body, signing_secret)
+            hashValue = self.compute_hash(request_body, signing_secret)
             return @signatures.include? hashValue
         end
 
-        def compute_hash(requestBody, signingSecret)
-            data = @requestTimestamp.to_s + "." + requestBody
-            return OpenSSL::HMAC.hexdigest('sha256', signingSecret, data)
+        def compute_hash(request_body, signing_secret)
+            data = @request_timestamp.to_s + "." + request_body
+            return OpenSSL::HMAC.hexdigest('sha256', signing_secret, data)
         end
 
         def get_current_unix_time()

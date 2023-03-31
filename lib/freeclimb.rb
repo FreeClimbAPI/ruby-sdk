@@ -151,7 +151,6 @@ require 'freeclimb/api/default_api'
 #Utils
 require 'freeclimb/utils/signature_information'
 require 'freeclimb/utils/request_verifier'
-require 'freeclimb/utils/maximum_integer'
 
 module Freeclimb
   class << self
