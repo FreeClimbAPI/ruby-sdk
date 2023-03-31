@@ -12,8 +12,7 @@ module Freeclimb
             @signatures = []
             signatureHeader = requestHeader.try(:split, ",")
             signatureHeader.each { |signature|
-                header = signature.try(:split, "=").at(0)
-                value = signature.try(:split, "=").at(1)
+                header, value = signature.try(:split, "=")
                 if header == "t"
                     @requestTimestamp = value.to_i
                 elsif header == "v1"
@@ -22,23 +21,23 @@ module Freeclimb
             }
         end
 
-        def isRequestTimeValid(tolerance)
-            currentTime = self.getCurrentUnixTime()
+        def is_request_time_valid(tolerance)
+            currentTime = self.get_current_unix_time()
             timeCalculation = @requestTimestamp + tolerance
             return (timeCalculation) < currentTime
         end
 
-        def isSignatureSafe(requestBody, signingSecret)
-            hashValue = self.computeHash(requestBody, signingSecret)
+        def is_signature_safe(requestBody, signingSecret)
+            hashValue = self.compute_hash(requestBody, signingSecret)
             return @signatures.include? hashValue
         end
 
-        def computeHash(requestBody, signingSecret)
+        def compute_hash(requestBody, signingSecret)
             data = @requestTimestamp.to_s + "." + requestBody
             return OpenSSL::HMAC.hexdigest('sha256', signingSecret, data)
         end
 
-        def getCurrentUnixTime()
+        def get_current_unix_time()
             return DateTime.now.strftime('%s').to_i
         end
     end

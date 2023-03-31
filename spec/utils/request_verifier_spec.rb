@@ -12,7 +12,7 @@ describe 'RequestVerifier' do
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793"
                 tolerance = 5 * 60
                 requestBody = ""
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Request Body cannot be empty or null")
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Request Body cannot be empty or null")
             end
         end
         context 'Request Body is nil' do
@@ -21,7 +21,7 @@ describe 'RequestVerifier' do
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793"
                 tolerance = 5 * 60
                 requestBody = nil
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Request Body cannot be empty or null")
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Request Body cannot be empty or null")
             end
         end
     end
@@ -33,7 +33,7 @@ describe 'RequestVerifier' do
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793"
                 tolerance = 5 * 60
                 requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Error with request header, signatures are not present")
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Error with request header, signatures are not present")
             end
         end
         context 'timestamp is not present' do
@@ -42,7 +42,7 @@ describe 'RequestVerifier' do
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793"
                 tolerance = 5 * 60
                 requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Error with request header, timestamp is not present")
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Error with request header, timestamp is not present")
             end
         end
         context 'Request header is empty' do
@@ -51,7 +51,7 @@ describe 'RequestVerifier' do
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793"
                 tolerance = 5 * 60
                 requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Error with request header, Request header is empty")
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Error with request header, Request header is empty")
             end
         end
     end
@@ -63,7 +63,7 @@ describe 'RequestVerifier' do
                 signingSecret = ""
                 tolerance = 5 * 60
                 requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Signing secret cannot be empty or null")
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Signing secret cannot be empty or null")
             end
         end
         context 'Signing secret is nil' do
@@ -72,7 +72,7 @@ describe 'RequestVerifier' do
                 signingSecret = nil
                 tolerance = 5 * 60
                 requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Signing secret cannot be empty or null")
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Signing secret cannot be empty or null")
             end
         end
     end
@@ -84,7 +84,7 @@ describe 'RequestVerifier' do
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793"
                 tolerance = -5
                 requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Tolerance value must be a positive integer")
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Tolerance value must be a positive integer")
             end
         end
         context 'Tolerance value is 0' do
@@ -93,16 +93,16 @@ describe 'RequestVerifier' do
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793"
                 tolerance = 0
                 requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Tolerance value must be a positive integer")
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Tolerance value must be a positive integer")
             end
         end
         context 'Tolerance value is greater than allowed limit' do
             it 'throws "Tolerance value must be a positive integer"' do
                 requestHeader = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8"
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793"
-                tolerance = (2**(0.size * 8 -2) -1)
+                tolerance = MaximumInteger::MAX_VALUE
                 requestBody = "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Tolerance value must be a positive integer")
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Tolerance value must be a positive integer")
             end
         end
     end
@@ -115,7 +115,7 @@ describe 'RequestVerifier' do
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793"
                 tolerance = (5 * 60)
                 requestBody =  "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Request time exceeded tolerance threshold. Request: 1900871395" + ", CurrentTime: " + currentTime.to_s + ", tolerance: " + tolerance.to_s)
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Request time exceeded tolerance threshold. Request: 1900871395" + ", CurrentTime: " + currentTime.to_s + ", tolerance: " + tolerance.to_s)
             end
         end
     end
@@ -128,7 +128,7 @@ describe 'RequestVerifier' do
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7794"
                 tolerance = (5 * 60)
                 requestBody =  "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Unverified signature request, If this request was unexpected, it may be from a bad actor. Please proceed with caution. If the request was exepected, please check any typos or issues with the signingSecret")
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.to raise_error("Unverified signature request, If this request was unexpected, it may be from a bad actor. Please proceed with caution. If the request was exepected, please check any typos or issues with the signingSecret")
             end
         end
     end
@@ -141,7 +141,7 @@ describe 'RequestVerifier' do
                 signingSecret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793"
                 tolerance = (5 * 60)
                 requestBody =  "{\"accountId\":\"AC1334ffb694cd8d969f51cddf5f7c9b478546d50c\",\"callId\":\"CAccb0b00506553cda09b51c5477f672a49e0b2213\",\"callStatus\":\"ringing\",\"conferenceId\":null,\"direction\":\"inbound\",\"from\":\"+13121000109\",\"parentCallId\":null,\"queueId\":null,\"requestType\":\"inboundCall\",\"to\":\"+13121000096\"}"
-                expect { @request_verifier_object.verifyRequestSignature(requestBody, requestHeader, signingSecret, tolerance) }.not_to raise_error
+                expect { @request_verifier_object.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance) }.not_to raise_error
             end
         end
     end
