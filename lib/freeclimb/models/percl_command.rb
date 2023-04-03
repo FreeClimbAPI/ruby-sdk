@@ -221,15 +221,15 @@ module Freeclimb
     end
     def to_percl_hash()
       command = self.command
-      attributes = self.class.openapi_types
-      percl_hash = attributes.each_with_object({}) do |(attr, _type), hash|
+      attributes = self.class.attribute_map
+      percl_hash = attributes.each_with_object({}) do |(attr, percl_attr), hash|
         value = self.send(attr)
         if value.is_a?(Array)
-          hash[attr] = value.compact.map { |v| v.is_a?(PerclCommand) ? v.to_percl_hash() : v }
+          hash[percl_attr] = value.compact.map { |v| v.is_a?(PerclCommand) ? v.to_percl_hash() : v }
         elsif value.is_a?(PerclCommand)
-          hash[attr] = value.to_percl_hash()
+          hash[percl_attr] = value.to_percl_hash()
         elsif !value.nil?
-          hash[attr] = value
+          hash[percl_attr] = value
         end
       end
       result = {}

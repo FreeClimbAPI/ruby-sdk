@@ -9,6 +9,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.1.4"></a>
+
+## [4.1.4] - 2023-03-31
+
+### Changed
+- PerclScript.to_json serialization fixed
+
 <a name="4.1.3"></a>
 
 ## [4.1.3] - 2023-03-13
