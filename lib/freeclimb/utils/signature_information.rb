@@ -39,5 +39,7 @@ module Freeclimb
         def get_current_unix_time()
             return DateTime.now.strftime('%s').to_i
         end
+
+        private :compute_hash
     end
 end
