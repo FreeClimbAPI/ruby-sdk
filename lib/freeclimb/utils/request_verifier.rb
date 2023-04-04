@@ -3,7 +3,7 @@ module Freeclimb
         class << self
             @@DEFAULT_TOLERANCE = 5 * 60 * 1000
             
-            public def verify_request_signature(request_body, request_header, signing_secret, tolerance=DEFAULT_TOLERANCE)
+            def verify_request_signature(request_body, request_header, signing_secret, tolerance=DEFAULT_TOLERANCE)
                 request_verifier_object = Freeclimb::RequestVerifier.new()
                 request_verifier_object.instance_eval{ check_request_body(request_body) }
                 request_verifier_object.instance_eval{ check_request_header(request_header) }
@@ -14,7 +14,7 @@ module Freeclimb
                 request_verifier_object.instance_eval{ verify_signature(info, request_body, signing_secret)}
             end
         end
-        
+
         private
 
         def check_request_body(request_body)
