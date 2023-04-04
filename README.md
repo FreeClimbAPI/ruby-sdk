@@ -291,9 +291,11 @@ Class | Method | HTTP request | Description
 
 - To verify the signature request, we will need to use the verifySignatureRequest method within the Request Verifier class
 
-  Freeclimb::RequestVerifier.verify_request_signature()
+  Freeclimb::RequestVerifier.verify_request_signature(requestBody, requestHeader, signingSecret, tolerance)
 
   This is a method that you can call directly from the request verifier class, it will throw exceptions depending on whether all parts of the request signature is valid otherwise it will throw a specific error message depending on which request signature part is causing issues
+
+  This method requires a requestBody of type string, a requestHeader of type string, a signingSecret of type string, and a tolerance value of type int
 
   Example code down below
 
