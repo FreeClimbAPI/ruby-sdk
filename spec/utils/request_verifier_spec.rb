@@ -136,7 +136,6 @@ describe 'RequestVerifier' do
     describe '#verify_request_signature' do
         context 'Request is valid' do
             it 'No errors are thrown' do
-                currentTime = DateTime.now.strftime('%s').to_i
                 request_header = "t=1679944186,v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8"
                 signing_secret = "sigsec_ead6d3b6904196c60835d039e91b3341c77a7793"
                 tolerance = (5 * 60)
