@@ -148,6 +148,10 @@ require 'freeclimb/models/unpark'
 # APIs
 require 'freeclimb/api/default_api'
 
+#Utils
+require 'freeclimb/utils/signature_information'
+require 'freeclimb/utils/request_verifier'
+
 module Freeclimb
   class << self
     # Customize default settings for the SDK using block.
