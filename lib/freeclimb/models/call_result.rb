@@ -133,11 +133,14 @@ module Freeclimb
         :'from',
         :'to',
         :'phone_number_id',
+        :'call_status',
         :'start_time',
         :'connect_time',
         :'end_time',
         :'duration',
         :'connect_duration',
+        :'direction',
+        :'answered_by',
         :'subresource_uris'
       ])
     end

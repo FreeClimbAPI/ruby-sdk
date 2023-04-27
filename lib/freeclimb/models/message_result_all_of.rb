@@ -76,6 +76,7 @@ module Freeclimb
       Set.new([
         :'account_id',
         :'message_id',
+        :'status',
         :'from',
         :'to',
         :'text',
