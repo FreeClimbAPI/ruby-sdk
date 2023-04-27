@@ -1799,7 +1799,6 @@ module Freeclimb
     # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
     # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
     # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
-    # @option opts [Boolean] :has_application Only show calls which are associated with an Application (applicationId !&#x3D; null)
     # @return [CallList]
     def list_calls(opts = {})
       data, _status_code, _headers = list_calls_with_http_info(opts)
@@ -1816,7 +1815,6 @@ module Freeclimb
     # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
     # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
     # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
-    # @option opts [Boolean] :has_application Only show calls which are associated with an Application (applicationId !&#x3D; null)
     # @return [Array<(CallList, Integer, Hash)>] CallList data, response status code and response headers
     def list_calls_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -1839,7 +1837,6 @@ module Freeclimb
       query_params[:'endTime'] = opts[:'end_time'] if !opts[:'end_time'].nil?
       query_params[:'parentCallId'] = opts[:'parent_call_id'] if !opts[:'parent_call_id'].nil?
       query_params[:'applicationId'] = @api_client.build_collection_param(opts[:'application_id'], :multi) if !opts[:'application_id'].nil?
-      query_params[:'hasApplication'] = opts[:'has_application'] if !opts[:'has_application'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

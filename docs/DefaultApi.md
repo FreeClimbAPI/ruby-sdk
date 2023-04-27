@@ -2105,8 +2105,7 @@ opts = {
   start_time: 'start_time_example', # String | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
   end_time: 'end_time_example', # String | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
   parent_call_id: 'parent_call_id_example', # String | Only show Calls spawned by the call with this ID.
-  application_id: ['inner_example'], # Array<String> | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
-  has_application: true # Boolean | Only show calls which are associated with an Application (applicationId != null)
+  application_id: ['inner_example'] # Array<String> | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
 }
 
 begin
@@ -2157,8 +2156,6 @@ end
 | **parent_call_id** | **String** | Only show Calls spawned by the call with this ID. | [optional] |
 
 | **application_id** | [**Array&lt;String&gt;**](String.md) | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. | [optional] |
-
-| **has_application** | **Boolean** | Only show calls which are associated with an Application (applicationId !&#x3D; null) | [optional] |
 
 
 ### Return type
