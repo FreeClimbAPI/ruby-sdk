@@ -128,6 +128,8 @@ describe 'DefaultApi' do
 
     @parent_call_id_list_calls_test_value = 'parentCallId_example'
 
+    @application_id_list_calls_test_value = ['AP0123456789ABCDEFabcedf000000000000000001', 'AP0123456789ABCDEFabcedf000000000000000002', 'AP0123456789ABCDEFabcedf000000000000000002']
+
     @status_list_conferences_test_value = 'status_example'
 
     @alias_list_conferences_test_value = 'alias_example'
@@ -914,6 +916,7 @@ describe 'DefaultApi' do
   # @option opts [String] :start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
   # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
   # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
+  # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
   # @return [CallList]
   describe 'list_calls test' do
     it 'should work' do
@@ -925,11 +928,12 @@ describe 'DefaultApi' do
       start_time = @start_time_list_calls_test_value
       end_time = @end_time_list_calls_test_value
       parent_call_id = @parent_call_id_list_calls_test_value
+      application_id = @application_id_list_calls_test_value
       
       result = @api_instance.list_calls(
         
         {
-          :active => active,:to => to,:from => from,:status => status,:start_time => start_time,:end_time => end_time,:parent_call_id => parent_call_id,
+          :active => active,:to => to,:from => from,:status => status,:start_time => start_time,:end_time => end_time,:parent_call_id => parent_call_id,:application_id => application_id,
         }
       )
  

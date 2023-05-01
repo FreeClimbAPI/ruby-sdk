@@ -70,6 +70,7 @@ module Freeclimb
     def self.openapi_nullable
       Set.new([
         :'timestamp',
+        :'level',
         :'request_id',
         :'account_id',
         :'call_id',

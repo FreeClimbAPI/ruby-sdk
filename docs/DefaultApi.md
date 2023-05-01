@@ -2104,7 +2104,8 @@ opts = {
   status: Freeclimb::CallStatus::QUEUED, # CallStatus | Only show Calls currently in this status. May be `queued`, `ringing`, `inProgress`, `canceled`, `completed`, `failed`, `busy`, or `noAnswer`.
   start_time: 'start_time_example', # String | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
   end_time: 'end_time_example', # String | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
-  parent_call_id: 'parent_call_id_example' # String | Only show Calls spawned by the call with this ID.
+  parent_call_id: 'parent_call_id_example', # String | Only show Calls spawned by the call with this ID.
+  application_id: ['inner_example'] # Array<String> | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
 }
 
 begin
@@ -2153,6 +2154,8 @@ end
 | **end_time** | **String** | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. | [optional] |
 
 | **parent_call_id** | **String** | Only show Calls spawned by the call with this ID. | [optional] |
+
+| **application_id** | [**Array&lt;String&gt;**](String.md) | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. | [optional] |
 
 
 ### Return type

@@ -265,6 +265,7 @@ lib/freeclimb/models/update_conference_participant_request.rb
 lib/freeclimb/models/update_conference_request.rb
 lib/freeclimb/models/update_conference_request_status.rb
 lib/freeclimb/version.rb
+spec/api/default_api_spec.rb
 spec/api_client_spec.rb
 spec/configuration_spec.rb
 spec/spec_helper.rb

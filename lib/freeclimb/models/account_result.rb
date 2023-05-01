@@ -92,6 +92,8 @@ module Freeclimb
         :'api_key',
         :'_alias',
         :'label',
+        :'type',
+        :'status',
         :'subresource_uris'
       ])
     end

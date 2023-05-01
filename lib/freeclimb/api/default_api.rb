@@ -1798,6 +1798,7 @@ module Freeclimb
     # @option opts [String] :start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
     # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
     # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
+    # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
     # @return [CallList]
     def list_calls(opts = {})
       data, _status_code, _headers = list_calls_with_http_info(opts)
@@ -1813,11 +1814,16 @@ module Freeclimb
     # @option opts [String] :start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
     # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
     # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
+    # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
     # @return [Array<(CallList, Integer, Hash)>] CallList data, response status code and response headers
     def list_calls_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_calls ...'
       end
+      if @api_client.config.client_side_validation && !opts[:'application_id'].nil? && opts[:'application_id'].length > 16
+        fail ArgumentError, 'invalid value for "opts[:"application_id"]" when calling DefaultApi.list_calls, number of items must be less than or equal to 16.'
+      end
+
       # resource path
       local_var_path = '/Accounts/{accountId}/Calls'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
 
@@ -1830,6 +1836,7 @@ module Freeclimb
       query_params[:'startTime'] = opts[:'start_time'] if !opts[:'start_time'].nil?
       query_params[:'endTime'] = opts[:'end_time'] if !opts[:'end_time'].nil?
       query_params[:'parentCallId'] = opts[:'parent_call_id'] if !opts[:'parent_call_id'].nil?
+      query_params[:'applicationId'] = @api_client.build_collection_param(opts[:'application_id'], :multi) if !opts[:'application_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
