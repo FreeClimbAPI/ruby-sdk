@@ -14,7 +14,8 @@ describe 'SignatureInformation' do
         end
         context 'request time is not within tolerance threshold' do
             it 'returns false since it does not match condition of request time being within tolerance threshold' do
-                tolerance = 5 * 60 * 10000
+                FIXNUM_MAX = (2**(0.size * 8 -2) -1)
+                tolerance = FIXNUM_MAX - 1679944186
                 expect(@signature_information_object.is_request_time_valid(tolerance)).to be false
             end
         end
