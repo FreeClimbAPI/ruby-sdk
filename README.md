@@ -120,13 +120,13 @@ Class | Method | HTTP request | Description
 *Freeclimb::DefaultApi* | [**get_an_application**](docs/DefaultApi.md#get_an_application) | **GET** /Accounts/{accountId}/Applications/{applicationId} | Get an Application
 *Freeclimb::DefaultApi* | [**get_an_incoming_number**](docs/DefaultApi.md#get_an_incoming_number) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number
 *Freeclimb::DefaultApi* | [**get_an_sms_message**](docs/DefaultApi.md#get_an_sms_message) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message
-*Freeclimb::DefaultApi* | [**get_an_sms_ten_dlc_brands**](docs/DefaultApi.md#get_an_sms_ten_dlc_brands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brnads
-*Freeclimb::DefaultApi* | [**get_an_sms_ten_dlc_campaigns**](docs/DefaultApi.md#get_an_sms_ten_dlc_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns
-*Freeclimb::DefaultApi* | [**get_an_sms_ten_dlc_partner_campaigns**](docs/DefaultApi.md#get_an_sms_ten_dlc_partner_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
 *Freeclimb::DefaultApi* | [**get_head_member**](docs/DefaultApi.md#get_head_member) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member
 *Freeclimb::DefaultApi* | [**get_ten_dlc_sms_brand**](docs/DefaultApi.md#get_ten_dlc_sms_brand) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands/{brandId} | Get a 10DLC SMS Brand
+*Freeclimb::DefaultApi* | [**get_ten_dlc_sms_brands**](docs/DefaultApi.md#get_ten_dlc_sms_brands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brands
 *Freeclimb::DefaultApi* | [**get_ten_dlc_sms_campaign**](docs/DefaultApi.md#get_ten_dlc_sms_campaign) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns/{campaignId} | Get a 10DLC SMS Campaign
+*Freeclimb::DefaultApi* | [**get_ten_dlc_sms_campaigns**](docs/DefaultApi.md#get_ten_dlc_sms_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns
 *Freeclimb::DefaultApi* | [**get_ten_dlc_sms_partner_campaign**](docs/DefaultApi.md#get_ten_dlc_sms_partner_campaign) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId} | Get a 10DLC SMS Partner Campaign
+*Freeclimb::DefaultApi* | [**get_ten_dlc_sms_partner_campaigns**](docs/DefaultApi.md#get_ten_dlc_sms_partner_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
 *Freeclimb::DefaultApi* | [**list_active_queues**](docs/DefaultApi.md#list_active_queues) | **GET** /Accounts/{accountId}/Queues | List Active Queues
 *Freeclimb::DefaultApi* | [**list_all_account_logs**](docs/DefaultApi.md#list_all_account_logs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs
 *Freeclimb::DefaultApi* | [**list_applications**](docs/DefaultApi.md#list_applications) | **GET** /Accounts/{accountId}/Applications | List applications

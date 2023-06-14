@@ -25,13 +25,13 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**get_an_application**](DefaultApi.md#get_an_application) | **GET** /Accounts/{accountId}/Applications/{applicationId} | Get an Application |
 | [**get_an_incoming_number**](DefaultApi.md#get_an_incoming_number) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number |
 | [**get_an_sms_message**](DefaultApi.md#get_an_sms_message) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message |
-| [**get_an_sms_ten_dlc_brands**](DefaultApi.md#get_an_sms_ten_dlc_brands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brnads |
-| [**get_an_sms_ten_dlc_campaigns**](DefaultApi.md#get_an_sms_ten_dlc_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns |
-| [**get_an_sms_ten_dlc_partner_campaigns**](DefaultApi.md#get_an_sms_ten_dlc_partner_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns |
 | [**get_head_member**](DefaultApi.md#get_head_member) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member |
 | [**get_ten_dlc_sms_brand**](DefaultApi.md#get_ten_dlc_sms_brand) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands/{brandId} | Get a 10DLC SMS Brand |
+| [**get_ten_dlc_sms_brands**](DefaultApi.md#get_ten_dlc_sms_brands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brands |
 | [**get_ten_dlc_sms_campaign**](DefaultApi.md#get_ten_dlc_sms_campaign) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns/{campaignId} | Get a 10DLC SMS Campaign |
+| [**get_ten_dlc_sms_campaigns**](DefaultApi.md#get_ten_dlc_sms_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns |
 | [**get_ten_dlc_sms_partner_campaign**](DefaultApi.md#get_ten_dlc_sms_partner_campaign) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId} | Get a 10DLC SMS Partner Campaign |
+| [**get_ten_dlc_sms_partner_campaigns**](DefaultApi.md#get_ten_dlc_sms_partner_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns |
 | [**list_active_queues**](DefaultApi.md#list_active_queues) | **GET** /Accounts/{accountId}/Queues | List Active Queues |
 | [**list_all_account_logs**](DefaultApi.md#list_all_account_logs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs |
 | [**list_applications**](DefaultApi.md#list_applications) | **GET** /Accounts/{accountId}/Applications | List applications |
@@ -1557,217 +1557,6 @@ end
 - **Accept**: application/json
 
 
-## get_an_sms_ten_dlc_brands
-
-Get list of SMS 10DLC Brnads
-
-### Examples
-
-```ruby
-require 'time'
-require 'freeclimb'
-# setup authorization
-Freeclimb.configure do |config|
-  # Configure HTTP basic authorization: fc
-  config.username = 'ACCOUNT_ID'
-  config.password = 'API_KEY'
-end
-
-api_instance = Freeclimb::DefaultApi.new
-
-
-begin
-
-  # Get list of SMS 10DLC Brnads
-  result = api_instance.get_an_sms_ten_dlc_brands()
-  p result
-rescue Freeclimb::ApiError => e
-  puts "Error when calling DefaultApi->get_an_sms_ten_dlc_brands: #{e}"
-end
-```
-
-#### Using the get_an_sms_ten_dlc_brands_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SMSTenDLCBrandsListResult>, Integer, Hash)> get_an_sms_ten_dlc_brands_with_http_info(account_id)
-
-```ruby
-begin
-  # Get list of SMS 10DLC Brnads
-  data, status_code, headers = api_instance.get_an_sms_ten_dlc_brands_with_http_info()
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SMSTenDLCBrandsListResult>
-rescue Freeclimb::ApiError => e
-  puts "Error when calling DefaultApi->get_an_sms_ten_dlc_brands_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-
-
-### Return type
-
-[**SMSTenDLCBrandsListResult**](SMSTenDLCBrandsListResult.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## get_an_sms_ten_dlc_campaigns
-
-Get list of SMS 10DLC Campaigns
-
-### Examples
-
-```ruby
-require 'time'
-require 'freeclimb'
-# setup authorization
-Freeclimb.configure do |config|
-  # Configure HTTP basic authorization: fc
-  config.username = 'ACCOUNT_ID'
-  config.password = 'API_KEY'
-end
-
-api_instance = Freeclimb::DefaultApi.new
-
-opts = {
-  brand_id: 'brand_id_example' # String | The unique identifier for a brand
-}
-
-begin
-
-  # Get list of SMS 10DLC Campaigns
-  result = api_instance.get_an_sms_ten_dlc_campaigns(opts)
-  p result
-rescue Freeclimb::ApiError => e
-  puts "Error when calling DefaultApi->get_an_sms_ten_dlc_campaigns: #{e}"
-end
-```
-
-#### Using the get_an_sms_ten_dlc_campaigns_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SMSTenDLCCampaignsListResult>, Integer, Hash)> get_an_sms_ten_dlc_campaigns_with_http_info(account_id, opts)
-
-```ruby
-begin
-  # Get list of SMS 10DLC Campaigns
-  data, status_code, headers = api_instance.get_an_sms_ten_dlc_campaigns_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SMSTenDLCCampaignsListResult>
-rescue Freeclimb::ApiError => e
-  puts "Error when calling DefaultApi->get_an_sms_ten_dlc_campaigns_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-
-| **brand_id** | **String** | The unique identifier for a brand | [optional] |
-
-
-### Return type
-
-[**SMSTenDLCCampaignsListResult**](SMSTenDLCCampaignsListResult.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## get_an_sms_ten_dlc_partner_campaigns
-
-Get list of SMS 10DLC Partner Campaigns
-
-### Examples
-
-```ruby
-require 'time'
-require 'freeclimb'
-# setup authorization
-Freeclimb.configure do |config|
-  # Configure HTTP basic authorization: fc
-  config.username = 'ACCOUNT_ID'
-  config.password = 'API_KEY'
-end
-
-api_instance = Freeclimb::DefaultApi.new
-
-opts = {
-  brand_id: 'brand_id_example' # String | The unique identifier for a brand
-}
-
-begin
-
-  # Get list of SMS 10DLC Partner Campaigns
-  result = api_instance.get_an_sms_ten_dlc_partner_campaigns(opts)
-  p result
-rescue Freeclimb::ApiError => e
-  puts "Error when calling DefaultApi->get_an_sms_ten_dlc_partner_campaigns: #{e}"
-end
-```
-
-#### Using the get_an_sms_ten_dlc_partner_campaigns_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SMSTenDLCPartnerCampaignsListResult>, Integer, Hash)> get_an_sms_ten_dlc_partner_campaigns_with_http_info(account_id, opts)
-
-```ruby
-begin
-  # Get list of SMS 10DLC Partner Campaigns
-  data, status_code, headers = api_instance.get_an_sms_ten_dlc_partner_campaigns_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SMSTenDLCPartnerCampaignsListResult>
-rescue Freeclimb::ApiError => e
-  puts "Error when calling DefaultApi->get_an_sms_ten_dlc_partner_campaigns_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-
-| **brand_id** | **String** | The unique identifier for a brand | [optional] |
-
-
-### Return type
-
-[**SMSTenDLCPartnerCampaignsListResult**](SMSTenDLCPartnerCampaignsListResult.md)
-
-### Authorization
-
-[fc](../README.md#fc)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## get_head_member
 
 Get Head Member
@@ -1910,6 +1699,73 @@ end
 - **Accept**: application/json
 
 
+## get_ten_dlc_sms_brands
+
+Get list of SMS 10DLC Brands
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+
+begin
+
+  # Get list of SMS 10DLC Brands
+  result = api_instance.get_ten_dlc_sms_brands()
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_ten_dlc_sms_brands: #{e}"
+end
+```
+
+#### Using the get_ten_dlc_sms_brands_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SMSTenDLCBrandsListResult>, Integer, Hash)> get_ten_dlc_sms_brands_with_http_info(account_id)
+
+```ruby
+begin
+  # Get list of SMS 10DLC Brands
+  data, status_code, headers = api_instance.get_ten_dlc_sms_brands_with_http_info()
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SMSTenDLCBrandsListResult>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_ten_dlc_sms_brands_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+
+
+### Return type
+
+[**SMSTenDLCBrandsListResult**](SMSTenDLCBrandsListResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## get_ten_dlc_sms_campaign
 
 Get a 10DLC SMS Campaign
@@ -1981,6 +1837,78 @@ end
 - **Accept**: application/json
 
 
+## get_ten_dlc_sms_campaigns
+
+Get list of SMS 10DLC Campaigns
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+opts = {
+  brand_id: 'brand_id_example' # String | The unique identifier for a brand
+}
+
+begin
+
+  # Get list of SMS 10DLC Campaigns
+  result = api_instance.get_ten_dlc_sms_campaigns(opts)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_ten_dlc_sms_campaigns: #{e}"
+end
+```
+
+#### Using the get_ten_dlc_sms_campaigns_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SMSTenDLCCampaignsListResult>, Integer, Hash)> get_ten_dlc_sms_campaigns_with_http_info(account_id, opts)
+
+```ruby
+begin
+  # Get list of SMS 10DLC Campaigns
+  data, status_code, headers = api_instance.get_ten_dlc_sms_campaigns_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SMSTenDLCCampaignsListResult>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_ten_dlc_sms_campaigns_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+
+| **brand_id** | **String** | The unique identifier for a brand | [optional] |
+
+
+### Return type
+
+[**SMSTenDLCCampaignsListResult**](SMSTenDLCCampaignsListResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## get_ten_dlc_sms_partner_campaign
 
 Get a 10DLC SMS Partner Campaign
@@ -2041,6 +1969,78 @@ end
 ### Return type
 
 [**SMSTenDLCPartnerCampaign**](SMSTenDLCPartnerCampaign.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_ten_dlc_sms_partner_campaigns
+
+Get list of SMS 10DLC Partner Campaigns
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+opts = {
+  brand_id: 'brand_id_example' # String | The unique identifier for a brand
+}
+
+begin
+
+  # Get list of SMS 10DLC Partner Campaigns
+  result = api_instance.get_ten_dlc_sms_partner_campaigns(opts)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_ten_dlc_sms_partner_campaigns: #{e}"
+end
+```
+
+#### Using the get_ten_dlc_sms_partner_campaigns_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SMSTenDLCPartnerCampaignsListResult>, Integer, Hash)> get_ten_dlc_sms_partner_campaigns_with_http_info(account_id, opts)
+
+```ruby
+begin
+  # Get list of SMS 10DLC Partner Campaigns
+  data, status_code, headers = api_instance.get_ten_dlc_sms_partner_campaigns_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SMSTenDLCPartnerCampaignsListResult>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_ten_dlc_sms_partner_campaigns_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+
+| **brand_id** | **String** | The unique identifier for a brand | [optional] |
+
+
+### Return type
+
+[**SMSTenDLCPartnerCampaignsListResult**](SMSTenDLCPartnerCampaignsListResult.md)
 
 ### Authorization
 
@@ -2710,7 +2710,7 @@ opts = {
   has_application: true, # Boolean | Indication of whether the phone number has an application linked to it.
   voice_enabled: true, # Boolean | Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
   sms_enabled: true, # Boolean | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
-  has_campaign: true, # Boolean | Indication of whether the phone number has a campaign accociatied with it
+  has_campaign: true, # Boolean | Indication of whether the phone number has a campaign associated with it
   capabilities_voice: true, # Boolean | 
   capabilities_sms: true, # Boolean | 
   capabilities_toll_free: true, # Boolean | 
@@ -2768,7 +2768,7 @@ end
 
 | **sms_enabled** | **Boolean** | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional][default to true] |
 
-| **has_campaign** | **Boolean** | Indication of whether the phone number has a campaign accociatied with it | [optional] |
+| **has_campaign** | **Boolean** | Indication of whether the phone number has a campaign associated with it | [optional] |
 
 | **capabilities_voice** | **Boolean** |  | [optional] |
 

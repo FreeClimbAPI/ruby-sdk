@@ -11,7 +11,7 @@
 | **num_pages** | **Integer** | Total number of pages | [optional] |
 | **page_size** | **Integer** | Number of items per page | [optional] |
 | **next_page_uri** | **String** | Uri to retrieve the next page of items | [optional] |
-| **queue_members** | [**Array&lt;SMSTenDLCCampaign&gt;**](SMSTenDLCCampaign.md) |  | [optional] |
+| **campaigns** | [**Array&lt;SMSTenDLCCampaign&gt;**](SMSTenDLCCampaign.md) |  | [optional] |
 
 ## Example
 
@@ -26,7 +26,7 @@ instance = Freeclimb::SMSTenDLCCampaignsListResult.new(
   num_pages: null,
   page_size: null,
   next_page_uri: null,
-  queue_members: null
+  campaigns: null
 )
 ```
 

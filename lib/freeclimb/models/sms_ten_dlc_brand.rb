@@ -88,6 +88,7 @@ module Freeclimb
     # Alternate business identifier such as DUNS, LEI, or GIIN
     attr_accessor :alt_business_id
 
+    # The type of the Alternative business identifier
     attr_accessor :alt_business_id_type
 
     # Universal EIN of Brand, Read Only.

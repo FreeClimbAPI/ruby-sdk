@@ -1344,177 +1344,6 @@ module Freeclimb
       return data, status_code, headers
     end
 
-    # Get list of SMS 10DLC Brnads
-    # @param [Hash] opts the optional parameters
-    # @return [SMSTenDLCBrandsListResult]
-    def get_an_sms_ten_dlc_brands(opts = {})
-      data, _status_code, _headers = get_an_sms_ten_dlc_brands_with_http_info(opts)
-      data
-    end
-
-    # Get list of SMS 10DLC Brnads
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(SMSTenDLCBrandsListResult, Integer, Hash)>] SMSTenDLCBrandsListResult data, response status code and response headers
-    def get_an_sms_ten_dlc_brands_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DefaultApi.get_an_sms_ten_dlc_brands ...'
-      end
-      # resource path
-      local_var_path = '/Accounts/{accountId}/Messages/10DLC/Brands'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'SMSTenDLCBrandsListResult'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['fc']
-
-      new_options = opts.merge(
-        :operation => :"DefaultApi.get_an_sms_ten_dlc_brands",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DefaultApi#get_an_sms_ten_dlc_brands\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get list of SMS 10DLC Campaigns
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :brand_id The unique identifier for a brand
-    # @return [SMSTenDLCCampaignsListResult]
-    def get_an_sms_ten_dlc_campaigns(opts = {})
-      data, _status_code, _headers = get_an_sms_ten_dlc_campaigns_with_http_info(opts)
-      data
-    end
-
-    # Get list of SMS 10DLC Campaigns
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :brand_id The unique identifier for a brand
-    # @return [Array<(SMSTenDLCCampaignsListResult, Integer, Hash)>] SMSTenDLCCampaignsListResult data, response status code and response headers
-    def get_an_sms_ten_dlc_campaigns_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DefaultApi.get_an_sms_ten_dlc_campaigns ...'
-      end
-      # resource path
-      local_var_path = '/Accounts/{accountId}/Messages/10DLC/Campaigns'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'brandId'] = opts[:'brand_id'] if !opts[:'brand_id'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'SMSTenDLCCampaignsListResult'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['fc']
-
-      new_options = opts.merge(
-        :operation => :"DefaultApi.get_an_sms_ten_dlc_campaigns",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DefaultApi#get_an_sms_ten_dlc_campaigns\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get list of SMS 10DLC Partner Campaigns
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :brand_id The unique identifier for a brand
-    # @return [SMSTenDLCPartnerCampaignsListResult]
-    def get_an_sms_ten_dlc_partner_campaigns(opts = {})
-      data, _status_code, _headers = get_an_sms_ten_dlc_partner_campaigns_with_http_info(opts)
-      data
-    end
-
-    # Get list of SMS 10DLC Partner Campaigns
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :brand_id The unique identifier for a brand
-    # @return [Array<(SMSTenDLCPartnerCampaignsListResult, Integer, Hash)>] SMSTenDLCPartnerCampaignsListResult data, response status code and response headers
-    def get_an_sms_ten_dlc_partner_campaigns_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DefaultApi.get_an_sms_ten_dlc_partner_campaigns ...'
-      end
-      # resource path
-      local_var_path = '/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'brandId'] = opts[:'brand_id'] if !opts[:'brand_id'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'SMSTenDLCPartnerCampaignsListResult'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['fc']
-
-      new_options = opts.merge(
-        :operation => :"DefaultApi.get_an_sms_ten_dlc_partner_campaigns",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DefaultApi#get_an_sms_ten_dlc_partner_campaigns\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Get Head Member
     # @param queue_id [String] String that uniquely identifies the Queue that the Member belongs to.
     # @param [Hash] opts the optional parameters
@@ -1639,6 +1468,61 @@ module Freeclimb
       return data, status_code, headers
     end
 
+    # Get list of SMS 10DLC Brands
+    # @param [Hash] opts the optional parameters
+    # @return [SMSTenDLCBrandsListResult]
+    def get_ten_dlc_sms_brands(opts = {})
+      data, _status_code, _headers = get_ten_dlc_sms_brands_with_http_info(opts)
+      data
+    end
+
+    # Get list of SMS 10DLC Brands
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SMSTenDLCBrandsListResult, Integer, Hash)>] SMSTenDLCBrandsListResult data, response status code and response headers
+    def get_ten_dlc_sms_brands_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_ten_dlc_sms_brands ...'
+      end
+      # resource path
+      local_var_path = '/Accounts/{accountId}/Messages/10DLC/Brands'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'SMSTenDLCBrandsListResult'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['fc']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_ten_dlc_sms_brands",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_ten_dlc_sms_brands\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get a 10DLC SMS Campaign
     # @param campaign_id [String] String that uniquely identifies this campaign resource.
     # @param [Hash] opts the optional parameters
@@ -1701,6 +1585,64 @@ module Freeclimb
       return data, status_code, headers
     end
 
+    # Get list of SMS 10DLC Campaigns
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :brand_id The unique identifier for a brand
+    # @return [SMSTenDLCCampaignsListResult]
+    def get_ten_dlc_sms_campaigns(opts = {})
+      data, _status_code, _headers = get_ten_dlc_sms_campaigns_with_http_info(opts)
+      data
+    end
+
+    # Get list of SMS 10DLC Campaigns
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :brand_id The unique identifier for a brand
+    # @return [Array<(SMSTenDLCCampaignsListResult, Integer, Hash)>] SMSTenDLCCampaignsListResult data, response status code and response headers
+    def get_ten_dlc_sms_campaigns_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_ten_dlc_sms_campaigns ...'
+      end
+      # resource path
+      local_var_path = '/Accounts/{accountId}/Messages/10DLC/Campaigns'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'brandId'] = opts[:'brand_id'] if !opts[:'brand_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'SMSTenDLCCampaignsListResult'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['fc']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_ten_dlc_sms_campaigns",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_ten_dlc_sms_campaigns\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get a 10DLC SMS Partner Campaign
     # @param campaign_id [String] String that uniquely identifies this campaign resource.
     # @param [Hash] opts the optional parameters
@@ -1759,6 +1701,64 @@ module Freeclimb
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#get_ten_dlc_sms_partner_campaign\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get list of SMS 10DLC Partner Campaigns
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :brand_id The unique identifier for a brand
+    # @return [SMSTenDLCPartnerCampaignsListResult]
+    def get_ten_dlc_sms_partner_campaigns(opts = {})
+      data, _status_code, _headers = get_ten_dlc_sms_partner_campaigns_with_http_info(opts)
+      data
+    end
+
+    # Get list of SMS 10DLC Partner Campaigns
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :brand_id The unique identifier for a brand
+    # @return [Array<(SMSTenDLCPartnerCampaignsListResult, Integer, Hash)>] SMSTenDLCPartnerCampaignsListResult data, response status code and response headers
+    def get_ten_dlc_sms_partner_campaigns_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_ten_dlc_sms_partner_campaigns ...'
+      end
+      # resource path
+      local_var_path = '/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'brandId'] = opts[:'brand_id'] if !opts[:'brand_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'SMSTenDLCPartnerCampaignsListResult'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['fc']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_ten_dlc_sms_partner_campaigns",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_ten_dlc_sms_partner_campaigns\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2306,7 +2306,7 @@ module Freeclimb
     # @option opts [Boolean] :has_application Indication of whether the phone number has an application linked to it. (default to false)
     # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (default to true)
     # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (default to true)
-    # @option opts [Boolean] :has_campaign Indication of whether the phone number has a campaign accociatied with it
+    # @option opts [Boolean] :has_campaign Indication of whether the phone number has a campaign associated with it
     # @option opts [Boolean] :capabilities_voice 
     # @option opts [Boolean] :capabilities_sms 
     # @option opts [Boolean] :capabilities_toll_free 
@@ -2329,7 +2329,7 @@ module Freeclimb
     # @option opts [Boolean] :has_application Indication of whether the phone number has an application linked to it.
     # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
     # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
-    # @option opts [Boolean] :has_campaign Indication of whether the phone number has a campaign accociatied with it
+    # @option opts [Boolean] :has_campaign Indication of whether the phone number has a campaign associated with it
     # @option opts [Boolean] :capabilities_voice 
     # @option opts [Boolean] :capabilities_sms 
     # @option opts [Boolean] :capabilities_toll_free 

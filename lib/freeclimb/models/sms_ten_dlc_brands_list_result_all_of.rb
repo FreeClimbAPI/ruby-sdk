@@ -15,12 +15,12 @@ require 'time'
 
 module Freeclimb
   class SMSTenDLCBrandsListResultAllOf
-    attr_accessor :queue_members
+    attr_accessor :brands
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'queue_members' => :'queueMembers'
+        :'brands' => :'brands'
       }
     end
 
@@ -32,14 +32,14 @@ module Freeclimb
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'queue_members' => :'Array<SMSTenDLCBrand>'
+        :'brands' => :'Array<SMSTenDLCBrand>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'queue_members'
+        :'brands'
       ])
     end
 
@@ -58,9 +58,9 @@ module Freeclimb
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'queue_members')
-        if (value = attributes[:'queue_members']).is_a?(Array)
-          self.queue_members = value
+      if attributes.key?(:'brands')
+        if (value = attributes[:'brands']).is_a?(Array)
+          self.brands = value
         end
       end
     end
@@ -83,7 +83,7 @@ module Freeclimb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          queue_members == o.queue_members
+          brands == o.brands
     end
 
     # @see the `==` method
@@ -95,7 +95,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [queue_members].hash
+      [brands].hash
     end
 
     # Builds the object from hash

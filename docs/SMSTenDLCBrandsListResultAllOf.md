@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **queue_members** | [**Array&lt;SMSTenDLCBrand&gt;**](SMSTenDLCBrand.md) |  | [optional] |
+| **brands** | [**Array&lt;SMSTenDLCBrand&gt;**](SMSTenDLCBrand.md) |  | [optional] |
 
 ## Example
 
@@ -12,7 +12,7 @@
 require 'freeclimb'
 
 instance = Freeclimb::SMSTenDLCBrandsListResultAllOf.new(
-  queue_members: null
+  brands: null
 )
 ```
 

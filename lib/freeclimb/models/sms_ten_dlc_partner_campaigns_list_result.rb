@@ -36,7 +36,7 @@ module Freeclimb
     # Uri to retrieve the next page of items
     attr_accessor :next_page_uri
 
-    attr_accessor :queue_members
+    attr_accessor :partner_campaigns
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -48,7 +48,7 @@ module Freeclimb
         :'num_pages' => :'numPages',
         :'page_size' => :'pageSize',
         :'next_page_uri' => :'nextPageUri',
-        :'queue_members' => :'queueMembers'
+        :'partner_campaigns' => :'partnerCampaigns'
       }
     end
 
@@ -67,7 +67,7 @@ module Freeclimb
         :'num_pages' => :'Integer',
         :'page_size' => :'Integer',
         :'next_page_uri' => :'String',
-        :'queue_members' => :'Array<SMSTenDLCPartnerCampaign>'
+        :'partner_campaigns' => :'Array<SMSTenDLCPartnerCampaign>'
       }
     end
 
@@ -81,7 +81,7 @@ module Freeclimb
         :'num_pages',
         :'page_size',
         :'next_page_uri',
-        :'queue_members'
+        :'partner_campaigns'
       ])
     end
 
@@ -136,9 +136,9 @@ module Freeclimb
         self.next_page_uri = attributes[:'next_page_uri']
       end
 
-      if attributes.key?(:'queue_members')
-        if (value = attributes[:'queue_members']).is_a?(Array)
-          self.queue_members = value
+      if attributes.key?(:'partner_campaigns')
+        if (value = attributes[:'partner_campaigns']).is_a?(Array)
+          self.partner_campaigns = value
         end
       end
     end
@@ -168,7 +168,7 @@ module Freeclimb
           num_pages == o.num_pages &&
           page_size == o.page_size &&
           next_page_uri == o.next_page_uri &&
-          queue_members == o.queue_members
+          partner_campaigns == o.partner_campaigns
     end
 
     # @see the `==` method
@@ -180,7 +180,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [total, start, _end, page, num_pages, page_size, next_page_uri, queue_members].hash
+      [total, start, _end, page, num_pages, page_size, next_page_uri, partner_campaigns].hash
     end
 
     # Builds the object from hash

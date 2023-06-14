@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **queue_members** | [**Array&lt;SMSTenDLCPartnerCampaign&gt;**](SMSTenDLCPartnerCampaign.md) |  | [optional] |
+| **partner_campaigns** | [**Array&lt;SMSTenDLCPartnerCampaign&gt;**](SMSTenDLCPartnerCampaign.md) |  | [optional] |
 
 ## Example
 
@@ -12,7 +12,7 @@
 require 'freeclimb'
 
 instance = Freeclimb::SMSTenDLCPartnerCampaignsListResultAllOf.new(
-  queue_members: null
+  partner_campaigns: null
 )
 ```
 
