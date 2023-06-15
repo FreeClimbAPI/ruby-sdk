@@ -13,9 +13,9 @@ None
 
 ## [4.4.0] - 2023-06-08
 
-### Changed
+### Added
 
-- Introduce application ID filtering for list calls method
+- Number management feature for python sdk including methods, properties, and testing
 
 <a name="4.3.0"></a>
 
