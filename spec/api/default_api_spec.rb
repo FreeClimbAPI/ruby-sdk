@@ -210,6 +210,18 @@ describe 'DefaultApi' do
 
     @date_created_list_recordings_test_value = 'dateCreated_example'
 
+    @brand_id_get_ten_dlc_sms_campaigns_test_value = 'BX56XX4'
+
+    @brand_id_get_ten_dlc_sms_partner_campaigns_test_value = 'BX56XX4'
+
+    @brand_id_get_ten_dlc_sms_brand_test_value = 'BX56XX4'
+
+    @campaign_id_get_ten_dlc_sms_campaign_test_value = 'CX56XX4'
+
+    @campaign_id_get_ten_dlc_sms_partner_campaign_test_value = 'CX56XX4'
+
+    @has_campaign_list_incoming_numbers_test_value = true
+
     @queue_request_update_a_queue_test_value = Freeclimb::QueueRequest.new
 
     @application_request_update_an_application_test_value = Freeclimb::ApplicationRequest.new
@@ -750,6 +762,142 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for get_ten_dlc_sms_brand
+  # Get a 10DLC SMS Brand
+  # @param brand_id String that uniquely identifies this brand resource.
+  # @param [Hash] opts the optional parameters
+  # @return [SMSTenDLCBrand]
+  describe 'get_ten_dlc_sms_brand test' do
+    it 'should work' do
+      
+      brand_id = @brand_id_get_ten_dlc_sms_brand_test_value
+      
+      result = @api_instance.get_ten_dlc_sms_brand(
+        brand_id,
+        {
+          
+        }
+      )
+ 
+      expect(result).to be_a Freeclimb::SMSTenDLCBrand
+      
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_ten_dlc_sms_brands
+  # Get list of SMS 10DLC Brands
+  # @param [Hash] opts the optional parameters
+  # @return [SMSTenDLCBrandsListResult]
+  describe 'get_ten_dlc_sms_brands test' do
+    it 'should work' do
+      
+      
+      result = @api_instance.get_ten_dlc_sms_brands(
+        
+        {
+          
+        }
+      )
+ 
+      expect(result).to be_a Freeclimb::SMSTenDLCBrandsListResult
+      
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_ten_dlc_sms_campaign
+  # Get a 10DLC SMS Campaign
+  # @param campaign_id String that uniquely identifies this campaign resource.
+  # @param [Hash] opts the optional parameters
+  # @return [SMSTenDLCCampaign]
+  describe 'get_ten_dlc_sms_campaign test' do
+    it 'should work' do
+      
+      campaign_id = @campaign_id_get_ten_dlc_sms_campaign_test_value
+      
+      result = @api_instance.get_ten_dlc_sms_campaign(
+        campaign_id,
+        {
+          
+        }
+      )
+ 
+      expect(result).to be_a Freeclimb::SMSTenDLCCampaign
+      
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_ten_dlc_sms_campaigns
+  # Get list of SMS 10DLC Campaigns
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :brand_id The unique identifier for a brand
+  # @return [SMSTenDLCCampaignsListResult]
+  describe 'get_ten_dlc_sms_campaigns test' do
+    it 'should work' do
+      
+      brand_id = @brand_id_get_ten_dlc_sms_campaigns_test_value
+      
+      result = @api_instance.get_ten_dlc_sms_campaigns(
+        
+        {
+          :brand_id => brand_id,
+        }
+      )
+ 
+      expect(result).to be_a Freeclimb::SMSTenDLCCampaignsListResult
+      
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_ten_dlc_sms_partner_campaign
+  # Get a 10DLC SMS Partner Campaign
+  # @param campaign_id String that uniquely identifies this campaign resource.
+  # @param [Hash] opts the optional parameters
+  # @return [SMSTenDLCPartnerCampaign]
+  describe 'get_ten_dlc_sms_partner_campaign test' do
+    it 'should work' do
+      
+      campaign_id = @campaign_id_get_ten_dlc_sms_partner_campaign_test_value
+      
+      result = @api_instance.get_ten_dlc_sms_partner_campaign(
+        campaign_id,
+        {
+          
+        }
+      )
+ 
+      expect(result).to be_a Freeclimb::SMSTenDLCPartnerCampaign
+      
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_ten_dlc_sms_partner_campaigns
+  # Get list of SMS 10DLC Partner Campaigns
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :brand_id The unique identifier for a brand
+  # @return [SMSTenDLCPartnerCampaignsListResult]
+  describe 'get_ten_dlc_sms_partner_campaigns test' do
+    it 'should work' do
+      
+      brand_id = @brand_id_get_ten_dlc_sms_partner_campaigns_test_value
+      
+      result = @api_instance.get_ten_dlc_sms_partner_campaigns(
+        
+        {
+          :brand_id => brand_id,
+        }
+      )
+ 
+      expect(result).to be_a Freeclimb::SMSTenDLCPartnerCampaignsListResult
+      
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for list_active_queues
   # List Active Queues
   # @param [Hash] opts the optional parameters
@@ -983,6 +1131,7 @@ describe 'DefaultApi' do
   # @option opts [Boolean] :has_application Indication of whether the phone number has an application linked to it.
   # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
   # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
+  # @option opts [Boolean] :has_campaign Indication of whether the phone number has a campaign associated with it
   # @option opts [Boolean] :capabilities_voice 
   # @option opts [Boolean] :capabilities_sms 
   # @option opts [Boolean] :capabilities_toll_free 
@@ -1001,6 +1150,7 @@ describe 'DefaultApi' do
       has_application = @has_application_list_incoming_numbers_test_value
       voice_enabled = @voice_enabled_list_incoming_numbers_test_value
       sms_enabled = @sms_enabled_list_incoming_numbers_test_value
+      has_campaign = @has_campaign_list_incoming_numbers_test_value
       capabilities_voice = @capabilities_voice_list_incoming_numbers_test_value
       capabilities_sms = @capabilities_sms_list_incoming_numbers_test_value
       capabilities_toll_free = @capabilities_toll_free_list_incoming_numbers_test_value
@@ -1011,7 +1161,7 @@ describe 'DefaultApi' do
       result = @api_instance.list_incoming_numbers(
         
         {
-          :phone_number => phone_number,:_alias => _alias,:region => region,:country => country,:application_id => application_id,:has_application => has_application,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,:offnet => offnet,
+          :phone_number => phone_number,:_alias => _alias,:region => region,:country => country,:application_id => application_id,:has_application => has_application,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:has_campaign => has_campaign,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,:offnet => offnet,
         }
       )
  
