@@ -25,28 +25,73 @@ describe Freeclimb::MutableResourceModel do
       expect(instance).to be_instance_of(Freeclimb::MutableResourceModel)
     end
   end
+
   describe 'test attribute "uri"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.uri = "TEST_STRING"
+          expect(instance.uri).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "date_created"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.date_created = "TEST_STRING"
+          expect(instance.date_created).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "date_updated"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.date_updated = "TEST_STRING"
+          expect(instance.date_updated).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

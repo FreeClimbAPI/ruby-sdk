@@ -25,58 +25,152 @@ describe Freeclimb::GetDigits do
       expect(instance).to be_instance_of(Freeclimb::GetDigits)
     end
   end
+
   describe 'test attribute "action_url"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.action_url = "TEST_STRING"
+          expect(instance.action_url).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "digit_timeout_ms"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "finish_on_key"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.finish_on_key = "TEST_STRING"
+          expect(instance.finish_on_key).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "flush_buffer"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.flush_buffer = false
+          expect(instance.flush_buffer).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "initial_timeout_ms"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.initial_timeout_ms = "TEST_STRING"
+          expect(instance.initial_timeout_ms).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "max_digits"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "min_digits"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "prompts"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.privacy_mode = false
+          expect(instance.privacy_mode).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

@@ -25,58 +25,163 @@ describe Freeclimb::MessageRequest do
       expect(instance).to be_instance_of(Freeclimb::MessageRequest)
     end
   end
+
   describe 'test attribute "uri"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.uri = "TEST_STRING"
+          expect(instance.uri).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "date_created"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.date_created = "TEST_STRING"
+          expect(instance.date_created).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "date_updated"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.date_updated = "TEST_STRING"
+          expect(instance.date_updated).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "from"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.from = "TEST_STRING"
+          expect(instance.from).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "to"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.to = "TEST_STRING"
+          expect(instance.to).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "text"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.text = "TEST_STRING"
+          expect(instance.text).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "notification_url"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.notification_url = "TEST_STRING"
+          expect(instance.notification_url).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.account_id = "TEST_STRING"
+          expect(instance.account_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

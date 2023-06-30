@@ -25,10 +25,16 @@ describe Freeclimb::PerclCommand do
       expect(instance).to be_instance_of(Freeclimb::PerclCommand)
     end
   end
+
   describe 'test attribute "command"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        # TODO: implement 
     end
   end
+  
+
+
+
+  
 
 end

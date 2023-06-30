@@ -25,70 +25,196 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       expect(instance).to be_instance_of(Freeclimb::SMSTenDLCPartnerCampaignBrand)
     end
   end
+
   describe 'test attribute "account_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.account_id = "TEST_STRING"
+          expect(instance.account_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "brand_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.brand_id = "TEST_STRING"
+          expect(instance.brand_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "first_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.first_name = "TEST_STRING"
+          expect(instance.first_name).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "last_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.last_name = "TEST_STRING"
+          expect(instance.last_name).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "display_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.display_name = "TEST_STRING"
+          expect(instance.display_name).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "company_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.company_name = "TEST_STRING"
+          expect(instance.company_name).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "phone"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.phone = "TEST_STRING"
+          expect(instance.phone).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "email"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.email = "TEST_STRING"
+          expect(instance.email).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "website"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.website = "TEST_STRING"
+          expect(instance.website).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "optional_attributes"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "evp_vetting_score"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

@@ -25,70 +25,187 @@ describe Freeclimb::QueueResult do
       expect(instance).to be_instance_of(Freeclimb::QueueResult)
     end
   end
+
   describe 'test attribute "uri"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.uri = "TEST_STRING"
+          expect(instance.uri).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "date_created"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.date_created = "TEST_STRING"
+          expect(instance.date_created).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "date_updated"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.date_updated = "TEST_STRING"
+          expect(instance.date_updated).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.account_id = "TEST_STRING"
+          expect(instance.account_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "queue_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.queue_id = "TEST_STRING"
+          expect(instance.queue_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "_alias"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance._alias = "TEST_STRING"
+          expect(instance._alias).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "max_size"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "current_size"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "average_queue_removal_time"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

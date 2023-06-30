@@ -25,210 +25,813 @@ describe Freeclimb::SMSTenDLCBrand do
       expect(instance).to be_instance_of(Freeclimb::SMSTenDLCBrand)
     end
   end
+
   describe 'test attribute "account_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+        
+          instance.account_id = "TEST_STRING"
+          expect(instance.account_id).to eq("TEST_STRING")  
+        
+        
+        
 
-  describe 'test attribute "entity_type"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["PRIVATE_PROFIT", "PUBLIC_PROFIT", "NON_PROFIT", "GOVERNMENT", "SOLE_PROPRIETOR"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.entity_type = value }.not_to raise_error
-      # end
     end
   end
+  
+
+
+
+  
+
+
+
+
+
+  
+  describe 'test attribute "entity_type"' do
+    it 'assigns value PRIVATE_PROFIT' do
+      instance.entity_type = "PRIVATE_PROFIT"
+      expect(instance.entity_type).to eq("PRIVATE_PROFIT")  
+    end
+  end
+  
+  describe 'test attribute "entity_type"' do
+    it 'assigns value PUBLIC_PROFIT' do
+      instance.entity_type = "PUBLIC_PROFIT"
+      expect(instance.entity_type).to eq("PUBLIC_PROFIT")  
+    end
+  end
+  
+  describe 'test attribute "entity_type"' do
+    it 'assigns value NON_PROFIT' do
+      instance.entity_type = "NON_PROFIT"
+      expect(instance.entity_type).to eq("NON_PROFIT")  
+    end
+  end
+  
+  describe 'test attribute "entity_type"' do
+    it 'assigns value GOVERNMENT' do
+      instance.entity_type = "GOVERNMENT"
+      expect(instance.entity_type).to eq("GOVERNMENT")  
+    end
+  end
+  
+  describe 'test attribute "entity_type"' do
+    it 'assigns value SOLE_PROPRIETOR' do
+      instance.entity_type = "SOLE_PROPRIETOR"
+      expect(instance.entity_type).to eq("SOLE_PROPRIETOR")  
+    end
+  end
+  
+
 
   describe 'test attribute "csp_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.csp_id = "TEST_STRING"
+          expect(instance.csp_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "brand_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.brand_id = "TEST_STRING"
+          expect(instance.brand_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "first_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.first_name = "TEST_STRING"
+          expect(instance.first_name).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "last_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.last_name = "TEST_STRING"
+          expect(instance.last_name).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "display_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.display_name = "TEST_STRING"
+          expect(instance.display_name).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "company_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.company_name = "TEST_STRING"
+          expect(instance.company_name).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "ein"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.ein = "TEST_STRING"
+          expect(instance.ein).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "ein_issuing_country"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+
     end
   end
+  
+
+  describe 'test attribute "ein_issuing_country"' do
+    it 'should work with length 2' do
+      instance.ein_issuing_country = "TS"
+      expect(instance.ein_issuing_country).to eq("TS")
+    end
+    it 'should not work with length > 2' do
+      expect{instance.ein_issuing_country = "TEST_STRING"}.to raise_error(ArgumentError)
+    end
+  end  
+
+
+  
+
 
   describe 'test attribute "phone"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.phone = "TEST_STRING"
+          expect(instance.phone).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "street"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.street = "TEST_STRING"
+          expect(instance.street).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "city"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.city = "TEST_STRING"
+          expect(instance.city).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "state"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.state = "TEST_STRING"
+          expect(instance.state).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "postal_code"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.postal_code = "TEST_STRING"
+          expect(instance.postal_code).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "country"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.country = "TEST_STRING"
+          expect(instance.country).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "email"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.email = "TEST_STRING"
+          expect(instance.email).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "stock_symbol"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+        
+          instance.stock_symbol = "TEST_STRING"
+          expect(instance.stock_symbol).to eq("TEST_STRING")  
+        
+        
+        
 
-  describe 'test attribute "stock_exchange"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["NONE", "NASDAQ", "NYSE", "AMEX", "AMX", "ASX", "B3", "BME", "BSE", "FRA", "ICEX", "JPX", "JSE", "KRX", "LON", "NSE", "OMX", "SEHK", "SGX", "SSE", "STO", "SWX", "SZSE", "TSX", "TWSE", "VSE", "OTHER"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.stock_exchange = value }.not_to raise_error
-      # end
     end
   end
+  
+
+
+
+  
+
+
+
+
+
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value NONE' do
+      instance.stock_exchange = "NONE"
+      expect(instance.stock_exchange).to eq("NONE")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value NASDAQ' do
+      instance.stock_exchange = "NASDAQ"
+      expect(instance.stock_exchange).to eq("NASDAQ")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value NYSE' do
+      instance.stock_exchange = "NYSE"
+      expect(instance.stock_exchange).to eq("NYSE")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value AMEX' do
+      instance.stock_exchange = "AMEX"
+      expect(instance.stock_exchange).to eq("AMEX")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value AMX' do
+      instance.stock_exchange = "AMX"
+      expect(instance.stock_exchange).to eq("AMX")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value ASX' do
+      instance.stock_exchange = "ASX"
+      expect(instance.stock_exchange).to eq("ASX")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value B3' do
+      instance.stock_exchange = "B3"
+      expect(instance.stock_exchange).to eq("B3")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value BME' do
+      instance.stock_exchange = "BME"
+      expect(instance.stock_exchange).to eq("BME")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value BSE' do
+      instance.stock_exchange = "BSE"
+      expect(instance.stock_exchange).to eq("BSE")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value FRA' do
+      instance.stock_exchange = "FRA"
+      expect(instance.stock_exchange).to eq("FRA")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value ICEX' do
+      instance.stock_exchange = "ICEX"
+      expect(instance.stock_exchange).to eq("ICEX")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value JPX' do
+      instance.stock_exchange = "JPX"
+      expect(instance.stock_exchange).to eq("JPX")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value JSE' do
+      instance.stock_exchange = "JSE"
+      expect(instance.stock_exchange).to eq("JSE")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value KRX' do
+      instance.stock_exchange = "KRX"
+      expect(instance.stock_exchange).to eq("KRX")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value LON' do
+      instance.stock_exchange = "LON"
+      expect(instance.stock_exchange).to eq("LON")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value NSE' do
+      instance.stock_exchange = "NSE"
+      expect(instance.stock_exchange).to eq("NSE")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value OMX' do
+      instance.stock_exchange = "OMX"
+      expect(instance.stock_exchange).to eq("OMX")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value SEHK' do
+      instance.stock_exchange = "SEHK"
+      expect(instance.stock_exchange).to eq("SEHK")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value SGX' do
+      instance.stock_exchange = "SGX"
+      expect(instance.stock_exchange).to eq("SGX")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value SSE' do
+      instance.stock_exchange = "SSE"
+      expect(instance.stock_exchange).to eq("SSE")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value STO' do
+      instance.stock_exchange = "STO"
+      expect(instance.stock_exchange).to eq("STO")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value SWX' do
+      instance.stock_exchange = "SWX"
+      expect(instance.stock_exchange).to eq("SWX")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value SZSE' do
+      instance.stock_exchange = "SZSE"
+      expect(instance.stock_exchange).to eq("SZSE")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value TSX' do
+      instance.stock_exchange = "TSX"
+      expect(instance.stock_exchange).to eq("TSX")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value TWSE' do
+      instance.stock_exchange = "TWSE"
+      expect(instance.stock_exchange).to eq("TWSE")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value VSE' do
+      instance.stock_exchange = "VSE"
+      expect(instance.stock_exchange).to eq("VSE")  
+    end
+  end
+  
+  describe 'test attribute "stock_exchange"' do
+    it 'assigns value OTHER' do
+      instance.stock_exchange = "OTHER"
+      expect(instance.stock_exchange).to eq("OTHER")  
+    end
+  end
+  
+
 
   describe 'test attribute "ip_address"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.ip_address = "TEST_STRING"
+          expect(instance.ip_address).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "website"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+        
+          instance.website = "TEST_STRING"
+          expect(instance.website).to eq("TEST_STRING")  
+        
+        
+        
 
-  describe 'test attribute "brand_relationship"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["BASIC_ACCOUNT", "SMALL_ACCOUNT", "MEDIUM_ACCOUNT", "LARGE_ACCOUNT", "KEY_ACCOUNT"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.brand_relationship = value }.not_to raise_error
-      # end
     end
   end
+  
+
+
+
+  
+
+
+
+
+
+  
+  describe 'test attribute "brand_relationship"' do
+    it 'assigns value BASIC_ACCOUNT' do
+      instance.brand_relationship = "BASIC_ACCOUNT"
+      expect(instance.brand_relationship).to eq("BASIC_ACCOUNT")  
+    end
+  end
+  
+  describe 'test attribute "brand_relationship"' do
+    it 'assigns value SMALL_ACCOUNT' do
+      instance.brand_relationship = "SMALL_ACCOUNT"
+      expect(instance.brand_relationship).to eq("SMALL_ACCOUNT")  
+    end
+  end
+  
+  describe 'test attribute "brand_relationship"' do
+    it 'assigns value MEDIUM_ACCOUNT' do
+      instance.brand_relationship = "MEDIUM_ACCOUNT"
+      expect(instance.brand_relationship).to eq("MEDIUM_ACCOUNT")  
+    end
+  end
+  
+  describe 'test attribute "brand_relationship"' do
+    it 'assigns value LARGE_ACCOUNT' do
+      instance.brand_relationship = "LARGE_ACCOUNT"
+      expect(instance.brand_relationship).to eq("LARGE_ACCOUNT")  
+    end
+  end
+  
+  describe 'test attribute "brand_relationship"' do
+    it 'assigns value KEY_ACCOUNT' do
+      instance.brand_relationship = "KEY_ACCOUNT"
+      expect(instance.brand_relationship).to eq("KEY_ACCOUNT")  
+    end
+  end
+  
+
 
   describe 'test attribute "vertical"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.vertical = "TEST_STRING"
+          expect(instance.vertical).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "alt_business_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+        
+          instance.alt_business_id = "TEST_STRING"
+          expect(instance.alt_business_id).to eq("TEST_STRING")  
+        
+        
+        
 
-  describe 'test attribute "alt_business_id_type"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["NONE", "DUNS", "GIIN", "LEI"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.alt_business_id_type = value }.not_to raise_error
-      # end
     end
   end
+  
+
+
+
+  
+
+
+
+
+
+  
+  describe 'test attribute "alt_business_id_type"' do
+    it 'assigns value NONE' do
+      instance.alt_business_id_type = "NONE"
+      expect(instance.alt_business_id_type).to eq("NONE")  
+    end
+  end
+  
+  describe 'test attribute "alt_business_id_type"' do
+    it 'assigns value DUNS' do
+      instance.alt_business_id_type = "DUNS"
+      expect(instance.alt_business_id_type).to eq("DUNS")  
+    end
+  end
+  
+  describe 'test attribute "alt_business_id_type"' do
+    it 'assigns value GIIN' do
+      instance.alt_business_id_type = "GIIN"
+      expect(instance.alt_business_id_type).to eq("GIIN")  
+    end
+  end
+  
+  describe 'test attribute "alt_business_id_type"' do
+    it 'assigns value LEI' do
+      instance.alt_business_id_type = "LEI"
+      expect(instance.alt_business_id_type).to eq("LEI")  
+    end
+  end
+  
+
 
   describe 'test attribute "universal_ein"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.universal_ein = "TEST_STRING"
+          expect(instance.universal_ein).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "reference_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.reference_id = "TEST_STRING"
+          expect(instance.reference_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "optional_attributes"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "mock"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+          instance.mock = false
+          expect(instance.mock).to eq(false)        
+        
+        
+        
 
-  describe 'test attribute "identity_status"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["SELF_DECLARED", "UNVERIFIED", "VERIFIED", "VETTED_VERIFIED"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.identity_status = value }.not_to raise_error
-      # end
     end
   end
+  
+
+
+
+  
+
+
+
+
+
+  
+  describe 'test attribute "identity_status"' do
+    it 'assigns value SELF_DECLARED' do
+      instance.identity_status = "SELF_DECLARED"
+      expect(instance.identity_status).to eq("SELF_DECLARED")  
+    end
+  end
+  
+  describe 'test attribute "identity_status"' do
+    it 'assigns value UNVERIFIED' do
+      instance.identity_status = "UNVERIFIED"
+      expect(instance.identity_status).to eq("UNVERIFIED")  
+    end
+  end
+  
+  describe 'test attribute "identity_status"' do
+    it 'assigns value VERIFIED' do
+      instance.identity_status = "VERIFIED"
+      expect(instance.identity_status).to eq("VERIFIED")  
+    end
+  end
+  
+  describe 'test attribute "identity_status"' do
+    it 'assigns value VETTED_VERIFIED' do
+      instance.identity_status = "VETTED_VERIFIED"
+      expect(instance.identity_status).to eq("VETTED_VERIFIED")  
+    end
+  end
+  
+
 
   describe 'test attribute "create_date"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

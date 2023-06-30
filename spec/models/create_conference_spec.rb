@@ -25,40 +25,116 @@ describe Freeclimb::CreateConference do
       expect(instance).to be_instance_of(Freeclimb::CreateConference)
     end
   end
+
   describe 'test attribute "action_url"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.action_url = "TEST_STRING"
+          expect(instance.action_url).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "_alias"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance._alias = false
+          expect(instance._alias).to eq(false)        
+        
+        
+        
+
+    end
+  end
+  
+
+
+
+  
+
+
+
+
+  describe 'test attribute "play_beep"' do
+    it 'assigns value ALWAYS' do
+      instance.play_beep = Freeclimb::PlayBeep::ALWAYS
+      expect(instance.play_beep).to eq(Freeclimb::PlayBeep::ALWAYS)  
+    end
+    it 'assigns value NEVER' do
+      instance.play_beep = Freeclimb::PlayBeep::NEVER
+      expect(instance.play_beep).to eq(Freeclimb::PlayBeep::NEVER)  
+    end
+    it 'assigns value ENTRY_ONLY' do
+      instance.play_beep = Freeclimb::PlayBeep::ENTRY_ONLY
+      expect(instance.play_beep).to eq(Freeclimb::PlayBeep::ENTRY_ONLY)  
+    end
+    it 'assigns value EXIT_ONLY' do
+      instance.play_beep = Freeclimb::PlayBeep::EXIT_ONLY
+      expect(instance.play_beep).to eq(Freeclimb::PlayBeep::EXIT_ONLY)  
     end
   end
 
-  describe 'test attribute "play_beep"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  
+
 
   describe 'test attribute "record"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.record = false
+          expect(instance.record).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "status_callback_url"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.status_callback_url = "TEST_STRING"
+          expect(instance.status_callback_url).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "wait_url"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.wait_url = "TEST_STRING"
+          expect(instance.wait_url).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

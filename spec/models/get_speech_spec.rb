@@ -25,82 +25,219 @@ describe Freeclimb::GetSpeech do
       expect(instance).to be_instance_of(Freeclimb::GetSpeech)
     end
   end
+
   describe 'test attribute "action_url"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.action_url = "TEST_STRING"
+          expect(instance.action_url).to eq("TEST_STRING")  
+        
+        
+        
+
+    end
+  end
+  
+
+
+
+  
+
+
+
+
+  describe 'test attribute "grammar_type"' do
+    it 'assigns value URL' do
+      instance.grammar_type = Freeclimb::GrammarType::URL
+      expect(instance.grammar_type).to eq(Freeclimb::GrammarType::URL)  
+    end
+    it 'assigns value BUILT_IN' do
+      instance.grammar_type = Freeclimb::GrammarType::BUILT_IN
+      expect(instance.grammar_type).to eq(Freeclimb::GrammarType::BUILT_IN)  
     end
   end
 
-  describe 'test attribute "grammar_type"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  
+
 
   describe 'test attribute "grammar_file"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.grammar_file = "TEST_STRING"
+          expect(instance.grammar_file).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "grammar_rule"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.grammar_rule = "TEST_STRING"
+          expect(instance.grammar_rule).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "play_beep"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.play_beep = false
+          expect(instance.play_beep).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "prompts"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "no_input_timeout_ms"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "recognition_timeout_ms"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "confidence_threshold"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+          instance.confidence_threshold = BigDecimal("1.0")
+          expect(instance.confidence_threshold).to eq(BigDecimal("1.0")) 
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "sensitivity_level"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+          instance.sensitivity_level = BigDecimal("1.0")
+          expect(instance.sensitivity_level).to eq(BigDecimal("1.0")) 
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "speech_complete_timeout_ms"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "speech_incomplete_timeout_ms"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.privacy_mode = false
+          expect(instance.privacy_mode).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

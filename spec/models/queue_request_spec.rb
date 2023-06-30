@@ -25,16 +25,37 @@ describe Freeclimb::QueueRequest do
       expect(instance).to be_instance_of(Freeclimb::QueueRequest)
     end
   end
+
   describe 'test attribute "_alias"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance._alias = "TEST_STRING"
+          expect(instance._alias).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "max_size"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

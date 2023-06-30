@@ -25,46 +25,125 @@ describe Freeclimb::AvailableNumber do
       expect(instance).to be_instance_of(Freeclimb::AvailableNumber)
     end
   end
+
   describe 'test attribute "capabilities"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "campaign_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.campaign_id = "TEST_STRING"
+          expect(instance.campaign_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "phone_number"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.phone_number = "TEST_STRING"
+          expect(instance.phone_number).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "voice_enabled"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.voice_enabled = false
+          expect(instance.voice_enabled).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "sms_enabled"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.sms_enabled = false
+          expect(instance.sms_enabled).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "region"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.region = "TEST_STRING"
+          expect(instance.region).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "country"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.country = "TEST_STRING"
+          expect(instance.country).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

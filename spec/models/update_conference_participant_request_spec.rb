@@ -25,16 +25,38 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
       expect(instance).to be_instance_of(Freeclimb::UpdateConferenceParticipantRequest)
     end
   end
+
   describe 'test attribute "talk"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.talk = false
+          expect(instance.talk).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "listen"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.listen = false
+          expect(instance.listen).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

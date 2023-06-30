@@ -25,10 +25,22 @@ describe Freeclimb::Redirect do
       expect(instance).to be_instance_of(Freeclimb::Redirect)
     end
   end
+
   describe 'test attribute "action_url"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.action_url = "TEST_STRING"
+          expect(instance.action_url).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

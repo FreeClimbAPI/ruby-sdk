@@ -25,10 +25,22 @@ describe Freeclimb::TerminateConference do
       expect(instance).to be_instance_of(Freeclimb::TerminateConference)
     end
   end
+
   describe 'test attribute "conference_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.conference_id = "TEST_STRING"
+          expect(instance.conference_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

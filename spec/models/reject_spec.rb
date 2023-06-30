@@ -25,10 +25,22 @@ describe Freeclimb::Reject do
       expect(instance).to be_instance_of(Freeclimb::Reject)
     end
   end
+
   describe 'test attribute "reason"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.reason = "TEST_STRING"
+          expect(instance.reason).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

@@ -25,10 +25,22 @@ describe Freeclimb::RemoveFromConference do
       expect(instance).to be_instance_of(Freeclimb::RemoveFromConference)
     end
   end
+
   describe 'test attribute "call_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.call_id = "TEST_STRING"
+          expect(instance.call_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

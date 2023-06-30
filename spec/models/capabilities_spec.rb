@@ -25,34 +25,89 @@ describe Freeclimb::Capabilities do
       expect(instance).to be_instance_of(Freeclimb::Capabilities)
     end
   end
+
   describe 'test attribute "voice"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.voice = false
+          expect(instance.voice).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "sms"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.sms = false
+          expect(instance.sms).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "toll_free"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.toll_free = false
+          expect(instance.toll_free).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "ten_dlc"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.ten_dlc = false
+          expect(instance.ten_dlc).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "short_code"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.short_code = false
+          expect(instance.short_code).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

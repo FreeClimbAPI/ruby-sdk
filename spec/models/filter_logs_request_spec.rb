@@ -25,10 +25,22 @@ describe Freeclimb::FilterLogsRequest do
       expect(instance).to be_instance_of(Freeclimb::FilterLogsRequest)
     end
   end
+
   describe 'test attribute "pql"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.pql = "TEST_STRING"
+          expect(instance.pql).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

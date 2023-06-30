@@ -25,22 +25,54 @@ describe Freeclimb::SendDigits do
       expect(instance).to be_instance_of(Freeclimb::SendDigits)
     end
   end
+
   describe 'test attribute "digits"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.digits = "TEST_STRING"
+          expect(instance.digits).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "pause_ms"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.privacy_mode = false
+          expect(instance.privacy_mode).to eq(false)        
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

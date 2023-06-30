@@ -25,88 +25,261 @@ describe Freeclimb::ConferenceResult do
       expect(instance).to be_instance_of(Freeclimb::ConferenceResult)
     end
   end
+
   describe 'test attribute "uri"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.uri = "TEST_STRING"
+          expect(instance.uri).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "date_created"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.date_created = "TEST_STRING"
+          expect(instance.date_created).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "date_updated"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.date_updated = "TEST_STRING"
+          expect(instance.date_updated).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "conference_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.conference_id = "TEST_STRING"
+          expect(instance.conference_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.account_id = "TEST_STRING"
+          expect(instance.account_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "_alias"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance._alias = "TEST_STRING"
+          expect(instance._alias).to eq("TEST_STRING")  
+        
+        
+        
+
+    end
+  end
+  
+
+
+
+  
+
+
+
+
+  describe 'test attribute "play_beep"' do
+    it 'assigns value ALWAYS' do
+      instance.play_beep = Freeclimb::PlayBeep::ALWAYS
+      expect(instance.play_beep).to eq(Freeclimb::PlayBeep::ALWAYS)  
+    end
+    it 'assigns value NEVER' do
+      instance.play_beep = Freeclimb::PlayBeep::NEVER
+      expect(instance.play_beep).to eq(Freeclimb::PlayBeep::NEVER)  
+    end
+    it 'assigns value ENTRY_ONLY' do
+      instance.play_beep = Freeclimb::PlayBeep::ENTRY_ONLY
+      expect(instance.play_beep).to eq(Freeclimb::PlayBeep::ENTRY_ONLY)  
+    end
+    it 'assigns value EXIT_ONLY' do
+      instance.play_beep = Freeclimb::PlayBeep::EXIT_ONLY
+      expect(instance.play_beep).to eq(Freeclimb::PlayBeep::EXIT_ONLY)  
     end
   end
 
-  describe 'test attribute "play_beep"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  
+
 
   describe 'test attribute "record"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+          instance.record = false
+          expect(instance.record).to eq(false)        
+        
+        
+        
+
+    end
+  end
+  
+
+
+
+  
+
+
+
+
+  describe 'test attribute "status"' do
+    it 'assigns value EMPTY' do
+      instance.status = Freeclimb::ConferenceStatus::EMPTY
+      expect(instance.status).to eq(Freeclimb::ConferenceStatus::EMPTY)  
+    end
+    it 'assigns value POPULATED' do
+      instance.status = Freeclimb::ConferenceStatus::POPULATED
+      expect(instance.status).to eq(Freeclimb::ConferenceStatus::POPULATED)  
+    end
+    it 'assigns value IN_PROGRESS' do
+      instance.status = Freeclimb::ConferenceStatus::IN_PROGRESS
+      expect(instance.status).to eq(Freeclimb::ConferenceStatus::IN_PROGRESS)  
+    end
+    it 'assigns value TERMINATED' do
+      instance.status = Freeclimb::ConferenceStatus::TERMINATED
+      expect(instance.status).to eq(Freeclimb::ConferenceStatus::TERMINATED)  
     end
   end
 
-  describe 'test attribute "status"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  
+
 
   describe 'test attribute "wait_url"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.wait_url = "TEST_STRING"
+          expect(instance.wait_url).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "action_url"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.action_url = "TEST_STRING"
+          expect(instance.action_url).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "status_callback_url"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.status_callback_url = "TEST_STRING"
+          expect(instance.status_callback_url).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

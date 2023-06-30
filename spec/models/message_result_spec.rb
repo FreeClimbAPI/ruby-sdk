@@ -25,76 +25,251 @@ describe Freeclimb::MessageResult do
       expect(instance).to be_instance_of(Freeclimb::MessageResult)
     end
   end
+
   describe 'test attribute "uri"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.uri = "TEST_STRING"
+          expect(instance.uri).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "date_created"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.date_created = "TEST_STRING"
+          expect(instance.date_created).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "date_updated"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.date_updated = "TEST_STRING"
+          expect(instance.date_updated).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.account_id = "TEST_STRING"
+          expect(instance.account_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "message_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.message_id = "TEST_STRING"
+          expect(instance.message_id).to eq("TEST_STRING")  
+        
+        
+        
+
+    end
+  end
+  
+
+
+
+  
+
+
+
+
+  describe 'test attribute "status"' do
+    it 'assigns value NEW' do
+      instance.status = Freeclimb::MessageStatus::NEW
+      expect(instance.status).to eq(Freeclimb::MessageStatus::NEW)  
+    end
+    it 'assigns value QUEUED' do
+      instance.status = Freeclimb::MessageStatus::QUEUED
+      expect(instance.status).to eq(Freeclimb::MessageStatus::QUEUED)  
+    end
+    it 'assigns value REJECTED' do
+      instance.status = Freeclimb::MessageStatus::REJECTED
+      expect(instance.status).to eq(Freeclimb::MessageStatus::REJECTED)  
+    end
+    it 'assigns value SENDING' do
+      instance.status = Freeclimb::MessageStatus::SENDING
+      expect(instance.status).to eq(Freeclimb::MessageStatus::SENDING)  
+    end
+    it 'assigns value SENT' do
+      instance.status = Freeclimb::MessageStatus::SENT
+      expect(instance.status).to eq(Freeclimb::MessageStatus::SENT)  
+    end
+    it 'assigns value FAILED' do
+      instance.status = Freeclimb::MessageStatus::FAILED
+      expect(instance.status).to eq(Freeclimb::MessageStatus::FAILED)  
+    end
+    it 'assigns value RECEIVED' do
+      instance.status = Freeclimb::MessageStatus::RECEIVED
+      expect(instance.status).to eq(Freeclimb::MessageStatus::RECEIVED)  
+    end
+    it 'assigns value UNDELIVERED' do
+      instance.status = Freeclimb::MessageStatus::UNDELIVERED
+      expect(instance.status).to eq(Freeclimb::MessageStatus::UNDELIVERED)  
+    end
+    it 'assigns value EXPIRED' do
+      instance.status = Freeclimb::MessageStatus::EXPIRED
+      expect(instance.status).to eq(Freeclimb::MessageStatus::EXPIRED)  
+    end
+    it 'assigns value DELETED' do
+      instance.status = Freeclimb::MessageStatus::DELETED
+      expect(instance.status).to eq(Freeclimb::MessageStatus::DELETED)  
+    end
+    it 'assigns value UNKNOWN' do
+      instance.status = Freeclimb::MessageStatus::UNKNOWN
+      expect(instance.status).to eq(Freeclimb::MessageStatus::UNKNOWN)  
     end
   end
 
-  describe 'test attribute "status"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  
+
 
   describe 'test attribute "from"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.from = "TEST_STRING"
+          expect(instance.from).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "to"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.to = "TEST_STRING"
+          expect(instance.to).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "text"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.text = "TEST_STRING"
+          expect(instance.text).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "direction"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.direction = "TEST_STRING"
+          expect(instance.direction).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "notification_url"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.notification_url = "TEST_STRING"
+          expect(instance.notification_url).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

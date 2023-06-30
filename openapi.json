@@ -85,6 +85,8 @@
         "type": "string",
         "enum": ["closed", "suspended", "active"],
         "x-enum-varnames": ["CLOSED", "SUSPENDED", "ACTIVE"],
+        "x-enum": true,
+        "x-account-status": true,
         "description": "The status of this account. It is one of: active, suspended, or closed.",
         "nullable": true
       },
@@ -92,7 +94,9 @@
         "type": "string",
         "description": "The type of this account. It is one of: trial or full.",
         "enum": ["trial", "full"],
+        "x-enum": true,
         "x-enum-varnames": ["TRIAL", "FULL"],
+        "x-account-type": true,
         "nullable": true
       },
       "AnsweredBy": {
@@ -100,6 +104,7 @@
         "nullable": true,
         "enum": ["human", "machine"],
         "x-enum-varnames": ["HUMAN", "MACHINE"],
+        "x-enum": true,
         "description": "If this Call was initiated with answering machine detection, either `human` or `machine`. Empty otherwise."
       },
       "CallDirection": {
@@ -107,6 +112,7 @@
         "nullable": true,
         "enum": ["inbound", "outboundAPI", "outboundDial"],
         "x-enum-varnames": ["INBOUND", "OUTBOUND_API", "OUTBOUND_DIAL"],
+        "x-enum": true,
         "description": "Direction of the Call. `inbound` for Calls into FreeClimb, `outboundAPI` for Calls initiated via the REST API,  `outboundDial` for Calls initiated by the `OutDial` PerCL command."
       },
       "CallStatus": {
@@ -132,6 +138,7 @@
           "BUSY",
           "NO_ANSWER"
         ],
+        "x-enum": true,
         "description": "* `queued` &ndash; Call is ready and waiting in line before going out. * `ringing` &ndash; Call is currently ringing. * `inProgress` &ndash; Call was answered and is currently in progress. * `canceled` &ndash; Call was hung up while it was queued or ringing. * `completed` &ndash; Call was answered and has ended normally. * `busy` &ndash; Caller received a busy signal. * `failed` &ndash; Call could not be completed as dialed, most likely because the phone number was non-existent. * `noAnswer` &ndash; Call ended without being answered."
       },
       "ConferenceStatus": {
@@ -139,6 +146,7 @@
         "nullable": true,
         "enum": ["empty", "populated", "inProgress", "terminated"],
         "x-enum-varnames": ["EMPTY", "POPULATED", "IN_PROGRESS", "TERMINATED"],
+        "x-enum": true,
         "description": "The status of the Conference. One of: creating, empty, populated, inProgress, or terminated."
       },
       "GetSpeechReason": {
@@ -158,7 +166,9 @@
           "NO_INPUT",
           "NO_MATCH",
           "RECOGNITION"
-        ]
+        ],
+        "x-enum": true
+
       },
       "GrammarFileBuiltIn": {
         "type": "string",
@@ -195,19 +205,22 @@
           "DIG11",
           "UP_TO_20_DIGIT_SEQUENCE",
           "VERSAY_YESNO"
-        ]
+        ],
+        "x-enum": true
       },
       "GrammarType": {
         "type": "string",
         "enum": ["URL", "BUILTIN"],
         "nullable": true,
         "x-enum-varnames": ["URL", "BUILT_IN"],
+        "x-enum": true,
         "description": "The grammar file type to use for speech recognition. A value of 'URL' indicates the grammarFile attribute specifies a URL that points to the grammar file. A value of `BUILTIN` indicates the grammarFile attribute specifies the name of one of the platform built-in grammar files."
       },
       "IfMachine": {
         "type": "string",
         "enum": ["redirect", "hangup"],
         "x-enum-varnames": ["REDIRECT", "HANGUP"],
+        "x-enum": true,
         "description": "Specifies how FreeClimb should handle this OutDial if an answering machine answers the Call. Valid values: `redirect` invokes the ifMachineUrl for instructions. `hangup` hangs up the Call. The ifMachineUrl will not be invoked."
       },
       "Language": {
@@ -267,24 +280,28 @@
           "CHINESE_CN",
           "CHINESE_HK",
           "CHINESE_TW"
-        ]
+        ],
+        "x-enum": true
       },
       "LogLevel": {
         "type": "string",
         "enum": ["info", "warning", "error"],
         "nullable": true,
         "x-enum-varnames": ["INFO", "WARNING", "ERROR"],
+        "x-enum": true,
         "description": "Level of the log. Possible values are info, warning, and error."
       },
       "MachineType": {
         "type": "string",
         "enum": ["answeringMachine", "faxMachine"],
-        "x-enum-varnames": ["ANSWERING_MACHINE", "FAX_MACHINE"]
+        "x-enum-varnames": ["ANSWERING_MACHINE", "FAX_MACHINE"],
+        "x-enum": true
       },
       "MessageDirection": {
         "type": "string",
         "enum": ["inbound", "outbound"],
-        "x-enum-varnames": ["INBOUND", "OUTBOUND"]
+        "x-enum-varnames": ["INBOUND", "OUTBOUND"],
+        "x-enum": true
       },
       "MessageStatus": {
         "type": "string",
@@ -315,13 +332,15 @@
           "EXPIRED",
           "DELETED",
           "UNKNOWN"
-        ]
+        ],
+        "x-enum": true
       },
       "PlayBeep": {
         "type": "string",
         "nullable": true,
         "enum": ["always", "never", "entryOnly", "exitOnly"],
         "x-enum-varnames": ["ALWAYS", "NEVER", "ENTRY_ONLY", "EXIT_ONLY"],
+        "x-enum": true,
         "description": "Indicates whether to play a beep when a Participant enters or leaves the Conference. either `always`, `never`, `entryOnly`, or `exitOnly`. Leaving this unset will make conference default to `always` ",
         "default": "always",
         "x-enum-default-attr": "ALWAYS"
@@ -329,12 +348,14 @@
       "QueueResultStatus": {
         "type": "string",
         "enum": ["queueFull", "dequeued", "hangup", "systemError"],
-        "x-enum-varnames": ["QUEUE_FULL", "DEQUEUED", "HANGUP", "SYSTEM_ERROR"]
+        "x-enum-varnames": ["QUEUE_FULL", "DEQUEUED", "HANGUP", "SYSTEM_ERROR"],
+        "x-enum": true
       },
       "RecordUtteranceTermReason": {
         "type": "string",
         "enum": ["finishKey", "timeout", "hangup", "maxLength"],
-        "x-enum-varnames": ["FINISH_KEY", "TIMEOUT", "HANGUP", "MAX_LENGTH"]
+        "x-enum-varnames": ["FINISH_KEY", "TIMEOUT", "HANGUP", "MAX_LENGTH"],
+        "x-enum": true
       },
       "RequestType": {
         "type": "string",
@@ -387,18 +408,21 @@
           "CONFERENCE_CALL_CONTROL",
           "MESSAGE_DELIVERY",
           "MESSAGE_STATUS"
-        ]
+        ],
+        "x-enum": true
       },
       "UpdateCallRequestStatus": {
         "type": "string",
         "enum": ["canceled", "completed"],
         "x-enum-varnames": ["CANCELED", "COMPLETED"],
+        "x-enum": true,
         "description": "Either `canceled` or `completed`.  Specifying `canceled` attempts to hang up calls that are queued without affecting calls already in progress. Specifying `completed` attempts to hang up a call already in progress."
       },
       "UpdateConferenceRequestStatus": {
         "type": "string",
         "enum": ["empty", "terminated"],
         "x-enum-varnames": ["EMPTY", "TERMINATED"],
+        "x-enum": true,
         "description": "New status of the conference. Valid values: `empty` or `terminated`. For more information, see **Status Parameter** below.**"
       },
       "PerclScript": {
@@ -2380,7 +2404,8 @@
             "enum": [
               "ACTIVE",
               "EXPIRED"
-            ]
+            ],
+            "x-enum-varnames": ["ACTIVE", "EXPIRED"]
           },
           "createDate": {
             "type": "string",
@@ -2599,7 +2624,8 @@
             "enum": [
               "ACTIVE",
               "EXPIRED"
-            ]
+            ],
+            "x-enum-varnames": ["ACTIVE", "EXPIRED"]
           },
           "createDate": {
             "type": "string",
@@ -2895,7 +2921,13 @@
               "NON_PROFIT",
               "GOVERNMENT",
               "SOLE_PROPRIETOR"
-            ]
+            ],
+            "x-enum-varnames": ["PRIVATE_PROFIT",
+              "PUBLIC_PROFIT",
+              "NON_PROFIT",
+              "GOVERNMENT",
+              "SOLE_PROPRIETOR"
+          ]
           },
           "cspId": {
             "type": "string",
@@ -2941,7 +2973,8 @@
             "maxLength": 2,
             "type": "string",
             "description": "ISO2 2 characters country code. Example: US - United States",
-            "example": "US"
+            "example": "US",
+            "x-max-length-2": true
           },
           "phone": {
             "maxLength": 20,
@@ -2971,7 +3004,8 @@
             "maxLength": 10,
             "type": "string",
             "description": "Postal codes. Use 5 digit zipcode for United States",
-            "example": "10001"
+            "example": "10001",
+            "x-char-len-2": true
           },
           "country": {
             "maxLength": 2,
@@ -3022,6 +3056,35 @@
               "TWSE",
               "VSE",
               "OTHER"
+            ],
+            "x-enum-varnames": [
+              "NONE",
+              "NASDAQ",
+              "NYSE",
+              "AMEX",
+              "AMX",
+              "ASX",
+              "B3",
+              "BME",
+              "BSE",
+              "FRA",
+              "ICEX",
+              "JPX",
+              "JSE",
+              "KRX",
+              "LON",
+              "NSE",
+              "OMX",
+              "SEHK",
+              "SGX",
+              "SSE",
+              "STO",
+              "SWX",
+              "SZSE",
+              "TSX",
+              "TWSE",
+              "VSE",
+              "OTHER"
             ]
           },
           "ipAddress": {
@@ -3044,6 +3107,13 @@
               "MEDIUM_ACCOUNT",
               "LARGE_ACCOUNT",
               "KEY_ACCOUNT"
+            ],
+            "x-enum-varnames": [
+              "BASIC_ACCOUNT",
+              "SMALL_ACCOUNT",
+              "MEDIUM_ACCOUNT",
+              "LARGE_ACCOUNT",
+              "KEY_ACCOUNT"
             ]
           },
           "vertical": {
@@ -3059,6 +3129,12 @@
           "altBusinessIdType": {
             "type": "string",
             "enum": [
+              "NONE",
+              "DUNS",
+              "GIIN",
+              "LEI"
+            ],
+            "x-enum-varnames": [
               "NONE",
               "DUNS",
               "GIIN",
@@ -3092,6 +3168,12 @@
             "type": "string",
             "description": "TCR assessment of the brand identification status.",
             "enum": [
+              "SELF_DECLARED",
+              "UNVERIFIED",
+              "VERIFIED",
+              "VETTED_VERIFIED"
+            ],
+            "x-enum-varnames": [
               "SELF_DECLARED",
               "UNVERIFIED",
               "VERIFIED",

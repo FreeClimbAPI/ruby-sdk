@@ -25,46 +25,126 @@ describe Freeclimb::LogResult do
       expect(instance).to be_instance_of(Freeclimb::LogResult)
     end
   end
+
   describe 'test attribute "timestamp"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
+    end
+  end
+  
+
+
+
+  
+
+
+
+
+  describe 'test attribute "level"' do
+    it 'assigns value INFO' do
+      instance.level = Freeclimb::LogLevel::INFO
+      expect(instance.level).to eq(Freeclimb::LogLevel::INFO)  
+    end
+    it 'assigns value WARNING' do
+      instance.level = Freeclimb::LogLevel::WARNING
+      expect(instance.level).to eq(Freeclimb::LogLevel::WARNING)  
+    end
+    it 'assigns value ERROR' do
+      instance.level = Freeclimb::LogLevel::ERROR
+      expect(instance.level).to eq(Freeclimb::LogLevel::ERROR)  
     end
   end
 
-  describe 'test attribute "level"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  
+
 
   describe 'test attribute "request_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.request_id = "TEST_STRING"
+          expect(instance.request_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.account_id = "TEST_STRING"
+          expect(instance.account_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "call_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.call_id = "TEST_STRING"
+          expect(instance.call_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "message"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.message = "TEST_STRING"
+          expect(instance.message).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "metadata"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

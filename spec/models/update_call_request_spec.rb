@@ -25,10 +25,20 @@ describe Freeclimb::UpdateCallRequest do
       expect(instance).to be_instance_of(Freeclimb::UpdateCallRequest)
     end
   end
+
+
+
   describe 'test attribute "status"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'assigns value CANCELED' do
+      instance.status = Freeclimb::UpdateCallRequestStatus::CANCELED
+      expect(instance.status).to eq(Freeclimb::UpdateCallRequestStatus::CANCELED)  
+    end
+    it 'assigns value COMPLETED' do
+      instance.status = Freeclimb::UpdateCallRequestStatus::COMPLETED
+      expect(instance.status).to eq(Freeclimb::UpdateCallRequestStatus::COMPLETED)  
     end
   end
+
+  
 
 end

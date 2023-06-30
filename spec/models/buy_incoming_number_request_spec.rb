@@ -25,22 +25,58 @@ describe Freeclimb::BuyIncomingNumberRequest do
       expect(instance).to be_instance_of(Freeclimb::BuyIncomingNumberRequest)
     end
   end
+
   describe 'test attribute "phone_number"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.phone_number = "TEST_STRING"
+          expect(instance.phone_number).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "_alias"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance._alias = "TEST_STRING"
+          expect(instance._alias).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "application_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.application_id = "TEST_STRING"
+          expect(instance.application_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end

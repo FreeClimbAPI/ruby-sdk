@@ -25,22 +25,62 @@ describe Freeclimb::UpdateConferenceRequest do
       expect(instance).to be_instance_of(Freeclimb::UpdateConferenceRequest)
     end
   end
+
   describe 'test attribute "_alias"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance._alias = "TEST_STRING"
+          expect(instance._alias).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
+
+
 
   describe 'test attribute "play_beep"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'assigns value ALWAYS' do
+      instance.play_beep = Freeclimb::PlayBeep::ALWAYS
+      expect(instance.play_beep).to eq(Freeclimb::PlayBeep::ALWAYS)  
+    end
+    it 'assigns value NEVER' do
+      instance.play_beep = Freeclimb::PlayBeep::NEVER
+      expect(instance.play_beep).to eq(Freeclimb::PlayBeep::NEVER)  
+    end
+    it 'assigns value ENTRY_ONLY' do
+      instance.play_beep = Freeclimb::PlayBeep::ENTRY_ONLY
+      expect(instance.play_beep).to eq(Freeclimb::PlayBeep::ENTRY_ONLY)  
+    end
+    it 'assigns value EXIT_ONLY' do
+      instance.play_beep = Freeclimb::PlayBeep::EXIT_ONLY
+      expect(instance.play_beep).to eq(Freeclimb::PlayBeep::EXIT_ONLY)  
     end
   end
 
+  
+
+
+
+
   describe 'test attribute "status"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'assigns value EMPTY' do
+      instance.status = Freeclimb::UpdateConferenceRequestStatus::EMPTY
+      expect(instance.status).to eq(Freeclimb::UpdateConferenceRequestStatus::EMPTY)  
+    end
+    it 'assigns value TERMINATED' do
+      instance.status = Freeclimb::UpdateConferenceRequestStatus::TERMINATED
+      expect(instance.status).to eq(Freeclimb::UpdateConferenceRequestStatus::TERMINATED)  
     end
   end
+
+  
 
 end

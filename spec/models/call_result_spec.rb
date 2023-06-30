@@ -25,118 +25,356 @@ describe Freeclimb::CallResult do
       expect(instance).to be_instance_of(Freeclimb::CallResult)
     end
   end
+
   describe 'test attribute "uri"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.uri = "TEST_STRING"
+          expect(instance.uri).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "date_created"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.date_created = "TEST_STRING"
+          expect(instance.date_created).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "date_updated"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.date_updated = "TEST_STRING"
+          expect(instance.date_updated).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "call_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.call_id = "TEST_STRING"
+          expect(instance.call_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "parent_call_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.parent_call_id = "TEST_STRING"
+          expect(instance.parent_call_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.account_id = "TEST_STRING"
+          expect(instance.account_id).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "from"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.from = "TEST_STRING"
+          expect(instance.from).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "to"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.to = "TEST_STRING"
+          expect(instance.to).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "phone_number_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.phone_number_id = "TEST_STRING"
+          expect(instance.phone_number_id).to eq("TEST_STRING")  
+        
+        
+        
+
+    end
+  end
+  
+
+
+
+  
+
+
+
+
+  describe 'test attribute "call_status"' do
+    it 'assigns value QUEUED' do
+      instance.call_status = Freeclimb::CallStatus::QUEUED
+      expect(instance.call_status).to eq(Freeclimb::CallStatus::QUEUED)  
+    end
+    it 'assigns value RINGING' do
+      instance.call_status = Freeclimb::CallStatus::RINGING
+      expect(instance.call_status).to eq(Freeclimb::CallStatus::RINGING)  
+    end
+    it 'assigns value IN_PROGRESS' do
+      instance.call_status = Freeclimb::CallStatus::IN_PROGRESS
+      expect(instance.call_status).to eq(Freeclimb::CallStatus::IN_PROGRESS)  
+    end
+    it 'assigns value CANCELED' do
+      instance.call_status = Freeclimb::CallStatus::CANCELED
+      expect(instance.call_status).to eq(Freeclimb::CallStatus::CANCELED)  
+    end
+    it 'assigns value COMPLETED' do
+      instance.call_status = Freeclimb::CallStatus::COMPLETED
+      expect(instance.call_status).to eq(Freeclimb::CallStatus::COMPLETED)  
+    end
+    it 'assigns value FAILED' do
+      instance.call_status = Freeclimb::CallStatus::FAILED
+      expect(instance.call_status).to eq(Freeclimb::CallStatus::FAILED)  
+    end
+    it 'assigns value BUSY' do
+      instance.call_status = Freeclimb::CallStatus::BUSY
+      expect(instance.call_status).to eq(Freeclimb::CallStatus::BUSY)  
+    end
+    it 'assigns value NO_ANSWER' do
+      instance.call_status = Freeclimb::CallStatus::NO_ANSWER
+      expect(instance.call_status).to eq(Freeclimb::CallStatus::NO_ANSWER)  
     end
   end
 
-  describe 'test attribute "call_status"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
+  
+
 
   describe 'test attribute "start_time"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.start_time = "TEST_STRING"
+          expect(instance.start_time).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "connect_time"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.connect_time = "TEST_STRING"
+          expect(instance.connect_time).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "end_time"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+          instance.end_time = "TEST_STRING"
+          expect(instance.end_time).to eq("TEST_STRING")  
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "duration"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
 
   describe 'test attribute "connect_duration"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
+
+
+
 
   describe 'test attribute "direction"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'assigns value INBOUND' do
+      instance.direction = Freeclimb::CallDirection::INBOUND
+      expect(instance.direction).to eq(Freeclimb::CallDirection::INBOUND)  
+    end
+    it 'assigns value OUTBOUND_API' do
+      instance.direction = Freeclimb::CallDirection::OUTBOUND_API
+      expect(instance.direction).to eq(Freeclimb::CallDirection::OUTBOUND_API)  
+    end
+    it 'assigns value OUTBOUND_DIAL' do
+      instance.direction = Freeclimb::CallDirection::OUTBOUND_DIAL
+      expect(instance.direction).to eq(Freeclimb::CallDirection::OUTBOUND_DIAL)  
     end
   end
 
+  
+
+
+
+
   describe 'test attribute "answered_by"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'assigns value HUMAN' do
+      instance.answered_by = Freeclimb::AnsweredBy::HUMAN
+      expect(instance.answered_by).to eq(Freeclimb::AnsweredBy::HUMAN)  
+    end
+    it 'assigns value MACHINE' do
+      instance.answered_by = Freeclimb::AnsweredBy::MACHINE
+      expect(instance.answered_by).to eq(Freeclimb::AnsweredBy::MACHINE)  
     end
   end
+
+  
+
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+        
+        
+        
+
     end
   end
+  
+
+
+
+  
 
 end
