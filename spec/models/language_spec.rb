@@ -27,132 +27,392 @@ describe Freeclimb::Language do
   end
   describe 'test attribute "CATALAN"' do
     it 'should work' do
-        expect { Freeclimb::Language::CATALAN = "ca-ES" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::CATALAN = "ca-ES" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::CATALAN
+      calculatedValue = Freeclimb::Language::build_from_hash("ca-ES")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "ca-ES"
+      calculatedValue = Freeclimb::Language::CATALAN
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "DANISH"' do
     it 'should work' do
-        expect { Freeclimb::Language::DANISH = "da-DK" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::DANISH = "da-DK" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::DANISH
+      calculatedValue = Freeclimb::Language::build_from_hash("da-DK")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "da-DK"
+      calculatedValue = Freeclimb::Language::DANISH
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "GERMAN"' do
     it 'should work' do
-        expect { Freeclimb::Language::GERMAN = "de-DE" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::GERMAN = "de-DE" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::GERMAN
+      calculatedValue = Freeclimb::Language::build_from_hash("de-DE")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "de-DE"
+      calculatedValue = Freeclimb::Language::GERMAN
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "ENGLISH_AU"' do
     it 'should work' do
-        expect { Freeclimb::Language::ENGLISH_AU = "en-AU" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::ENGLISH_AU = "en-AU" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::ENGLISH_AU
+      calculatedValue = Freeclimb::Language::build_from_hash("en-AU")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "en-AU"
+      calculatedValue = Freeclimb::Language::ENGLISH_AU
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "ENGLISH_CA"' do
     it 'should work' do
-        expect { Freeclimb::Language::ENGLISH_CA = "en-CA" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::ENGLISH_CA = "en-CA" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::ENGLISH_CA
+      calculatedValue = Freeclimb::Language::build_from_hash("en-CA")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "en-CA"
+      calculatedValue = Freeclimb::Language::ENGLISH_CA
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "ENGLISH_UK"' do
     it 'should work' do
-        expect { Freeclimb::Language::ENGLISH_UK = "en-GB" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::ENGLISH_UK = "en-GB" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::ENGLISH_UK
+      calculatedValue = Freeclimb::Language::build_from_hash("en-GB")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "en-GB"
+      calculatedValue = Freeclimb::Language::ENGLISH_UK
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "ENGLISH_IN"' do
     it 'should work' do
-        expect { Freeclimb::Language::ENGLISH_IN = "en-IN" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::ENGLISH_IN = "en-IN" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::ENGLISH_IN
+      calculatedValue = Freeclimb::Language::build_from_hash("en-IN")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "en-IN"
+      calculatedValue = Freeclimb::Language::ENGLISH_IN
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "ENGLISH_US"' do
     it 'should work' do
-        expect { Freeclimb::Language::ENGLISH_US = "en-US" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::ENGLISH_US = "en-US" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::ENGLISH_US
+      calculatedValue = Freeclimb::Language::build_from_hash("en-US")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "en-US"
+      calculatedValue = Freeclimb::Language::ENGLISH_US
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "ENGLISH_ES"' do
     it 'should work' do
-        expect { Freeclimb::Language::ENGLISH_ES = "es-ES" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::ENGLISH_ES = "es-ES" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::ENGLISH_ES
+      calculatedValue = Freeclimb::Language::build_from_hash("es-ES")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "es-ES"
+      calculatedValue = Freeclimb::Language::ENGLISH_ES
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "ENGLISH_MX"' do
     it 'should work' do
-        expect { Freeclimb::Language::ENGLISH_MX = "es-MX" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::ENGLISH_MX = "es-MX" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::ENGLISH_MX
+      calculatedValue = Freeclimb::Language::build_from_hash("es-MX")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "es-MX"
+      calculatedValue = Freeclimb::Language::ENGLISH_MX
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "FINNISH"' do
     it 'should work' do
-        expect { Freeclimb::Language::FINNISH = "fi-FI" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::FINNISH = "fi-FI" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::FINNISH
+      calculatedValue = Freeclimb::Language::build_from_hash("fi-FI")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "fi-FI"
+      calculatedValue = Freeclimb::Language::FINNISH
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "FRENCH_CA"' do
     it 'should work' do
-        expect { Freeclimb::Language::FRENCH_CA = "fr-CA" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::FRENCH_CA = "fr-CA" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::FRENCH_CA
+      calculatedValue = Freeclimb::Language::build_from_hash("fr-CA")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "fr-CA"
+      calculatedValue = Freeclimb::Language::FRENCH_CA
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "FRENCH_FR"' do
     it 'should work' do
-        expect { Freeclimb::Language::FRENCH_FR = "fr-FR" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::FRENCH_FR = "fr-FR" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::FRENCH_FR
+      calculatedValue = Freeclimb::Language::build_from_hash("fr-FR")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "fr-FR"
+      calculatedValue = Freeclimb::Language::FRENCH_FR
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "ITALIAN"' do
     it 'should work' do
-        expect { Freeclimb::Language::ITALIAN = "it-IT" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::ITALIAN = "it-IT" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::ITALIAN
+      calculatedValue = Freeclimb::Language::build_from_hash("it-IT")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "it-IT"
+      calculatedValue = Freeclimb::Language::ITALIAN
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "JAPANESE"' do
     it 'should work' do
-        expect { Freeclimb::Language::JAPANESE = "ja-JP" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::JAPANESE = "ja-JP" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::JAPANESE
+      calculatedValue = Freeclimb::Language::build_from_hash("ja-JP")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "ja-JP"
+      calculatedValue = Freeclimb::Language::JAPANESE
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "KOREAN"' do
     it 'should work' do
-        expect { Freeclimb::Language::KOREAN = "ko-KR" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::KOREAN = "ko-KR" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::KOREAN
+      calculatedValue = Freeclimb::Language::build_from_hash("ko-KR")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "ko-KR"
+      calculatedValue = Freeclimb::Language::KOREAN
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "NORWEGIAN"' do
     it 'should work' do
-        expect { Freeclimb::Language::NORWEGIAN = "nb-NO" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::NORWEGIAN = "nb-NO" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::NORWEGIAN
+      calculatedValue = Freeclimb::Language::build_from_hash("nb-NO")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "nb-NO"
+      calculatedValue = Freeclimb::Language::NORWEGIAN
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "DUTCH"' do
     it 'should work' do
-        expect { Freeclimb::Language::DUTCH = "nl-NL" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::DUTCH = "nl-NL" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::DUTCH
+      calculatedValue = Freeclimb::Language::build_from_hash("nl-NL")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "nl-NL"
+      calculatedValue = Freeclimb::Language::DUTCH
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "POLISH"' do
     it 'should work' do
-        expect { Freeclimb::Language::POLISH = "pl-PL" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::POLISH = "pl-PL" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::POLISH
+      calculatedValue = Freeclimb::Language::build_from_hash("pl-PL")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "pl-PL"
+      calculatedValue = Freeclimb::Language::POLISH
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "PORTUGESE_BR"' do
     it 'should work' do
-        expect { Freeclimb::Language::PORTUGESE_BR = "pt-BR" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::PORTUGESE_BR = "pt-BR" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::PORTUGESE_BR
+      calculatedValue = Freeclimb::Language::build_from_hash("pt-BR")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "pt-BR"
+      calculatedValue = Freeclimb::Language::PORTUGESE_BR
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "PORTUGESE_PT"' do
     it 'should work' do
-        expect { Freeclimb::Language::PORTUGESE_PT = "pt-PT" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::PORTUGESE_PT = "pt-PT" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::PORTUGESE_PT
+      calculatedValue = Freeclimb::Language::build_from_hash("pt-PT")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "pt-PT"
+      calculatedValue = Freeclimb::Language::PORTUGESE_PT
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "RUSSIAN"' do
     it 'should work' do
-        expect { Freeclimb::Language::RUSSIAN = "ru-RU" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::RUSSIAN = "ru-RU" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::RUSSIAN
+      calculatedValue = Freeclimb::Language::build_from_hash("ru-RU")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "ru-RU"
+      calculatedValue = Freeclimb::Language::RUSSIAN
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "SWEDISH"' do
     it 'should work' do
-        expect { Freeclimb::Language::SWEDISH = "sv-SE" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::SWEDISH = "sv-SE" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::SWEDISH
+      calculatedValue = Freeclimb::Language::build_from_hash("sv-SE")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "sv-SE"
+      calculatedValue = Freeclimb::Language::SWEDISH
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "CHINESE_CN"' do
     it 'should work' do
-        expect { Freeclimb::Language::CHINESE_CN = "zh-CN" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::CHINESE_CN = "zh-CN" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::CHINESE_CN
+      calculatedValue = Freeclimb::Language::build_from_hash("zh-CN")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "zh-CN"
+      calculatedValue = Freeclimb::Language::CHINESE_CN
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "CHINESE_HK"' do
     it 'should work' do
-        expect { Freeclimb::Language::CHINESE_HK = "zh-HK" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::CHINESE_HK = "zh-HK" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::CHINESE_HK
+      calculatedValue = Freeclimb::Language::build_from_hash("zh-HK")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "zh-HK"
+      calculatedValue = Freeclimb::Language::CHINESE_HK
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "CHINESE_TW"' do
     it 'should work' do
-        expect { Freeclimb::Language::CHINESE_TW = "zh-TW" }.not_to raise_error
-      end
+      expect { Freeclimb::Language::CHINESE_TW = "zh-TW" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::Language::CHINESE_TW
+      calculatedValue = Freeclimb::Language::build_from_hash("zh-TW")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "zh-TW"
+      calculatedValue = Freeclimb::Language::CHINESE_TW
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
 end

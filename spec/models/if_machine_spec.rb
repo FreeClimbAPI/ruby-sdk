@@ -27,12 +27,32 @@ describe Freeclimb::IfMachine do
   end
   describe 'test attribute "REDIRECT"' do
     it 'should work' do
-        expect { Freeclimb::IfMachine::REDIRECT = "redirect" }.not_to raise_error
-      end
+      expect { Freeclimb::IfMachine::REDIRECT = "redirect" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::IfMachine::REDIRECT
+      calculatedValue = Freeclimb::IfMachine::build_from_hash("redirect")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "redirect"
+      calculatedValue = Freeclimb::IfMachine::REDIRECT
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "HANGUP"' do
     it 'should work' do
-        expect { Freeclimb::IfMachine::HANGUP = "hangup" }.not_to raise_error
-      end
+      expect { Freeclimb::IfMachine::HANGUP = "hangup" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::IfMachine::HANGUP
+      calculatedValue = Freeclimb::IfMachine::build_from_hash("hangup")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "hangup"
+      calculatedValue = Freeclimb::IfMachine::HANGUP
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
 end

@@ -27,12 +27,32 @@ describe Freeclimb::GrammarType do
   end
   describe 'test attribute "URL"' do
     it 'should work' do
-        expect { Freeclimb::GrammarType::URL = "URL" }.not_to raise_error
-      end
+      expect { Freeclimb::GrammarType::URL = "URL" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::GrammarType::URL
+      calculatedValue = Freeclimb::GrammarType::build_from_hash("URL")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "URL"
+      calculatedValue = Freeclimb::GrammarType::URL
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "BUILT_IN"' do
     it 'should work' do
-        expect { Freeclimb::GrammarType::BUILT_IN = "BUILTIN" }.not_to raise_error
-      end
+      expect { Freeclimb::GrammarType::BUILT_IN = "BUILTIN" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::GrammarType::BUILT_IN
+      calculatedValue = Freeclimb::GrammarType::build_from_hash("BUILTIN")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "BUILTIN"
+      calculatedValue = Freeclimb::GrammarType::BUILT_IN
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
 end

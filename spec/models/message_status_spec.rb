@@ -27,57 +27,167 @@ describe Freeclimb::MessageStatus do
   end
   describe 'test attribute "NEW"' do
     it 'should work' do
-        expect { Freeclimb::MessageStatus::NEW = "new" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageStatus::NEW = "new" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageStatus::NEW
+      calculatedValue = Freeclimb::MessageStatus::build_from_hash("new")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "new"
+      calculatedValue = Freeclimb::MessageStatus::NEW
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "QUEUED"' do
     it 'should work' do
-        expect { Freeclimb::MessageStatus::QUEUED = "queued" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageStatus::QUEUED = "queued" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageStatus::QUEUED
+      calculatedValue = Freeclimb::MessageStatus::build_from_hash("queued")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "queued"
+      calculatedValue = Freeclimb::MessageStatus::QUEUED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "REJECTED"' do
     it 'should work' do
-        expect { Freeclimb::MessageStatus::REJECTED = "rejected" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageStatus::REJECTED = "rejected" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageStatus::REJECTED
+      calculatedValue = Freeclimb::MessageStatus::build_from_hash("rejected")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "rejected"
+      calculatedValue = Freeclimb::MessageStatus::REJECTED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "SENDING"' do
     it 'should work' do
-        expect { Freeclimb::MessageStatus::SENDING = "sending" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageStatus::SENDING = "sending" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageStatus::SENDING
+      calculatedValue = Freeclimb::MessageStatus::build_from_hash("sending")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "sending"
+      calculatedValue = Freeclimb::MessageStatus::SENDING
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "SENT"' do
     it 'should work' do
-        expect { Freeclimb::MessageStatus::SENT = "sent" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageStatus::SENT = "sent" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageStatus::SENT
+      calculatedValue = Freeclimb::MessageStatus::build_from_hash("sent")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "sent"
+      calculatedValue = Freeclimb::MessageStatus::SENT
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "FAILED"' do
     it 'should work' do
-        expect { Freeclimb::MessageStatus::FAILED = "failed" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageStatus::FAILED = "failed" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageStatus::FAILED
+      calculatedValue = Freeclimb::MessageStatus::build_from_hash("failed")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "failed"
+      calculatedValue = Freeclimb::MessageStatus::FAILED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "RECEIVED"' do
     it 'should work' do
-        expect { Freeclimb::MessageStatus::RECEIVED = "received" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageStatus::RECEIVED = "received" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageStatus::RECEIVED
+      calculatedValue = Freeclimb::MessageStatus::build_from_hash("received")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "received"
+      calculatedValue = Freeclimb::MessageStatus::RECEIVED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "UNDELIVERED"' do
     it 'should work' do
-        expect { Freeclimb::MessageStatus::UNDELIVERED = "undelivered" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageStatus::UNDELIVERED = "undelivered" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageStatus::UNDELIVERED
+      calculatedValue = Freeclimb::MessageStatus::build_from_hash("undelivered")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "undelivered"
+      calculatedValue = Freeclimb::MessageStatus::UNDELIVERED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "EXPIRED"' do
     it 'should work' do
-        expect { Freeclimb::MessageStatus::EXPIRED = "expired" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageStatus::EXPIRED = "expired" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageStatus::EXPIRED
+      calculatedValue = Freeclimb::MessageStatus::build_from_hash("expired")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "expired"
+      calculatedValue = Freeclimb::MessageStatus::EXPIRED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "DELETED"' do
     it 'should work' do
-        expect { Freeclimb::MessageStatus::DELETED = "deleted" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageStatus::DELETED = "deleted" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageStatus::DELETED
+      calculatedValue = Freeclimb::MessageStatus::build_from_hash("deleted")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "deleted"
+      calculatedValue = Freeclimb::MessageStatus::DELETED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "UNKNOWN"' do
     it 'should work' do
-        expect { Freeclimb::MessageStatus::UNKNOWN = "unknown" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageStatus::UNKNOWN = "unknown" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageStatus::UNKNOWN
+      calculatedValue = Freeclimb::MessageStatus::build_from_hash("unknown")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "unknown"
+      calculatedValue = Freeclimb::MessageStatus::UNKNOWN
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
 end

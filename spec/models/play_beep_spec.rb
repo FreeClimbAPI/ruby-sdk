@@ -27,22 +27,62 @@ describe Freeclimb::PlayBeep do
   end
   describe 'test attribute "ALWAYS"' do
     it 'should work' do
-        expect { Freeclimb::PlayBeep::ALWAYS = "always" }.not_to raise_error
-      end
+      expect { Freeclimb::PlayBeep::ALWAYS = "always" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::PlayBeep::ALWAYS
+      calculatedValue = Freeclimb::PlayBeep::build_from_hash("always")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "always"
+      calculatedValue = Freeclimb::PlayBeep::ALWAYS
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "NEVER"' do
     it 'should work' do
-        expect { Freeclimb::PlayBeep::NEVER = "never" }.not_to raise_error
-      end
+      expect { Freeclimb::PlayBeep::NEVER = "never" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::PlayBeep::NEVER
+      calculatedValue = Freeclimb::PlayBeep::build_from_hash("never")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "never"
+      calculatedValue = Freeclimb::PlayBeep::NEVER
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "ENTRY_ONLY"' do
     it 'should work' do
-        expect { Freeclimb::PlayBeep::ENTRY_ONLY = "entryOnly" }.not_to raise_error
-      end
+      expect { Freeclimb::PlayBeep::ENTRY_ONLY = "entryOnly" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::PlayBeep::ENTRY_ONLY
+      calculatedValue = Freeclimb::PlayBeep::build_from_hash("entryOnly")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "entryOnly"
+      calculatedValue = Freeclimb::PlayBeep::ENTRY_ONLY
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "EXIT_ONLY"' do
     it 'should work' do
-        expect { Freeclimb::PlayBeep::EXIT_ONLY = "exitOnly" }.not_to raise_error
-      end
+      expect { Freeclimb::PlayBeep::EXIT_ONLY = "exitOnly" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::PlayBeep::EXIT_ONLY
+      calculatedValue = Freeclimb::PlayBeep::build_from_hash("exitOnly")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "exitOnly"
+      calculatedValue = Freeclimb::PlayBeep::EXIT_ONLY
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
 end

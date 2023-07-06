@@ -27,22 +27,62 @@ describe Freeclimb::QueueResultStatus do
   end
   describe 'test attribute "QUEUE_FULL"' do
     it 'should work' do
-        expect { Freeclimb::QueueResultStatus::QUEUE_FULL = "queueFull" }.not_to raise_error
-      end
+      expect { Freeclimb::QueueResultStatus::QUEUE_FULL = "queueFull" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::QueueResultStatus::QUEUE_FULL
+      calculatedValue = Freeclimb::QueueResultStatus::build_from_hash("queueFull")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "queueFull"
+      calculatedValue = Freeclimb::QueueResultStatus::QUEUE_FULL
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "DEQUEUED"' do
     it 'should work' do
-        expect { Freeclimb::QueueResultStatus::DEQUEUED = "dequeued" }.not_to raise_error
-      end
+      expect { Freeclimb::QueueResultStatus::DEQUEUED = "dequeued" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::QueueResultStatus::DEQUEUED
+      calculatedValue = Freeclimb::QueueResultStatus::build_from_hash("dequeued")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "dequeued"
+      calculatedValue = Freeclimb::QueueResultStatus::DEQUEUED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "HANGUP"' do
     it 'should work' do
-        expect { Freeclimb::QueueResultStatus::HANGUP = "hangup" }.not_to raise_error
-      end
+      expect { Freeclimb::QueueResultStatus::HANGUP = "hangup" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::QueueResultStatus::HANGUP
+      calculatedValue = Freeclimb::QueueResultStatus::build_from_hash("hangup")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "hangup"
+      calculatedValue = Freeclimb::QueueResultStatus::HANGUP
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "SYSTEM_ERROR"' do
     it 'should work' do
-        expect { Freeclimb::QueueResultStatus::SYSTEM_ERROR = "systemError" }.not_to raise_error
-      end
+      expect { Freeclimb::QueueResultStatus::SYSTEM_ERROR = "systemError" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::QueueResultStatus::SYSTEM_ERROR
+      calculatedValue = Freeclimb::QueueResultStatus::build_from_hash("systemError")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "systemError"
+      calculatedValue = Freeclimb::QueueResultStatus::SYSTEM_ERROR
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
 end

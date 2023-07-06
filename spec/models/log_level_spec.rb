@@ -27,17 +27,47 @@ describe Freeclimb::LogLevel do
   end
   describe 'test attribute "INFO"' do
     it 'should work' do
-        expect { Freeclimb::LogLevel::INFO = "info" }.not_to raise_error
-      end
+      expect { Freeclimb::LogLevel::INFO = "info" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::LogLevel::INFO
+      calculatedValue = Freeclimb::LogLevel::build_from_hash("info")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "info"
+      calculatedValue = Freeclimb::LogLevel::INFO
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "WARNING"' do
     it 'should work' do
-        expect { Freeclimb::LogLevel::WARNING = "warning" }.not_to raise_error
-      end
+      expect { Freeclimb::LogLevel::WARNING = "warning" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::LogLevel::WARNING
+      calculatedValue = Freeclimb::LogLevel::build_from_hash("warning")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "warning"
+      calculatedValue = Freeclimb::LogLevel::WARNING
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "ERROR"' do
     it 'should work' do
-        expect { Freeclimb::LogLevel::ERROR = "error" }.not_to raise_error
-      end
+      expect { Freeclimb::LogLevel::ERROR = "error" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::LogLevel::ERROR
+      calculatedValue = Freeclimb::LogLevel::build_from_hash("error")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "error"
+      calculatedValue = Freeclimb::LogLevel::ERROR
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
 end

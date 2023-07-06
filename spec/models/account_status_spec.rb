@@ -27,17 +27,47 @@ describe Freeclimb::AccountStatus do
   end
   describe 'test attribute "CLOSED"' do
     it 'should work' do
-        expect { Freeclimb::AccountStatus::CLOSED = "closed" }.not_to raise_error
-      end
+      expect { Freeclimb::AccountStatus::CLOSED = "closed" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::AccountStatus::CLOSED
+      calculatedValue = Freeclimb::AccountStatus::build_from_hash("closed")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "closed"
+      calculatedValue = Freeclimb::AccountStatus::CLOSED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "SUSPENDED"' do
     it 'should work' do
-        expect { Freeclimb::AccountStatus::SUSPENDED = "suspended" }.not_to raise_error
-      end
+      expect { Freeclimb::AccountStatus::SUSPENDED = "suspended" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::AccountStatus::SUSPENDED
+      calculatedValue = Freeclimb::AccountStatus::build_from_hash("suspended")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "suspended"
+      calculatedValue = Freeclimb::AccountStatus::SUSPENDED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "ACTIVE"' do
     it 'should work' do
-        expect { Freeclimb::AccountStatus::ACTIVE = "active" }.not_to raise_error
-      end
+      expect { Freeclimb::AccountStatus::ACTIVE = "active" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::AccountStatus::ACTIVE
+      calculatedValue = Freeclimb::AccountStatus::build_from_hash("active")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "active"
+      calculatedValue = Freeclimb::AccountStatus::ACTIVE
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
 end

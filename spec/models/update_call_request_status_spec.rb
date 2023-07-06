@@ -27,12 +27,32 @@ describe Freeclimb::UpdateCallRequestStatus do
   end
   describe 'test attribute "CANCELED"' do
     it 'should work' do
-        expect { Freeclimb::UpdateCallRequestStatus::CANCELED = "canceled" }.not_to raise_error
-      end
+      expect { Freeclimb::UpdateCallRequestStatus::CANCELED = "canceled" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::UpdateCallRequestStatus::CANCELED
+      calculatedValue = Freeclimb::UpdateCallRequestStatus::build_from_hash("canceled")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "canceled"
+      calculatedValue = Freeclimb::UpdateCallRequestStatus::CANCELED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
   describe 'test attribute "COMPLETED"' do
     it 'should work' do
-        expect { Freeclimb::UpdateCallRequestStatus::COMPLETED = "completed" }.not_to raise_error
-      end
+      expect { Freeclimb::UpdateCallRequestStatus::COMPLETED = "completed" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::UpdateCallRequestStatus::COMPLETED
+      calculatedValue = Freeclimb::UpdateCallRequestStatus::build_from_hash("completed")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "completed"
+      calculatedValue = Freeclimb::UpdateCallRequestStatus::COMPLETED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
 end
