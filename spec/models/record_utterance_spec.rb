@@ -28,118 +28,92 @@ describe Freeclimb::RecordUtterance do
 
   describe 'test attribute "action_url"' do
     it 'should work' do
-        
+      
           instance.action_url = "TEST_STRING"
           expect(instance.action_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "silence_timeout_ms"' do
     it 'should work' do
+      
+          instance.silence_timeout_ms = 1
+          expect(instance.silence_timeout_ms).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "finish_on_key"' do
     it 'should work' do
-        
+      
           instance.finish_on_key = "TEST_STRING"
           expect(instance.finish_on_key).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "max_length_sec"' do
     it 'should work' do
+      
+          instance.max_length_sec = 1
+          expect(instance.max_length_sec).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "play_beep"' do
     it 'should work' do
+      
           instance.play_beep = false
           expect(instance.play_beep).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "auto_start"' do
     it 'should work' do
+      
           instance.auto_start = false
           expect(instance.auto_start).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
+      
           instance.privacy_mode = false
           expect(instance.privacy_mode).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

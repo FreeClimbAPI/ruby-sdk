@@ -28,36 +28,27 @@ describe Freeclimb::SetTalk do
 
   describe 'test attribute "call_id"' do
     it 'should work' do
-        
+      
           instance.call_id = "TEST_STRING"
           expect(instance.call_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "talk"' do
     it 'should work' do
+      
           instance.talk = false
           expect(instance.talk).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

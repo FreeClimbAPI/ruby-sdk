@@ -28,23 +28,16 @@ describe Freeclimb::GetSpeech do
 
   describe 'test attribute "action_url"' do
     it 'should work' do
-        
+      
           instance.action_url = "TEST_STRING"
           expect(instance.action_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
-
-
 
   describe 'test attribute "grammar_type"' do
     it 'assigns value URL' do
@@ -56,188 +49,154 @@ describe Freeclimb::GetSpeech do
       expect(instance.grammar_type).to eq(Freeclimb::GrammarType::BUILT_IN)  
     end
   end
-
   
-
 
   describe 'test attribute "grammar_file"' do
     it 'should work' do
-        
+      
           instance.grammar_file = "TEST_STRING"
           expect(instance.grammar_file).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "grammar_rule"' do
     it 'should work' do
-        
+      
           instance.grammar_rule = "TEST_STRING"
           expect(instance.grammar_rule).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "play_beep"' do
     it 'should work' do
+      
           instance.play_beep = false
           expect(instance.play_beep).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "prompts"' do
     it 'should work' do
+      
         
+          instance.prompts = ["ELEMENT_1", "ELEMENT_2"]
+          expect(instance.prompts).to eq(["ELEMENT_1", "ELEMENT_2"]) 
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "no_input_timeout_ms"' do
     it 'should work' do
+      
+          instance.no_input_timeout_ms = 1
+          expect(instance.no_input_timeout_ms).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "recognition_timeout_ms"' do
     it 'should work' do
+      
+          instance.recognition_timeout_ms = 1
+          expect(instance.recognition_timeout_ms).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "confidence_threshold"' do
     it 'should work' do
-        
-        
+      
+          instance.confidence_threshold = 1
+          expect(instance.confidence_threshold).to eq(1) 
         
           instance.confidence_threshold = BigDecimal("1.0")
           expect(instance.confidence_threshold).to eq(BigDecimal("1.0")) 
         
-
+        
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "sensitivity_level"' do
     it 'should work' do
-        
-        
+      
+          instance.sensitivity_level = 1
+          expect(instance.sensitivity_level).to eq(1) 
         
           instance.sensitivity_level = BigDecimal("1.0")
           expect(instance.sensitivity_level).to eq(BigDecimal("1.0")) 
         
-
+        
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "speech_complete_timeout_ms"' do
     it 'should work' do
+      
+          instance.speech_complete_timeout_ms = 1
+          expect(instance.speech_complete_timeout_ms).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "speech_incomplete_timeout_ms"' do
     it 'should work' do
+      
+          instance.speech_incomplete_timeout_ms = 1
+          expect(instance.speech_incomplete_timeout_ms).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
+      
           instance.privacy_mode = false
           expect(instance.privacy_mode).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

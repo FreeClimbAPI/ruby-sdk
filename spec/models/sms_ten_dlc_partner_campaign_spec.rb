@@ -28,42 +28,29 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-        
+      
           instance.account_id = "TEST_STRING"
           expect(instance.account_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "campaign_id"' do
     it 'should work' do
-        
+      
           instance.campaign_id = "TEST_STRING"
           expect(instance.campaign_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
-
-
-
 
   
   describe 'test attribute "status"' do
@@ -81,457 +68,346 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
   end
   
 
-
   describe 'test attribute "create_date"' do
     it 'should work' do
+      
+          instance.create_date = "2022-07-05T15:17:05Z"
+          expect(instance.create_date).to eq("2022-07-05T15:17:05Z")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "brand_id"' do
     it 'should work' do
-        
-          instance.brand_id = "TEST_STRING"
-          expect(instance.brand_id).to eq("TEST_STRING")  
-        
-        
-        
-
+      
     end
   end
   
-
-
-
+  describe 'test attribute "brand_id"' do
+    it 'should work with length 8' do
+      instance.brand_id = "TEST_STR"
+      expect(instance.brand_id).to eq("TEST_STR")
+    end
+    it 'should not work with length > 8' do
+      expect{instance.brand_id = "TEST_STRING"}.to raise_error(ArgumentError)
+    end
+  end  
   
-
 
   describe 'test attribute "usecase"' do
     it 'should work' do
-        
+      
           instance.usecase = "TEST_STRING"
           expect(instance.usecase).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "description"' do
     it 'should work' do
-        
+      
           instance.description = "TEST_STRING"
           expect(instance.description).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "embedded_link"' do
     it 'should work' do
+      
           instance.embedded_link = false
           expect(instance.embedded_link).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "embedded_phone"' do
     it 'should work' do
+      
           instance.embedded_phone = false
           expect(instance.embedded_phone).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "affiliate_marketing"' do
     it 'should work' do
+      
           instance.affiliate_marketing = false
           expect(instance.affiliate_marketing).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "number_pool"' do
     it 'should work' do
+      
           instance.number_pool = false
           expect(instance.number_pool).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "age_gated"' do
     it 'should work' do
+      
           instance.age_gated = false
           expect(instance.age_gated).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "direct_lending"' do
     it 'should work' do
+      
           instance.direct_lending = false
           expect(instance.direct_lending).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "subscriber_optin"' do
     it 'should work' do
+      
           instance.subscriber_optin = false
           expect(instance.subscriber_optin).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "subscriber_optout"' do
     it 'should work' do
+      
           instance.subscriber_optout = false
           expect(instance.subscriber_optout).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "subscriber_help"' do
     it 'should work' do
+      
           instance.subscriber_help = false
           expect(instance.subscriber_help).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "sample1"' do
     it 'should work' do
-        
+      
           instance.sample1 = "TEST_STRING"
           expect(instance.sample1).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "sample2"' do
     it 'should work' do
-        
+      
           instance.sample2 = "TEST_STRING"
           expect(instance.sample2).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "sample3"' do
     it 'should work' do
-        
+      
           instance.sample3 = "TEST_STRING"
           expect(instance.sample3).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "sample4"' do
     it 'should work' do
-        
+      
           instance.sample4 = "TEST_STRING"
           expect(instance.sample4).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "sample5"' do
     it 'should work' do
-        
+      
           instance.sample5 = "TEST_STRING"
           expect(instance.sample5).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "message_flow"' do
     it 'should work' do
-        
+      
           instance.message_flow = "TEST_STRING"
           expect(instance.message_flow).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "help_message"' do
     it 'should work' do
-        
+      
           instance.help_message = "TEST_STRING"
           expect(instance.help_message).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "optin_keywords"' do
     it 'should work' do
-        
+      
           instance.optin_keywords = "TEST_STRING"
           expect(instance.optin_keywords).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "optout_keywords"' do
     it 'should work' do
-        
+      
           instance.optout_keywords = "TEST_STRING"
           expect(instance.optout_keywords).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "help_keywords"' do
     it 'should work' do
-        
+      
           instance.help_keywords = "TEST_STRING"
           expect(instance.help_keywords).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "optin_message"' do
     it 'should work' do
-        
+      
           instance.optin_message = "TEST_STRING"
           expect(instance.optin_message).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "optout_message"' do
     it 'should work' do
-        
+      
           instance.optout_message = "TEST_STRING"
           expect(instance.optout_message).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "brand"' do
     it 'should work' do
+      
         
         
+          instance.brand = Freeclimb::SMSTenDLCPartnerCampaignBrand.new
+          expect(instance.brand).to be_instance_of(Freeclimb::SMSTenDLCPartnerCampaignBrand)
         
-
+      
     end
   end
   
-
-
-
   
-
 end

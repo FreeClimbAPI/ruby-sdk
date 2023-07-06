@@ -28,35 +28,27 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
 
   describe 'test attribute "talk"' do
     it 'should work' do
+      
           instance.talk = false
           expect(instance.talk).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "listen"' do
     it 'should work' do
+      
           instance.listen = false
           expect(instance.listen).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

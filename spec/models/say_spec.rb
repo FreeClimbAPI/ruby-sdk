@@ -28,87 +28,66 @@ describe Freeclimb::Say do
 
   describe 'test attribute "text"' do
     it 'should work' do
-        
+      
           instance.text = "TEST_STRING"
           expect(instance.text).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "language"' do
     it 'should work' do
-        
+      
           instance.language = "TEST_STRING"
           expect(instance.language).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "loop"' do
     it 'should work' do
+      
+          instance.loop = 1
+          expect(instance.loop).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "conference_id"' do
     it 'should work' do
-        
+      
           instance.conference_id = "TEST_STRING"
           expect(instance.conference_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
+      
           instance.privacy_mode = false
           expect(instance.privacy_mode).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

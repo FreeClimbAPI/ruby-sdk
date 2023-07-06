@@ -28,16 +28,14 @@ describe Freeclimb::Pause do
 
   describe 'test attribute "length"' do
     it 'should work' do
+      
+          instance.length = 1
+          expect(instance.length).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

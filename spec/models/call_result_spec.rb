@@ -28,182 +28,133 @@ describe Freeclimb::CallResult do
 
   describe 'test attribute "uri"' do
     it 'should work' do
-        
+      
           instance.uri = "TEST_STRING"
           expect(instance.uri).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
-        
+      
           instance.date_created = "TEST_STRING"
           expect(instance.date_created).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "date_updated"' do
     it 'should work' do
-        
+      
           instance.date_updated = "TEST_STRING"
           expect(instance.date_updated).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
+      
+          instance.revision = 1
+          expect(instance.revision).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "call_id"' do
     it 'should work' do
-        
+      
           instance.call_id = "TEST_STRING"
           expect(instance.call_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "parent_call_id"' do
     it 'should work' do
-        
+      
           instance.parent_call_id = "TEST_STRING"
           expect(instance.parent_call_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-        
+      
           instance.account_id = "TEST_STRING"
           expect(instance.account_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "from"' do
     it 'should work' do
-        
+      
           instance.from = "TEST_STRING"
           expect(instance.from).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "to"' do
     it 'should work' do
-        
+      
           instance.to = "TEST_STRING"
           expect(instance.to).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "phone_number_id"' do
     it 'should work' do
-        
+      
           instance.phone_number_id = "TEST_STRING"
           expect(instance.phone_number_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
-
-
 
   describe 'test attribute "call_status"' do
     it 'assigns value QUEUED' do
@@ -239,95 +190,72 @@ describe Freeclimb::CallResult do
       expect(instance.call_status).to eq(Freeclimb::CallStatus::NO_ANSWER)  
     end
   end
-
   
-
 
   describe 'test attribute "start_time"' do
     it 'should work' do
-        
+      
           instance.start_time = "TEST_STRING"
           expect(instance.start_time).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "connect_time"' do
     it 'should work' do
-        
+      
           instance.connect_time = "TEST_STRING"
           expect(instance.connect_time).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "end_time"' do
     it 'should work' do
-        
+      
           instance.end_time = "TEST_STRING"
           expect(instance.end_time).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "duration"' do
     it 'should work' do
+      
+          instance.duration = 1
+          expect(instance.duration).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "connect_duration"' do
     it 'should work' do
+      
+          instance.connect_duration = 1
+          expect(instance.connect_duration).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
-
-
 
   describe 'test attribute "direction"' do
     it 'assigns value INBOUND' do
@@ -343,11 +271,7 @@ describe Freeclimb::CallResult do
       expect(instance.direction).to eq(Freeclimb::CallDirection::OUTBOUND_DIAL)  
     end
   end
-
   
-
-
-
 
   describe 'test attribute "answered_by"' do
     it 'assigns value HUMAN' do
@@ -359,22 +283,19 @@ describe Freeclimb::CallResult do
       expect(instance.answered_by).to eq(Freeclimb::AnsweredBy::MACHINE)  
     end
   end
-
   
-
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
+      
         
+          testObject = Object.new()
+          instance.subresource_uris = testObject
+          expect(instance.subresource_uris).to eq(testObject)
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

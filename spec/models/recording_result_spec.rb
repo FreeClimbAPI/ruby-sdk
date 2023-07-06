@@ -28,157 +28,118 @@ describe Freeclimb::RecordingResult do
 
   describe 'test attribute "uri"' do
     it 'should work' do
-        
+      
           instance.uri = "TEST_STRING"
           expect(instance.uri).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
-        
+      
           instance.date_created = "TEST_STRING"
           expect(instance.date_created).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "date_updated"' do
     it 'should work' do
-        
+      
           instance.date_updated = "TEST_STRING"
           expect(instance.date_updated).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
+      
+          instance.revision = 1
+          expect(instance.revision).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "recording_id"' do
     it 'should work' do
-        
+      
           instance.recording_id = "TEST_STRING"
           expect(instance.recording_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-        
+      
           instance.account_id = "TEST_STRING"
           expect(instance.account_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "call_id"' do
     it 'should work' do
-        
+      
           instance.call_id = "TEST_STRING"
           expect(instance.call_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "duration_sec"' do
     it 'should work' do
+      
+          instance.duration_sec = 1
+          expect(instance.duration_sec).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "conference_id"' do
     it 'should work' do
-        
+      
           instance.conference_id = "TEST_STRING"
           expect(instance.conference_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

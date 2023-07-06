@@ -28,24 +28,16 @@ describe Freeclimb::SMSTenDLCBrand do
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-        
+      
           instance.account_id = "TEST_STRING"
           expect(instance.account_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
-
-
-
 
   
   describe 'test attribute "entity_type"' do
@@ -84,140 +76,103 @@ describe Freeclimb::SMSTenDLCBrand do
   end
   
 
-
   describe 'test attribute "csp_id"' do
     it 'should work' do
-        
+      
           instance.csp_id = "TEST_STRING"
           expect(instance.csp_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "brand_id"' do
     it 'should work' do
-        
+      
           instance.brand_id = "TEST_STRING"
           expect(instance.brand_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "first_name"' do
     it 'should work' do
-        
+      
           instance.first_name = "TEST_STRING"
           expect(instance.first_name).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "last_name"' do
     it 'should work' do
-        
+      
           instance.last_name = "TEST_STRING"
           expect(instance.last_name).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "display_name"' do
     it 'should work' do
-        
+      
           instance.display_name = "TEST_STRING"
           expect(instance.display_name).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "company_name"' do
     it 'should work' do
-        
+      
           instance.company_name = "TEST_STRING"
           expect(instance.company_name).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "ein"' do
     it 'should work' do
-        
+      
           instance.ein = "TEST_STRING"
           expect(instance.ein).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "ein_issuing_country"' do
     it 'should work' do
-
+      
     end
   end
   
-
   describe 'test attribute "ein_issuing_country"' do
     it 'should work with length 2' do
       instance.ein_issuing_country = "TS"
@@ -227,157 +182,123 @@ describe Freeclimb::SMSTenDLCBrand do
       expect{instance.ein_issuing_country = "TEST_STRING"}.to raise_error(ArgumentError)
     end
   end  
-
-
   
-
 
   describe 'test attribute "phone"' do
     it 'should work' do
-        
+      
           instance.phone = "TEST_STRING"
           expect(instance.phone).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "street"' do
     it 'should work' do
-        
+      
           instance.street = "TEST_STRING"
           expect(instance.street).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "city"' do
     it 'should work' do
-        
+      
           instance.city = "TEST_STRING"
           expect(instance.city).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "state"' do
     it 'should work' do
-        
+      
           instance.state = "TEST_STRING"
           expect(instance.state).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "postal_code"' do
     it 'should work' do
-        
-          instance.postal_code = "TEST_STRING"
-          expect(instance.postal_code).to eq("TEST_STRING")  
-        
-        
-        
-
+      
     end
   end
   
-
-
-
+  describe 'test attribute "postal_code"' do
+    it 'should work with length 10' do
+      instance.postal_code = "TEST_STRIN"
+      expect(instance.postal_code).to eq("TEST_STRIN")
+    end
+    it 'should not work with length > 10' do
+      expect{instance.postal_code = "TEST_STRING"}.to raise_error(ArgumentError)
+    end
+  end  
   
-
 
   describe 'test attribute "country"' do
     it 'should work' do
-        
-          instance.country = "TEST_STRING"
-          expect(instance.country).to eq("TEST_STRING")  
-        
-        
-        
-
+      
     end
   end
   
-
-
-
+  describe 'test attribute "country"' do
+    it 'should work with length 2' do
+      instance.country = "TS"
+      expect(instance.country).to eq("TS")
+    end
+    it 'should not work with length > 2' do
+      expect{instance.country = "TEST_STRING"}.to raise_error(ArgumentError)
+    end
+  end  
   
-
 
   describe 'test attribute "email"' do
     it 'should work' do
-        
+      
           instance.email = "TEST_STRING"
           expect(instance.email).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "stock_symbol"' do
     it 'should work' do
-        
-          instance.stock_symbol = "TEST_STRING"
-          expect(instance.stock_symbol).to eq("TEST_STRING")  
-        
-        
-        
-
+      
     end
   end
   
-
-
-
+  describe 'test attribute "stock_symbol"' do
+    it 'should work with length 10' do
+      instance.stock_symbol = "TEST_STRIN"
+      expect(instance.stock_symbol).to eq("TEST_STRIN")
+    end
+    it 'should not work with length > 10' do
+      expect{instance.stock_symbol = "TEST_STRING"}.to raise_error(ArgumentError)
+    end
+  end  
   
-
-
-
-
 
   
   describe 'test attribute "stock_exchange"' do
@@ -570,45 +491,31 @@ describe Freeclimb::SMSTenDLCBrand do
   end
   
 
-
   describe 'test attribute "ip_address"' do
     it 'should work' do
-        
+      
           instance.ip_address = "TEST_STRING"
           expect(instance.ip_address).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "website"' do
     it 'should work' do
-        
+      
           instance.website = "TEST_STRING"
           expect(instance.website).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
-
-
-
 
   
   describe 'test attribute "brand_relationship"' do
@@ -647,45 +554,31 @@ describe Freeclimb::SMSTenDLCBrand do
   end
   
 
-
   describe 'test attribute "vertical"' do
     it 'should work' do
-        
+      
           instance.vertical = "TEST_STRING"
           expect(instance.vertical).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "alt_business_id"' do
     it 'should work' do
-        
+      
           instance.alt_business_id = "TEST_STRING"
           expect(instance.alt_business_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
-
-
-
 
   
   describe 'test attribute "alt_business_id_type"' do
@@ -717,77 +610,58 @@ describe Freeclimb::SMSTenDLCBrand do
   end
   
 
-
   describe 'test attribute "universal_ein"' do
     it 'should work' do
-        
+      
           instance.universal_ein = "TEST_STRING"
           expect(instance.universal_ein).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "reference_id"' do
     it 'should work' do
-        
+      
           instance.reference_id = "TEST_STRING"
           expect(instance.reference_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "optional_attributes"' do
     it 'should work' do
+      
         
+          testObject = Object.new()
+          instance.optional_attributes = testObject
+          expect(instance.optional_attributes).to eq(testObject)
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "mock"' do
     it 'should work' do
+      
           instance.mock = false
           expect(instance.mock).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
-
-
-
 
   
   describe 'test attribute "identity_status"' do
@@ -819,19 +693,16 @@ describe Freeclimb::SMSTenDLCBrand do
   end
   
 
-
   describe 'test attribute "create_date"' do
     it 'should work' do
+      
+          instance.create_date = "2022-07-05T15:17:05Z"
+          expect(instance.create_date).to eq("2022-07-05T15:17:05Z")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

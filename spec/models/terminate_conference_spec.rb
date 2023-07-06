@@ -28,19 +28,14 @@ describe Freeclimb::TerminateConference do
 
   describe 'test attribute "conference_id"' do
     it 'should work' do
-        
+      
           instance.conference_id = "TEST_STRING"
           expect(instance.conference_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

@@ -28,73 +28,53 @@ describe Freeclimb::Sms do
 
   describe 'test attribute "to"' do
     it 'should work' do
-        
+      
           instance.to = "TEST_STRING"
           expect(instance.to).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "from"' do
     it 'should work' do
-        
+      
           instance.from = "TEST_STRING"
           expect(instance.from).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "text"' do
     it 'should work' do
-        
+      
           instance.text = "TEST_STRING"
           expect(instance.text).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "notification_url"' do
     it 'should work' do
-        
+      
           instance.notification_url = "TEST_STRING"
           expect(instance.notification_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

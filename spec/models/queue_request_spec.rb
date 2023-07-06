@@ -28,34 +28,27 @@ describe Freeclimb::QueueRequest do
 
   describe 'test attribute "_alias"' do
     it 'should work' do
-        
+      
           instance._alias = "TEST_STRING"
           expect(instance._alias).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "max_size"' do
     it 'should work' do
+      
+          instance.max_size = 1
+          expect(instance.max_size).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

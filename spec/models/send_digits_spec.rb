@@ -28,51 +28,40 @@ describe Freeclimb::SendDigits do
 
   describe 'test attribute "digits"' do
     it 'should work' do
-        
+      
           instance.digits = "TEST_STRING"
           expect(instance.digits).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "pause_ms"' do
     it 'should work' do
+      
+          instance.pause_ms = 1
+          expect(instance.pause_ms).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
+      
           instance.privacy_mode = false
           expect(instance.privacy_mode).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

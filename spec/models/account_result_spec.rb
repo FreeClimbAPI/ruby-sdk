@@ -28,146 +28,107 @@ describe Freeclimb::AccountResult do
 
   describe 'test attribute "uri"' do
     it 'should work' do
-        
+      
           instance.uri = "TEST_STRING"
           expect(instance.uri).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
-        
+      
           instance.date_created = "TEST_STRING"
           expect(instance.date_created).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "date_updated"' do
     it 'should work' do
-        
+      
           instance.date_updated = "TEST_STRING"
           expect(instance.date_updated).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
+      
+          instance.revision = 1
+          expect(instance.revision).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-        
+      
           instance.account_id = "TEST_STRING"
           expect(instance.account_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "api_key"' do
     it 'should work' do
-        
+      
           instance.api_key = "TEST_STRING"
           expect(instance.api_key).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "_alias"' do
     it 'should work' do
-        
+      
           instance._alias = "TEST_STRING"
           expect(instance._alias).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "label"' do
     it 'should work' do
-        
+      
           instance.label = "TEST_STRING"
           expect(instance.label).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
-
-
 
   describe 'test attribute "type"' do
     it 'assigns value TRIAL' do
@@ -179,11 +140,7 @@ describe Freeclimb::AccountResult do
       expect(instance.type).to eq(Freeclimb::AccountType::FULL)  
     end
   end
-
   
-
-
-
 
   describe 'test attribute "status"' do
     it 'assigns value CLOSED' do
@@ -199,22 +156,19 @@ describe Freeclimb::AccountResult do
       expect(instance.status).to eq(Freeclimb::AccountStatus::ACTIVE)  
     end
   end
-
   
-
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
+      
         
+          testObject = Object.new()
+          instance.subresource_uris = testObject
+          expect(instance.subresource_uris).to eq(testObject)
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

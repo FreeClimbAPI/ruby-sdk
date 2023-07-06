@@ -28,177 +28,131 @@ describe Freeclimb::MakeCallRequest do
 
   describe 'test attribute "from"' do
     it 'should work' do
-        
+      
           instance.from = "TEST_STRING"
           expect(instance.from).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "to"' do
     it 'should work' do
-        
+      
           instance.to = "TEST_STRING"
           expect(instance.to).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "application_id"' do
     it 'should work' do
-        
+      
           instance.application_id = "TEST_STRING"
           expect(instance.application_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "send_digits"' do
     it 'should work' do
-        
+      
           instance.send_digits = "TEST_STRING"
           expect(instance.send_digits).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "if_machine"' do
     it 'should work' do
-        
+      
           instance.if_machine = "TEST_STRING"
           expect(instance.if_machine).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "if_machine_url"' do
     it 'should work' do
-        
+      
           instance.if_machine_url = "TEST_STRING"
           expect(instance.if_machine_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "timeout"' do
     it 'should work' do
+      
+          instance.timeout = 1
+          expect(instance.timeout).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "parent_call_id"' do
     it 'should work' do
-        
+      
           instance.parent_call_id = "TEST_STRING"
           expect(instance.parent_call_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
+      
           instance.privacy_mode = false
           expect(instance.privacy_mode).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "call_connect_url"' do
     it 'should work' do
-        
+      
           instance.call_connect_url = "TEST_STRING"
           expect(instance.call_connect_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

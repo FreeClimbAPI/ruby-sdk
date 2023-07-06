@@ -28,19 +28,14 @@ describe Freeclimb::Redirect do
 
   describe 'test attribute "action_url"' do
     it 'should work' do
-        
+      
           instance.action_url = "TEST_STRING"
           expect(instance.action_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

@@ -32,9 +32,5 @@ describe Freeclimb::PerclCommand do
     end
   end
   
-
-
-
   
-
 end

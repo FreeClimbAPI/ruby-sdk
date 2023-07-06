@@ -28,69 +28,53 @@ describe Freeclimb::Play do
 
   describe 'test attribute "file"' do
     it 'should work' do
-        
+      
           instance.file = "TEST_STRING"
           expect(instance.file).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "loop"' do
     it 'should work' do
+      
+          instance.loop = 1
+          expect(instance.loop).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "conference_id"' do
     it 'should work' do
-        
+      
           instance.conference_id = "TEST_STRING"
           expect(instance.conference_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
+      
           instance.privacy_mode = false
           expect(instance.privacy_mode).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

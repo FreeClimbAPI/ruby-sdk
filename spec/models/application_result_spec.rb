@@ -28,232 +28,170 @@ describe Freeclimb::ApplicationResult do
 
   describe 'test attribute "uri"' do
     it 'should work' do
-        
+      
           instance.uri = "TEST_STRING"
           expect(instance.uri).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
-        
+      
           instance.date_created = "TEST_STRING"
           expect(instance.date_created).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "date_updated"' do
     it 'should work' do
-        
+      
           instance.date_updated = "TEST_STRING"
           expect(instance.date_updated).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
+      
+          instance.revision = 1
+          expect(instance.revision).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-        
+      
           instance.account_id = "TEST_STRING"
           expect(instance.account_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "application_id"' do
     it 'should work' do
-        
+      
           instance.application_id = "TEST_STRING"
           expect(instance.application_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "_alias"' do
     it 'should work' do
-        
+      
           instance._alias = "TEST_STRING"
           expect(instance._alias).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "voice_url"' do
     it 'should work' do
-        
+      
           instance.voice_url = "TEST_STRING"
           expect(instance.voice_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "voice_fallback_url"' do
     it 'should work' do
-        
+      
           instance.voice_fallback_url = "TEST_STRING"
           expect(instance.voice_fallback_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "call_connect_url"' do
     it 'should work' do
-        
+      
           instance.call_connect_url = "TEST_STRING"
           expect(instance.call_connect_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "status_callback_url"' do
     it 'should work' do
-        
+      
           instance.status_callback_url = "TEST_STRING"
           expect(instance.status_callback_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "sms_url"' do
     it 'should work' do
-        
+      
           instance.sms_url = "TEST_STRING"
           expect(instance.sms_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "sms_fallback_url"' do
     it 'should work' do
-        
+      
           instance.sms_fallback_url = "TEST_STRING"
           expect(instance.sms_fallback_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

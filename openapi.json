@@ -2394,6 +2394,7 @@
           },
           "resellerId": {
             "maxLength": 8,
+            "x-max-length-8": true,
             "type": "string",
             "nullable": true,
             "description": "Alphanumeric identifier of the reseller that you want to associate with this campaign."
@@ -2410,7 +2411,8 @@
           "createDate": {
             "type": "string",
             "description": "Unix timestamp when campaign was created.",
-            "format": "date-time"
+            "format": "date-time",
+            "x-is-date-time": true
           },
           "autoRenewal": {
             "type": "boolean",
@@ -2420,10 +2422,12 @@
             "type": "string",
             "description": "Campaign recent billed date.",
             "format": "date-time",
+            "x-is-date-time": true,
             "nullable": true
           },
           "brandId": {
             "maxLength": 8,
+            "x-max-length-8": true,
             "type": "string",
             "description": "Alphanumeric identifier of the brand associated with this campaign."
           },
@@ -2543,6 +2547,7 @@
             "nullable": true,
             "description": "When the campaign would be due for its next renew/bill date.",
             "format": "date",
+            "x-is-date": true,
             "example": "2000-01-01"
           }
         }
@@ -2630,10 +2635,12 @@
           "createDate": {
             "type": "string",
             "description": "Unix timestamp when campaign was created.",
-            "format": "date-time"
+            "format": "date-time",
+            "x-is-date-time": true
           },
           "brandId": {
             "maxLength": 8,
+            "x-max-length-8": true,
             "type": "string",
             "description": "Alphanumeric identifier of the brand associated with this campaign."
           },
@@ -2755,7 +2762,8 @@
             "description": "Subscriber opt-out message."
           },
           "brand": {
-            "$ref": "#/components/schemas/SMSTenDLCPartnerCampaignBrand"
+            "$ref": "#/components/schemas/SMSTenDLCPartnerCampaignBrand",
+            "x-partner-campaign-brand": true
           }
         },
         "example": {
@@ -3002,6 +3010,7 @@
           },
           "postalCode": {
             "maxLength": 10,
+            "x-max-length-10": true,
             "type": "string",
             "description": "Postal codes. Use 5 digit zipcode for United States",
             "example": "10001",
@@ -3009,6 +3018,7 @@
           },
           "country": {
             "maxLength": 2,
+            "x-max-length-2": true,
             "type": "string",
             "description": "ISO2 2 characters country code. Example: US - United States",
             "example": "US"
@@ -3020,6 +3030,7 @@
           },
           "stockSymbol": {
             "maxLength": 10,
+            "x-max-length-10": true,
             "type": "string",
             "description": "(Required for public company) stock symbol.",
             "example": "ABC"
@@ -3183,7 +3194,8 @@
           "createDate": {
             "type": "string",
             "description": "Unix timestamp when brand was created.",
-            "format": "date-time"
+            "format": "date-time",
+            "x-is-date-time": true
           }
         },
         "description": "A brand is a business identity behind the campaign.",

@@ -28,77 +28,55 @@ describe Freeclimb::OutDial do
 
   describe 'test attribute "action_url"' do
     it 'should work' do
-        
+      
           instance.action_url = "TEST_STRING"
           expect(instance.action_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "call_connect_url"' do
     it 'should work' do
-        
+      
           instance.call_connect_url = "TEST_STRING"
           expect(instance.call_connect_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "calling_number"' do
     it 'should work' do
-        
+      
           instance.calling_number = "TEST_STRING"
           expect(instance.calling_number).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "destination"' do
     it 'should work' do
-        
+      
           instance.destination = "TEST_STRING"
           expect(instance.destination).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
-
-
 
   describe 'test attribute "if_machine"' do
     it 'assigns value REDIRECT' do
@@ -110,93 +88,70 @@ describe Freeclimb::OutDial do
       expect(instance.if_machine).to eq(Freeclimb::IfMachine::HANGUP)  
     end
   end
-
   
-
 
   describe 'test attribute "if_machine_url"' do
     it 'should work' do
-        
+      
           instance.if_machine_url = "TEST_STRING"
           expect(instance.if_machine_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "send_digits"' do
     it 'should work' do
-        
+      
           instance.send_digits = "TEST_STRING"
           expect(instance.send_digits).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "status_callback_url"' do
     it 'should work' do
-        
+      
           instance.status_callback_url = "TEST_STRING"
           expect(instance.status_callback_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "timeout"' do
     it 'should work' do
+      
+          instance.timeout = 1
+          expect(instance.timeout).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
+      
           instance.privacy_mode = false
           expect(instance.privacy_mode).to eq(false)        
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

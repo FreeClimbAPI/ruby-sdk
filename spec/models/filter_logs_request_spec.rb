@@ -28,19 +28,14 @@ describe Freeclimb::FilterLogsRequest do
 
   describe 'test attribute "pql"' do
     it 'should work' do
-        
+      
           instance.pql = "TEST_STRING"
           expect(instance.pql).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

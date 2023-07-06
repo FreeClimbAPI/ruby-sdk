@@ -28,73 +28,53 @@ describe Freeclimb::Enqueue do
 
   describe 'test attribute "action_url"' do
     it 'should work' do
-        
+      
           instance.action_url = "TEST_STRING"
           expect(instance.action_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "notification_url"' do
     it 'should work' do
-        
+      
           instance.notification_url = "TEST_STRING"
           expect(instance.notification_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "queue_id"' do
     it 'should work' do
-        
+      
           instance.queue_id = "TEST_STRING"
           expect(instance.queue_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "wait_url"' do
     it 'should work' do
-        
+      
           instance.wait_url = "TEST_STRING"
           expect(instance.wait_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

@@ -28,23 +28,16 @@ describe Freeclimb::UpdateConferenceRequest do
 
   describe 'test attribute "_alias"' do
     it 'should work' do
-        
+      
           instance._alias = "TEST_STRING"
           expect(instance._alias).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
-
-
 
   describe 'test attribute "play_beep"' do
     it 'assigns value ALWAYS' do
@@ -64,11 +57,7 @@ describe Freeclimb::UpdateConferenceRequest do
       expect(instance.play_beep).to eq(Freeclimb::PlayBeep::EXIT_ONLY)  
     end
   end
-
   
-
-
-
 
   describe 'test attribute "status"' do
     it 'assigns value EMPTY' do
@@ -80,7 +69,5 @@ describe Freeclimb::UpdateConferenceRequest do
       expect(instance.status).to eq(Freeclimb::UpdateConferenceRequestStatus::TERMINATED)  
     end
   end
-
   
-
 end

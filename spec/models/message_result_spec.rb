@@ -28,110 +28,81 @@ describe Freeclimb::MessageResult do
 
   describe 'test attribute "uri"' do
     it 'should work' do
-        
+      
           instance.uri = "TEST_STRING"
           expect(instance.uri).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
-        
+      
           instance.date_created = "TEST_STRING"
           expect(instance.date_created).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "date_updated"' do
     it 'should work' do
-        
+      
           instance.date_updated = "TEST_STRING"
           expect(instance.date_updated).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
+      
+          instance.revision = 1
+          expect(instance.revision).to eq(1) 
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-        
+      
           instance.account_id = "TEST_STRING"
           expect(instance.account_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "message_id"' do
     it 'should work' do
-        
+      
           instance.message_id = "TEST_STRING"
           expect(instance.message_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
-
-
 
   describe 'test attribute "status"' do
     it 'assigns value NEW' do
@@ -179,97 +150,70 @@ describe Freeclimb::MessageResult do
       expect(instance.status).to eq(Freeclimb::MessageStatus::UNKNOWN)  
     end
   end
-
   
-
 
   describe 'test attribute "from"' do
     it 'should work' do
-        
+      
           instance.from = "TEST_STRING"
           expect(instance.from).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "to"' do
     it 'should work' do
-        
+      
           instance.to = "TEST_STRING"
           expect(instance.to).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "text"' do
     it 'should work' do
-        
+      
           instance.text = "TEST_STRING"
           expect(instance.text).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "direction"' do
     it 'should work' do
-        
+      
           instance.direction = "TEST_STRING"
           expect(instance.direction).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 
   describe 'test attribute "notification_url"' do
     it 'should work' do
-        
+      
           instance.notification_url = "TEST_STRING"
           expect(instance.notification_url).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end

@@ -28,19 +28,14 @@ describe Freeclimb::RemoveFromConference do
 
   describe 'test attribute "call_id"' do
     it 'should work' do
-        
+      
           instance.call_id = "TEST_STRING"
           expect(instance.call_id).to eq("TEST_STRING")  
         
         
-        
-
+      
     end
   end
   
-
-
-
   
-
 end
