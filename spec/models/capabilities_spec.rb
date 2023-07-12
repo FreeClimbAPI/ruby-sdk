@@ -32,7 +32,6 @@ describe Freeclimb::Capabilities do
           instance.voice = false
           expect(instance.voice).to eq(false)        
         
-        
       
     end
   end
@@ -44,7 +43,6 @@ describe Freeclimb::Capabilities do
       
           instance.sms = false
           expect(instance.sms).to eq(false)        
-        
         
       
     end
@@ -58,7 +56,6 @@ describe Freeclimb::Capabilities do
           instance.toll_free = false
           expect(instance.toll_free).to eq(false)        
         
-        
       
     end
   end
@@ -70,7 +67,6 @@ describe Freeclimb::Capabilities do
       
           instance.ten_dlc = false
           expect(instance.ten_dlc).to eq(false)        
-        
         
       
     end
@@ -84,10 +80,301 @@ describe Freeclimb::Capabilities do
           instance.short_code = false
           expect(instance.short_code).to eq(false)        
         
-        
       
     end
   end
   
   
+  describe 'test method "initialize"' do
+    it 'properly initializes with values' do
+        expect{instance = Freeclimb::Capabilities.new(
+          
+          voice: true,
+          
+          sms: true,
+          
+          toll_free: true,
+          
+          ten_dlc: true,
+          
+          short_code: true,
+        )}.not_to raise_error()
+    end
+    it 'fails to initialize with input argument that is not a hash in Freeclimb::Capabilities' do
+        expect{instance = Freeclimb::Capabilities.new(
+          
+          voice: true,
+          
+          sms: true,
+          
+          toll_free: true,
+          
+          ten_dlc: true,
+          
+          short_code: true,
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+    it 'fails to initialize with invalid attribute' do
+        expect{instance = Freeclimb::Capabilities.new(
+          
+          voice: true,
+          
+          sms: true,
+          
+          toll_free: true,
+          
+          ten_dlc: true,
+          
+          short_code: true,
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+  end
+
+  describe 'test method "valid"' do
+    it 'checks if properties are valid' do
+      instance = Freeclimb::Capabilities.new(
+          
+          voice: true,
+          
+          sms: true,
+          
+          toll_free: true,
+          
+          ten_dlc: true,
+          
+          short_code: true,
+      )
+      expect(instance.valid?).to eq(true)
+    end
+  end
+
+  describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      instance_1 = Freeclimb::Capabilities.new(
+          
+          voice: true,
+          
+          sms: true,
+          
+          toll_free: true,
+          
+          ten_dlc: true,
+          
+          short_code: true,
+      )
+      instance_2 = Freeclimb::Capabilities.new(
+          
+          voice: true,
+          
+          sms: true,
+          
+          toll_free: true,
+          
+          ten_dlc: true,
+          
+          short_code: true,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::Capabilities.new(
+          
+          voice: true,
+          
+          sms: true,
+          
+          toll_free: true,
+          
+          ten_dlc: true,
+          
+          short_code: true,
+      )
+      instance_2 = Freeclimb::Capabilities.new(
+          
+          voice: false,
+          
+          sms: false,
+          
+          toll_free: false,
+          
+          ten_dlc: false,
+          
+          short_code: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
+  end
+
+  describe 'test method "hash"' do
+    it 'calculates hash code' do
+      instance = Freeclimb::Capabilities.new(
+        
+        voice: true,
+        
+        sms: true,
+        
+        toll_free: true,
+        
+        ten_dlc: true,
+        
+        short_code: true,
+    )
+    expect(instance.hash).to be_a_kind_of(Integer)
+    end
+  end
+
+  describe 'test method "build_from_hash"' do
+    it 'builds equivalent model from hash code' do
+      instance_1 = Freeclimb::Capabilities.new(
+        
+        voice: true,
+        
+        sms: true,
+        
+        toll_free: true,
+        
+        ten_dlc: true,
+        
+        short_code: true,
+      )
+      instance_2 = Freeclimb::Capabilities.new
+      expect(instance_2.build_from_hash(instance.hash)).to eq(instance.build_from_hash(instance.hash))
+    end
+  end
+
+  describe 'test method "_deserialize"' do
+    instance = Freeclimb::Capabilities.new(
+        
+        voice: true,
+        
+        sms: true,
+        
+        toll_free: true,
+        
+        ten_dlc: true,
+        
+        short_code: true,
+    )
+    
+    
+    it 'deserializes the data of voice' do
+      expect(instance._deserialize("Boolean", instance.voice)).to be_a_kind_of(TrueClass)
+    end
+    
+    
+    it 'deserializes the data of sms' do
+      expect(instance._deserialize("Boolean", instance.sms)).to be_a_kind_of(TrueClass)
+    end
+    
+    
+    it 'deserializes the data of toll_free' do
+      expect(instance._deserialize("Boolean", instance.toll_free)).to be_a_kind_of(TrueClass)
+    end
+    
+    
+    it 'deserializes the data of ten_dlc' do
+      expect(instance._deserialize("Boolean", instance.ten_dlc)).to be_a_kind_of(TrueClass)
+    end
+    
+    
+    it 'deserializes the data of short_code' do
+      expect(instance._deserialize("Boolean", instance.short_code)).to be_a_kind_of(TrueClass)
+    end
+  end
+
+  describe 'test method "to_s"' do
+    it 'returns the string representation of the object' do
+      instance = Freeclimb::Capabilities.new(
+        
+        voice: true,
+        
+        sms: true,
+        
+        toll_free: true,
+        
+        ten_dlc: true,
+        
+        short_code: true,
+      )
+      expect(instance.to_s).to eq(instance.to_hash.to_s)
+    end
+  end
+
+  describe 'test method "to_hash"' do
+    it 'returns the object in the form of hash' do
+      instance = Freeclimb::Capabilities.new(
+        
+        voice: true,
+        
+        sms: true,
+        
+        toll_free: true,
+        
+        ten_dlc: true,
+        
+        short_code: true,
+      )
+      expect(instance.to_hash).to be_a_kind_of(Hash)
+    end
+    it 'creates equal hash for two equal objects' do
+      obj = Object.new()
+      instance_1 = Freeclimb::Capabilities.new(
+        
+        voice: true,
+        
+        sms: true,
+        
+        toll_free: true,
+        
+        ten_dlc: true,
+        
+        short_code: true,
+      )
+      instance_2 = Freeclimb::Capabilities.new(
+        
+        voice: true,
+        
+        sms: true,
+        
+        toll_free: true,
+        
+        ten_dlc: true,
+        
+        short_code: true,
+      )
+      expect(instance_1.to_hash).to eq(instance_2.to_hash)
+    end
+  end
+
+  describe 'test method "_to_hash"' do
+    instance = Freeclimb::Capabilities.new(
+        
+        voice: true,
+        
+        sms: true,
+        
+        toll_free: true,
+        
+        ten_dlc: true,
+        
+        short_code: true,
+    )
+    it 'returns voice in the form of hash' do
+      expect(instance._to_hash(instance.voice)).to eq(instance.voice)
+    end
+    it 'returns sms in the form of hash' do
+      expect(instance._to_hash(instance.sms)).to eq(instance.sms)
+    end
+    it 'returns toll_free in the form of hash' do
+      expect(instance._to_hash(instance.toll_free)).to eq(instance.toll_free)
+    end
+    it 'returns ten_dlc in the form of hash' do
+      expect(instance._to_hash(instance.ten_dlc)).to eq(instance.ten_dlc)
+    end
+    it 'returns short_code in the form of hash' do
+      expect(instance._to_hash(instance.short_code)).to eq(instance.short_code)
+    end
+  end
 end

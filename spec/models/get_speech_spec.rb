@@ -32,7 +32,6 @@ describe Freeclimb::GetSpeech do
           instance.action_url = "TEST_STRING"
           expect(instance.action_url).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -57,7 +56,6 @@ describe Freeclimb::GetSpeech do
           instance.grammar_file = "TEST_STRING"
           expect(instance.grammar_file).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -69,7 +67,6 @@ describe Freeclimb::GetSpeech do
       
           instance.grammar_rule = "TEST_STRING"
           expect(instance.grammar_rule).to eq("TEST_STRING")  
-        
         
       
     end
@@ -83,7 +80,6 @@ describe Freeclimb::GetSpeech do
           instance.play_beep = false
           expect(instance.play_beep).to eq(false)        
         
-        
       
     end
   end
@@ -96,7 +92,6 @@ describe Freeclimb::GetSpeech do
         
           instance.prompts = ["ELEMENT_1", "ELEMENT_2"]
           expect(instance.prompts).to eq(["ELEMENT_1", "ELEMENT_2"]) 
-        
       
     end
   end
@@ -109,7 +104,6 @@ describe Freeclimb::GetSpeech do
           instance.no_input_timeout_ms = 1
           expect(instance.no_input_timeout_ms).to eq(1) 
         
-        
       
     end
   end
@@ -121,7 +115,6 @@ describe Freeclimb::GetSpeech do
       
           instance.recognition_timeout_ms = 1
           expect(instance.recognition_timeout_ms).to eq(1) 
-        
         
       
     end
@@ -138,7 +131,6 @@ describe Freeclimb::GetSpeech do
           instance.confidence_threshold = BigDecimal("1.0")
           expect(instance.confidence_threshold).to eq(BigDecimal("1.0")) 
         
-        
       
     end
   end
@@ -154,7 +146,6 @@ describe Freeclimb::GetSpeech do
           instance.sensitivity_level = BigDecimal("1.0")
           expect(instance.sensitivity_level).to eq(BigDecimal("1.0")) 
         
-        
       
     end
   end
@@ -166,7 +157,6 @@ describe Freeclimb::GetSpeech do
       
           instance.speech_complete_timeout_ms = 1
           expect(instance.speech_complete_timeout_ms).to eq(1) 
-        
         
       
     end
@@ -180,7 +170,6 @@ describe Freeclimb::GetSpeech do
           instance.speech_incomplete_timeout_ms = 1
           expect(instance.speech_incomplete_timeout_ms).to eq(1) 
         
-        
       
     end
   end
@@ -192,7 +181,6 @@ describe Freeclimb::GetSpeech do
       
           instance.privacy_mode = false
           expect(instance.privacy_mode).to eq(false)        
-        
         
       
     end

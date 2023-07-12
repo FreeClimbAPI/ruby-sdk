@@ -32,7 +32,6 @@ describe Freeclimb::CreateConference do
           instance.action_url = "TEST_STRING"
           expect(instance.action_url).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -44,7 +43,6 @@ describe Freeclimb::CreateConference do
       
           instance._alias = false
           expect(instance._alias).to eq(false)        
-        
         
       
     end
@@ -78,7 +76,6 @@ describe Freeclimb::CreateConference do
           instance.record = false
           expect(instance.record).to eq(false)        
         
-        
       
     end
   end
@@ -91,7 +88,6 @@ describe Freeclimb::CreateConference do
           instance.status_callback_url = "TEST_STRING"
           expect(instance.status_callback_url).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -103,7 +99,6 @@ describe Freeclimb::CreateConference do
       
           instance.wait_url = "TEST_STRING"
           expect(instance.wait_url).to eq("TEST_STRING")  
-        
         
       
     end

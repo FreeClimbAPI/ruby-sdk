@@ -32,7 +32,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.account_id = "TEST_STRING"
           expect(instance.account_id).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -45,7 +44,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.campaign_id = "TEST_STRING"
           expect(instance.campaign_id).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -57,7 +55,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
           instance.csp_id = "TEST_STRING"
           expect(instance.csp_id).to eq("TEST_STRING")  
-        
         
       
     end
@@ -104,7 +101,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.create_date = "2022-07-05T15:17:05Z"
           expect(instance.create_date).to eq("2022-07-05T15:17:05Z")  
         
-        
       
     end
   end
@@ -117,7 +113,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.auto_renewal = false
           expect(instance.auto_renewal).to eq(false)        
         
-        
       
     end
   end
@@ -129,7 +124,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
           instance.billed_date = "2022-07-05T15:17:05Z"
           expect(instance.billed_date).to eq("2022-07-05T15:17:05Z")  
-        
         
       
     end
@@ -160,7 +154,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.usecase = "TEST_STRING"
           expect(instance.usecase).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -173,7 +166,6 @@ describe Freeclimb::SMSTenDLCCampaign do
         
           instance.sub_usecases = ["ELEMENT_1", "ELEMENT_2"]
           expect(instance.sub_usecases).to eq(["ELEMENT_1", "ELEMENT_2"]) 
-        
       
     end
   end
@@ -185,7 +177,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
           instance.description = "TEST_STRING"
           expect(instance.description).to eq("TEST_STRING")  
-        
         
       
     end
@@ -199,7 +190,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.embedded_link = false
           expect(instance.embedded_link).to eq(false)        
         
-        
       
     end
   end
@@ -211,7 +201,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
           instance.embedded_phone = false
           expect(instance.embedded_phone).to eq(false)        
-        
         
       
     end
@@ -225,7 +214,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.affiliate_marketing = false
           expect(instance.affiliate_marketing).to eq(false)        
         
-        
       
     end
   end
@@ -237,7 +225,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
           instance.number_pool = false
           expect(instance.number_pool).to eq(false)        
-        
         
       
     end
@@ -251,7 +238,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.age_gated = false
           expect(instance.age_gated).to eq(false)        
         
-        
       
     end
   end
@@ -263,7 +249,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
           instance.direct_lending = false
           expect(instance.direct_lending).to eq(false)        
-        
         
       
     end
@@ -277,7 +262,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.subscriber_optin = false
           expect(instance.subscriber_optin).to eq(false)        
         
-        
       
     end
   end
@@ -289,7 +273,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
           instance.subscriber_optout = false
           expect(instance.subscriber_optout).to eq(false)        
-        
         
       
     end
@@ -303,7 +286,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.subscriber_help = false
           expect(instance.subscriber_help).to eq(false)        
         
-        
       
     end
   end
@@ -315,7 +297,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
           instance.sample1 = "TEST_STRING"
           expect(instance.sample1).to eq("TEST_STRING")  
-        
         
       
     end
@@ -329,7 +310,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.sample2 = "TEST_STRING"
           expect(instance.sample2).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -341,7 +321,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
           instance.sample3 = "TEST_STRING"
           expect(instance.sample3).to eq("TEST_STRING")  
-        
         
       
     end
@@ -355,7 +334,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.sample4 = "TEST_STRING"
           expect(instance.sample4).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -367,7 +345,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
           instance.sample5 = "TEST_STRING"
           expect(instance.sample5).to eq("TEST_STRING")  
-        
         
       
     end
@@ -381,7 +358,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.message_flow = "TEST_STRING"
           expect(instance.message_flow).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -393,7 +369,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
           instance.help_message = "TEST_STRING"
           expect(instance.help_message).to eq("TEST_STRING")  
-        
         
       
     end
@@ -407,7 +382,6 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.reference_id = "TEST_STRING"
           expect(instance.reference_id).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -419,7 +393,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
           instance.mock = false
           expect(instance.mock).to eq(false)        
-        
         
       
     end
@@ -433,10 +406,1588 @@ describe Freeclimb::SMSTenDLCCampaign do
           instance.next_renewal_or_expiration_date = "2000-01-01"
           expect(instance.next_renewal_or_expiration_date).to eq("2000-01-01")  
         
-        
       
     end
   end
   
   
+  describe 'test method "initialize"' do
+    it 'properly initializes with values' do
+        expect{instance = Freeclimb::SMSTenDLCCampaign.new(
+          
+          account_id: "TS",
+          
+          
+          campaign_id: "TS",
+          
+          
+          csp_id: "TS",
+          
+          
+          reseller_id: "TS",
+          
+          
+          status: "ACTIVE",
+          
+          create_date: "2022-07-05T15:17:05Z",
+          
+          auto_renewal: true,
+          
+          billed_date: "2022-07-05T15:17:05Z",
+          
+          brand_id: "TS",
+          
+          
+          usecase: "TS",
+          
+          
+          sub_usecases: Array.new(),
+          
+          description: "TS",
+          
+          
+          embedded_link: true,
+          
+          embedded_phone: true,
+          
+          affiliate_marketing: true,
+          
+          number_pool: true,
+          
+          age_gated: true,
+          
+          direct_lending: true,
+          
+          subscriber_optin: true,
+          
+          subscriber_optout: true,
+          
+          subscriber_help: true,
+          
+          sample1: "TS",
+          
+          
+          sample2: "TS",
+          
+          
+          sample3: "TS",
+          
+          
+          sample4: "TS",
+          
+          
+          sample5: "TS",
+          
+          
+          message_flow: "TS",
+          
+          
+          help_message: "TS",
+          
+          
+          reference_id: "TS",
+          
+          
+          mock: true,
+          
+          next_renewal_or_expiration_date: "2000-01-01",
+        )}.not_to raise_error()
+    end
+    it 'fails to initialize with input argument that is not a hash in Freeclimb::SMSTenDLCCampaign' do
+        expect{instance = Freeclimb::SMSTenDLCCampaign.new(
+          
+          account_id: "TS",
+          
+          
+          campaign_id: "TS",
+          
+          
+          csp_id: "TS",
+          
+          
+          reseller_id: "TS",
+          
+          
+          status: "ACTIVE",
+          
+          create_date: "2022-07-05T15:17:05Z",
+          
+          auto_renewal: true,
+          
+          billed_date: "2022-07-05T15:17:05Z",
+          
+          brand_id: "TS",
+          
+          
+          usecase: "TS",
+          
+          
+          sub_usecases: Array.new(),
+          
+          description: "TS",
+          
+          
+          embedded_link: true,
+          
+          embedded_phone: true,
+          
+          affiliate_marketing: true,
+          
+          number_pool: true,
+          
+          age_gated: true,
+          
+          direct_lending: true,
+          
+          subscriber_optin: true,
+          
+          subscriber_optout: true,
+          
+          subscriber_help: true,
+          
+          sample1: "TS",
+          
+          
+          sample2: "TS",
+          
+          
+          sample3: "TS",
+          
+          
+          sample4: "TS",
+          
+          
+          sample5: "TS",
+          
+          
+          message_flow: "TS",
+          
+          
+          help_message: "TS",
+          
+          
+          reference_id: "TS",
+          
+          
+          mock: true,
+          
+          next_renewal_or_expiration_date: "2000-01-01",
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+    it 'fails to initialize with invalid attribute' do
+        expect{instance = Freeclimb::SMSTenDLCCampaign.new(
+          
+          account_id: "TS",
+          
+          
+          campaign_id: "TS",
+          
+          
+          csp_id: "TS",
+          
+          
+          reseller_id: "TS",
+          
+          
+          status: "ACTIVE",
+          
+          create_date: "2022-07-05T15:17:05Z",
+          
+          auto_renewal: true,
+          
+          billed_date: "2022-07-05T15:17:05Z",
+          
+          brand_id: "TS",
+          
+          
+          usecase: "TS",
+          
+          
+          sub_usecases: Array.new(),
+          
+          description: "TS",
+          
+          
+          embedded_link: true,
+          
+          embedded_phone: true,
+          
+          affiliate_marketing: true,
+          
+          number_pool: true,
+          
+          age_gated: true,
+          
+          direct_lending: true,
+          
+          subscriber_optin: true,
+          
+          subscriber_optout: true,
+          
+          subscriber_help: true,
+          
+          sample1: "TS",
+          
+          
+          sample2: "TS",
+          
+          
+          sample3: "TS",
+          
+          
+          sample4: "TS",
+          
+          
+          sample5: "TS",
+          
+          
+          message_flow: "TS",
+          
+          
+          help_message: "TS",
+          
+          
+          reference_id: "TS",
+          
+          
+          mock: true,
+          
+          next_renewal_or_expiration_date: "2000-01-01",
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+  end
+
+  describe 'test method "valid"' do
+    it 'checks if properties are valid' do
+      instance = Freeclimb::SMSTenDLCCampaign.new(
+          
+          account_id: "TS",
+          
+          
+          campaign_id: "TS",
+          
+          
+          csp_id: "TS",
+          
+          
+          reseller_id: "TS",
+          
+          
+          status: "ACTIVE",
+          
+          create_date: "2022-07-05T15:17:05Z",
+          
+          auto_renewal: true,
+          
+          billed_date: "2022-07-05T15:17:05Z",
+          
+          brand_id: "TS",
+          
+          
+          usecase: "TS",
+          
+          
+          sub_usecases: Array.new(),
+          
+          description: "TS",
+          
+          
+          embedded_link: true,
+          
+          embedded_phone: true,
+          
+          affiliate_marketing: true,
+          
+          number_pool: true,
+          
+          age_gated: true,
+          
+          direct_lending: true,
+          
+          subscriber_optin: true,
+          
+          subscriber_optout: true,
+          
+          subscriber_help: true,
+          
+          sample1: "TS",
+          
+          
+          sample2: "TS",
+          
+          
+          sample3: "TS",
+          
+          
+          sample4: "TS",
+          
+          
+          sample5: "TS",
+          
+          
+          message_flow: "TS",
+          
+          
+          help_message: "TS",
+          
+          
+          reference_id: "TS",
+          
+          
+          mock: true,
+          
+          next_renewal_or_expiration_date: "2000-01-01",
+      )
+      expect(instance.valid?).to eq(true)
+    end
+  end
+
+  describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      instance_1 = Freeclimb::SMSTenDLCCampaign.new(
+          
+          account_id: "TS",
+          
+          
+          campaign_id: "TS",
+          
+          
+          csp_id: "TS",
+          
+          
+          reseller_id: "TS",
+          
+          
+          status: "ACTIVE",
+          
+          
+          auto_renewal: true,
+          
+          
+          brand_id: "TS",
+          
+          
+          usecase: "TS",
+          
+          
+          sub_usecases: [],
+          
+          description: "TS",
+          
+          
+          embedded_link: true,
+          
+          embedded_phone: true,
+          
+          affiliate_marketing: true,
+          
+          number_pool: true,
+          
+          age_gated: true,
+          
+          direct_lending: true,
+          
+          subscriber_optin: true,
+          
+          subscriber_optout: true,
+          
+          subscriber_help: true,
+          
+          sample1: "TS",
+          
+          
+          sample2: "TS",
+          
+          
+          sample3: "TS",
+          
+          
+          sample4: "TS",
+          
+          
+          sample5: "TS",
+          
+          
+          message_flow: "TS",
+          
+          
+          help_message: "TS",
+          
+          
+          reference_id: "TS",
+          
+          
+          mock: true,
+          
+      )
+      instance_2 = Freeclimb::SMSTenDLCCampaign.new(
+          
+          account_id: "TS",
+          
+          
+          campaign_id: "TS",
+          
+          
+          csp_id: "TS",
+          
+          
+          reseller_id: "TS",
+          
+          
+          status: "ACTIVE",
+          
+          
+          auto_renewal: true,
+          
+          
+          brand_id: "TS",
+          
+          
+          usecase: "TS",
+          
+          
+          sub_usecases: [],
+          
+          description: "TS",
+          
+          
+          embedded_link: true,
+          
+          embedded_phone: true,
+          
+          affiliate_marketing: true,
+          
+          number_pool: true,
+          
+          age_gated: true,
+          
+          direct_lending: true,
+          
+          subscriber_optin: true,
+          
+          subscriber_optout: true,
+          
+          subscriber_help: true,
+          
+          sample1: "TS",
+          
+          
+          sample2: "TS",
+          
+          
+          sample3: "TS",
+          
+          
+          sample4: "TS",
+          
+          
+          sample5: "TS",
+          
+          
+          message_flow: "TS",
+          
+          
+          help_message: "TS",
+          
+          
+          reference_id: "TS",
+          
+          
+          mock: true,
+          
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::SMSTenDLCCampaign.new(
+          
+          account_id: "TS",
+          
+          
+          campaign_id: "TS",
+          
+          
+          csp_id: "TS",
+          
+          
+          reseller_id: "TS",
+          
+          
+          status: "ACTIVE",
+          
+          
+          auto_renewal: true,
+          
+          
+          brand_id: "TS",
+          
+          
+          usecase: "TS",
+          
+          
+          sub_usecases: [],
+          
+          description: "TS",
+          
+          
+          embedded_link: true,
+          
+          embedded_phone: true,
+          
+          affiliate_marketing: true,
+          
+          number_pool: true,
+          
+          age_gated: true,
+          
+          direct_lending: true,
+          
+          subscriber_optin: true,
+          
+          subscriber_optout: true,
+          
+          subscriber_help: true,
+          
+          sample1: "TS",
+          
+          
+          sample2: "TS",
+          
+          
+          sample3: "TS",
+          
+          
+          sample4: "TS",
+          
+          
+          sample5: "TS",
+          
+          
+          message_flow: "TS",
+          
+          
+          help_message: "TS",
+          
+          
+          reference_id: "TS",
+          
+          
+          mock: true,
+          
+      )
+      instance_2 = Freeclimb::SMSTenDLCCampaign.new(
+          
+          account_id: "ST",
+          
+          
+          campaign_id: "ST",
+          
+          
+          csp_id: "ST",
+          
+          
+          reseller_id: "ST",
+          
+          
+          status: "EXPIRED",
+          
+          
+          auto_renewal: false,
+          
+          
+          brand_id: "ST",
+          
+          
+          usecase: "ST",
+          
+          
+          sub_usecases: nil,
+          
+          description: "ST",
+          
+          
+          embedded_link: false,
+          
+          embedded_phone: false,
+          
+          affiliate_marketing: false,
+          
+          number_pool: false,
+          
+          age_gated: false,
+          
+          direct_lending: false,
+          
+          subscriber_optin: false,
+          
+          subscriber_optout: false,
+          
+          subscriber_help: false,
+          
+          sample1: "ST",
+          
+          
+          sample2: "ST",
+          
+          
+          sample3: "ST",
+          
+          
+          sample4: "ST",
+          
+          
+          sample5: "ST",
+          
+          
+          message_flow: "ST",
+          
+          
+          help_message: "ST",
+          
+          
+          reference_id: "ST",
+          
+          
+          mock: false,
+          
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
+  end
+
+  describe 'test method "hash"' do
+    it 'calculates hash code' do
+      instance = Freeclimb::SMSTenDLCCampaign.new(
+        
+        account_id: "TS",
+        
+        
+        campaign_id: "TS",
+        
+        
+        csp_id: "TS",
+        
+        
+        reseller_id: "TS",
+        
+        
+        status: "ACTIVE",
+        
+        create_date: "2022-07-05T15:17:05Z",
+        
+        auto_renewal: true,
+        
+        billed_date: "2022-07-05T15:17:05Z",
+        
+        brand_id: "TS",
+        
+        
+        usecase: "TS",
+        
+        
+        sub_usecases: Array.new(),
+        
+        description: "TS",
+        
+        
+        embedded_link: true,
+        
+        embedded_phone: true,
+        
+        affiliate_marketing: true,
+        
+        number_pool: true,
+        
+        age_gated: true,
+        
+        direct_lending: true,
+        
+        subscriber_optin: true,
+        
+        subscriber_optout: true,
+        
+        subscriber_help: true,
+        
+        sample1: "TS",
+        
+        
+        sample2: "TS",
+        
+        
+        sample3: "TS",
+        
+        
+        sample4: "TS",
+        
+        
+        sample5: "TS",
+        
+        
+        message_flow: "TS",
+        
+        
+        help_message: "TS",
+        
+        
+        reference_id: "TS",
+        
+        
+        mock: true,
+        
+        next_renewal_or_expiration_date: "2000-01-01",
+    )
+    expect(instance.hash).to be_a_kind_of(Integer)
+    end
+  end
+
+  describe 'test method "build_from_hash"' do
+    it 'builds equivalent model from hash code' do
+      instance_1 = Freeclimb::SMSTenDLCCampaign.new(
+        
+        account_id: "TS",
+        
+        
+        campaign_id: "TS",
+        
+        
+        csp_id: "TS",
+        
+        
+        reseller_id: "TS",
+        
+        
+        status: "ACTIVE",
+        
+        create_date: "2022-07-05T15:17:05Z",
+        
+        auto_renewal: true,
+        
+        billed_date: "2022-07-05T15:17:05Z",
+        
+        brand_id: "TS",
+        
+        
+        usecase: "TS",
+        
+        
+        sub_usecases: Array.new(),
+        
+        description: "TS",
+        
+        
+        embedded_link: true,
+        
+        embedded_phone: true,
+        
+        affiliate_marketing: true,
+        
+        number_pool: true,
+        
+        age_gated: true,
+        
+        direct_lending: true,
+        
+        subscriber_optin: true,
+        
+        subscriber_optout: true,
+        
+        subscriber_help: true,
+        
+        sample1: "TS",
+        
+        
+        sample2: "TS",
+        
+        
+        sample3: "TS",
+        
+        
+        sample4: "TS",
+        
+        
+        sample5: "TS",
+        
+        
+        message_flow: "TS",
+        
+        
+        help_message: "TS",
+        
+        
+        reference_id: "TS",
+        
+        
+        mock: true,
+        
+        next_renewal_or_expiration_date: "2000-01-01",
+      )
+      instance_2 = Freeclimb::SMSTenDLCCampaign.new
+      expect(instance_2.build_from_hash(instance.hash)).to eq(instance.build_from_hash(instance.hash))
+    end
+  end
+
+  describe 'test method "_deserialize"' do
+    instance = Freeclimb::SMSTenDLCCampaign.new(
+        
+        account_id: "TS",
+        
+        
+        campaign_id: "TS",
+        
+        
+        csp_id: "TS",
+        
+        
+        reseller_id: "TS",
+        
+        
+        status: "ACTIVE",
+        
+        create_date: "2022-07-05T15:17:05Z",
+        
+        auto_renewal: true,
+        
+        billed_date: "2022-07-05T15:17:05Z",
+        
+        brand_id: "TS",
+        
+        
+        usecase: "TS",
+        
+        
+        sub_usecases: Array.new(),
+        
+        description: "TS",
+        
+        
+        embedded_link: true,
+        
+        embedded_phone: true,
+        
+        affiliate_marketing: true,
+        
+        number_pool: true,
+        
+        age_gated: true,
+        
+        direct_lending: true,
+        
+        subscriber_optin: true,
+        
+        subscriber_optout: true,
+        
+        subscriber_help: true,
+        
+        sample1: "TS",
+        
+        
+        sample2: "TS",
+        
+        
+        sample3: "TS",
+        
+        
+        sample4: "TS",
+        
+        
+        sample5: "TS",
+        
+        
+        message_flow: "TS",
+        
+        
+        help_message: "TS",
+        
+        
+        reference_id: "TS",
+        
+        
+        mock: true,
+        
+        next_renewal_or_expiration_date: "2000-01-01",
+    )
+    
+    it 'deserializes the data of account_id' do
+      expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of campaign_id' do
+      expect(instance._deserialize("String", instance.campaign_id)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of csp_id' do
+      expect(instance._deserialize("String", instance.csp_id)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of reseller_id' do
+      expect(instance._deserialize("String", instance.reseller_id)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of status' do
+      expect(instance._deserialize("String", instance.status)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of create_date' do
+      expect(instance._deserialize("Time", instance.create_date)).to be_a_kind_of(Time)
+    end
+    
+    
+    
+    
+    it 'deserializes the data of auto_renewal' do
+      expect(instance._deserialize("Boolean", instance.auto_renewal)).to be_a_kind_of(TrueClass)
+    end
+    
+    it 'deserializes the data of billed_date' do
+      expect(instance._deserialize("Time", instance.billed_date)).to be_a_kind_of(Time)
+    end
+    
+    
+    
+    it 'deserializes the data of brand_id' do
+      expect(instance._deserialize("String", instance.brand_id)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of usecase' do
+      expect(instance._deserialize("String", instance.usecase)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of sub_usecases' do
+      expect(instance._deserialize("Array<String>", instance.sub_usecases)).to be_a_kind_of(Array)
+    end
+    
+    
+    it 'deserializes the data of description' do
+      expect(instance._deserialize("String", instance.description)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    
+    it 'deserializes the data of embedded_link' do
+      expect(instance._deserialize("Boolean", instance.embedded_link)).to be_a_kind_of(TrueClass)
+    end
+    
+    
+    it 'deserializes the data of embedded_phone' do
+      expect(instance._deserialize("Boolean", instance.embedded_phone)).to be_a_kind_of(TrueClass)
+    end
+    
+    
+    it 'deserializes the data of affiliate_marketing' do
+      expect(instance._deserialize("Boolean", instance.affiliate_marketing)).to be_a_kind_of(TrueClass)
+    end
+    
+    
+    it 'deserializes the data of number_pool' do
+      expect(instance._deserialize("Boolean", instance.number_pool)).to be_a_kind_of(TrueClass)
+    end
+    
+    
+    it 'deserializes the data of age_gated' do
+      expect(instance._deserialize("Boolean", instance.age_gated)).to be_a_kind_of(TrueClass)
+    end
+    
+    
+    it 'deserializes the data of direct_lending' do
+      expect(instance._deserialize("Boolean", instance.direct_lending)).to be_a_kind_of(TrueClass)
+    end
+    
+    
+    it 'deserializes the data of subscriber_optin' do
+      expect(instance._deserialize("Boolean", instance.subscriber_optin)).to be_a_kind_of(TrueClass)
+    end
+    
+    
+    it 'deserializes the data of subscriber_optout' do
+      expect(instance._deserialize("Boolean", instance.subscriber_optout)).to be_a_kind_of(TrueClass)
+    end
+    
+    
+    it 'deserializes the data of subscriber_help' do
+      expect(instance._deserialize("Boolean", instance.subscriber_help)).to be_a_kind_of(TrueClass)
+    end
+    
+    it 'deserializes the data of sample1' do
+      expect(instance._deserialize("String", instance.sample1)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of sample2' do
+      expect(instance._deserialize("String", instance.sample2)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of sample3' do
+      expect(instance._deserialize("String", instance.sample3)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of sample4' do
+      expect(instance._deserialize("String", instance.sample4)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of sample5' do
+      expect(instance._deserialize("String", instance.sample5)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of message_flow' do
+      expect(instance._deserialize("String", instance.message_flow)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of help_message' do
+      expect(instance._deserialize("String", instance.help_message)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of reference_id' do
+      expect(instance._deserialize("String", instance.reference_id)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    
+    it 'deserializes the data of mock' do
+      expect(instance._deserialize("Boolean", instance.mock)).to be_a_kind_of(TrueClass)
+    end
+    
+    it 'deserializes the data of next_renewal_or_expiration_date' do
+      expect(instance._deserialize("Date", instance.next_renewal_or_expiration_date)).to be_a_kind_of(Date)
+    end
+    
+    
+  end
+
+  describe 'test method "to_s"' do
+    it 'returns the string representation of the object' do
+      instance = Freeclimb::SMSTenDLCCampaign.new(
+        
+        account_id: "TS",
+        
+        
+        campaign_id: "TS",
+        
+        
+        csp_id: "TS",
+        
+        
+        reseller_id: "TS",
+        
+        
+        status: "ACTIVE",
+        
+        create_date: "2022-07-05T15:17:05Z",
+        
+        auto_renewal: true,
+        
+        billed_date: "2022-07-05T15:17:05Z",
+        
+        brand_id: "TS",
+        
+        
+        usecase: "TS",
+        
+        
+        sub_usecases: Array.new(),
+        
+        description: "TS",
+        
+        
+        embedded_link: true,
+        
+        embedded_phone: true,
+        
+        affiliate_marketing: true,
+        
+        number_pool: true,
+        
+        age_gated: true,
+        
+        direct_lending: true,
+        
+        subscriber_optin: true,
+        
+        subscriber_optout: true,
+        
+        subscriber_help: true,
+        
+        sample1: "TS",
+        
+        
+        sample2: "TS",
+        
+        
+        sample3: "TS",
+        
+        
+        sample4: "TS",
+        
+        
+        sample5: "TS",
+        
+        
+        message_flow: "TS",
+        
+        
+        help_message: "TS",
+        
+        
+        reference_id: "TS",
+        
+        
+        mock: true,
+        
+        next_renewal_or_expiration_date: "2000-01-01",
+      )
+      expect(instance.to_s).to eq(instance.to_hash.to_s)
+    end
+  end
+
+  describe 'test method "to_hash"' do
+    it 'returns the object in the form of hash' do
+      instance = Freeclimb::SMSTenDLCCampaign.new(
+        
+        account_id: "TS",
+        
+        
+        campaign_id: "TS",
+        
+        
+        csp_id: "TS",
+        
+        
+        reseller_id: "TS",
+        
+        
+        status: "ACTIVE",
+        
+        create_date: "2022-07-05T15:17:05Z",
+        
+        auto_renewal: true,
+        
+        billed_date: "2022-07-05T15:17:05Z",
+        
+        brand_id: "TS",
+        
+        
+        usecase: "TS",
+        
+        
+        sub_usecases: Array.new(),
+        
+        description: "TS",
+        
+        
+        embedded_link: true,
+        
+        embedded_phone: true,
+        
+        affiliate_marketing: true,
+        
+        number_pool: true,
+        
+        age_gated: true,
+        
+        direct_lending: true,
+        
+        subscriber_optin: true,
+        
+        subscriber_optout: true,
+        
+        subscriber_help: true,
+        
+        sample1: "TS",
+        
+        
+        sample2: "TS",
+        
+        
+        sample3: "TS",
+        
+        
+        sample4: "TS",
+        
+        
+        sample5: "TS",
+        
+        
+        message_flow: "TS",
+        
+        
+        help_message: "TS",
+        
+        
+        reference_id: "TS",
+        
+        
+        mock: true,
+        
+        next_renewal_or_expiration_date: "2000-01-01",
+      )
+      expect(instance.to_hash).to be_a_kind_of(Hash)
+    end
+    it 'creates equal hash for two equal objects' do
+      obj = Object.new()
+      instance_1 = Freeclimb::SMSTenDLCCampaign.new(
+        
+        account_id: "TS",
+        
+        
+        campaign_id: "TS",
+        
+        
+        csp_id: "TS",
+        
+        
+        reseller_id: "TS",
+        
+        
+        status: "ACTIVE",
+        
+        create_date: "2022-07-05T15:17:05Z",
+        
+        auto_renewal: true,
+        
+        billed_date: "2022-07-05T15:17:05Z",
+        
+        brand_id: "TS",
+        
+        
+        usecase: "TS",
+        
+        
+        sub_usecases: Array.new(),
+        
+        description: "TS",
+        
+        
+        embedded_link: true,
+        
+        embedded_phone: true,
+        
+        affiliate_marketing: true,
+        
+        number_pool: true,
+        
+        age_gated: true,
+        
+        direct_lending: true,
+        
+        subscriber_optin: true,
+        
+        subscriber_optout: true,
+        
+        subscriber_help: true,
+        
+        sample1: "TS",
+        
+        
+        sample2: "TS",
+        
+        
+        sample3: "TS",
+        
+        
+        sample4: "TS",
+        
+        
+        sample5: "TS",
+        
+        
+        message_flow: "TS",
+        
+        
+        help_message: "TS",
+        
+        
+        reference_id: "TS",
+        
+        
+        mock: true,
+        
+        next_renewal_or_expiration_date: "2000-01-01",
+      )
+      instance_2 = Freeclimb::SMSTenDLCCampaign.new(
+        
+        account_id: "TS",
+        
+        
+        campaign_id: "TS",
+        
+        
+        csp_id: "TS",
+        
+        
+        reseller_id: "TS",
+        
+        
+        status: "ACTIVE",
+        
+        create_date: "2022-07-05T15:17:05Z",
+        
+        auto_renewal: true,
+        
+        billed_date: "2022-07-05T15:17:05Z",
+        
+        brand_id: "TS",
+        
+        
+        usecase: "TS",
+        
+        
+        sub_usecases: Array.new(),
+        
+        description: "TS",
+        
+        
+        embedded_link: true,
+        
+        embedded_phone: true,
+        
+        affiliate_marketing: true,
+        
+        number_pool: true,
+        
+        age_gated: true,
+        
+        direct_lending: true,
+        
+        subscriber_optin: true,
+        
+        subscriber_optout: true,
+        
+        subscriber_help: true,
+        
+        sample1: "TS",
+        
+        
+        sample2: "TS",
+        
+        
+        sample3: "TS",
+        
+        
+        sample4: "TS",
+        
+        
+        sample5: "TS",
+        
+        
+        message_flow: "TS",
+        
+        
+        help_message: "TS",
+        
+        
+        reference_id: "TS",
+        
+        
+        mock: true,
+        
+        next_renewal_or_expiration_date: "2000-01-01",
+      )
+      expect(instance_1.to_hash).to eq(instance_2.to_hash)
+    end
+  end
+
+  describe 'test method "_to_hash"' do
+    instance = Freeclimb::SMSTenDLCCampaign.new(
+        
+        account_id: "TS",
+        
+        
+        campaign_id: "TS",
+        
+        
+        csp_id: "TS",
+        
+        
+        reseller_id: "TS",
+        
+        
+        status: "ACTIVE",
+        
+        create_date: "2022-07-05T15:17:05Z",
+        
+        auto_renewal: true,
+        
+        billed_date: "2022-07-05T15:17:05Z",
+        
+        brand_id: "TS",
+        
+        
+        usecase: "TS",
+        
+        
+        sub_usecases: Array.new(),
+        
+        description: "TS",
+        
+        
+        embedded_link: true,
+        
+        embedded_phone: true,
+        
+        affiliate_marketing: true,
+        
+        number_pool: true,
+        
+        age_gated: true,
+        
+        direct_lending: true,
+        
+        subscriber_optin: true,
+        
+        subscriber_optout: true,
+        
+        subscriber_help: true,
+        
+        sample1: "TS",
+        
+        
+        sample2: "TS",
+        
+        
+        sample3: "TS",
+        
+        
+        sample4: "TS",
+        
+        
+        sample5: "TS",
+        
+        
+        message_flow: "TS",
+        
+        
+        help_message: "TS",
+        
+        
+        reference_id: "TS",
+        
+        
+        mock: true,
+        
+        next_renewal_or_expiration_date: "2000-01-01",
+    )
+    it 'returns account_id in the form of hash' do
+      expect(instance._to_hash(instance.account_id)).to eq(instance.account_id)
+    end
+    it 'returns campaign_id in the form of hash' do
+      expect(instance._to_hash(instance.campaign_id)).to eq(instance.campaign_id)
+    end
+    it 'returns csp_id in the form of hash' do
+      expect(instance._to_hash(instance.csp_id)).to eq(instance.csp_id)
+    end
+    it 'returns reseller_id in the form of hash' do
+      expect(instance._to_hash(instance.reseller_id)).to eq(instance.reseller_id)
+    end
+    it 'returns status in the form of hash' do
+      expect(instance._to_hash(instance.status)).to eq(instance.status)
+    end
+    it 'returns create_date in the form of hash' do
+      expect(instance._to_hash(instance.create_date)).to eq(instance.create_date)
+    end
+    it 'returns auto_renewal in the form of hash' do
+      expect(instance._to_hash(instance.auto_renewal)).to eq(instance.auto_renewal)
+    end
+    it 'returns billed_date in the form of hash' do
+      expect(instance._to_hash(instance.billed_date)).to eq(instance.billed_date)
+    end
+    it 'returns brand_id in the form of hash' do
+      expect(instance._to_hash(instance.brand_id)).to eq(instance.brand_id)
+    end
+    it 'returns usecase in the form of hash' do
+      expect(instance._to_hash(instance.usecase)).to eq(instance.usecase)
+    end
+    it 'returns sub_usecases in the form of hash' do
+      expect(instance._to_hash(instance.sub_usecases)).to eq(instance.sub_usecases)
+    end
+    it 'returns description in the form of hash' do
+      expect(instance._to_hash(instance.description)).to eq(instance.description)
+    end
+    it 'returns embedded_link in the form of hash' do
+      expect(instance._to_hash(instance.embedded_link)).to eq(instance.embedded_link)
+    end
+    it 'returns embedded_phone in the form of hash' do
+      expect(instance._to_hash(instance.embedded_phone)).to eq(instance.embedded_phone)
+    end
+    it 'returns affiliate_marketing in the form of hash' do
+      expect(instance._to_hash(instance.affiliate_marketing)).to eq(instance.affiliate_marketing)
+    end
+    it 'returns number_pool in the form of hash' do
+      expect(instance._to_hash(instance.number_pool)).to eq(instance.number_pool)
+    end
+    it 'returns age_gated in the form of hash' do
+      expect(instance._to_hash(instance.age_gated)).to eq(instance.age_gated)
+    end
+    it 'returns direct_lending in the form of hash' do
+      expect(instance._to_hash(instance.direct_lending)).to eq(instance.direct_lending)
+    end
+    it 'returns subscriber_optin in the form of hash' do
+      expect(instance._to_hash(instance.subscriber_optin)).to eq(instance.subscriber_optin)
+    end
+    it 'returns subscriber_optout in the form of hash' do
+      expect(instance._to_hash(instance.subscriber_optout)).to eq(instance.subscriber_optout)
+    end
+    it 'returns subscriber_help in the form of hash' do
+      expect(instance._to_hash(instance.subscriber_help)).to eq(instance.subscriber_help)
+    end
+    it 'returns sample1 in the form of hash' do
+      expect(instance._to_hash(instance.sample1)).to eq(instance.sample1)
+    end
+    it 'returns sample2 in the form of hash' do
+      expect(instance._to_hash(instance.sample2)).to eq(instance.sample2)
+    end
+    it 'returns sample3 in the form of hash' do
+      expect(instance._to_hash(instance.sample3)).to eq(instance.sample3)
+    end
+    it 'returns sample4 in the form of hash' do
+      expect(instance._to_hash(instance.sample4)).to eq(instance.sample4)
+    end
+    it 'returns sample5 in the form of hash' do
+      expect(instance._to_hash(instance.sample5)).to eq(instance.sample5)
+    end
+    it 'returns message_flow in the form of hash' do
+      expect(instance._to_hash(instance.message_flow)).to eq(instance.message_flow)
+    end
+    it 'returns help_message in the form of hash' do
+      expect(instance._to_hash(instance.help_message)).to eq(instance.help_message)
+    end
+    it 'returns reference_id in the form of hash' do
+      expect(instance._to_hash(instance.reference_id)).to eq(instance.reference_id)
+    end
+    it 'returns mock in the form of hash' do
+      expect(instance._to_hash(instance.mock)).to eq(instance.mock)
+    end
+    it 'returns next_renewal_or_expiration_date in the form of hash' do
+      expect(instance._to_hash(instance.next_renewal_or_expiration_date)).to eq(instance.next_renewal_or_expiration_date)
+    end
+  end
 end

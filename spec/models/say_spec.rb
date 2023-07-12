@@ -32,7 +32,6 @@ describe Freeclimb::Say do
           instance.text = "TEST_STRING"
           expect(instance.text).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -44,7 +43,6 @@ describe Freeclimb::Say do
       
           instance.language = "TEST_STRING"
           expect(instance.language).to eq("TEST_STRING")  
-        
         
       
     end
@@ -58,7 +56,6 @@ describe Freeclimb::Say do
           instance.loop = 1
           expect(instance.loop).to eq(1) 
         
-        
       
     end
   end
@@ -71,7 +68,6 @@ describe Freeclimb::Say do
           instance.conference_id = "TEST_STRING"
           expect(instance.conference_id).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -83,7 +79,6 @@ describe Freeclimb::Say do
       
           instance.privacy_mode = false
           expect(instance.privacy_mode).to eq(false)        
-        
         
       
     end

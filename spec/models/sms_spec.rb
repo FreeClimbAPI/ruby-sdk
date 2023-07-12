@@ -32,7 +32,6 @@ describe Freeclimb::Sms do
           instance.to = "TEST_STRING"
           expect(instance.to).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -44,7 +43,6 @@ describe Freeclimb::Sms do
       
           instance.from = "TEST_STRING"
           expect(instance.from).to eq("TEST_STRING")  
-        
         
       
     end
@@ -58,7 +56,6 @@ describe Freeclimb::Sms do
           instance.text = "TEST_STRING"
           expect(instance.text).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -70,7 +67,6 @@ describe Freeclimb::Sms do
       
           instance.notification_url = "TEST_STRING"
           expect(instance.notification_url).to eq("TEST_STRING")  
-        
         
       
     end

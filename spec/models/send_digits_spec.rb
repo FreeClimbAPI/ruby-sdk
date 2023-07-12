@@ -32,7 +32,6 @@ describe Freeclimb::SendDigits do
           instance.digits = "TEST_STRING"
           expect(instance.digits).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -45,7 +44,6 @@ describe Freeclimb::SendDigits do
           instance.pause_ms = 1
           expect(instance.pause_ms).to eq(1) 
         
-        
       
     end
   end
@@ -57,7 +55,6 @@ describe Freeclimb::SendDigits do
       
           instance.privacy_mode = false
           expect(instance.privacy_mode).to eq(false)        
-        
         
       
     end

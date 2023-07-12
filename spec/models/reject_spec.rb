@@ -32,7 +32,6 @@ describe Freeclimb::Reject do
           instance.reason = "TEST_STRING"
           expect(instance.reason).to eq("TEST_STRING")  
         
-        
       
     end
   end

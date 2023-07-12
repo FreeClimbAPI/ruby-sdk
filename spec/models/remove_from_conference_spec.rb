@@ -32,7 +32,6 @@ describe Freeclimb::RemoveFromConference do
           instance.call_id = "TEST_STRING"
           expect(instance.call_id).to eq("TEST_STRING")  
         
-        
       
     end
   end

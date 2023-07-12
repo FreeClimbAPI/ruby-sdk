@@ -32,7 +32,6 @@ describe Freeclimb::MutableResourceModel do
           instance.uri = "TEST_STRING"
           expect(instance.uri).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -44,7 +43,6 @@ describe Freeclimb::MutableResourceModel do
       
           instance.date_created = "TEST_STRING"
           expect(instance.date_created).to eq("TEST_STRING")  
-        
         
       
     end
@@ -58,7 +56,6 @@ describe Freeclimb::MutableResourceModel do
           instance.date_updated = "TEST_STRING"
           expect(instance.date_updated).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -71,10 +68,313 @@ describe Freeclimb::MutableResourceModel do
           instance.revision = 1
           expect(instance.revision).to eq(1) 
         
-        
       
     end
   end
   
   
+  describe 'test method "initialize"' do
+    it 'properly initializes with values' do
+        expect{instance = Freeclimb::MutableResourceModel.new(
+          
+          uri: "TS",
+          
+          
+          date_created: "TS",
+          
+          
+          date_updated: "TS",
+          
+          
+          revision: 1,
+        )}.not_to raise_error()
+    end
+    it 'fails to initialize with input argument that is not a hash in Freeclimb::MutableResourceModel' do
+        expect{instance = Freeclimb::MutableResourceModel.new(
+          
+          uri: "TS",
+          
+          
+          date_created: "TS",
+          
+          
+          date_updated: "TS",
+          
+          
+          revision: 1,
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+    it 'fails to initialize with invalid attribute' do
+        expect{instance = Freeclimb::MutableResourceModel.new(
+          
+          uri: "TS",
+          
+          
+          date_created: "TS",
+          
+          
+          date_updated: "TS",
+          
+          
+          revision: 1,
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+  end
+
+  describe 'test method "valid"' do
+    it 'checks if properties are valid' do
+      instance = Freeclimb::MutableResourceModel.new(
+          
+          uri: "TS",
+          
+          
+          date_created: "TS",
+          
+          
+          date_updated: "TS",
+          
+          
+          revision: 1,
+      )
+      expect(instance.valid?).to eq(true)
+    end
+  end
+
+  describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      instance_1 = Freeclimb::MutableResourceModel.new(
+          
+          uri: "TS",
+          
+          
+          date_created: "TS",
+          
+          
+          date_updated: "TS",
+          
+          
+          revision: 1,
+      )
+      instance_2 = Freeclimb::MutableResourceModel.new(
+          
+          uri: "TS",
+          
+          
+          date_created: "TS",
+          
+          
+          date_updated: "TS",
+          
+          
+          revision: 1,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::MutableResourceModel.new(
+          
+          uri: "TS",
+          
+          
+          date_created: "TS",
+          
+          
+          date_updated: "TS",
+          
+          
+          revision: 1,
+      )
+      instance_2 = Freeclimb::MutableResourceModel.new(
+          
+          uri: "ST",
+          
+          
+          date_created: "ST",
+          
+          
+          date_updated: "ST",
+          
+          
+          revision: 0,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
+  end
+
+  describe 'test method "hash"' do
+    it 'calculates hash code' do
+      instance = Freeclimb::MutableResourceModel.new(
+        
+        uri: "TS",
+        
+        
+        date_created: "TS",
+        
+        
+        date_updated: "TS",
+        
+        
+        revision: 1,
+    )
+    expect(instance.hash).to be_a_kind_of(Integer)
+    end
+  end
+
+  describe 'test method "build_from_hash"' do
+    it 'builds equivalent model from hash code' do
+      instance_1 = Freeclimb::MutableResourceModel.new(
+        
+        uri: "TS",
+        
+        
+        date_created: "TS",
+        
+        
+        date_updated: "TS",
+        
+        
+        revision: 1,
+      )
+      instance_2 = Freeclimb::MutableResourceModel.new
+      expect(instance_2.build_from_hash(instance.hash)).to eq(instance.build_from_hash(instance.hash))
+    end
+  end
+
+  describe 'test method "_deserialize"' do
+    instance = Freeclimb::MutableResourceModel.new(
+        
+        uri: "TS",
+        
+        
+        date_created: "TS",
+        
+        
+        date_updated: "TS",
+        
+        
+        revision: 1,
+    )
+    
+    it 'deserializes the data of uri' do
+      expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of date_created' do
+      expect(instance._deserialize("String", instance.date_created)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of date_updated' do
+      expect(instance._deserialize("String", instance.date_updated)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of revision' do
+      expect(instance._deserialize("Integer", instance.revision)).to be_a_kind_of(Integer)
+    end
+    
+    
+  end
+
+  describe 'test method "to_s"' do
+    it 'returns the string representation of the object' do
+      instance = Freeclimb::MutableResourceModel.new(
+        
+        uri: "TS",
+        
+        
+        date_created: "TS",
+        
+        
+        date_updated: "TS",
+        
+        
+        revision: 1,
+      )
+      expect(instance.to_s).to eq(instance.to_hash.to_s)
+    end
+  end
+
+  describe 'test method "to_hash"' do
+    it 'returns the object in the form of hash' do
+      instance = Freeclimb::MutableResourceModel.new(
+        
+        uri: "TS",
+        
+        
+        date_created: "TS",
+        
+        
+        date_updated: "TS",
+        
+        
+        revision: 1,
+      )
+      expect(instance.to_hash).to be_a_kind_of(Hash)
+    end
+    it 'creates equal hash for two equal objects' do
+      obj = Object.new()
+      instance_1 = Freeclimb::MutableResourceModel.new(
+        
+        uri: "TS",
+        
+        
+        date_created: "TS",
+        
+        
+        date_updated: "TS",
+        
+        
+        revision: 1,
+      )
+      instance_2 = Freeclimb::MutableResourceModel.new(
+        
+        uri: "TS",
+        
+        
+        date_created: "TS",
+        
+        
+        date_updated: "TS",
+        
+        
+        revision: 1,
+      )
+      expect(instance_1.to_hash).to eq(instance_2.to_hash)
+    end
+  end
+
+  describe 'test method "_to_hash"' do
+    instance = Freeclimb::MutableResourceModel.new(
+        
+        uri: "TS",
+        
+        
+        date_created: "TS",
+        
+        
+        date_updated: "TS",
+        
+        
+        revision: 1,
+    )
+    it 'returns uri in the form of hash' do
+      expect(instance._to_hash(instance.uri)).to eq(instance.uri)
+    end
+    it 'returns date_created in the form of hash' do
+      expect(instance._to_hash(instance.date_created)).to eq(instance.date_created)
+    end
+    it 'returns date_updated in the form of hash' do
+      expect(instance._to_hash(instance.date_updated)).to eq(instance.date_updated)
+    end
+    it 'returns revision in the form of hash' do
+      expect(instance._to_hash(instance.revision)).to eq(instance.revision)
+    end
+  end
 end

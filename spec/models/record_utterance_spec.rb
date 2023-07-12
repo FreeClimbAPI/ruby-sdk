@@ -32,7 +32,6 @@ describe Freeclimb::RecordUtterance do
           instance.action_url = "TEST_STRING"
           expect(instance.action_url).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -44,7 +43,6 @@ describe Freeclimb::RecordUtterance do
       
           instance.silence_timeout_ms = 1
           expect(instance.silence_timeout_ms).to eq(1) 
-        
         
       
     end
@@ -58,7 +56,6 @@ describe Freeclimb::RecordUtterance do
           instance.finish_on_key = "TEST_STRING"
           expect(instance.finish_on_key).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -70,7 +67,6 @@ describe Freeclimb::RecordUtterance do
       
           instance.max_length_sec = 1
           expect(instance.max_length_sec).to eq(1) 
-        
         
       
     end
@@ -84,7 +80,6 @@ describe Freeclimb::RecordUtterance do
           instance.play_beep = false
           expect(instance.play_beep).to eq(false)        
         
-        
       
     end
   end
@@ -97,7 +92,6 @@ describe Freeclimb::RecordUtterance do
           instance.auto_start = false
           expect(instance.auto_start).to eq(false)        
         
-        
       
     end
   end
@@ -109,7 +103,6 @@ describe Freeclimb::RecordUtterance do
       
           instance.privacy_mode = false
           expect(instance.privacy_mode).to eq(false)        
-        
         
       
     end

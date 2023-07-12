@@ -32,7 +32,6 @@ describe Freeclimb::SetTalk do
           instance.call_id = "TEST_STRING"
           expect(instance.call_id).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -44,7 +43,6 @@ describe Freeclimb::SetTalk do
       
           instance.talk = false
           expect(instance.talk).to eq(false)        
-        
         
       
     end

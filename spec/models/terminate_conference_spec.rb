@@ -32,7 +32,6 @@ describe Freeclimb::TerminateConference do
           instance.conference_id = "TEST_STRING"
           expect(instance.conference_id).to eq("TEST_STRING")  
         
-        
       
     end
   end

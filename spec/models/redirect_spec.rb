@@ -32,7 +32,6 @@ describe Freeclimb::Redirect do
           instance.action_url = "TEST_STRING"
           expect(instance.action_url).to eq("TEST_STRING")  
         
-        
       
     end
   end

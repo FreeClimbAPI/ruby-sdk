@@ -32,7 +32,6 @@ describe Freeclimb::AddToConference do
           instance.allow_call_control = false
           expect(instance.allow_call_control).to eq(false)        
         
-        
       
     end
   end
@@ -44,7 +43,6 @@ describe Freeclimb::AddToConference do
       
           instance.call_control_sequence = "TEST_STRING"
           expect(instance.call_control_sequence).to eq("TEST_STRING")  
-        
         
       
     end
@@ -58,7 +56,6 @@ describe Freeclimb::AddToConference do
           instance.call_control_url = "TEST_STRING"
           expect(instance.call_control_url).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -70,7 +67,6 @@ describe Freeclimb::AddToConference do
       
           instance.conference_id = "TEST_STRING"
           expect(instance.conference_id).to eq("TEST_STRING")  
-        
         
       
     end
@@ -84,7 +80,6 @@ describe Freeclimb::AddToConference do
           instance.call_id = false
           expect(instance.call_id).to eq(false)        
         
-        
       
     end
   end
@@ -96,7 +91,6 @@ describe Freeclimb::AddToConference do
       
           instance.leave_conference_url = "TEST_STRING"
           expect(instance.leave_conference_url).to eq("TEST_STRING")  
-        
         
       
     end
@@ -110,7 +104,6 @@ describe Freeclimb::AddToConference do
           instance.listen = false
           expect(instance.listen).to eq(false)        
         
-        
       
     end
   end
@@ -122,7 +115,6 @@ describe Freeclimb::AddToConference do
       
           instance.notification_url = "TEST_STRING"
           expect(instance.notification_url).to eq("TEST_STRING")  
-        
         
       
     end
@@ -136,7 +128,6 @@ describe Freeclimb::AddToConference do
           instance.start_conf_on_enter = false
           expect(instance.start_conf_on_enter).to eq(false)        
         
-        
       
     end
   end
@@ -148,7 +139,6 @@ describe Freeclimb::AddToConference do
       
           instance.talk = false
           expect(instance.talk).to eq(false)        
-        
         
       
     end

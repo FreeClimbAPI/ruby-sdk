@@ -32,7 +32,6 @@ describe Freeclimb::Pause do
           instance.length = 1
           expect(instance.length).to eq(1) 
         
-        
       
     end
   end

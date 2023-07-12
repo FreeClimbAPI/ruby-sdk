@@ -32,7 +32,6 @@ describe Freeclimb::Enqueue do
           instance.action_url = "TEST_STRING"
           expect(instance.action_url).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -44,7 +43,6 @@ describe Freeclimb::Enqueue do
       
           instance.notification_url = "TEST_STRING"
           expect(instance.notification_url).to eq("TEST_STRING")  
-        
         
       
     end
@@ -58,7 +56,6 @@ describe Freeclimb::Enqueue do
           instance.queue_id = "TEST_STRING"
           expect(instance.queue_id).to eq("TEST_STRING")  
         
-        
       
     end
   end
@@ -70,7 +67,6 @@ describe Freeclimb::Enqueue do
       
           instance.wait_url = "TEST_STRING"
           expect(instance.wait_url).to eq("TEST_STRING")  
-        
         
       
     end

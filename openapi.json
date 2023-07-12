@@ -1259,6 +1259,7 @@
         "description": "Details for which features this number may be used.",
         "type": "object",
         "required": ["voice", "sms", "tollFree", "tenDLC", "shortCode"],
+        "x-is-object": true,
         "properties": {
           "voice": {
             "description": "Indicates whether a number can be used for voice calls. Replaces voiceEnabled.",
@@ -1526,7 +1527,7 @@
             "type": "object",
             "properties": {
               "capabilities": {
-                "$ref": "#/components/schemas/Capabilities"
+                "$ref": "#/components/schemas/Capabilities"              
               },
               "campaignId": {
                 "type": "string",
@@ -2815,6 +2816,7 @@
           "phone"
         ],
         "type": "object",
+        "x-is-object": true,
         "properties": {
           "accountId": {
             "type": "string",
@@ -2869,6 +2871,7 @@
           },
           "optionalAttributes": {
             "type": "object",
+            "x-is-hash": true,
             "additionalProperties": {
               "type": "object",
               "description": "Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names."
@@ -3165,6 +3168,7 @@
           },
           "optionalAttributes": {
             "type": "object",
+            "x-is-hash": true,
             "additionalProperties": {
               "type": "object",
               "description": "Optional brand attributes. Please refer to GET /enum/optionalAttributeNames for dictionary of optional attribute names."
