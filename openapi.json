@@ -575,6 +575,7 @@
       "Dequeue": {
         "description": "The `Dequeue` command transfers control of a Call that is in a Queue so that the waiting caller exits the Queue. Execution continues with the first command in the PerCL script returned by the `actionUrl` specified in the `Enqueue` command.",
         "x-percl-command": true,
+        "x-no-properties": true,
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -1154,6 +1155,7 @@
       "StartRecordCall": {
         "description": "The `StartRecordCall` command records the current call and returns the URL of a file containing the audio recording when recording completes. `StartRecordCall` is non-blocking. After recording of the current call begins, control of the call moves to the PerCL command that follows `StartRecordCall` in the current PerCL script.",
         "x-percl-command": true,
+        "x-no-properties": true,
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -1185,6 +1187,7 @@
       "Unpark": {
         "description": "The `Unpark` command resumes a parked call.  Execution continues with the first command in the PerCL scripted returned by the actionUrl specified in the Park command as long as the call is still in progress.  If the call is no longer in progress, any returned PerCL will not be executed. Unpark is a terminal command -- any commands following it in the same script are not executed.",
         "x-percl-command": true,
+        "x-no-properties": true,
         "allOf": [
           {
             "$ref": "#/components/schemas/PerclCommand"
@@ -2402,6 +2405,7 @@
           },
           "status": {
             "type": "string",
+            "x-has-writer": true,
             "description": "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. ",
             "enum": [
               "ACTIVE",
@@ -2626,6 +2630,7 @@
           },
           "status": {
             "type": "string",
+            "x-has-writer": true,
             "description": "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. ",
             "enum": [
               "ACTIVE",
@@ -2925,6 +2930,7 @@
           "entityType": {
             "maxLength": 20,
             "type": "string",
+            "x-has-writer": true,
             "description": "Entity type behind the brand. This is the form of business establishment.",
             "enum": [
               "PRIVATE_PROFIT",
@@ -3040,6 +3046,7 @@
           },
           "stockExchange": {
             "type": "string",
+            "x-has-writer": true,
             "description": "(Required for public company) stock exchange.",
             "example": "NASDAQ",
             "enum": [
@@ -3114,6 +3121,7 @@
           },
           "brandRelationship": {
             "type": "string",
+            "x-has-writer": true,
             "description": "Brand relationship to the CSP",
             "enum": [
               "BASIC_ACCOUNT",
@@ -3142,6 +3150,7 @@
           },
           "altBusinessIdType": {
             "type": "string",
+            "x-has-writer": true,
             "enum": [
               "NONE",
               "DUNS",
@@ -3181,6 +3190,7 @@
           },
           "identityStatus": {
             "type": "string",
+            "x-has-writer": true,
             "description": "TCR assessment of the brand identification status.",
             "enum": [
               "SELF_DECLARED",

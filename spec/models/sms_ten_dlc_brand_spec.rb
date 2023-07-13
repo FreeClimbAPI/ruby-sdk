@@ -36,44 +36,33 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
   
-  
 
-  
   describe 'test attribute "entity_type"' do
     it 'assigns value PRIVATE_PROFIT' do
       instance.entity_type = "PRIVATE_PROFIT"
       expect(instance.entity_type).to eq("PRIVATE_PROFIT")  
     end
-  end
-  
-  describe 'test attribute "entity_type"' do
     it 'assigns value PUBLIC_PROFIT' do
       instance.entity_type = "PUBLIC_PROFIT"
       expect(instance.entity_type).to eq("PUBLIC_PROFIT")  
     end
-  end
-  
-  describe 'test attribute "entity_type"' do
     it 'assigns value NON_PROFIT' do
       instance.entity_type = "NON_PROFIT"
       expect(instance.entity_type).to eq("NON_PROFIT")  
     end
-  end
-  
-  describe 'test attribute "entity_type"' do
     it 'assigns value GOVERNMENT' do
       instance.entity_type = "GOVERNMENT"
       expect(instance.entity_type).to eq("GOVERNMENT")  
     end
-  end
-  
-  describe 'test attribute "entity_type"' do
     it 'assigns value SOLE_PROPRIETOR' do
       instance.entity_type = "SOLE_PROPRIETOR"
       expect(instance.entity_type).to eq("SOLE_PROPRIETOR")  
     end
+    it 'throws error on invalid enum' do
+      instance = Freeclimb::SMSTenDLCBrand.new
+      expect{instance.entity_type = "INVALID_ENUM"}.to raise_error(ArgumentError)
+    end
   end
-  
 
   describe 'test attribute "csp_id"' do
     it 'should work' do
@@ -84,7 +73,6 @@ describe Freeclimb::SMSTenDLCBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "brand_id"' do
@@ -97,7 +85,6 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
   
-  
 
   describe 'test attribute "first_name"' do
     it 'should work' do
@@ -108,7 +95,6 @@ describe Freeclimb::SMSTenDLCBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "last_name"' do
@@ -121,7 +107,6 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
   
-  
 
   describe 'test attribute "display_name"' do
     it 'should work' do
@@ -132,7 +117,6 @@ describe Freeclimb::SMSTenDLCBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "company_name"' do
@@ -145,7 +129,6 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
   
-  
 
   describe 'test attribute "ein"' do
     it 'should work' do
@@ -156,7 +139,6 @@ describe Freeclimb::SMSTenDLCBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "ein_issuing_country"' do
@@ -174,7 +156,6 @@ describe Freeclimb::SMSTenDLCBrand do
       expect{instance.ein_issuing_country = "TEST_STRING"}.to raise_error(ArgumentError)
     end
   end  
-  
 
   describe 'test attribute "phone"' do
     it 'should work' do
@@ -185,7 +166,6 @@ describe Freeclimb::SMSTenDLCBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "street"' do
@@ -198,7 +178,6 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
   
-  
 
   describe 'test attribute "city"' do
     it 'should work' do
@@ -210,7 +189,6 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
   
-  
 
   describe 'test attribute "state"' do
     it 'should work' do
@@ -221,7 +199,6 @@ describe Freeclimb::SMSTenDLCBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "postal_code"' do
@@ -239,7 +216,6 @@ describe Freeclimb::SMSTenDLCBrand do
       expect{instance.postal_code = "TEST_STRING"}.to raise_error(ArgumentError)
     end
   end  
-  
 
   describe 'test attribute "country"' do
     it 'should work' do
@@ -256,7 +232,6 @@ describe Freeclimb::SMSTenDLCBrand do
       expect{instance.country = "TEST_STRING"}.to raise_error(ArgumentError)
     end
   end  
-  
 
   describe 'test attribute "email"' do
     it 'should work' do
@@ -267,7 +242,6 @@ describe Freeclimb::SMSTenDLCBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "stock_symbol"' do
@@ -285,198 +259,121 @@ describe Freeclimb::SMSTenDLCBrand do
       expect{instance.stock_symbol = "TEST_STRING"}.to raise_error(ArgumentError)
     end
   end  
-  
 
-  
   describe 'test attribute "stock_exchange"' do
     it 'assigns value NONE' do
       instance.stock_exchange = "NONE"
       expect(instance.stock_exchange).to eq("NONE")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value NASDAQ' do
       instance.stock_exchange = "NASDAQ"
       expect(instance.stock_exchange).to eq("NASDAQ")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value NYSE' do
       instance.stock_exchange = "NYSE"
       expect(instance.stock_exchange).to eq("NYSE")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value AMEX' do
       instance.stock_exchange = "AMEX"
       expect(instance.stock_exchange).to eq("AMEX")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value AMX' do
       instance.stock_exchange = "AMX"
       expect(instance.stock_exchange).to eq("AMX")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value ASX' do
       instance.stock_exchange = "ASX"
       expect(instance.stock_exchange).to eq("ASX")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value B3' do
       instance.stock_exchange = "B3"
       expect(instance.stock_exchange).to eq("B3")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value BME' do
       instance.stock_exchange = "BME"
       expect(instance.stock_exchange).to eq("BME")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value BSE' do
       instance.stock_exchange = "BSE"
       expect(instance.stock_exchange).to eq("BSE")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value FRA' do
       instance.stock_exchange = "FRA"
       expect(instance.stock_exchange).to eq("FRA")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value ICEX' do
       instance.stock_exchange = "ICEX"
       expect(instance.stock_exchange).to eq("ICEX")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value JPX' do
       instance.stock_exchange = "JPX"
       expect(instance.stock_exchange).to eq("JPX")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value JSE' do
       instance.stock_exchange = "JSE"
       expect(instance.stock_exchange).to eq("JSE")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value KRX' do
       instance.stock_exchange = "KRX"
       expect(instance.stock_exchange).to eq("KRX")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value LON' do
       instance.stock_exchange = "LON"
       expect(instance.stock_exchange).to eq("LON")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value NSE' do
       instance.stock_exchange = "NSE"
       expect(instance.stock_exchange).to eq("NSE")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value OMX' do
       instance.stock_exchange = "OMX"
       expect(instance.stock_exchange).to eq("OMX")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value SEHK' do
       instance.stock_exchange = "SEHK"
       expect(instance.stock_exchange).to eq("SEHK")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value SGX' do
       instance.stock_exchange = "SGX"
       expect(instance.stock_exchange).to eq("SGX")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value SSE' do
       instance.stock_exchange = "SSE"
       expect(instance.stock_exchange).to eq("SSE")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value STO' do
       instance.stock_exchange = "STO"
       expect(instance.stock_exchange).to eq("STO")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value SWX' do
       instance.stock_exchange = "SWX"
       expect(instance.stock_exchange).to eq("SWX")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value SZSE' do
       instance.stock_exchange = "SZSE"
       expect(instance.stock_exchange).to eq("SZSE")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value TSX' do
       instance.stock_exchange = "TSX"
       expect(instance.stock_exchange).to eq("TSX")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value TWSE' do
       instance.stock_exchange = "TWSE"
       expect(instance.stock_exchange).to eq("TWSE")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value VSE' do
       instance.stock_exchange = "VSE"
       expect(instance.stock_exchange).to eq("VSE")  
     end
-  end
-  
-  describe 'test attribute "stock_exchange"' do
     it 'assigns value OTHER' do
       instance.stock_exchange = "OTHER"
       expect(instance.stock_exchange).to eq("OTHER")  
     end
+    it 'throws error on invalid enum' do
+      instance = Freeclimb::SMSTenDLCBrand.new
+      expect{instance.stock_exchange = "INVALID_ENUM"}.to raise_error(ArgumentError)
+    end
   end
-  
 
   describe 'test attribute "ip_address"' do
     it 'should work' do
@@ -487,7 +384,6 @@ describe Freeclimb::SMSTenDLCBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "website"' do
@@ -500,44 +396,33 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
   
-  
 
-  
   describe 'test attribute "brand_relationship"' do
     it 'assigns value BASIC_ACCOUNT' do
       instance.brand_relationship = "BASIC_ACCOUNT"
       expect(instance.brand_relationship).to eq("BASIC_ACCOUNT")  
     end
-  end
-  
-  describe 'test attribute "brand_relationship"' do
     it 'assigns value SMALL_ACCOUNT' do
       instance.brand_relationship = "SMALL_ACCOUNT"
       expect(instance.brand_relationship).to eq("SMALL_ACCOUNT")  
     end
-  end
-  
-  describe 'test attribute "brand_relationship"' do
     it 'assigns value MEDIUM_ACCOUNT' do
       instance.brand_relationship = "MEDIUM_ACCOUNT"
       expect(instance.brand_relationship).to eq("MEDIUM_ACCOUNT")  
     end
-  end
-  
-  describe 'test attribute "brand_relationship"' do
     it 'assigns value LARGE_ACCOUNT' do
       instance.brand_relationship = "LARGE_ACCOUNT"
       expect(instance.brand_relationship).to eq("LARGE_ACCOUNT")  
     end
-  end
-  
-  describe 'test attribute "brand_relationship"' do
     it 'assigns value KEY_ACCOUNT' do
       instance.brand_relationship = "KEY_ACCOUNT"
       expect(instance.brand_relationship).to eq("KEY_ACCOUNT")  
     end
+    it 'throws error on invalid enum' do
+      instance = Freeclimb::SMSTenDLCBrand.new
+      expect{instance.brand_relationship = "INVALID_ENUM"}.to raise_error(ArgumentError)
+    end
   end
-  
 
   describe 'test attribute "vertical"' do
     it 'should work' do
@@ -548,7 +433,6 @@ describe Freeclimb::SMSTenDLCBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "alt_business_id"' do
@@ -561,37 +445,29 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
   
-  
 
-  
   describe 'test attribute "alt_business_id_type"' do
     it 'assigns value NONE' do
       instance.alt_business_id_type = "NONE"
       expect(instance.alt_business_id_type).to eq("NONE")  
     end
-  end
-  
-  describe 'test attribute "alt_business_id_type"' do
     it 'assigns value DUNS' do
       instance.alt_business_id_type = "DUNS"
       expect(instance.alt_business_id_type).to eq("DUNS")  
     end
-  end
-  
-  describe 'test attribute "alt_business_id_type"' do
     it 'assigns value GIIN' do
       instance.alt_business_id_type = "GIIN"
       expect(instance.alt_business_id_type).to eq("GIIN")  
     end
-  end
-  
-  describe 'test attribute "alt_business_id_type"' do
     it 'assigns value LEI' do
       instance.alt_business_id_type = "LEI"
       expect(instance.alt_business_id_type).to eq("LEI")  
     end
+    it 'throws error on invalid enum' do
+      instance = Freeclimb::SMSTenDLCBrand.new
+      expect{instance.alt_business_id_type = "INVALID_ENUM"}.to raise_error(ArgumentError)
+    end
   end
-  
 
   describe 'test attribute "universal_ein"' do
     it 'should work' do
@@ -603,7 +479,6 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
   
-  
 
   describe 'test attribute "reference_id"' do
     it 'should work' do
@@ -614,7 +489,6 @@ describe Freeclimb::SMSTenDLCBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "optional_attributes"' do
@@ -628,7 +502,6 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
   
-  
 
   describe 'test attribute "mock"' do
     it 'should work' do
@@ -640,37 +513,29 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
   
-  
 
-  
   describe 'test attribute "identity_status"' do
     it 'assigns value SELF_DECLARED' do
       instance.identity_status = "SELF_DECLARED"
       expect(instance.identity_status).to eq("SELF_DECLARED")  
     end
-  end
-  
-  describe 'test attribute "identity_status"' do
     it 'assigns value UNVERIFIED' do
       instance.identity_status = "UNVERIFIED"
       expect(instance.identity_status).to eq("UNVERIFIED")  
     end
-  end
-  
-  describe 'test attribute "identity_status"' do
     it 'assigns value VERIFIED' do
       instance.identity_status = "VERIFIED"
       expect(instance.identity_status).to eq("VERIFIED")  
     end
-  end
-  
-  describe 'test attribute "identity_status"' do
     it 'assigns value VETTED_VERIFIED' do
       instance.identity_status = "VETTED_VERIFIED"
       expect(instance.identity_status).to eq("VETTED_VERIFIED")  
     end
+    it 'throws error on invalid enum' do
+      instance = Freeclimb::SMSTenDLCBrand.new
+      expect{instance.identity_status = "INVALID_ENUM"}.to raise_error(ArgumentError)
+    end
   end
-  
 
   describe 'test attribute "create_date"' do
     it 'should work' do
@@ -681,7 +546,6 @@ describe Freeclimb::SMSTenDLCBrand do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -2420,4 +2284,5 @@ describe Freeclimb::SMSTenDLCBrand do
       expect(instance._to_hash(instance.create_date)).to eq(instance.create_date)
     end
   end
+
 end

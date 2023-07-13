@@ -36,7 +36,6 @@ describe Freeclimb::AvailableNumber do
     end
   end
   
-  
 
   describe 'test attribute "campaign_id"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::AvailableNumber do
       
     end
   end
-  
   
 
   describe 'test attribute "phone_number"' do
@@ -60,7 +58,6 @@ describe Freeclimb::AvailableNumber do
     end
   end
   
-  
 
   describe 'test attribute "voice_enabled"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::AvailableNumber do
       
     end
   end
-  
   
 
   describe 'test attribute "sms_enabled"' do
@@ -84,7 +80,6 @@ describe Freeclimb::AvailableNumber do
     end
   end
   
-  
 
   describe 'test attribute "region"' do
     it 'should work' do
@@ -96,7 +91,6 @@ describe Freeclimb::AvailableNumber do
     end
   end
   
-  
 
   describe 'test attribute "country"' do
     it 'should work' do
@@ -107,7 +101,6 @@ describe Freeclimb::AvailableNumber do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -544,4 +537,5 @@ describe Freeclimb::AvailableNumber do
       expect(instance._to_hash(instance.country)).to eq(instance.country)
     end
   end
+
 end

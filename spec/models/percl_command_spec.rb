@@ -28,10 +28,8 @@ describe Freeclimb::PerclCommand do
 
   describe 'test attribute "command"' do
     it 'should work' do
-        # TODO: implement 
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -182,4 +180,29 @@ describe Freeclimb::PerclCommand do
       expect(instance._to_hash(instance.command)).to eq(instance.command)
     end
   end
+  describe 'test method "to_percl_hash"' do
+    it 'returns the object in the form of hash' do
+      instance = Freeclimb::PerclCommand.new(
+        
+        command: "PERCL_COMMAND",
+        
+      )
+      expect(instance.to_percl_hash).to be_a_kind_of(Hash)
+    end
+    it 'creates equal hash for two equal objects' do
+      obj = Object.new()
+      instance_1 = Freeclimb::PerclCommand.new(
+        
+        command: "PERCL_COMMAND",
+        
+      )
+      instance_2 = Freeclimb::PerclCommand.new(
+        
+        command: "PERCL_COMMAND",
+        
+      )
+      expect(instance_1.to_percl_hash).to eq(instance_2.to_percl_hash)
+    end
+  end
+
 end

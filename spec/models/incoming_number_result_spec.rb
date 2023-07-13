@@ -36,7 +36,6 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
   
-  
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::IncomingNumberResult do
       
     end
   end
-  
   
 
   describe 'test attribute "date_updated"' do
@@ -60,7 +58,6 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
   
-  
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::IncomingNumberResult do
       
     end
   end
-  
   
 
   describe 'test attribute "capabilities"' do
@@ -84,7 +80,6 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
   
-  
 
   describe 'test attribute "campaign_id"' do
     it 'should work' do
@@ -95,7 +90,6 @@ describe Freeclimb::IncomingNumberResult do
       
     end
   end
-  
   
 
   describe 'test attribute "phone_number_id"' do
@@ -108,7 +102,6 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
   
-  
 
   describe 'test attribute "account_id"' do
     it 'should work' do
@@ -119,7 +112,6 @@ describe Freeclimb::IncomingNumberResult do
       
     end
   end
-  
   
 
   describe 'test attribute "application_id"' do
@@ -132,7 +124,6 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
   
-  
 
   describe 'test attribute "phone_number"' do
     it 'should work' do
@@ -143,7 +134,6 @@ describe Freeclimb::IncomingNumberResult do
       
     end
   end
-  
   
 
   describe 'test attribute "_alias"' do
@@ -156,7 +146,6 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
   
-  
 
   describe 'test attribute "region"' do
     it 'should work' do
@@ -167,7 +156,6 @@ describe Freeclimb::IncomingNumberResult do
       
     end
   end
-  
   
 
   describe 'test attribute "country"' do
@@ -180,7 +168,6 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
   
-  
 
   describe 'test attribute "voice_enabled"' do
     it 'should work' do
@@ -191,7 +178,6 @@ describe Freeclimb::IncomingNumberResult do
       
     end
   end
-  
   
 
   describe 'test attribute "sms_enabled"' do
@@ -204,7 +190,6 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
   
-  
 
   describe 'test attribute "offnet"' do
     it 'should work' do
@@ -215,7 +200,6 @@ describe Freeclimb::IncomingNumberResult do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -1132,4 +1116,5 @@ describe Freeclimb::IncomingNumberResult do
       expect(instance._to_hash(instance.offnet)).to eq(instance.offnet)
     end
   end
+
 end

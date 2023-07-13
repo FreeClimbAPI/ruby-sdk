@@ -36,7 +36,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "campaign_id"' do
     it 'should work' do
@@ -48,7 +47,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "csp_id"' do
     it 'should work' do
@@ -59,7 +57,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "reseller_id"' do
@@ -77,23 +74,21 @@ describe Freeclimb::SMSTenDLCCampaign do
       expect{instance.reseller_id = "TEST_STRING"}.to raise_error(ArgumentError)
     end
   end  
-  
 
-  
   describe 'test attribute "status"' do
     it 'assigns value ACTIVE' do
       instance.status = "ACTIVE"
       expect(instance.status).to eq("ACTIVE")  
     end
-  end
-  
-  describe 'test attribute "status"' do
     it 'assigns value EXPIRED' do
       instance.status = "EXPIRED"
       expect(instance.status).to eq("EXPIRED")  
     end
+    it 'throws error on invalid enum' do
+      instance = Freeclimb::SMSTenDLCCampaign.new
+      expect{instance.status = "INVALID_ENUM"}.to raise_error(ArgumentError)
+    end
   end
-  
 
   describe 'test attribute "create_date"' do
     it 'should work' do
@@ -104,7 +99,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "auto_renewal"' do
@@ -117,7 +111,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "billed_date"' do
     it 'should work' do
@@ -128,7 +121,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "brand_id"' do
@@ -146,7 +138,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       expect{instance.brand_id = "TEST_STRING"}.to raise_error(ArgumentError)
     end
   end  
-  
 
   describe 'test attribute "usecase"' do
     it 'should work' do
@@ -157,7 +148,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "sub_usecases"' do
@@ -170,7 +160,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "description"' do
     it 'should work' do
@@ -181,7 +170,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "embedded_link"' do
@@ -194,7 +182,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "embedded_phone"' do
     it 'should work' do
@@ -205,7 +192,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "affiliate_marketing"' do
@@ -218,7 +204,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "number_pool"' do
     it 'should work' do
@@ -229,7 +214,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "age_gated"' do
@@ -242,7 +226,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "direct_lending"' do
     it 'should work' do
@@ -253,7 +236,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "subscriber_optin"' do
@@ -266,7 +248,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "subscriber_optout"' do
     it 'should work' do
@@ -277,7 +258,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "subscriber_help"' do
@@ -290,7 +270,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "sample1"' do
     it 'should work' do
@@ -301,7 +280,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "sample2"' do
@@ -314,7 +292,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "sample3"' do
     it 'should work' do
@@ -325,7 +302,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "sample4"' do
@@ -338,7 +314,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "sample5"' do
     it 'should work' do
@@ -349,7 +324,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "message_flow"' do
@@ -362,7 +336,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "help_message"' do
     it 'should work' do
@@ -373,7 +346,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "reference_id"' do
@@ -386,7 +358,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "mock"' do
     it 'should work' do
@@ -398,7 +369,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
   
-  
 
   describe 'test attribute "next_renewal_or_expiration_date"' do
     it 'should work' do
@@ -409,7 +379,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -1990,4 +1959,5 @@ describe Freeclimb::SMSTenDLCCampaign do
       expect(instance._to_hash(instance.next_renewal_or_expiration_date)).to eq(instance.next_renewal_or_expiration_date)
     end
   end
+
 end

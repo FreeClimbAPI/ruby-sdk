@@ -36,7 +36,6 @@ describe Freeclimb::RecordingResult do
     end
   end
   
-  
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::RecordingResult do
       
     end
   end
-  
   
 
   describe 'test attribute "date_updated"' do
@@ -60,7 +58,6 @@ describe Freeclimb::RecordingResult do
     end
   end
   
-  
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::RecordingResult do
       
     end
   end
-  
   
 
   describe 'test attribute "recording_id"' do
@@ -84,7 +80,6 @@ describe Freeclimb::RecordingResult do
     end
   end
   
-  
 
   describe 'test attribute "account_id"' do
     it 'should work' do
@@ -95,7 +90,6 @@ describe Freeclimb::RecordingResult do
       
     end
   end
-  
   
 
   describe 'test attribute "call_id"' do
@@ -108,7 +102,6 @@ describe Freeclimb::RecordingResult do
     end
   end
   
-  
 
   describe 'test attribute "duration_sec"' do
     it 'should work' do
@@ -120,7 +113,6 @@ describe Freeclimb::RecordingResult do
     end
   end
   
-  
 
   describe 'test attribute "conference_id"' do
     it 'should work' do
@@ -131,7 +123,6 @@ describe Freeclimb::RecordingResult do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -706,4 +697,5 @@ describe Freeclimb::RecordingResult do
       expect(instance._to_hash(instance.conference_id)).to eq(instance.conference_id)
     end
   end
+
 end

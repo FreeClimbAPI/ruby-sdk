@@ -36,7 +36,6 @@ describe Freeclimb::CreateConferenceRequest do
     end
   end
   
-  
 
   describe 'test attribute "play_beep"' do
     it 'assigns value ALWAYS' do
@@ -56,7 +55,6 @@ describe Freeclimb::CreateConferenceRequest do
       expect(instance.play_beep).to eq(Freeclimb::PlayBeep::EXIT_ONLY)  
     end
   end
-  
 
   describe 'test attribute "record"' do
     it 'should work' do
@@ -67,7 +65,6 @@ describe Freeclimb::CreateConferenceRequest do
       
     end
   end
-  
   
 
   describe 'test attribute "wait_url"' do
@@ -80,7 +77,6 @@ describe Freeclimb::CreateConferenceRequest do
     end
   end
   
-  
 
   describe 'test attribute "status_callback_url"' do
     it 'should work' do
@@ -91,7 +87,6 @@ describe Freeclimb::CreateConferenceRequest do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -433,4 +428,5 @@ describe Freeclimb::CreateConferenceRequest do
       expect(instance._to_hash(instance.status_callback_url)).to eq(instance.status_callback_url)
     end
   end
+
 end

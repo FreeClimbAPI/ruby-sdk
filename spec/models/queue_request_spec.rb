@@ -36,7 +36,6 @@ describe Freeclimb::QueueRequest do
     end
   end
   
-  
 
   describe 'test attribute "max_size"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::QueueRequest do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -239,4 +237,5 @@ describe Freeclimb::QueueRequest do
       expect(instance._to_hash(instance.max_size)).to eq(instance.max_size)
     end
   end
+
 end

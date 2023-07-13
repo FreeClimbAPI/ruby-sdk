@@ -36,7 +36,6 @@ describe Freeclimb::ConferenceResult do
     end
   end
   
-  
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::ConferenceResult do
       
     end
   end
-  
   
 
   describe 'test attribute "date_updated"' do
@@ -60,7 +58,6 @@ describe Freeclimb::ConferenceResult do
     end
   end
   
-  
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::ConferenceResult do
       
     end
   end
-  
   
 
   describe 'test attribute "conference_id"' do
@@ -84,7 +80,6 @@ describe Freeclimb::ConferenceResult do
     end
   end
   
-  
 
   describe 'test attribute "account_id"' do
     it 'should work' do
@@ -96,7 +91,6 @@ describe Freeclimb::ConferenceResult do
     end
   end
   
-  
 
   describe 'test attribute "_alias"' do
     it 'should work' do
@@ -107,7 +101,6 @@ describe Freeclimb::ConferenceResult do
       
     end
   end
-  
   
 
   describe 'test attribute "play_beep"' do
@@ -128,7 +121,6 @@ describe Freeclimb::ConferenceResult do
       expect(instance.play_beep).to eq(Freeclimb::PlayBeep::EXIT_ONLY)  
     end
   end
-  
 
   describe 'test attribute "record"' do
     it 'should work' do
@@ -139,7 +131,6 @@ describe Freeclimb::ConferenceResult do
       
     end
   end
-  
   
 
   describe 'test attribute "status"' do
@@ -160,7 +151,6 @@ describe Freeclimb::ConferenceResult do
       expect(instance.status).to eq(Freeclimb::ConferenceStatus::TERMINATED)  
     end
   end
-  
 
   describe 'test attribute "wait_url"' do
     it 'should work' do
@@ -171,7 +161,6 @@ describe Freeclimb::ConferenceResult do
       
     end
   end
-  
   
 
   describe 'test attribute "action_url"' do
@@ -184,7 +173,6 @@ describe Freeclimb::ConferenceResult do
     end
   end
   
-  
 
   describe 'test attribute "status_callback_url"' do
     it 'should work' do
@@ -195,7 +183,6 @@ describe Freeclimb::ConferenceResult do
       
     end
   end
-  
   
 
   describe 'test attribute "subresource_uris"' do
@@ -208,7 +195,6 @@ describe Freeclimb::ConferenceResult do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -1011,4 +997,5 @@ describe Freeclimb::ConferenceResult do
       expect(instance._to_hash(instance.subresource_uris)).to eq(instance.subresource_uris)
     end
   end
+
 end

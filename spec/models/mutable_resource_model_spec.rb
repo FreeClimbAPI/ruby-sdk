@@ -36,7 +36,6 @@ describe Freeclimb::MutableResourceModel do
     end
   end
   
-  
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::MutableResourceModel do
       
     end
   end
-  
   
 
   describe 'test attribute "date_updated"' do
@@ -60,7 +58,6 @@ describe Freeclimb::MutableResourceModel do
     end
   end
   
-  
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::MutableResourceModel do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -377,4 +373,5 @@ describe Freeclimb::MutableResourceModel do
       expect(instance._to_hash(instance.revision)).to eq(instance.revision)
     end
   end
+
 end

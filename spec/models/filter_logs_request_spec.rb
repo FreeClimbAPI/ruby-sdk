@@ -36,7 +36,6 @@ describe Freeclimb::FilterLogsRequest do
     end
   end
   
-  
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::FilterLogsRequest.new(
@@ -186,4 +185,5 @@ describe Freeclimb::FilterLogsRequest do
       expect(instance._to_hash(instance.pql)).to eq(instance.pql)
     end
   end
+
 end

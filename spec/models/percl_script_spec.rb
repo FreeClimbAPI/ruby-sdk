@@ -36,7 +36,6 @@ describe Freeclimb::PerclScript do
     end
   end
   
-  
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::PerclScript.new(
@@ -169,4 +168,5 @@ describe Freeclimb::PerclScript do
       expect(instance._to_hash(instance.commands)).to eq(instance.commands)
     end
   end
+
 end

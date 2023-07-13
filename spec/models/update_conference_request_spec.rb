@@ -36,7 +36,6 @@ describe Freeclimb::UpdateConferenceRequest do
     end
   end
   
-  
 
   describe 'test attribute "play_beep"' do
     it 'assigns value ALWAYS' do
@@ -56,7 +55,6 @@ describe Freeclimb::UpdateConferenceRequest do
       expect(instance.play_beep).to eq(Freeclimb::PlayBeep::EXIT_ONLY)  
     end
   end
-  
 
   describe 'test attribute "status"' do
     it 'assigns value EMPTY' do
@@ -68,7 +66,6 @@ describe Freeclimb::UpdateConferenceRequest do
       expect(instance.status).to eq(Freeclimb::UpdateConferenceRequestStatus::TERMINATED)  
     end
   end
-  
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::UpdateConferenceRequest.new(
@@ -292,4 +289,5 @@ describe Freeclimb::UpdateConferenceRequest do
       expect(instance._to_hash(instance.status)).to eq(instance.status)
     end
   end
+
 end

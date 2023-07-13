@@ -36,7 +36,6 @@ describe Freeclimb::CallResult do
     end
   end
   
-  
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::CallResult do
       
     end
   end
-  
   
 
   describe 'test attribute "date_updated"' do
@@ -60,7 +58,6 @@ describe Freeclimb::CallResult do
     end
   end
   
-  
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::CallResult do
       
     end
   end
-  
   
 
   describe 'test attribute "call_id"' do
@@ -84,7 +80,6 @@ describe Freeclimb::CallResult do
     end
   end
   
-  
 
   describe 'test attribute "parent_call_id"' do
     it 'should work' do
@@ -95,7 +90,6 @@ describe Freeclimb::CallResult do
       
     end
   end
-  
   
 
   describe 'test attribute "account_id"' do
@@ -108,7 +102,6 @@ describe Freeclimb::CallResult do
     end
   end
   
-  
 
   describe 'test attribute "from"' do
     it 'should work' do
@@ -119,7 +112,6 @@ describe Freeclimb::CallResult do
       
     end
   end
-  
   
 
   describe 'test attribute "to"' do
@@ -132,7 +124,6 @@ describe Freeclimb::CallResult do
     end
   end
   
-  
 
   describe 'test attribute "phone_number_id"' do
     it 'should work' do
@@ -143,7 +134,6 @@ describe Freeclimb::CallResult do
       
     end
   end
-  
   
 
   describe 'test attribute "call_status"' do
@@ -180,7 +170,6 @@ describe Freeclimb::CallResult do
       expect(instance.call_status).to eq(Freeclimb::CallStatus::NO_ANSWER)  
     end
   end
-  
 
   describe 'test attribute "start_time"' do
     it 'should work' do
@@ -191,7 +180,6 @@ describe Freeclimb::CallResult do
       
     end
   end
-  
   
 
   describe 'test attribute "connect_time"' do
@@ -204,7 +192,6 @@ describe Freeclimb::CallResult do
     end
   end
   
-  
 
   describe 'test attribute "end_time"' do
     it 'should work' do
@@ -215,7 +202,6 @@ describe Freeclimb::CallResult do
       
     end
   end
-  
   
 
   describe 'test attribute "duration"' do
@@ -228,7 +214,6 @@ describe Freeclimb::CallResult do
     end
   end
   
-  
 
   describe 'test attribute "connect_duration"' do
     it 'should work' do
@@ -239,7 +224,6 @@ describe Freeclimb::CallResult do
       
     end
   end
-  
   
 
   describe 'test attribute "direction"' do
@@ -256,7 +240,6 @@ describe Freeclimb::CallResult do
       expect(instance.direction).to eq(Freeclimb::CallDirection::OUTBOUND_DIAL)  
     end
   end
-  
 
   describe 'test attribute "answered_by"' do
     it 'assigns value HUMAN' do
@@ -268,7 +251,6 @@ describe Freeclimb::CallResult do
       expect(instance.answered_by).to eq(Freeclimb::AnsweredBy::MACHINE)  
     end
   end
-  
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
@@ -280,7 +262,6 @@ describe Freeclimb::CallResult do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -1333,4 +1314,5 @@ describe Freeclimb::CallResult do
       expect(instance._to_hash(instance.subresource_uris)).to eq(instance.subresource_uris)
     end
   end
+
 end

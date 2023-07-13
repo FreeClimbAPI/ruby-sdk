@@ -36,5 +36,154 @@ describe Freeclimb::PlayEarlyMedia do
     end
   end
   
-  
+  describe 'test method "initialize"' do
+    it 'properly initializes with values' do
+        expect{instance = Freeclimb::PlayEarlyMedia.new(
+          
+          file: "TS",
+          
+        )}.not_to raise_error()
+    end
+    it 'fails to initialize with input argument that is not a hash in Freeclimb::PlayEarlyMedia' do
+        expect{instance = Freeclimb::PlayEarlyMedia.new(
+          
+          file: "TS",
+          
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+    it 'fails to initialize with invalid attribute' do
+        expect{instance = Freeclimb::PlayEarlyMedia.new(
+          
+          file: "TS",
+          
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+  end
+
+  describe 'test method "valid"' do
+    it 'checks if properties are valid' do
+      instance = Freeclimb::PlayEarlyMedia.new(
+          
+          file: "TS",
+          
+      )
+      expect(instance.valid?).to eq(true)
+    end
+  end
+
+  describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      instance_1 = Freeclimb::PlayEarlyMedia.new(
+          
+          file: "TS",
+          
+      )
+      instance_2 = Freeclimb::PlayEarlyMedia.new(
+          
+          file: "TS",
+          
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::PlayEarlyMedia.new(
+          
+          file: "TS",
+          
+      )
+      instance_2 = Freeclimb::PlayEarlyMedia.new(
+          
+          file: "ST",
+          
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
+  end
+
+  describe 'test method "hash"' do
+    it 'calculates hash code' do
+      instance = Freeclimb::PlayEarlyMedia.new(
+        
+        file: "TS",
+        
+    )
+    expect(instance.hash).to be_a_kind_of(Integer)
+    end
+  end
+
+  describe 'test method "build_from_hash"' do
+    it 'builds equivalent model from hash code' do
+      instance_1 = Freeclimb::PlayEarlyMedia.new(
+        
+        file: "TS",
+        
+      )
+      instance_2 = Freeclimb::PlayEarlyMedia.new
+      expect(instance_2.build_from_hash(instance.hash)).to eq(instance.build_from_hash(instance.hash))
+    end
+  end
+
+  describe 'test method "_deserialize"' do
+    instance = Freeclimb::PlayEarlyMedia.new(
+        
+        file: "TS",
+        
+    )
+    
+    it 'deserializes the data of file' do
+      expect(instance._deserialize("String", instance.file)).to be_a_kind_of(String)
+    end
+    
+    
+  end
+
+  describe 'test method "to_s"' do
+    it 'returns the string representation of the object' do
+      instance = Freeclimb::PlayEarlyMedia.new(
+        
+        file: "TS",
+        
+      )
+      expect(instance.to_s).to eq(instance.to_hash.to_s)
+    end
+  end
+
+  describe 'test method "to_hash"' do
+    it 'returns the object in the form of hash' do
+      instance = Freeclimb::PlayEarlyMedia.new(
+        
+        file: "TS",
+        
+      )
+      expect(instance.to_hash).to be_a_kind_of(Hash)
+    end
+    it 'creates equal hash for two equal objects' do
+      obj = Object.new()
+      instance_1 = Freeclimb::PlayEarlyMedia.new(
+        
+        file: "TS",
+        
+      )
+      instance_2 = Freeclimb::PlayEarlyMedia.new(
+        
+        file: "TS",
+        
+      )
+      expect(instance_1.to_hash).to eq(instance_2.to_hash)
+    end
+  end
+
+  describe 'test method "_to_hash"' do
+    instance = Freeclimb::PlayEarlyMedia.new(
+        
+        file: "TS",
+        
+    )
+    it 'returns file in the form of hash' do
+      expect(instance._to_hash(instance.file)).to eq(instance.file)
+    end
+  end
+
 end

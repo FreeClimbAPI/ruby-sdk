@@ -36,7 +36,6 @@ describe Freeclimb::AccountResult do
     end
   end
   
-  
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::AccountResult do
       
     end
   end
-  
   
 
   describe 'test attribute "date_updated"' do
@@ -60,7 +58,6 @@ describe Freeclimb::AccountResult do
     end
   end
   
-  
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::AccountResult do
       
     end
   end
-  
   
 
   describe 'test attribute "account_id"' do
@@ -84,7 +80,6 @@ describe Freeclimb::AccountResult do
     end
   end
   
-  
 
   describe 'test attribute "api_key"' do
     it 'should work' do
@@ -95,7 +90,6 @@ describe Freeclimb::AccountResult do
       
     end
   end
-  
   
 
   describe 'test attribute "_alias"' do
@@ -108,7 +102,6 @@ describe Freeclimb::AccountResult do
     end
   end
   
-  
 
   describe 'test attribute "label"' do
     it 'should work' do
@@ -119,7 +112,6 @@ describe Freeclimb::AccountResult do
       
     end
   end
-  
   
 
   describe 'test attribute "type"' do
@@ -132,7 +124,6 @@ describe Freeclimb::AccountResult do
       expect(instance.type).to eq(Freeclimb::AccountType::FULL)  
     end
   end
-  
 
   describe 'test attribute "status"' do
     it 'assigns value CLOSED' do
@@ -148,7 +139,6 @@ describe Freeclimb::AccountResult do
       expect(instance.status).to eq(Freeclimb::AccountStatus::ACTIVE)  
     end
   end
-  
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
@@ -160,7 +150,6 @@ describe Freeclimb::AccountResult do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -809,4 +798,5 @@ describe Freeclimb::AccountResult do
       expect(instance._to_hash(instance.subresource_uris)).to eq(instance.subresource_uris)
     end
   end
+
 end

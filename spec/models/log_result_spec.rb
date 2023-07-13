@@ -36,7 +36,6 @@ describe Freeclimb::LogResult do
     end
   end
   
-  
 
   describe 'test attribute "level"' do
     it 'assigns value INFO' do
@@ -52,7 +51,6 @@ describe Freeclimb::LogResult do
       expect(instance.level).to eq(Freeclimb::LogLevel::ERROR)  
     end
   end
-  
 
   describe 'test attribute "request_id"' do
     it 'should work' do
@@ -63,7 +61,6 @@ describe Freeclimb::LogResult do
       
     end
   end
-  
   
 
   describe 'test attribute "account_id"' do
@@ -76,7 +73,6 @@ describe Freeclimb::LogResult do
     end
   end
   
-  
 
   describe 'test attribute "call_id"' do
     it 'should work' do
@@ -87,7 +83,6 @@ describe Freeclimb::LogResult do
       
     end
   end
-  
   
 
   describe 'test attribute "message"' do
@@ -100,7 +95,6 @@ describe Freeclimb::LogResult do
     end
   end
   
-  
 
   describe 'test attribute "metadata"' do
     it 'should work' do
@@ -112,7 +106,6 @@ describe Freeclimb::LogResult do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -553,4 +546,5 @@ describe Freeclimb::LogResult do
       expect(instance._to_hash(instance.metadata)).to eq(instance.metadata)
     end
   end
+
 end

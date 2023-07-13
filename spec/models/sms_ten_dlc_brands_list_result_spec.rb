@@ -36,7 +36,6 @@ describe Freeclimb::SMSTenDLCBrandsListResult do
     end
   end
   
-  
 
   describe 'test attribute "start"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::SMSTenDLCBrandsListResult do
       
     end
   end
-  
   
 
   describe 'test attribute "_end"' do
@@ -60,7 +58,6 @@ describe Freeclimb::SMSTenDLCBrandsListResult do
     end
   end
   
-  
 
   describe 'test attribute "page"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::SMSTenDLCBrandsListResult do
       
     end
   end
-  
   
 
   describe 'test attribute "num_pages"' do
@@ -84,7 +80,6 @@ describe Freeclimb::SMSTenDLCBrandsListResult do
     end
   end
   
-  
 
   describe 'test attribute "page_size"' do
     it 'should work' do
@@ -95,7 +90,6 @@ describe Freeclimb::SMSTenDLCBrandsListResult do
       
     end
   end
-  
   
 
   describe 'test attribute "next_page_uri"' do
@@ -108,7 +102,6 @@ describe Freeclimb::SMSTenDLCBrandsListResult do
     end
   end
   
-  
 
   describe 'test attribute "brands"' do
     it 'should work' do
@@ -119,7 +112,6 @@ describe Freeclimb::SMSTenDLCBrandsListResult do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -556,4 +548,5 @@ describe Freeclimb::SMSTenDLCBrandsListResult do
       expect(instance._to_hash(instance.brands)).to eq(instance.brands)
     end
   end
+
 end

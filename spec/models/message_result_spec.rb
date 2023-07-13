@@ -36,7 +36,6 @@ describe Freeclimb::MessageResult do
     end
   end
   
-  
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::MessageResult do
       
     end
   end
-  
   
 
   describe 'test attribute "date_updated"' do
@@ -60,7 +58,6 @@ describe Freeclimb::MessageResult do
     end
   end
   
-  
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::MessageResult do
       
     end
   end
-  
   
 
   describe 'test attribute "account_id"' do
@@ -84,7 +80,6 @@ describe Freeclimb::MessageResult do
     end
   end
   
-  
 
   describe 'test attribute "message_id"' do
     it 'should work' do
@@ -95,7 +90,6 @@ describe Freeclimb::MessageResult do
       
     end
   end
-  
   
 
   describe 'test attribute "status"' do
@@ -144,7 +138,6 @@ describe Freeclimb::MessageResult do
       expect(instance.status).to eq(Freeclimb::MessageStatus::UNKNOWN)  
     end
   end
-  
 
   describe 'test attribute "from"' do
     it 'should work' do
@@ -155,7 +148,6 @@ describe Freeclimb::MessageResult do
       
     end
   end
-  
   
 
   describe 'test attribute "to"' do
@@ -168,7 +160,6 @@ describe Freeclimb::MessageResult do
     end
   end
   
-  
 
   describe 'test attribute "text"' do
     it 'should work' do
@@ -179,7 +170,6 @@ describe Freeclimb::MessageResult do
       
     end
   end
-  
   
 
   describe 'test attribute "direction"' do
@@ -192,7 +182,6 @@ describe Freeclimb::MessageResult do
     end
   end
   
-  
 
   describe 'test attribute "notification_url"' do
     it 'should work' do
@@ -203,7 +192,6 @@ describe Freeclimb::MessageResult do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -945,4 +933,5 @@ describe Freeclimb::MessageResult do
       expect(instance._to_hash(instance.notification_url)).to eq(instance.notification_url)
     end
   end
+
 end

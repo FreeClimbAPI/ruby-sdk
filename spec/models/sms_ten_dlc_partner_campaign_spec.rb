@@ -36,7 +36,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "campaign_id"' do
     it 'should work' do
@@ -48,23 +47,21 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
-  
   describe 'test attribute "status"' do
     it 'assigns value ACTIVE' do
       instance.status = "ACTIVE"
       expect(instance.status).to eq("ACTIVE")  
     end
-  end
-  
-  describe 'test attribute "status"' do
     it 'assigns value EXPIRED' do
       instance.status = "EXPIRED"
       expect(instance.status).to eq("EXPIRED")  
     end
+    it 'throws error on invalid enum' do
+      instance = Freeclimb::SMSTenDLCPartnerCampaign.new
+      expect{instance.status = "INVALID_ENUM"}.to raise_error(ArgumentError)
+    end
   end
-  
 
   describe 'test attribute "create_date"' do
     it 'should work' do
@@ -75,7 +72,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "brand_id"' do
@@ -93,7 +89,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       expect{instance.brand_id = "TEST_STRING"}.to raise_error(ArgumentError)
     end
   end  
-  
 
   describe 'test attribute "usecase"' do
     it 'should work' do
@@ -104,7 +99,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "description"' do
@@ -117,7 +111,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "embedded_link"' do
     it 'should work' do
@@ -128,7 +121,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "embedded_phone"' do
@@ -141,7 +133,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "affiliate_marketing"' do
     it 'should work' do
@@ -152,7 +143,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "number_pool"' do
@@ -165,7 +155,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "age_gated"' do
     it 'should work' do
@@ -176,7 +165,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "direct_lending"' do
@@ -189,7 +177,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "subscriber_optin"' do
     it 'should work' do
@@ -200,7 +187,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "subscriber_optout"' do
@@ -213,7 +199,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "subscriber_help"' do
     it 'should work' do
@@ -224,7 +209,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "sample1"' do
@@ -237,7 +221,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "sample2"' do
     it 'should work' do
@@ -248,7 +231,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "sample3"' do
@@ -261,7 +243,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "sample4"' do
     it 'should work' do
@@ -272,7 +253,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "sample5"' do
@@ -285,7 +265,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "message_flow"' do
     it 'should work' do
@@ -296,7 +275,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "help_message"' do
@@ -309,7 +287,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "optin_keywords"' do
     it 'should work' do
@@ -320,7 +297,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "optout_keywords"' do
@@ -333,7 +309,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "help_keywords"' do
     it 'should work' do
@@ -344,7 +319,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
 
   describe 'test attribute "optin_message"' do
@@ -357,7 +331,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "optout_message"' do
     it 'should work' do
@@ -369,7 +342,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
   
-  
 
   describe 'test attribute "brand"' do
     it 'should work' do
@@ -380,7 +352,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -1916,4 +1887,5 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       expect(instance._to_hash(instance.brand)).to eq(instance.brand)
     end
   end
+
 end

@@ -36,7 +36,6 @@ describe Freeclimb::AccountRequest do
     end
   end
   
-  
 
   describe 'test attribute "label"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::AccountRequest do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -255,4 +253,5 @@ describe Freeclimb::AccountRequest do
       expect(instance._to_hash(instance.label)).to eq(instance.label)
     end
   end
+
 end

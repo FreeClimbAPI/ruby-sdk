@@ -36,7 +36,6 @@ describe Freeclimb::ApplicationResult do
     end
   end
   
-  
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::ApplicationResult do
       
     end
   end
-  
   
 
   describe 'test attribute "date_updated"' do
@@ -60,7 +58,6 @@ describe Freeclimb::ApplicationResult do
     end
   end
   
-  
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::ApplicationResult do
       
     end
   end
-  
   
 
   describe 'test attribute "account_id"' do
@@ -84,7 +80,6 @@ describe Freeclimb::ApplicationResult do
     end
   end
   
-  
 
   describe 'test attribute "application_id"' do
     it 'should work' do
@@ -95,7 +90,6 @@ describe Freeclimb::ApplicationResult do
       
     end
   end
-  
   
 
   describe 'test attribute "_alias"' do
@@ -108,7 +102,6 @@ describe Freeclimb::ApplicationResult do
     end
   end
   
-  
 
   describe 'test attribute "voice_url"' do
     it 'should work' do
@@ -119,7 +112,6 @@ describe Freeclimb::ApplicationResult do
       
     end
   end
-  
   
 
   describe 'test attribute "voice_fallback_url"' do
@@ -132,7 +124,6 @@ describe Freeclimb::ApplicationResult do
     end
   end
   
-  
 
   describe 'test attribute "call_connect_url"' do
     it 'should work' do
@@ -143,7 +134,6 @@ describe Freeclimb::ApplicationResult do
       
     end
   end
-  
   
 
   describe 'test attribute "status_callback_url"' do
@@ -156,7 +146,6 @@ describe Freeclimb::ApplicationResult do
     end
   end
   
-  
 
   describe 'test attribute "sms_url"' do
     it 'should work' do
@@ -168,7 +157,6 @@ describe Freeclimb::ApplicationResult do
     end
   end
   
-  
 
   describe 'test attribute "sms_fallback_url"' do
     it 'should work' do
@@ -179,7 +167,6 @@ describe Freeclimb::ApplicationResult do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -998,4 +985,5 @@ describe Freeclimb::ApplicationResult do
       expect(instance._to_hash(instance.sms_fallback_url)).to eq(instance.sms_fallback_url)
     end
   end
+
 end

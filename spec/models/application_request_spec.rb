@@ -36,7 +36,6 @@ describe Freeclimb::ApplicationRequest do
     end
   end
   
-  
 
   describe 'test attribute "voice_url"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::ApplicationRequest do
       
     end
   end
-  
   
 
   describe 'test attribute "voice_fallback_url"' do
@@ -60,7 +58,6 @@ describe Freeclimb::ApplicationRequest do
     end
   end
   
-  
 
   describe 'test attribute "call_connect_url"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::ApplicationRequest do
       
     end
   end
-  
   
 
   describe 'test attribute "status_callback_url"' do
@@ -84,7 +80,6 @@ describe Freeclimb::ApplicationRequest do
     end
   end
   
-  
 
   describe 'test attribute "sms_url"' do
     it 'should work' do
@@ -96,7 +91,6 @@ describe Freeclimb::ApplicationRequest do
     end
   end
   
-  
 
   describe 'test attribute "sms_fallback_url"' do
     it 'should work' do
@@ -107,7 +101,6 @@ describe Freeclimb::ApplicationRequest do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -600,4 +593,5 @@ describe Freeclimb::ApplicationRequest do
       expect(instance._to_hash(instance.sms_fallback_url)).to eq(instance.sms_fallback_url)
     end
   end
+
 end

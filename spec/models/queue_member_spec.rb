@@ -36,7 +36,6 @@ describe Freeclimb::QueueMember do
     end
   end
   
-  
 
   describe 'test attribute "call_id"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::QueueMember do
       
     end
   end
-  
   
 
   describe 'test attribute "wait_time"' do
@@ -60,7 +58,6 @@ describe Freeclimb::QueueMember do
     end
   end
   
-  
 
   describe 'test attribute "position"' do
     it 'should work' do
@@ -72,7 +69,6 @@ describe Freeclimb::QueueMember do
     end
   end
   
-  
 
   describe 'test attribute "date_enqueued"' do
     it 'should work' do
@@ -83,7 +79,6 @@ describe Freeclimb::QueueMember do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -430,4 +425,5 @@ describe Freeclimb::QueueMember do
       expect(instance._to_hash(instance.date_enqueued)).to eq(instance.date_enqueued)
     end
   end
+
 end

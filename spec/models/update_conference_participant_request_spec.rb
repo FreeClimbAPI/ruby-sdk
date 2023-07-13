@@ -36,7 +36,6 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
     end
   end
   
-  
 
   describe 'test attribute "listen"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -221,4 +219,5 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
       expect(instance._to_hash(instance.listen)).to eq(instance.listen)
     end
   end
+
 end

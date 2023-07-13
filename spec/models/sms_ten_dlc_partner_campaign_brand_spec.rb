@@ -36,7 +36,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     end
   end
   
-  
 
   describe 'test attribute "brand_id"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "first_name"' do
@@ -60,7 +58,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     end
   end
   
-  
 
   describe 'test attribute "last_name"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "display_name"' do
@@ -84,7 +80,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     end
   end
   
-  
 
   describe 'test attribute "company_name"' do
     it 'should work' do
@@ -95,7 +90,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "phone"' do
@@ -108,7 +102,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     end
   end
   
-  
 
   describe 'test attribute "email"' do
     it 'should work' do
@@ -120,7 +113,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     end
   end
   
-  
 
   describe 'test attribute "website"' do
     it 'should work' do
@@ -131,7 +123,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       
     end
   end
-  
   
 
   describe 'test attribute "optional_attributes"' do
@@ -145,7 +136,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     end
   end
   
-  
 
   describe 'test attribute "evp_vetting_score"' do
     it 'should work' do
@@ -156,7 +146,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -856,4 +845,5 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       expect(instance._to_hash(instance.evp_vetting_score)).to eq(instance.evp_vetting_score)
     end
   end
+
 end

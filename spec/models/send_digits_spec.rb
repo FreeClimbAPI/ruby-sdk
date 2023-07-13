@@ -36,7 +36,6 @@ describe Freeclimb::SendDigits do
     end
   end
   
-  
 
   describe 'test attribute "pause_ms"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::SendDigits do
       
     end
   end
-  
   
 
   describe 'test attribute "privacy_mode"' do
@@ -60,5 +58,235 @@ describe Freeclimb::SendDigits do
     end
   end
   
-  
+  describe 'test method "initialize"' do
+    it 'properly initializes with values' do
+        expect{instance = Freeclimb::SendDigits.new(
+          
+          digits: "TS",
+          
+          
+          pause_ms: 1,
+          
+          privacy_mode: true,
+        )}.not_to raise_error()
+    end
+    it 'fails to initialize with input argument that is not a hash in Freeclimb::SendDigits' do
+        expect{instance = Freeclimb::SendDigits.new(
+          
+          digits: "TS",
+          
+          
+          pause_ms: 1,
+          
+          privacy_mode: true,
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+    it 'fails to initialize with invalid attribute' do
+        expect{instance = Freeclimb::SendDigits.new(
+          
+          digits: "TS",
+          
+          
+          pause_ms: 1,
+          
+          privacy_mode: true,
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+  end
+
+  describe 'test method "valid"' do
+    it 'checks if properties are valid' do
+      instance = Freeclimb::SendDigits.new(
+          
+          digits: "TS",
+          
+          
+          pause_ms: 1,
+          
+          privacy_mode: true,
+      )
+      expect(instance.valid?).to eq(true)
+    end
+  end
+
+  describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      instance_1 = Freeclimb::SendDigits.new(
+          
+          digits: "TS",
+          
+          
+          pause_ms: 1,
+          
+          privacy_mode: true,
+      )
+      instance_2 = Freeclimb::SendDigits.new(
+          
+          digits: "TS",
+          
+          
+          pause_ms: 1,
+          
+          privacy_mode: true,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::SendDigits.new(
+          
+          digits: "TS",
+          
+          
+          pause_ms: 1,
+          
+          privacy_mode: true,
+      )
+      instance_2 = Freeclimb::SendDigits.new(
+          
+          digits: "ST",
+          
+          
+          pause_ms: 0,
+          
+          privacy_mode: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
+  end
+
+  describe 'test method "hash"' do
+    it 'calculates hash code' do
+      instance = Freeclimb::SendDigits.new(
+        
+        digits: "TS",
+        
+        
+        pause_ms: 1,
+        
+        privacy_mode: true,
+    )
+    expect(instance.hash).to be_a_kind_of(Integer)
+    end
+  end
+
+  describe 'test method "build_from_hash"' do
+    it 'builds equivalent model from hash code' do
+      instance_1 = Freeclimb::SendDigits.new(
+        
+        digits: "TS",
+        
+        
+        pause_ms: 1,
+        
+        privacy_mode: true,
+      )
+      instance_2 = Freeclimb::SendDigits.new
+      expect(instance_2.build_from_hash(instance.hash)).to eq(instance.build_from_hash(instance.hash))
+    end
+  end
+
+  describe 'test method "_deserialize"' do
+    instance = Freeclimb::SendDigits.new(
+        
+        digits: "TS",
+        
+        
+        pause_ms: 1,
+        
+        privacy_mode: true,
+    )
+    
+    it 'deserializes the data of digits' do
+      expect(instance._deserialize("String", instance.digits)).to be_a_kind_of(String)
+    end
+    
+    
+    
+    it 'deserializes the data of pause_ms' do
+      expect(instance._deserialize("Integer", instance.pause_ms)).to be_a_kind_of(Integer)
+    end
+    
+    
+    
+    
+    it 'deserializes the data of privacy_mode' do
+      expect(instance._deserialize("Boolean", instance.privacy_mode)).to be_a_kind_of(TrueClass)
+    end
+  end
+
+  describe 'test method "to_s"' do
+    it 'returns the string representation of the object' do
+      instance = Freeclimb::SendDigits.new(
+        
+        digits: "TS",
+        
+        
+        pause_ms: 1,
+        
+        privacy_mode: true,
+      )
+      expect(instance.to_s).to eq(instance.to_hash.to_s)
+    end
+  end
+
+  describe 'test method "to_hash"' do
+    it 'returns the object in the form of hash' do
+      instance = Freeclimb::SendDigits.new(
+        
+        digits: "TS",
+        
+        
+        pause_ms: 1,
+        
+        privacy_mode: true,
+      )
+      expect(instance.to_hash).to be_a_kind_of(Hash)
+    end
+    it 'creates equal hash for two equal objects' do
+      obj = Object.new()
+      instance_1 = Freeclimb::SendDigits.new(
+        
+        digits: "TS",
+        
+        
+        pause_ms: 1,
+        
+        privacy_mode: true,
+      )
+      instance_2 = Freeclimb::SendDigits.new(
+        
+        digits: "TS",
+        
+        
+        pause_ms: 1,
+        
+        privacy_mode: true,
+      )
+      expect(instance_1.to_hash).to eq(instance_2.to_hash)
+    end
+  end
+
+  describe 'test method "_to_hash"' do
+    instance = Freeclimb::SendDigits.new(
+        
+        digits: "TS",
+        
+        
+        pause_ms: 1,
+        
+        privacy_mode: true,
+    )
+    it 'returns digits in the form of hash' do
+      expect(instance._to_hash(instance.digits)).to eq(instance.digits)
+    end
+    it 'returns pause_ms in the form of hash' do
+      expect(instance._to_hash(instance.pause_ms)).to eq(instance.pause_ms)
+    end
+    it 'returns privacy_mode in the form of hash' do
+      expect(instance._to_hash(instance.privacy_mode)).to eq(instance.privacy_mode)
+    end
+  end
+
 end

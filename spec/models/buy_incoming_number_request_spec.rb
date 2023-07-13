@@ -36,7 +36,6 @@ describe Freeclimb::BuyIncomingNumberRequest do
     end
   end
   
-  
 
   describe 'test attribute "_alias"' do
     it 'should work' do
@@ -48,7 +47,6 @@ describe Freeclimb::BuyIncomingNumberRequest do
     end
   end
   
-  
 
   describe 'test attribute "application_id"' do
     it 'should work' do
@@ -59,7 +57,6 @@ describe Freeclimb::BuyIncomingNumberRequest do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -324,4 +321,5 @@ describe Freeclimb::BuyIncomingNumberRequest do
       expect(instance._to_hash(instance.application_id)).to eq(instance.application_id)
     end
   end
+
 end

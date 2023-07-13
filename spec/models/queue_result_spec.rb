@@ -36,7 +36,6 @@ describe Freeclimb::QueueResult do
     end
   end
   
-  
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::QueueResult do
       
     end
   end
-  
   
 
   describe 'test attribute "date_updated"' do
@@ -60,7 +58,6 @@ describe Freeclimb::QueueResult do
     end
   end
   
-  
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::QueueResult do
       
     end
   end
-  
   
 
   describe 'test attribute "account_id"' do
@@ -84,7 +80,6 @@ describe Freeclimb::QueueResult do
     end
   end
   
-  
 
   describe 'test attribute "queue_id"' do
     it 'should work' do
@@ -95,7 +90,6 @@ describe Freeclimb::QueueResult do
       
     end
   end
-  
   
 
   describe 'test attribute "_alias"' do
@@ -108,7 +102,6 @@ describe Freeclimb::QueueResult do
     end
   end
   
-  
 
   describe 'test attribute "max_size"' do
     it 'should work' do
@@ -119,7 +112,6 @@ describe Freeclimb::QueueResult do
       
     end
   end
-  
   
 
   describe 'test attribute "current_size"' do
@@ -132,7 +124,6 @@ describe Freeclimb::QueueResult do
     end
   end
   
-  
 
   describe 'test attribute "average_queue_removal_time"' do
     it 'should work' do
@@ -143,7 +134,6 @@ describe Freeclimb::QueueResult do
       
     end
   end
-  
   
 
   describe 'test attribute "subresource_uris"' do
@@ -156,7 +146,6 @@ describe Freeclimb::QueueResult do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -797,4 +786,5 @@ describe Freeclimb::QueueResult do
       expect(instance._to_hash(instance.subresource_uris)).to eq(instance.subresource_uris)
     end
   end
+
 end

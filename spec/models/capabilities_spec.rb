@@ -36,7 +36,6 @@ describe Freeclimb::Capabilities do
     end
   end
   
-  
 
   describe 'test attribute "sms"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::Capabilities do
       
     end
   end
-  
   
 
   describe 'test attribute "toll_free"' do
@@ -60,7 +58,6 @@ describe Freeclimb::Capabilities do
     end
   end
   
-  
 
   describe 'test attribute "ten_dlc"' do
     it 'should work' do
@@ -72,7 +69,6 @@ describe Freeclimb::Capabilities do
     end
   end
   
-  
 
   describe 'test attribute "short_code"' do
     it 'should work' do
@@ -83,7 +79,6 @@ describe Freeclimb::Capabilities do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -377,4 +372,5 @@ describe Freeclimb::Capabilities do
       expect(instance._to_hash(instance.short_code)).to eq(instance.short_code)
     end
   end
+
 end

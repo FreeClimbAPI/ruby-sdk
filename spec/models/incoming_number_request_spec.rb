@@ -36,7 +36,6 @@ describe Freeclimb::IncomingNumberRequest do
     end
   end
   
-  
 
   describe 'test attribute "_alias"' do
     it 'should work' do
@@ -48,7 +47,6 @@ describe Freeclimb::IncomingNumberRequest do
     end
   end
   
-  
 
   describe 'test attribute "campaign_id"' do
     it 'should work' do
@@ -59,7 +57,6 @@ describe Freeclimb::IncomingNumberRequest do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -324,4 +321,5 @@ describe Freeclimb::IncomingNumberRequest do
       expect(instance._to_hash(instance.campaign_id)).to eq(instance.campaign_id)
     end
   end
+
 end

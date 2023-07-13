@@ -36,7 +36,6 @@ describe Freeclimb::ConferenceParticipantResult do
     end
   end
   
-  
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::ConferenceParticipantResult do
       
     end
   end
-  
   
 
   describe 'test attribute "date_updated"' do
@@ -60,7 +58,6 @@ describe Freeclimb::ConferenceParticipantResult do
     end
   end
   
-  
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::ConferenceParticipantResult do
       
     end
   end
-  
   
 
   describe 'test attribute "account_id"' do
@@ -84,7 +80,6 @@ describe Freeclimb::ConferenceParticipantResult do
     end
   end
   
-  
 
   describe 'test attribute "conference_id"' do
     it 'should work' do
@@ -95,7 +90,6 @@ describe Freeclimb::ConferenceParticipantResult do
       
     end
   end
-  
   
 
   describe 'test attribute "call_id"' do
@@ -108,7 +102,6 @@ describe Freeclimb::ConferenceParticipantResult do
     end
   end
   
-  
 
   describe 'test attribute "talk"' do
     it 'should work' do
@@ -119,7 +112,6 @@ describe Freeclimb::ConferenceParticipantResult do
       
     end
   end
-  
   
 
   describe 'test attribute "listen"' do
@@ -132,7 +124,6 @@ describe Freeclimb::ConferenceParticipantResult do
     end
   end
   
-  
 
   describe 'test attribute "start_conf_on_enter"' do
     it 'should work' do
@@ -143,7 +134,6 @@ describe Freeclimb::ConferenceParticipantResult do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -740,4 +730,5 @@ describe Freeclimb::ConferenceParticipantResult do
       expect(instance._to_hash(instance.start_conf_on_enter)).to eq(instance.start_conf_on_enter)
     end
   end
+
 end

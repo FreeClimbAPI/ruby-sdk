@@ -36,7 +36,6 @@ describe Freeclimb::MakeCallRequest do
     end
   end
   
-  
 
   describe 'test attribute "to"' do
     it 'should work' do
@@ -47,7 +46,6 @@ describe Freeclimb::MakeCallRequest do
       
     end
   end
-  
   
 
   describe 'test attribute "application_id"' do
@@ -60,7 +58,6 @@ describe Freeclimb::MakeCallRequest do
     end
   end
   
-  
 
   describe 'test attribute "send_digits"' do
     it 'should work' do
@@ -71,7 +68,6 @@ describe Freeclimb::MakeCallRequest do
       
     end
   end
-  
   
 
   describe 'test attribute "if_machine"' do
@@ -84,7 +80,6 @@ describe Freeclimb::MakeCallRequest do
     end
   end
   
-  
 
   describe 'test attribute "if_machine_url"' do
     it 'should work' do
@@ -95,7 +90,6 @@ describe Freeclimb::MakeCallRequest do
       
     end
   end
-  
   
 
   describe 'test attribute "timeout"' do
@@ -108,7 +102,6 @@ describe Freeclimb::MakeCallRequest do
     end
   end
   
-  
 
   describe 'test attribute "parent_call_id"' do
     it 'should work' do
@@ -119,7 +112,6 @@ describe Freeclimb::MakeCallRequest do
       
     end
   end
-  
   
 
   describe 'test attribute "privacy_mode"' do
@@ -132,7 +124,6 @@ describe Freeclimb::MakeCallRequest do
     end
   end
   
-  
 
   describe 'test attribute "call_connect_url"' do
     it 'should work' do
@@ -143,7 +134,6 @@ describe Freeclimb::MakeCallRequest do
       
     end
   end
-  
   
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
@@ -774,4 +764,5 @@ describe Freeclimb::MakeCallRequest do
       expect(instance._to_hash(instance.call_connect_url)).to eq(instance.call_connect_url)
     end
   end
+
 end
