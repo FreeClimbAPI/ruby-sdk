@@ -40,6 +40,7 @@ describe Freeclimb::AccountStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "SUSPENDED"' do
     it 'should work' do
       expect { Freeclimb::AccountStatus::SUSPENDED = "suspended" }.not_to raise_error
@@ -55,6 +56,7 @@ describe Freeclimb::AccountStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "ACTIVE"' do
     it 'should work' do
       expect { Freeclimb::AccountStatus::ACTIVE = "active" }.not_to raise_error
@@ -70,4 +72,5 @@ describe Freeclimb::AccountStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

@@ -40,6 +40,7 @@ describe Freeclimb::QueueResultStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DEQUEUED"' do
     it 'should work' do
       expect { Freeclimb::QueueResultStatus::DEQUEUED = "dequeued" }.not_to raise_error
@@ -55,6 +56,7 @@ describe Freeclimb::QueueResultStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "HANGUP"' do
     it 'should work' do
       expect { Freeclimb::QueueResultStatus::HANGUP = "hangup" }.not_to raise_error
@@ -70,6 +72,7 @@ describe Freeclimb::QueueResultStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "SYSTEM_ERROR"' do
     it 'should work' do
       expect { Freeclimb::QueueResultStatus::SYSTEM_ERROR = "systemError" }.not_to raise_error
@@ -85,4 +88,5 @@ describe Freeclimb::QueueResultStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

@@ -40,6 +40,7 @@ describe Freeclimb::CallStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "RINGING"' do
     it 'should work' do
       expect { Freeclimb::CallStatus::RINGING = "ringing" }.not_to raise_error
@@ -55,6 +56,7 @@ describe Freeclimb::CallStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "IN_PROGRESS"' do
     it 'should work' do
       expect { Freeclimb::CallStatus::IN_PROGRESS = "inProgress" }.not_to raise_error
@@ -70,6 +72,7 @@ describe Freeclimb::CallStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "CANCELED"' do
     it 'should work' do
       expect { Freeclimb::CallStatus::CANCELED = "canceled" }.not_to raise_error
@@ -85,6 +88,7 @@ describe Freeclimb::CallStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "COMPLETED"' do
     it 'should work' do
       expect { Freeclimb::CallStatus::COMPLETED = "completed" }.not_to raise_error
@@ -100,6 +104,7 @@ describe Freeclimb::CallStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "FAILED"' do
     it 'should work' do
       expect { Freeclimb::CallStatus::FAILED = "failed" }.not_to raise_error
@@ -115,6 +120,7 @@ describe Freeclimb::CallStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "BUSY"' do
     it 'should work' do
       expect { Freeclimb::CallStatus::BUSY = "busy" }.not_to raise_error
@@ -130,6 +136,7 @@ describe Freeclimb::CallStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "NO_ANSWER"' do
     it 'should work' do
       expect { Freeclimb::CallStatus::NO_ANSWER = "noAnswer" }.not_to raise_error
@@ -145,4 +152,5 @@ describe Freeclimb::CallStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

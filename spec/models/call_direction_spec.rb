@@ -40,6 +40,7 @@ describe Freeclimb::CallDirection do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "OUTBOUND_API"' do
     it 'should work' do
       expect { Freeclimb::CallDirection::OUTBOUND_API = "outboundAPI" }.not_to raise_error
@@ -55,6 +56,7 @@ describe Freeclimb::CallDirection do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "OUTBOUND_DIAL"' do
     it 'should work' do
       expect { Freeclimb::CallDirection::OUTBOUND_DIAL = "outboundDial" }.not_to raise_error
@@ -70,4 +72,5 @@ describe Freeclimb::CallDirection do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

@@ -28,199 +28,124 @@ describe Freeclimb::AddToConference do
 
   describe 'test attribute "allow_call_control"' do
     it 'should work' do
-      
-          instance.allow_call_control = false
-          expect(instance.allow_call_control).to eq(false)        
-        
-      
+      instance.allow_call_control = false
+      expect(instance.allow_call_control).to eq(false)        
     end
   end
-  
+
 
   describe 'test attribute "call_control_sequence"' do
     it 'should work' do
-      
-          instance.call_control_sequence = "TEST_STRING"
-          expect(instance.call_control_sequence).to eq("TEST_STRING")  
-        
-      
+      instance.call_control_sequence = "TEST_STRING"
+      expect(instance.call_control_sequence).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "call_control_url"' do
     it 'should work' do
-      
-          instance.call_control_url = "TEST_STRING"
-          expect(instance.call_control_url).to eq("TEST_STRING")  
-        
-      
+      instance.call_control_url = "TEST_STRING"
+      expect(instance.call_control_url).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "conference_id"' do
     it 'should work' do
-      
-          instance.conference_id = "TEST_STRING"
-          expect(instance.conference_id).to eq("TEST_STRING")  
-        
-      
+      instance.conference_id = "TEST_STRING"
+      expect(instance.conference_id).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "call_id"' do
     it 'should work' do
-      
-          instance.call_id = false
-          expect(instance.call_id).to eq(false)        
-        
-      
+      instance.call_id = false
+      expect(instance.call_id).to eq(false)        
     end
   end
-  
+
 
   describe 'test attribute "leave_conference_url"' do
     it 'should work' do
-      
-          instance.leave_conference_url = "TEST_STRING"
-          expect(instance.leave_conference_url).to eq("TEST_STRING")  
-        
-      
+      instance.leave_conference_url = "TEST_STRING"
+      expect(instance.leave_conference_url).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "listen"' do
     it 'should work' do
-      
-          instance.listen = false
-          expect(instance.listen).to eq(false)        
-        
-      
+      instance.listen = false
+      expect(instance.listen).to eq(false)        
     end
   end
-  
+
 
   describe 'test attribute "notification_url"' do
     it 'should work' do
-      
-          instance.notification_url = "TEST_STRING"
-          expect(instance.notification_url).to eq("TEST_STRING")  
-        
-      
+      instance.notification_url = "TEST_STRING"
+      expect(instance.notification_url).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "start_conf_on_enter"' do
     it 'should work' do
-      
-          instance.start_conf_on_enter = false
-          expect(instance.start_conf_on_enter).to eq(false)        
-        
-      
+      instance.start_conf_on_enter = false
+      expect(instance.start_conf_on_enter).to eq(false)        
     end
   end
-  
+
 
   describe 'test attribute "talk"' do
     it 'should work' do
-      
-          instance.talk = false
-          expect(instance.talk).to eq(false)        
-        
-      
+      instance.talk = false
+      expect(instance.talk).to eq(false)        
     end
   end
-  
+
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::AddToConference.new(
-          
           allow_call_control: true,
-          
           call_control_sequence: "TS",
-          
-          
           call_control_url: "TS",
-          
-          
           conference_id: "TS",
-          
-          
           call_id: true,
-          
           leave_conference_url: "TS",
-          
-          
           listen: true,
-          
           notification_url: "TS",
-          
-          
           start_conf_on_enter: true,
-          
           talk: true,
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::AddToConference' do
         expect{instance = Freeclimb::AddToConference.new(
-          
           allow_call_control: true,
-          
           call_control_sequence: "TS",
-          
-          
           call_control_url: "TS",
-          
-          
           conference_id: "TS",
-          
-          
           call_id: true,
-          
           leave_conference_url: "TS",
-          
-          
           listen: true,
-          
           notification_url: "TS",
-          
-          
           start_conf_on_enter: true,
-          
           talk: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::AddToConference.new(
-          
           allow_call_control: true,
-          
           call_control_sequence: "TS",
-          
-          
           call_control_url: "TS",
-          
-          
           conference_id: "TS",
-          
-          
           call_id: true,
-          
           leave_conference_url: "TS",
-          
-          
           listen: true,
-          
           notification_url: "TS",
-          
-          
           start_conf_on_enter: true,
-          
           talk: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -230,30 +155,15 @@ describe Freeclimb::AddToConference do
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::AddToConference.new(
-          
           allow_call_control: true,
-          
           call_control_sequence: "TS",
-          
-          
           call_control_url: "TS",
-          
-          
           conference_id: "TS",
-          
-          
           call_id: true,
-          
           leave_conference_url: "TS",
-          
-          
           listen: true,
-          
           notification_url: "TS",
-          
-          
           start_conf_on_enter: true,
-          
           talk: true,
       )
       expect(instance.valid?).to eq(true)
@@ -263,114 +173,54 @@ describe Freeclimb::AddToConference do
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
       instance_1 = Freeclimb::AddToConference.new(
-          
           allow_call_control: true,
-          
           call_control_sequence: "TS",
-          
-          
           call_control_url: "TS",
-          
-          
           conference_id: "TS",
-          
-          
           call_id: true,
-          
           leave_conference_url: "TS",
-          
-          
           listen: true,
-          
           notification_url: "TS",
-          
-          
           start_conf_on_enter: true,
-          
           talk: true,
       )
       instance_2 = Freeclimb::AddToConference.new(
-          
           allow_call_control: true,
-          
           call_control_sequence: "TS",
-          
-          
           call_control_url: "TS",
-          
-          
           conference_id: "TS",
-          
-          
           call_id: true,
-          
           leave_conference_url: "TS",
-          
-          
           listen: true,
-          
           notification_url: "TS",
-          
-          
           start_conf_on_enter: true,
-          
           talk: true,
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::AddToConference.new(
-          
           allow_call_control: true,
-          
           call_control_sequence: "TS",
-          
-          
           call_control_url: "TS",
-          
-          
           conference_id: "TS",
-          
-          
           call_id: true,
-          
           leave_conference_url: "TS",
-          
-          
           listen: true,
-          
           notification_url: "TS",
-          
-          
           start_conf_on_enter: true,
-          
           talk: true,
       )
       instance_2 = Freeclimb::AddToConference.new(
-          
           allow_call_control: false,
-          
           call_control_sequence: "ST",
-          
-          
           call_control_url: "ST",
-          
-          
           conference_id: "ST",
-          
-          
           call_id: false,
-          
           leave_conference_url: "ST",
-          
-          
           listen: false,
-          
           notification_url: "ST",
-          
-          
           start_conf_on_enter: false,
-          
           talk: false,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
@@ -380,31 +230,16 @@ describe Freeclimb::AddToConference do
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::AddToConference.new(
-        
-        allow_call_control: true,
-        
-        call_control_sequence: "TS",
-        
-        
-        call_control_url: "TS",
-        
-        
-        conference_id: "TS",
-        
-        
-        call_id: true,
-        
-        leave_conference_url: "TS",
-        
-        
-        listen: true,
-        
-        notification_url: "TS",
-        
-        
-        start_conf_on_enter: true,
-        
-        talk: true,
+      allow_call_control: true,
+      call_control_sequence: "TS",
+      call_control_url: "TS",
+      conference_id: "TS",
+      call_id: true,
+      leave_conference_url: "TS",
+      listen: true,
+      notification_url: "TS",
+      start_conf_on_enter: true,
+      talk: true,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -413,118 +248,63 @@ describe Freeclimb::AddToConference do
   describe 'test method "build_from_hash"' do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::AddToConference.new(
-        
         allow_call_control: true,
-        
         call_control_sequence: "TS",
-        
-        
         call_control_url: "TS",
-        
-        
         conference_id: "TS",
-        
-        
         call_id: true,
-        
         leave_conference_url: "TS",
-        
-        
         listen: true,
-        
         notification_url: "TS",
-        
-        
         start_conf_on_enter: true,
-        
         talk: true,
       )
       instance_2 = Freeclimb::AddToConference.new
-      expect(instance_2.build_from_hash(instance.hash)).to eq(instance.build_from_hash(instance.hash))
+      expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
     end
   end
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::AddToConference.new(
-        
         allow_call_control: true,
-        
         call_control_sequence: "TS",
-        
-        
         call_control_url: "TS",
-        
-        
         conference_id: "TS",
-        
-        
         call_id: true,
-        
         leave_conference_url: "TS",
-        
-        
         listen: true,
-        
         notification_url: "TS",
-        
-        
         start_conf_on_enter: true,
-        
         talk: true,
     )
-    
-    
-    it 'deserializes the data of allow_call_control' do
+        it 'deserializes the data of allow_call_control' do
       expect(instance._deserialize("Boolean", instance.allow_call_control)).to be_a_kind_of(TrueClass)
     end
-    
     it 'deserializes the data of call_control_sequence' do
       expect(instance._deserialize("String", instance.call_control_sequence)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of call_control_url' do
+        it 'deserializes the data of call_control_url' do
       expect(instance._deserialize("String", instance.call_control_url)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of conference_id' do
+        it 'deserializes the data of conference_id' do
       expect(instance._deserialize("String", instance.conference_id)).to be_a_kind_of(String)
     end
-    
-    
-    
-    
-    it 'deserializes the data of call_id' do
+            it 'deserializes the data of call_id' do
       expect(instance._deserialize("Boolean", instance.call_id)).to be_a_kind_of(TrueClass)
     end
-    
     it 'deserializes the data of leave_conference_url' do
       expect(instance._deserialize("String", instance.leave_conference_url)).to be_a_kind_of(String)
     end
-    
-    
-    
-    
-    it 'deserializes the data of listen' do
+            it 'deserializes the data of listen' do
       expect(instance._deserialize("Boolean", instance.listen)).to be_a_kind_of(TrueClass)
     end
-    
     it 'deserializes the data of notification_url' do
       expect(instance._deserialize("String", instance.notification_url)).to be_a_kind_of(String)
     end
-    
-    
-    
-    
-    it 'deserializes the data of start_conf_on_enter' do
+            it 'deserializes the data of start_conf_on_enter' do
       expect(instance._deserialize("Boolean", instance.start_conf_on_enter)).to be_a_kind_of(TrueClass)
     end
-    
-    
-    it 'deserializes the data of talk' do
+        it 'deserializes the data of talk' do
       expect(instance._deserialize("Boolean", instance.talk)).to be_a_kind_of(TrueClass)
     end
   end
@@ -532,30 +312,15 @@ describe Freeclimb::AddToConference do
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
       instance = Freeclimb::AddToConference.new(
-        
         allow_call_control: true,
-        
         call_control_sequence: "TS",
-        
-        
         call_control_url: "TS",
-        
-        
         conference_id: "TS",
-        
-        
         call_id: true,
-        
         leave_conference_url: "TS",
-        
-        
         listen: true,
-        
         notification_url: "TS",
-        
-        
         start_conf_on_enter: true,
-        
         talk: true,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -565,30 +330,25 @@ describe Freeclimb::AddToConference do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::AddToConference.new(
-        
+
         allow_call_control: true,
-        
         call_control_sequence: "TS",
-        
         
         call_control_url: "TS",
         
-        
         conference_id: "TS",
         
-        
+
         call_id: true,
-        
         leave_conference_url: "TS",
         
-        
+
         listen: true,
-        
         notification_url: "TS",
         
-        
+
         start_conf_on_enter: true,
-        
+
         talk: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -596,91 +356,55 @@ describe Freeclimb::AddToConference do
     it 'creates equal hash for two equal objects' do
       obj = Object.new()
       instance_1 = Freeclimb::AddToConference.new(
-        
         allow_call_control: true,
-        
         call_control_sequence: "TS",
-        
-        
         call_control_url: "TS",
-        
-        
         conference_id: "TS",
-        
-        
         call_id: true,
-        
         leave_conference_url: "TS",
-        
-        
         listen: true,
-        
         notification_url: "TS",
-        
-        
         start_conf_on_enter: true,
-        
         talk: true,
       )
       instance_2 = Freeclimb::AddToConference.new(
-        
         allow_call_control: true,
-        
-        call_control_sequence: "TS",
-        
-        
+                call_control_sequence: "TS",
         call_control_url: "TS",
-        
-        
         conference_id: "TS",
-        
-        
         call_id: true,
-        
-        leave_conference_url: "TS",
-        
-        
+                leave_conference_url: "TS",
         listen: true,
-        
-        notification_url: "TS",
-        
-        
+                notification_url: "TS",
         start_conf_on_enter: true,
-        
-        talk: true,
-      )
+                talk: true,
+              )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end
 
   describe 'test method "_to_hash"' do
     instance = Freeclimb::AddToConference.new(
-        
         allow_call_control: true,
-        
+      
         call_control_sequence: "TS",
-        
-        
+      
         call_control_url: "TS",
-        
-        
+      
         conference_id: "TS",
-        
-        
+      
         call_id: true,
-        
+      
         leave_conference_url: "TS",
-        
-        
+      
         listen: true,
-        
+      
         notification_url: "TS",
-        
-        
+      
         start_conf_on_enter: true,
-        
+      
         talk: true,
-    )
+      )
     it 'returns allow_call_control in the form of hash' do
       expect(instance._to_hash(instance.allow_call_control)).to eq(instance.allow_call_control)
     end

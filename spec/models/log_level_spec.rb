@@ -40,6 +40,7 @@ describe Freeclimb::LogLevel do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "WARNING"' do
     it 'should work' do
       expect { Freeclimb::LogLevel::WARNING = "warning" }.not_to raise_error
@@ -55,6 +56,7 @@ describe Freeclimb::LogLevel do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "ERROR"' do
     it 'should work' do
       expect { Freeclimb::LogLevel::ERROR = "error" }.not_to raise_error
@@ -70,4 +72,5 @@ describe Freeclimb::LogLevel do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

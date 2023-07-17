@@ -40,6 +40,7 @@ describe Freeclimb::AnsweredBy do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "MACHINE"' do
     it 'should work' do
       expect { Freeclimb::AnsweredBy::MACHINE = "machine" }.not_to raise_error
@@ -55,4 +56,5 @@ describe Freeclimb::AnsweredBy do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

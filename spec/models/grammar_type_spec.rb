@@ -40,6 +40,7 @@ describe Freeclimb::GrammarType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "BUILT_IN"' do
     it 'should work' do
       expect { Freeclimb::GrammarType::BUILT_IN = "BUILTIN" }.not_to raise_error
@@ -55,4 +56,5 @@ describe Freeclimb::GrammarType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

@@ -28,14 +28,10 @@ describe Freeclimb::SMSTenDLCBrand do
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-      
-          instance.account_id = "TEST_STRING"
-          expect(instance.account_id).to eq("TEST_STRING")  
-        
-      
+      instance.account_id = "TEST_STRING"
+      expect(instance.account_id).to eq("TEST_STRING")  
     end
   end
-  
 
   describe 'test attribute "entity_type"' do
     it 'assigns value PRIVATE_PROFIT' do
@@ -64,89 +60,68 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
 
+
   describe 'test attribute "csp_id"' do
     it 'should work' do
-      
-          instance.csp_id = "TEST_STRING"
-          expect(instance.csp_id).to eq("TEST_STRING")  
-        
-      
+      instance.csp_id = "TEST_STRING"
+      expect(instance.csp_id).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "brand_id"' do
     it 'should work' do
-      
-          instance.brand_id = "TEST_STRING"
-          expect(instance.brand_id).to eq("TEST_STRING")  
-        
-      
+      instance.brand_id = "TEST_STRING"
+      expect(instance.brand_id).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "first_name"' do
     it 'should work' do
-      
-          instance.first_name = "TEST_STRING"
-          expect(instance.first_name).to eq("TEST_STRING")  
-        
-      
+      instance.first_name = "TEST_STRING"
+      expect(instance.first_name).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "last_name"' do
     it 'should work' do
-      
-          instance.last_name = "TEST_STRING"
-          expect(instance.last_name).to eq("TEST_STRING")  
-        
-      
+      instance.last_name = "TEST_STRING"
+      expect(instance.last_name).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "display_name"' do
     it 'should work' do
-      
-          instance.display_name = "TEST_STRING"
-          expect(instance.display_name).to eq("TEST_STRING")  
-        
-      
+      instance.display_name = "TEST_STRING"
+      expect(instance.display_name).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "company_name"' do
     it 'should work' do
-      
-          instance.company_name = "TEST_STRING"
-          expect(instance.company_name).to eq("TEST_STRING")  
-        
-      
+      instance.company_name = "TEST_STRING"
+      expect(instance.company_name).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "ein"' do
     it 'should work' do
-      
-          instance.ein = "TEST_STRING"
-          expect(instance.ein).to eq("TEST_STRING")  
-        
-      
+      instance.ein = "TEST_STRING"
+      expect(instance.ein).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "ein_issuing_country"' do
     it 'should work' do
-      
     end
   end
-  
+
   describe 'test attribute "ein_issuing_country"' do
     it 'should work with length 2' do
       instance.ein_issuing_country = "TS"
@@ -157,56 +132,44 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end  
 
+
   describe 'test attribute "phone"' do
     it 'should work' do
-      
-          instance.phone = "TEST_STRING"
-          expect(instance.phone).to eq("TEST_STRING")  
-        
-      
+      instance.phone = "TEST_STRING"
+      expect(instance.phone).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "street"' do
     it 'should work' do
-      
-          instance.street = "TEST_STRING"
-          expect(instance.street).to eq("TEST_STRING")  
-        
-      
+      instance.street = "TEST_STRING"
+      expect(instance.street).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "city"' do
     it 'should work' do
-      
-          instance.city = "TEST_STRING"
-          expect(instance.city).to eq("TEST_STRING")  
-        
-      
+      instance.city = "TEST_STRING"
+      expect(instance.city).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "state"' do
     it 'should work' do
-      
-          instance.state = "TEST_STRING"
-          expect(instance.state).to eq("TEST_STRING")  
-        
-      
+      instance.state = "TEST_STRING"
+      expect(instance.state).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "postal_code"' do
     it 'should work' do
-      
     end
   end
-  
+
   describe 'test attribute "postal_code"' do
     it 'should work with length 10' do
       instance.postal_code = "TEST_STRIN"
@@ -217,12 +180,12 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end  
 
+
   describe 'test attribute "country"' do
     it 'should work' do
-      
     end
   end
-  
+
   describe 'test attribute "country"' do
     it 'should work with length 2' do
       instance.country = "TS"
@@ -233,23 +196,20 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end  
 
+
   describe 'test attribute "email"' do
     it 'should work' do
-      
-          instance.email = "TEST_STRING"
-          expect(instance.email).to eq("TEST_STRING")  
-        
-      
+      instance.email = "TEST_STRING"
+      expect(instance.email).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "stock_symbol"' do
     it 'should work' do
-      
     end
   end
-  
+
   describe 'test attribute "stock_symbol"' do
     it 'should work with length 10' do
       instance.stock_symbol = "TEST_STRIN"
@@ -375,27 +335,21 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
 
+
   describe 'test attribute "ip_address"' do
     it 'should work' do
-      
-          instance.ip_address = "TEST_STRING"
-          expect(instance.ip_address).to eq("TEST_STRING")  
-        
-      
+      instance.ip_address = "TEST_STRING"
+      expect(instance.ip_address).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "website"' do
     it 'should work' do
-      
-          instance.website = "TEST_STRING"
-          expect(instance.website).to eq("TEST_STRING")  
-        
-      
+      instance.website = "TEST_STRING"
+      expect(instance.website).to eq("TEST_STRING")  
     end
   end
-  
 
   describe 'test attribute "brand_relationship"' do
     it 'assigns value BASIC_ACCOUNT' do
@@ -424,27 +378,21 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
 
+
   describe 'test attribute "vertical"' do
     it 'should work' do
-      
-          instance.vertical = "TEST_STRING"
-          expect(instance.vertical).to eq("TEST_STRING")  
-        
-      
+      instance.vertical = "TEST_STRING"
+      expect(instance.vertical).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "alt_business_id"' do
     it 'should work' do
-      
-          instance.alt_business_id = "TEST_STRING"
-          expect(instance.alt_business_id).to eq("TEST_STRING")  
-        
-      
+      instance.alt_business_id = "TEST_STRING"
+      expect(instance.alt_business_id).to eq("TEST_STRING")  
     end
   end
-  
 
   describe 'test attribute "alt_business_id_type"' do
     it 'assigns value NONE' do
@@ -469,50 +417,38 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
 
+
   describe 'test attribute "universal_ein"' do
     it 'should work' do
-      
-          instance.universal_ein = "TEST_STRING"
-          expect(instance.universal_ein).to eq("TEST_STRING")  
-        
-      
+      instance.universal_ein = "TEST_STRING"
+      expect(instance.universal_ein).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "reference_id"' do
     it 'should work' do
-      
-          instance.reference_id = "TEST_STRING"
-          expect(instance.reference_id).to eq("TEST_STRING")  
-        
-      
+      instance.reference_id = "TEST_STRING"
+      expect(instance.reference_id).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "optional_attributes"' do
     it 'should work' do
-      
-        
-          testObject = Object.new()
-          instance.optional_attributes = testObject
-          expect(instance.optional_attributes).to eq(testObject)
-      
+      testObject = Object.new()
+      instance.optional_attributes = testObject
+      expect(instance.optional_attributes).to eq(testObject)
     end
   end
-  
+
 
   describe 'test attribute "mock"' do
     it 'should work' do
-      
-          instance.mock = false
-          expect(instance.mock).to eq(false)        
-        
-      
+      instance.mock = false
+      expect(instance.mock).to eq(false)        
     end
   end
-  
 
   describe 'test attribute "identity_status"' do
     it 'assigns value SELF_DECLARED' do
@@ -537,285 +473,121 @@ describe Freeclimb::SMSTenDLCBrand do
     end
   end
 
+
   describe 'test attribute "create_date"' do
     it 'should work' do
-      
-          instance.create_date = "2022-07-05T15:17:05Z"
-          expect(instance.create_date).to eq("2022-07-05T15:17:05Z")  
-        
-      
+      instance.create_date = "2022-07-05T15:17:05Z"
+      expect(instance.create_date).to eq("2022-07-05T15:17:05Z")  
     end
   end
-  
+
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::SMSTenDLCBrand.new(
-          
           account_id: "TS",
-          
-          
           entity_type: "PRIVATE_PROFIT",
-          
           csp_id: "TS",
-          
-          
           brand_id: "TS",
-          
-          
           first_name: "TS",
-          
-          
           last_name: "TS",
-          
-          
           display_name: "TS",
-          
-          
           company_name: "TS",
-          
-          
           ein: "TS",
-          
-          
           ein_issuing_country: "TS",
-          
-          
           phone: "TS",
-          
-          
           street: "TS",
-          
-          
           city: "TS",
-          
-          
           state: "TS",
-          
-          
           postal_code: "TS",
-          
-          
           country: "TS",
-          
-          
           email: "TS",
-          
-          
           stock_symbol: "TS",
-          
-          
           stock_exchange: "NONE",
-          
           ip_address: "TS",
-          
-          
           website: "TS",
-          
-          
           brand_relationship: "BASIC_ACCOUNT",
-          
           vertical: "TS",
-          
-          
           alt_business_id: "TS",
-          
-          
           alt_business_id_type: "NONE",
-          
           universal_ein: "TS",
-          
-          
           reference_id: "TS",
-          
-          
           optional_attributes: Object.new(),
           optional_attributes: Hash.new(),
-          
           mock: true,
-          
           identity_status: "SELF_DECLARED",
-          
           create_date: "2022-07-05T15:17:05Z",
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::SMSTenDLCBrand' do
         expect{instance = Freeclimb::SMSTenDLCBrand.new(
-          
           account_id: "TS",
-          
-          
           entity_type: "PRIVATE_PROFIT",
-          
           csp_id: "TS",
-          
-          
           brand_id: "TS",
-          
-          
           first_name: "TS",
-          
-          
           last_name: "TS",
-          
-          
           display_name: "TS",
-          
-          
           company_name: "TS",
-          
-          
           ein: "TS",
-          
-          
           ein_issuing_country: "TS",
-          
-          
           phone: "TS",
-          
-          
           street: "TS",
-          
-          
           city: "TS",
-          
-          
           state: "TS",
-          
-          
           postal_code: "TS",
-          
-          
           country: "TS",
-          
-          
           email: "TS",
-          
-          
           stock_symbol: "TS",
-          
-          
           stock_exchange: "NONE",
-          
           ip_address: "TS",
-          
-          
           website: "TS",
-          
-          
           brand_relationship: "BASIC_ACCOUNT",
-          
           vertical: "TS",
-          
-          
           alt_business_id: "TS",
-          
-          
           alt_business_id_type: "NONE",
-          
           universal_ein: "TS",
-          
-          
           reference_id: "TS",
-          
-          
           optional_attributes: Object.new(),
           optional_attributes: Hash.new(),
-          
           mock: true,
-          
           identity_status: "SELF_DECLARED",
-          
           create_date: "2022-07-05T15:17:05Z",
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::SMSTenDLCBrand.new(
-          
           account_id: "TS",
-          
-          
           entity_type: "PRIVATE_PROFIT",
-          
           csp_id: "TS",
-          
-          
           brand_id: "TS",
-          
-          
           first_name: "TS",
-          
-          
           last_name: "TS",
-          
-          
           display_name: "TS",
-          
-          
           company_name: "TS",
-          
-          
           ein: "TS",
-          
-          
           ein_issuing_country: "TS",
-          
-          
           phone: "TS",
-          
-          
           street: "TS",
-          
-          
           city: "TS",
-          
-          
           state: "TS",
-          
-          
           postal_code: "TS",
-          
-          
           country: "TS",
-          
-          
           email: "TS",
-          
-          
           stock_symbol: "TS",
-          
-          
           stock_exchange: "NONE",
-          
           ip_address: "TS",
-          
-          
           website: "TS",
-          
-          
           brand_relationship: "BASIC_ACCOUNT",
-          
           vertical: "TS",
-          
-          
           alt_business_id: "TS",
-          
-          
           alt_business_id_type: "NONE",
-          
           universal_ein: "TS",
-          
-          
           reference_id: "TS",
-          
-          
           optional_attributes: Object.new(),
           optional_attributes: Hash.new(),
-          
           mock: true,
-          
           identity_status: "SELF_DECLARED",
-          
           create_date: "2022-07-05T15:17:05Z",
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -825,91 +597,37 @@ describe Freeclimb::SMSTenDLCBrand do
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::SMSTenDLCBrand.new(
-          
           account_id: "TS",
-          
-          
           entity_type: "PRIVATE_PROFIT",
-          
           csp_id: "TS",
-          
-          
           brand_id: "TS",
-          
-          
           first_name: "TS",
-          
-          
           last_name: "TS",
-          
-          
           display_name: "TS",
-          
-          
           company_name: "TS",
-          
-          
           ein: "TS",
-          
-          
           ein_issuing_country: "TS",
-          
-          
           phone: "TS",
-          
-          
           street: "TS",
-          
-          
           city: "TS",
-          
-          
           state: "TS",
-          
-          
           postal_code: "TS",
-          
-          
           country: "TS",
-          
-          
           email: "TS",
-          
-          
           stock_symbol: "TS",
-          
-          
           stock_exchange: "NONE",
-          
           ip_address: "TS",
-          
-          
           website: "TS",
-          
-          
           brand_relationship: "BASIC_ACCOUNT",
-          
           vertical: "TS",
-          
-          
           alt_business_id: "TS",
-          
-          
           alt_business_id_type: "NONE",
-          
           universal_ein: "TS",
-          
-          
           reference_id: "TS",
-          
-          
           optional_attributes: Object.new(),
           optional_attributes: Hash.new(),
-          
           mock: true,
-          
           identity_status: "SELF_DECLARED",
-          
           create_date: "2022-07-05T15:17:05Z",
       )
       expect(instance.valid?).to eq(true)
@@ -919,351 +637,135 @@ describe Freeclimb::SMSTenDLCBrand do
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
       instance_1 = Freeclimb::SMSTenDLCBrand.new(
-          
           account_id: "TS",
-          
-          
           entity_type: "PRIVATE_PROFIT",
-          
           csp_id: "TS",
-          
-          
           brand_id: "TS",
-          
-          
           first_name: "TS",
-          
-          
           last_name: "TS",
-          
-          
           display_name: "TS",
-          
-          
           company_name: "TS",
-          
-          
           ein: "TS",
-          
-          
           ein_issuing_country: "TS",
-          
-          
           phone: "TS",
-          
-          
           street: "TS",
-          
-          
           city: "TS",
-          
-          
           state: "TS",
-          
-          
           postal_code: "TS",
-          
-          
           country: "TS",
-          
-          
           email: "TS",
-          
-          
           stock_symbol: "TS",
-          
-          
           stock_exchange: "NONE",
-          
           ip_address: "TS",
-          
-          
           website: "TS",
-          
-          
           brand_relationship: "BASIC_ACCOUNT",
-          
           vertical: "TS",
-          
-          
           alt_business_id: "TS",
-          
-          
           alt_business_id_type: "NONE",
-          
           universal_ein: "TS",
-          
-          
           reference_id: "TS",
-          
-          
           optional_attributes: nil,
-          
           mock: true,
-          
           identity_status: "SELF_DECLARED",
-          
       )
       instance_2 = Freeclimb::SMSTenDLCBrand.new(
-          
           account_id: "TS",
-          
-          
           entity_type: "PRIVATE_PROFIT",
-          
           csp_id: "TS",
-          
-          
           brand_id: "TS",
-          
-          
           first_name: "TS",
-          
-          
           last_name: "TS",
-          
-          
           display_name: "TS",
-          
-          
           company_name: "TS",
-          
-          
           ein: "TS",
-          
-          
           ein_issuing_country: "TS",
-          
-          
           phone: "TS",
-          
-          
           street: "TS",
-          
-          
           city: "TS",
-          
-          
           state: "TS",
-          
-          
           postal_code: "TS",
-          
-          
           country: "TS",
-          
-          
           email: "TS",
-          
-          
           stock_symbol: "TS",
-          
-          
           stock_exchange: "NONE",
-          
           ip_address: "TS",
-          
-          
           website: "TS",
-          
-          
           brand_relationship: "BASIC_ACCOUNT",
-          
           vertical: "TS",
-          
-          
           alt_business_id: "TS",
-          
-          
           alt_business_id_type: "NONE",
-          
           universal_ein: "TS",
-          
-          
           reference_id: "TS",
-          
-          
           optional_attributes: nil,
-          
           mock: true,
-          
           identity_status: "SELF_DECLARED",
-          
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::SMSTenDLCBrand.new(
-          
           account_id: "TS",
-          
-          
           entity_type: "PRIVATE_PROFIT",
-          
           csp_id: "TS",
-          
-          
           brand_id: "TS",
-          
-          
           first_name: "TS",
-          
-          
           last_name: "TS",
-          
-          
           display_name: "TS",
-          
-          
           company_name: "TS",
-          
-          
           ein: "TS",
-          
-          
           ein_issuing_country: "TS",
-          
-          
           phone: "TS",
-          
-          
           street: "TS",
-          
-          
           city: "TS",
-          
-          
           state: "TS",
-          
-          
           postal_code: "TS",
-          
-          
           country: "TS",
-          
-          
           email: "TS",
-          
-          
           stock_symbol: "TS",
-          
-          
           stock_exchange: "NONE",
-          
           ip_address: "TS",
-          
-          
           website: "TS",
-          
-          
           brand_relationship: "BASIC_ACCOUNT",
-          
           vertical: "TS",
-          
-          
           alt_business_id: "TS",
-          
-          
           alt_business_id_type: "NONE",
-          
           universal_ein: "TS",
-          
-          
           reference_id: "TS",
-          
-          
           optional_attributes: Object.new(),
-          
           mock: true,
-          
           identity_status: "SELF_DECLARED",
-          
       )
       instance_2 = Freeclimb::SMSTenDLCBrand.new(
-          
           account_id: "ST",
-          
-          
           entity_type: "PUBLIC_PROFIT",
-          
           csp_id: "ST",
-          
-          
           brand_id: "ST",
-          
-          
           first_name: "ST",
-          
-          
           last_name: "ST",
-          
-          
           display_name: "ST",
-          
-          
           company_name: "ST",
-          
-          
           ein: "ST",
-          
-          
           ein_issuing_country: "ST",
-          
-          
           phone: "ST",
-          
-          
           street: "ST",
-          
-          
           city: "ST",
-          
-          
           state: "ST",
-          
-          
           postal_code: "ST",
-          
-          
           country: "ST",
-          
-          
           email: "ST",
-          
-          
           stock_symbol: "ST",
-          
-          
           stock_exchange: "NASDAQ",
-          
           ip_address: "ST",
-          
-          
           website: "ST",
-          
-          
           brand_relationship: "SMALL_ACCOUNT",
-          
           vertical: "ST",
-          
-          
           alt_business_id: "ST",
-          
-          
           alt_business_id_type: "DUNS",
-          
           universal_ein: "ST",
-          
-          
           reference_id: "ST",
-          
-          
           optional_attributes: nil,
-          
           mock: false,
-          
           identity_status: "UNVERIFIED",
-          
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
@@ -1272,92 +774,38 @@ describe Freeclimb::SMSTenDLCBrand do
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SMSTenDLCBrand.new(
-        
-        account_id: "TS",
-        
-        
-        entity_type: "PRIVATE_PROFIT",
-        
-        csp_id: "TS",
-        
-        
-        brand_id: "TS",
-        
-        
-        first_name: "TS",
-        
-        
-        last_name: "TS",
-        
-        
-        display_name: "TS",
-        
-        
-        company_name: "TS",
-        
-        
-        ein: "TS",
-        
-        
-        ein_issuing_country: "TS",
-        
-        
-        phone: "TS",
-        
-        
-        street: "TS",
-        
-        
-        city: "TS",
-        
-        
-        state: "TS",
-        
-        
-        postal_code: "TS",
-        
-        
-        country: "TS",
-        
-        
-        email: "TS",
-        
-        
-        stock_symbol: "TS",
-        
-        
-        stock_exchange: "NONE",
-        
-        ip_address: "TS",
-        
-        
-        website: "TS",
-        
-        
-        brand_relationship: "BASIC_ACCOUNT",
-        
-        vertical: "TS",
-        
-        
-        alt_business_id: "TS",
-        
-        
-        alt_business_id_type: "NONE",
-        
-        universal_ein: "TS",
-        
-        
-        reference_id: "TS",
-        
-        
-        optional_attributes: Object.new(),
-        optional_attributes: Hash.new(),
-        
-        mock: true,
-        
-        identity_status: "SELF_DECLARED",
-        
-        create_date: "2022-07-05T15:17:05Z",
+      account_id: "TS",
+      entity_type: "PRIVATE_PROFIT",
+      csp_id: "TS",
+      brand_id: "TS",
+      first_name: "TS",
+      last_name: "TS",
+      display_name: "TS",
+      company_name: "TS",
+      ein: "TS",
+      ein_issuing_country: "TS",
+      phone: "TS",
+      street: "TS",
+      city: "TS",
+      state: "TS",
+      postal_code: "TS",
+      country: "TS",
+      email: "TS",
+      stock_symbol: "TS",
+      stock_exchange: "NONE",
+      ip_address: "TS",
+      website: "TS",
+      brand_relationship: "BASIC_ACCOUNT",
+      vertical: "TS",
+      alt_business_id: "TS",
+      alt_business_id_type: "NONE",
+      universal_ein: "TS",
+      reference_id: "TS",
+      optional_attributes: Object.new(),
+      optional_attributes: Hash.new(),
+      mock: true,
+      identity_status: "SELF_DECLARED",
+      create_date: "2022-07-05T15:17:05Z",
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -1366,461 +814,208 @@ describe Freeclimb::SMSTenDLCBrand do
   describe 'test method "build_from_hash"' do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::SMSTenDLCBrand.new(
-        
         account_id: "TS",
-        
-        
         entity_type: "PRIVATE_PROFIT",
-        
         csp_id: "TS",
-        
-        
         brand_id: "TS",
-        
-        
         first_name: "TS",
-        
-        
         last_name: "TS",
-        
-        
         display_name: "TS",
-        
-        
         company_name: "TS",
-        
-        
         ein: "TS",
-        
-        
         ein_issuing_country: "TS",
-        
-        
         phone: "TS",
-        
-        
         street: "TS",
-        
-        
         city: "TS",
-        
-        
         state: "TS",
-        
-        
         postal_code: "TS",
-        
-        
         country: "TS",
-        
-        
         email: "TS",
-        
-        
         stock_symbol: "TS",
-        
-        
         stock_exchange: "NONE",
-        
         ip_address: "TS",
-        
-        
         website: "TS",
-        
-        
         brand_relationship: "BASIC_ACCOUNT",
-        
         vertical: "TS",
-        
-        
         alt_business_id: "TS",
-        
-        
         alt_business_id_type: "NONE",
-        
         universal_ein: "TS",
-        
-        
         reference_id: "TS",
-        
-        
         optional_attributes: Object.new(),
         optional_attributes: Hash.new(),
-        
         mock: true,
-        
         identity_status: "SELF_DECLARED",
-        
         create_date: "2022-07-05T15:17:05Z",
       )
       instance_2 = Freeclimb::SMSTenDLCBrand.new
-      expect(instance_2.build_from_hash(instance.hash)).to eq(instance.build_from_hash(instance.hash))
+      expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
     end
   end
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::SMSTenDLCBrand.new(
-        
         account_id: "TS",
-        
-        
         entity_type: "PRIVATE_PROFIT",
-        
         csp_id: "TS",
-        
-        
         brand_id: "TS",
-        
-        
         first_name: "TS",
-        
-        
         last_name: "TS",
-        
-        
         display_name: "TS",
-        
-        
         company_name: "TS",
-        
-        
         ein: "TS",
-        
-        
         ein_issuing_country: "TS",
-        
-        
         phone: "TS",
-        
-        
         street: "TS",
-        
-        
         city: "TS",
-        
-        
         state: "TS",
-        
-        
         postal_code: "TS",
-        
-        
         country: "TS",
-        
-        
         email: "TS",
-        
-        
         stock_symbol: "TS",
-        
-        
         stock_exchange: "NONE",
-        
         ip_address: "TS",
-        
-        
         website: "TS",
-        
-        
         brand_relationship: "BASIC_ACCOUNT",
-        
         vertical: "TS",
-        
-        
         alt_business_id: "TS",
-        
-        
         alt_business_id_type: "NONE",
-        
         universal_ein: "TS",
-        
-        
         reference_id: "TS",
-        
-        
         optional_attributes: Object.new(),
         optional_attributes: Hash.new(),
-        
         mock: true,
-        
         identity_status: "SELF_DECLARED",
-        
         create_date: "2022-07-05T15:17:05Z",
     )
-    
     it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of entity_type' do
+        it 'deserializes the data of entity_type' do
       expect(instance._deserialize("String", instance.entity_type)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of csp_id' do
+        it 'deserializes the data of csp_id' do
       expect(instance._deserialize("String", instance.csp_id)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of brand_id' do
+        it 'deserializes the data of brand_id' do
       expect(instance._deserialize("String", instance.brand_id)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of first_name' do
+        it 'deserializes the data of first_name' do
       expect(instance._deserialize("String", instance.first_name)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of last_name' do
+        it 'deserializes the data of last_name' do
       expect(instance._deserialize("String", instance.last_name)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of display_name' do
+        it 'deserializes the data of display_name' do
       expect(instance._deserialize("String", instance.display_name)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of company_name' do
+        it 'deserializes the data of company_name' do
       expect(instance._deserialize("String", instance.company_name)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of ein' do
+        it 'deserializes the data of ein' do
       expect(instance._deserialize("String", instance.ein)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of ein_issuing_country' do
+        it 'deserializes the data of ein_issuing_country' do
       expect(instance._deserialize("String", instance.ein_issuing_country)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of phone' do
+        it 'deserializes the data of phone' do
       expect(instance._deserialize("String", instance.phone)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of street' do
+        it 'deserializes the data of street' do
       expect(instance._deserialize("String", instance.street)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of city' do
+        it 'deserializes the data of city' do
       expect(instance._deserialize("String", instance.city)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of state' do
+        it 'deserializes the data of state' do
       expect(instance._deserialize("String", instance.state)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of postal_code' do
+        it 'deserializes the data of postal_code' do
       expect(instance._deserialize("String", instance.postal_code)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of country' do
+        it 'deserializes the data of country' do
       expect(instance._deserialize("String", instance.country)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of email' do
+        it 'deserializes the data of email' do
       expect(instance._deserialize("String", instance.email)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of stock_symbol' do
+        it 'deserializes the data of stock_symbol' do
       expect(instance._deserialize("String", instance.stock_symbol)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of stock_exchange' do
+        it 'deserializes the data of stock_exchange' do
       expect(instance._deserialize("String", instance.stock_exchange)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of ip_address' do
+        it 'deserializes the data of ip_address' do
       expect(instance._deserialize("String", instance.ip_address)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of website' do
+        it 'deserializes the data of website' do
       expect(instance._deserialize("String", instance.website)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of brand_relationship' do
+        it 'deserializes the data of brand_relationship' do
       expect(instance._deserialize("String", instance.brand_relationship)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of vertical' do
+        it 'deserializes the data of vertical' do
       expect(instance._deserialize("String", instance.vertical)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of alt_business_id' do
+        it 'deserializes the data of alt_business_id' do
       expect(instance._deserialize("String", instance.alt_business_id)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of alt_business_id_type' do
+        it 'deserializes the data of alt_business_id_type' do
       expect(instance._deserialize("String", instance.alt_business_id_type)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of universal_ein' do
+        it 'deserializes the data of universal_ein' do
       expect(instance._deserialize("String", instance.universal_ein)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of reference_id' do
+        it 'deserializes the data of reference_id' do
       expect(instance._deserialize("String", instance.reference_id)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of optional_attributes' do
+        it 'deserializes the data of optional_attributes' do
       expect(instance._deserialize("Hash<String, Object>", instance.optional_attributes)).to be_a_kind_of(Hash)
     end
-    
-    
-    
-    it 'deserializes the data of mock' do
+            it 'deserializes the data of mock' do
       expect(instance._deserialize("Boolean", instance.mock)).to be_a_kind_of(TrueClass)
     end
-    
     it 'deserializes the data of identity_status' do
       expect(instance._deserialize("String", instance.identity_status)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of create_date' do
+        it 'deserializes the data of create_date' do
       expect(instance._deserialize("Time", instance.create_date)).to be_a_kind_of(Time)
     end
-    
-    
-  end
+      end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
       instance = Freeclimb::SMSTenDLCBrand.new(
-        
         account_id: "TS",
-        
-        
         entity_type: "PRIVATE_PROFIT",
-        
         csp_id: "TS",
-        
-        
         brand_id: "TS",
-        
-        
         first_name: "TS",
-        
-        
         last_name: "TS",
-        
-        
         display_name: "TS",
-        
-        
         company_name: "TS",
-        
-        
         ein: "TS",
-        
-        
         ein_issuing_country: "TS",
-        
-        
         phone: "TS",
-        
-        
         street: "TS",
-        
-        
         city: "TS",
-        
-        
         state: "TS",
-        
-        
         postal_code: "TS",
-        
-        
         country: "TS",
-        
-        
         email: "TS",
-        
-        
         stock_symbol: "TS",
-        
-        
         stock_exchange: "NONE",
-        
         ip_address: "TS",
-        
-        
         website: "TS",
-        
-        
         brand_relationship: "BASIC_ACCOUNT",
-        
         vertical: "TS",
-        
-        
         alt_business_id: "TS",
-        
-        
         alt_business_id_type: "NONE",
-        
         universal_ein: "TS",
-        
-        
         reference_id: "TS",
-        
-        
         optional_attributes: Object.new(),
         optional_attributes: Hash.new(),
-        
         mock: true,
-        
         identity_status: "SELF_DECLARED",
-        
         create_date: "2022-07-05T15:17:05Z",
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -1830,91 +1025,68 @@ describe Freeclimb::SMSTenDLCBrand do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::SMSTenDLCBrand.new(
-        
         account_id: "TS",
         
-        
+
         entity_type: "PRIVATE_PROFIT",
-        
         csp_id: "TS",
-        
         
         brand_id: "TS",
         
-        
         first_name: "TS",
-        
         
         last_name: "TS",
         
-        
         display_name: "TS",
-        
         
         company_name: "TS",
         
-        
         ein: "TS",
-        
         
         ein_issuing_country: "TS",
         
-        
         phone: "TS",
-        
         
         street: "TS",
         
-        
         city: "TS",
-        
         
         state: "TS",
         
-        
         postal_code: "TS",
-        
         
         country: "TS",
         
-        
         email: "TS",
-        
         
         stock_symbol: "TS",
         
-        
+
         stock_exchange: "NONE",
-        
         ip_address: "TS",
-        
         
         website: "TS",
         
-        
+
         brand_relationship: "BASIC_ACCOUNT",
-        
         vertical: "TS",
-        
         
         alt_business_id: "TS",
         
-        
+
         alt_business_id_type: "NONE",
-        
         universal_ein: "TS",
-        
         
         reference_id: "TS",
         
-        
+
         optional_attributes: Object.new(),
         optional_attributes: Hash.new(),
-        
+
         mock: true,
-        
+
         identity_status: "SELF_DECLARED",
-        
+
         create_date: "2022-07-05T15:17:05Z",
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -1922,274 +1094,150 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'creates equal hash for two equal objects' do
       obj = Object.new()
       instance_1 = Freeclimb::SMSTenDLCBrand.new(
-        
         account_id: "TS",
-        
-        
         entity_type: "PRIVATE_PROFIT",
-        
         csp_id: "TS",
-        
-        
         brand_id: "TS",
-        
-        
         first_name: "TS",
-        
-        
         last_name: "TS",
-        
-        
         display_name: "TS",
-        
-        
         company_name: "TS",
-        
-        
         ein: "TS",
-        
-        
         ein_issuing_country: "TS",
-        
-        
         phone: "TS",
-        
-        
         street: "TS",
-        
-        
         city: "TS",
-        
-        
         state: "TS",
-        
-        
         postal_code: "TS",
-        
-        
         country: "TS",
-        
-        
         email: "TS",
-        
-        
         stock_symbol: "TS",
-        
-        
         stock_exchange: "NONE",
-        
         ip_address: "TS",
-        
-        
         website: "TS",
-        
-        
         brand_relationship: "BASIC_ACCOUNT",
-        
         vertical: "TS",
-        
-        
         alt_business_id: "TS",
-        
-        
         alt_business_id_type: "NONE",
-        
         universal_ein: "TS",
-        
-        
         reference_id: "TS",
-        
-        
         optional_attributes: obj,
         optional_attributes: Hash.new(),
-        
         mock: true,
-        
         identity_status: "SELF_DECLARED",
-        
         create_date: "2022-07-05T15:17:05Z",
       )
       instance_2 = Freeclimb::SMSTenDLCBrand.new(
-        
         account_id: "TS",
-        
-        
+
         entity_type: "PRIVATE_PROFIT",
-        
-        csp_id: "TS",
-        
-        
+                csp_id: "TS",
         brand_id: "TS",
-        
-        
         first_name: "TS",
-        
-        
         last_name: "TS",
-        
-        
         display_name: "TS",
-        
-        
         company_name: "TS",
-        
-        
         ein: "TS",
-        
-        
         ein_issuing_country: "TS",
-        
-        
         phone: "TS",
-        
-        
         street: "TS",
-        
-        
         city: "TS",
-        
-        
         state: "TS",
-        
-        
         postal_code: "TS",
-        
-        
         country: "TS",
-        
-        
         email: "TS",
-        
-        
         stock_symbol: "TS",
-        
-        
+
         stock_exchange: "NONE",
-        
-        ip_address: "TS",
-        
-        
+                ip_address: "TS",
         website: "TS",
-        
-        
+
         brand_relationship: "BASIC_ACCOUNT",
-        
-        vertical: "TS",
-        
-        
+                vertical: "TS",
         alt_business_id: "TS",
-        
-        
+
         alt_business_id_type: "NONE",
-        
-        universal_ein: "TS",
-        
-        
+                universal_ein: "TS",
         reference_id: "TS",
-        
-        
+
         optional_attributes: obj,
-        optional_attributes: Hash.new(),
         
-        mock: true,
+        optional_attributes: Hash.new(),
+                mock: true,
         
         identity_status: "SELF_DECLARED",
         
         create_date: "2022-07-05T15:17:05Z",
-      )
+              )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end
 
   describe 'test method "_to_hash"' do
     instance = Freeclimb::SMSTenDLCBrand.new(
-        
         account_id: "TS",
-        
-        
+      
         entity_type: "PRIVATE_PROFIT",
-        
+      
         csp_id: "TS",
-        
-        
+      
         brand_id: "TS",
-        
-        
+      
         first_name: "TS",
-        
-        
+      
         last_name: "TS",
-        
-        
+      
         display_name: "TS",
-        
-        
+      
         company_name: "TS",
-        
-        
+      
         ein: "TS",
-        
-        
+      
         ein_issuing_country: "TS",
-        
-        
+      
         phone: "TS",
-        
-        
+      
         street: "TS",
-        
-        
+      
         city: "TS",
-        
-        
+      
         state: "TS",
-        
-        
+      
         postal_code: "TS",
-        
-        
+      
         country: "TS",
-        
-        
+      
         email: "TS",
-        
-        
+      
         stock_symbol: "TS",
-        
-        
+      
         stock_exchange: "NONE",
-        
+      
         ip_address: "TS",
-        
-        
+      
         website: "TS",
-        
-        
+      
         brand_relationship: "BASIC_ACCOUNT",
-        
+      
         vertical: "TS",
-        
-        
+      
         alt_business_id: "TS",
-        
-        
+      
         alt_business_id_type: "NONE",
-        
+      
         universal_ein: "TS",
-        
-        
+      
         reference_id: "TS",
-        
-        
+      
         optional_attributes: Object.new(),
         optional_attributes: Hash.new(),
-        
+      
         mock: true,
-        
+      
         identity_status: "SELF_DECLARED",
-        
+      
         create_date: "2022-07-05T15:17:05Z",
-    )
+      )
     it 'returns account_id in the form of hash' do
       expect(instance._to_hash(instance.account_id)).to eq(instance.account_id)
     end

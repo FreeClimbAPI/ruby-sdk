@@ -28,51 +28,36 @@ describe Freeclimb::QueueRequest do
 
   describe 'test attribute "_alias"' do
     it 'should work' do
-      
-          instance._alias = "TEST_STRING"
-          expect(instance._alias).to eq("TEST_STRING")  
-        
-      
+      instance._alias = "TEST_STRING"
+      expect(instance._alias).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "max_size"' do
     it 'should work' do
-      
-          instance.max_size = 1
-          expect(instance.max_size).to eq(1) 
-        
-      
+      instance.max_size = 1
+      expect(instance.max_size).to eq(1) 
     end
   end
-  
+
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::QueueRequest.new(
-          
           _alias: "TS",
-          
-          
           max_size: 1,
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::QueueRequest' do
         expect{instance = Freeclimb::QueueRequest.new(
-          
           _alias: "TS",
-          
-          
           max_size: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::QueueRequest.new(
-          
           _alias: "TS",
-          
-          
           max_size: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -82,10 +67,7 @@ describe Freeclimb::QueueRequest do
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::QueueRequest.new(
-          
           _alias: "TS",
-          
-          
           max_size: 1,
       )
       expect(instance.valid?).to eq(true)
@@ -95,34 +77,22 @@ describe Freeclimb::QueueRequest do
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
       instance_1 = Freeclimb::QueueRequest.new(
-          
           _alias: "TS",
-          
-          
           max_size: 1,
       )
       instance_2 = Freeclimb::QueueRequest.new(
-          
           _alias: "TS",
-          
-          
           max_size: 1,
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::QueueRequest.new(
-          
           _alias: "TS",
-          
-          
           max_size: 1,
       )
       instance_2 = Freeclimb::QueueRequest.new(
-          
           _alias: "ST",
-          
-          
           max_size: 0,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
@@ -132,11 +102,8 @@ describe Freeclimb::QueueRequest do
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::QueueRequest.new(
-        
-        _alias: "TS",
-        
-        
-        max_size: 1,
+      _alias: "TS",
+      max_size: 1,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -145,46 +112,31 @@ describe Freeclimb::QueueRequest do
   describe 'test method "build_from_hash"' do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::QueueRequest.new(
-        
         _alias: "TS",
-        
-        
         max_size: 1,
       )
       instance_2 = Freeclimb::QueueRequest.new
-      expect(instance_2.build_from_hash(instance.hash)).to eq(instance.build_from_hash(instance.hash))
+      expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
     end
   end
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::QueueRequest.new(
-        
         _alias: "TS",
-        
-        
         max_size: 1,
     )
-    
     it 'deserializes the data of _alias' do
       expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of max_size' do
+        it 'deserializes the data of max_size' do
       expect(instance._deserialize("Integer", instance.max_size)).to be_a_kind_of(Integer)
     end
-    
-    
-  end
+      end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
       instance = Freeclimb::QueueRequest.new(
-        
         _alias: "TS",
-        
-        
         max_size: 1,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -194,10 +146,9 @@ describe Freeclimb::QueueRequest do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::QueueRequest.new(
-        
         _alias: "TS",
         
-        
+
         max_size: 1,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -205,31 +156,24 @@ describe Freeclimb::QueueRequest do
     it 'creates equal hash for two equal objects' do
       obj = Object.new()
       instance_1 = Freeclimb::QueueRequest.new(
-        
         _alias: "TS",
-        
-        
         max_size: 1,
       )
       instance_2 = Freeclimb::QueueRequest.new(
-        
         _alias: "TS",
-        
-        
+
         max_size: 1,
-      )
+              )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end
 
   describe 'test method "_to_hash"' do
     instance = Freeclimb::QueueRequest.new(
-        
         _alias: "TS",
-        
-        
+      
         max_size: 1,
-    )
+      )
     it 'returns _alias in the form of hash' do
       expect(instance._to_hash(instance._alias)).to eq(instance._alias)
     end

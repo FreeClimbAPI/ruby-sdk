@@ -40,6 +40,7 @@ describe Freeclimb::MachineType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "FAX_MACHINE"' do
     it 'should work' do
       expect { Freeclimb::MachineType::FAX_MACHINE = "faxMachine" }.not_to raise_error
@@ -55,4 +56,5 @@ describe Freeclimb::MachineType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

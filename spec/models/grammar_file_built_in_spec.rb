@@ -40,6 +40,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "ANY_DIG"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::ANY_DIG = "ANY_DIG" }.not_to raise_error
@@ -55,6 +56,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DIG1"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::DIG1 = "DIG1" }.not_to raise_error
@@ -70,6 +72,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DIG2"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::DIG2 = "DIG2" }.not_to raise_error
@@ -85,6 +88,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DIG3"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::DIG3 = "DIG3" }.not_to raise_error
@@ -100,6 +104,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DIG4"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::DIG4 = "DIG4" }.not_to raise_error
@@ -115,6 +120,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DIG5"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::DIG5 = "DIG5" }.not_to raise_error
@@ -130,6 +136,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DIG6"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::DIG6 = "DIG6" }.not_to raise_error
@@ -145,6 +152,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DIG7"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::DIG7 = "DIG7" }.not_to raise_error
@@ -160,6 +168,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DIG8"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::DIG8 = "DIG8" }.not_to raise_error
@@ -175,6 +184,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DIG9"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::DIG9 = "DIG9" }.not_to raise_error
@@ -190,6 +200,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DIG10"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::DIG10 = "DIG10" }.not_to raise_error
@@ -205,6 +216,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DIG11"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::DIG11 = "DIG11" }.not_to raise_error
@@ -220,6 +232,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "UP_TO_20_DIGIT_SEQUENCE"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::UP_TO_20_DIGIT_SEQUENCE = "UP_TO_20_DIGIT_SEQUENCE" }.not_to raise_error
@@ -235,6 +248,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "VERSAY_YESNO"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::VERSAY_YESNO = "VERSAY_YESNO" }.not_to raise_error
@@ -250,4 +264,5 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

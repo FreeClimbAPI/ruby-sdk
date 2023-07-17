@@ -40,6 +40,7 @@ describe Freeclimb::AccountType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "FULL"' do
     it 'should work' do
       expect { Freeclimb::AccountType::FULL = "full" }.not_to raise_error
@@ -55,4 +56,5 @@ describe Freeclimb::AccountType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

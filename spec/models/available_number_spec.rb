@@ -28,146 +28,92 @@ describe Freeclimb::AvailableNumber do
 
   describe 'test attribute "capabilities"' do
     it 'should work' do
-      
-        
-          instance.capabilities = Freeclimb::Capabilities.new
-          expect(instance.capabilities).to be_instance_of(Freeclimb::Capabilities)
-      
+      instance.capabilities = Freeclimb::Capabilities.new
+      expect(instance.capabilities).to be_instance_of(Freeclimb::Capabilities)
     end
   end
-  
+
 
   describe 'test attribute "campaign_id"' do
     it 'should work' do
-      
-          instance.campaign_id = "TEST_STRING"
-          expect(instance.campaign_id).to eq("TEST_STRING")  
-        
-      
+      instance.campaign_id = "TEST_STRING"
+      expect(instance.campaign_id).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "phone_number"' do
     it 'should work' do
-      
-          instance.phone_number = "TEST_STRING"
-          expect(instance.phone_number).to eq("TEST_STRING")  
-        
-      
+      instance.phone_number = "TEST_STRING"
+      expect(instance.phone_number).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "voice_enabled"' do
     it 'should work' do
-      
-          instance.voice_enabled = false
-          expect(instance.voice_enabled).to eq(false)        
-        
-      
+      instance.voice_enabled = false
+      expect(instance.voice_enabled).to eq(false)        
     end
   end
-  
+
 
   describe 'test attribute "sms_enabled"' do
     it 'should work' do
-      
-          instance.sms_enabled = false
-          expect(instance.sms_enabled).to eq(false)        
-        
-      
+      instance.sms_enabled = false
+      expect(instance.sms_enabled).to eq(false)        
     end
   end
-  
+
 
   describe 'test attribute "region"' do
     it 'should work' do
-      
-          instance.region = "TEST_STRING"
-          expect(instance.region).to eq("TEST_STRING")  
-        
-      
+      instance.region = "TEST_STRING"
+      expect(instance.region).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "country"' do
     it 'should work' do
-      
-          instance.country = "TEST_STRING"
-          expect(instance.country).to eq("TEST_STRING")  
-        
-      
+      instance.country = "TEST_STRING"
+      expect(instance.country).to eq("TEST_STRING")  
     end
   end
-  
+
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::AvailableNumber.new(
-          
           capabilities: Freeclimb::Capabilities.new,
-          
           campaign_id: "TS",
-          
-          
           phone_number: "TS",
-          
-          
           voice_enabled: true,
-          
           sms_enabled: true,
-          
           region: "TS",
-          
-          
           country: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::AvailableNumber' do
         expect{instance = Freeclimb::AvailableNumber.new(
-          
           capabilities: Freeclimb::Capabilities.new,
-          
           campaign_id: "TS",
-          
-          
           phone_number: "TS",
-          
-          
           voice_enabled: true,
-          
           sms_enabled: true,
-          
           region: "TS",
-          
-          
           country: "TS",
-          
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::AvailableNumber.new(
-          
           capabilities: Freeclimb::Capabilities.new,
-          
           campaign_id: "TS",
-          
-          
           phone_number: "TS",
-          
-          
           voice_enabled: true,
-          
           sms_enabled: true,
-          
           region: "TS",
-          
-          
           country: "TS",
-          
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -176,24 +122,13 @@ describe Freeclimb::AvailableNumber do
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::AvailableNumber.new(
-          
           capabilities: Freeclimb::Capabilities.new,
-          
           campaign_id: "TS",
-          
-          
           phone_number: "TS",
-          
-          
           voice_enabled: true,
-          
           sms_enabled: true,
-          
           region: "TS",
-          
-          
           country: "TS",
-          
       )
       expect(instance.valid?).to eq(true)
     end
@@ -202,83 +137,39 @@ describe Freeclimb::AvailableNumber do
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
       instance_1 = Freeclimb::AvailableNumber.new(
-          
-          
           campaign_id: "TS",
-          
-          
           phone_number: "TS",
-          
-          
           voice_enabled: true,
-          
           sms_enabled: true,
-          
           region: "TS",
-          
-          
           country: "TS",
-          
       )
       instance_2 = Freeclimb::AvailableNumber.new(
-          
-          
           campaign_id: "TS",
-          
-          
           phone_number: "TS",
-          
-          
           voice_enabled: true,
-          
           sms_enabled: true,
-          
           region: "TS",
-          
-          
           country: "TS",
-          
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::AvailableNumber.new(
-          
-          
           campaign_id: "TS",
-          
-          
           phone_number: "TS",
-          
-          
           voice_enabled: true,
-          
           sms_enabled: true,
-          
           region: "TS",
-          
-          
           country: "TS",
-          
       )
       instance_2 = Freeclimb::AvailableNumber.new(
-          
-          
           campaign_id: "ST",
-          
-          
           phone_number: "ST",
-          
-          
           voice_enabled: false,
-          
           sms_enabled: false,
-          
           region: "ST",
-          
-          
           country: "ST",
-          
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
@@ -287,24 +178,13 @@ describe Freeclimb::AvailableNumber do
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::AvailableNumber.new(
-        
-        capabilities: Freeclimb::Capabilities.new,
-        
-        campaign_id: "TS",
-        
-        
-        phone_number: "TS",
-        
-        
-        voice_enabled: true,
-        
-        sms_enabled: true,
-        
-        region: "TS",
-        
-        
-        country: "TS",
-        
+      capabilities: Freeclimb::Capabilities.new,
+      campaign_id: "TS",
+      phone_number: "TS",
+      voice_enabled: true,
+      sms_enabled: true,
+      region: "TS",
+      country: "TS",
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -313,113 +193,62 @@ describe Freeclimb::AvailableNumber do
   describe 'test method "build_from_hash"' do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::AvailableNumber.new(
-        
         capabilities: Freeclimb::Capabilities.new,
-        
         campaign_id: "TS",
-        
-        
         phone_number: "TS",
-        
-        
         voice_enabled: true,
-        
         sms_enabled: true,
-        
         region: "TS",
-        
-        
         country: "TS",
-        
       )
       instance_2 = Freeclimb::AvailableNumber.new
-      expect(instance_2.build_from_hash(instance.hash)).to eq(instance.build_from_hash(instance.hash))
+      expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
     end
   end
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::AvailableNumber.new(
-        
         capabilities: Freeclimb::Capabilities.new,
-        
         campaign_id: "TS",
-        
-        
         phone_number: "TS",
-        
-        
         voice_enabled: true,
-        
         sms_enabled: true,
-        
         region: "TS",
-        
-        
         country: "TS",
-        
     )
-    
-    
-    it 'deserializes the data of capabilities' do
+        it 'deserializes the data of capabilities' do
       expect(instance._deserialize("Object", instance.capabilities)).to be_a_kind_of(Freeclimb::Capabilities)
     end
-    
     it 'deserializes the data of campaign_id' do
       expect(instance._deserialize("String", instance.campaign_id)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of phone_number' do
+        it 'deserializes the data of phone_number' do
       expect(instance._deserialize("String", instance.phone_number)).to be_a_kind_of(String)
     end
-    
-    
-    
-    
-    it 'deserializes the data of voice_enabled' do
+            it 'deserializes the data of voice_enabled' do
       expect(instance._deserialize("Boolean", instance.voice_enabled)).to be_a_kind_of(TrueClass)
     end
-    
-    
-    it 'deserializes the data of sms_enabled' do
+        it 'deserializes the data of sms_enabled' do
       expect(instance._deserialize("Boolean", instance.sms_enabled)).to be_a_kind_of(TrueClass)
     end
-    
     it 'deserializes the data of region' do
       expect(instance._deserialize("String", instance.region)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of country' do
+        it 'deserializes the data of country' do
       expect(instance._deserialize("String", instance.country)).to be_a_kind_of(String)
     end
-    
-    
-  end
+      end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
       instance = Freeclimb::AvailableNumber.new(
-        
         capabilities: Freeclimb::Capabilities.new,
-        
         campaign_id: "TS",
-        
-        
         phone_number: "TS",
-        
-        
         voice_enabled: true,
-        
         sms_enabled: true,
-        
         region: "TS",
-        
-        
         country: "TS",
-        
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -428,21 +257,17 @@ describe Freeclimb::AvailableNumber do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::AvailableNumber.new(
-        
+
         capabilities: Freeclimb::Capabilities.new,
-        
         campaign_id: "TS",
-        
         
         phone_number: "TS",
         
-        
+
         voice_enabled: true,
-        
+
         sms_enabled: true,
-        
         region: "TS",
-        
         
         country: "TS",
         
@@ -452,44 +277,23 @@ describe Freeclimb::AvailableNumber do
     it 'creates equal hash for two equal objects' do
       obj = Object.new()
       instance_1 = Freeclimb::AvailableNumber.new(
-        
         capabilities: Freeclimb::Capabilities.new,
-        
         campaign_id: "TS",
-        
-        
         phone_number: "TS",
-        
-        
         voice_enabled: true,
-        
         sms_enabled: true,
-        
         region: "TS",
-        
-        
         country: "TS",
-        
       )
       instance_2 = Freeclimb::AvailableNumber.new(
-        
+
         capabilities: Freeclimb::Capabilities.new,
-        
         campaign_id: "TS",
-        
-        
         phone_number: "TS",
-        
-        
         voice_enabled: true,
-        
-        sms_enabled: true,
-        
-        region: "TS",
-        
-        
+                sms_enabled: true,
+                region: "TS",
         country: "TS",
-        
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -497,24 +301,19 @@ describe Freeclimb::AvailableNumber do
 
   describe 'test method "_to_hash"' do
     instance = Freeclimb::AvailableNumber.new(
-        
-        
+      
         campaign_id: "TS",
-        
-        
+      
         phone_number: "TS",
-        
-        
+      
         voice_enabled: true,
-        
+      
         sms_enabled: true,
-        
+      
         region: "TS",
-        
-        
+      
         country: "TS",
-        
-    )
+      )
     it 'returns capabilities in the form of hash' do
       expect(instance._to_hash(instance.capabilities)).to eq(instance.capabilities)
     end

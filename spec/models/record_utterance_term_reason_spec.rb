@@ -40,6 +40,7 @@ describe Freeclimb::RecordUtteranceTermReason do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "TIMEOUT"' do
     it 'should work' do
       expect { Freeclimb::RecordUtteranceTermReason::TIMEOUT = "timeout" }.not_to raise_error
@@ -55,6 +56,7 @@ describe Freeclimb::RecordUtteranceTermReason do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "HANGUP"' do
     it 'should work' do
       expect { Freeclimb::RecordUtteranceTermReason::HANGUP = "hangup" }.not_to raise_error
@@ -70,6 +72,7 @@ describe Freeclimb::RecordUtteranceTermReason do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "MAX_LENGTH"' do
     it 'should work' do
       expect { Freeclimb::RecordUtteranceTermReason::MAX_LENGTH = "maxLength" }.not_to raise_error
@@ -85,4 +88,5 @@ describe Freeclimb::RecordUtteranceTermReason do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

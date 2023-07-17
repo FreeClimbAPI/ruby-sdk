@@ -40,6 +40,7 @@ describe Freeclimb::MessageDirection do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "OUTBOUND"' do
     it 'should work' do
       expect { Freeclimb::MessageDirection::OUTBOUND = "outbound" }.not_to raise_error
@@ -55,4 +56,5 @@ describe Freeclimb::MessageDirection do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

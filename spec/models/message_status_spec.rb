@@ -40,6 +40,7 @@ describe Freeclimb::MessageStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "QUEUED"' do
     it 'should work' do
       expect { Freeclimb::MessageStatus::QUEUED = "queued" }.not_to raise_error
@@ -55,6 +56,7 @@ describe Freeclimb::MessageStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "REJECTED"' do
     it 'should work' do
       expect { Freeclimb::MessageStatus::REJECTED = "rejected" }.not_to raise_error
@@ -70,6 +72,7 @@ describe Freeclimb::MessageStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "SENDING"' do
     it 'should work' do
       expect { Freeclimb::MessageStatus::SENDING = "sending" }.not_to raise_error
@@ -85,6 +88,7 @@ describe Freeclimb::MessageStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "SENT"' do
     it 'should work' do
       expect { Freeclimb::MessageStatus::SENT = "sent" }.not_to raise_error
@@ -100,6 +104,7 @@ describe Freeclimb::MessageStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "FAILED"' do
     it 'should work' do
       expect { Freeclimb::MessageStatus::FAILED = "failed" }.not_to raise_error
@@ -115,6 +120,7 @@ describe Freeclimb::MessageStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "RECEIVED"' do
     it 'should work' do
       expect { Freeclimb::MessageStatus::RECEIVED = "received" }.not_to raise_error
@@ -130,6 +136,7 @@ describe Freeclimb::MessageStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "UNDELIVERED"' do
     it 'should work' do
       expect { Freeclimb::MessageStatus::UNDELIVERED = "undelivered" }.not_to raise_error
@@ -145,6 +152,7 @@ describe Freeclimb::MessageStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "EXPIRED"' do
     it 'should work' do
       expect { Freeclimb::MessageStatus::EXPIRED = "expired" }.not_to raise_error
@@ -160,6 +168,7 @@ describe Freeclimb::MessageStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DELETED"' do
     it 'should work' do
       expect { Freeclimb::MessageStatus::DELETED = "deleted" }.not_to raise_error
@@ -175,6 +184,7 @@ describe Freeclimb::MessageStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "UNKNOWN"' do
     it 'should work' do
       expect { Freeclimb::MessageStatus::UNKNOWN = "unknown" }.not_to raise_error
@@ -190,4 +200,5 @@ describe Freeclimb::MessageStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

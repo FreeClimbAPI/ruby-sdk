@@ -40,6 +40,7 @@ describe Freeclimb::UpdateCallRequestStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "COMPLETED"' do
     it 'should work' do
       expect { Freeclimb::UpdateCallRequestStatus::COMPLETED = "completed" }.not_to raise_error
@@ -55,4 +56,5 @@ describe Freeclimb::UpdateCallRequestStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

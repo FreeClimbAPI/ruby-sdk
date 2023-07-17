@@ -40,6 +40,7 @@ describe Freeclimb::UpdateConferenceRequestStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "TERMINATED"' do
     it 'should work' do
       expect { Freeclimb::UpdateConferenceRequestStatus::TERMINATED = "terminated" }.not_to raise_error
@@ -55,4 +56,5 @@ describe Freeclimb::UpdateConferenceRequestStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

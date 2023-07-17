@@ -28,55 +28,37 @@ describe Freeclimb::AccountRequest do
 
   describe 'test attribute "_alias"' do
     it 'should work' do
-      
-          instance._alias = "TEST_STRING"
-          expect(instance._alias).to eq("TEST_STRING")  
-        
-      
+      instance._alias = "TEST_STRING"
+      expect(instance._alias).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "label"' do
     it 'should work' do
-      
-          instance.label = "TEST_STRING"
-          expect(instance.label).to eq("TEST_STRING")  
-        
-      
+      instance.label = "TEST_STRING"
+      expect(instance.label).to eq("TEST_STRING")  
     end
   end
-  
+
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::AccountRequest.new(
-          
           _alias: "TS",
-          
-          
           label: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::AccountRequest' do
         expect{instance = Freeclimb::AccountRequest.new(
-          
           _alias: "TS",
-          
-          
           label: "TS",
-          
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::AccountRequest.new(
-          
           _alias: "TS",
-          
-          
           label: "TS",
-          
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -85,12 +67,8 @@ describe Freeclimb::AccountRequest do
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::AccountRequest.new(
-          
           _alias: "TS",
-          
-          
           label: "TS",
-          
       )
       expect(instance.valid?).to eq(true)
     end
@@ -99,39 +77,23 @@ describe Freeclimb::AccountRequest do
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
       instance_1 = Freeclimb::AccountRequest.new(
-          
           _alias: "TS",
-          
-          
           label: "TS",
-          
       )
       instance_2 = Freeclimb::AccountRequest.new(
-          
           _alias: "TS",
-          
-          
           label: "TS",
-          
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::AccountRequest.new(
-          
           _alias: "TS",
-          
-          
           label: "TS",
-          
       )
       instance_2 = Freeclimb::AccountRequest.new(
-          
           _alias: "ST",
-          
-          
           label: "ST",
-          
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
@@ -140,12 +102,8 @@ describe Freeclimb::AccountRequest do
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::AccountRequest.new(
-        
-        _alias: "TS",
-        
-        
-        label: "TS",
-        
+      _alias: "TS",
+      label: "TS",
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -154,50 +112,32 @@ describe Freeclimb::AccountRequest do
   describe 'test method "build_from_hash"' do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::AccountRequest.new(
-        
         _alias: "TS",
-        
-        
         label: "TS",
-        
       )
       instance_2 = Freeclimb::AccountRequest.new
-      expect(instance_2.build_from_hash(instance.hash)).to eq(instance.build_from_hash(instance.hash))
+      expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
     end
   end
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::AccountRequest.new(
-        
         _alias: "TS",
-        
-        
         label: "TS",
-        
     )
-    
     it 'deserializes the data of _alias' do
       expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of label' do
+        it 'deserializes the data of label' do
       expect(instance._deserialize("String", instance.label)).to be_a_kind_of(String)
     end
-    
-    
-  end
+      end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
       instance = Freeclimb::AccountRequest.new(
-        
         _alias: "TS",
-        
-        
         label: "TS",
-        
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -206,9 +146,7 @@ describe Freeclimb::AccountRequest do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::AccountRequest.new(
-        
         _alias: "TS",
-        
         
         label: "TS",
         
@@ -218,20 +156,12 @@ describe Freeclimb::AccountRequest do
     it 'creates equal hash for two equal objects' do
       obj = Object.new()
       instance_1 = Freeclimb::AccountRequest.new(
-        
         _alias: "TS",
-        
-        
         label: "TS",
-        
       )
       instance_2 = Freeclimb::AccountRequest.new(
-        
         _alias: "TS",
-        
-        
         label: "TS",
-        
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -239,13 +169,10 @@ describe Freeclimb::AccountRequest do
 
   describe 'test method "_to_hash"' do
     instance = Freeclimb::AccountRequest.new(
-        
         _alias: "TS",
-        
-        
+      
         label: "TS",
-        
-    )
+      )
     it 'returns _alias in the form of hash' do
       expect(instance._to_hash(instance._alias)).to eq(instance._alias)
     end

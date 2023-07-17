@@ -86,7 +86,6 @@
         "enum": ["closed", "suspended", "active"],
         "x-enum-varnames": ["CLOSED", "SUSPENDED", "ACTIVE"],
         "x-enum": true,
-        "x-account-status": true,
         "description": "The status of this account. It is one of: active, suspended, or closed.",
         "nullable": true
       },
@@ -96,7 +95,6 @@
         "enum": ["trial", "full"],
         "x-enum": true,
         "x-enum-varnames": ["TRIAL", "FULL"],
-        "x-account-type": true,
         "nullable": true
       },
       "AnsweredBy": {

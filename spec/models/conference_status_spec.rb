@@ -40,6 +40,7 @@ describe Freeclimb::ConferenceStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "POPULATED"' do
     it 'should work' do
       expect { Freeclimb::ConferenceStatus::POPULATED = "populated" }.not_to raise_error
@@ -55,6 +56,7 @@ describe Freeclimb::ConferenceStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "IN_PROGRESS"' do
     it 'should work' do
       expect { Freeclimb::ConferenceStatus::IN_PROGRESS = "inProgress" }.not_to raise_error
@@ -70,6 +72,7 @@ describe Freeclimb::ConferenceStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "TERMINATED"' do
     it 'should work' do
       expect { Freeclimb::ConferenceStatus::TERMINATED = "terminated" }.not_to raise_error
@@ -85,4 +88,5 @@ describe Freeclimb::ConferenceStatus do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

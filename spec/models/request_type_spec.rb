@@ -40,6 +40,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "RECORD"' do
     it 'should work' do
       expect { Freeclimb::RequestType::RECORD = "record" }.not_to raise_error
@@ -55,6 +56,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "GET_DIGITS"' do
     it 'should work' do
       expect { Freeclimb::RequestType::GET_DIGITS = "getDigits" }.not_to raise_error
@@ -70,6 +72,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "GET_SPEECH"' do
     it 'should work' do
       expect { Freeclimb::RequestType::GET_SPEECH = "getSpeech" }.not_to raise_error
@@ -85,6 +88,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "REDIRECT"' do
     it 'should work' do
       expect { Freeclimb::RequestType::REDIRECT = "redirect" }.not_to raise_error
@@ -100,6 +104,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "PAUSE"' do
     it 'should work' do
       expect { Freeclimb::RequestType::PAUSE = "pause" }.not_to raise_error
@@ -115,6 +120,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "OUT_DIAL_START"' do
     it 'should work' do
       expect { Freeclimb::RequestType::OUT_DIAL_START = "outDialStart" }.not_to raise_error
@@ -130,6 +136,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "OUT_DIAL_CONNECT"' do
     it 'should work' do
       expect { Freeclimb::RequestType::OUT_DIAL_CONNECT = "outDialConnect" }.not_to raise_error
@@ -145,6 +152,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "OUT_DIAL_API_CONNECT"' do
     it 'should work' do
       expect { Freeclimb::RequestType::OUT_DIAL_API_CONNECT = "outDialApiConnect" }.not_to raise_error
@@ -160,6 +168,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "MACHINE_DETECTED"' do
     it 'should work' do
       expect { Freeclimb::RequestType::MACHINE_DETECTED = "machineDetected" }.not_to raise_error
@@ -175,6 +184,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "DEQUEUE"' do
     it 'should work' do
       expect { Freeclimb::RequestType::DEQUEUE = "dequeue" }.not_to raise_error
@@ -190,6 +200,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "QUEUE_WAIT"' do
     it 'should work' do
       expect { Freeclimb::RequestType::QUEUE_WAIT = "queueWait" }.not_to raise_error
@@ -205,6 +216,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "ADD_TO_QUEUE_NOTIFICATION"' do
     it 'should work' do
       expect { Freeclimb::RequestType::ADD_TO_QUEUE_NOTIFICATION = "addToQueueNotification" }.not_to raise_error
@@ -220,6 +232,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "REMOVE_FROM_QUEUE_NOTIFICATION"' do
     it 'should work' do
       expect { Freeclimb::RequestType::REMOVE_FROM_QUEUE_NOTIFICATION = "removeFromQueueNotification" }.not_to raise_error
@@ -235,6 +248,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "CALL_STATUS"' do
     it 'should work' do
       expect { Freeclimb::RequestType::CALL_STATUS = "callStatus" }.not_to raise_error
@@ -250,6 +264,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "CREATE_CONFERENCE"' do
     it 'should work' do
       expect { Freeclimb::RequestType::CREATE_CONFERENCE = "createConference" }.not_to raise_error
@@ -265,6 +280,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "CONFERENCE_STATUS"' do
     it 'should work' do
       expect { Freeclimb::RequestType::CONFERENCE_STATUS = "conferenceStatus" }.not_to raise_error
@@ -280,6 +296,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "LEAVE_CONFERENCE"' do
     it 'should work' do
       expect { Freeclimb::RequestType::LEAVE_CONFERENCE = "leaveConference" }.not_to raise_error
@@ -295,6 +312,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "ADD_TO_CONFERENCE_NOTIFICATION"' do
     it 'should work' do
       expect { Freeclimb::RequestType::ADD_TO_CONFERENCE_NOTIFICATION = "addToConferenceNotification" }.not_to raise_error
@@ -310,6 +328,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "CONFERENCE_RECORDING_STATUS"' do
     it 'should work' do
       expect { Freeclimb::RequestType::CONFERENCE_RECORDING_STATUS = "conferenceRecordingStatus" }.not_to raise_error
@@ -325,6 +344,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "CONFERENCE_CALL_CONTROL"' do
     it 'should work' do
       expect { Freeclimb::RequestType::CONFERENCE_CALL_CONTROL = "conferenceCallControl" }.not_to raise_error
@@ -340,6 +360,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "MESSAGE_DELIVERY"' do
     it 'should work' do
       expect { Freeclimb::RequestType::MESSAGE_DELIVERY = "messageDelivery" }.not_to raise_error
@@ -355,6 +376,7 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
   describe 'test attribute "MESSAGE_STATUS"' do
     it 'should work' do
       expect { Freeclimb::RequestType::MESSAGE_STATUS = "messageStatus" }.not_to raise_error
@@ -370,4 +392,5 @@ describe Freeclimb::RequestType do
       expect(expectedValue).to eq(calculatedValue)
     end
   end
+
 end

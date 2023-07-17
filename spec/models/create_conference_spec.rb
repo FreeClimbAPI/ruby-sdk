@@ -28,25 +28,18 @@ describe Freeclimb::CreateConference do
 
   describe 'test attribute "action_url"' do
     it 'should work' do
-      
-          instance.action_url = "TEST_STRING"
-          expect(instance.action_url).to eq("TEST_STRING")  
-        
-      
+      instance.action_url = "TEST_STRING"
+      expect(instance.action_url).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "_alias"' do
     it 'should work' do
-      
-          instance._alias = false
-          expect(instance._alias).to eq(false)        
-        
-      
+      instance._alias = false
+      expect(instance._alias).to eq(false)        
     end
   end
-  
 
   describe 'test attribute "play_beep"' do
     it 'assigns value ALWAYS' do
@@ -67,95 +60,60 @@ describe Freeclimb::CreateConference do
     end
   end
 
+
   describe 'test attribute "record"' do
     it 'should work' do
-      
-          instance.record = false
-          expect(instance.record).to eq(false)        
-        
-      
+      instance.record = false
+      expect(instance.record).to eq(false)        
     end
   end
-  
+
 
   describe 'test attribute "status_callback_url"' do
     it 'should work' do
-      
-          instance.status_callback_url = "TEST_STRING"
-          expect(instance.status_callback_url).to eq("TEST_STRING")  
-        
-      
+      instance.status_callback_url = "TEST_STRING"
+      expect(instance.status_callback_url).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "wait_url"' do
     it 'should work' do
-      
-          instance.wait_url = "TEST_STRING"
-          expect(instance.wait_url).to eq("TEST_STRING")  
-        
-      
+      instance.wait_url = "TEST_STRING"
+      expect(instance.wait_url).to eq("TEST_STRING")  
     end
   end
-  
+
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::CreateConference.new(
-          
           action_url: "TS",
-          
-          
           _alias: true,
-          
           play_beep: "ALWAYS",
-          
           record: true,
-          
           status_callback_url: "TS",
-          
-          
           wait_url: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::CreateConference' do
         expect{instance = Freeclimb::CreateConference.new(
-          
           action_url: "TS",
-          
-          
           _alias: true,
-          
           play_beep: "ALWAYS",
-          
           record: true,
-          
           status_callback_url: "TS",
-          
-          
           wait_url: "TS",
-          
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::CreateConference.new(
-          
           action_url: "TS",
-          
-          
           _alias: true,
-          
           play_beep: "ALWAYS",
-          
           record: true,
-          
           status_callback_url: "TS",
-          
-          
           wait_url: "TS",
-          
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -164,21 +122,12 @@ describe Freeclimb::CreateConference do
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::CreateConference.new(
-          
           action_url: "TS",
-          
-          
           _alias: true,
-          
           play_beep: "ALWAYS",
-          
           record: true,
-          
           status_callback_url: "TS",
-          
-          
           wait_url: "TS",
-          
       )
       expect(instance.valid?).to eq(true)
     end
@@ -187,75 +136,39 @@ describe Freeclimb::CreateConference do
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
       instance_1 = Freeclimb::CreateConference.new(
-          
           action_url: "TS",
-          
-          
           _alias: true,
-          
           play_beep: "ALWAYS",
-          
           record: true,
-          
           status_callback_url: "TS",
-          
-          
           wait_url: "TS",
-          
       )
       instance_2 = Freeclimb::CreateConference.new(
-          
           action_url: "TS",
-          
-          
           _alias: true,
-          
           play_beep: "ALWAYS",
-          
           record: true,
-          
           status_callback_url: "TS",
-          
-          
           wait_url: "TS",
-          
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::CreateConference.new(
-          
           action_url: "TS",
-          
-          
           _alias: true,
-          
           play_beep: "ALWAYS",
-          
           record: true,
-          
           status_callback_url: "TS",
-          
-          
           wait_url: "TS",
-          
       )
       instance_2 = Freeclimb::CreateConference.new(
-          
           action_url: "ST",
-          
-          
           _alias: false,
-          
           play_beep: "NEVER",
-          
           record: false,
-          
           status_callback_url: "ST",
-          
-          
           wait_url: "ST",
-          
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
@@ -264,21 +177,12 @@ describe Freeclimb::CreateConference do
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::CreateConference.new(
-        
-        action_url: "TS",
-        
-        
-        _alias: true,
-        
-        play_beep: "ALWAYS",
-        
-        record: true,
-        
-        status_callback_url: "TS",
-        
-        
-        wait_url: "TS",
-        
+      action_url: "TS",
+      _alias: true,
+      play_beep: "ALWAYS",
+      record: true,
+      status_callback_url: "TS",
+      wait_url: "TS",
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -287,95 +191,53 @@ describe Freeclimb::CreateConference do
   describe 'test method "build_from_hash"' do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::CreateConference.new(
-        
         action_url: "TS",
-        
-        
         _alias: true,
-        
         play_beep: "ALWAYS",
-        
         record: true,
-        
         status_callback_url: "TS",
-        
-        
         wait_url: "TS",
-        
       )
       instance_2 = Freeclimb::CreateConference.new
-      expect(instance_2.build_from_hash(instance.hash)).to eq(instance.build_from_hash(instance.hash))
+      expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
     end
   end
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::CreateConference.new(
-        
         action_url: "TS",
-        
-        
         _alias: true,
-        
         play_beep: "ALWAYS",
-        
         record: true,
-        
         status_callback_url: "TS",
-        
-        
         wait_url: "TS",
-        
     )
-    
     it 'deserializes the data of action_url' do
       expect(instance._deserialize("String", instance.action_url)).to be_a_kind_of(String)
     end
-    
-    
-    
-    
-    it 'deserializes the data of _alias' do
+            it 'deserializes the data of _alias' do
       expect(instance._deserialize("Boolean", instance._alias)).to be_a_kind_of(TrueClass)
     end
-    
-    
-    
-    
-    it 'deserializes the data of record' do
+            it 'deserializes the data of record' do
       expect(instance._deserialize("Boolean", instance.record)).to be_a_kind_of(TrueClass)
     end
-    
     it 'deserializes the data of status_callback_url' do
       expect(instance._deserialize("String", instance.status_callback_url)).to be_a_kind_of(String)
     end
-    
-    
-    
-    it 'deserializes the data of wait_url' do
+        it 'deserializes the data of wait_url' do
       expect(instance._deserialize("String", instance.wait_url)).to be_a_kind_of(String)
     end
-    
-    
-  end
+      end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
       instance = Freeclimb::CreateConference.new(
-        
         action_url: "TS",
-        
-        
         _alias: true,
-        
         play_beep: "ALWAYS",
-        
         record: true,
-        
         status_callback_url: "TS",
-        
-        
         wait_url: "TS",
-        
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -384,18 +246,15 @@ describe Freeclimb::CreateConference do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::CreateConference.new(
-        
         action_url: "TS",
         
-        
+
         _alias: true,
-        
+
         play_beep: "ALWAYS",
-        
+
         record: true,
-        
         status_callback_url: "TS",
-        
         
         wait_url: "TS",
         
@@ -405,38 +264,21 @@ describe Freeclimb::CreateConference do
     it 'creates equal hash for two equal objects' do
       obj = Object.new()
       instance_1 = Freeclimb::CreateConference.new(
-        
         action_url: "TS",
-        
-        
         _alias: true,
-        
         play_beep: "ALWAYS",
-        
         record: true,
-        
         status_callback_url: "TS",
-        
-        
         wait_url: "TS",
-        
       )
       instance_2 = Freeclimb::CreateConference.new(
-        
         action_url: "TS",
-        
-        
         _alias: true,
         
         play_beep: "ALWAYS",
-        
-        record: true,
-        
-        status_callback_url: "TS",
-        
-        
+                record: true,
+                status_callback_url: "TS",
         wait_url: "TS",
-        
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -444,22 +286,18 @@ describe Freeclimb::CreateConference do
 
   describe 'test method "_to_hash"' do
     instance = Freeclimb::CreateConference.new(
-        
         action_url: "TS",
-        
-        
+      
         _alias: true,
-        
+      
         play_beep: "ALWAYS",
-        
+      
         record: true,
-        
+      
         status_callback_url: "TS",
-        
-        
+      
         wait_url: "TS",
-        
-    )
+      )
     it 'returns action_url in the form of hash' do
       expect(instance._to_hash(instance.action_url)).to eq(instance.action_url)
     end

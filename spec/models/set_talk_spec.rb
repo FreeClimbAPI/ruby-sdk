@@ -28,51 +28,36 @@ describe Freeclimb::SetTalk do
 
   describe 'test attribute "call_id"' do
     it 'should work' do
-      
-          instance.call_id = "TEST_STRING"
-          expect(instance.call_id).to eq("TEST_STRING")  
-        
-      
+      instance.call_id = "TEST_STRING"
+      expect(instance.call_id).to eq("TEST_STRING")  
     end
   end
-  
+
 
   describe 'test attribute "talk"' do
     it 'should work' do
-      
-          instance.talk = false
-          expect(instance.talk).to eq(false)        
-        
-      
+      instance.talk = false
+      expect(instance.talk).to eq(false)        
     end
   end
-  
+
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::SetTalk.new(
-          
           call_id: "TS",
-          
-          
           talk: true,
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::SetTalk' do
         expect{instance = Freeclimb::SetTalk.new(
-          
           call_id: "TS",
-          
-          
           talk: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::SetTalk.new(
-          
           call_id: "TS",
-          
-          
           talk: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -82,10 +67,7 @@ describe Freeclimb::SetTalk do
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::SetTalk.new(
-          
           call_id: "TS",
-          
-          
           talk: true,
       )
       expect(instance.valid?).to eq(true)
@@ -95,34 +77,22 @@ describe Freeclimb::SetTalk do
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
       instance_1 = Freeclimb::SetTalk.new(
-          
           call_id: "TS",
-          
-          
           talk: true,
       )
       instance_2 = Freeclimb::SetTalk.new(
-          
           call_id: "TS",
-          
-          
           talk: true,
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::SetTalk.new(
-          
           call_id: "TS",
-          
-          
           talk: true,
       )
       instance_2 = Freeclimb::SetTalk.new(
-          
           call_id: "ST",
-          
-          
           talk: false,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
@@ -132,11 +102,8 @@ describe Freeclimb::SetTalk do
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SetTalk.new(
-        
-        call_id: "TS",
-        
-        
-        talk: true,
+      call_id: "TS",
+      talk: true,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -145,34 +112,23 @@ describe Freeclimb::SetTalk do
   describe 'test method "build_from_hash"' do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::SetTalk.new(
-        
         call_id: "TS",
-        
-        
         talk: true,
       )
       instance_2 = Freeclimb::SetTalk.new
-      expect(instance_2.build_from_hash(instance.hash)).to eq(instance.build_from_hash(instance.hash))
+      expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
     end
   end
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::SetTalk.new(
-        
         call_id: "TS",
-        
-        
         talk: true,
     )
-    
     it 'deserializes the data of call_id' do
       expect(instance._deserialize("String", instance.call_id)).to be_a_kind_of(String)
     end
-    
-    
-    
-    
-    it 'deserializes the data of talk' do
+            it 'deserializes the data of talk' do
       expect(instance._deserialize("Boolean", instance.talk)).to be_a_kind_of(TrueClass)
     end
   end
@@ -180,10 +136,7 @@ describe Freeclimb::SetTalk do
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
       instance = Freeclimb::SetTalk.new(
-        
         call_id: "TS",
-        
-        
         talk: true,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -193,10 +146,9 @@ describe Freeclimb::SetTalk do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::SetTalk.new(
-        
         call_id: "TS",
         
-        
+
         talk: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -204,31 +156,23 @@ describe Freeclimb::SetTalk do
     it 'creates equal hash for two equal objects' do
       obj = Object.new()
       instance_1 = Freeclimb::SetTalk.new(
-        
         call_id: "TS",
-        
-        
         talk: true,
       )
       instance_2 = Freeclimb::SetTalk.new(
-        
         call_id: "TS",
-        
-        
         talk: true,
-      )
+              )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end
 
   describe 'test method "_to_hash"' do
     instance = Freeclimb::SetTalk.new(
-        
         call_id: "TS",
-        
-        
+      
         talk: true,
-    )
+      )
     it 'returns call_id in the form of hash' do
       expect(instance._to_hash(instance.call_id)).to eq(instance.call_id)
     end
