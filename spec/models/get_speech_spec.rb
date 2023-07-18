@@ -87,8 +87,6 @@ describe Freeclimb::GetSpeech do
 
   describe 'test attribute "confidence_threshold"' do
     it 'should work' do
-      instance.confidence_threshold = 1
-      expect(instance.confidence_threshold).to eq(1) 
       instance.confidence_threshold = BigDecimal("1.0")
       expect(instance.confidence_threshold).to eq(BigDecimal("1.0")) 
     end
@@ -96,8 +94,6 @@ describe Freeclimb::GetSpeech do
 
   describe 'test attribute "sensitivity_level"' do
     it 'should work' do
-      instance.sensitivity_level = 1
-      expect(instance.sensitivity_level).to eq(1) 
       instance.sensitivity_level = BigDecimal("1.0")
       expect(instance.sensitivity_level).to eq(BigDecimal("1.0")) 
     end
