@@ -25,14 +25,12 @@ describe Freeclimb::ApplicationResult do
       expect(instance).to be_instance_of(Freeclimb::ApplicationResult)
     end
   end
-
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::ApplicationResult do
     end
   end
 
-
   describe 'test attribute "date_updated"' do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -57,14 +53,12 @@ describe Freeclimb::ApplicationResult do
     end
   end
 
-
   describe 'test attribute "account_id"' do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "application_id"' do
     it 'should work' do
@@ -73,14 +67,12 @@ describe Freeclimb::ApplicationResult do
     end
   end
 
-
   describe 'test attribute "_alias"' do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "voice_url"' do
     it 'should work' do
@@ -89,14 +81,12 @@ describe Freeclimb::ApplicationResult do
     end
   end
 
-
   describe 'test attribute "voice_fallback_url"' do
     it 'should work' do
       instance.voice_fallback_url = "TEST_STRING"
       expect(instance.voice_fallback_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "call_connect_url"' do
     it 'should work' do
@@ -105,7 +95,6 @@ describe Freeclimb::ApplicationResult do
     end
   end
 
-
   describe 'test attribute "status_callback_url"' do
     it 'should work' do
       instance.status_callback_url = "TEST_STRING"
@@ -113,14 +102,12 @@ describe Freeclimb::ApplicationResult do
     end
   end
 
-
   describe 'test attribute "sms_url"' do
     it 'should work' do
       instance.sms_url = "TEST_STRING"
       expect(instance.sms_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "sms_fallback_url"' do
     it 'should work' do
@@ -208,6 +195,7 @@ describe Freeclimb::ApplicationResult do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::ApplicationResult.new(
           uri: "TS",
           date_created: "TS",
@@ -337,43 +325,43 @@ describe Freeclimb::ApplicationResult do
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_created' do
+    it 'deserializes the data of date_created' do
       expect(instance._deserialize("String", instance.date_created)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_updated' do
+    it 'deserializes the data of date_updated' do
       expect(instance._deserialize("String", instance.date_updated)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of revision' do
+    it 'deserializes the data of revision' do
       expect(instance._deserialize("Integer", instance.revision)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of account_id' do
+    it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of application_id' do
+    it 'deserializes the data of application_id' do
       expect(instance._deserialize("String", instance.application_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of _alias' do
+    it 'deserializes the data of _alias' do
       expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of voice_url' do
+    it 'deserializes the data of voice_url' do
       expect(instance._deserialize("String", instance.voice_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of voice_fallback_url' do
+    it 'deserializes the data of voice_fallback_url' do
       expect(instance._deserialize("String", instance.voice_fallback_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of call_connect_url' do
+    it 'deserializes the data of call_connect_url' do
       expect(instance._deserialize("String", instance.call_connect_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of status_callback_url' do
+    it 'deserializes the data of status_callback_url' do
       expect(instance._deserialize("String", instance.status_callback_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of sms_url' do
+    it 'deserializes the data of sms_url' do
       expect(instance._deserialize("String", instance.sms_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of sms_fallback_url' do
+    it 'deserializes the data of sms_fallback_url' do
       expect(instance._deserialize("String", instance.sms_fallback_url)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -400,31 +388,18 @@ describe Freeclimb::ApplicationResult do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::ApplicationResult.new(
         uri: "TS",
-        
         date_created: "TS",
-        
         date_updated: "TS",
-        
-
         revision: 1,
         account_id: "TS",
-        
         application_id: "TS",
-        
         _alias: "TS",
-        
         voice_url: "TS",
-        
         voice_fallback_url: "TS",
-        
         call_connect_url: "TS",
-        
         status_callback_url: "TS",
-        
         sms_url: "TS",
-        
         sms_fallback_url: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -449,9 +424,8 @@ describe Freeclimb::ApplicationResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-
         revision: 1,
-                account_id: "TS",
+        account_id: "TS",
         application_id: "TS",
         _alias: "TS",
         voice_url: "TS",

@@ -25,14 +25,12 @@ describe Freeclimb::SetListen do
       expect(instance).to be_instance_of(Freeclimb::SetListen)
     end
   end
-
   describe 'test attribute "call_id"' do
     it 'should work' do
       instance.call_id = "TEST_STRING"
       expect(instance.call_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "listen"' do
     it 'should work' do
@@ -76,6 +74,7 @@ describe Freeclimb::SetListen do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::SetListen.new(
           call_id: "TS",
           listen: true,
@@ -128,7 +127,7 @@ describe Freeclimb::SetListen do
     it 'deserializes the data of call_id' do
       expect(instance._deserialize("String", instance.call_id)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of listen' do
+    it 'deserializes the data of listen' do
       expect(instance._deserialize("Boolean", instance.listen)).to be_a_kind_of(TrueClass)
     end
   end
@@ -147,8 +146,6 @@ describe Freeclimb::SetListen do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::SetListen.new(
         call_id: "TS",
-        
-
         listen: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -162,7 +159,7 @@ describe Freeclimb::SetListen do
       instance_2 = Freeclimb::SetListen.new(
         call_id: "TS",
         listen: true,
-              )
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

@@ -25,7 +25,6 @@ describe Freeclimb::PerclScript do
       expect(instance).to be_instance_of(Freeclimb::PerclScript)
     end
   end
-
   describe 'test attribute "commands"' do
     it 'should work' do
       instance.commands = ["ELEMENT_1", "ELEMENT_2"]
@@ -64,6 +63,7 @@ describe Freeclimb::PerclScript do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::PerclScript.new(
           commands: [],
       )
@@ -109,7 +109,7 @@ describe Freeclimb::PerclScript do
     it 'deserializes the data of commands' do
       expect(instance._deserialize("Array<PerclCommand>", instance.commands)).to be_a_kind_of(Array)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -123,7 +123,6 @@ describe Freeclimb::PerclScript do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::PerclScript.new(
-
         commands: Array.new(),
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -134,9 +133,8 @@ describe Freeclimb::PerclScript do
         commands: Array.new(),
       )
       instance_2 = Freeclimb::PerclScript.new(
-
         commands: Array.new(),
-              )
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

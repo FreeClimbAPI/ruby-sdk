@@ -25,14 +25,12 @@ describe Freeclimb::AccountRequest do
       expect(instance).to be_instance_of(Freeclimb::AccountRequest)
     end
   end
-
   describe 'test attribute "_alias"' do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "label"' do
     it 'should work' do
@@ -76,6 +74,7 @@ describe Freeclimb::AccountRequest do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::AccountRequest.new(
           _alias: "TS",
           label: "TS",
@@ -128,10 +127,10 @@ describe Freeclimb::AccountRequest do
     it 'deserializes the data of _alias' do
       expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of label' do
+    it 'deserializes the data of label' do
       expect(instance._deserialize("String", instance.label)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -147,9 +146,7 @@ describe Freeclimb::AccountRequest do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::AccountRequest.new(
         _alias: "TS",
-        
         label: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end

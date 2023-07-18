@@ -25,14 +25,12 @@ describe Freeclimb::RecordingResult do
       expect(instance).to be_instance_of(Freeclimb::RecordingResult)
     end
   end
-
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::RecordingResult do
     end
   end
 
-
   describe 'test attribute "date_updated"' do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -57,14 +53,12 @@ describe Freeclimb::RecordingResult do
     end
   end
 
-
   describe 'test attribute "recording_id"' do
     it 'should work' do
       instance.recording_id = "TEST_STRING"
       expect(instance.recording_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "account_id"' do
     it 'should work' do
@@ -73,7 +67,6 @@ describe Freeclimb::RecordingResult do
     end
   end
 
-
   describe 'test attribute "call_id"' do
     it 'should work' do
       instance.call_id = "TEST_STRING"
@@ -81,14 +74,12 @@ describe Freeclimb::RecordingResult do
     end
   end
 
-
   describe 'test attribute "duration_sec"' do
     it 'should work' do
       instance.duration_sec = 1
       expect(instance.duration_sec).to eq(1) 
     end
   end
-
 
   describe 'test attribute "conference_id"' do
     it 'should work' do
@@ -160,6 +151,7 @@ describe Freeclimb::RecordingResult do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::RecordingResult.new(
           uri: "TS",
           date_created: "TS",
@@ -261,31 +253,31 @@ describe Freeclimb::RecordingResult do
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_created' do
+    it 'deserializes the data of date_created' do
       expect(instance._deserialize("String", instance.date_created)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_updated' do
+    it 'deserializes the data of date_updated' do
       expect(instance._deserialize("String", instance.date_updated)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of revision' do
+    it 'deserializes the data of revision' do
       expect(instance._deserialize("Integer", instance.revision)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of recording_id' do
+    it 'deserializes the data of recording_id' do
       expect(instance._deserialize("String", instance.recording_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of account_id' do
+    it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of call_id' do
+    it 'deserializes the data of call_id' do
       expect(instance._deserialize("String", instance.call_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of duration_sec' do
+    it 'deserializes the data of duration_sec' do
       expect(instance._deserialize("Integer", instance.duration_sec)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of conference_id' do
+    it 'deserializes the data of conference_id' do
       expect(instance._deserialize("String", instance.conference_id)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -308,23 +300,14 @@ describe Freeclimb::RecordingResult do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::RecordingResult.new(
         uri: "TS",
-        
         date_created: "TS",
-        
         date_updated: "TS",
-        
-
         revision: 1,
         recording_id: "TS",
-        
         account_id: "TS",
-        
         call_id: "TS",
-        
-
         duration_sec: 1,
         conference_id: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -345,14 +328,12 @@ describe Freeclimb::RecordingResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-
         revision: 1,
-                recording_id: "TS",
+        recording_id: "TS",
         account_id: "TS",
         call_id: "TS",
-
         duration_sec: 1,
-                conference_id: "TS",
+        conference_id: "TS",
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end

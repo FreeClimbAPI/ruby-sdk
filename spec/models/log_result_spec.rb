@@ -25,7 +25,6 @@ describe Freeclimb::LogResult do
       expect(instance).to be_instance_of(Freeclimb::LogResult)
     end
   end
-
   describe 'test attribute "timestamp"' do
     it 'should work' do
       instance.timestamp = 1
@@ -48,14 +47,12 @@ describe Freeclimb::LogResult do
     end
   end
 
-
   describe 'test attribute "request_id"' do
     it 'should work' do
       instance.request_id = "TEST_STRING"
       expect(instance.request_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "account_id"' do
     it 'should work' do
@@ -64,7 +61,6 @@ describe Freeclimb::LogResult do
     end
   end
 
-
   describe 'test attribute "call_id"' do
     it 'should work' do
       instance.call_id = "TEST_STRING"
@@ -72,14 +68,12 @@ describe Freeclimb::LogResult do
     end
   end
 
-
   describe 'test attribute "message"' do
     it 'should work' do
       instance.message = "TEST_STRING"
       expect(instance.message).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "metadata"' do
     it 'should work' do
@@ -144,6 +138,7 @@ describe Freeclimb::LogResult do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::LogResult.new(
           timestamp: 1,
           level: "INFO",
@@ -151,7 +146,7 @@ describe Freeclimb::LogResult do
           account_id: "TS",
           call_id: "TS",
           message: "TS",
-          metadata: nil,
+          metadata: obj,
       )
       instance_2 = Freeclimb::LogResult.new(
           timestamp: 1,
@@ -160,7 +155,7 @@ describe Freeclimb::LogResult do
           account_id: "TS",
           call_id: "TS",
           message: "TS",
-          metadata: nil,
+          metadata: obj,
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
@@ -231,22 +226,22 @@ describe Freeclimb::LogResult do
     it 'deserializes the data of timestamp' do
       expect(instance._deserialize("Integer", instance.timestamp)).to be_a_kind_of(Integer)
     end
-            it 'deserializes the data of request_id' do
+    it 'deserializes the data of request_id' do
       expect(instance._deserialize("String", instance.request_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of account_id' do
+    it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of call_id' do
+    it 'deserializes the data of call_id' do
       expect(instance._deserialize("String", instance.call_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of message' do
+    it 'deserializes the data of message' do
       expect(instance._deserialize("String", instance.message)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of metadata' do
+    it 'deserializes the data of metadata' do
       expect(instance._deserialize("Object", instance.metadata)).to be_a_kind_of(Object)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -266,19 +261,12 @@ describe Freeclimb::LogResult do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::LogResult.new(
-
         timestamp: 1,
-
         level: "INFO",
         request_id: "TS",
-        
         account_id: "TS",
-        
         call_id: "TS",
-        
         message: "TS",
-        
-
         metadata: Object.new(),
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -295,17 +283,14 @@ describe Freeclimb::LogResult do
         metadata: obj,
       )
       instance_2 = Freeclimb::LogResult.new(
-
         timestamp: 1,
-        
         level: "INFO",
-                request_id: "TS",
+        request_id: "TS",
         account_id: "TS",
         call_id: "TS",
         message: "TS",
-
         metadata: obj,
-              )
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

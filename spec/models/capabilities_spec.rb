@@ -25,14 +25,12 @@ describe Freeclimb::Capabilities do
       expect(instance).to be_instance_of(Freeclimb::Capabilities)
     end
   end
-
   describe 'test attribute "voice"' do
     it 'should work' do
       instance.voice = false
       expect(instance.voice).to eq(false)        
     end
   end
-
 
   describe 'test attribute "sms"' do
     it 'should work' do
@@ -41,7 +39,6 @@ describe Freeclimb::Capabilities do
     end
   end
 
-
   describe 'test attribute "toll_free"' do
     it 'should work' do
       instance.toll_free = false
@@ -49,14 +46,12 @@ describe Freeclimb::Capabilities do
     end
   end
 
-
   describe 'test attribute "ten_dlc"' do
     it 'should work' do
       instance.ten_dlc = false
       expect(instance.ten_dlc).to eq(false)        
     end
   end
-
 
   describe 'test attribute "short_code"' do
     it 'should work' do
@@ -112,6 +107,7 @@ describe Freeclimb::Capabilities do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::Capabilities.new(
           voice: true,
           sms: true,
@@ -182,19 +178,19 @@ describe Freeclimb::Capabilities do
         ten_dlc: true,
         short_code: true,
     )
-        it 'deserializes the data of voice' do
+    it 'deserializes the data of voice' do
       expect(instance._deserialize("Boolean", instance.voice)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of sms' do
+    it 'deserializes the data of sms' do
       expect(instance._deserialize("Boolean", instance.sms)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of toll_free' do
+    it 'deserializes the data of toll_free' do
       expect(instance._deserialize("Boolean", instance.toll_free)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of ten_dlc' do
+    it 'deserializes the data of ten_dlc' do
       expect(instance._deserialize("Boolean", instance.ten_dlc)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of short_code' do
+    it 'deserializes the data of short_code' do
       expect(instance._deserialize("Boolean", instance.short_code)).to be_a_kind_of(TrueClass)
     end
   end
@@ -215,15 +211,10 @@ describe Freeclimb::Capabilities do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::Capabilities.new(
-
         voice: true,
-
         sms: true,
-
         toll_free: true,
-
         ten_dlc: true,
-
         short_code: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -239,11 +230,11 @@ describe Freeclimb::Capabilities do
       )
       instance_2 = Freeclimb::Capabilities.new(
         voice: true,
-                sms: true,
-                toll_free: true,
-                ten_dlc: true,
-                short_code: true,
-              )
+        sms: true,
+        toll_free: true,
+        ten_dlc: true,
+        short_code: true,
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

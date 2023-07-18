@@ -25,14 +25,12 @@ describe Freeclimb::Sms do
       expect(instance).to be_instance_of(Freeclimb::Sms)
     end
   end
-
   describe 'test attribute "to"' do
     it 'should work' do
       instance.to = "TEST_STRING"
       expect(instance.to).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "from"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::Sms do
     end
   end
 
-
   describe 'test attribute "text"' do
     it 'should work' do
       instance.text = "TEST_STRING"
       expect(instance.text).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "notification_url"' do
     it 'should work' do
@@ -100,6 +96,7 @@ describe Freeclimb::Sms do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::Sms.new(
           to: "TS",
           from: "TS",
@@ -166,16 +163,16 @@ describe Freeclimb::Sms do
     it 'deserializes the data of to' do
       expect(instance._deserialize("String", instance.to)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of from' do
+    it 'deserializes the data of from' do
       expect(instance._deserialize("String", instance.from)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of text' do
+    it 'deserializes the data of text' do
       expect(instance._deserialize("String", instance.text)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of notification_url' do
+    it 'deserializes the data of notification_url' do
       expect(instance._deserialize("String", instance.notification_url)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -193,13 +190,9 @@ describe Freeclimb::Sms do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::Sms.new(
         to: "TS",
-        
         from: "TS",
-        
         text: "TS",
-        
         notification_url: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end

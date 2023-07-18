@@ -25,7 +25,6 @@ describe Freeclimb::Park do
       expect(instance).to be_instance_of(Freeclimb::Park)
     end
   end
-
   describe 'test attribute "wait_url"' do
     it 'should work' do
       instance.wait_url = "TEST_STRING"
@@ -33,14 +32,12 @@ describe Freeclimb::Park do
     end
   end
 
-
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "notification_url"' do
     it 'should work' do
@@ -88,6 +85,7 @@ describe Freeclimb::Park do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::Park.new(
           wait_url: "TS",
           action_url: "TS",
@@ -147,13 +145,13 @@ describe Freeclimb::Park do
     it 'deserializes the data of wait_url' do
       expect(instance._deserialize("String", instance.wait_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of action_url' do
+    it 'deserializes the data of action_url' do
       expect(instance._deserialize("String", instance.action_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of notification_url' do
+    it 'deserializes the data of notification_url' do
       expect(instance._deserialize("String", instance.notification_url)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -170,11 +168,8 @@ describe Freeclimb::Park do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::Park.new(
         wait_url: "TS",
-        
         action_url: "TS",
-        
         notification_url: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end

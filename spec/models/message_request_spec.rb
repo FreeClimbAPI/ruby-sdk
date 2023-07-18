@@ -25,14 +25,12 @@ describe Freeclimb::MessageRequest do
       expect(instance).to be_instance_of(Freeclimb::MessageRequest)
     end
   end
-
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::MessageRequest do
     end
   end
 
-
   describe 'test attribute "date_updated"' do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -57,14 +53,12 @@ describe Freeclimb::MessageRequest do
     end
   end
 
-
   describe 'test attribute "from"' do
     it 'should work' do
       instance.from = "TEST_STRING"
       expect(instance.from).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "to"' do
     it 'should work' do
@@ -73,7 +67,6 @@ describe Freeclimb::MessageRequest do
     end
   end
 
-
   describe 'test attribute "text"' do
     it 'should work' do
       instance.text = "TEST_STRING"
@@ -81,14 +74,12 @@ describe Freeclimb::MessageRequest do
     end
   end
 
-
   describe 'test attribute "notification_url"' do
     it 'should work' do
       instance.notification_url = "TEST_STRING"
       expect(instance.notification_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "account_id"' do
     it 'should work' do
@@ -160,6 +151,7 @@ describe Freeclimb::MessageRequest do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::MessageRequest.new(
           uri: "TS",
           date_created: "TS",
@@ -261,31 +253,31 @@ describe Freeclimb::MessageRequest do
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_created' do
+    it 'deserializes the data of date_created' do
       expect(instance._deserialize("String", instance.date_created)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_updated' do
+    it 'deserializes the data of date_updated' do
       expect(instance._deserialize("String", instance.date_updated)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of revision' do
+    it 'deserializes the data of revision' do
       expect(instance._deserialize("Integer", instance.revision)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of from' do
+    it 'deserializes the data of from' do
       expect(instance._deserialize("String", instance.from)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of to' do
+    it 'deserializes the data of to' do
       expect(instance._deserialize("String", instance.to)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of text' do
+    it 'deserializes the data of text' do
       expect(instance._deserialize("String", instance.text)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of notification_url' do
+    it 'deserializes the data of notification_url' do
       expect(instance._deserialize("String", instance.notification_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of account_id' do
+    it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -308,23 +300,14 @@ describe Freeclimb::MessageRequest do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::MessageRequest.new(
         uri: "TS",
-        
         date_created: "TS",
-        
         date_updated: "TS",
-        
-
         revision: 1,
         from: "TS",
-        
         to: "TS",
-        
         text: "TS",
-        
         notification_url: "TS",
-        
         account_id: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -345,9 +328,8 @@ describe Freeclimb::MessageRequest do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-
         revision: 1,
-                from: "TS",
+        from: "TS",
         to: "TS",
         text: "TS",
         notification_url: "TS",

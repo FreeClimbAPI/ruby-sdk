@@ -25,14 +25,12 @@ describe Freeclimb::MessagesList do
       expect(instance).to be_instance_of(Freeclimb::MessagesList)
     end
   end
-
   describe 'test attribute "total"' do
     it 'should work' do
       instance.total = 1
       expect(instance.total).to eq(1) 
     end
   end
-
 
   describe 'test attribute "start"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::MessagesList do
     end
   end
 
-
   describe 'test attribute "_end"' do
     it 'should work' do
       instance._end = 1
       expect(instance._end).to eq(1) 
     end
   end
-
 
   describe 'test attribute "page"' do
     it 'should work' do
@@ -57,14 +53,12 @@ describe Freeclimb::MessagesList do
     end
   end
 
-
   describe 'test attribute "num_pages"' do
     it 'should work' do
       instance.num_pages = 1
       expect(instance.num_pages).to eq(1) 
     end
   end
-
 
   describe 'test attribute "page_size"' do
     it 'should work' do
@@ -73,14 +67,12 @@ describe Freeclimb::MessagesList do
     end
   end
 
-
   describe 'test attribute "next_page_uri"' do
     it 'should work' do
       instance.next_page_uri = "TEST_STRING"
       expect(instance.next_page_uri).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "messages"' do
     it 'should work' do
@@ -148,6 +140,7 @@ describe Freeclimb::MessagesList do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::MessagesList.new(
           total: 1,
           start: 1,
@@ -242,28 +235,28 @@ describe Freeclimb::MessagesList do
     it 'deserializes the data of total' do
       expect(instance._deserialize("Integer", instance.total)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of start' do
+    it 'deserializes the data of start' do
       expect(instance._deserialize("Integer", instance.start)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of _end' do
+    it 'deserializes the data of _end' do
       expect(instance._deserialize("Integer", instance._end)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of page' do
+    it 'deserializes the data of page' do
       expect(instance._deserialize("Integer", instance.page)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of num_pages' do
+    it 'deserializes the data of num_pages' do
       expect(instance._deserialize("Integer", instance.num_pages)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of page_size' do
+    it 'deserializes the data of page_size' do
       expect(instance._deserialize("Integer", instance.page_size)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of next_page_uri' do
+    it 'deserializes the data of next_page_uri' do
       expect(instance._deserialize("String", instance.next_page_uri)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of messages' do
+    it 'deserializes the data of messages' do
       expect(instance._deserialize("Array<MessageResult>", instance.messages)).to be_a_kind_of(Array)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -284,21 +277,13 @@ describe Freeclimb::MessagesList do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::MessagesList.new(
-
         total: 1,
-
         start: 1,
-
         _end: 1,
-
         page: 1,
-
         num_pages: 1,
-
         page_size: 1,
         next_page_uri: "TS",
-        
-
         messages: Array.new(),
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -316,22 +301,15 @@ describe Freeclimb::MessagesList do
         messages: Array.new(),
       )
       instance_2 = Freeclimb::MessagesList.new(
-
         total: 1,
-        
         start: 1,
-        
         _end: 1,
-        
         page: 1,
-        
         num_pages: 1,
-        
         page_size: 1,
-                next_page_uri: "TS",
-
+        next_page_uri: "TS",
         messages: Array.new(),
-              )
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

@@ -25,14 +25,12 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
       expect(instance).to be_instance_of(Freeclimb::UpdateConferenceParticipantRequest)
     end
   end
-
   describe 'test attribute "talk"' do
     it 'should work' do
       instance.talk = false
       expect(instance.talk).to eq(false)        
     end
   end
-
 
   describe 'test attribute "listen"' do
     it 'should work' do
@@ -76,6 +74,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::UpdateConferenceParticipantRequest.new(
           talk: true,
           listen: true,
@@ -125,10 +124,10 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
         talk: true,
         listen: true,
     )
-        it 'deserializes the data of talk' do
+    it 'deserializes the data of talk' do
       expect(instance._deserialize("Boolean", instance.talk)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of listen' do
+    it 'deserializes the data of listen' do
       expect(instance._deserialize("Boolean", instance.listen)).to be_a_kind_of(TrueClass)
     end
   end
@@ -146,9 +145,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::UpdateConferenceParticipantRequest.new(
-
         talk: true,
-
         listen: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -161,8 +158,8 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
       )
       instance_2 = Freeclimb::UpdateConferenceParticipantRequest.new(
         talk: true,
-                listen: true,
-              )
+        listen: true,
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

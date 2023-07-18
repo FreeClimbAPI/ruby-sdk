@@ -25,14 +25,12 @@ describe Freeclimb::Play do
       expect(instance).to be_instance_of(Freeclimb::Play)
     end
   end
-
   describe 'test attribute "file"' do
     it 'should work' do
       instance.file = "TEST_STRING"
       expect(instance.file).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "loop"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::Play do
     end
   end
 
-
   describe 'test attribute "conference_id"' do
     it 'should work' do
       instance.conference_id = "TEST_STRING"
       expect(instance.conference_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
@@ -100,6 +96,7 @@ describe Freeclimb::Play do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::Play.new(
           file: "TS",
           loop: 1,
@@ -166,13 +163,13 @@ describe Freeclimb::Play do
     it 'deserializes the data of file' do
       expect(instance._deserialize("String", instance.file)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of loop' do
+    it 'deserializes the data of loop' do
       expect(instance._deserialize("Integer", instance.loop)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of conference_id' do
+    it 'deserializes the data of conference_id' do
       expect(instance._deserialize("String", instance.conference_id)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of privacy_mode' do
+    it 'deserializes the data of privacy_mode' do
       expect(instance._deserialize("Boolean", instance.privacy_mode)).to be_a_kind_of(TrueClass)
     end
   end
@@ -193,12 +190,8 @@ describe Freeclimb::Play do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::Play.new(
         file: "TS",
-        
-
         loop: 1,
         conference_id: "TS",
-        
-
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -213,11 +206,10 @@ describe Freeclimb::Play do
       )
       instance_2 = Freeclimb::Play.new(
         file: "TS",
-
         loop: 1,
-                conference_id: "TS",
+        conference_id: "TS",
         privacy_mode: true,
-              )
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

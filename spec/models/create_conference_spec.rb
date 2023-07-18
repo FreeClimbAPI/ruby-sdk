@@ -25,14 +25,12 @@ describe Freeclimb::CreateConference do
       expect(instance).to be_instance_of(Freeclimb::CreateConference)
     end
   end
-
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "_alias"' do
     it 'should work' do
@@ -60,7 +58,6 @@ describe Freeclimb::CreateConference do
     end
   end
 
-
   describe 'test attribute "record"' do
     it 'should work' do
       instance.record = false
@@ -68,14 +65,12 @@ describe Freeclimb::CreateConference do
     end
   end
 
-
   describe 'test attribute "status_callback_url"' do
     it 'should work' do
       instance.status_callback_url = "TEST_STRING"
       expect(instance.status_callback_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "wait_url"' do
     it 'should work' do
@@ -135,6 +130,7 @@ describe Freeclimb::CreateConference do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::CreateConference.new(
           action_url: "TS",
           _alias: true,
@@ -215,19 +211,19 @@ describe Freeclimb::CreateConference do
     it 'deserializes the data of action_url' do
       expect(instance._deserialize("String", instance.action_url)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of _alias' do
+    it 'deserializes the data of _alias' do
       expect(instance._deserialize("Boolean", instance._alias)).to be_a_kind_of(TrueClass)
     end
-            it 'deserializes the data of record' do
+    it 'deserializes the data of record' do
       expect(instance._deserialize("Boolean", instance.record)).to be_a_kind_of(TrueClass)
     end
     it 'deserializes the data of status_callback_url' do
       expect(instance._deserialize("String", instance.status_callback_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of wait_url' do
+    it 'deserializes the data of wait_url' do
       expect(instance._deserialize("String", instance.wait_url)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -247,17 +243,11 @@ describe Freeclimb::CreateConference do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::CreateConference.new(
         action_url: "TS",
-        
-
         _alias: true,
-
         play_beep: "ALWAYS",
-
         record: true,
         status_callback_url: "TS",
-        
         wait_url: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -274,10 +264,9 @@ describe Freeclimb::CreateConference do
       instance_2 = Freeclimb::CreateConference.new(
         action_url: "TS",
         _alias: true,
-        
         play_beep: "ALWAYS",
-                record: true,
-                status_callback_url: "TS",
+        record: true,
+        status_callback_url: "TS",
         wait_url: "TS",
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)

@@ -25,7 +25,6 @@ describe Freeclimb::TerminateConference do
       expect(instance).to be_instance_of(Freeclimb::TerminateConference)
     end
   end
-
   describe 'test attribute "conference_id"' do
     it 'should work' do
       instance.conference_id = "TEST_STRING"
@@ -64,6 +63,7 @@ describe Freeclimb::TerminateConference do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::TerminateConference.new(
           conference_id: "TS",
       )
@@ -109,7 +109,7 @@ describe Freeclimb::TerminateConference do
     it 'deserializes the data of conference_id' do
       expect(instance._deserialize("String", instance.conference_id)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -124,7 +124,6 @@ describe Freeclimb::TerminateConference do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::TerminateConference.new(
         conference_id: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end

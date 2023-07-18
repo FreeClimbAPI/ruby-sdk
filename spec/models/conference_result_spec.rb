@@ -25,14 +25,12 @@ describe Freeclimb::ConferenceResult do
       expect(instance).to be_instance_of(Freeclimb::ConferenceResult)
     end
   end
-
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::ConferenceResult do
     end
   end
 
-
   describe 'test attribute "date_updated"' do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -57,7 +53,6 @@ describe Freeclimb::ConferenceResult do
     end
   end
 
-
   describe 'test attribute "conference_id"' do
     it 'should work' do
       instance.conference_id = "TEST_STRING"
@@ -65,14 +60,12 @@ describe Freeclimb::ConferenceResult do
     end
   end
 
-
   describe 'test attribute "account_id"' do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "_alias"' do
     it 'should work' do
@@ -100,7 +93,6 @@ describe Freeclimb::ConferenceResult do
     end
   end
 
-
   describe 'test attribute "record"' do
     it 'should work' do
       instance.record = false
@@ -127,14 +119,12 @@ describe Freeclimb::ConferenceResult do
     end
   end
 
-
   describe 'test attribute "wait_url"' do
     it 'should work' do
       instance.wait_url = "TEST_STRING"
       expect(instance.wait_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "action_url"' do
     it 'should work' do
@@ -143,14 +133,12 @@ describe Freeclimb::ConferenceResult do
     end
   end
 
-
   describe 'test attribute "status_callback_url"' do
     it 'should work' do
       instance.status_callback_url = "TEST_STRING"
       expect(instance.status_callback_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
@@ -243,6 +231,7 @@ describe Freeclimb::ConferenceResult do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::ConferenceResult.new(
           uri: "TS",
           date_created: "TS",
@@ -257,7 +246,7 @@ describe Freeclimb::ConferenceResult do
           wait_url: "TS",
           action_url: "TS",
           status_callback_url: "TS",
-          subresource_uris: nil,
+          subresource_uris: obj,
       )
       instance_2 = Freeclimb::ConferenceResult.new(
           uri: "TS",
@@ -273,7 +262,7 @@ describe Freeclimb::ConferenceResult do
           wait_url: "TS",
           action_url: "TS",
           status_callback_url: "TS",
-          subresource_uris: nil,
+          subresource_uris: obj,
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
@@ -379,40 +368,40 @@ describe Freeclimb::ConferenceResult do
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_created' do
+    it 'deserializes the data of date_created' do
       expect(instance._deserialize("String", instance.date_created)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_updated' do
+    it 'deserializes the data of date_updated' do
       expect(instance._deserialize("String", instance.date_updated)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of revision' do
+    it 'deserializes the data of revision' do
       expect(instance._deserialize("Integer", instance.revision)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of conference_id' do
+    it 'deserializes the data of conference_id' do
       expect(instance._deserialize("String", instance.conference_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of account_id' do
+    it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of _alias' do
+    it 'deserializes the data of _alias' do
       expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
     end
-                it 'deserializes the data of record' do
+    it 'deserializes the data of record' do
       expect(instance._deserialize("Boolean", instance.record)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of wait_url' do
+    it 'deserializes the data of wait_url' do
       expect(instance._deserialize("String", instance.wait_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of action_url' do
+    it 'deserializes the data of action_url' do
       expect(instance._deserialize("String", instance.action_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of status_callback_url' do
+    it 'deserializes the data of status_callback_url' do
       expect(instance._deserialize("String", instance.status_callback_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of subresource_uris' do
+    it 'deserializes the data of subresource_uris' do
       expect(instance._deserialize("Object", instance.subresource_uris)).to be_a_kind_of(Object)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -440,32 +429,18 @@ describe Freeclimb::ConferenceResult do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::ConferenceResult.new(
         uri: "TS",
-        
         date_created: "TS",
-        
         date_updated: "TS",
-        
-
         revision: 1,
         conference_id: "TS",
-        
         account_id: "TS",
-        
         _alias: "TS",
-        
-
         play_beep: "ALWAYS",
-
         record: true,
-
         status: "EMPTY",
         wait_url: "TS",
-        
         action_url: "TS",
-        
         status_callback_url: "TS",
-        
-
         subresource_uris: Object.new(),
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -492,22 +467,18 @@ describe Freeclimb::ConferenceResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-
         revision: 1,
-                conference_id: "TS",
+        conference_id: "TS",
         account_id: "TS",
         _alias: "TS",
-
         play_beep: "ALWAYS",
-                record: true,
-        
+        record: true,
         status: "EMPTY",
-                wait_url: "TS",
+        wait_url: "TS",
         action_url: "TS",
         status_callback_url: "TS",
-
         subresource_uris: obj,
-              )
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

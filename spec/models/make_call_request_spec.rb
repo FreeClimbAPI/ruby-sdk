@@ -25,14 +25,12 @@ describe Freeclimb::MakeCallRequest do
       expect(instance).to be_instance_of(Freeclimb::MakeCallRequest)
     end
   end
-
   describe 'test attribute "from"' do
     it 'should work' do
       instance.from = "TEST_STRING"
       expect(instance.from).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "to"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::MakeCallRequest do
     end
   end
 
-
   describe 'test attribute "application_id"' do
     it 'should work' do
       instance.application_id = "TEST_STRING"
       expect(instance.application_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "send_digits"' do
     it 'should work' do
@@ -57,14 +53,12 @@ describe Freeclimb::MakeCallRequest do
     end
   end
 
-
   describe 'test attribute "if_machine"' do
     it 'should work' do
       instance.if_machine = "TEST_STRING"
       expect(instance.if_machine).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "if_machine_url"' do
     it 'should work' do
@@ -73,14 +67,12 @@ describe Freeclimb::MakeCallRequest do
     end
   end
 
-
   describe 'test attribute "timeout"' do
     it 'should work' do
       instance.timeout = 1
       expect(instance.timeout).to eq(1) 
     end
   end
-
 
   describe 'test attribute "parent_call_id"' do
     it 'should work' do
@@ -89,14 +81,12 @@ describe Freeclimb::MakeCallRequest do
     end
   end
 
-
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
       instance.privacy_mode = false
       expect(instance.privacy_mode).to eq(false)        
     end
   end
-
 
   describe 'test attribute "call_connect_url"' do
     it 'should work' do
@@ -172,6 +162,7 @@ describe Freeclimb::MakeCallRequest do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::MakeCallRequest.new(
           from: "TS",
           to: "TS",
@@ -280,34 +271,34 @@ describe Freeclimb::MakeCallRequest do
     it 'deserializes the data of from' do
       expect(instance._deserialize("String", instance.from)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of to' do
+    it 'deserializes the data of to' do
       expect(instance._deserialize("String", instance.to)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of application_id' do
+    it 'deserializes the data of application_id' do
       expect(instance._deserialize("String", instance.application_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of send_digits' do
+    it 'deserializes the data of send_digits' do
       expect(instance._deserialize("String", instance.send_digits)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of if_machine' do
+    it 'deserializes the data of if_machine' do
       expect(instance._deserialize("String", instance.if_machine)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of if_machine_url' do
+    it 'deserializes the data of if_machine_url' do
       expect(instance._deserialize("String", instance.if_machine_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of timeout' do
+    it 'deserializes the data of timeout' do
       expect(instance._deserialize("Integer", instance.timeout)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of parent_call_id' do
+    it 'deserializes the data of parent_call_id' do
       expect(instance._deserialize("String", instance.parent_call_id)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of privacy_mode' do
+    it 'deserializes the data of privacy_mode' do
       expect(instance._deserialize("Boolean", instance.privacy_mode)).to be_a_kind_of(TrueClass)
     end
     it 'deserializes the data of call_connect_url' do
       expect(instance._deserialize("String", instance.call_connect_url)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -331,25 +322,15 @@ describe Freeclimb::MakeCallRequest do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::MakeCallRequest.new(
         from: "TS",
-        
         to: "TS",
-        
         application_id: "TS",
-        
         send_digits: "TS",
-        
         if_machine: "TS",
-        
         if_machine_url: "TS",
-        
-
         timeout: 1,
         parent_call_id: "TS",
-        
-
         privacy_mode: true,
         call_connect_url: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -374,11 +355,10 @@ describe Freeclimb::MakeCallRequest do
         send_digits: "TS",
         if_machine: "TS",
         if_machine_url: "TS",
-
         timeout: 1,
-                parent_call_id: "TS",
+        parent_call_id: "TS",
         privacy_mode: true,
-                call_connect_url: "TS",
+        call_connect_url: "TS",
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end

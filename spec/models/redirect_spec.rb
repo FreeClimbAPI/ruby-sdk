@@ -25,7 +25,6 @@ describe Freeclimb::Redirect do
       expect(instance).to be_instance_of(Freeclimb::Redirect)
     end
   end
-
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"
@@ -64,6 +63,7 @@ describe Freeclimb::Redirect do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::Redirect.new(
           action_url: "TS",
       )
@@ -109,7 +109,7 @@ describe Freeclimb::Redirect do
     it 'deserializes the data of action_url' do
       expect(instance._deserialize("String", instance.action_url)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -124,7 +124,6 @@ describe Freeclimb::Redirect do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::Redirect.new(
         action_url: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end

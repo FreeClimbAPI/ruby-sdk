@@ -25,14 +25,12 @@ describe Freeclimb::RecordUtterance do
       expect(instance).to be_instance_of(Freeclimb::RecordUtterance)
     end
   end
-
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "silence_timeout_ms"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::RecordUtterance do
     end
   end
 
-
   describe 'test attribute "finish_on_key"' do
     it 'should work' do
       instance.finish_on_key = "TEST_STRING"
       expect(instance.finish_on_key).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "max_length_sec"' do
     it 'should work' do
@@ -57,7 +53,6 @@ describe Freeclimb::RecordUtterance do
     end
   end
 
-
   describe 'test attribute "play_beep"' do
     it 'should work' do
       instance.play_beep = false
@@ -65,14 +60,12 @@ describe Freeclimb::RecordUtterance do
     end
   end
 
-
   describe 'test attribute "auto_start"' do
     it 'should work' do
       instance.auto_start = false
       expect(instance.auto_start).to eq(false)        
     end
   end
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
@@ -136,6 +129,7 @@ describe Freeclimb::RecordUtterance do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::RecordUtterance.new(
           action_url: "TS",
           silence_timeout_ms: 1,
@@ -223,22 +217,22 @@ describe Freeclimb::RecordUtterance do
     it 'deserializes the data of action_url' do
       expect(instance._deserialize("String", instance.action_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of silence_timeout_ms' do
+    it 'deserializes the data of silence_timeout_ms' do
       expect(instance._deserialize("Integer", instance.silence_timeout_ms)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of finish_on_key' do
+    it 'deserializes the data of finish_on_key' do
       expect(instance._deserialize("String", instance.finish_on_key)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of max_length_sec' do
+    it 'deserializes the data of max_length_sec' do
       expect(instance._deserialize("Integer", instance.max_length_sec)).to be_a_kind_of(Integer)
     end
-            it 'deserializes the data of play_beep' do
+    it 'deserializes the data of play_beep' do
       expect(instance._deserialize("Boolean", instance.play_beep)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of auto_start' do
+    it 'deserializes the data of auto_start' do
       expect(instance._deserialize("Boolean", instance.auto_start)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of privacy_mode' do
+    it 'deserializes the data of privacy_mode' do
       expect(instance._deserialize("Boolean", instance.privacy_mode)).to be_a_kind_of(TrueClass)
     end
   end
@@ -262,18 +256,11 @@ describe Freeclimb::RecordUtterance do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-        
-
         silence_timeout_ms: 1,
         finish_on_key: "TS",
-        
-
         max_length_sec: 1,
-
         play_beep: true,
-
         auto_start: true,
-
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -291,15 +278,13 @@ describe Freeclimb::RecordUtterance do
       )
       instance_2 = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-
         silence_timeout_ms: 1,
-                finish_on_key: "TS",
-
+        finish_on_key: "TS",
         max_length_sec: 1,
-                play_beep: true,
-                auto_start: true,
-                privacy_mode: true,
-              )
+        play_beep: true,
+        auto_start: true,
+        privacy_mode: true,
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

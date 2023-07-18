@@ -25,14 +25,12 @@ describe Freeclimb::OutDial do
       expect(instance).to be_instance_of(Freeclimb::OutDial)
     end
   end
-
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "call_connect_url"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::OutDial do
     end
   end
 
-
   describe 'test attribute "calling_number"' do
     it 'should work' do
       instance.calling_number = "TEST_STRING"
       expect(instance.calling_number).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "destination"' do
     it 'should work' do
@@ -68,14 +64,12 @@ describe Freeclimb::OutDial do
     end
   end
 
-
   describe 'test attribute "if_machine_url"' do
     it 'should work' do
       instance.if_machine_url = "TEST_STRING"
       expect(instance.if_machine_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "send_digits"' do
     it 'should work' do
@@ -84,7 +78,6 @@ describe Freeclimb::OutDial do
     end
   end
 
-
   describe 'test attribute "status_callback_url"' do
     it 'should work' do
       instance.status_callback_url = "TEST_STRING"
@@ -92,14 +85,12 @@ describe Freeclimb::OutDial do
     end
   end
 
-
   describe 'test attribute "timeout"' do
     it 'should work' do
       instance.timeout = 1
       expect(instance.timeout).to eq(1) 
     end
   end
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
@@ -175,6 +166,7 @@ describe Freeclimb::OutDial do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::OutDial.new(
           action_url: "TS",
           call_connect_url: "TS",
@@ -283,28 +275,28 @@ describe Freeclimb::OutDial do
     it 'deserializes the data of action_url' do
       expect(instance._deserialize("String", instance.action_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of call_connect_url' do
+    it 'deserializes the data of call_connect_url' do
       expect(instance._deserialize("String", instance.call_connect_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of calling_number' do
+    it 'deserializes the data of calling_number' do
       expect(instance._deserialize("String", instance.calling_number)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of destination' do
+    it 'deserializes the data of destination' do
       expect(instance._deserialize("String", instance.destination)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of if_machine_url' do
+    it 'deserializes the data of if_machine_url' do
       expect(instance._deserialize("String", instance.if_machine_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of send_digits' do
+    it 'deserializes the data of send_digits' do
       expect(instance._deserialize("String", instance.send_digits)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of status_callback_url' do
+    it 'deserializes the data of status_callback_url' do
       expect(instance._deserialize("String", instance.status_callback_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of timeout' do
+    it 'deserializes the data of timeout' do
       expect(instance._deserialize("Integer", instance.timeout)).to be_a_kind_of(Integer)
     end
-            it 'deserializes the data of privacy_mode' do
+    it 'deserializes the data of privacy_mode' do
       expect(instance._deserialize("Boolean", instance.privacy_mode)).to be_a_kind_of(TrueClass)
     end
   end
@@ -331,24 +323,14 @@ describe Freeclimb::OutDial do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::OutDial.new(
         action_url: "TS",
-        
         call_connect_url: "TS",
-        
         calling_number: "TS",
-        
         destination: "TS",
-        
-
         if_machine: "REDIRECT",
         if_machine_url: "TS",
-        
         send_digits: "TS",
-        
         status_callback_url: "TS",
-        
-
         timeout: 1,
-
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -372,15 +354,13 @@ describe Freeclimb::OutDial do
         call_connect_url: "TS",
         calling_number: "TS",
         destination: "TS",
-
         if_machine: "REDIRECT",
-                if_machine_url: "TS",
+        if_machine_url: "TS",
         send_digits: "TS",
         status_callback_url: "TS",
-
         timeout: 1,
-                privacy_mode: true,
-              )
+        privacy_mode: true,
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

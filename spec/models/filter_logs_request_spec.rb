@@ -25,7 +25,6 @@ describe Freeclimb::FilterLogsRequest do
       expect(instance).to be_instance_of(Freeclimb::FilterLogsRequest)
     end
   end
-
   describe 'test attribute "pql"' do
     it 'should work' do
       instance.pql = "TEST_STRING"
@@ -64,6 +63,7 @@ describe Freeclimb::FilterLogsRequest do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::FilterLogsRequest.new(
           pql: "TS",
       )
@@ -109,7 +109,7 @@ describe Freeclimb::FilterLogsRequest do
     it 'deserializes the data of pql' do
       expect(instance._deserialize("String", instance.pql)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -124,7 +124,6 @@ describe Freeclimb::FilterLogsRequest do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::FilterLogsRequest.new(
         pql: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end

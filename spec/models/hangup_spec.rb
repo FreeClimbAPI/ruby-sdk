@@ -25,7 +25,6 @@ describe Freeclimb::Hangup do
       expect(instance).to be_instance_of(Freeclimb::Hangup)
     end
   end
-
   describe 'test attribute "reason"' do
     it 'should work' do
       instance.reason = "TEST_STRING"
@@ -64,6 +63,7 @@ describe Freeclimb::Hangup do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::Hangup.new(
           reason: "TS",
       )
@@ -109,7 +109,7 @@ describe Freeclimb::Hangup do
     it 'deserializes the data of reason' do
       expect(instance._deserialize("String", instance.reason)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -124,7 +124,6 @@ describe Freeclimb::Hangup do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::Hangup.new(
         reason: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end

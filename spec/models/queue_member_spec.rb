@@ -25,14 +25,12 @@ describe Freeclimb::QueueMember do
       expect(instance).to be_instance_of(Freeclimb::QueueMember)
     end
   end
-
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "call_id"' do
     it 'should work' do
@@ -41,7 +39,6 @@ describe Freeclimb::QueueMember do
     end
   end
 
-
   describe 'test attribute "wait_time"' do
     it 'should work' do
       instance.wait_time = 1
@@ -49,14 +46,12 @@ describe Freeclimb::QueueMember do
     end
   end
 
-
   describe 'test attribute "position"' do
     it 'should work' do
       instance.position = 1
       expect(instance.position).to eq(1) 
     end
   end
-
 
   describe 'test attribute "date_enqueued"' do
     it 'should work' do
@@ -112,6 +107,7 @@ describe Freeclimb::QueueMember do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::QueueMember.new(
           uri: "TS",
           call_id: "TS",
@@ -185,19 +181,19 @@ describe Freeclimb::QueueMember do
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of call_id' do
+    it 'deserializes the data of call_id' do
       expect(instance._deserialize("String", instance.call_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of wait_time' do
+    it 'deserializes the data of wait_time' do
       expect(instance._deserialize("Integer", instance.wait_time)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of position' do
+    it 'deserializes the data of position' do
       expect(instance._deserialize("Integer", instance.position)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of date_enqueued' do
+    it 'deserializes the data of date_enqueued' do
       expect(instance._deserialize("String", instance.date_enqueued)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -216,15 +212,10 @@ describe Freeclimb::QueueMember do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::QueueMember.new(
         uri: "TS",
-        
         call_id: "TS",
-        
-
         wait_time: 1,
-
         position: 1,
         date_enqueued: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -240,11 +231,9 @@ describe Freeclimb::QueueMember do
       instance_2 = Freeclimb::QueueMember.new(
         uri: "TS",
         call_id: "TS",
-
         wait_time: 1,
-        
         position: 1,
-                date_enqueued: "TS",
+        date_enqueued: "TS",
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end

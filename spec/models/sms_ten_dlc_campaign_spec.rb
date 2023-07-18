@@ -25,14 +25,12 @@ describe Freeclimb::SMSTenDLCCampaign do
       expect(instance).to be_instance_of(Freeclimb::SMSTenDLCCampaign)
     end
   end
-
   describe 'test attribute "account_id"' do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "campaign_id"' do
     it 'should work' do
@@ -41,7 +39,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "csp_id"' do
     it 'should work' do
       instance.csp_id = "TEST_STRING"
@@ -49,11 +46,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
-  describe 'test attribute "reseller_id"' do
-    it 'should work' do
-    end
-  end
 
   describe 'test attribute "reseller_id"' do
     it 'should work with length 8' do
@@ -80,14 +72,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "create_date"' do
     it 'should work' do
       instance.create_date = "2022-07-05T15:17:05Z"
       expect(instance.create_date).to eq("2022-07-05T15:17:05Z")  
     end
   end
-
 
   describe 'test attribute "auto_renewal"' do
     it 'should work' do
@@ -96,7 +86,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "billed_date"' do
     it 'should work' do
       instance.billed_date = "2022-07-05T15:17:05Z"
@@ -104,11 +93,6 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
-  describe 'test attribute "brand_id"' do
-    it 'should work' do
-    end
-  end
 
   describe 'test attribute "brand_id"' do
     it 'should work with length 8' do
@@ -120,14 +104,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "usecase"' do
     it 'should work' do
       instance.usecase = "TEST_STRING"
       expect(instance.usecase).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "sub_usecases"' do
     it 'should work' do
@@ -136,14 +118,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "description"' do
     it 'should work' do
       instance.description = "TEST_STRING"
       expect(instance.description).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "embedded_link"' do
     it 'should work' do
@@ -152,14 +132,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "embedded_phone"' do
     it 'should work' do
       instance.embedded_phone = false
       expect(instance.embedded_phone).to eq(false)        
     end
   end
-
 
   describe 'test attribute "affiliate_marketing"' do
     it 'should work' do
@@ -168,14 +146,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "number_pool"' do
     it 'should work' do
       instance.number_pool = false
       expect(instance.number_pool).to eq(false)        
     end
   end
-
 
   describe 'test attribute "age_gated"' do
     it 'should work' do
@@ -184,14 +160,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "direct_lending"' do
     it 'should work' do
       instance.direct_lending = false
       expect(instance.direct_lending).to eq(false)        
     end
   end
-
 
   describe 'test attribute "subscriber_optin"' do
     it 'should work' do
@@ -200,14 +174,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "subscriber_optout"' do
     it 'should work' do
       instance.subscriber_optout = false
       expect(instance.subscriber_optout).to eq(false)        
     end
   end
-
 
   describe 'test attribute "subscriber_help"' do
     it 'should work' do
@@ -216,14 +188,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "sample1"' do
     it 'should work' do
       instance.sample1 = "TEST_STRING"
       expect(instance.sample1).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "sample2"' do
     it 'should work' do
@@ -232,14 +202,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "sample3"' do
     it 'should work' do
       instance.sample3 = "TEST_STRING"
       expect(instance.sample3).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "sample4"' do
     it 'should work' do
@@ -248,14 +216,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "sample5"' do
     it 'should work' do
       instance.sample5 = "TEST_STRING"
       expect(instance.sample5).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "message_flow"' do
     it 'should work' do
@@ -264,14 +230,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "help_message"' do
     it 'should work' do
       instance.help_message = "TEST_STRING"
       expect(instance.help_message).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "reference_id"' do
     it 'should work' do
@@ -280,14 +244,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
-
   describe 'test attribute "mock"' do
     it 'should work' do
       instance.mock = false
       expect(instance.mock).to eq(false)        
     end
   end
-
 
   describe 'test attribute "next_renewal_or_expiration_date"' do
     it 'should work' do
@@ -447,6 +409,7 @@ describe Freeclimb::SMSTenDLCCampaign do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::SMSTenDLCCampaign.new(
           account_id: "TS",
           campaign_id: "TS",
@@ -690,97 +653,97 @@ describe Freeclimb::SMSTenDLCCampaign do
     it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of campaign_id' do
+    it 'deserializes the data of campaign_id' do
       expect(instance._deserialize("String", instance.campaign_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of csp_id' do
+    it 'deserializes the data of csp_id' do
       expect(instance._deserialize("String", instance.csp_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of reseller_id' do
+    it 'deserializes the data of reseller_id' do
       expect(instance._deserialize("String", instance.reseller_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of status' do
+    it 'deserializes the data of status' do
       expect(instance._deserialize("String", instance.status)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of create_date' do
+    it 'deserializes the data of create_date' do
       expect(instance._deserialize("Time", instance.create_date)).to be_a_kind_of(Time)
     end
-            it 'deserializes the data of auto_renewal' do
+    it 'deserializes the data of auto_renewal' do
       expect(instance._deserialize("Boolean", instance.auto_renewal)).to be_a_kind_of(TrueClass)
     end
     it 'deserializes the data of billed_date' do
       expect(instance._deserialize("Time", instance.billed_date)).to be_a_kind_of(Time)
     end
-        it 'deserializes the data of brand_id' do
+    it 'deserializes the data of brand_id' do
       expect(instance._deserialize("String", instance.brand_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of usecase' do
+    it 'deserializes the data of usecase' do
       expect(instance._deserialize("String", instance.usecase)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of sub_usecases' do
+    it 'deserializes the data of sub_usecases' do
       expect(instance._deserialize("Array<String>", instance.sub_usecases)).to be_a_kind_of(Array)
     end
-        it 'deserializes the data of description' do
+    it 'deserializes the data of description' do
       expect(instance._deserialize("String", instance.description)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of embedded_link' do
+    it 'deserializes the data of embedded_link' do
       expect(instance._deserialize("Boolean", instance.embedded_link)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of embedded_phone' do
+    it 'deserializes the data of embedded_phone' do
       expect(instance._deserialize("Boolean", instance.embedded_phone)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of affiliate_marketing' do
+    it 'deserializes the data of affiliate_marketing' do
       expect(instance._deserialize("Boolean", instance.affiliate_marketing)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of number_pool' do
+    it 'deserializes the data of number_pool' do
       expect(instance._deserialize("Boolean", instance.number_pool)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of age_gated' do
+    it 'deserializes the data of age_gated' do
       expect(instance._deserialize("Boolean", instance.age_gated)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of direct_lending' do
+    it 'deserializes the data of direct_lending' do
       expect(instance._deserialize("Boolean", instance.direct_lending)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of subscriber_optin' do
+    it 'deserializes the data of subscriber_optin' do
       expect(instance._deserialize("Boolean", instance.subscriber_optin)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of subscriber_optout' do
+    it 'deserializes the data of subscriber_optout' do
       expect(instance._deserialize("Boolean", instance.subscriber_optout)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of subscriber_help' do
+    it 'deserializes the data of subscriber_help' do
       expect(instance._deserialize("Boolean", instance.subscriber_help)).to be_a_kind_of(TrueClass)
     end
     it 'deserializes the data of sample1' do
       expect(instance._deserialize("String", instance.sample1)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of sample2' do
+    it 'deserializes the data of sample2' do
       expect(instance._deserialize("String", instance.sample2)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of sample3' do
+    it 'deserializes the data of sample3' do
       expect(instance._deserialize("String", instance.sample3)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of sample4' do
+    it 'deserializes the data of sample4' do
       expect(instance._deserialize("String", instance.sample4)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of sample5' do
+    it 'deserializes the data of sample5' do
       expect(instance._deserialize("String", instance.sample5)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of message_flow' do
+    it 'deserializes the data of message_flow' do
       expect(instance._deserialize("String", instance.message_flow)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of help_message' do
+    it 'deserializes the data of help_message' do
       expect(instance._deserialize("String", instance.help_message)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of reference_id' do
+    it 'deserializes the data of reference_id' do
       expect(instance._deserialize("String", instance.reference_id)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of mock' do
+    it 'deserializes the data of mock' do
       expect(instance._deserialize("Boolean", instance.mock)).to be_a_kind_of(TrueClass)
     end
     it 'deserializes the data of next_renewal_or_expiration_date' do
       expect(instance._deserialize("Date", instance.next_renewal_or_expiration_date)).to be_a_kind_of(Date)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -825,66 +788,35 @@ describe Freeclimb::SMSTenDLCCampaign do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::SMSTenDLCCampaign.new(
         account_id: "TS",
-        
         campaign_id: "TS",
-        
         csp_id: "TS",
-        
         reseller_id: "TS",
-        
-
         status: "ACTIVE",
-
         create_date: "2022-07-05T15:17:05Z",
-
         auto_renewal: true,
-
         billed_date: "2022-07-05T15:17:05Z",
         brand_id: "TS",
-        
         usecase: "TS",
-        
-
         sub_usecases: Array.new(),
         description: "TS",
-        
-
         embedded_link: true,
-
         embedded_phone: true,
-
         affiliate_marketing: true,
-
         number_pool: true,
-
         age_gated: true,
-
         direct_lending: true,
-
         subscriber_optin: true,
-
         subscriber_optout: true,
-
         subscriber_help: true,
         sample1: "TS",
-        
         sample2: "TS",
-        
         sample3: "TS",
-        
         sample4: "TS",
-        
         sample5: "TS",
-        
         message_flow: "TS",
-        
         help_message: "TS",
-        
         reference_id: "TS",
-        
-
         mock: true,
-
         next_renewal_or_expiration_date: "2000-01-01",
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -929,28 +861,24 @@ describe Freeclimb::SMSTenDLCCampaign do
         campaign_id: "TS",
         csp_id: "TS",
         reseller_id: "TS",
-
         status: "ACTIVE",
-        
         create_date: "2022-07-05T15:17:05Z",
-                auto_renewal: true,
-        
+        auto_renewal: true,
         billed_date: "2022-07-05T15:17:05Z",
-                brand_id: "TS",
+        brand_id: "TS",
         usecase: "TS",
-
         sub_usecases: Array.new(),
-                description: "TS",
+        description: "TS",
         embedded_link: true,
-                embedded_phone: true,
-                affiliate_marketing: true,
-                number_pool: true,
-                age_gated: true,
-                direct_lending: true,
-                subscriber_optin: true,
-                subscriber_optout: true,
-                subscriber_help: true,
-                sample1: "TS",
+        embedded_phone: true,
+        affiliate_marketing: true,
+        number_pool: true,
+        age_gated: true,
+        direct_lending: true,
+        subscriber_optin: true,
+        subscriber_optout: true,
+        subscriber_help: true,
+        sample1: "TS",
         sample2: "TS",
         sample3: "TS",
         sample4: "TS",
@@ -959,9 +887,8 @@ describe Freeclimb::SMSTenDLCCampaign do
         help_message: "TS",
         reference_id: "TS",
         mock: true,
-        
         next_renewal_or_expiration_date: "2000-01-01",
-              )
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

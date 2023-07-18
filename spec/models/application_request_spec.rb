@@ -25,14 +25,12 @@ describe Freeclimb::ApplicationRequest do
       expect(instance).to be_instance_of(Freeclimb::ApplicationRequest)
     end
   end
-
   describe 'test attribute "_alias"' do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "voice_url"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::ApplicationRequest do
     end
   end
 
-
   describe 'test attribute "voice_fallback_url"' do
     it 'should work' do
       instance.voice_fallback_url = "TEST_STRING"
       expect(instance.voice_fallback_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "call_connect_url"' do
     it 'should work' do
@@ -57,7 +53,6 @@ describe Freeclimb::ApplicationRequest do
     end
   end
 
-
   describe 'test attribute "status_callback_url"' do
     it 'should work' do
       instance.status_callback_url = "TEST_STRING"
@@ -65,14 +60,12 @@ describe Freeclimb::ApplicationRequest do
     end
   end
 
-
   describe 'test attribute "sms_url"' do
     it 'should work' do
       instance.sms_url = "TEST_STRING"
       expect(instance.sms_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "sms_fallback_url"' do
     it 'should work' do
@@ -136,6 +129,7 @@ describe Freeclimb::ApplicationRequest do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::ApplicationRequest.new(
           _alias: "TS",
           voice_url: "TS",
@@ -223,25 +217,25 @@ describe Freeclimb::ApplicationRequest do
     it 'deserializes the data of _alias' do
       expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of voice_url' do
+    it 'deserializes the data of voice_url' do
       expect(instance._deserialize("String", instance.voice_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of voice_fallback_url' do
+    it 'deserializes the data of voice_fallback_url' do
       expect(instance._deserialize("String", instance.voice_fallback_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of call_connect_url' do
+    it 'deserializes the data of call_connect_url' do
       expect(instance._deserialize("String", instance.call_connect_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of status_callback_url' do
+    it 'deserializes the data of status_callback_url' do
       expect(instance._deserialize("String", instance.status_callback_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of sms_url' do
+    it 'deserializes the data of sms_url' do
       expect(instance._deserialize("String", instance.sms_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of sms_fallback_url' do
+    it 'deserializes the data of sms_fallback_url' do
       expect(instance._deserialize("String", instance.sms_fallback_url)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -262,19 +256,12 @@ describe Freeclimb::ApplicationRequest do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::ApplicationRequest.new(
         _alias: "TS",
-        
         voice_url: "TS",
-        
         voice_fallback_url: "TS",
-        
         call_connect_url: "TS",
-        
         status_callback_url: "TS",
-        
         sms_url: "TS",
-        
         sms_fallback_url: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end

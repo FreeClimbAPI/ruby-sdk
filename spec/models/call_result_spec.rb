@@ -25,14 +25,12 @@ describe Freeclimb::CallResult do
       expect(instance).to be_instance_of(Freeclimb::CallResult)
     end
   end
-
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::CallResult do
     end
   end
 
-
   describe 'test attribute "date_updated"' do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -57,14 +53,12 @@ describe Freeclimb::CallResult do
     end
   end
 
-
   describe 'test attribute "call_id"' do
     it 'should work' do
       instance.call_id = "TEST_STRING"
       expect(instance.call_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "parent_call_id"' do
     it 'should work' do
@@ -73,14 +67,12 @@ describe Freeclimb::CallResult do
     end
   end
 
-
   describe 'test attribute "account_id"' do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "from"' do
     it 'should work' do
@@ -89,14 +81,12 @@ describe Freeclimb::CallResult do
     end
   end
 
-
   describe 'test attribute "to"' do
     it 'should work' do
       instance.to = "TEST_STRING"
       expect(instance.to).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "phone_number_id"' do
     it 'should work' do
@@ -140,14 +130,12 @@ describe Freeclimb::CallResult do
     end
   end
 
-
   describe 'test attribute "start_time"' do
     it 'should work' do
       instance.start_time = "TEST_STRING"
       expect(instance.start_time).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "connect_time"' do
     it 'should work' do
@@ -156,7 +144,6 @@ describe Freeclimb::CallResult do
     end
   end
 
-
   describe 'test attribute "end_time"' do
     it 'should work' do
       instance.end_time = "TEST_STRING"
@@ -164,14 +151,12 @@ describe Freeclimb::CallResult do
     end
   end
 
-
   describe 'test attribute "duration"' do
     it 'should work' do
       instance.duration = 1
       expect(instance.duration).to eq(1) 
     end
   end
-
 
   describe 'test attribute "connect_duration"' do
     it 'should work' do
@@ -205,7 +190,6 @@ describe Freeclimb::CallResult do
       expect(instance.answered_by).to eq(Freeclimb::AnsweredBy::MACHINE)  
     end
   end
-
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
@@ -318,6 +302,7 @@ describe Freeclimb::CallResult do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::CallResult.new(
           uri: "TS",
           date_created: "TS",
@@ -337,7 +322,7 @@ describe Freeclimb::CallResult do
           connect_duration: 1,
           direction: "INBOUND",
           answered_by: "HUMAN",
-          subresource_uris: nil,
+          subresource_uris: obj,
       )
       instance_2 = Freeclimb::CallResult.new(
           uri: "TS",
@@ -358,7 +343,7 @@ describe Freeclimb::CallResult do
           connect_duration: 1,
           direction: "INBOUND",
           answered_by: "HUMAN",
-          subresource_uris: nil,
+          subresource_uris: obj,
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
@@ -489,52 +474,52 @@ describe Freeclimb::CallResult do
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_created' do
+    it 'deserializes the data of date_created' do
       expect(instance._deserialize("String", instance.date_created)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_updated' do
+    it 'deserializes the data of date_updated' do
       expect(instance._deserialize("String", instance.date_updated)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of revision' do
+    it 'deserializes the data of revision' do
       expect(instance._deserialize("Integer", instance.revision)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of call_id' do
+    it 'deserializes the data of call_id' do
       expect(instance._deserialize("String", instance.call_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of parent_call_id' do
+    it 'deserializes the data of parent_call_id' do
       expect(instance._deserialize("String", instance.parent_call_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of account_id' do
+    it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of from' do
+    it 'deserializes the data of from' do
       expect(instance._deserialize("String", instance.from)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of to' do
+    it 'deserializes the data of to' do
       expect(instance._deserialize("String", instance.to)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of phone_number_id' do
+    it 'deserializes the data of phone_number_id' do
       expect(instance._deserialize("String", instance.phone_number_id)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of start_time' do
+    it 'deserializes the data of start_time' do
       expect(instance._deserialize("String", instance.start_time)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of connect_time' do
+    it 'deserializes the data of connect_time' do
       expect(instance._deserialize("String", instance.connect_time)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of end_time' do
+    it 'deserializes the data of end_time' do
       expect(instance._deserialize("String", instance.end_time)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of duration' do
+    it 'deserializes the data of duration' do
       expect(instance._deserialize("Integer", instance.duration)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of connect_duration' do
+    it 'deserializes the data of connect_duration' do
       expect(instance._deserialize("Integer", instance.connect_duration)).to be_a_kind_of(Integer)
     end
-                it 'deserializes the data of subresource_uris' do
+    it 'deserializes the data of subresource_uris' do
       expect(instance._deserialize("Object", instance.subresource_uris)).to be_a_kind_of(Object)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -567,42 +552,23 @@ describe Freeclimb::CallResult do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::CallResult.new(
         uri: "TS",
-        
         date_created: "TS",
-        
         date_updated: "TS",
-        
-
         revision: 1,
         call_id: "TS",
-        
         parent_call_id: "TS",
-        
         account_id: "TS",
-        
         from: "TS",
-        
         to: "TS",
-        
         phone_number_id: "TS",
-        
-
         call_status: "QUEUED",
         start_time: "TS",
-        
         connect_time: "TS",
-        
         end_time: "TS",
-        
-
         duration: 1,
-
         connect_duration: 1,
-
         direction: "INBOUND",
-
         answered_by: "HUMAN",
-
         subresource_uris: Object.new(),
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -634,30 +600,23 @@ describe Freeclimb::CallResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-
         revision: 1,
-                call_id: "TS",
+        call_id: "TS",
         parent_call_id: "TS",
         account_id: "TS",
         from: "TS",
         to: "TS",
         phone_number_id: "TS",
-
         call_status: "QUEUED",
-                start_time: "TS",
+        start_time: "TS",
         connect_time: "TS",
         end_time: "TS",
-
         duration: 1,
-        
         connect_duration: 1,
-        
         direction: "INBOUND",
-        
         answered_by: "HUMAN",
-        
         subresource_uris: obj,
-              )
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

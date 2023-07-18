@@ -25,14 +25,12 @@ describe Freeclimb::AvailableNumber do
       expect(instance).to be_instance_of(Freeclimb::AvailableNumber)
     end
   end
-
   describe 'test attribute "capabilities"' do
     it 'should work' do
       instance.capabilities = Freeclimb::Capabilities.new
       expect(instance.capabilities).to be_instance_of(Freeclimb::Capabilities)
     end
   end
-
 
   describe 'test attribute "campaign_id"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::AvailableNumber do
     end
   end
 
-
   describe 'test attribute "phone_number"' do
     it 'should work' do
       instance.phone_number = "TEST_STRING"
       expect(instance.phone_number).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "voice_enabled"' do
     it 'should work' do
@@ -57,7 +53,6 @@ describe Freeclimb::AvailableNumber do
     end
   end
 
-
   describe 'test attribute "sms_enabled"' do
     it 'should work' do
       instance.sms_enabled = false
@@ -65,14 +60,12 @@ describe Freeclimb::AvailableNumber do
     end
   end
 
-
   describe 'test attribute "region"' do
     it 'should work' do
       instance.region = "TEST_STRING"
       expect(instance.region).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "country"' do
     it 'should work' do
@@ -136,6 +129,7 @@ describe Freeclimb::AvailableNumber do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::AvailableNumber.new(
           campaign_id: "TS",
           phone_number: "TS",
@@ -216,28 +210,28 @@ describe Freeclimb::AvailableNumber do
         region: "TS",
         country: "TS",
     )
-        it 'deserializes the data of capabilities' do
+    it 'deserializes the data of capabilities' do
       expect(instance._deserialize("Object", instance.capabilities)).to be_a_kind_of(Freeclimb::Capabilities)
     end
     it 'deserializes the data of campaign_id' do
       expect(instance._deserialize("String", instance.campaign_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of phone_number' do
+    it 'deserializes the data of phone_number' do
       expect(instance._deserialize("String", instance.phone_number)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of voice_enabled' do
+    it 'deserializes the data of voice_enabled' do
       expect(instance._deserialize("Boolean", instance.voice_enabled)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of sms_enabled' do
+    it 'deserializes the data of sms_enabled' do
       expect(instance._deserialize("Boolean", instance.sms_enabled)).to be_a_kind_of(TrueClass)
     end
     it 'deserializes the data of region' do
       expect(instance._deserialize("String", instance.region)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of country' do
+    it 'deserializes the data of country' do
       expect(instance._deserialize("String", instance.country)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -257,20 +251,13 @@ describe Freeclimb::AvailableNumber do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::AvailableNumber.new(
-
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
-        
         phone_number: "TS",
-        
-
         voice_enabled: true,
-
         sms_enabled: true,
         region: "TS",
-        
         country: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -286,13 +273,12 @@ describe Freeclimb::AvailableNumber do
         country: "TS",
       )
       instance_2 = Freeclimb::AvailableNumber.new(
-
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number: "TS",
         voice_enabled: true,
-                sms_enabled: true,
-                region: "TS",
+        sms_enabled: true,
+        region: "TS",
         country: "TS",
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)

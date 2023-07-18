@@ -25,14 +25,12 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       expect(instance).to be_instance_of(Freeclimb::SMSTenDLCPartnerCampaignBrand)
     end
   end
-
   describe 'test attribute "account_id"' do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "brand_id"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     end
   end
 
-
   describe 'test attribute "first_name"' do
     it 'should work' do
       instance.first_name = "TEST_STRING"
       expect(instance.first_name).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "last_name"' do
     it 'should work' do
@@ -57,14 +53,12 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     end
   end
 
-
   describe 'test attribute "display_name"' do
     it 'should work' do
       instance.display_name = "TEST_STRING"
       expect(instance.display_name).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "company_name"' do
     it 'should work' do
@@ -73,14 +67,12 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     end
   end
 
-
   describe 'test attribute "phone"' do
     it 'should work' do
       instance.phone = "TEST_STRING"
       expect(instance.phone).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "email"' do
     it 'should work' do
@@ -89,14 +81,12 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     end
   end
 
-
   describe 'test attribute "website"' do
     it 'should work' do
       instance.website = "TEST_STRING"
       expect(instance.website).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "optional_attributes"' do
     it 'should work' do
@@ -105,7 +95,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       expect(instance.optional_attributes).to eq(testObject)
     end
   end
-
 
   describe 'test attribute "evp_vetting_score"' do
     it 'should work' do
@@ -126,7 +115,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           phone: "TS",
           email: "TS",
           website: "TS",
-          optional_attributes: Object.new(),
           optional_attributes: Hash.new(),
           evp_vetting_score: 1,
         )}.not_to raise_error()
@@ -142,7 +130,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           phone: "TS",
           email: "TS",
           website: "TS",
-          optional_attributes: Object.new(),
           optional_attributes: Hash.new(),
           evp_vetting_score: 1,
           invalid_attribute: true
@@ -159,7 +146,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           phone: "TS",
           email: "TS",
           website: "TS",
-          optional_attributes: Object.new(),
           optional_attributes: Hash.new(),
           evp_vetting_score: 1,
           invalid_attribute: true
@@ -179,7 +165,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           phone: "TS",
           email: "TS",
           website: "TS",
-          optional_attributes: Object.new(),
           optional_attributes: Hash.new(),
           evp_vetting_score: 1,
       )
@@ -189,6 +174,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
           account_id: "TS",
           brand_id: "TS",
@@ -199,7 +185,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           phone: "TS",
           email: "TS",
           website: "TS",
-          optional_attributes: nil,
           evp_vetting_score: 1,
       )
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
@@ -212,7 +197,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           phone: "TS",
           email: "TS",
           website: "TS",
-          optional_attributes: nil,
           evp_vetting_score: 1,
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
@@ -228,7 +212,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           phone: "TS",
           email: "TS",
           website: "TS",
-          optional_attributes: Object.new(),
           evp_vetting_score: 1,
       )
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
@@ -241,7 +224,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           phone: "ST",
           email: "ST",
           website: "ST",
-          optional_attributes: nil,
           evp_vetting_score: 0,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
@@ -260,7 +242,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       phone: "TS",
       email: "TS",
       website: "TS",
-      optional_attributes: Object.new(),
       optional_attributes: Hash.new(),
       evp_vetting_score: 1,
     )
@@ -280,7 +261,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
         phone: "TS",
         email: "TS",
         website: "TS",
-        optional_attributes: Object.new(),
         optional_attributes: Hash.new(),
         evp_vetting_score: 1,
       )
@@ -300,44 +280,43 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
         phone: "TS",
         email: "TS",
         website: "TS",
-        optional_attributes: Object.new(),
         optional_attributes: Hash.new(),
         evp_vetting_score: 1,
     )
     it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of brand_id' do
+    it 'deserializes the data of brand_id' do
       expect(instance._deserialize("String", instance.brand_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of first_name' do
+    it 'deserializes the data of first_name' do
       expect(instance._deserialize("String", instance.first_name)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of last_name' do
+    it 'deserializes the data of last_name' do
       expect(instance._deserialize("String", instance.last_name)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of display_name' do
+    it 'deserializes the data of display_name' do
       expect(instance._deserialize("String", instance.display_name)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of company_name' do
+    it 'deserializes the data of company_name' do
       expect(instance._deserialize("String", instance.company_name)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of phone' do
+    it 'deserializes the data of phone' do
       expect(instance._deserialize("String", instance.phone)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of email' do
+    it 'deserializes the data of email' do
       expect(instance._deserialize("String", instance.email)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of website' do
+    it 'deserializes the data of website' do
       expect(instance._deserialize("String", instance.website)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of optional_attributes' do
+    it 'deserializes the data of optional_attributes' do
       expect(instance._deserialize("Hash<String, Object>", instance.optional_attributes)).to be_a_kind_of(Hash)
     end
-        it 'deserializes the data of evp_vetting_score' do
+    it 'deserializes the data of evp_vetting_score' do
       expect(instance._deserialize("Integer", instance.evp_vetting_score)).to be_a_kind_of(Integer)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -351,7 +330,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
         phone: "TS",
         email: "TS",
         website: "TS",
-        optional_attributes: Object.new(),
         optional_attributes: Hash.new(),
         evp_vetting_score: 1,
       )
@@ -363,27 +341,15 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
         account_id: "TS",
-        
         brand_id: "TS",
-        
         first_name: "TS",
-        
         last_name: "TS",
-        
         display_name: "TS",
-        
         company_name: "TS",
-        
         phone: "TS",
-        
         email: "TS",
-        
         website: "TS",
-        
-
-        optional_attributes: Object.new(),
         optional_attributes: Hash.new(),
-
         evp_vetting_score: 1,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -400,7 +366,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
         phone: "TS",
         email: "TS",
         website: "TS",
-        optional_attributes: obj,
         optional_attributes: Hash.new(),
         evp_vetting_score: 1,
       )
@@ -414,13 +379,9 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
         phone: "TS",
         email: "TS",
         website: "TS",
-
-        optional_attributes: obj,
-        
         optional_attributes: Hash.new(),
-        
         evp_vetting_score: 1,
-              )
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end
@@ -445,7 +406,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       
         website: "TS",
       
-        optional_attributes: Object.new(),
         optional_attributes: Hash.new(),
       
         evp_vetting_score: 1,

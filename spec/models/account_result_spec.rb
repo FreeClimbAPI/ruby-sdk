@@ -25,14 +25,12 @@ describe Freeclimb::AccountResult do
       expect(instance).to be_instance_of(Freeclimb::AccountResult)
     end
   end
-
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::AccountResult do
     end
   end
 
-
   describe 'test attribute "date_updated"' do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -57,14 +53,12 @@ describe Freeclimb::AccountResult do
     end
   end
 
-
   describe 'test attribute "account_id"' do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "api_key"' do
     it 'should work' do
@@ -73,14 +67,12 @@ describe Freeclimb::AccountResult do
     end
   end
 
-
   describe 'test attribute "_alias"' do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "label"' do
     it 'should work' do
@@ -114,7 +106,6 @@ describe Freeclimb::AccountResult do
       expect(instance.status).to eq(Freeclimb::AccountStatus::ACTIVE)  
     end
   end
-
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
@@ -195,6 +186,7 @@ describe Freeclimb::AccountResult do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::AccountResult.new(
           uri: "TS",
           date_created: "TS",
@@ -206,7 +198,7 @@ describe Freeclimb::AccountResult do
           label: "TS",
           type: "TRIAL",
           status: "CLOSED",
-          subresource_uris: nil,
+          subresource_uris: obj,
       )
       instance_2 = Freeclimb::AccountResult.new(
           uri: "TS",
@@ -219,7 +211,7 @@ describe Freeclimb::AccountResult do
           label: "TS",
           type: "TRIAL",
           status: "CLOSED",
-          subresource_uris: nil,
+          subresource_uris: obj,
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
@@ -310,31 +302,31 @@ describe Freeclimb::AccountResult do
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_created' do
+    it 'deserializes the data of date_created' do
       expect(instance._deserialize("String", instance.date_created)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_updated' do
+    it 'deserializes the data of date_updated' do
       expect(instance._deserialize("String", instance.date_updated)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of revision' do
+    it 'deserializes the data of revision' do
       expect(instance._deserialize("Integer", instance.revision)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of account_id' do
+    it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of api_key' do
+    it 'deserializes the data of api_key' do
       expect(instance._deserialize("String", instance.api_key)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of _alias' do
+    it 'deserializes the data of _alias' do
       expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of label' do
+    it 'deserializes the data of label' do
       expect(instance._deserialize("String", instance.label)).to be_a_kind_of(String)
     end
-                it 'deserializes the data of subresource_uris' do
+    it 'deserializes the data of subresource_uris' do
       expect(instance._deserialize("Object", instance.subresource_uris)).to be_a_kind_of(Object)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -359,26 +351,15 @@ describe Freeclimb::AccountResult do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::AccountResult.new(
         uri: "TS",
-        
         date_created: "TS",
-        
         date_updated: "TS",
-        
-
         revision: 1,
         account_id: "TS",
-        
         api_key: "TS",
-        
         _alias: "TS",
-        
         label: "TS",
-        
-
         type: "TRIAL",
-
         status: "CLOSED",
-
         subresource_uris: Object.new(),
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -402,19 +383,15 @@ describe Freeclimb::AccountResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-
         revision: 1,
-                account_id: "TS",
+        account_id: "TS",
         api_key: "TS",
         _alias: "TS",
         label: "TS",
-
         type: "TRIAL",
-        
         status: "CLOSED",
-        
         subresource_uris: obj,
-              )
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

@@ -26,11 +26,6 @@ describe Freeclimb::PerclCommand do
     end
   end
 
-  describe 'test attribute "command"' do
-    it 'should work' do
-    end
-  end
-
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::PerclCommand.new(
@@ -62,6 +57,7 @@ describe Freeclimb::PerclCommand do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::PerclCommand.new(
           command: "TS",
       )
@@ -107,7 +103,7 @@ describe Freeclimb::PerclCommand do
     it 'deserializes the data of command' do
       expect(instance._deserialize("String", instance.command)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -122,7 +118,6 @@ describe Freeclimb::PerclCommand do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::PerclCommand.new(
         command: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end

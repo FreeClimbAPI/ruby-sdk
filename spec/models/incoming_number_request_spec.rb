@@ -25,7 +25,6 @@ describe Freeclimb::IncomingNumberRequest do
       expect(instance).to be_instance_of(Freeclimb::IncomingNumberRequest)
     end
   end
-
   describe 'test attribute "application_id"' do
     it 'should work' do
       instance.application_id = "TEST_STRING"
@@ -33,14 +32,12 @@ describe Freeclimb::IncomingNumberRequest do
     end
   end
 
-
   describe 'test attribute "_alias"' do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "campaign_id"' do
     it 'should work' do
@@ -88,6 +85,7 @@ describe Freeclimb::IncomingNumberRequest do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::IncomingNumberRequest.new(
           application_id: "TS",
           _alias: "TS",
@@ -147,13 +145,13 @@ describe Freeclimb::IncomingNumberRequest do
     it 'deserializes the data of application_id' do
       expect(instance._deserialize("String", instance.application_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of _alias' do
+    it 'deserializes the data of _alias' do
       expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of campaign_id' do
+    it 'deserializes the data of campaign_id' do
       expect(instance._deserialize("String", instance.campaign_id)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -170,11 +168,8 @@ describe Freeclimb::IncomingNumberRequest do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::IncomingNumberRequest.new(
         application_id: "TS",
-        
         _alias: "TS",
-        
         campaign_id: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end

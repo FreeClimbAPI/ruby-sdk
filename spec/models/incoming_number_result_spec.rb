@@ -25,14 +25,12 @@ describe Freeclimb::IncomingNumberResult do
       expect(instance).to be_instance_of(Freeclimb::IncomingNumberResult)
     end
   end
-
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
 
-
   describe 'test attribute "date_updated"' do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -57,14 +53,12 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
 
-
   describe 'test attribute "capabilities"' do
     it 'should work' do
       instance.capabilities = Freeclimb::Capabilities.new
       expect(instance.capabilities).to be_instance_of(Freeclimb::Capabilities)
     end
   end
-
 
   describe 'test attribute "campaign_id"' do
     it 'should work' do
@@ -73,14 +67,12 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
 
-
   describe 'test attribute "phone_number_id"' do
     it 'should work' do
       instance.phone_number_id = "TEST_STRING"
       expect(instance.phone_number_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "account_id"' do
     it 'should work' do
@@ -89,14 +81,12 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
 
-
   describe 'test attribute "application_id"' do
     it 'should work' do
       instance.application_id = "TEST_STRING"
       expect(instance.application_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "phone_number"' do
     it 'should work' do
@@ -105,14 +95,12 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
 
-
   describe 'test attribute "_alias"' do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "region"' do
     it 'should work' do
@@ -121,14 +109,12 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
 
-
   describe 'test attribute "country"' do
     it 'should work' do
       instance.country = "TEST_STRING"
       expect(instance.country).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "voice_enabled"' do
     it 'should work' do
@@ -137,14 +123,12 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
 
-
   describe 'test attribute "sms_enabled"' do
     it 'should work' do
       instance.sms_enabled = false
       expect(instance.sms_enabled).to eq(false)        
     end
   end
-
 
   describe 'test attribute "offnet"' do
     it 'should work' do
@@ -244,6 +228,7 @@ describe Freeclimb::IncomingNumberResult do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::IncomingNumberResult.new(
           uri: "TS",
           date_created: "TS",
@@ -390,49 +375,49 @@ describe Freeclimb::IncomingNumberResult do
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_created' do
+    it 'deserializes the data of date_created' do
       expect(instance._deserialize("String", instance.date_created)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_updated' do
+    it 'deserializes the data of date_updated' do
       expect(instance._deserialize("String", instance.date_updated)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of revision' do
+    it 'deserializes the data of revision' do
       expect(instance._deserialize("Integer", instance.revision)).to be_a_kind_of(Integer)
     end
-            it 'deserializes the data of capabilities' do
+    it 'deserializes the data of capabilities' do
       expect(instance._deserialize("Object", instance.capabilities)).to be_a_kind_of(Freeclimb::Capabilities)
     end
     it 'deserializes the data of campaign_id' do
       expect(instance._deserialize("String", instance.campaign_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of phone_number_id' do
+    it 'deserializes the data of phone_number_id' do
       expect(instance._deserialize("String", instance.phone_number_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of account_id' do
+    it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of application_id' do
+    it 'deserializes the data of application_id' do
       expect(instance._deserialize("String", instance.application_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of phone_number' do
+    it 'deserializes the data of phone_number' do
       expect(instance._deserialize("String", instance.phone_number)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of _alias' do
+    it 'deserializes the data of _alias' do
       expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of region' do
+    it 'deserializes the data of region' do
       expect(instance._deserialize("String", instance.region)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of country' do
+    it 'deserializes the data of country' do
       expect(instance._deserialize("String", instance.country)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of voice_enabled' do
+    it 'deserializes the data of voice_enabled' do
       expect(instance._deserialize("Boolean", instance.voice_enabled)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of sms_enabled' do
+    it 'deserializes the data of sms_enabled' do
       expect(instance._deserialize("Boolean", instance.sms_enabled)).to be_a_kind_of(TrueClass)
     end
-        it 'deserializes the data of offnet' do
+    it 'deserializes the data of offnet' do
       expect(instance._deserialize("Boolean", instance.offnet)).to be_a_kind_of(TrueClass)
     end
   end
@@ -465,36 +450,20 @@ describe Freeclimb::IncomingNumberResult do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::IncomingNumberResult.new(
         uri: "TS",
-        
         date_created: "TS",
-        
         date_updated: "TS",
-        
-
         revision: 1,
-
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
-        
         phone_number_id: "TS",
-        
         account_id: "TS",
-        
         application_id: "TS",
-        
         phone_number: "TS",
-        
         _alias: "TS",
-        
         region: "TS",
-        
         country: "TS",
-        
-
         voice_enabled: true,
-
         sms_enabled: true,
-
         offnet: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -523,9 +492,7 @@ describe Freeclimb::IncomingNumberResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-
         revision: 1,
-        
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -536,9 +503,9 @@ describe Freeclimb::IncomingNumberResult do
         region: "TS",
         country: "TS",
         voice_enabled: true,
-                sms_enabled: true,
-                offnet: true,
-              )
+        sms_enabled: true,
+        offnet: true,
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

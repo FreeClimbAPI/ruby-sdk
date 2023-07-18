@@ -25,7 +25,6 @@ describe Freeclimb::SendDigits do
       expect(instance).to be_instance_of(Freeclimb::SendDigits)
     end
   end
-
   describe 'test attribute "digits"' do
     it 'should work' do
       instance.digits = "TEST_STRING"
@@ -33,14 +32,12 @@ describe Freeclimb::SendDigits do
     end
   end
 
-
   describe 'test attribute "pause_ms"' do
     it 'should work' do
       instance.pause_ms = 1
       expect(instance.pause_ms).to eq(1) 
     end
   end
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
@@ -88,6 +85,7 @@ describe Freeclimb::SendDigits do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::SendDigits.new(
           digits: "TS",
           pause_ms: 1,
@@ -147,10 +145,10 @@ describe Freeclimb::SendDigits do
     it 'deserializes the data of digits' do
       expect(instance._deserialize("String", instance.digits)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of pause_ms' do
+    it 'deserializes the data of pause_ms' do
       expect(instance._deserialize("Integer", instance.pause_ms)).to be_a_kind_of(Integer)
     end
-            it 'deserializes the data of privacy_mode' do
+    it 'deserializes the data of privacy_mode' do
       expect(instance._deserialize("Boolean", instance.privacy_mode)).to be_a_kind_of(TrueClass)
     end
   end
@@ -170,10 +168,7 @@ describe Freeclimb::SendDigits do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::SendDigits.new(
         digits: "TS",
-        
-
         pause_ms: 1,
-
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -187,10 +182,9 @@ describe Freeclimb::SendDigits do
       )
       instance_2 = Freeclimb::SendDigits.new(
         digits: "TS",
-
         pause_ms: 1,
-                privacy_mode: true,
-              )
+        privacy_mode: true,
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

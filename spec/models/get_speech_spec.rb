@@ -25,7 +25,6 @@ describe Freeclimb::GetSpeech do
       expect(instance).to be_instance_of(Freeclimb::GetSpeech)
     end
   end
-
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"
@@ -44,14 +43,12 @@ describe Freeclimb::GetSpeech do
     end
   end
 
-
   describe 'test attribute "grammar_file"' do
     it 'should work' do
       instance.grammar_file = "TEST_STRING"
       expect(instance.grammar_file).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "grammar_rule"' do
     it 'should work' do
@@ -60,14 +57,12 @@ describe Freeclimb::GetSpeech do
     end
   end
 
-
   describe 'test attribute "play_beep"' do
     it 'should work' do
       instance.play_beep = false
       expect(instance.play_beep).to eq(false)        
     end
   end
-
 
   describe 'test attribute "prompts"' do
     it 'should work' do
@@ -76,7 +71,6 @@ describe Freeclimb::GetSpeech do
     end
   end
 
-
   describe 'test attribute "no_input_timeout_ms"' do
     it 'should work' do
       instance.no_input_timeout_ms = 1
@@ -84,14 +78,12 @@ describe Freeclimb::GetSpeech do
     end
   end
 
-
   describe 'test attribute "recognition_timeout_ms"' do
     it 'should work' do
       instance.recognition_timeout_ms = 1
       expect(instance.recognition_timeout_ms).to eq(1) 
     end
   end
-
 
   describe 'test attribute "confidence_threshold"' do
     it 'should work' do
@@ -102,7 +94,6 @@ describe Freeclimb::GetSpeech do
     end
   end
 
-
   describe 'test attribute "sensitivity_level"' do
     it 'should work' do
       instance.sensitivity_level = 1
@@ -112,7 +103,6 @@ describe Freeclimb::GetSpeech do
     end
   end
 
-
   describe 'test attribute "speech_complete_timeout_ms"' do
     it 'should work' do
       instance.speech_complete_timeout_ms = 1
@@ -120,14 +110,12 @@ describe Freeclimb::GetSpeech do
     end
   end
 
-
   describe 'test attribute "speech_incomplete_timeout_ms"' do
     it 'should work' do
       instance.speech_incomplete_timeout_ms = 1
       expect(instance.speech_incomplete_timeout_ms).to eq(1) 
     end
   end
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
@@ -207,6 +195,7 @@ describe Freeclimb::GetSpeech do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::GetSpeech.new(
           action_url: "TS",
           grammar_type: "URL",
@@ -322,37 +311,37 @@ describe Freeclimb::GetSpeech do
     it 'deserializes the data of action_url' do
       expect(instance._deserialize("String", instance.action_url)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of grammar_file' do
+    it 'deserializes the data of grammar_file' do
       expect(instance._deserialize("String", instance.grammar_file)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of grammar_rule' do
+    it 'deserializes the data of grammar_rule' do
       expect(instance._deserialize("String", instance.grammar_rule)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of play_beep' do
+    it 'deserializes the data of play_beep' do
       expect(instance._deserialize("Boolean", instance.play_beep)).to be_a_kind_of(TrueClass)
     end
     it 'deserializes the data of prompts' do
       expect(instance._deserialize("Array<PerclCommand>", instance.prompts)).to be_a_kind_of(Array)
     end
-        it 'deserializes the data of no_input_timeout_ms' do
+    it 'deserializes the data of no_input_timeout_ms' do
       expect(instance._deserialize("Integer", instance.no_input_timeout_ms)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of recognition_timeout_ms' do
+    it 'deserializes the data of recognition_timeout_ms' do
       expect(instance._deserialize("Integer", instance.recognition_timeout_ms)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of confidence_threshold' do
+    it 'deserializes the data of confidence_threshold' do
       expect(instance._deserialize("Float", instance.confidence_threshold)).to be_a_kind_of(Float)
     end
-        it 'deserializes the data of sensitivity_level' do
+    it 'deserializes the data of sensitivity_level' do
       expect(instance._deserialize("Float", instance.sensitivity_level)).to be_a_kind_of(Float)
     end
-        it 'deserializes the data of speech_complete_timeout_ms' do
+    it 'deserializes the data of speech_complete_timeout_ms' do
       expect(instance._deserialize("Integer", instance.speech_complete_timeout_ms)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of speech_incomplete_timeout_ms' do
+    it 'deserializes the data of speech_incomplete_timeout_ms' do
       expect(instance._deserialize("Integer", instance.speech_incomplete_timeout_ms)).to be_a_kind_of(Integer)
     end
-            it 'deserializes the data of privacy_mode' do
+    it 'deserializes the data of privacy_mode' do
       expect(instance._deserialize("Boolean", instance.privacy_mode)).to be_a_kind_of(TrueClass)
     end
   end
@@ -380,28 +369,15 @@ describe Freeclimb::GetSpeech do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::GetSpeech.new(
         action_url: "TS",
-        
-
         grammar_type: "URL",
         grammar_file: "TS",
-        
         grammar_rule: "TS",
-        
-
         play_beep: true,
-
         prompts: Array.new(),
-
         no_input_timeout_ms: 1,
-
         recognition_timeout_ms: 1,
-
-
-
         speech_complete_timeout_ms: 1,
-
         speech_incomplete_timeout_ms: 1,
-
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -423,23 +399,17 @@ describe Freeclimb::GetSpeech do
       )
       instance_2 = Freeclimb::GetSpeech.new(
         action_url: "TS",
-
         grammar_type: "URL",
-                grammar_file: "TS",
+        grammar_file: "TS",
         grammar_rule: "TS",
         play_beep: true,
-        
         prompts: Array.new(),
-        
         no_input_timeout_ms: 1,
-        
         recognition_timeout_ms: 1,
-        
         speech_complete_timeout_ms: 1,
-        
         speech_incomplete_timeout_ms: 1,
-                privacy_mode: true,
-              )
+        privacy_mode: true,
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

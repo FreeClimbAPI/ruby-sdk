@@ -25,7 +25,6 @@ describe Freeclimb::UpdateConferenceRequest do
       expect(instance).to be_instance_of(Freeclimb::UpdateConferenceRequest)
     end
   end
-
   describe 'test attribute "_alias"' do
     it 'should work' do
       instance._alias = "TEST_STRING"
@@ -102,6 +101,7 @@ describe Freeclimb::UpdateConferenceRequest do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::UpdateConferenceRequest.new(
           _alias: "TS",
           play_beep: "ALWAYS",
@@ -161,7 +161,7 @@ describe Freeclimb::UpdateConferenceRequest do
     it 'deserializes the data of _alias' do
       expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
     end
-              end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -178,10 +178,7 @@ describe Freeclimb::UpdateConferenceRequest do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::UpdateConferenceRequest.new(
         _alias: "TS",
-        
-
         play_beep: "ALWAYS",
-
         status: "EMPTY",
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -195,11 +192,9 @@ describe Freeclimb::UpdateConferenceRequest do
       )
       instance_2 = Freeclimb::UpdateConferenceRequest.new(
         _alias: "TS",
-
         play_beep: "ALWAYS",
-        
         status: "EMPTY",
-              )
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

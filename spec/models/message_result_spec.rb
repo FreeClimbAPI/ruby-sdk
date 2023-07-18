@@ -25,14 +25,12 @@ describe Freeclimb::MessageResult do
       expect(instance).to be_instance_of(Freeclimb::MessageResult)
     end
   end
-
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "date_created"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::MessageResult do
     end
   end
 
-
   describe 'test attribute "date_updated"' do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "revision"' do
     it 'should work' do
@@ -57,14 +53,12 @@ describe Freeclimb::MessageResult do
     end
   end
 
-
   describe 'test attribute "account_id"' do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "message_id"' do
     it 'should work' do
@@ -120,14 +114,12 @@ describe Freeclimb::MessageResult do
     end
   end
 
-
   describe 'test attribute "from"' do
     it 'should work' do
       instance.from = "TEST_STRING"
       expect(instance.from).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "to"' do
     it 'should work' do
@@ -136,7 +128,6 @@ describe Freeclimb::MessageResult do
     end
   end
 
-
   describe 'test attribute "text"' do
     it 'should work' do
       instance.text = "TEST_STRING"
@@ -144,14 +135,12 @@ describe Freeclimb::MessageResult do
     end
   end
 
-
   describe 'test attribute "direction"' do
     it 'should work' do
       instance.direction = "TEST_STRING"
       expect(instance.direction).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "notification_url"' do
     it 'should work' do
@@ -235,6 +224,7 @@ describe Freeclimb::MessageResult do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::MessageResult.new(
           uri: "TS",
           date_created: "TS",
@@ -357,37 +347,37 @@ describe Freeclimb::MessageResult do
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_created' do
+    it 'deserializes the data of date_created' do
       expect(instance._deserialize("String", instance.date_created)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of date_updated' do
+    it 'deserializes the data of date_updated' do
       expect(instance._deserialize("String", instance.date_updated)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of revision' do
+    it 'deserializes the data of revision' do
       expect(instance._deserialize("Integer", instance.revision)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of account_id' do
+    it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of message_id' do
+    it 'deserializes the data of message_id' do
       expect(instance._deserialize("String", instance.message_id)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of from' do
+    it 'deserializes the data of from' do
       expect(instance._deserialize("String", instance.from)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of to' do
+    it 'deserializes the data of to' do
       expect(instance._deserialize("String", instance.to)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of text' do
+    it 'deserializes the data of text' do
       expect(instance._deserialize("String", instance.text)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of direction' do
+    it 'deserializes the data of direction' do
       expect(instance._deserialize("String", instance.direction)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of notification_url' do
+    it 'deserializes the data of notification_url' do
       expect(instance._deserialize("String", instance.notification_url)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -413,29 +403,17 @@ describe Freeclimb::MessageResult do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::MessageResult.new(
         uri: "TS",
-        
         date_created: "TS",
-        
         date_updated: "TS",
-        
-
         revision: 1,
         account_id: "TS",
-        
         message_id: "TS",
-        
-
         status: "NEW",
         from: "TS",
-        
         to: "TS",
-        
         text: "TS",
-        
         direction: "TS",
-        
         notification_url: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -459,13 +437,11 @@ describe Freeclimb::MessageResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-
         revision: 1,
-                account_id: "TS",
+        account_id: "TS",
         message_id: "TS",
-
         status: "NEW",
-                from: "TS",
+        from: "TS",
         to: "TS",
         text: "TS",
         direction: "TS",

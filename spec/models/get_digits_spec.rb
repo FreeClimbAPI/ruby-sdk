@@ -25,14 +25,12 @@ describe Freeclimb::GetDigits do
       expect(instance).to be_instance_of(Freeclimb::GetDigits)
     end
   end
-
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "digit_timeout_ms"' do
     it 'should work' do
@@ -41,14 +39,12 @@ describe Freeclimb::GetDigits do
     end
   end
 
-
   describe 'test attribute "finish_on_key"' do
     it 'should work' do
       instance.finish_on_key = "TEST_STRING"
       expect(instance.finish_on_key).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "flush_buffer"' do
     it 'should work' do
@@ -57,14 +53,12 @@ describe Freeclimb::GetDigits do
     end
   end
 
-
   describe 'test attribute "initial_timeout_ms"' do
     it 'should work' do
       instance.initial_timeout_ms = "TEST_STRING"
       expect(instance.initial_timeout_ms).to eq("TEST_STRING")  
     end
   end
-
 
   describe 'test attribute "max_digits"' do
     it 'should work' do
@@ -73,7 +67,6 @@ describe Freeclimb::GetDigits do
     end
   end
 
-
   describe 'test attribute "min_digits"' do
     it 'should work' do
       instance.min_digits = 1
@@ -81,14 +74,12 @@ describe Freeclimb::GetDigits do
     end
   end
 
-
   describe 'test attribute "prompts"' do
     it 'should work' do
       instance.prompts = ["ELEMENT_1", "ELEMENT_2"]
       expect(instance.prompts).to eq(["ELEMENT_1", "ELEMENT_2"]) 
     end
   end
-
 
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
@@ -160,6 +151,7 @@ describe Freeclimb::GetDigits do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::GetDigits.new(
           action_url: "TS",
           digit_timeout_ms: 1,
@@ -261,28 +253,28 @@ describe Freeclimb::GetDigits do
     it 'deserializes the data of action_url' do
       expect(instance._deserialize("String", instance.action_url)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of digit_timeout_ms' do
+    it 'deserializes the data of digit_timeout_ms' do
       expect(instance._deserialize("Integer", instance.digit_timeout_ms)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of finish_on_key' do
+    it 'deserializes the data of finish_on_key' do
       expect(instance._deserialize("String", instance.finish_on_key)).to be_a_kind_of(String)
     end
-            it 'deserializes the data of flush_buffer' do
+    it 'deserializes the data of flush_buffer' do
       expect(instance._deserialize("Boolean", instance.flush_buffer)).to be_a_kind_of(TrueClass)
     end
     it 'deserializes the data of initial_timeout_ms' do
       expect(instance._deserialize("String", instance.initial_timeout_ms)).to be_a_kind_of(String)
     end
-        it 'deserializes the data of max_digits' do
+    it 'deserializes the data of max_digits' do
       expect(instance._deserialize("Integer", instance.max_digits)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of min_digits' do
+    it 'deserializes the data of min_digits' do
       expect(instance._deserialize("Integer", instance.min_digits)).to be_a_kind_of(Integer)
     end
-        it 'deserializes the data of prompts' do
+    it 'deserializes the data of prompts' do
       expect(instance._deserialize("Array<PerclCommand>", instance.prompts)).to be_a_kind_of(Array)
     end
-            it 'deserializes the data of privacy_mode' do
+    it 'deserializes the data of privacy_mode' do
       expect(instance._deserialize("Boolean", instance.privacy_mode)).to be_a_kind_of(TrueClass)
     end
   end
@@ -308,22 +300,13 @@ describe Freeclimb::GetDigits do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::GetDigits.new(
         action_url: "TS",
-        
-
         digit_timeout_ms: 1,
         finish_on_key: "TS",
-        
-
         flush_buffer: true,
         initial_timeout_ms: "TS",
-        
-
         max_digits: 1,
-
         min_digits: 1,
-
         prompts: Array.new(),
-
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -343,19 +326,15 @@ describe Freeclimb::GetDigits do
       )
       instance_2 = Freeclimb::GetDigits.new(
         action_url: "TS",
-
         digit_timeout_ms: 1,
-                finish_on_key: "TS",
+        finish_on_key: "TS",
         flush_buffer: true,
-                initial_timeout_ms: "TS",
-
+        initial_timeout_ms: "TS",
         max_digits: 1,
-        
         min_digits: 1,
-        
         prompts: Array.new(),
-                privacy_mode: true,
-              )
+        privacy_mode: true,
+      )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
   end

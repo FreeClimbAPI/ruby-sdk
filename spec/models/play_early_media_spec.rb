@@ -25,7 +25,6 @@ describe Freeclimb::PlayEarlyMedia do
       expect(instance).to be_instance_of(Freeclimb::PlayEarlyMedia)
     end
   end
-
   describe 'test attribute "file"' do
     it 'should work' do
       instance.file = "TEST_STRING"
@@ -64,6 +63,7 @@ describe Freeclimb::PlayEarlyMedia do
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
+      obj = Object.new()
       instance_1 = Freeclimb::PlayEarlyMedia.new(
           file: "TS",
       )
@@ -109,7 +109,7 @@ describe Freeclimb::PlayEarlyMedia do
     it 'deserializes the data of file' do
       expect(instance._deserialize("String", instance.file)).to be_a_kind_of(String)
     end
-      end
+  end
 
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
@@ -124,7 +124,6 @@ describe Freeclimb::PlayEarlyMedia do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::PlayEarlyMedia.new(
         file: "TS",
-        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
