@@ -27,12 +27,34 @@ describe Freeclimb::MessageDirection do
   end
   describe 'test attribute "INBOUND"' do
     it 'should work' do
-        expect { Freeclimb::MessageDirection::INBOUND = "inbound" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageDirection::INBOUND = "inbound" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageDirection::INBOUND
+      calculatedValue = Freeclimb::MessageDirection::build_from_hash("inbound")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "inbound"
+      calculatedValue = Freeclimb::MessageDirection::INBOUND
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "OUTBOUND"' do
     it 'should work' do
-        expect { Freeclimb::MessageDirection::OUTBOUND = "outbound" }.not_to raise_error
-      end
+      expect { Freeclimb::MessageDirection::OUTBOUND = "outbound" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MessageDirection::OUTBOUND
+      calculatedValue = Freeclimb::MessageDirection::build_from_hash("outbound")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "outbound"
+      calculatedValue = Freeclimb::MessageDirection::OUTBOUND
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
 end

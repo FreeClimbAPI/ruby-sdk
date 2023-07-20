@@ -27,12 +27,34 @@ describe Freeclimb::AccountType do
   end
   describe 'test attribute "TRIAL"' do
     it 'should work' do
-        expect { Freeclimb::AccountType::TRIAL = "trial" }.not_to raise_error
-      end
+      expect { Freeclimb::AccountType::TRIAL = "trial" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::AccountType::TRIAL
+      calculatedValue = Freeclimb::AccountType::build_from_hash("trial")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "trial"
+      calculatedValue = Freeclimb::AccountType::TRIAL
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "FULL"' do
     it 'should work' do
-        expect { Freeclimb::AccountType::FULL = "full" }.not_to raise_error
-      end
+      expect { Freeclimb::AccountType::FULL = "full" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::AccountType::FULL
+      calculatedValue = Freeclimb::AccountType::build_from_hash("full")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "full"
+      calculatedValue = Freeclimb::AccountType::FULL
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
 end

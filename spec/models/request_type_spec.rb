@@ -27,117 +27,370 @@ describe Freeclimb::RequestType do
   end
   describe 'test attribute "INBOUND_CALL"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::INBOUND_CALL = "inboundCall" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::INBOUND_CALL = "inboundCall" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::INBOUND_CALL
+      calculatedValue = Freeclimb::RequestType::build_from_hash("inboundCall")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "inboundCall"
+      calculatedValue = Freeclimb::RequestType::INBOUND_CALL
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "RECORD"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::RECORD = "record" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::RECORD = "record" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::RECORD
+      calculatedValue = Freeclimb::RequestType::build_from_hash("record")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "record"
+      calculatedValue = Freeclimb::RequestType::RECORD
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "GET_DIGITS"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::GET_DIGITS = "getDigits" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::GET_DIGITS = "getDigits" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::GET_DIGITS
+      calculatedValue = Freeclimb::RequestType::build_from_hash("getDigits")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "getDigits"
+      calculatedValue = Freeclimb::RequestType::GET_DIGITS
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "GET_SPEECH"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::GET_SPEECH = "getSpeech" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::GET_SPEECH = "getSpeech" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::GET_SPEECH
+      calculatedValue = Freeclimb::RequestType::build_from_hash("getSpeech")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "getSpeech"
+      calculatedValue = Freeclimb::RequestType::GET_SPEECH
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "REDIRECT"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::REDIRECT = "redirect" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::REDIRECT = "redirect" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::REDIRECT
+      calculatedValue = Freeclimb::RequestType::build_from_hash("redirect")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "redirect"
+      calculatedValue = Freeclimb::RequestType::REDIRECT
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "PAUSE"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::PAUSE = "pause" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::PAUSE = "pause" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::PAUSE
+      calculatedValue = Freeclimb::RequestType::build_from_hash("pause")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "pause"
+      calculatedValue = Freeclimb::RequestType::PAUSE
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "OUT_DIAL_START"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::OUT_DIAL_START = "outDialStart" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::OUT_DIAL_START = "outDialStart" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::OUT_DIAL_START
+      calculatedValue = Freeclimb::RequestType::build_from_hash("outDialStart")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "outDialStart"
+      calculatedValue = Freeclimb::RequestType::OUT_DIAL_START
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "OUT_DIAL_CONNECT"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::OUT_DIAL_CONNECT = "outDialConnect" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::OUT_DIAL_CONNECT = "outDialConnect" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::OUT_DIAL_CONNECT
+      calculatedValue = Freeclimb::RequestType::build_from_hash("outDialConnect")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "outDialConnect"
+      calculatedValue = Freeclimb::RequestType::OUT_DIAL_CONNECT
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "OUT_DIAL_API_CONNECT"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::OUT_DIAL_API_CONNECT = "outDialApiConnect" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::OUT_DIAL_API_CONNECT = "outDialApiConnect" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::OUT_DIAL_API_CONNECT
+      calculatedValue = Freeclimb::RequestType::build_from_hash("outDialApiConnect")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "outDialApiConnect"
+      calculatedValue = Freeclimb::RequestType::OUT_DIAL_API_CONNECT
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "MACHINE_DETECTED"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::MACHINE_DETECTED = "machineDetected" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::MACHINE_DETECTED = "machineDetected" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::MACHINE_DETECTED
+      calculatedValue = Freeclimb::RequestType::build_from_hash("machineDetected")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "machineDetected"
+      calculatedValue = Freeclimb::RequestType::MACHINE_DETECTED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "DEQUEUE"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::DEQUEUE = "dequeue" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::DEQUEUE = "dequeue" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::DEQUEUE
+      calculatedValue = Freeclimb::RequestType::build_from_hash("dequeue")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "dequeue"
+      calculatedValue = Freeclimb::RequestType::DEQUEUE
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "QUEUE_WAIT"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::QUEUE_WAIT = "queueWait" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::QUEUE_WAIT = "queueWait" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::QUEUE_WAIT
+      calculatedValue = Freeclimb::RequestType::build_from_hash("queueWait")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "queueWait"
+      calculatedValue = Freeclimb::RequestType::QUEUE_WAIT
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "ADD_TO_QUEUE_NOTIFICATION"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::ADD_TO_QUEUE_NOTIFICATION = "addToQueueNotification" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::ADD_TO_QUEUE_NOTIFICATION = "addToQueueNotification" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::ADD_TO_QUEUE_NOTIFICATION
+      calculatedValue = Freeclimb::RequestType::build_from_hash("addToQueueNotification")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "addToQueueNotification"
+      calculatedValue = Freeclimb::RequestType::ADD_TO_QUEUE_NOTIFICATION
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "REMOVE_FROM_QUEUE_NOTIFICATION"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::REMOVE_FROM_QUEUE_NOTIFICATION = "removeFromQueueNotification" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::REMOVE_FROM_QUEUE_NOTIFICATION = "removeFromQueueNotification" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::REMOVE_FROM_QUEUE_NOTIFICATION
+      calculatedValue = Freeclimb::RequestType::build_from_hash("removeFromQueueNotification")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "removeFromQueueNotification"
+      calculatedValue = Freeclimb::RequestType::REMOVE_FROM_QUEUE_NOTIFICATION
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "CALL_STATUS"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::CALL_STATUS = "callStatus" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::CALL_STATUS = "callStatus" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::CALL_STATUS
+      calculatedValue = Freeclimb::RequestType::build_from_hash("callStatus")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "callStatus"
+      calculatedValue = Freeclimb::RequestType::CALL_STATUS
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "CREATE_CONFERENCE"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::CREATE_CONFERENCE = "createConference" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::CREATE_CONFERENCE = "createConference" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::CREATE_CONFERENCE
+      calculatedValue = Freeclimb::RequestType::build_from_hash("createConference")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "createConference"
+      calculatedValue = Freeclimb::RequestType::CREATE_CONFERENCE
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "CONFERENCE_STATUS"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::CONFERENCE_STATUS = "conferenceStatus" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::CONFERENCE_STATUS = "conferenceStatus" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::CONFERENCE_STATUS
+      calculatedValue = Freeclimb::RequestType::build_from_hash("conferenceStatus")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "conferenceStatus"
+      calculatedValue = Freeclimb::RequestType::CONFERENCE_STATUS
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "LEAVE_CONFERENCE"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::LEAVE_CONFERENCE = "leaveConference" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::LEAVE_CONFERENCE = "leaveConference" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::LEAVE_CONFERENCE
+      calculatedValue = Freeclimb::RequestType::build_from_hash("leaveConference")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "leaveConference"
+      calculatedValue = Freeclimb::RequestType::LEAVE_CONFERENCE
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "ADD_TO_CONFERENCE_NOTIFICATION"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::ADD_TO_CONFERENCE_NOTIFICATION = "addToConferenceNotification" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::ADD_TO_CONFERENCE_NOTIFICATION = "addToConferenceNotification" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::ADD_TO_CONFERENCE_NOTIFICATION
+      calculatedValue = Freeclimb::RequestType::build_from_hash("addToConferenceNotification")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "addToConferenceNotification"
+      calculatedValue = Freeclimb::RequestType::ADD_TO_CONFERENCE_NOTIFICATION
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "CONFERENCE_RECORDING_STATUS"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::CONFERENCE_RECORDING_STATUS = "conferenceRecordingStatus" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::CONFERENCE_RECORDING_STATUS = "conferenceRecordingStatus" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::CONFERENCE_RECORDING_STATUS
+      calculatedValue = Freeclimb::RequestType::build_from_hash("conferenceRecordingStatus")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "conferenceRecordingStatus"
+      calculatedValue = Freeclimb::RequestType::CONFERENCE_RECORDING_STATUS
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "CONFERENCE_CALL_CONTROL"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::CONFERENCE_CALL_CONTROL = "conferenceCallControl" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::CONFERENCE_CALL_CONTROL = "conferenceCallControl" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::CONFERENCE_CALL_CONTROL
+      calculatedValue = Freeclimb::RequestType::build_from_hash("conferenceCallControl")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "conferenceCallControl"
+      calculatedValue = Freeclimb::RequestType::CONFERENCE_CALL_CONTROL
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "MESSAGE_DELIVERY"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::MESSAGE_DELIVERY = "messageDelivery" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::MESSAGE_DELIVERY = "messageDelivery" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::MESSAGE_DELIVERY
+      calculatedValue = Freeclimb::RequestType::build_from_hash("messageDelivery")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "messageDelivery"
+      calculatedValue = Freeclimb::RequestType::MESSAGE_DELIVERY
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "MESSAGE_STATUS"' do
     it 'should work' do
-        expect { Freeclimb::RequestType::MESSAGE_STATUS = "messageStatus" }.not_to raise_error
-      end
+      expect { Freeclimb::RequestType::MESSAGE_STATUS = "messageStatus" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RequestType::MESSAGE_STATUS
+      calculatedValue = Freeclimb::RequestType::build_from_hash("messageStatus")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "messageStatus"
+      calculatedValue = Freeclimb::RequestType::MESSAGE_STATUS
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
 end

@@ -9,13 +9,19 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
-<a name="4.4.0"></a>
+<a name="4.4.1"></a>
+
+## [4.4.1] - 2023-07-19
+
+### Added
+
+- Unit testing for Ruby SDK
 
 ## [4.4.0] - 2023-06-08
 
 ### Added
 
-- Number management feature for python sdk including methods, properties, and testing
+- Number management feature for ruby sdk including methods, properties, and testing
 
 <a name="4.3.0"></a>
 

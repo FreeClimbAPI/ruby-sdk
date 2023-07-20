@@ -27,22 +27,66 @@ describe Freeclimb::RecordUtteranceTermReason do
   end
   describe 'test attribute "FINISH_KEY"' do
     it 'should work' do
-        expect { Freeclimb::RecordUtteranceTermReason::FINISH_KEY = "finishKey" }.not_to raise_error
-      end
+      expect { Freeclimb::RecordUtteranceTermReason::FINISH_KEY = "finishKey" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RecordUtteranceTermReason::FINISH_KEY
+      calculatedValue = Freeclimb::RecordUtteranceTermReason::build_from_hash("finishKey")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "finishKey"
+      calculatedValue = Freeclimb::RecordUtteranceTermReason::FINISH_KEY
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "TIMEOUT"' do
     it 'should work' do
-        expect { Freeclimb::RecordUtteranceTermReason::TIMEOUT = "timeout" }.not_to raise_error
-      end
+      expect { Freeclimb::RecordUtteranceTermReason::TIMEOUT = "timeout" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RecordUtteranceTermReason::TIMEOUT
+      calculatedValue = Freeclimb::RecordUtteranceTermReason::build_from_hash("timeout")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "timeout"
+      calculatedValue = Freeclimb::RecordUtteranceTermReason::TIMEOUT
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "HANGUP"' do
     it 'should work' do
-        expect { Freeclimb::RecordUtteranceTermReason::HANGUP = "hangup" }.not_to raise_error
-      end
+      expect { Freeclimb::RecordUtteranceTermReason::HANGUP = "hangup" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RecordUtteranceTermReason::HANGUP
+      calculatedValue = Freeclimb::RecordUtteranceTermReason::build_from_hash("hangup")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "hangup"
+      calculatedValue = Freeclimb::RecordUtteranceTermReason::HANGUP
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "MAX_LENGTH"' do
     it 'should work' do
-        expect { Freeclimb::RecordUtteranceTermReason::MAX_LENGTH = "maxLength" }.not_to raise_error
-      end
+      expect { Freeclimb::RecordUtteranceTermReason::MAX_LENGTH = "maxLength" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::RecordUtteranceTermReason::MAX_LENGTH
+      calculatedValue = Freeclimb::RecordUtteranceTermReason::build_from_hash("maxLength")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "maxLength"
+      calculatedValue = Freeclimb::RecordUtteranceTermReason::MAX_LENGTH
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
 end

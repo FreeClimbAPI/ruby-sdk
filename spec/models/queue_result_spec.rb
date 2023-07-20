@@ -27,67 +27,425 @@ describe Freeclimb::QueueResult do
   end
   describe 'test attribute "uri"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.uri = "TEST_STRING"
+      expect(instance.uri).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "date_created"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.date_created = "TEST_STRING"
+      expect(instance.date_created).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "date_updated"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.date_updated = "TEST_STRING"
+      expect(instance.date_updated).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.revision = 1
+      expect(instance.revision).to eq(1) 
     end
   end
 
   describe 'test attribute "account_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.account_id = "TEST_STRING"
+      expect(instance.account_id).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "queue_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.queue_id = "TEST_STRING"
+      expect(instance.queue_id).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "_alias"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance._alias = "TEST_STRING"
+      expect(instance._alias).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "max_size"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.max_size = 1
+      expect(instance.max_size).to eq(1) 
     end
   end
 
   describe 'test attribute "current_size"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.current_size = 1
+      expect(instance.current_size).to eq(1) 
     end
   end
 
   describe 'test attribute "average_queue_removal_time"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.average_queue_removal_time = 1
+      expect(instance.average_queue_removal_time).to eq(1) 
     end
   end
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      testObject = Object.new()
+      instance.subresource_uris = testObject
+      expect(instance.subresource_uris).to eq(testObject)
+    end
+  end
+
+  describe 'test method "initialize"' do
+    it 'properly initializes with values' do
+        expect{instance = Freeclimb::QueueResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          account_id: "TS",
+          queue_id: "TS",
+          _alias: "TS",
+          max_size: 1,
+          current_size: 1,
+          average_queue_removal_time: 1,
+          subresource_uris: Object.new(),
+        )}.not_to raise_error()
+    end
+    it 'fails to initialize with input argument that is not a hash in Freeclimb::QueueResult' do
+        expect{instance = Freeclimb::QueueResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          account_id: "TS",
+          queue_id: "TS",
+          _alias: "TS",
+          max_size: 1,
+          current_size: 1,
+          average_queue_removal_time: 1,
+          subresource_uris: Object.new(),
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+    it 'fails to initialize with invalid attribute' do
+        expect{instance = Freeclimb::QueueResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          account_id: "TS",
+          queue_id: "TS",
+          _alias: "TS",
+          max_size: 1,
+          current_size: 1,
+          average_queue_removal_time: 1,
+          subresource_uris: Object.new(),
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+  end
+
+  describe 'test method "valid"' do
+    it 'checks if properties are valid' do
+      instance = Freeclimb::QueueResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          account_id: "TS",
+          queue_id: "TS",
+          _alias: "TS",
+          max_size: 1,
+          current_size: 1,
+          average_queue_removal_time: 1,
+          subresource_uris: Object.new(),
+      )
+      expect(instance.valid?).to eq(true)
+    end
+  end
+
+  describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::QueueResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          account_id: "TS",
+          queue_id: "TS",
+          _alias: "TS",
+          max_size: 1,
+          current_size: 1,
+          average_queue_removal_time: 1,
+          subresource_uris: obj,
+      )
+      instance_2 = Freeclimb::QueueResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          account_id: "TS",
+          queue_id: "TS",
+          _alias: "TS",
+          max_size: 1,
+          current_size: 1,
+          average_queue_removal_time: 1,
+          subresource_uris: obj,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::QueueResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          account_id: "TS",
+          queue_id: "TS",
+          _alias: "TS",
+          max_size: 1,
+          current_size: 1,
+          average_queue_removal_time: 1,
+          subresource_uris: Object.new(),
+      )
+      instance_2 = Freeclimb::QueueResult.new(
+          uri: "ST",
+          date_created: "ST",
+          date_updated: "ST",
+          revision: 0,
+          account_id: "ST",
+          queue_id: "ST",
+          _alias: "ST",
+          max_size: 0,
+          current_size: 0,
+          average_queue_removal_time: 0,
+          subresource_uris: nil,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
+  end
+
+  describe 'test method "hash"' do
+    it 'calculates hash code' do
+      instance = Freeclimb::QueueResult.new(
+      uri: "TS",
+      date_created: "TS",
+      date_updated: "TS",
+      revision: 1,
+      account_id: "TS",
+      queue_id: "TS",
+      _alias: "TS",
+      max_size: 1,
+      current_size: 1,
+      average_queue_removal_time: 1,
+      subresource_uris: Object.new(),
+    )
+    expect(instance.hash).to be_a_kind_of(Integer)
+    end
+  end
+
+  describe 'test method "build_from_hash"' do
+    it 'builds equivalent model from hash code' do
+      instance_1 = Freeclimb::QueueResult.new(
+        uri: "TS",
+        date_created: "TS",
+        date_updated: "TS",
+        revision: 1,
+        account_id: "TS",
+        queue_id: "TS",
+        _alias: "TS",
+        max_size: 1,
+        current_size: 1,
+        average_queue_removal_time: 1,
+        subresource_uris: Object.new(),
+      )
+      instance_2 = Freeclimb::QueueResult.new
+      expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
+    end
+  end
+
+  describe 'test method "_deserialize"' do
+    instance = Freeclimb::QueueResult.new(
+        uri: "TS",
+        date_created: "TS",
+        date_updated: "TS",
+        revision: 1,
+        account_id: "TS",
+        queue_id: "TS",
+        _alias: "TS",
+        max_size: 1,
+        current_size: 1,
+        average_queue_removal_time: 1,
+        subresource_uris: Object.new(),
+    )
+    it 'deserializes the data of uri' do
+      expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of date_created' do
+      expect(instance._deserialize("String", instance.date_created)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of date_updated' do
+      expect(instance._deserialize("String", instance.date_updated)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of revision' do
+      expect(instance._deserialize("Integer", instance.revision)).to be_a_kind_of(Integer)
+    end
+    it 'deserializes the data of account_id' do
+      expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of queue_id' do
+      expect(instance._deserialize("String", instance.queue_id)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of _alias' do
+      expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of max_size' do
+      expect(instance._deserialize("Integer", instance.max_size)).to be_a_kind_of(Integer)
+    end
+    it 'deserializes the data of current_size' do
+      expect(instance._deserialize("Integer", instance.current_size)).to be_a_kind_of(Integer)
+    end
+    it 'deserializes the data of average_queue_removal_time' do
+      expect(instance._deserialize("Integer", instance.average_queue_removal_time)).to be_a_kind_of(Integer)
+    end
+    it 'deserializes the data of subresource_uris' do
+      expect(instance._deserialize("Object", instance.subresource_uris)).to be_a_kind_of(Object)
+    end
+  end
+
+  describe 'test method "to_s"' do
+    it 'returns the string representation of the object' do
+      instance = Freeclimb::QueueResult.new(
+        uri: "TS",
+        date_created: "TS",
+        date_updated: "TS",
+        revision: 1,
+        account_id: "TS",
+        queue_id: "TS",
+        _alias: "TS",
+        max_size: 1,
+        current_size: 1,
+        average_queue_removal_time: 1,
+        subresource_uris: Object.new(),
+      )
+      expect(instance.to_s).to eq(instance.to_hash.to_s)
+    end
+  end
+
+  describe 'test method "to_hash"' do
+    it 'returns the object in the form of hash' do
+      instance = Freeclimb::QueueResult.new(
+        uri: "TS",
+        date_created: "TS",
+        date_updated: "TS",
+        revision: 1,
+        account_id: "TS",
+        queue_id: "TS",
+        _alias: "TS",
+        max_size: 1,
+        current_size: 1,
+        average_queue_removal_time: 1,
+        subresource_uris: Object.new(),
+      )
+      expect(instance.to_hash).to be_a_kind_of(Hash)
+    end
+    it 'creates equal hash for two equal objects' do
+      obj = Object.new()
+      instance_1 = Freeclimb::QueueResult.new(
+        uri: "TS",
+        date_created: "TS",
+        date_updated: "TS",
+        revision: 1,
+        account_id: "TS",
+        queue_id: "TS",
+        _alias: "TS",
+        max_size: 1,
+        current_size: 1,
+        average_queue_removal_time: 1,
+        subresource_uris: obj,
+      )
+      instance_2 = Freeclimb::QueueResult.new(
+        uri: "TS",
+        date_created: "TS",
+        date_updated: "TS",
+        revision: 1,
+        account_id: "TS",
+        queue_id: "TS",
+        _alias: "TS",
+        max_size: 1,
+        current_size: 1,
+        average_queue_removal_time: 1,
+        subresource_uris: obj,
+      )
+      expect(instance_1.to_hash).to eq(instance_2.to_hash)
+    end
+  end
+
+  describe 'test method "_to_hash"' do
+    instance = Freeclimb::QueueResult.new(
+        uri: "TS",
+      
+        date_created: "TS",
+      
+        date_updated: "TS",
+      
+        revision: 1,
+      
+        account_id: "TS",
+      
+        queue_id: "TS",
+      
+        _alias: "TS",
+      
+        max_size: 1,
+      
+        current_size: 1,
+      
+        average_queue_removal_time: 1,
+      
+        subresource_uris: Object.new(),
+      )
+    it 'returns uri in the form of hash' do
+      expect(instance._to_hash(instance.uri)).to eq(instance.uri)
+    end
+    it 'returns date_created in the form of hash' do
+      expect(instance._to_hash(instance.date_created)).to eq(instance.date_created)
+    end
+    it 'returns date_updated in the form of hash' do
+      expect(instance._to_hash(instance.date_updated)).to eq(instance.date_updated)
+    end
+    it 'returns revision in the form of hash' do
+      expect(instance._to_hash(instance.revision)).to eq(instance.revision)
+    end
+    it 'returns account_id in the form of hash' do
+      expect(instance._to_hash(instance.account_id)).to eq(instance.account_id)
+    end
+    it 'returns queue_id in the form of hash' do
+      expect(instance._to_hash(instance.queue_id)).to eq(instance.queue_id)
+    end
+    it 'returns _alias in the form of hash' do
+      expect(instance._to_hash(instance._alias)).to eq(instance._alias)
+    end
+    it 'returns max_size in the form of hash' do
+      expect(instance._to_hash(instance.max_size)).to eq(instance.max_size)
+    end
+    it 'returns current_size in the form of hash' do
+      expect(instance._to_hash(instance.current_size)).to eq(instance.current_size)
+    end
+    it 'returns average_queue_removal_time in the form of hash' do
+      expect(instance._to_hash(instance.average_queue_removal_time)).to eq(instance.average_queue_removal_time)
+    end
+    it 'returns subresource_uris in the form of hash' do
+      expect(instance._to_hash(instance.subresource_uris)).to eq(instance.subresource_uris)
     end
   end
 

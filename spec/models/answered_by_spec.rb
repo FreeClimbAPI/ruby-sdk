@@ -27,12 +27,34 @@ describe Freeclimb::AnsweredBy do
   end
   describe 'test attribute "HUMAN"' do
     it 'should work' do
-        expect { Freeclimb::AnsweredBy::HUMAN = "human" }.not_to raise_error
-      end
+      expect { Freeclimb::AnsweredBy::HUMAN = "human" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::AnsweredBy::HUMAN
+      calculatedValue = Freeclimb::AnsweredBy::build_from_hash("human")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "human"
+      calculatedValue = Freeclimb::AnsweredBy::HUMAN
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "MACHINE"' do
     it 'should work' do
-        expect { Freeclimb::AnsweredBy::MACHINE = "machine" }.not_to raise_error
-      end
+      expect { Freeclimb::AnsweredBy::MACHINE = "machine" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::AnsweredBy::MACHINE
+      calculatedValue = Freeclimb::AnsweredBy::build_from_hash("machine")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "machine"
+      calculatedValue = Freeclimb::AnsweredBy::MACHINE
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
 end

@@ -27,22 +27,66 @@ describe Freeclimb::ConferenceStatus do
   end
   describe 'test attribute "EMPTY"' do
     it 'should work' do
-        expect { Freeclimb::ConferenceStatus::EMPTY = "empty" }.not_to raise_error
-      end
+      expect { Freeclimb::ConferenceStatus::EMPTY = "empty" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::ConferenceStatus::EMPTY
+      calculatedValue = Freeclimb::ConferenceStatus::build_from_hash("empty")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "empty"
+      calculatedValue = Freeclimb::ConferenceStatus::EMPTY
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "POPULATED"' do
     it 'should work' do
-        expect { Freeclimb::ConferenceStatus::POPULATED = "populated" }.not_to raise_error
-      end
+      expect { Freeclimb::ConferenceStatus::POPULATED = "populated" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::ConferenceStatus::POPULATED
+      calculatedValue = Freeclimb::ConferenceStatus::build_from_hash("populated")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "populated"
+      calculatedValue = Freeclimb::ConferenceStatus::POPULATED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "IN_PROGRESS"' do
     it 'should work' do
-        expect { Freeclimb::ConferenceStatus::IN_PROGRESS = "inProgress" }.not_to raise_error
-      end
+      expect { Freeclimb::ConferenceStatus::IN_PROGRESS = "inProgress" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::ConferenceStatus::IN_PROGRESS
+      calculatedValue = Freeclimb::ConferenceStatus::build_from_hash("inProgress")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "inProgress"
+      calculatedValue = Freeclimb::ConferenceStatus::IN_PROGRESS
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "TERMINATED"' do
     it 'should work' do
-        expect { Freeclimb::ConferenceStatus::TERMINATED = "terminated" }.not_to raise_error
-      end
+      expect { Freeclimb::ConferenceStatus::TERMINATED = "terminated" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::ConferenceStatus::TERMINATED
+      calculatedValue = Freeclimb::ConferenceStatus::build_from_hash("terminated")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "terminated"
+      calculatedValue = Freeclimb::ConferenceStatus::TERMINATED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
 end

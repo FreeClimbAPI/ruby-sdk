@@ -27,207 +27,1213 @@ describe Freeclimb::SMSTenDLCBrand do
   end
   describe 'test attribute "account_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.account_id = "TEST_STRING"
+      expect(instance.account_id).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "entity_type"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["PRIVATE_PROFIT", "PUBLIC_PROFIT", "NON_PROFIT", "GOVERNMENT", "SOLE_PROPRIETOR"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.entity_type = value }.not_to raise_error
-      # end
+    it 'assigns value PRIVATE_PROFIT' do
+      instance.entity_type = "PRIVATE_PROFIT"
+      expect(instance.entity_type).to eq("PRIVATE_PROFIT")  
+    end
+    it 'assigns value PUBLIC_PROFIT' do
+      instance.entity_type = "PUBLIC_PROFIT"
+      expect(instance.entity_type).to eq("PUBLIC_PROFIT")  
+    end
+    it 'assigns value NON_PROFIT' do
+      instance.entity_type = "NON_PROFIT"
+      expect(instance.entity_type).to eq("NON_PROFIT")  
+    end
+    it 'assigns value GOVERNMENT' do
+      instance.entity_type = "GOVERNMENT"
+      expect(instance.entity_type).to eq("GOVERNMENT")  
+    end
+    it 'assigns value SOLE_PROPRIETOR' do
+      instance.entity_type = "SOLE_PROPRIETOR"
+      expect(instance.entity_type).to eq("SOLE_PROPRIETOR")  
+    end
+    it 'throws error on invalid enum' do
+      instance = Freeclimb::SMSTenDLCBrand.new
+      expect{instance.entity_type = "INVALID_ENUM"}.to raise_error(ArgumentError)
     end
   end
 
   describe 'test attribute "csp_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.csp_id = "TEST_STRING"
+      expect(instance.csp_id).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "brand_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.brand_id = "TEST_STRING"
+      expect(instance.brand_id).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "first_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.first_name = "TEST_STRING"
+      expect(instance.first_name).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "last_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.last_name = "TEST_STRING"
+      expect(instance.last_name).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "display_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.display_name = "TEST_STRING"
+      expect(instance.display_name).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "company_name"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.company_name = "TEST_STRING"
+      expect(instance.company_name).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "ein"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.ein = "TEST_STRING"
+      expect(instance.ein).to eq("TEST_STRING")  
     end
   end
 
+
   describe 'test attribute "ein_issuing_country"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work with length 2' do
+      instance.ein_issuing_country = "TS"
+      expect(instance.ein_issuing_country).to eq("TS")
     end
-  end
+    it 'should not work with length > 2' do
+      expect{instance.ein_issuing_country = "TEST_STRING"}.to raise_error(ArgumentError)
+    end
+  end  
 
   describe 'test attribute "phone"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.phone = "TEST_STRING"
+      expect(instance.phone).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "street"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.street = "TEST_STRING"
+      expect(instance.street).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "city"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.city = "TEST_STRING"
+      expect(instance.city).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "state"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.state = "TEST_STRING"
+      expect(instance.state).to eq("TEST_STRING")  
     end
   end
+
 
   describe 'test attribute "postal_code"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work with length 10' do
+      instance.postal_code = "TEST_STRIN"
+      expect(instance.postal_code).to eq("TEST_STRIN")
     end
-  end
+    it 'should not work with length > 10' do
+      expect{instance.postal_code = "TEST_STRING"}.to raise_error(ArgumentError)
+    end
+  end  
+
 
   describe 'test attribute "country"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work with length 2' do
+      instance.country = "TS"
+      expect(instance.country).to eq("TS")
     end
-  end
+    it 'should not work with length > 2' do
+      expect{instance.country = "TEST_STRING"}.to raise_error(ArgumentError)
+    end
+  end  
 
   describe 'test attribute "email"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.email = "TEST_STRING"
+      expect(instance.email).to eq("TEST_STRING")  
     end
   end
+
 
   describe 'test attribute "stock_symbol"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work with length 10' do
+      instance.stock_symbol = "TEST_STRIN"
+      expect(instance.stock_symbol).to eq("TEST_STRIN")
     end
-  end
+    it 'should not work with length > 10' do
+      expect{instance.stock_symbol = "TEST_STRING"}.to raise_error(ArgumentError)
+    end
+  end  
 
   describe 'test attribute "stock_exchange"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["NONE", "NASDAQ", "NYSE", "AMEX", "AMX", "ASX", "B3", "BME", "BSE", "FRA", "ICEX", "JPX", "JSE", "KRX", "LON", "NSE", "OMX", "SEHK", "SGX", "SSE", "STO", "SWX", "SZSE", "TSX", "TWSE", "VSE", "OTHER"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.stock_exchange = value }.not_to raise_error
-      # end
+    it 'assigns value NONE' do
+      instance.stock_exchange = "NONE"
+      expect(instance.stock_exchange).to eq("NONE")  
+    end
+    it 'assigns value NASDAQ' do
+      instance.stock_exchange = "NASDAQ"
+      expect(instance.stock_exchange).to eq("NASDAQ")  
+    end
+    it 'assigns value NYSE' do
+      instance.stock_exchange = "NYSE"
+      expect(instance.stock_exchange).to eq("NYSE")  
+    end
+    it 'assigns value AMEX' do
+      instance.stock_exchange = "AMEX"
+      expect(instance.stock_exchange).to eq("AMEX")  
+    end
+    it 'assigns value AMX' do
+      instance.stock_exchange = "AMX"
+      expect(instance.stock_exchange).to eq("AMX")  
+    end
+    it 'assigns value ASX' do
+      instance.stock_exchange = "ASX"
+      expect(instance.stock_exchange).to eq("ASX")  
+    end
+    it 'assigns value B3' do
+      instance.stock_exchange = "B3"
+      expect(instance.stock_exchange).to eq("B3")  
+    end
+    it 'assigns value BME' do
+      instance.stock_exchange = "BME"
+      expect(instance.stock_exchange).to eq("BME")  
+    end
+    it 'assigns value BSE' do
+      instance.stock_exchange = "BSE"
+      expect(instance.stock_exchange).to eq("BSE")  
+    end
+    it 'assigns value FRA' do
+      instance.stock_exchange = "FRA"
+      expect(instance.stock_exchange).to eq("FRA")  
+    end
+    it 'assigns value ICEX' do
+      instance.stock_exchange = "ICEX"
+      expect(instance.stock_exchange).to eq("ICEX")  
+    end
+    it 'assigns value JPX' do
+      instance.stock_exchange = "JPX"
+      expect(instance.stock_exchange).to eq("JPX")  
+    end
+    it 'assigns value JSE' do
+      instance.stock_exchange = "JSE"
+      expect(instance.stock_exchange).to eq("JSE")  
+    end
+    it 'assigns value KRX' do
+      instance.stock_exchange = "KRX"
+      expect(instance.stock_exchange).to eq("KRX")  
+    end
+    it 'assigns value LON' do
+      instance.stock_exchange = "LON"
+      expect(instance.stock_exchange).to eq("LON")  
+    end
+    it 'assigns value NSE' do
+      instance.stock_exchange = "NSE"
+      expect(instance.stock_exchange).to eq("NSE")  
+    end
+    it 'assigns value OMX' do
+      instance.stock_exchange = "OMX"
+      expect(instance.stock_exchange).to eq("OMX")  
+    end
+    it 'assigns value SEHK' do
+      instance.stock_exchange = "SEHK"
+      expect(instance.stock_exchange).to eq("SEHK")  
+    end
+    it 'assigns value SGX' do
+      instance.stock_exchange = "SGX"
+      expect(instance.stock_exchange).to eq("SGX")  
+    end
+    it 'assigns value SSE' do
+      instance.stock_exchange = "SSE"
+      expect(instance.stock_exchange).to eq("SSE")  
+    end
+    it 'assigns value STO' do
+      instance.stock_exchange = "STO"
+      expect(instance.stock_exchange).to eq("STO")  
+    end
+    it 'assigns value SWX' do
+      instance.stock_exchange = "SWX"
+      expect(instance.stock_exchange).to eq("SWX")  
+    end
+    it 'assigns value SZSE' do
+      instance.stock_exchange = "SZSE"
+      expect(instance.stock_exchange).to eq("SZSE")  
+    end
+    it 'assigns value TSX' do
+      instance.stock_exchange = "TSX"
+      expect(instance.stock_exchange).to eq("TSX")  
+    end
+    it 'assigns value TWSE' do
+      instance.stock_exchange = "TWSE"
+      expect(instance.stock_exchange).to eq("TWSE")  
+    end
+    it 'assigns value VSE' do
+      instance.stock_exchange = "VSE"
+      expect(instance.stock_exchange).to eq("VSE")  
+    end
+    it 'assigns value OTHER' do
+      instance.stock_exchange = "OTHER"
+      expect(instance.stock_exchange).to eq("OTHER")  
+    end
+    it 'throws error on invalid enum' do
+      instance = Freeclimb::SMSTenDLCBrand.new
+      expect{instance.stock_exchange = "INVALID_ENUM"}.to raise_error(ArgumentError)
     end
   end
 
   describe 'test attribute "ip_address"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.ip_address = "TEST_STRING"
+      expect(instance.ip_address).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "website"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.website = "TEST_STRING"
+      expect(instance.website).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "brand_relationship"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["BASIC_ACCOUNT", "SMALL_ACCOUNT", "MEDIUM_ACCOUNT", "LARGE_ACCOUNT", "KEY_ACCOUNT"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.brand_relationship = value }.not_to raise_error
-      # end
+    it 'assigns value BASIC_ACCOUNT' do
+      instance.brand_relationship = "BASIC_ACCOUNT"
+      expect(instance.brand_relationship).to eq("BASIC_ACCOUNT")  
+    end
+    it 'assigns value SMALL_ACCOUNT' do
+      instance.brand_relationship = "SMALL_ACCOUNT"
+      expect(instance.brand_relationship).to eq("SMALL_ACCOUNT")  
+    end
+    it 'assigns value MEDIUM_ACCOUNT' do
+      instance.brand_relationship = "MEDIUM_ACCOUNT"
+      expect(instance.brand_relationship).to eq("MEDIUM_ACCOUNT")  
+    end
+    it 'assigns value LARGE_ACCOUNT' do
+      instance.brand_relationship = "LARGE_ACCOUNT"
+      expect(instance.brand_relationship).to eq("LARGE_ACCOUNT")  
+    end
+    it 'assigns value KEY_ACCOUNT' do
+      instance.brand_relationship = "KEY_ACCOUNT"
+      expect(instance.brand_relationship).to eq("KEY_ACCOUNT")  
+    end
+    it 'throws error on invalid enum' do
+      instance = Freeclimb::SMSTenDLCBrand.new
+      expect{instance.brand_relationship = "INVALID_ENUM"}.to raise_error(ArgumentError)
     end
   end
 
   describe 'test attribute "vertical"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.vertical = "TEST_STRING"
+      expect(instance.vertical).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "alt_business_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.alt_business_id = "TEST_STRING"
+      expect(instance.alt_business_id).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "alt_business_id_type"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["NONE", "DUNS", "GIIN", "LEI"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.alt_business_id_type = value }.not_to raise_error
-      # end
+    it 'assigns value NONE' do
+      instance.alt_business_id_type = "NONE"
+      expect(instance.alt_business_id_type).to eq("NONE")  
+    end
+    it 'assigns value DUNS' do
+      instance.alt_business_id_type = "DUNS"
+      expect(instance.alt_business_id_type).to eq("DUNS")  
+    end
+    it 'assigns value GIIN' do
+      instance.alt_business_id_type = "GIIN"
+      expect(instance.alt_business_id_type).to eq("GIIN")  
+    end
+    it 'assigns value LEI' do
+      instance.alt_business_id_type = "LEI"
+      expect(instance.alt_business_id_type).to eq("LEI")  
+    end
+    it 'throws error on invalid enum' do
+      instance = Freeclimb::SMSTenDLCBrand.new
+      expect{instance.alt_business_id_type = "INVALID_ENUM"}.to raise_error(ArgumentError)
     end
   end
 
   describe 'test attribute "universal_ein"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.universal_ein = "TEST_STRING"
+      expect(instance.universal_ein).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "reference_id"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.reference_id = "TEST_STRING"
+      expect(instance.reference_id).to eq("TEST_STRING")  
     end
   end
 
   describe 'test attribute "optional_attributes"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      testObject = Object.new()
+      instance.optional_attributes = testObject
+      expect(instance.optional_attributes).to eq(testObject)
     end
   end
 
   describe 'test attribute "mock"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.mock = false
+      expect(instance.mock).to eq(false)        
     end
   end
 
   describe 'test attribute "identity_status"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["SELF_DECLARED", "UNVERIFIED", "VERIFIED", "VETTED_VERIFIED"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.identity_status = value }.not_to raise_error
-      # end
+    it 'assigns value SELF_DECLARED' do
+      instance.identity_status = "SELF_DECLARED"
+      expect(instance.identity_status).to eq("SELF_DECLARED")  
+    end
+    it 'assigns value UNVERIFIED' do
+      instance.identity_status = "UNVERIFIED"
+      expect(instance.identity_status).to eq("UNVERIFIED")  
+    end
+    it 'assigns value VERIFIED' do
+      instance.identity_status = "VERIFIED"
+      expect(instance.identity_status).to eq("VERIFIED")  
+    end
+    it 'assigns value VETTED_VERIFIED' do
+      instance.identity_status = "VETTED_VERIFIED"
+      expect(instance.identity_status).to eq("VETTED_VERIFIED")  
+    end
+    it 'throws error on invalid enum' do
+      instance = Freeclimb::SMSTenDLCBrand.new
+      expect{instance.identity_status = "INVALID_ENUM"}.to raise_error(ArgumentError)
     end
   end
 
   describe 'test attribute "create_date"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.create_date = "2022-07-05T15:17:05Z"
+      expect(instance.create_date).to eq("2022-07-05T15:17:05Z")  
+    end
+  end
+
+  describe 'test method "initialize"' do
+    it 'properly initializes with values' do
+        expect{instance = Freeclimb::SMSTenDLCBrand.new(
+          account_id: "TS",
+          entity_type: "PRIVATE_PROFIT",
+          csp_id: "TS",
+          brand_id: "TS",
+          first_name: "TS",
+          last_name: "TS",
+          display_name: "TS",
+          company_name: "TS",
+          ein: "TS",
+          ein_issuing_country: "TS",
+          phone: "TS",
+          street: "TS",
+          city: "TS",
+          state: "TS",
+          postal_code: "TS",
+          country: "TS",
+          email: "TS",
+          stock_symbol: "TS",
+          stock_exchange: "NONE",
+          ip_address: "TS",
+          website: "TS",
+          brand_relationship: "BASIC_ACCOUNT",
+          vertical: "TS",
+          alt_business_id: "TS",
+          alt_business_id_type: "NONE",
+          universal_ein: "TS",
+          reference_id: "TS",
+          optional_attributes: Hash.new(),
+          mock: true,
+          identity_status: "SELF_DECLARED",
+          create_date: "2022-07-05T15:17:05Z",
+        )}.not_to raise_error()
+    end
+    it 'fails to initialize with input argument that is not a hash in Freeclimb::SMSTenDLCBrand' do
+        expect{instance = Freeclimb::SMSTenDLCBrand.new(
+          account_id: "TS",
+          entity_type: "PRIVATE_PROFIT",
+          csp_id: "TS",
+          brand_id: "TS",
+          first_name: "TS",
+          last_name: "TS",
+          display_name: "TS",
+          company_name: "TS",
+          ein: "TS",
+          ein_issuing_country: "TS",
+          phone: "TS",
+          street: "TS",
+          city: "TS",
+          state: "TS",
+          postal_code: "TS",
+          country: "TS",
+          email: "TS",
+          stock_symbol: "TS",
+          stock_exchange: "NONE",
+          ip_address: "TS",
+          website: "TS",
+          brand_relationship: "BASIC_ACCOUNT",
+          vertical: "TS",
+          alt_business_id: "TS",
+          alt_business_id_type: "NONE",
+          universal_ein: "TS",
+          reference_id: "TS",
+          optional_attributes: Hash.new(),
+          mock: true,
+          identity_status: "SELF_DECLARED",
+          create_date: "2022-07-05T15:17:05Z",
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+    it 'fails to initialize with invalid attribute' do
+        expect{instance = Freeclimb::SMSTenDLCBrand.new(
+          account_id: "TS",
+          entity_type: "PRIVATE_PROFIT",
+          csp_id: "TS",
+          brand_id: "TS",
+          first_name: "TS",
+          last_name: "TS",
+          display_name: "TS",
+          company_name: "TS",
+          ein: "TS",
+          ein_issuing_country: "TS",
+          phone: "TS",
+          street: "TS",
+          city: "TS",
+          state: "TS",
+          postal_code: "TS",
+          country: "TS",
+          email: "TS",
+          stock_symbol: "TS",
+          stock_exchange: "NONE",
+          ip_address: "TS",
+          website: "TS",
+          brand_relationship: "BASIC_ACCOUNT",
+          vertical: "TS",
+          alt_business_id: "TS",
+          alt_business_id_type: "NONE",
+          universal_ein: "TS",
+          reference_id: "TS",
+          optional_attributes: Hash.new(),
+          mock: true,
+          identity_status: "SELF_DECLARED",
+          create_date: "2022-07-05T15:17:05Z",
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+  end
+
+  describe 'test method "valid"' do
+    it 'checks if properties are valid' do
+      instance = Freeclimb::SMSTenDLCBrand.new(
+          account_id: "TS",
+          entity_type: "PRIVATE_PROFIT",
+          csp_id: "TS",
+          brand_id: "TS",
+          first_name: "TS",
+          last_name: "TS",
+          display_name: "TS",
+          company_name: "TS",
+          ein: "TS",
+          ein_issuing_country: "TS",
+          phone: "TS",
+          street: "TS",
+          city: "TS",
+          state: "TS",
+          postal_code: "TS",
+          country: "TS",
+          email: "TS",
+          stock_symbol: "TS",
+          stock_exchange: "NONE",
+          ip_address: "TS",
+          website: "TS",
+          brand_relationship: "BASIC_ACCOUNT",
+          vertical: "TS",
+          alt_business_id: "TS",
+          alt_business_id_type: "NONE",
+          universal_ein: "TS",
+          reference_id: "TS",
+          optional_attributes: Hash.new(),
+          mock: true,
+          identity_status: "SELF_DECLARED",
+          create_date: "2022-07-05T15:17:05Z",
+      )
+      expect(instance.valid?).to eq(true)
+    end
+  end
+
+  describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::SMSTenDLCBrand.new(
+          account_id: "TS",
+          entity_type: "PRIVATE_PROFIT",
+          csp_id: "TS",
+          brand_id: "TS",
+          first_name: "TS",
+          last_name: "TS",
+          display_name: "TS",
+          company_name: "TS",
+          ein: "TS",
+          ein_issuing_country: "TS",
+          phone: "TS",
+          street: "TS",
+          city: "TS",
+          state: "TS",
+          postal_code: "TS",
+          country: "TS",
+          email: "TS",
+          stock_symbol: "TS",
+          stock_exchange: "NONE",
+          ip_address: "TS",
+          website: "TS",
+          brand_relationship: "BASIC_ACCOUNT",
+          vertical: "TS",
+          alt_business_id: "TS",
+          alt_business_id_type: "NONE",
+          universal_ein: "TS",
+          reference_id: "TS",
+          mock: true,
+          identity_status: "SELF_DECLARED",
+      )
+      instance_2 = Freeclimb::SMSTenDLCBrand.new(
+          account_id: "TS",
+          entity_type: "PRIVATE_PROFIT",
+          csp_id: "TS",
+          brand_id: "TS",
+          first_name: "TS",
+          last_name: "TS",
+          display_name: "TS",
+          company_name: "TS",
+          ein: "TS",
+          ein_issuing_country: "TS",
+          phone: "TS",
+          street: "TS",
+          city: "TS",
+          state: "TS",
+          postal_code: "TS",
+          country: "TS",
+          email: "TS",
+          stock_symbol: "TS",
+          stock_exchange: "NONE",
+          ip_address: "TS",
+          website: "TS",
+          brand_relationship: "BASIC_ACCOUNT",
+          vertical: "TS",
+          alt_business_id: "TS",
+          alt_business_id_type: "NONE",
+          universal_ein: "TS",
+          reference_id: "TS",
+          mock: true,
+          identity_status: "SELF_DECLARED",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::SMSTenDLCBrand.new(
+          account_id: "TS",
+          entity_type: "PRIVATE_PROFIT",
+          csp_id: "TS",
+          brand_id: "TS",
+          first_name: "TS",
+          last_name: "TS",
+          display_name: "TS",
+          company_name: "TS",
+          ein: "TS",
+          ein_issuing_country: "TS",
+          phone: "TS",
+          street: "TS",
+          city: "TS",
+          state: "TS",
+          postal_code: "TS",
+          country: "TS",
+          email: "TS",
+          stock_symbol: "TS",
+          stock_exchange: "NONE",
+          ip_address: "TS",
+          website: "TS",
+          brand_relationship: "BASIC_ACCOUNT",
+          vertical: "TS",
+          alt_business_id: "TS",
+          alt_business_id_type: "NONE",
+          universal_ein: "TS",
+          reference_id: "TS",
+          mock: true,
+          identity_status: "SELF_DECLARED",
+      )
+      instance_2 = Freeclimb::SMSTenDLCBrand.new(
+          account_id: "ST",
+          entity_type: "PUBLIC_PROFIT",
+          csp_id: "ST",
+          brand_id: "ST",
+          first_name: "ST",
+          last_name: "ST",
+          display_name: "ST",
+          company_name: "ST",
+          ein: "ST",
+          ein_issuing_country: "ST",
+          phone: "ST",
+          street: "ST",
+          city: "ST",
+          state: "ST",
+          postal_code: "ST",
+          country: "ST",
+          email: "ST",
+          stock_symbol: "ST",
+          stock_exchange: "NASDAQ",
+          ip_address: "ST",
+          website: "ST",
+          brand_relationship: "SMALL_ACCOUNT",
+          vertical: "ST",
+          alt_business_id: "ST",
+          alt_business_id_type: "DUNS",
+          universal_ein: "ST",
+          reference_id: "ST",
+          mock: false,
+          identity_status: "UNVERIFIED",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
+  end
+
+  describe 'test method "hash"' do
+    it 'calculates hash code' do
+      instance = Freeclimb::SMSTenDLCBrand.new(
+      account_id: "TS",
+      entity_type: "PRIVATE_PROFIT",
+      csp_id: "TS",
+      brand_id: "TS",
+      first_name: "TS",
+      last_name: "TS",
+      display_name: "TS",
+      company_name: "TS",
+      ein: "TS",
+      ein_issuing_country: "TS",
+      phone: "TS",
+      street: "TS",
+      city: "TS",
+      state: "TS",
+      postal_code: "TS",
+      country: "TS",
+      email: "TS",
+      stock_symbol: "TS",
+      stock_exchange: "NONE",
+      ip_address: "TS",
+      website: "TS",
+      brand_relationship: "BASIC_ACCOUNT",
+      vertical: "TS",
+      alt_business_id: "TS",
+      alt_business_id_type: "NONE",
+      universal_ein: "TS",
+      reference_id: "TS",
+      optional_attributes: Hash.new(),
+      mock: true,
+      identity_status: "SELF_DECLARED",
+      create_date: "2022-07-05T15:17:05Z",
+    )
+    expect(instance.hash).to be_a_kind_of(Integer)
+    end
+  end
+
+  describe 'test method "build_from_hash"' do
+    it 'builds equivalent model from hash code' do
+      instance_1 = Freeclimb::SMSTenDLCBrand.new(
+        account_id: "TS",
+        entity_type: "PRIVATE_PROFIT",
+        csp_id: "TS",
+        brand_id: "TS",
+        first_name: "TS",
+        last_name: "TS",
+        display_name: "TS",
+        company_name: "TS",
+        ein: "TS",
+        ein_issuing_country: "TS",
+        phone: "TS",
+        street: "TS",
+        city: "TS",
+        state: "TS",
+        postal_code: "TS",
+        country: "TS",
+        email: "TS",
+        stock_symbol: "TS",
+        stock_exchange: "NONE",
+        ip_address: "TS",
+        website: "TS",
+        brand_relationship: "BASIC_ACCOUNT",
+        vertical: "TS",
+        alt_business_id: "TS",
+        alt_business_id_type: "NONE",
+        universal_ein: "TS",
+        reference_id: "TS",
+        optional_attributes: Hash.new(),
+        mock: true,
+        identity_status: "SELF_DECLARED",
+        create_date: "2022-07-05T15:17:05Z",
+      )
+      instance_2 = Freeclimb::SMSTenDLCBrand.new
+      expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
+    end
+  end
+
+  describe 'test method "_deserialize"' do
+    instance = Freeclimb::SMSTenDLCBrand.new(
+        account_id: "TS",
+        entity_type: "PRIVATE_PROFIT",
+        csp_id: "TS",
+        brand_id: "TS",
+        first_name: "TS",
+        last_name: "TS",
+        display_name: "TS",
+        company_name: "TS",
+        ein: "TS",
+        ein_issuing_country: "TS",
+        phone: "TS",
+        street: "TS",
+        city: "TS",
+        state: "TS",
+        postal_code: "TS",
+        country: "TS",
+        email: "TS",
+        stock_symbol: "TS",
+        stock_exchange: "NONE",
+        ip_address: "TS",
+        website: "TS",
+        brand_relationship: "BASIC_ACCOUNT",
+        vertical: "TS",
+        alt_business_id: "TS",
+        alt_business_id_type: "NONE",
+        universal_ein: "TS",
+        reference_id: "TS",
+        optional_attributes: Hash.new(),
+        mock: true,
+        identity_status: "SELF_DECLARED",
+        create_date: "2022-07-05T15:17:05Z",
+    )
+    it 'deserializes the data of account_id' do
+      expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of entity_type' do
+      expect(instance._deserialize("String", instance.entity_type)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of csp_id' do
+      expect(instance._deserialize("String", instance.csp_id)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of brand_id' do
+      expect(instance._deserialize("String", instance.brand_id)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of first_name' do
+      expect(instance._deserialize("String", instance.first_name)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of last_name' do
+      expect(instance._deserialize("String", instance.last_name)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of display_name' do
+      expect(instance._deserialize("String", instance.display_name)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of company_name' do
+      expect(instance._deserialize("String", instance.company_name)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of ein' do
+      expect(instance._deserialize("String", instance.ein)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of ein_issuing_country' do
+      expect(instance._deserialize("String", instance.ein_issuing_country)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of phone' do
+      expect(instance._deserialize("String", instance.phone)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of street' do
+      expect(instance._deserialize("String", instance.street)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of city' do
+      expect(instance._deserialize("String", instance.city)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of state' do
+      expect(instance._deserialize("String", instance.state)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of postal_code' do
+      expect(instance._deserialize("String", instance.postal_code)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of country' do
+      expect(instance._deserialize("String", instance.country)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of email' do
+      expect(instance._deserialize("String", instance.email)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of stock_symbol' do
+      expect(instance._deserialize("String", instance.stock_symbol)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of stock_exchange' do
+      expect(instance._deserialize("String", instance.stock_exchange)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of ip_address' do
+      expect(instance._deserialize("String", instance.ip_address)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of website' do
+      expect(instance._deserialize("String", instance.website)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of brand_relationship' do
+      expect(instance._deserialize("String", instance.brand_relationship)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of vertical' do
+      expect(instance._deserialize("String", instance.vertical)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of alt_business_id' do
+      expect(instance._deserialize("String", instance.alt_business_id)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of alt_business_id_type' do
+      expect(instance._deserialize("String", instance.alt_business_id_type)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of universal_ein' do
+      expect(instance._deserialize("String", instance.universal_ein)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of reference_id' do
+      expect(instance._deserialize("String", instance.reference_id)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of optional_attributes' do
+      expect(instance._deserialize("Hash<String, Object>", instance.optional_attributes)).to be_a_kind_of(Hash)
+    end
+    it 'deserializes the data of mock' do
+      expect(instance._deserialize("Boolean", instance.mock)).to be_a_kind_of(TrueClass)
+    end
+    it 'deserializes the data of identity_status' do
+      expect(instance._deserialize("String", instance.identity_status)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of create_date' do
+      expect(instance._deserialize("Time", instance.create_date)).to be_a_kind_of(Time)
+    end
+  end
+
+  describe 'test method "to_s"' do
+    it 'returns the string representation of the object' do
+      instance = Freeclimb::SMSTenDLCBrand.new(
+        account_id: "TS",
+        entity_type: "PRIVATE_PROFIT",
+        csp_id: "TS",
+        brand_id: "TS",
+        first_name: "TS",
+        last_name: "TS",
+        display_name: "TS",
+        company_name: "TS",
+        ein: "TS",
+        ein_issuing_country: "TS",
+        phone: "TS",
+        street: "TS",
+        city: "TS",
+        state: "TS",
+        postal_code: "TS",
+        country: "TS",
+        email: "TS",
+        stock_symbol: "TS",
+        stock_exchange: "NONE",
+        ip_address: "TS",
+        website: "TS",
+        brand_relationship: "BASIC_ACCOUNT",
+        vertical: "TS",
+        alt_business_id: "TS",
+        alt_business_id_type: "NONE",
+        universal_ein: "TS",
+        reference_id: "TS",
+        optional_attributes: Hash.new(),
+        mock: true,
+        identity_status: "SELF_DECLARED",
+        create_date: "2022-07-05T15:17:05Z",
+      )
+      expect(instance.to_s).to eq(instance.to_hash.to_s)
+    end
+  end
+
+  describe 'test method "to_hash"' do
+    it 'returns the object in the form of hash' do
+      instance = Freeclimb::SMSTenDLCBrand.new(
+        account_id: "TS",
+        entity_type: "PRIVATE_PROFIT",
+        csp_id: "TS",
+        brand_id: "TS",
+        first_name: "TS",
+        last_name: "TS",
+        display_name: "TS",
+        company_name: "TS",
+        ein: "TS",
+        ein_issuing_country: "TS",
+        phone: "TS",
+        street: "TS",
+        city: "TS",
+        state: "TS",
+        postal_code: "TS",
+        country: "TS",
+        email: "TS",
+        stock_symbol: "TS",
+        stock_exchange: "NONE",
+        ip_address: "TS",
+        website: "TS",
+        brand_relationship: "BASIC_ACCOUNT",
+        vertical: "TS",
+        alt_business_id: "TS",
+        alt_business_id_type: "NONE",
+        universal_ein: "TS",
+        reference_id: "TS",
+        optional_attributes: Hash.new(),
+        mock: true,
+        identity_status: "SELF_DECLARED",
+        create_date: "2022-07-05T15:17:05Z",
+      )
+      expect(instance.to_hash).to be_a_kind_of(Hash)
+    end
+    it 'creates equal hash for two equal objects' do
+      obj = Object.new()
+      instance_1 = Freeclimb::SMSTenDLCBrand.new(
+        account_id: "TS",
+        entity_type: "PRIVATE_PROFIT",
+        csp_id: "TS",
+        brand_id: "TS",
+        first_name: "TS",
+        last_name: "TS",
+        display_name: "TS",
+        company_name: "TS",
+        ein: "TS",
+        ein_issuing_country: "TS",
+        phone: "TS",
+        street: "TS",
+        city: "TS",
+        state: "TS",
+        postal_code: "TS",
+        country: "TS",
+        email: "TS",
+        stock_symbol: "TS",
+        stock_exchange: "NONE",
+        ip_address: "TS",
+        website: "TS",
+        brand_relationship: "BASIC_ACCOUNT",
+        vertical: "TS",
+        alt_business_id: "TS",
+        alt_business_id_type: "NONE",
+        universal_ein: "TS",
+        reference_id: "TS",
+        optional_attributes: Hash.new(),
+        mock: true,
+        identity_status: "SELF_DECLARED",
+        create_date: "2022-07-05T15:17:05Z",
+      )
+      instance_2 = Freeclimb::SMSTenDLCBrand.new(
+        account_id: "TS",
+        entity_type: "PRIVATE_PROFIT",
+        csp_id: "TS",
+        brand_id: "TS",
+        first_name: "TS",
+        last_name: "TS",
+        display_name: "TS",
+        company_name: "TS",
+        ein: "TS",
+        ein_issuing_country: "TS",
+        phone: "TS",
+        street: "TS",
+        city: "TS",
+        state: "TS",
+        postal_code: "TS",
+        country: "TS",
+        email: "TS",
+        stock_symbol: "TS",
+        stock_exchange: "NONE",
+        ip_address: "TS",
+        website: "TS",
+        brand_relationship: "BASIC_ACCOUNT",
+        vertical: "TS",
+        alt_business_id: "TS",
+        alt_business_id_type: "NONE",
+        universal_ein: "TS",
+        reference_id: "TS",
+        optional_attributes: Hash.new(),
+        mock: true,
+        identity_status: "SELF_DECLARED",
+        create_date: "2022-07-05T15:17:05Z",
+      )
+      expect(instance_1.to_hash).to eq(instance_2.to_hash)
+    end
+  end
+
+  describe 'test method "_to_hash"' do
+    instance = Freeclimb::SMSTenDLCBrand.new(
+        account_id: "TS",
+      
+        entity_type: "PRIVATE_PROFIT",
+      
+        csp_id: "TS",
+      
+        brand_id: "TS",
+      
+        first_name: "TS",
+      
+        last_name: "TS",
+      
+        display_name: "TS",
+      
+        company_name: "TS",
+      
+        ein: "TS",
+      
+        ein_issuing_country: "TS",
+      
+        phone: "TS",
+      
+        street: "TS",
+      
+        city: "TS",
+      
+        state: "TS",
+      
+        postal_code: "TS",
+      
+        country: "TS",
+      
+        email: "TS",
+      
+        stock_symbol: "TS",
+      
+        stock_exchange: "NONE",
+      
+        ip_address: "TS",
+      
+        website: "TS",
+      
+        brand_relationship: "BASIC_ACCOUNT",
+      
+        vertical: "TS",
+      
+        alt_business_id: "TS",
+      
+        alt_business_id_type: "NONE",
+      
+        universal_ein: "TS",
+      
+        reference_id: "TS",
+      
+        optional_attributes: Hash.new(),
+      
+        mock: true,
+      
+        identity_status: "SELF_DECLARED",
+      
+        create_date: "2022-07-05T15:17:05Z",
+      )
+    it 'returns account_id in the form of hash' do
+      expect(instance._to_hash(instance.account_id)).to eq(instance.account_id)
+    end
+    it 'returns entity_type in the form of hash' do
+      expect(instance._to_hash(instance.entity_type)).to eq(instance.entity_type)
+    end
+    it 'returns csp_id in the form of hash' do
+      expect(instance._to_hash(instance.csp_id)).to eq(instance.csp_id)
+    end
+    it 'returns brand_id in the form of hash' do
+      expect(instance._to_hash(instance.brand_id)).to eq(instance.brand_id)
+    end
+    it 'returns first_name in the form of hash' do
+      expect(instance._to_hash(instance.first_name)).to eq(instance.first_name)
+    end
+    it 'returns last_name in the form of hash' do
+      expect(instance._to_hash(instance.last_name)).to eq(instance.last_name)
+    end
+    it 'returns display_name in the form of hash' do
+      expect(instance._to_hash(instance.display_name)).to eq(instance.display_name)
+    end
+    it 'returns company_name in the form of hash' do
+      expect(instance._to_hash(instance.company_name)).to eq(instance.company_name)
+    end
+    it 'returns ein in the form of hash' do
+      expect(instance._to_hash(instance.ein)).to eq(instance.ein)
+    end
+    it 'returns ein_issuing_country in the form of hash' do
+      expect(instance._to_hash(instance.ein_issuing_country)).to eq(instance.ein_issuing_country)
+    end
+    it 'returns phone in the form of hash' do
+      expect(instance._to_hash(instance.phone)).to eq(instance.phone)
+    end
+    it 'returns street in the form of hash' do
+      expect(instance._to_hash(instance.street)).to eq(instance.street)
+    end
+    it 'returns city in the form of hash' do
+      expect(instance._to_hash(instance.city)).to eq(instance.city)
+    end
+    it 'returns state in the form of hash' do
+      expect(instance._to_hash(instance.state)).to eq(instance.state)
+    end
+    it 'returns postal_code in the form of hash' do
+      expect(instance._to_hash(instance.postal_code)).to eq(instance.postal_code)
+    end
+    it 'returns country in the form of hash' do
+      expect(instance._to_hash(instance.country)).to eq(instance.country)
+    end
+    it 'returns email in the form of hash' do
+      expect(instance._to_hash(instance.email)).to eq(instance.email)
+    end
+    it 'returns stock_symbol in the form of hash' do
+      expect(instance._to_hash(instance.stock_symbol)).to eq(instance.stock_symbol)
+    end
+    it 'returns stock_exchange in the form of hash' do
+      expect(instance._to_hash(instance.stock_exchange)).to eq(instance.stock_exchange)
+    end
+    it 'returns ip_address in the form of hash' do
+      expect(instance._to_hash(instance.ip_address)).to eq(instance.ip_address)
+    end
+    it 'returns website in the form of hash' do
+      expect(instance._to_hash(instance.website)).to eq(instance.website)
+    end
+    it 'returns brand_relationship in the form of hash' do
+      expect(instance._to_hash(instance.brand_relationship)).to eq(instance.brand_relationship)
+    end
+    it 'returns vertical in the form of hash' do
+      expect(instance._to_hash(instance.vertical)).to eq(instance.vertical)
+    end
+    it 'returns alt_business_id in the form of hash' do
+      expect(instance._to_hash(instance.alt_business_id)).to eq(instance.alt_business_id)
+    end
+    it 'returns alt_business_id_type in the form of hash' do
+      expect(instance._to_hash(instance.alt_business_id_type)).to eq(instance.alt_business_id_type)
+    end
+    it 'returns universal_ein in the form of hash' do
+      expect(instance._to_hash(instance.universal_ein)).to eq(instance.universal_ein)
+    end
+    it 'returns reference_id in the form of hash' do
+      expect(instance._to_hash(instance.reference_id)).to eq(instance.reference_id)
+    end
+    it 'returns optional_attributes in the form of hash' do
+      expect(instance._to_hash(instance.optional_attributes)).to eq(instance.optional_attributes)
+    end
+    it 'returns mock in the form of hash' do
+      expect(instance._to_hash(instance.mock)).to eq(instance.mock)
+    end
+    it 'returns identity_status in the form of hash' do
+      expect(instance._to_hash(instance.identity_status)).to eq(instance.identity_status)
+    end
+    it 'returns create_date in the form of hash' do
+      expect(instance._to_hash(instance.create_date)).to eq(instance.create_date)
     end
   end
 

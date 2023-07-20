@@ -27,12 +27,34 @@ describe Freeclimb::UpdateConferenceRequestStatus do
   end
   describe 'test attribute "EMPTY"' do
     it 'should work' do
-        expect { Freeclimb::UpdateConferenceRequestStatus::EMPTY = "empty" }.not_to raise_error
-      end
+      expect { Freeclimb::UpdateConferenceRequestStatus::EMPTY = "empty" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::UpdateConferenceRequestStatus::EMPTY
+      calculatedValue = Freeclimb::UpdateConferenceRequestStatus::build_from_hash("empty")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "empty"
+      calculatedValue = Freeclimb::UpdateConferenceRequestStatus::EMPTY
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "TERMINATED"' do
     it 'should work' do
-        expect { Freeclimb::UpdateConferenceRequestStatus::TERMINATED = "terminated" }.not_to raise_error
-      end
+      expect { Freeclimb::UpdateConferenceRequestStatus::TERMINATED = "terminated" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::UpdateConferenceRequestStatus::TERMINATED
+      calculatedValue = Freeclimb::UpdateConferenceRequestStatus::build_from_hash("terminated")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "terminated"
+      calculatedValue = Freeclimb::UpdateConferenceRequestStatus::TERMINATED
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
 end

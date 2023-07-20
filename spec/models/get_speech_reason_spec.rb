@@ -27,32 +27,98 @@ describe Freeclimb::GetSpeechReason do
   end
   describe 'test attribute "ERROR"' do
     it 'should work' do
-        expect { Freeclimb::GetSpeechReason::ERROR = "error" }.not_to raise_error
-      end
+      expect { Freeclimb::GetSpeechReason::ERROR = "error" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::GetSpeechReason::ERROR
+      calculatedValue = Freeclimb::GetSpeechReason::build_from_hash("error")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "error"
+      calculatedValue = Freeclimb::GetSpeechReason::ERROR
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "HANGUP"' do
     it 'should work' do
-        expect { Freeclimb::GetSpeechReason::HANGUP = "hangup" }.not_to raise_error
-      end
+      expect { Freeclimb::GetSpeechReason::HANGUP = "hangup" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::GetSpeechReason::HANGUP
+      calculatedValue = Freeclimb::GetSpeechReason::build_from_hash("hangup")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "hangup"
+      calculatedValue = Freeclimb::GetSpeechReason::HANGUP
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "DIGIT"' do
     it 'should work' do
-        expect { Freeclimb::GetSpeechReason::DIGIT = "digit" }.not_to raise_error
-      end
+      expect { Freeclimb::GetSpeechReason::DIGIT = "digit" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::GetSpeechReason::DIGIT
+      calculatedValue = Freeclimb::GetSpeechReason::build_from_hash("digit")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "digit"
+      calculatedValue = Freeclimb::GetSpeechReason::DIGIT
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "NO_INPUT"' do
     it 'should work' do
-        expect { Freeclimb::GetSpeechReason::NO_INPUT = "noInput" }.not_to raise_error
-      end
+      expect { Freeclimb::GetSpeechReason::NO_INPUT = "noInput" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::GetSpeechReason::NO_INPUT
+      calculatedValue = Freeclimb::GetSpeechReason::build_from_hash("noInput")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "noInput"
+      calculatedValue = Freeclimb::GetSpeechReason::NO_INPUT
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "NO_MATCH"' do
     it 'should work' do
-        expect { Freeclimb::GetSpeechReason::NO_MATCH = "noMatch" }.not_to raise_error
-      end
+      expect { Freeclimb::GetSpeechReason::NO_MATCH = "noMatch" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::GetSpeechReason::NO_MATCH
+      calculatedValue = Freeclimb::GetSpeechReason::build_from_hash("noMatch")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "noMatch"
+      calculatedValue = Freeclimb::GetSpeechReason::NO_MATCH
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "RECOGNITION"' do
     it 'should work' do
-        expect { Freeclimb::GetSpeechReason::RECOGNITION = "recognition" }.not_to raise_error
-      end
+      expect { Freeclimb::GetSpeechReason::RECOGNITION = "recognition" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::GetSpeechReason::RECOGNITION
+      calculatedValue = Freeclimb::GetSpeechReason::build_from_hash("recognition")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "recognition"
+      calculatedValue = Freeclimb::GetSpeechReason::RECOGNITION
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
 end

@@ -27,7 +27,124 @@ describe Freeclimb::PerclScript do
   end
   describe 'test attribute "commands"' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      instance.commands = ["ELEMENT_1", "ELEMENT_2"]
+      expect(instance.commands).to eq(["ELEMENT_1", "ELEMENT_2"]) 
+    end
+  end
+
+  describe 'test method "initialize"' do
+    it 'properly initializes with values' do
+        expect{instance = Freeclimb::PerclScript.new(
+          commands: Array.new(),
+        )}.not_to raise_error()
+    end
+    it 'fails to initialize with input argument that is not a hash in Freeclimb::PerclScript' do
+        expect{instance = Freeclimb::PerclScript.new(
+          commands: Array.new(),
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+    it 'fails to initialize with invalid attribute' do
+        expect{instance = Freeclimb::PerclScript.new(
+          commands: Array.new(),
+          invalid_attribute: true
+        )}.to raise_error(ArgumentError)
+    end
+  end
+
+  describe 'test method "valid"' do
+    it 'checks if properties are valid' do
+      instance = Freeclimb::PerclScript.new(
+          commands: Array.new(),
+      )
+      expect(instance.valid?).to eq(true)
+    end
+  end
+
+  describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::PerclScript.new(
+          commands: [],
+      )
+      instance_2 = Freeclimb::PerclScript.new(
+          commands: [],
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::PerclScript.new(
+          commands: [],
+      )
+      instance_2 = Freeclimb::PerclScript.new(
+          commands: nil,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
+  end
+
+  describe 'test method "hash"' do
+    it 'calculates hash code' do
+      instance = Freeclimb::PerclScript.new(
+      commands: Array.new(),
+    )
+    expect(instance.hash).to be_a_kind_of(Integer)
+    end
+  end
+
+  describe 'test method "build_from_hash"' do
+    it 'builds equivalent model from hash code' do
+      instance_1 = Freeclimb::PerclScript.new(
+        commands: Array.new(),
+      )
+      instance_2 = Freeclimb::PerclScript.new
+      expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
+    end
+  end
+
+  describe 'test method "_deserialize"' do
+    instance = Freeclimb::PerclScript.new(
+        commands: Array.new(),
+    )
+    it 'deserializes the data of commands' do
+      expect(instance._deserialize("Array<PerclCommand>", instance.commands)).to be_a_kind_of(Array)
+    end
+  end
+
+  describe 'test method "to_s"' do
+    it 'returns the string representation of the object' do
+      instance = Freeclimb::PerclScript.new(
+        commands: Array.new(),
+      )
+      expect(instance.to_s).to eq(instance.to_hash.to_s)
+    end
+  end
+
+  describe 'test method "to_hash"' do
+    it 'returns the object in the form of hash' do
+      instance = Freeclimb::PerclScript.new(
+        commands: Array.new(),
+      )
+      expect(instance.to_hash).to be_a_kind_of(Hash)
+    end
+    it 'creates equal hash for two equal objects' do
+      obj = Object.new()
+      instance_1 = Freeclimb::PerclScript.new(
+        commands: Array.new(),
+      )
+      instance_2 = Freeclimb::PerclScript.new(
+        commands: Array.new(),
+      )
+      expect(instance_1.to_hash).to eq(instance_2.to_hash)
+    end
+  end
+
+  describe 'test method "_to_hash"' do
+    instance = Freeclimb::PerclScript.new(
+        commands: Array.new(),
+      )
+    it 'returns commands in the form of hash' do
+      expect(instance._to_hash(instance.commands)).to eq(instance.commands)
     end
   end
 

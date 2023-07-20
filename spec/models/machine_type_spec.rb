@@ -27,12 +27,34 @@ describe Freeclimb::MachineType do
   end
   describe 'test attribute "ANSWERING_MACHINE"' do
     it 'should work' do
-        expect { Freeclimb::MachineType::ANSWERING_MACHINE = "answeringMachine" }.not_to raise_error
-      end
+      expect { Freeclimb::MachineType::ANSWERING_MACHINE = "answeringMachine" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MachineType::ANSWERING_MACHINE
+      calculatedValue = Freeclimb::MachineType::build_from_hash("answeringMachine")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "answeringMachine"
+      calculatedValue = Freeclimb::MachineType::ANSWERING_MACHINE
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "FAX_MACHINE"' do
     it 'should work' do
-        expect { Freeclimb::MachineType::FAX_MACHINE = "faxMachine" }.not_to raise_error
-      end
+      expect { Freeclimb::MachineType::FAX_MACHINE = "faxMachine" }.not_to raise_error
     end
+    it 'should serialize to enum' do
+      expectedValue = Freeclimb::MachineType::FAX_MACHINE
+      calculatedValue = Freeclimb::MachineType::build_from_hash("faxMachine")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it 'should deserialize to string' do
+      expectedValue = "faxMachine"
+      calculatedValue = Freeclimb::MachineType::FAX_MACHINE
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
 end
