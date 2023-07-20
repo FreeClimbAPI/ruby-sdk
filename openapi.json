@@ -3020,8 +3020,7 @@
             "x-max-length-10": true,
             "type": "string",
             "description": "Postal codes. Use 5 digit zipcode for United States",
-            "example": "10001",
-            "x-char-len-2": true
+            "example": "10001"
           },
           "country": {
             "maxLength": 2,
