@@ -166,7 +166,6 @@
           "RECOGNITION"
         ],
         "x-enum": true
-
       },
       "GrammarFileBuiltIn": {
         "type": "string",
@@ -431,6 +430,7 @@
           "commands": {
             "type": "array",
             "description": "A JSON array of PerCL commands",
+            "x-is-list": true,
             "items": {
               "$ref": "#/components/schemas/PerclCommand"
             }
@@ -506,7 +506,7 @@
               },
               "callId": {
                 "description": "ID of the Call that will be added to the specified Conference. The Call must be in progress or an error will result. If the Call is part of an existing Conference, it is first removed from that Conference and is then moved to the new one.",
-                "type": "boolean"
+                "type": "string"
               },
               "leaveConferenceUrl": {
                 "description": "URL to be invoked when the Participant leaves the Conference. ",
@@ -656,6 +656,7 @@
               "prompts": {
                 "description": "JSON array of PerCL commands to nest within the `GetDigits` command. The `Say`, `Play`, and `Pause` commands can be used. The nested actions are executed while FreeClimb is waiting for input from the Caller.",
                 "type": "array",
+                "x-is-list": true,
                 "items": {
                   "$ref": "#/components/schemas/PerclCommand"
                 }
@@ -682,7 +683,8 @@
               "actionUrl": {
                 "description": "When the caller has finished speaking or the command has timed out, FreeClimb will make a POST request to this URL. A PerCL response is expected to continue handling the call.",
                 "type": "string",
-                "format": "uri"
+                "format": "uri",
+                "x-is-uri": true
               },
               "grammarType": {
                 "$ref": "#/components/schemas/GrammarType"
@@ -704,7 +706,8 @@
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/PerclCommand"
-                }
+                },
+                "x-is-list": true
               },
               "noInputTimeoutMs": {
                 "description": "When recognition is started and there is no speech detected for `noInputTimeoutMs` milliseconds, the recognizer will terminate the recognition operation.",
@@ -1454,7 +1457,8 @@
                 "items": {
                   "$ref": "#/components/schemas/ApplicationResult"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
@@ -1513,7 +1517,8 @@
                 "items": {
                   "$ref": "#/components/schemas/AvailableNumber"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
@@ -1528,7 +1533,7 @@
             "type": "object",
             "properties": {
               "capabilities": {
-                "$ref": "#/components/schemas/Capabilities"              
+                "$ref": "#/components/schemas/Capabilities"
               },
               "campaignId": {
                 "type": "string",
@@ -1622,7 +1627,8 @@
                 "items": {
                   "$ref": "#/components/schemas/IncomingNumberResult"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
@@ -1797,7 +1803,8 @@
                 "items": {
                   "$ref": "#/components/schemas/CallResult"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
@@ -1853,7 +1860,8 @@
                 "items": {
                   "$ref": "#/components/schemas/RecordingResult"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
@@ -1910,7 +1918,8 @@
                 "items": {
                   "$ref": "#/components/schemas/LogResult"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
@@ -1989,7 +1998,8 @@
                 "items": {
                   "$ref": "#/components/schemas/MessageResult"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
@@ -2041,7 +2051,8 @@
                 "items": {
                   "$ref": "#/components/schemas/ConferenceResult"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
@@ -2204,7 +2215,8 @@
                 "items": {
                   "$ref": "#/components/schemas/ConferenceParticipantResult"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
@@ -2285,7 +2297,8 @@
                 "items": {
                   "$ref": "#/components/schemas/QueueResult"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
@@ -2334,7 +2347,8 @@
                 "items": {
                   "$ref": "#/components/schemas/QueueMember"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
@@ -2363,7 +2377,8 @@
                 "items": {
                   "$ref": "#/components/schemas/SMSTenDLCCampaign"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
@@ -2405,10 +2420,7 @@
             "type": "string",
             "x-has-writer": true,
             "description": "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. ",
-            "enum": [
-              "ACTIVE",
-              "EXPIRED"
-            ],
+            "enum": ["ACTIVE", "EXPIRED"],
             "x-enum-varnames": ["ACTIVE", "EXPIRED"]
           },
           "createDate": {
@@ -2441,6 +2453,7 @@
           },
           "subUsecases": {
             "uniqueItems": true,
+            "x-is-set": true,
             "type": "array",
             "description": "Campaign sub-usecases. Must be of defined valid sub-usecase types. Use `/registry/enum/usecase` operation to retrieve list of valid sub-usecases",
             "items": {
@@ -2448,7 +2461,7 @@
               "description": "Campaign sub-usecases. Must be of defined valid sub-usecase types. Use `/registry/enum/usecase` operation to retrieve list of valid sub-usecases"
             }
           },
-            "description": {
+          "description": {
             "maxLength": 4096,
             "type": "string",
             "description": "Summary description of this campaign."
@@ -2553,8 +2566,7 @@
             "x-is-date": true,
             "example": "2000-01-01"
           }
-        }
-        ,
+        },
         "example": {
           "campaignId": "CX56XX4",
           "accountId": "ACe39970fb7c31c747c67148900b4d9da60a41e532",
@@ -2602,19 +2614,15 @@
                 "items": {
                   "$ref": "#/components/schemas/SMSTenDLCPartnerCampaign"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
         ]
       },
       "SMSTenDLCPartnerCampaign": {
-        "required": [
-          "brandId",
-          "campaignId",
-          "description",
-          "usecase"
-        ],
+        "required": ["brandId", "campaignId", "description", "usecase"],
         "type": "object",
         "properties": {
           "accountId": {
@@ -2630,10 +2638,7 @@
             "type": "string",
             "x-has-writer": true,
             "description": "Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status. ",
-            "enum": [
-              "ACTIVE",
-              "EXPIRED"
-            ],
+            "enum": ["ACTIVE", "EXPIRED"],
             "x-enum-varnames": ["ACTIVE", "EXPIRED"]
           },
           "createDate": {
@@ -2813,11 +2818,8 @@
           }
         }
       },
-      "SMSTenDLCPartnerCampaignBrand":{
-        "required": [
-          "email",
-          "phone"
-        ],
+      "SMSTenDLCPartnerCampaignBrand": {
+        "required": ["email", "phone"],
         "type": "object",
         "x-is-object": true,
         "properties": {
@@ -2873,6 +2875,7 @@
             "example": "http://www.abcmobile.com"
           },
           "optionalAttributes": {
+            "x-is-map": true,
             "type": "object",
             "x-is-hash": true,
             "additionalProperties": {
@@ -2900,13 +2903,14 @@
                 "items": {
                   "$ref": "#/components/schemas/SMSTenDLCBrand"
                 },
-                "nullable": true
+                "nullable": true,
+                "x-is-list": true
               }
             }
           }
         ]
       },
-      "SMSTenDLCBrand":{
+      "SMSTenDLCBrand": {
         "required": [
           "brandRelationship",
           "country",
@@ -2937,12 +2941,13 @@
               "GOVERNMENT",
               "SOLE_PROPRIETOR"
             ],
-            "x-enum-varnames": ["PRIVATE_PROFIT",
+            "x-enum-varnames": [
+              "PRIVATE_PROFIT",
               "PUBLIC_PROFIT",
               "NON_PROFIT",
               "GOVERNMENT",
               "SOLE_PROPRIETOR"
-          ]
+            ]
           },
           "cspId": {
             "type": "string",
@@ -3148,18 +3153,8 @@
           "altBusinessIdType": {
             "type": "string",
             "x-has-writer": true,
-            "enum": [
-              "NONE",
-              "DUNS",
-              "GIIN",
-              "LEI"
-            ],
-            "x-enum-varnames": [
-              "NONE",
-              "DUNS",
-              "GIIN",
-              "LEI"
-            ],
+            "enum": ["NONE", "DUNS", "GIIN", "LEI"],
+            "x-enum-varnames": ["NONE", "DUNS", "GIIN", "LEI"],
             "description": "The type of the Alternative business identifier"
           },
           "universalEin": {
@@ -3173,6 +3168,7 @@
             "description": "Caller supplied brand reference ID. If supplied, the value must be unique across all submitted brands. Can be used to prevent duplicate brand registrations."
           },
           "optionalAttributes": {
+            "x-is-map": true,
             "type": "object",
             "x-is-hash": true,
             "additionalProperties": {
