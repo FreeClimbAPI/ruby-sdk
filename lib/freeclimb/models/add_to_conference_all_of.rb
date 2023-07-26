@@ -73,7 +73,7 @@ module Freeclimb
         :'call_control_sequence' => :'String',
         :'call_control_url' => :'String',
         :'conference_id' => :'String',
-        :'call_id' => :'Boolean',
+        :'call_id' => :'String',
         :'leave_conference_url' => :'String',
         :'listen' => :'Boolean',
         :'notification_url' => :'String',
