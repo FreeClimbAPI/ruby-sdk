@@ -222,6 +222,12 @@ describe 'DefaultApi' do
 
     @has_campaign_list_incoming_numbers_test_value = true
 
+    @campaign_id_list_sms_messages_test_value = 'CX56XX4'
+
+    @brand_id_list_sms_messages_test_value = 'BX56XX4'
+
+    @is10_dlc_list_sms_messages_test_value = true
+
     @queue_request_update_a_queue_test_value = Freeclimb::QueueRequest.new
 
     @application_request_update_an_application_test_value = Freeclimb::ApplicationRequest.new
@@ -1256,6 +1262,9 @@ describe 'DefaultApi' do
   # @option opts [String] :begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
   # @option opts [String] :end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
   # @option opts [MessageDirection] :direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb.
+  # @option opts [String] :campaign_id Only show messages associated with this campaign ID.
+  # @option opts [String] :brand_id Only show messages associated with this brand ID
+  # @option opts [Boolean] :is10_dlc Only show messages that were sent as part of a 10DLC campaign.
   # @return [MessagesList]
   describe 'list_sms_messages test' do
     it 'should work' do
@@ -1265,11 +1274,14 @@ describe 'DefaultApi' do
       begin_time = @begin_time_list_sms_messages_test_value
       end_time = @end_time_list_sms_messages_test_value
       direction = @direction_list_sms_messages_test_value
+      campaign_id = @campaign_id_list_sms_messages_test_value
+      brand_id = @brand_id_list_sms_messages_test_value
+      is10_dlc = @is10_dlc_list_sms_messages_test_value
       
       result = @api_instance.list_sms_messages(
         
         {
-          :to => to,:from => from,:begin_time => begin_time,:end_time => end_time,:direction => direction,
+          :to => to,:from => from,:begin_time => begin_time,:end_time => end_time,:direction => direction,:campaign_id => campaign_id,:brand_id => brand_id,:is10_dlc => is10_dlc,
         }
       )
  
