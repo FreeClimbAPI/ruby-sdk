@@ -12,6 +12,9 @@
 | **text** | **String** | Message contents | [optional] |
 | **direction** | **String** | Noting whether the message was inbound or outbound | [optional] |
 | **notification_url** | **String** | URL invoked when message sent | [optional] |
+| **brand_id** | **String** | The unique identifier for the brand associated with the message | [optional] |
+| **campaign_id** | **String** | The unique identifier for the campaign associated with the message | [optional] |
+| **segment_count** | **Float** | The number of segments into which the message was split | [optional] |
 
 ## Example
 
@@ -26,7 +29,10 @@ instance = Freeclimb::MessageResultAllOf.new(
   to: null,
   text: null,
   direction: null,
-  notification_url: null
+  notification_url: null,
+  brand_id: null,
+  campaign_id: null,
+  segment_count: null
 )
 ```
 

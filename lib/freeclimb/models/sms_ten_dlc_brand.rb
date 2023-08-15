@@ -485,46 +485,72 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @entity_type.nil?
-      entity_type_validator = EnumAttributeValidator.new('String', ["PRIVATE_PROFIT", "PUBLIC_PROFIT", "NON_PROFIT", "GOVERNMENT", "SOLE_PROPRIETOR"])
-      return false unless entity_type_validator.valid?(@entity_type)
-      return false if @entity_type.to_s.length > 20
-      return false if !@first_name.nil? && @first_name.to_s.length > 100
-      return false if !@last_name.nil? && @last_name.to_s.length > 100
-      return false if @display_name.nil?
-      return false if @display_name.to_s.length > 255
-      return false if !@company_name.nil? && @company_name.to_s.length > 255
-      return false if !@ein.nil? && @ein.to_s.length > 21
-      return false if !@ein_issuing_country.nil? && @ein_issuing_country.to_s.length > 2
-      return false if @phone.nil?
-      return false if @phone.to_s.length > 20
-      return false if !@street.nil? && @street.to_s.length > 100
-      return false if !@city.nil? && @city.to_s.length > 100
-      return false if !@state.nil? && @state.to_s.length > 20
-      return false if !@postal_code.nil? && @postal_code.to_s.length > 10
-      return false if @country.nil?
-      return false if @country.to_s.length > 2
-      return false if @email.nil?
-      return false if @email.to_s.length > 100
-      return false if !@stock_symbol.nil? && @stock_symbol.to_s.length > 10
-      stock_exchange_validator = EnumAttributeValidator.new('String', ["NONE", "NASDAQ", "NYSE", "AMEX", "AMX", "ASX", "B3", "BME", "BSE", "FRA", "ICEX", "JPX", "JSE", "KRX", "LON", "NSE", "OMX", "SEHK", "SGX", "SSE", "STO", "SWX", "SZSE", "TSX", "TWSE", "VSE", "OTHER"])
-      return false unless stock_exchange_validator.valid?(@stock_exchange)
-      return false if !@ip_address.nil? && @ip_address.to_s.length > 50
-      return false if !@website.nil? && @website.to_s.length > 100
-      return false if @brand_relationship.nil?
-      brand_relationship_validator = EnumAttributeValidator.new('String', ["BASIC_ACCOUNT", "SMALL_ACCOUNT", "MEDIUM_ACCOUNT", "LARGE_ACCOUNT", "KEY_ACCOUNT"])
-      return false unless brand_relationship_validator.valid?(@brand_relationship)
-      return false if @vertical.nil?
-      return false if @vertical.to_s.length > 50
-      return false if !@alt_business_id.nil? && @alt_business_id.to_s.length > 50
-      alt_business_id_type_validator = EnumAttributeValidator.new('String', ["NONE", "DUNS", "GIIN", "LEI"])
-      return false unless alt_business_id_type_validator.valid?(@alt_business_id_type)
-      return false if !@reference_id.nil? && @reference_id.to_s.length > 50
-      return false if @mock.nil?
-      return false if @identity_status.nil?
-      identity_status_validator = EnumAttributeValidator.new('String', ["SELF_DECLARED", "UNVERIFIED", "VERIFIED", "VETTED_VERIFIED"])
-      return false unless identity_status_validator.valid?(@identity_status)
-      true
+      
+      if @account_id.nil?
+        false
+      elsif @entity_type.nil?
+        false
+      elsif @csp_id.nil?
+        false
+      elsif @brand_id.nil?
+        false
+      elsif @first_name.nil?
+        false
+      elsif @last_name.nil?
+        false
+      elsif @display_name.nil?
+        false
+      elsif @company_name.nil?
+        false
+      elsif @ein.nil?
+        false
+      elsif @ein_issuing_country.nil?
+        false
+      elsif @phone.nil?
+        false
+      elsif @street.nil?
+        false
+      elsif @city.nil?
+        false
+      elsif @state.nil?
+        false
+      elsif @postal_code.nil?
+        false
+      elsif @country.nil?
+        false
+      elsif @email.nil?
+        false
+      elsif @stock_symbol.nil?
+        false
+      elsif @stock_exchange.nil?
+        false
+      elsif @ip_address.nil?
+        false
+      elsif @website.nil?
+        false
+      elsif @brand_relationship.nil?
+        false
+      elsif @vertical.nil?
+        false
+      elsif @alt_business_id.nil?
+        false
+      elsif @alt_business_id_type.nil?
+        false
+      elsif @universal_ein.nil?
+        false
+      elsif @reference_id.nil?
+        false
+      elsif @optional_attributes.nil?
+        false
+      elsif @mock.nil?
+        false
+      elsif @identity_status.nil?
+        false
+      elsif @create_date.nil?
+        false
+      else
+        list_invalid_properties.length() == 0
+      end
     end
 
     # Custom attribute writer method checking allowed values (enum).

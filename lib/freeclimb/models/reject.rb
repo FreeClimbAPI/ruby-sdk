@@ -86,7 +86,12 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      true && super
+      
+      if @reason.nil?
+        false
+      else
+        list_invalid_properties.length() == 0
+      end
     end
 
     # Checks equality by comparing each attribute.
