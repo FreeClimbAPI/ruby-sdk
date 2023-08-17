@@ -2597,6 +2597,9 @@ module Freeclimb
     # @option opts [String] :begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
     # @option opts [String] :end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
     # @option opts [MessageDirection] :direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb.
+    # @option opts [String] :campaign_id Only show messages associated with this campaign ID.
+    # @option opts [String] :brand_id Only show messages associated with this brand ID
+    # @option opts [Boolean] :is10_dlc Only show messages that were sent as part of a 10DLC campaign.
     # @return [MessagesList]
     def list_sms_messages(opts = {})
       data, _status_code, _headers = list_sms_messages_with_http_info(opts)
@@ -2610,6 +2613,9 @@ module Freeclimb
     # @option opts [String] :begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
     # @option opts [String] :end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
     # @option opts [MessageDirection] :direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb.
+    # @option opts [String] :campaign_id Only show messages associated with this campaign ID.
+    # @option opts [String] :brand_id Only show messages associated with this brand ID
+    # @option opts [Boolean] :is10_dlc Only show messages that were sent as part of a 10DLC campaign.
     # @return [Array<(MessagesList, Integer, Hash)>] MessagesList data, response status code and response headers
     def list_sms_messages_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -2625,6 +2631,9 @@ module Freeclimb
       query_params[:'beginTime'] = opts[:'begin_time'] if !opts[:'begin_time'].nil?
       query_params[:'endTime'] = opts[:'end_time'] if !opts[:'end_time'].nil?
       query_params[:'direction'] = opts[:'direction'] if !opts[:'direction'].nil?
+      query_params[:'campaignId'] = opts[:'campaign_id'] if !opts[:'campaign_id'].nil?
+      query_params[:'brandId'] = opts[:'brand_id'] if !opts[:'brand_id'].nil?
+      query_params[:'is10DLC'] = opts[:'is10_dlc'] if !opts[:'is10_dlc'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

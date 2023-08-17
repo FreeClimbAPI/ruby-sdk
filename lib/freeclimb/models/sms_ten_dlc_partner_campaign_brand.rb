@@ -202,16 +202,32 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@first_name.nil? && @first_name.to_s.length > 100
-      return false if !@last_name.nil? && @last_name.to_s.length > 100
-      return false if !@display_name.nil? && @display_name.to_s.length > 255
-      return false if !@company_name.nil? && @company_name.to_s.length > 255
-      return false if @phone.nil?
-      return false if @phone.to_s.length > 20
-      return false if @email.nil?
-      return false if @email.to_s.length > 100
-      return false if !@website.nil? && @website.to_s.length > 100
-      true
+      
+      if @account_id.nil?
+        false
+      elsif @brand_id.nil?
+        false
+      elsif @first_name.nil?
+        false
+      elsif @last_name.nil?
+        false
+      elsif @display_name.nil?
+        false
+      elsif @company_name.nil?
+        false
+      elsif @phone.nil?
+        false
+      elsif @email.nil?
+        false
+      elsif @website.nil?
+        false
+      elsif @optional_attributes.nil?
+        false
+      elsif @evp_vetting_score.nil?
+        false
+      else
+        list_invalid_properties.length() == 0
+      end
     end
 
     # Custom attribute writer method with validation

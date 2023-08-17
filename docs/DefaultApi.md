@@ -3048,7 +3048,10 @@ opts = {
   from: 'from_example', # String | Only show Messages from this phone number.
   begin_time: 'begin_time_example', # String | Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
   end_time: 'end_time_example', # String | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
-  direction: Freeclimb::MessageDirection::INBOUND # MessageDirection | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb.
+  direction: Freeclimb::MessageDirection::INBOUND, # MessageDirection | Either `inbound` or `outbound`. Only show Messages that were either *sent from* or *received by* FreeClimb.
+  campaign_id: 'campaign_id_example', # String | Only show messages associated with this campaign ID.
+  brand_id: 'brand_id_example', # String | Only show messages associated with this brand ID
+  is10_dlc: true # Boolean | Only show messages that were sent as part of a 10DLC campaign.
 }
 
 begin
@@ -3093,6 +3096,12 @@ end
 | **end_time** | **String** | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. | [optional] |
 
 | **direction** | [**MessageDirection**](.md) | Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional] |
+
+| **campaign_id** | **String** | Only show messages associated with this campaign ID. | [optional] |
+
+| **brand_id** | **String** | Only show messages associated with this brand ID | [optional] |
+
+| **is10_dlc** | **Boolean** | Only show messages that were sent as part of a 10DLC campaign. | [optional] |
 
 
 ### Return type

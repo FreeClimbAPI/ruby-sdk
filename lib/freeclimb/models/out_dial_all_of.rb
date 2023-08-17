@@ -169,11 +169,30 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @action_url.nil?
-      return false if @call_connect_url.nil?
-      return false if @calling_number.nil?
-      return false if @destination.nil?
-      true
+      
+      if @action_url.nil?
+        false
+      elsif @call_connect_url.nil?
+        false
+      elsif @calling_number.nil?
+        false
+      elsif @destination.nil?
+        false
+      elsif @if_machine.nil?
+        false
+      elsif @if_machine_url.nil?
+        false
+      elsif @send_digits.nil?
+        false
+      elsif @status_callback_url.nil?
+        false
+      elsif @timeout.nil?
+        false
+      elsif @privacy_mode.nil?
+        false
+      else
+        list_invalid_properties.length() == 0
+      end
     end
 
     # Checks equality by comparing each attribute.

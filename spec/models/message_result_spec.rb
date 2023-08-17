@@ -149,6 +149,27 @@ describe Freeclimb::MessageResult do
     end
   end
 
+  describe 'test attribute "brand_id"' do
+    it 'should work' do
+      instance.brand_id = "TEST_STRING"
+      expect(instance.brand_id).to eq("TEST_STRING")  
+    end
+  end
+
+  describe 'test attribute "campaign_id"' do
+    it 'should work' do
+      instance.campaign_id = "TEST_STRING"
+      expect(instance.campaign_id).to eq("TEST_STRING")  
+    end
+  end
+
+  describe 'test attribute "segment_count"' do
+    it 'should work' do
+      instance.segment_count = BigDecimal("1.0")
+      expect(instance.segment_count).to eq(BigDecimal("1.0")) 
+    end
+  end
+
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::MessageResult.new(
@@ -164,6 +185,8 @@ describe Freeclimb::MessageResult do
           text: "TS",
           direction: "TS",
           notification_url: "TS",
+          brand_id: "TS",
+          campaign_id: "TS",
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::MessageResult' do
@@ -180,6 +203,8 @@ describe Freeclimb::MessageResult do
           text: "TS",
           direction: "TS",
           notification_url: "TS",
+          brand_id: "TS",
+          campaign_id: "TS",
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -197,6 +222,8 @@ describe Freeclimb::MessageResult do
           text: "TS",
           direction: "TS",
           notification_url: "TS",
+          brand_id: "TS",
+          campaign_id: "TS",
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -217,8 +244,20 @@ describe Freeclimb::MessageResult do
           text: "TS",
           direction: "TS",
           notification_url: "TS",
+          brand_id: "TS",
+          campaign_id: "TS",
+          segment_count: 1,
       )
       expect(instance.valid?).to eq(true)
+    end
+    it 'checks if properties are invalid' do
+      instance = Freeclimb::MessageResult.new(
+      )
+      expect(instance.valid?).to eq(false)
+    end
+    it 'checks if model is empty' do
+      instance = Freeclimb::MessageResult.new()
+      expect(instance.valid?).to eq(false)
     end
   end
 
@@ -238,6 +277,8 @@ describe Freeclimb::MessageResult do
           text: "TS",
           direction: "TS",
           notification_url: "TS",
+          brand_id: "TS",
+          campaign_id: "TS",
       )
       instance_2 = Freeclimb::MessageResult.new(
           uri: "TS",
@@ -252,6 +293,8 @@ describe Freeclimb::MessageResult do
           text: "TS",
           direction: "TS",
           notification_url: "TS",
+          brand_id: "TS",
+          campaign_id: "TS",
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
@@ -269,6 +312,8 @@ describe Freeclimb::MessageResult do
           text: "TS",
           direction: "TS",
           notification_url: "TS",
+          brand_id: "TS",
+          campaign_id: "TS",
       )
       instance_2 = Freeclimb::MessageResult.new(
           uri: "ST",
@@ -283,6 +328,8 @@ describe Freeclimb::MessageResult do
           text: "ST",
           direction: "ST",
           notification_url: "ST",
+          brand_id: "ST",
+          campaign_id: "ST",
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
@@ -303,6 +350,8 @@ describe Freeclimb::MessageResult do
       text: "TS",
       direction: "TS",
       notification_url: "TS",
+      brand_id: "TS",
+      campaign_id: "TS",
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -323,6 +372,8 @@ describe Freeclimb::MessageResult do
         text: "TS",
         direction: "TS",
         notification_url: "TS",
+        brand_id: "TS",
+        campaign_id: "TS",
       )
       instance_2 = Freeclimb::MessageResult.new
       expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
@@ -343,6 +394,8 @@ describe Freeclimb::MessageResult do
         text: "TS",
         direction: "TS",
         notification_url: "TS",
+        brand_id: "TS",
+        campaign_id: "TS",
     )
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
@@ -377,6 +430,15 @@ describe Freeclimb::MessageResult do
     it 'deserializes the data of notification_url' do
       expect(instance._deserialize("String", instance.notification_url)).to be_a_kind_of(String)
     end
+    it 'deserializes the data of brand_id' do
+      expect(instance._deserialize("String", instance.brand_id)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of campaign_id' do
+      expect(instance._deserialize("String", instance.campaign_id)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of segment_count' do
+      expect(instance._deserialize("Float", instance.segment_count)).to be_a_kind_of(Float)
+    end
   end
 
   describe 'test method "to_s"' do
@@ -394,6 +456,8 @@ describe Freeclimb::MessageResult do
         text: "TS",
         direction: "TS",
         notification_url: "TS",
+        brand_id: "TS",
+        campaign_id: "TS",
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -414,6 +478,8 @@ describe Freeclimb::MessageResult do
         text: "TS",
         direction: "TS",
         notification_url: "TS",
+        brand_id: "TS",
+        campaign_id: "TS",
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -432,6 +498,8 @@ describe Freeclimb::MessageResult do
         text: "TS",
         direction: "TS",
         notification_url: "TS",
+        brand_id: "TS",
+        campaign_id: "TS",
       )
       instance_2 = Freeclimb::MessageResult.new(
         uri: "TS",
@@ -446,6 +514,8 @@ describe Freeclimb::MessageResult do
         text: "TS",
         direction: "TS",
         notification_url: "TS",
+        brand_id: "TS",
+        campaign_id: "TS",
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -476,6 +546,11 @@ describe Freeclimb::MessageResult do
         direction: "TS",
       
         notification_url: "TS",
+      
+        brand_id: "TS",
+      
+        campaign_id: "TS",
+      
       )
     it 'returns uri in the form of hash' do
       expect(instance._to_hash(instance.uri)).to eq(instance.uri)
@@ -512,6 +587,15 @@ describe Freeclimb::MessageResult do
     end
     it 'returns notification_url in the form of hash' do
       expect(instance._to_hash(instance.notification_url)).to eq(instance.notification_url)
+    end
+    it 'returns brand_id in the form of hash' do
+      expect(instance._to_hash(instance.brand_id)).to eq(instance.brand_id)
+    end
+    it 'returns campaign_id in the form of hash' do
+      expect(instance._to_hash(instance.campaign_id)).to eq(instance.campaign_id)
+    end
+    it 'returns segment_count in the form of hash' do
+      expect(instance._to_hash(instance.segment_count)).to eq(instance.segment_count)
     end
   end
 

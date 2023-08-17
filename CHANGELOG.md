@@ -9,6 +9,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.4.3"></a>
+
+## [4.4.3] - 2023-08-15
+
+### Changed
+
+- `valid?` method implementation now utilizes `list_invalid_properties`
+- Testing for `valid?` method
+
 <a name="4.4.2"></a>
 
 ## [4.4.2] - 2023-07-26

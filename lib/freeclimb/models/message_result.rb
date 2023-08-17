@@ -50,6 +50,15 @@ module Freeclimb
     # URL invoked when message sent
     attr_accessor :notification_url
 
+    # The unique identifier for the brand associated with the message
+    attr_accessor :brand_id
+
+    # The unique identifier for the campaign associated with the message
+    attr_accessor :campaign_id
+
+    # The number of segments into which the message was split
+    attr_accessor :segment_count
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -64,7 +73,10 @@ module Freeclimb
         :'to' => :'to',
         :'text' => :'text',
         :'direction' => :'direction',
-        :'notification_url' => :'notificationUrl'
+        :'notification_url' => :'notificationUrl',
+        :'brand_id' => :'brandId',
+        :'campaign_id' => :'campaignId',
+        :'segment_count' => :'segmentCount'
       }
     end
 
@@ -87,7 +99,10 @@ module Freeclimb
         :'to' => :'String',
         :'text' => :'String',
         :'direction' => :'String',
-        :'notification_url' => :'String'
+        :'notification_url' => :'String',
+        :'brand_id' => :'String',
+        :'campaign_id' => :'String',
+        :'segment_count' => :'Float'
       }
     end
 
@@ -101,7 +116,10 @@ module Freeclimb
         :'to',
         :'text',
         :'direction',
-        :'notification_url'
+        :'notification_url',
+        :'brand_id',
+        :'campaign_id',
+        :'segment_count'
       ])
     end
 
@@ -175,6 +193,18 @@ module Freeclimb
       if attributes.key?(:'notification_url')
         self.notification_url = attributes[:'notification_url']
       end
+
+      if attributes.key?(:'brand_id')
+        self.brand_id = attributes[:'brand_id']
+      end
+
+      if attributes.key?(:'campaign_id')
+        self.campaign_id = attributes[:'campaign_id']
+      end
+
+      if attributes.key?(:'segment_count')
+        self.segment_count = attributes[:'segment_count']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -187,7 +217,18 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      true
+      
+      if @uri.nil?
+        false
+      elsif @date_created.nil?
+        false
+      elsif @date_updated.nil?
+        false
+      elsif @revision.nil?
+        false
+      else
+        list_invalid_properties.length() == 0
+      end
     end
 
     # Checks equality by comparing each attribute.
@@ -206,7 +247,10 @@ module Freeclimb
           to == o.to &&
           text == o.text &&
           direction == o.direction &&
-          notification_url == o.notification_url
+          notification_url == o.notification_url &&
+          brand_id == o.brand_id &&
+          campaign_id == o.campaign_id &&
+          segment_count == o.segment_count
     end
 
     # @see the `==` method
@@ -218,7 +262,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, account_id, message_id, status, from, to, text, direction, notification_url].hash
+      [uri, date_created, date_updated, revision, account_id, message_id, status, from, to, text, direction, notification_url, brand_id, campaign_id, segment_count].hash
     end
 
     # Builds the object from hash

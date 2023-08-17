@@ -440,28 +440,56 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @campaign_id.nil?
-      status_validator = EnumAttributeValidator.new('String', ["ACTIVE", "EXPIRED"])
-      return false unless status_validator.valid?(@status)
-      return false if @brand_id.nil?
-      return false if @brand_id.to_s.length > 8
-      return false if @usecase.nil?
-      return false if @usecase.to_s.length > 20
-      return false if @description.nil?
-      return false if @description.to_s.length > 4096
-      return false if !@sample1.nil? && @sample1.to_s.length > 1024
-      return false if !@sample2.nil? && @sample2.to_s.length > 1024
-      return false if !@sample3.nil? && @sample3.to_s.length > 1024
-      return false if !@sample4.nil? && @sample4.to_s.length > 1024
-      return false if !@sample5.nil? && @sample5.to_s.length > 1024
-      return false if !@message_flow.nil? && @message_flow.to_s.length > 2048
-      return false if !@help_message.nil? && @help_message.to_s.length > 255
-      return false if !@optin_keywords.nil? && @optin_keywords.to_s.length > 255
-      return false if !@optout_keywords.nil? && @optout_keywords.to_s.length > 255
-      return false if !@help_keywords.nil? && @help_keywords.to_s.length > 255
-      return false if !@optin_message.nil? && @optin_message.to_s.length > 255
-      return false if !@optout_message.nil? && @optout_message.to_s.length > 255
-      true
+      
+      if @account_id.nil?
+        false
+      elsif @campaign_id.nil?
+        false
+      elsif @status.nil?
+        false
+      elsif @create_date.nil?
+        false
+      elsif @brand_id.nil?
+        false
+      elsif @usecase.nil?
+        false
+      elsif @description.nil?
+        false
+      elsif @embedded_link.nil?
+        false
+      elsif @embedded_phone.nil?
+        false
+      elsif @affiliate_marketing.nil?
+        false
+      elsif @number_pool.nil?
+        false
+      elsif @age_gated.nil?
+        false
+      elsif @direct_lending.nil?
+        false
+      elsif @subscriber_optin.nil?
+        false
+      elsif @subscriber_optout.nil?
+        false
+      elsif @subscriber_help.nil?
+        false
+      elsif @sample1.nil?
+        false
+      elsif @optin_keywords.nil?
+        false
+      elsif @optout_keywords.nil?
+        false
+      elsif @help_keywords.nil?
+        false
+      elsif @optin_message.nil?
+        false
+      elsif @optout_message.nil?
+        false
+      elsif @brand.nil?
+        false
+      else
+        list_invalid_properties.length() == 0
+      end
     end
 
     # Custom attribute writer method checking allowed values (enum).

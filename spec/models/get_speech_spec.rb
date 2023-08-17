@@ -181,11 +181,24 @@ describe Freeclimb::GetSpeech do
           prompts: Array.new(),
           no_input_timeout_ms: 1,
           recognition_timeout_ms: 1,
+          confidence_threshold: 1,
+          sensitivity_level: 1,
           speech_complete_timeout_ms: 1,
           speech_incomplete_timeout_ms: 1,
           privacy_mode: true,
       )
       expect(instance.valid?).to eq(true)
+    end
+    it 'checks if properties are invalid' do
+      instance = Freeclimb::GetSpeech.new(
+          action_url: nil,
+          grammar_file: nil,
+      )
+      expect(instance.valid?).to eq(false)
+    end
+    it 'checks if model is empty' do
+      instance = Freeclimb::GetSpeech.new()
+      expect(instance.valid?).to eq(false)
     end
   end
 
