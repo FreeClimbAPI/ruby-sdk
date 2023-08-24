@@ -9,6 +9,18 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.4.4"></a>
+
+## [4.4.4] - 2023-08-24
+
+### Changed
+
+- Remove implementation of 'x-max-length' vendor extension for unit testing
+
+### Added
+
+- Unit testing for properties with 'maxLength'
+
 <a name="4.4.3"></a>
 
 ## [4.4.3] - 2023-08-15

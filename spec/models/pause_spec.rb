@@ -25,6 +25,7 @@ describe Freeclimb::Pause do
       expect(instance).to be_instance_of(Freeclimb::Pause)
     end
   end
+  
   describe 'test attribute "length"' do
     it 'should work' do
       instance.length = 1

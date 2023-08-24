@@ -25,6 +25,7 @@ describe Freeclimb::Capabilities do
       expect(instance).to be_instance_of(Freeclimb::Capabilities)
     end
   end
+  
   describe 'test attribute "voice"' do
     it 'should work' do
       instance.voice = false

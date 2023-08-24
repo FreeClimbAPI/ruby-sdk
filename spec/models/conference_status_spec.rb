@@ -25,6 +25,7 @@ describe Freeclimb::ConferenceStatus do
       expect(instance).to be_instance_of(Freeclimb::ConferenceStatus)
     end
   end
+  
   describe 'test attribute "EMPTY"' do
     it 'should work' do
       expect { Freeclimb::ConferenceStatus::EMPTY = "empty" }.not_to raise_error

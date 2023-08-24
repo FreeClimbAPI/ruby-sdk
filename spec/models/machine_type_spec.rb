@@ -25,6 +25,7 @@ describe Freeclimb::MachineType do
       expect(instance).to be_instance_of(Freeclimb::MachineType)
     end
   end
+  
   describe 'test attribute "ANSWERING_MACHINE"' do
     it 'should work' do
       expect { Freeclimb::MachineType::ANSWERING_MACHINE = "answeringMachine" }.not_to raise_error

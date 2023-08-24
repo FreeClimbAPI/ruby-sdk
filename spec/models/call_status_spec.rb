@@ -25,6 +25,7 @@ describe Freeclimb::CallStatus do
       expect(instance).to be_instance_of(Freeclimb::CallStatus)
     end
   end
+  
   describe 'test attribute "QUEUED"' do
     it 'should work' do
       expect { Freeclimb::CallStatus::QUEUED = "queued" }.not_to raise_error

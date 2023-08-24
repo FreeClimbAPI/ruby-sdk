@@ -25,6 +25,7 @@ describe Freeclimb::RequestType do
       expect(instance).to be_instance_of(Freeclimb::RequestType)
     end
   end
+  
   describe 'test attribute "INBOUND_CALL"' do
     it 'should work' do
       expect { Freeclimb::RequestType::INBOUND_CALL = "inboundCall" }.not_to raise_error

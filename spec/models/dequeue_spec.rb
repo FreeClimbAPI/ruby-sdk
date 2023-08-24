@@ -25,4 +25,5 @@ describe Freeclimb::Dequeue do
       expect(instance).to be_instance_of(Freeclimb::Dequeue)
     end
   end
+  
 end

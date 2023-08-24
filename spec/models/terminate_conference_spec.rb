@@ -25,6 +25,7 @@ describe Freeclimb::TerminateConference do
       expect(instance).to be_instance_of(Freeclimb::TerminateConference)
     end
   end
+  
   describe 'test attribute "conference_id"' do
     it 'should work' do
       instance.conference_id = "TEST_STRING"

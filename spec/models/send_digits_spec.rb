@@ -25,6 +25,7 @@ describe Freeclimb::SendDigits do
       expect(instance).to be_instance_of(Freeclimb::SendDigits)
     end
   end
+  
   describe 'test attribute "digits"' do
     it 'should work' do
       instance.digits = "TEST_STRING"

@@ -25,6 +25,7 @@ describe Freeclimb::GrammarFileBuiltIn do
       expect(instance).to be_instance_of(Freeclimb::GrammarFileBuiltIn)
     end
   end
+  
   describe 'test attribute "ALPHNUM6"' do
     it 'should work' do
       expect { Freeclimb::GrammarFileBuiltIn::ALPHNUM6 = "ALPHNUM6" }.not_to raise_error

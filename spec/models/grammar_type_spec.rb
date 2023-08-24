@@ -25,6 +25,7 @@ describe Freeclimb::GrammarType do
       expect(instance).to be_instance_of(Freeclimb::GrammarType)
     end
   end
+  
   describe 'test attribute "URL"' do
     it 'should work' do
       expect { Freeclimb::GrammarType::URL = "URL" }.not_to raise_error

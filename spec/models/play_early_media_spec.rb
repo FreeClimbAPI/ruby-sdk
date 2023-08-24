@@ -25,6 +25,7 @@ describe Freeclimb::PlayEarlyMedia do
       expect(instance).to be_instance_of(Freeclimb::PlayEarlyMedia)
     end
   end
+  
   describe 'test attribute "file"' do
     it 'should work' do
       instance.file = "TEST_STRING"

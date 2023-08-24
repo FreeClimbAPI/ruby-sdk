@@ -25,6 +25,7 @@ describe Freeclimb::SMSTenDLCBrandsListResult do
       expect(instance).to be_instance_of(Freeclimb::SMSTenDLCBrandsListResult)
     end
   end
+  
   describe 'test attribute "total"' do
     it 'should work' do
       instance.total = 1

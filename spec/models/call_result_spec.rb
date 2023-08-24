@@ -25,6 +25,7 @@ describe Freeclimb::CallResult do
       expect(instance).to be_instance_of(Freeclimb::CallResult)
     end
   end
+  
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
@@ -94,6 +95,7 @@ describe Freeclimb::CallResult do
       expect(instance.phone_number_id).to eq("TEST_STRING")  
     end
   end
+
 
   describe 'test attribute "call_status"' do
     it 'assigns value QUEUED' do
@@ -165,6 +167,7 @@ describe Freeclimb::CallResult do
     end
   end
 
+
   describe 'test attribute "direction"' do
     it 'assigns value INBOUND' do
       instance.direction = Freeclimb::CallDirection::INBOUND
@@ -179,6 +182,7 @@ describe Freeclimb::CallResult do
       expect(instance.direction).to eq(Freeclimb::CallDirection::OUTBOUND_DIAL)  
     end
   end
+
 
   describe 'test attribute "answered_by"' do
     it 'assigns value HUMAN' do

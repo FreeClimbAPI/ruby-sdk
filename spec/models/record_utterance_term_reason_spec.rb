@@ -25,6 +25,7 @@ describe Freeclimb::RecordUtteranceTermReason do
       expect(instance).to be_instance_of(Freeclimb::RecordUtteranceTermReason)
     end
   end
+  
   describe 'test attribute "FINISH_KEY"' do
     it 'should work' do
       expect { Freeclimb::RecordUtteranceTermReason::FINISH_KEY = "finishKey" }.not_to raise_error

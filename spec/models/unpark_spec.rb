@@ -25,4 +25,5 @@ describe Freeclimb::Unpark do
       expect(instance).to be_instance_of(Freeclimb::Unpark)
     end
   end
+  
 end

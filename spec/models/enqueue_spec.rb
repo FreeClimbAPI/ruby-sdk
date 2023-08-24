@@ -25,6 +25,7 @@ describe Freeclimb::Enqueue do
       expect(instance).to be_instance_of(Freeclimb::Enqueue)
     end
   end
+  
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"

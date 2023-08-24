@@ -25,6 +25,7 @@ describe Freeclimb::Say do
       expect(instance).to be_instance_of(Freeclimb::Say)
     end
   end
+  
   describe 'test attribute "text"' do
     it 'should work' do
       instance.text = "TEST_STRING"

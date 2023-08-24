@@ -25,6 +25,7 @@ describe Freeclimb::MessageDirection do
       expect(instance).to be_instance_of(Freeclimb::MessageDirection)
     end
   end
+  
   describe 'test attribute "INBOUND"' do
     it 'should work' do
       expect { Freeclimb::MessageDirection::INBOUND = "inbound" }.not_to raise_error

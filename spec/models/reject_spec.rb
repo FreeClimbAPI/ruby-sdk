@@ -25,6 +25,7 @@ describe Freeclimb::Reject do
       expect(instance).to be_instance_of(Freeclimb::Reject)
     end
   end
+  
   describe 'test attribute "reason"' do
     it 'should work' do
       instance.reason = "TEST_STRING"

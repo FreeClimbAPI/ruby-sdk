@@ -25,6 +25,7 @@ describe Freeclimb::GetSpeechReason do
       expect(instance).to be_instance_of(Freeclimb::GetSpeechReason)
     end
   end
+  
   describe 'test attribute "ERROR"' do
     it 'should work' do
       expect { Freeclimb::GetSpeechReason::ERROR = "error" }.not_to raise_error

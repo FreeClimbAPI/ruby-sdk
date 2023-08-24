@@ -25,6 +25,7 @@ describe Freeclimb::SetListen do
       expect(instance).to be_instance_of(Freeclimb::SetListen)
     end
   end
+  
   describe 'test attribute "call_id"' do
     it 'should work' do
       instance.call_id = "TEST_STRING"

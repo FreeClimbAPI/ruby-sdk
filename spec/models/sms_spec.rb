@@ -25,6 +25,7 @@ describe Freeclimb::Sms do
       expect(instance).to be_instance_of(Freeclimb::Sms)
     end
   end
+  
   describe 'test attribute "to"' do
     it 'should work' do
       instance.to = "TEST_STRING"

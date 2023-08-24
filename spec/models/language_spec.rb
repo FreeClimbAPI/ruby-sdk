@@ -25,6 +25,7 @@ describe Freeclimb::Language do
       expect(instance).to be_instance_of(Freeclimb::Language)
     end
   end
+  
   describe 'test attribute "CATALAN"' do
     it 'should work' do
       expect { Freeclimb::Language::CATALAN = "ca-ES" }.not_to raise_error

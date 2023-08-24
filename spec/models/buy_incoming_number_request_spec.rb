@@ -25,6 +25,7 @@ describe Freeclimb::BuyIncomingNumberRequest do
       expect(instance).to be_instance_of(Freeclimb::BuyIncomingNumberRequest)
     end
   end
+  
   describe 'test attribute "phone_number"' do
     it 'should work' do
       instance.phone_number = "TEST_STRING"

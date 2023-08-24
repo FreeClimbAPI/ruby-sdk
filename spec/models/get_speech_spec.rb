@@ -25,12 +25,14 @@ describe Freeclimb::GetSpeech do
       expect(instance).to be_instance_of(Freeclimb::GetSpeech)
     end
   end
+  
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
     end
   end
+
 
   describe 'test attribute "grammar_type"' do
     it 'assigns value URL' do

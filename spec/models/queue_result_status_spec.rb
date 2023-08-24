@@ -25,6 +25,7 @@ describe Freeclimb::QueueResultStatus do
       expect(instance).to be_instance_of(Freeclimb::QueueResultStatus)
     end
   end
+  
   describe 'test attribute "QUEUE_FULL"' do
     it 'should work' do
       expect { Freeclimb::QueueResultStatus::QUEUE_FULL = "queueFull" }.not_to raise_error

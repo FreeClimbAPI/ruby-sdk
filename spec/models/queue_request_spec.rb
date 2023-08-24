@@ -25,6 +25,7 @@ describe Freeclimb::QueueRequest do
       expect(instance).to be_instance_of(Freeclimb::QueueRequest)
     end
   end
+  
   describe 'test attribute "_alias"' do
     it 'should work' do
       instance._alias = "TEST_STRING"
