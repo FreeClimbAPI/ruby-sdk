@@ -2443,7 +2443,6 @@
           },
           "resellerId": {
             "maxLength": 8,
-            "x-max-length-8": true,
             "type": "string",
             "nullable": true,
             "description": "Alphanumeric identifier of the reseller that you want to associate with this campaign."
@@ -2474,7 +2473,6 @@
           },
           "brandId": {
             "maxLength": 8,
-            "x-max-length-8": true,
             "type": "string",
             "description": "Alphanumeric identifier of the brand associated with this campaign."
           },
@@ -2681,7 +2679,6 @@
           },
           "brandId": {
             "maxLength": 8,
-            "x-max-length-8": true,
             "type": "string",
             "description": "Alphanumeric identifier of the brand associated with this campaign."
           },
@@ -3025,8 +3022,7 @@
             "maxLength": 2,
             "type": "string",
             "description": "ISO2 2 characters country code. Example: US - United States",
-            "example": "US",
-            "x-max-length-2": true
+            "example": "US"
           },
           "phone": {
             "maxLength": 20,
@@ -3054,14 +3050,12 @@
           },
           "postalCode": {
             "maxLength": 10,
-            "x-max-length-10": true,
             "type": "string",
             "description": "Postal codes. Use 5 digit zipcode for United States",
             "example": "10001"
           },
           "country": {
             "maxLength": 2,
-            "x-max-length-2": true,
             "type": "string",
             "description": "ISO2 2 characters country code. Example: US - United States",
             "example": "US"
@@ -3073,7 +3067,6 @@
           },
           "stockSymbol": {
             "maxLength": 10,
-            "x-max-length-10": true,
             "type": "string",
             "description": "(Required for public company) stock symbol.",
             "example": "ABC"

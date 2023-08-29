@@ -25,6 +25,7 @@ describe Freeclimb::Play do
       expect(instance).to be_instance_of(Freeclimb::Play)
     end
   end
+  
   describe 'test attribute "file"' do
     it 'should work' do
       instance.file = "TEST_STRING"

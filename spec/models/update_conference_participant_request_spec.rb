@@ -25,6 +25,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
       expect(instance).to be_instance_of(Freeclimb::UpdateConferenceParticipantRequest)
     end
   end
+  
   describe 'test attribute "talk"' do
     it 'should work' do
       instance.talk = false

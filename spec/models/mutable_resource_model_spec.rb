@@ -25,6 +25,7 @@ describe Freeclimb::MutableResourceModel do
       expect(instance).to be_instance_of(Freeclimb::MutableResourceModel)
     end
   end
+  
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"

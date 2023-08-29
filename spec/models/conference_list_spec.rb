@@ -25,6 +25,7 @@ describe Freeclimb::ConferenceList do
       expect(instance).to be_instance_of(Freeclimb::ConferenceList)
     end
   end
+  
   describe 'test attribute "total"' do
     it 'should work' do
       instance.total = 1

@@ -25,6 +25,7 @@ describe Freeclimb::IncomingNumberRequest do
       expect(instance).to be_instance_of(Freeclimb::IncomingNumberRequest)
     end
   end
+  
   describe 'test attribute "application_id"' do
     it 'should work' do
       instance.application_id = "TEST_STRING"

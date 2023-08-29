@@ -25,6 +25,7 @@ describe Freeclimb::FilterLogsRequest do
       expect(instance).to be_instance_of(Freeclimb::FilterLogsRequest)
     end
   end
+  
   describe 'test attribute "pql"' do
     it 'should work' do
       instance.pql = "TEST_STRING"

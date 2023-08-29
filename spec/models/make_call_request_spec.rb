@@ -25,6 +25,7 @@ describe Freeclimb::MakeCallRequest do
       expect(instance).to be_instance_of(Freeclimb::MakeCallRequest)
     end
   end
+  
   describe 'test attribute "from"' do
     it 'should work' do
       instance.from = "TEST_STRING"

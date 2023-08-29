@@ -25,6 +25,7 @@ describe Freeclimb::AvailableNumber do
       expect(instance).to be_instance_of(Freeclimb::AvailableNumber)
     end
   end
+  
   describe 'test attribute "capabilities"' do
     it 'should work' do
       instance.capabilities = Freeclimb::Capabilities.new

@@ -25,6 +25,7 @@ describe Freeclimb::AccountType do
       expect(instance).to be_instance_of(Freeclimb::AccountType)
     end
   end
+  
   describe 'test attribute "TRIAL"' do
     it 'should work' do
       expect { Freeclimb::AccountType::TRIAL = "trial" }.not_to raise_error

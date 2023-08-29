@@ -25,6 +25,7 @@ describe Freeclimb::AccountResult do
       expect(instance).to be_instance_of(Freeclimb::AccountResult)
     end
   end
+  
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
@@ -81,6 +82,7 @@ describe Freeclimb::AccountResult do
     end
   end
 
+
   describe 'test attribute "type"' do
     it 'assigns value TRIAL' do
       instance.type = Freeclimb::AccountType::TRIAL
@@ -91,6 +93,7 @@ describe Freeclimb::AccountResult do
       expect(instance.type).to eq(Freeclimb::AccountType::FULL)  
     end
   end
+
 
   describe 'test attribute "status"' do
     it 'assigns value CLOSED' do

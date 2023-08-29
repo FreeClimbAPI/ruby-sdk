@@ -25,6 +25,8 @@ describe Freeclimb::UpdateCallRequest do
       expect(instance).to be_instance_of(Freeclimb::UpdateCallRequest)
     end
   end
+  
+
   describe 'test attribute "status"' do
     it 'assigns value CANCELED' do
       instance.status = Freeclimb::UpdateCallRequestStatus::CANCELED

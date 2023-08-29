@@ -25,6 +25,7 @@ describe Freeclimb::AccountStatus do
       expect(instance).to be_instance_of(Freeclimb::AccountStatus)
     end
   end
+  
   describe 'test attribute "CLOSED"' do
     it 'should work' do
       expect { Freeclimb::AccountStatus::CLOSED = "closed" }.not_to raise_error

@@ -25,12 +25,14 @@ describe Freeclimb::LogResult do
       expect(instance).to be_instance_of(Freeclimb::LogResult)
     end
   end
+  
   describe 'test attribute "timestamp"' do
     it 'should work' do
       instance.timestamp = 1
       expect(instance.timestamp).to eq(1) 
     end
   end
+
 
   describe 'test attribute "level"' do
     it 'assigns value INFO' do

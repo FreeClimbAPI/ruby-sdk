@@ -25,12 +25,14 @@ describe Freeclimb::SMSTenDLCBrand do
       expect(instance).to be_instance_of(Freeclimb::SMSTenDLCBrand)
     end
   end
+  
   describe 'test attribute "account_id"' do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
     end
   end
+
 
   describe 'test attribute "entity_type"' do
     it 'assigns value PRIVATE_PROFIT' do
@@ -74,118 +76,145 @@ describe Freeclimb::SMSTenDLCBrand do
   end
 
   describe 'test attribute "first_name"' do
-    it 'should work' do
-      instance.first_name = "TEST_STRING"
-      expect(instance.first_name).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.first_name = "T" * 100
+      expect(instance.first_name).to eq("T" * 100)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.first_name = "T" * (100 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "last_name"' do
-    it 'should work' do
-      instance.last_name = "TEST_STRING"
-      expect(instance.last_name).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.last_name = "T" * 100
+      expect(instance.last_name).to eq("T" * 100)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.last_name = "T" * (100 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "display_name"' do
-    it 'should work' do
-      instance.display_name = "TEST_STRING"
-      expect(instance.display_name).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.display_name = "T" * 255
+      expect(instance.display_name).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.display_name = "T" * (255 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "company_name"' do
-    it 'should work' do
-      instance.company_name = "TEST_STRING"
-      expect(instance.company_name).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.company_name = "T" * 255
+      expect(instance.company_name).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.company_name = "T" * (255 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "ein"' do
-    it 'should work' do
-      instance.ein = "TEST_STRING"
-      expect(instance.ein).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.ein = "T" * 21
+      expect(instance.ein).to eq("T" * 21)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.ein = "T" * (21 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
-
   describe 'test attribute "ein_issuing_country"' do
-    it 'should work with length 2' do
-      instance.ein_issuing_country = "TS"
-      expect(instance.ein_issuing_country).to eq("TS")
+    it 'should assign a value of maxLength' do
+      instance.ein_issuing_country = "T" * 2
+      expect(instance.ein_issuing_country).to eq("T" * 2)  
     end
-    it 'should not work with length > 2' do
-      expect{instance.ein_issuing_country = "TEST_STRING"}.to raise_error(ArgumentError)
+    it 'should not assign a value over maxLength' do
+      expect{instance.ein_issuing_country = "T" * (2 + 1)}.to raise_error(ArgumentError) 
     end
-  end  
+  end
 
   describe 'test attribute "phone"' do
-    it 'should work' do
-      instance.phone = "TEST_STRING"
-      expect(instance.phone).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.phone = "T" * 20
+      expect(instance.phone).to eq("T" * 20)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.phone = "T" * (20 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "street"' do
-    it 'should work' do
-      instance.street = "TEST_STRING"
-      expect(instance.street).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.street = "T" * 100
+      expect(instance.street).to eq("T" * 100)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.street = "T" * (100 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "city"' do
-    it 'should work' do
-      instance.city = "TEST_STRING"
-      expect(instance.city).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.city = "T" * 100
+      expect(instance.city).to eq("T" * 100)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.city = "T" * (100 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "state"' do
-    it 'should work' do
-      instance.state = "TEST_STRING"
-      expect(instance.state).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.state = "T" * 20
+      expect(instance.state).to eq("T" * 20)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.state = "T" * (20 + 1)}.to raise_error(ArgumentError) 
     end
   end
-
 
   describe 'test attribute "postal_code"' do
-    it 'should work with length 10' do
-      instance.postal_code = "TEST_STRIN"
-      expect(instance.postal_code).to eq("TEST_STRIN")
+    it 'should assign a value of maxLength' do
+      instance.postal_code = "T" * 10
+      expect(instance.postal_code).to eq("T" * 10)  
     end
-    it 'should not work with length > 10' do
-      expect{instance.postal_code = "TEST_STRING"}.to raise_error(ArgumentError)
-    end
-  end  
-
-
-  describe 'test attribute "country"' do
-    it 'should work with length 2' do
-      instance.country = "TS"
-      expect(instance.country).to eq("TS")
-    end
-    it 'should not work with length > 2' do
-      expect{instance.country = "TEST_STRING"}.to raise_error(ArgumentError)
-    end
-  end  
-
-  describe 'test attribute "email"' do
-    it 'should work' do
-      instance.email = "TEST_STRING"
-      expect(instance.email).to eq("TEST_STRING")  
+    it 'should not assign a value over maxLength' do
+      expect{instance.postal_code = "T" * (10 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
+  describe 'test attribute "country"' do
+    it 'should assign a value of maxLength' do
+      instance.country = "T" * 2
+      expect(instance.country).to eq("T" * 2)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.country = "T" * (2 + 1)}.to raise_error(ArgumentError) 
+    end
+  end
+
+  describe 'test attribute "email"' do
+    it 'should assign a value of maxLength' do
+      instance.email = "T" * 100
+      expect(instance.email).to eq("T" * 100)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.email = "T" * (100 + 1)}.to raise_error(ArgumentError) 
+    end
+  end
 
   describe 'test attribute "stock_symbol"' do
-    it 'should work with length 10' do
-      instance.stock_symbol = "TEST_STRIN"
-      expect(instance.stock_symbol).to eq("TEST_STRIN")
+    it 'should assign a value of maxLength' do
+      instance.stock_symbol = "T" * 10
+      expect(instance.stock_symbol).to eq("T" * 10)  
     end
-    it 'should not work with length > 10' do
-      expect{instance.stock_symbol = "TEST_STRING"}.to raise_error(ArgumentError)
+    it 'should not assign a value over maxLength' do
+      expect{instance.stock_symbol = "T" * (10 + 1)}.to raise_error(ArgumentError) 
     end
-  end  
+  end
+
 
   describe 'test attribute "stock_exchange"' do
     it 'assigns value NONE' do
@@ -303,18 +332,25 @@ describe Freeclimb::SMSTenDLCBrand do
   end
 
   describe 'test attribute "ip_address"' do
-    it 'should work' do
-      instance.ip_address = "TEST_STRING"
-      expect(instance.ip_address).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.ip_address = "T" * 50
+      expect(instance.ip_address).to eq("T" * 50)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.ip_address = "T" * (50 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "website"' do
-    it 'should work' do
-      instance.website = "TEST_STRING"
-      expect(instance.website).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.website = "T" * 100
+      expect(instance.website).to eq("T" * 100)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.website = "T" * (100 + 1)}.to raise_error(ArgumentError) 
     end
   end
+
 
   describe 'test attribute "brand_relationship"' do
     it 'assigns value BASIC_ACCOUNT' do
@@ -344,18 +380,25 @@ describe Freeclimb::SMSTenDLCBrand do
   end
 
   describe 'test attribute "vertical"' do
-    it 'should work' do
-      instance.vertical = "TEST_STRING"
-      expect(instance.vertical).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.vertical = "T" * 50
+      expect(instance.vertical).to eq("T" * 50)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.vertical = "T" * (50 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "alt_business_id"' do
-    it 'should work' do
-      instance.alt_business_id = "TEST_STRING"
-      expect(instance.alt_business_id).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.alt_business_id = "T" * 50
+      expect(instance.alt_business_id).to eq("T" * 50)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.alt_business_id = "T" * (50 + 1)}.to raise_error(ArgumentError) 
     end
   end
+
 
   describe 'test attribute "alt_business_id_type"' do
     it 'assigns value NONE' do
@@ -388,9 +431,12 @@ describe Freeclimb::SMSTenDLCBrand do
   end
 
   describe 'test attribute "reference_id"' do
-    it 'should work' do
-      instance.reference_id = "TEST_STRING"
-      expect(instance.reference_id).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.reference_id = "T" * 50
+      expect(instance.reference_id).to eq("T" * 50)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.reference_id = "T" * (50 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
@@ -408,6 +454,7 @@ describe Freeclimb::SMSTenDLCBrand do
       expect(instance.mock).to eq(false)        
     end
   end
+
 
   describe 'test attribute "identity_status"' do
     it 'assigns value SELF_DECLARED' do

@@ -25,6 +25,7 @@ describe Freeclimb::OutDial do
       expect(instance).to be_instance_of(Freeclimb::OutDial)
     end
   end
+  
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"
@@ -52,6 +53,7 @@ describe Freeclimb::OutDial do
       expect(instance.destination).to eq("TEST_STRING")  
     end
   end
+
 
   describe 'test attribute "if_machine"' do
     it 'assigns value REDIRECT' do

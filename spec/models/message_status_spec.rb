@@ -25,6 +25,7 @@ describe Freeclimb::MessageStatus do
       expect(instance).to be_instance_of(Freeclimb::MessageStatus)
     end
   end
+  
   describe 'test attribute "NEW"' do
     it 'should work' do
       expect { Freeclimb::MessageStatus::NEW = "new" }.not_to raise_error

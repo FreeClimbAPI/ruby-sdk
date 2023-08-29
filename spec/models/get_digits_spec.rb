@@ -25,6 +25,7 @@ describe Freeclimb::GetDigits do
       expect(instance).to be_instance_of(Freeclimb::GetDigits)
     end
   end
+  
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"

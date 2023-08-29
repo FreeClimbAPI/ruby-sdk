@@ -25,6 +25,7 @@ describe Freeclimb::MessageResult do
       expect(instance).to be_instance_of(Freeclimb::MessageResult)
     end
   end
+  
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
@@ -66,6 +67,7 @@ describe Freeclimb::MessageResult do
       expect(instance.message_id).to eq("TEST_STRING")  
     end
   end
+
 
   describe 'test attribute "status"' do
     it 'assigns value NEW' do

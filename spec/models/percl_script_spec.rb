@@ -25,6 +25,7 @@ describe Freeclimb::PerclScript do
       expect(instance).to be_instance_of(Freeclimb::PerclScript)
     end
   end
+  
   describe 'test attribute "commands"' do
     it 'should work' do
       instance.commands = ["ELEMENT_1", "ELEMENT_2"]

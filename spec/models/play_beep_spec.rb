@@ -25,6 +25,7 @@ describe Freeclimb::PlayBeep do
       expect(instance).to be_instance_of(Freeclimb::PlayBeep)
     end
   end
+  
   describe 'test attribute "ALWAYS"' do
     it 'should work' do
       expect { Freeclimb::PlayBeep::ALWAYS = "always" }.not_to raise_error

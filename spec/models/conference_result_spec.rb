@@ -25,6 +25,7 @@ describe Freeclimb::ConferenceResult do
       expect(instance).to be_instance_of(Freeclimb::ConferenceResult)
     end
   end
+  
   describe 'test attribute "uri"' do
     it 'should work' do
       instance.uri = "TEST_STRING"
@@ -74,6 +75,7 @@ describe Freeclimb::ConferenceResult do
     end
   end
 
+
   describe 'test attribute "play_beep"' do
     it 'assigns value ALWAYS' do
       instance.play_beep = Freeclimb::PlayBeep::ALWAYS
@@ -99,6 +101,7 @@ describe Freeclimb::ConferenceResult do
       expect(instance.record).to eq(false)        
     end
   end
+
 
   describe 'test attribute "status"' do
     it 'assigns value EMPTY' do

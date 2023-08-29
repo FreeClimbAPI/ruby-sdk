@@ -25,6 +25,7 @@ describe Freeclimb::PerclCommand do
       expect(instance).to be_instance_of(Freeclimb::PerclCommand)
     end
   end
+  
 
   describe 'test method "initialize"' do
     it 'properly initializes with values' do

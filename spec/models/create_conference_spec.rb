@@ -25,6 +25,7 @@ describe Freeclimb::CreateConference do
       expect(instance).to be_instance_of(Freeclimb::CreateConference)
     end
   end
+  
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"
@@ -38,6 +39,7 @@ describe Freeclimb::CreateConference do
       expect(instance._alias).to eq(false)        
     end
   end
+
 
   describe 'test attribute "play_beep"' do
     it 'assigns value ALWAYS' do

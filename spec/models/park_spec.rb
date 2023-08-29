@@ -25,6 +25,7 @@ describe Freeclimb::Park do
       expect(instance).to be_instance_of(Freeclimb::Park)
     end
   end
+  
   describe 'test attribute "wait_url"' do
     it 'should work' do
       instance.wait_url = "TEST_STRING"

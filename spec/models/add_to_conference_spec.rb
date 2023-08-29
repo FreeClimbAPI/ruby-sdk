@@ -25,6 +25,7 @@ describe Freeclimb::AddToConference do
       expect(instance).to be_instance_of(Freeclimb::AddToConference)
     end
   end
+  
   describe 'test attribute "allow_call_control"' do
     it 'should work' do
       instance.allow_call_control = false

@@ -25,6 +25,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       expect(instance).to be_instance_of(Freeclimb::SMSTenDLCPartnerCampaign)
     end
   end
+  
   describe 'test attribute "account_id"' do
     it 'should work' do
       instance.account_id = "TEST_STRING"
@@ -38,6 +39,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       expect(instance.campaign_id).to eq("TEST_STRING")  
     end
   end
+
 
   describe 'test attribute "status"' do
     it 'assigns value ACTIVE' do
@@ -61,28 +63,33 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     end
   end
 
-
   describe 'test attribute "brand_id"' do
-    it 'should work with length 8' do
-      instance.brand_id = "TEST_STR"
-      expect(instance.brand_id).to eq("TEST_STR")
+    it 'should assign a value of maxLength' do
+      instance.brand_id = "T" * 8
+      expect(instance.brand_id).to eq("T" * 8)  
     end
-    it 'should not work with length > 8' do
-      expect{instance.brand_id = "TEST_STRING"}.to raise_error(ArgumentError)
+    it 'should not assign a value over maxLength' do
+      expect{instance.brand_id = "T" * (8 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "usecase"' do
-    it 'should work' do
-      instance.usecase = "TEST_STRING"
-      expect(instance.usecase).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.usecase = "T" * 20
+      expect(instance.usecase).to eq("T" * 20)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.usecase = "T" * (20 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "description"' do
-    it 'should work' do
-      instance.description = "TEST_STRING"
-      expect(instance.description).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.description = "T" * 4096
+      expect(instance.description).to eq("T" * 4096)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.description = "T" * (4096 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
@@ -150,86 +157,122 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
   end
 
   describe 'test attribute "sample1"' do
-    it 'should work' do
-      instance.sample1 = "TEST_STRING"
-      expect(instance.sample1).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.sample1 = "T" * 1024
+      expect(instance.sample1).to eq("T" * 1024)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.sample1 = "T" * (1024 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "sample2"' do
-    it 'should work' do
-      instance.sample2 = "TEST_STRING"
-      expect(instance.sample2).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.sample2 = "T" * 1024
+      expect(instance.sample2).to eq("T" * 1024)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.sample2 = "T" * (1024 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "sample3"' do
-    it 'should work' do
-      instance.sample3 = "TEST_STRING"
-      expect(instance.sample3).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.sample3 = "T" * 1024
+      expect(instance.sample3).to eq("T" * 1024)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.sample3 = "T" * (1024 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "sample4"' do
-    it 'should work' do
-      instance.sample4 = "TEST_STRING"
-      expect(instance.sample4).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.sample4 = "T" * 1024
+      expect(instance.sample4).to eq("T" * 1024)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.sample4 = "T" * (1024 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "sample5"' do
-    it 'should work' do
-      instance.sample5 = "TEST_STRING"
-      expect(instance.sample5).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.sample5 = "T" * 1024
+      expect(instance.sample5).to eq("T" * 1024)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.sample5 = "T" * (1024 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "message_flow"' do
-    it 'should work' do
-      instance.message_flow = "TEST_STRING"
-      expect(instance.message_flow).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.message_flow = "T" * 2048
+      expect(instance.message_flow).to eq("T" * 2048)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.message_flow = "T" * (2048 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "help_message"' do
-    it 'should work' do
-      instance.help_message = "TEST_STRING"
-      expect(instance.help_message).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.help_message = "T" * 255
+      expect(instance.help_message).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.help_message = "T" * (255 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "optin_keywords"' do
-    it 'should work' do
-      instance.optin_keywords = "TEST_STRING"
-      expect(instance.optin_keywords).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.optin_keywords = "T" * 255
+      expect(instance.optin_keywords).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.optin_keywords = "T" * (255 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "optout_keywords"' do
-    it 'should work' do
-      instance.optout_keywords = "TEST_STRING"
-      expect(instance.optout_keywords).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.optout_keywords = "T" * 255
+      expect(instance.optout_keywords).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.optout_keywords = "T" * (255 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "help_keywords"' do
-    it 'should work' do
-      instance.help_keywords = "TEST_STRING"
-      expect(instance.help_keywords).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.help_keywords = "T" * 255
+      expect(instance.help_keywords).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.help_keywords = "T" * (255 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "optin_message"' do
-    it 'should work' do
-      instance.optin_message = "TEST_STRING"
-      expect(instance.optin_message).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.optin_message = "T" * 255
+      expect(instance.optin_message).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.optin_message = "T" * (255 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
   describe 'test attribute "optout_message"' do
-    it 'should work' do
-      instance.optout_message = "TEST_STRING"
-      expect(instance.optout_message).to eq("TEST_STRING")  
+    it 'should assign a value of maxLength' do
+      instance.optout_message = "T" * 255
+      expect(instance.optout_message).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.optout_message = "T" * (255 + 1)}.to raise_error(ArgumentError) 
     end
   end
 
