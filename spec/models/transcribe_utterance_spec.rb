@@ -25,6 +25,7 @@ describe Freeclimb::TranscribeUtterance do
       expect(instance).to be_instance_of(Freeclimb::TranscribeUtterance)
     end
   end
+  
   describe 'test attribute "action_url"' do
     it 'should work' do
       instance.action_url = "TEST_STRING"
@@ -133,6 +134,16 @@ describe Freeclimb::TranscribeUtterance do
           prompts: Array.new(),
       )
       expect(instance.valid?).to eq(true)
+    end
+    it 'checks if properties are invalid' do
+      instance = Freeclimb::TranscribeUtterance.new(
+          action_url: nil,
+      )
+      expect(instance.valid?).to eq(false)
+    end
+    it 'checks if model is empty' do
+      instance = Freeclimb::TranscribeUtterance.new()
+      expect(instance.valid?).to eq(false)
     end
   end
 

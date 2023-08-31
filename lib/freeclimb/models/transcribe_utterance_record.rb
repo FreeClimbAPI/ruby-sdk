@@ -108,11 +108,16 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@max_length_sec.nil? && @max_length_sec > 60
-      return false if !@max_length_sec.nil? && @max_length_sec < 1
-      return false if !@rcrd_termination_silence_time_ms.nil? && @rcrd_termination_silence_time_ms > 3000
-      return false if !@rcrd_termination_silence_time_ms.nil? && @rcrd_termination_silence_time_ms <= 0
-      true
+      
+      if @save_recording.nil?
+        false
+      elsif @max_length_sec.nil?
+        false
+      elsif @rcrd_termination_silence_time_ms.nil?
+        false
+      else
+        list_invalid_properties.length() == 0
+      end
     end
 
     # Custom attribute writer method with validation

@@ -25,6 +25,7 @@ describe Freeclimb::TranscribeUtteranceRecord do
       expect(instance).to be_instance_of(Freeclimb::TranscribeUtteranceRecord)
     end
   end
+  
   describe 'test attribute "save_recording"' do
     it 'should work' do
       instance.save_recording = false
@@ -80,6 +81,16 @@ describe Freeclimb::TranscribeUtteranceRecord do
           rcrd_termination_silence_time_ms: 1,
       )
       expect(instance.valid?).to eq(true)
+    end
+    it 'checks if properties are invalid' do
+      instance = Freeclimb::TranscribeUtteranceRecord.new(
+        save_recording: nil,
+      )
+      expect(instance.valid?).to eq(false)
+    end
+    it 'checks if model is empty' do
+      instance = Freeclimb::TranscribeUtteranceRecord.new()
+      expect(instance.valid?).to eq(false)
     end
   end
 
