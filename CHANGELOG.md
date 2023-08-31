@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.5.0"></a>
+
+## [4.5.0] - 2023-08-15
+
+### Added
+
+- Transcribe Utterance Feature
+
 <a name="4.4.4"></a>
 
 ## [4.4.4] - 2023-08-24

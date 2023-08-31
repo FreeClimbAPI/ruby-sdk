@@ -135,6 +135,8 @@ docs/SmsAllOf.md
 docs/StartRecordCall.md
 docs/TerminateConference.md
 docs/TerminateConferenceAllOf.md
+docs/TranscribeUtterance.md
+docs/TranscribeUtteranceRecord.md
 docs/Unpark.md
 docs/UpdateCallRequest.md
 docs/UpdateCallRequestStatus.md
@@ -278,6 +280,8 @@ lib/freeclimb/models/sms_ten_dlc_partner_campaigns_list_result_all_of.rb
 lib/freeclimb/models/start_record_call.rb
 lib/freeclimb/models/terminate_conference.rb
 lib/freeclimb/models/terminate_conference_all_of.rb
+lib/freeclimb/models/transcribe_utterance.rb
+lib/freeclimb/models/transcribe_utterance_record.rb
 lib/freeclimb/models/unpark.rb
 lib/freeclimb/models/update_call_request.rb
 lib/freeclimb/models/update_call_request_status.rb
@@ -287,4 +291,6 @@ lib/freeclimb/models/update_conference_request_status.rb
 lib/freeclimb/version.rb
 spec/api_client_spec.rb
 spec/configuration_spec.rb
+spec/models/transcribe_utterance_record_spec.rb
+spec/models/transcribe_utterance_spec.rb
 spec/spec_helper.rb
