@@ -109,6 +109,7 @@ module Freeclimb
           self.prompts = value
         end
       end
+      self.command = "TranscribeUtterance"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
