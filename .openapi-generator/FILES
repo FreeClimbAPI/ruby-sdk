@@ -291,6 +291,4 @@ lib/freeclimb/models/update_conference_request_status.rb
 lib/freeclimb/version.rb
 spec/api_client_spec.rb
 spec/configuration_spec.rb
-spec/models/transcribe_utterance_record_spec.rb
-spec/models/transcribe_utterance_spec.rb
 spec/spec_helper.rb

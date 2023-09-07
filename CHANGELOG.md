@@ -8,12 +8,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 
 None
+
 <a name="4.5.1"></a>
 
 ## [4.5.1] - 2023-09-01
 
 ### Added
 
+- TranscribeUtterance into a PerCL command
 - MIT License
 
 <a name="4.5.0"></a>

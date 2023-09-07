@@ -15,7 +15,7 @@ require 'time'
 
 module Freeclimb
   # The `TranscribeUtterance` command transcribes the caller’s voice and returns transcription of the audio and optionally returns the recording of the audio transcribed.  `TranscribeUtterance` is blocking and is a terminal command. As such, the actionUrl property is required, and control of the Call picks up using the `PerCL` returned in response of the `actionUrl`. Recording and Transcription information is returned in the actionUrl request. If the reason this command ended was due to the call hanging up, any PerCL returned will not execute.
-  class TranscribeUtterance
+  class TranscribeUtterance < PerclCommand
     attr_accessor :action_url
 
     attr_accessor :play_beep
@@ -61,6 +61,13 @@ module Freeclimb
     def self.openapi_nullable
       Set.new([
       ])
+    end
+
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'PerclCommand'
+      ]
     end
 
     # Initializes the object
@@ -109,6 +116,7 @@ module Freeclimb
           self.prompts = value
         end
       end
+      self.command = "TranscribeUtterance"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -255,7 +263,7 @@ module Freeclimb
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?
