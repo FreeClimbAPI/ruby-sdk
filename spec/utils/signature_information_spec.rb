@@ -12,16 +12,16 @@ describe 'SignatureInformation' do
                 @time_calculation = DateTime.now.strftime('%s').to_i 
                 @request_header = "t=#{@time_calculation},v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8"
                 @signature_information_object = Freeclimb::SignatureInformation.new(@request_header)
-                tolerance = 5 * 60 * 1000
+                tolerance = 5 * 60
                 expect(@signature_information_object.is_request_time_valid(tolerance)).to be true
             end
         end
         context 'request time is not within tolerance threshold' do
             it 'returns false since it does not match condition of request time being within tolerance threshold' do
-                @time_calculation = DateTime.now.strftime('%s').to_i - (600 * 60 * 1000) 
+                @time_calculation = DateTime.now.strftime('%s').to_i - (600 * 60) 
                 @request_header = "t=#{@time_calculation},v1=c3957749baf61df4b1506802579cc69a74c77a1ae21447b930e5a704f9ec4120,v1=1ba18712726898fbbe48cd862dd096a709f7ad761a5bab14bda9ac24d963a6a8"
                 @signature_information_object = Freeclimb::SignatureInformation.new(@request_header)
-                tolerance = 500 * 60 * 1000
+                tolerance = 500 * 60
                 expect(@signature_information_object.is_request_time_valid(tolerance)).to be false
             end
         end
