@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.5.2"></a>
+
+## [4.5.2] - 2024-04-09
+
+### Added
+
+- Fix for Signature Information class method bug
+
 <a name="4.5.1"></a>
 
 ## [4.5.1] - 2023-09-01

@@ -23,7 +23,7 @@ module Freeclimb
         def is_request_time_valid(tolerance)
             currentTime = self.get_current_unix_time()
             timeCalculation = @request_timestamp + tolerance
-            return (timeCalculation) < currentTime
+            return currentTime < (timeCalculation)
         end
 
         def is_signature_safe(request_body, signing_secret)
