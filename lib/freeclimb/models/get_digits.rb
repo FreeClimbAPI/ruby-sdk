@@ -70,7 +70,7 @@ module Freeclimb
         :'digit_timeout_ms' => :'Integer',
         :'finish_on_key' => :'String',
         :'flush_buffer' => :'Boolean',
-        :'initial_timeout_ms' => :'String',
+        :'initial_timeout_ms' => :'Integer',
         :'max_digits' => :'Integer',
         :'min_digits' => :'Integer',
         :'prompts' => :'Array<PerclCommand>',

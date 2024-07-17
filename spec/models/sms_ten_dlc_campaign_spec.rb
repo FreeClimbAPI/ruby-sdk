@@ -264,6 +264,56 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
   end
 
+  describe 'test attribute "optin_keywords"' do
+    it 'should assign a value of maxLength' do
+      instance.optin_keywords = "T" * 255
+      expect(instance.optin_keywords).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.optin_keywords = "T" * (255 + 1)}.to raise_error(ArgumentError) 
+    end
+  end
+
+  describe 'test attribute "optout_keywords"' do
+    it 'should assign a value of maxLength' do
+      instance.optout_keywords = "T" * 255
+      expect(instance.optout_keywords).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.optout_keywords = "T" * (255 + 1)}.to raise_error(ArgumentError) 
+    end
+  end
+
+  describe 'test attribute "help_keywords"' do
+    it 'should assign a value of maxLength' do
+      instance.help_keywords = "T" * 255
+      expect(instance.help_keywords).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.help_keywords = "T" * (255 + 1)}.to raise_error(ArgumentError) 
+    end
+  end
+
+  describe 'test attribute "optin_message"' do
+    it 'should assign a value of maxLength' do
+      instance.optin_message = "T" * 255
+      expect(instance.optin_message).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.optin_message = "T" * (255 + 1)}.to raise_error(ArgumentError) 
+    end
+  end
+
+  describe 'test attribute "optout_message"' do
+    it 'should assign a value of maxLength' do
+      instance.optout_message = "T" * 255
+      expect(instance.optout_message).to eq("T" * 255)  
+    end
+    it 'should not assign a value over maxLength' do
+      expect{instance.optout_message = "T" * (255 + 1)}.to raise_error(ArgumentError) 
+    end
+  end
+
   describe 'test attribute "reference_id"' do
     it 'should assign a value of maxLength' do
       instance.reference_id = "T" * 50
@@ -319,6 +369,11 @@ describe Freeclimb::SMSTenDLCCampaign do
           sample5: "TS",
           message_flow: "TS",
           help_message: "TS",
+          optin_keywords: "TS",
+          optout_keywords: "TS",
+          help_keywords: "TS",
+          optin_message: "TS",
+          optout_message: "TS",
           reference_id: "TS",
           mock: true,
           next_renewal_or_expiration_date: "2000-01-01",
@@ -354,6 +409,11 @@ describe Freeclimb::SMSTenDLCCampaign do
           sample5: "TS",
           message_flow: "TS",
           help_message: "TS",
+          optin_keywords: "TS",
+          optout_keywords: "TS",
+          help_keywords: "TS",
+          optin_message: "TS",
+          optout_message: "TS",
           reference_id: "TS",
           mock: true,
           next_renewal_or_expiration_date: "2000-01-01",
@@ -390,6 +450,11 @@ describe Freeclimb::SMSTenDLCCampaign do
           sample5: "TS",
           message_flow: "TS",
           help_message: "TS",
+          optin_keywords: "TS",
+          optout_keywords: "TS",
+          help_keywords: "TS",
+          optin_message: "TS",
+          optout_message: "TS",
           reference_id: "TS",
           mock: true,
           next_renewal_or_expiration_date: "2000-01-01",
@@ -429,6 +494,11 @@ describe Freeclimb::SMSTenDLCCampaign do
           sample5: "TS",
           message_flow: "TS",
           help_message: "TS",
+          optin_keywords: "TS",
+          optout_keywords: "TS",
+          help_keywords: "TS",
+          optin_message: "TS",
+          optout_message: "TS",
           reference_id: "TS",
           mock: true,
           next_renewal_or_expiration_date: "2000-01-01",
@@ -471,6 +541,11 @@ describe Freeclimb::SMSTenDLCCampaign do
           sample5: "TS",
           message_flow: "TS",
           help_message: "TS",
+          optin_keywords: "TS",
+          optout_keywords: "TS",
+          help_keywords: "TS",
+          optin_message: "TS",
+          optout_message: "TS",
           reference_id: "TS",
           mock: true,
       )
@@ -501,6 +576,11 @@ describe Freeclimb::SMSTenDLCCampaign do
           sample5: "TS",
           message_flow: "TS",
           help_message: "TS",
+          optin_keywords: "TS",
+          optout_keywords: "TS",
+          help_keywords: "TS",
+          optin_message: "TS",
+          optout_message: "TS",
           reference_id: "TS",
           mock: true,
       )
@@ -534,6 +614,11 @@ describe Freeclimb::SMSTenDLCCampaign do
           sample5: "TS",
           message_flow: "TS",
           help_message: "TS",
+          optin_keywords: "TS",
+          optout_keywords: "TS",
+          help_keywords: "TS",
+          optin_message: "TS",
+          optout_message: "TS",
           reference_id: "TS",
           mock: true,
       )
@@ -564,6 +649,11 @@ describe Freeclimb::SMSTenDLCCampaign do
           sample5: "ST",
           message_flow: "ST",
           help_message: "ST",
+          optin_keywords: "ST",
+          optout_keywords: "ST",
+          help_keywords: "ST",
+          optin_message: "ST",
+          optout_message: "ST",
           reference_id: "ST",
           mock: false,
       )
@@ -602,6 +692,11 @@ describe Freeclimb::SMSTenDLCCampaign do
       sample5: "TS",
       message_flow: "TS",
       help_message: "TS",
+      optin_keywords: "TS",
+      optout_keywords: "TS",
+      help_keywords: "TS",
+      optin_message: "TS",
+      optout_message: "TS",
       reference_id: "TS",
       mock: true,
       next_renewal_or_expiration_date: "2000-01-01",
@@ -641,6 +736,11 @@ describe Freeclimb::SMSTenDLCCampaign do
         sample5: "TS",
         message_flow: "TS",
         help_message: "TS",
+        optin_keywords: "TS",
+        optout_keywords: "TS",
+        help_keywords: "TS",
+        optin_message: "TS",
+        optout_message: "TS",
         reference_id: "TS",
         mock: true,
         next_renewal_or_expiration_date: "2000-01-01",
@@ -680,6 +780,11 @@ describe Freeclimb::SMSTenDLCCampaign do
         sample5: "TS",
         message_flow: "TS",
         help_message: "TS",
+        optin_keywords: "TS",
+        optout_keywords: "TS",
+        help_keywords: "TS",
+        optin_message: "TS",
+        optout_message: "TS",
         reference_id: "TS",
         mock: true,
         next_renewal_or_expiration_date: "2000-01-01",
@@ -768,6 +873,21 @@ describe Freeclimb::SMSTenDLCCampaign do
     it 'deserializes the data of help_message' do
       expect(instance._deserialize("String", instance.help_message)).to be_a_kind_of(String)
     end
+    it 'deserializes the data of optin_keywords' do
+      expect(instance._deserialize("String", instance.optin_keywords)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of optout_keywords' do
+      expect(instance._deserialize("String", instance.optout_keywords)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of help_keywords' do
+      expect(instance._deserialize("String", instance.help_keywords)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of optin_message' do
+      expect(instance._deserialize("String", instance.optin_message)).to be_a_kind_of(String)
+    end
+    it 'deserializes the data of optout_message' do
+      expect(instance._deserialize("String", instance.optout_message)).to be_a_kind_of(String)
+    end
     it 'deserializes the data of reference_id' do
       expect(instance._deserialize("String", instance.reference_id)).to be_a_kind_of(String)
     end
@@ -810,6 +930,11 @@ describe Freeclimb::SMSTenDLCCampaign do
         sample5: "TS",
         message_flow: "TS",
         help_message: "TS",
+        optin_keywords: "TS",
+        optout_keywords: "TS",
+        help_keywords: "TS",
+        optin_message: "TS",
+        optout_message: "TS",
         reference_id: "TS",
         mock: true,
         next_renewal_or_expiration_date: "2000-01-01",
@@ -849,6 +974,11 @@ describe Freeclimb::SMSTenDLCCampaign do
         sample5: "TS",
         message_flow: "TS",
         help_message: "TS",
+        optin_keywords: "TS",
+        optout_keywords: "TS",
+        help_keywords: "TS",
+        optin_message: "TS",
+        optout_message: "TS",
         reference_id: "TS",
         mock: true,
         next_renewal_or_expiration_date: "2000-01-01",
@@ -886,6 +1016,11 @@ describe Freeclimb::SMSTenDLCCampaign do
         sample5: "TS",
         message_flow: "TS",
         help_message: "TS",
+        optin_keywords: "TS",
+        optout_keywords: "TS",
+        help_keywords: "TS",
+        optin_message: "TS",
+        optout_message: "TS",
         reference_id: "TS",
         mock: true,
         next_renewal_or_expiration_date: "2000-01-01",
@@ -919,6 +1054,11 @@ describe Freeclimb::SMSTenDLCCampaign do
         sample5: "TS",
         message_flow: "TS",
         help_message: "TS",
+        optin_keywords: "TS",
+        optout_keywords: "TS",
+        help_keywords: "TS",
+        optin_message: "TS",
+        optout_message: "TS",
         reference_id: "TS",
         mock: true,
         next_renewal_or_expiration_date: "2000-01-01",
@@ -984,6 +1124,16 @@ describe Freeclimb::SMSTenDLCCampaign do
         message_flow: "TS",
       
         help_message: "TS",
+      
+        optin_keywords: "TS",
+      
+        optout_keywords: "TS",
+      
+        help_keywords: "TS",
+      
+        optin_message: "TS",
+      
+        optout_message: "TS",
       
         reference_id: "TS",
       
@@ -1074,6 +1224,21 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
     it 'returns help_message in the form of hash' do
       expect(instance._to_hash(instance.help_message)).to eq(instance.help_message)
+    end
+    it 'returns optin_keywords in the form of hash' do
+      expect(instance._to_hash(instance.optin_keywords)).to eq(instance.optin_keywords)
+    end
+    it 'returns optout_keywords in the form of hash' do
+      expect(instance._to_hash(instance.optout_keywords)).to eq(instance.optout_keywords)
+    end
+    it 'returns help_keywords in the form of hash' do
+      expect(instance._to_hash(instance.help_keywords)).to eq(instance.help_keywords)
+    end
+    it 'returns optin_message in the form of hash' do
+      expect(instance._to_hash(instance.optin_message)).to eq(instance.optin_message)
+    end
+    it 'returns optout_message in the form of hash' do
+      expect(instance._to_hash(instance.optout_message)).to eq(instance.optout_message)
     end
     it 'returns reference_id in the form of hash' do
       expect(instance._to_hash(instance.reference_id)).to eq(instance.reference_id)

@@ -14,35 +14,82 @@ require 'date'
 require 'time'
 
 module Freeclimb
-  # The `TerminateConference` command terminates an existing Conference. Any active participants are hung up on by FreeClimb. If this is not the desired behavior, use the `RemoveFromConference` command to unbridge Calls that should not be hung up. Note: The Call requesting TerminateConference must be on the same Conference for this command to execute.
-  class TerminateConference < PerclCommand
+  class SMSTollFreeCampaignsListResult
+    # Total amount of requested resource.
+    attr_accessor :total
+
+    # Resource index at start of current page
+    attr_accessor :start
+
+    # Resource index at end of current page
+    attr_accessor :_end
+
+    # Current page
+    attr_accessor :page
+
+    # Total number of pages
+    attr_accessor :num_pages
+
+    # Number of items per page
+    attr_accessor :page_size
+
+    # Uri to retrieve the next page of items
+    attr_accessor :next_page_uri
+
+    attr_accessor :brands
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'total' => :'total',
+        :'start' => :'start',
+        :'_end' => :'end',
+        :'page' => :'page',
+        :'num_pages' => :'numPages',
+        :'page_size' => :'pageSize',
+        :'next_page_uri' => :'nextPageUri',
+        :'brands' => :'brands'
       }
     end
 
-    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
+    # Returns all the JSON keys this model knows about
     def self.acceptable_attributes
-      attribute_map.values.concat(superclass.acceptable_attributes)
+      attribute_map.values
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'total' => :'Integer',
+        :'start' => :'Integer',
+        :'_end' => :'Integer',
+        :'page' => :'Integer',
+        :'num_pages' => :'Integer',
+        :'page_size' => :'Integer',
+        :'next_page_uri' => :'String',
+        :'brands' => :'Array<SMSTollFreeCampaign>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'total',
+        :'start',
+        :'_end',
+        :'page',
+        :'num_pages',
+        :'page_size',
+        :'next_page_uri',
+        :'brands'
       ])
     end
 
     # List of class defined in allOf (OpenAPI v3)
     def self.openapi_all_of
       [
-      :'PerclCommand'
+      :'PaginationModel',
+      :'SMSTollFreeCampaignsListResultAllOf'
       ]
     end
 
@@ -50,26 +97,56 @@ module Freeclimb
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::TerminateConference` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::SMSTollFreeCampaignsListResult` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::TerminateConference`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::SMSTollFreeCampaignsListResult`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      # call parent's initialize
-      super(attributes)
-      self.command = "TerminateConference"
+      if attributes.key?(:'total')
+        self.total = attributes[:'total']
+      end
+
+      if attributes.key?(:'start')
+        self.start = attributes[:'start']
+      end
+
+      if attributes.key?(:'_end')
+        self._end = attributes[:'_end']
+      end
+
+      if attributes.key?(:'page')
+        self.page = attributes[:'page']
+      end
+
+      if attributes.key?(:'num_pages')
+        self.num_pages = attributes[:'num_pages']
+      end
+
+      if attributes.key?(:'page_size')
+        self.page_size = attributes[:'page_size']
+      end
+
+      if attributes.key?(:'next_page_uri')
+        self.next_page_uri = attributes[:'next_page_uri']
+      end
+
+      if attributes.key?(:'brands')
+        if (value = attributes[:'brands']).is_a?(Array)
+          self.brands = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
+      invalid_properties = Array.new
       invalid_properties
     end
 
@@ -77,13 +154,26 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
+      if @total.nil?
+        false
+      else
+        list_invalid_properties.length() == 0
+      end
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class && super(o)
+      self.class == o.class &&
+          total == o.total &&
+          start == o.start &&
+          _end == o._end &&
+          page == o.page &&
+          num_pages == o.num_pages &&
+          page_size == o.page_size &&
+          next_page_uri == o.next_page_uri &&
+          brands == o.brands
     end
 
     # @see the `==` method
@@ -95,7 +185,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [].hash
+      [total, start, _end, page, num_pages, page_size, next_page_uri, brands].hash
     end
 
     # Builds the object from hash
@@ -110,7 +200,6 @@ module Freeclimb
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
-      super(attributes)
       self.class.openapi_types.each_pair do |key, type|
         if attributes[self.class.attribute_map[key]].nil? && self.class.openapi_nullable.include?(key)
           self.send("#{key}=", nil)
@@ -186,7 +275,7 @@ module Freeclimb
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = super
+      hash = {}
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

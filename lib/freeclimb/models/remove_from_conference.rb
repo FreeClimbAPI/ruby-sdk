@@ -16,13 +16,9 @@ require 'time'
 module Freeclimb
   # The `RemoveFromConference` command removes a Participant from a Conference but does not hang up. Instead, the Call is simply unbridged and what happens next with the Call is determined by the PerCL returned in response to the `leaveConferenceUrl` attribute.
   class RemoveFromConference < PerclCommand
-    # ID of the Call leg to be removed from the Conference. The Call must be in a Conference or an error will be triggered.
-    attr_accessor :call_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'call_id' => :'callId'
       }
     end
 
@@ -34,7 +30,6 @@ module Freeclimb
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'call_id' => :'String'
       }
     end
 
@@ -47,8 +42,7 @@ module Freeclimb
     # List of class defined in allOf (OpenAPI v3)
     def self.openapi_all_of
       [
-      :'PerclCommand',
-      :'RemoveFromConferenceAllOf'
+      :'PerclCommand'
       ]
     end
 
@@ -69,10 +63,6 @@ module Freeclimb
 
       # call parent's initialize
       super(attributes)
-
-      if attributes.key?(:'call_id')
-        self.call_id = attributes[:'call_id']
-      end
       self.command = "RemoveFromConference"
     end
 
@@ -80,10 +70,6 @@ module Freeclimb
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @call_id.nil?
-        invalid_properties.push('invalid value for "call_id", call_id cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -91,19 +77,13 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
-      if @call_id.nil?
-        false
-      else
-        list_invalid_properties.length() == 0
-      end
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          call_id == o.call_id && super(o)
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -115,7 +95,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [call_id].hash
+      [].hash
     end
 
     # Builds the object from hash

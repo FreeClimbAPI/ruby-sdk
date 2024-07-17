@@ -14,62 +14,156 @@ require 'date'
 require 'time'
 
 module Freeclimb
-  # The `TerminateConference` command terminates an existing Conference. Any active participants are hung up on by FreeClimb. If this is not the desired behavior, use the `RemoveFromConference` command to unbridge Calls that should not be hung up. Note: The Call requesting TerminateConference must be on the same Conference for this command to execute.
-  class TerminateConference < PerclCommand
+  class SMSTollFreeCampaign
+    # ID of the account that created this toll-free campaign
+    attr_accessor :account_id
+
+    # Alphanumeric identifier used by the platform to identify this toll-free campaign
+    attr_accessor :campaign_id
+
+    attr_accessor :use_case
+
+    # Current toll-free campaign registration status.Possible values: UNREGISTERED,INITIATED,PENDING,DECLINED,REGISTERED. A newly created campaign defaults to INITIATED status. 
+    attr_accessor :registration_status
+
+    attr_accessor :date_created
+
+    attr_accessor :date_updated
+
+    attr_accessor :revision
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'account_id' => :'accountId',
+        :'campaign_id' => :'campaignId',
+        :'use_case' => :'useCase',
+        :'registration_status' => :'registrationStatus',
+        :'date_created' => :'dateCreated',
+        :'date_updated' => :'dateUpdated',
+        :'revision' => :'revision'
       }
     end
 
-    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
+    # Returns all the JSON keys this model knows about
     def self.acceptable_attributes
-      attribute_map.values.concat(superclass.acceptable_attributes)
+      attribute_map.values
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'account_id' => :'String',
+        :'campaign_id' => :'String',
+        :'use_case' => :'String',
+        :'registration_status' => :'String',
+        :'date_created' => :'String',
+        :'date_updated' => :'String',
+        :'revision' => :'Integer'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'account_id',
       ])
-    end
-
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-      :'PerclCommand'
-      ]
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::TerminateConference` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::SMSTollFreeCampaign` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::TerminateConference`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::SMSTollFreeCampaign`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      # call parent's initialize
-      super(attributes)
-      self.command = "TerminateConference"
+      if attributes.key?(:'account_id')
+        self.account_id = attributes[:'account_id']
+      end
+
+      if attributes.key?(:'campaign_id')
+        self.campaign_id = attributes[:'campaign_id']
+      end
+
+      if attributes.key?(:'use_case')
+        self.use_case = attributes[:'use_case']
+      end
+
+      if attributes.key?(:'registration_status')
+        self.registration_status = attributes[:'registration_status']
+      end
+
+      if attributes.key?(:'date_created')
+        self.date_created = attributes[:'date_created']
+      end
+
+      if attributes.key?(:'date_updated')
+        self.date_updated = attributes[:'date_updated']
+      end
+
+      if attributes.key?(:'revision')
+        self.revision = attributes[:'revision']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
+      invalid_properties = Array.new
+      if @campaign_id.nil?
+        invalid_properties.push('invalid value for "campaign_id", campaign_id cannot be nil.')
+      end
+
+      if @use_case.nil?
+        invalid_properties.push('invalid value for "use_case", use_case cannot be nil.')
+      end
+
+      if @registration_status.nil?
+        invalid_properties.push('invalid value for "registration_status", registration_status cannot be nil.')
+      end
+
+      if @date_created.nil?
+        invalid_properties.push('invalid value for "date_created", date_created cannot be nil.')
+      end
+
+      if @date_updated.nil?
+        invalid_properties.push('invalid value for "date_updated", date_updated cannot be nil.')
+      end
+
+      if @revision.nil?
+        invalid_properties.push('invalid value for "revision", revision cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -77,13 +171,47 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
+      if @account_id.nil?
+        false
+      elsif @campaign_id.nil?
+        false
+      elsif @use_case.nil?
+        false
+      elsif @registration_status.nil?
+        false
+      elsif @date_created.nil?
+        false
+      elsif @date_updated.nil?
+        false
+      elsif @revision.nil?
+        false
+      else
+        list_invalid_properties.length() == 0
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] registration_status Object to be assigned
+    def registration_status=(registration_status)
+      validator = EnumAttributeValidator.new('String', ["UNREGISTERED", "INITIATED", "PENDING", "DECLINED", "REGISTERED"])
+      unless validator.valid?(registration_status)
+        fail ArgumentError, "invalid value for \"registration_status\", must be one of #{validator.allowable_values}."
+      end
+      @registration_status = registration_status
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class && super(o)
+      self.class == o.class &&
+          account_id == o.account_id &&
+          campaign_id == o.campaign_id &&
+          use_case == o.use_case &&
+          registration_status == o.registration_status &&
+          date_created == o.date_created &&
+          date_updated == o.date_updated &&
+          revision == o.revision
     end
 
     # @see the `==` method
@@ -95,7 +223,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [].hash
+      [account_id, campaign_id, use_case, registration_status, date_created, date_updated, revision].hash
     end
 
     # Builds the object from hash
@@ -110,7 +238,6 @@ module Freeclimb
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
-      super(attributes)
       self.class.openapi_types.each_pair do |key, type|
         if attributes[self.class.attribute_map[key]].nil? && self.class.openapi_nullable.include?(key)
           self.send("#{key}=", nil)
@@ -186,7 +313,7 @@ module Freeclimb
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = super
+      hash = {}
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

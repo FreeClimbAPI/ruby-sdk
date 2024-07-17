@@ -27,9 +27,6 @@ module Freeclimb
     # ID of the Conference to which to add the Participant (Call leg). Conference must exist or an error will result.
     attr_accessor :conference_id
 
-    # ID of the Call that will be added to the specified Conference. The Call must be in progress or an error will result. If the Call is part of an existing Conference, it is first removed from that Conference and is then moved to the new one.
-    attr_accessor :call_id
-
     # URL to be invoked when the Participant leaves the Conference. 
     attr_accessor :leave_conference_url
 
@@ -52,7 +49,6 @@ module Freeclimb
         :'call_control_sequence' => :'callControlSequence',
         :'call_control_url' => :'callControlUrl',
         :'conference_id' => :'conferenceId',
-        :'call_id' => :'callId',
         :'leave_conference_url' => :'leaveConferenceUrl',
         :'listen' => :'listen',
         :'notification_url' => :'notificationUrl',
@@ -73,7 +69,6 @@ module Freeclimb
         :'call_control_sequence' => :'String',
         :'call_control_url' => :'String',
         :'conference_id' => :'String',
-        :'call_id' => :'String',
         :'leave_conference_url' => :'String',
         :'listen' => :'Boolean',
         :'notification_url' => :'String',
@@ -117,10 +112,6 @@ module Freeclimb
 
       if attributes.key?(:'conference_id')
         self.conference_id = attributes[:'conference_id']
-      end
-
-      if attributes.key?(:'call_id')
-        self.call_id = attributes[:'call_id']
       end
 
       if attributes.key?(:'leave_conference_url')
@@ -167,8 +158,6 @@ module Freeclimb
         false
       elsif @conference_id.nil?
         false
-      elsif @call_id.nil?
-        false
       elsif @leave_conference_url.nil?
         false
       elsif @listen.nil?
@@ -193,7 +182,6 @@ module Freeclimb
           call_control_sequence == o.call_control_sequence &&
           call_control_url == o.call_control_url &&
           conference_id == o.conference_id &&
-          call_id == o.call_id &&
           leave_conference_url == o.leave_conference_url &&
           listen == o.listen &&
           notification_url == o.notification_url &&
@@ -210,7 +198,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [allow_call_control, call_control_sequence, call_control_url, conference_id, call_id, leave_conference_url, listen, notification_url, start_conf_on_enter, talk].hash
+      [allow_call_control, call_control_sequence, call_control_url, conference_id, leave_conference_url, listen, notification_url, start_conf_on_enter, talk].hash
     end
 
     # Builds the object from hash

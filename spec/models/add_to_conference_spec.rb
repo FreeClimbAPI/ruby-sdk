@@ -54,13 +54,6 @@ describe Freeclimb::AddToConference do
     end
   end
 
-  describe 'test attribute "call_id"' do
-    it 'should work' do
-      instance.call_id = "TEST_STRING"
-      expect(instance.call_id).to eq("TEST_STRING")  
-    end
-  end
-
   describe 'test attribute "leave_conference_url"' do
     it 'should work' do
       instance.leave_conference_url = "TEST_STRING"
@@ -103,7 +96,6 @@ describe Freeclimb::AddToConference do
           call_control_sequence: "TS",
           call_control_url: "TS",
           conference_id: "TS",
-          call_id: "TS",
           leave_conference_url: "TS",
           listen: true,
           notification_url: "TS",
@@ -117,7 +109,6 @@ describe Freeclimb::AddToConference do
           call_control_sequence: "TS",
           call_control_url: "TS",
           conference_id: "TS",
-          call_id: "TS",
           leave_conference_url: "TS",
           listen: true,
           notification_url: "TS",
@@ -132,7 +123,6 @@ describe Freeclimb::AddToConference do
           call_control_sequence: "TS",
           call_control_url: "TS",
           conference_id: "TS",
-          call_id: "TS",
           leave_conference_url: "TS",
           listen: true,
           notification_url: "TS",
@@ -150,7 +140,6 @@ describe Freeclimb::AddToConference do
           call_control_sequence: "TS",
           call_control_url: "TS",
           conference_id: "TS",
-          call_id: "TS",
           leave_conference_url: "TS",
           listen: true,
           notification_url: "TS",
@@ -179,7 +168,6 @@ describe Freeclimb::AddToConference do
           call_control_sequence: "TS",
           call_control_url: "TS",
           conference_id: "TS",
-          call_id: "TS",
           leave_conference_url: "TS",
           listen: true,
           notification_url: "TS",
@@ -191,7 +179,6 @@ describe Freeclimb::AddToConference do
           call_control_sequence: "TS",
           call_control_url: "TS",
           conference_id: "TS",
-          call_id: "TS",
           leave_conference_url: "TS",
           listen: true,
           notification_url: "TS",
@@ -206,7 +193,6 @@ describe Freeclimb::AddToConference do
           call_control_sequence: "TS",
           call_control_url: "TS",
           conference_id: "TS",
-          call_id: "TS",
           leave_conference_url: "TS",
           listen: true,
           notification_url: "TS",
@@ -218,7 +204,6 @@ describe Freeclimb::AddToConference do
           call_control_sequence: "ST",
           call_control_url: "ST",
           conference_id: "ST",
-          call_id: "ST",
           leave_conference_url: "ST",
           listen: false,
           notification_url: "ST",
@@ -236,7 +221,6 @@ describe Freeclimb::AddToConference do
       call_control_sequence: "TS",
       call_control_url: "TS",
       conference_id: "TS",
-      call_id: "TS",
       leave_conference_url: "TS",
       listen: true,
       notification_url: "TS",
@@ -254,7 +238,6 @@ describe Freeclimb::AddToConference do
         call_control_sequence: "TS",
         call_control_url: "TS",
         conference_id: "TS",
-        call_id: "TS",
         leave_conference_url: "TS",
         listen: true,
         notification_url: "TS",
@@ -272,7 +255,6 @@ describe Freeclimb::AddToConference do
         call_control_sequence: "TS",
         call_control_url: "TS",
         conference_id: "TS",
-        call_id: "TS",
         leave_conference_url: "TS",
         listen: true,
         notification_url: "TS",
@@ -290,9 +272,6 @@ describe Freeclimb::AddToConference do
     end
     it 'deserializes the data of conference_id' do
       expect(instance._deserialize("String", instance.conference_id)).to be_a_kind_of(String)
-    end
-    it 'deserializes the data of call_id' do
-      expect(instance._deserialize("String", instance.call_id)).to be_a_kind_of(String)
     end
     it 'deserializes the data of leave_conference_url' do
       expect(instance._deserialize("String", instance.leave_conference_url)).to be_a_kind_of(String)
@@ -318,7 +297,6 @@ describe Freeclimb::AddToConference do
         call_control_sequence: "TS",
         call_control_url: "TS",
         conference_id: "TS",
-        call_id: "TS",
         leave_conference_url: "TS",
         listen: true,
         notification_url: "TS",
@@ -336,7 +314,6 @@ describe Freeclimb::AddToConference do
         call_control_sequence: "TS",
         call_control_url: "TS",
         conference_id: "TS",
-        call_id: "TS",
         leave_conference_url: "TS",
         listen: true,
         notification_url: "TS",
@@ -352,7 +329,6 @@ describe Freeclimb::AddToConference do
         call_control_sequence: "TS",
         call_control_url: "TS",
         conference_id: "TS",
-        call_id: "TS",
         leave_conference_url: "TS",
         listen: true,
         notification_url: "TS",
@@ -364,7 +340,6 @@ describe Freeclimb::AddToConference do
         call_control_sequence: "TS",
         call_control_url: "TS",
         conference_id: "TS",
-        call_id: "TS",
         leave_conference_url: "TS",
         listen: true,
         notification_url: "TS",
@@ -384,8 +359,6 @@ describe Freeclimb::AddToConference do
         call_control_url: "TS",
       
         conference_id: "TS",
-      
-        call_id: "TS",
       
         leave_conference_url: "TS",
       
@@ -408,9 +381,6 @@ describe Freeclimb::AddToConference do
     end
     it 'returns conference_id in the form of hash' do
       expect(instance._to_hash(instance.conference_id)).to eq(instance.conference_id)
-    end
-    it 'returns call_id in the form of hash' do
-      expect(instance._to_hash(instance.call_id)).to eq(instance.call_id)
     end
     it 'returns leave_conference_url in the form of hash' do
       expect(instance._to_hash(instance.leave_conference_url)).to eq(instance.leave_conference_url)

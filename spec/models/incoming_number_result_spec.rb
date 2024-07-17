@@ -138,6 +138,13 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
 
+  describe 'test attribute "tfn"' do
+    it 'should work' do
+      instance.tfn = Freeclimb::TFN.new
+      expect(instance.tfn).to be_instance_of(Freeclimb::TFN)
+    end
+  end
+
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::IncomingNumberResult.new(
@@ -157,6 +164,7 @@ describe Freeclimb::IncomingNumberResult do
           voice_enabled: true,
           sms_enabled: true,
           offnet: true,
+          tfn: Freeclimb::TFN.new,
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::IncomingNumberResult' do
@@ -177,6 +185,7 @@ describe Freeclimb::IncomingNumberResult do
           voice_enabled: true,
           sms_enabled: true,
           offnet: true,
+          tfn: Freeclimb::TFN.new,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -198,6 +207,7 @@ describe Freeclimb::IncomingNumberResult do
           voice_enabled: true,
           sms_enabled: true,
           offnet: true,
+          tfn: Freeclimb::TFN.new,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -222,6 +232,7 @@ describe Freeclimb::IncomingNumberResult do
           voice_enabled: true,
           sms_enabled: true,
           offnet: true,
+          tfn: Freeclimb::TFN.new,
       )
       expect(instance.valid?).to eq(true)
     end
@@ -333,6 +344,7 @@ describe Freeclimb::IncomingNumberResult do
       voice_enabled: true,
       sms_enabled: true,
       offnet: true,
+      tfn: Freeclimb::TFN.new,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -357,6 +369,7 @@ describe Freeclimb::IncomingNumberResult do
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
+        tfn: Freeclimb::TFN.new,
       )
       instance_2 = Freeclimb::IncomingNumberResult.new
       expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
@@ -381,6 +394,7 @@ describe Freeclimb::IncomingNumberResult do
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
+        tfn: Freeclimb::TFN.new,
     )
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
@@ -430,6 +444,9 @@ describe Freeclimb::IncomingNumberResult do
     it 'deserializes the data of offnet' do
       expect(instance._deserialize("Boolean", instance.offnet)).to be_a_kind_of(TrueClass)
     end
+    it 'deserializes the data of tfn' do
+      expect(instance._deserialize("Object", instance.tfn)).to be_a_kind_of(Freeclimb::TFN)
+    end
   end
 
   describe 'test method "to_s"' do
@@ -451,6 +468,7 @@ describe Freeclimb::IncomingNumberResult do
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
+        tfn: Freeclimb::TFN.new,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -475,6 +493,7 @@ describe Freeclimb::IncomingNumberResult do
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
+        tfn: Freeclimb::TFN.new,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -497,6 +516,7 @@ describe Freeclimb::IncomingNumberResult do
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
+        tfn: Freeclimb::TFN.new,
       )
       instance_2 = Freeclimb::IncomingNumberResult.new(
         uri: "TS",
@@ -515,6 +535,7 @@ describe Freeclimb::IncomingNumberResult do
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
+        tfn: Freeclimb::TFN.new,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -552,6 +573,7 @@ describe Freeclimb::IncomingNumberResult do
         sms_enabled: true,
       
         offnet: true,
+      
       )
     it 'returns uri in the form of hash' do
       expect(instance._to_hash(instance.uri)).to eq(instance.uri)
@@ -600,6 +622,9 @@ describe Freeclimb::IncomingNumberResult do
     end
     it 'returns offnet in the form of hash' do
       expect(instance._to_hash(instance.offnet)).to eq(instance.offnet)
+    end
+    it 'returns tfn in the form of hash' do
+      expect(instance._to_hash(instance.tfn)).to eq(instance.tfn)
     end
   end
 

@@ -1763,6 +1763,123 @@ module Freeclimb
       return data, status_code, headers
     end
 
+    # Get a TollFree SMS Campaign
+    # @param campaign_id [String] String that uniquely identifies this TollFree Campaign resource.
+    # @param [Hash] opts the optional parameters
+    # @return [SMSTollFreeCampaign]
+    def get_toll_free_sms_campaign(campaign_id, opts = {})
+      data, _status_code, _headers = get_toll_free_sms_campaign_with_http_info(campaign_id, opts)
+      data
+    end
+
+    # Get a TollFree SMS Campaign
+    # @param campaign_id [String] String that uniquely identifies this TollFree Campaign resource.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SMSTollFreeCampaign, Integer, Hash)>] SMSTollFreeCampaign data, response status code and response headers
+    def get_toll_free_sms_campaign_with_http_info(campaign_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_toll_free_sms_campaign ...'
+      end
+
+      # verify the required parameter 'campaign_id' is set
+      if @api_client.config.client_side_validation && campaign_id.nil?
+        fail ArgumentError, "Missing the required parameter 'campaign_id' when calling DefaultApi.get_toll_free_sms_campaign"
+      end
+      # resource path
+      local_var_path = '/Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId}'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'campaignId' + '}', CGI.escape(campaign_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'SMSTollFreeCampaign'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['fc']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_toll_free_sms_campaign",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_toll_free_sms_campaign\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get list of TollFree Campaigns
+    # @param [Hash] opts the optional parameters
+    # @return [SMSTollFreeCampaignsListResult]
+    def get_toll_free_sms_campaigns(opts = {})
+      data, _status_code, _headers = get_toll_free_sms_campaigns_with_http_info(opts)
+      data
+    end
+
+    # Get list of TollFree Campaigns
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SMSTollFreeCampaignsListResult, Integer, Hash)>] SMSTollFreeCampaignsListResult data, response status code and response headers
+    def get_toll_free_sms_campaigns_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_toll_free_sms_campaigns ...'
+      end
+      # resource path
+      local_var_path = '/Accounts/{accountId}/Messages/TollFree/Campaigns'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'SMSTollFreeCampaignsListResult'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['fc']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_toll_free_sms_campaigns",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_toll_free_sms_campaigns\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List Active Queues
     # @param [Hash] opts the optional parameters
     # @option opts [String] :_alias Return only the Queue resources with aliases that exactly match this name.
@@ -2229,6 +2346,70 @@ module Freeclimb
       return data, status_code, headers
     end
 
+    # List Conference Recordings
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
+    # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
+    # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+    # @return [RecordingList]
+    def list_conference_recordings(opts = {})
+      data, _status_code, _headers = list_conference_recordings_with_http_info(opts)
+      data
+    end
+
+    # List Conference Recordings
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
+    # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
+    # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+    # @return [Array<(RecordingList, Integer, Hash)>] RecordingList data, response status code and response headers
+    def list_conference_recordings_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_conference_recordings ...'
+      end
+      # resource path
+      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'callId'] = opts[:'call_id'] if !opts[:'call_id'].nil?
+      query_params[:'conferenceId'] = opts[:'conference_id'] if !opts[:'conference_id'].nil?
+      query_params[:'dateCreated'] = opts[:'date_created'] if !opts[:'date_created'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'RecordingList'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['fc']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.list_conference_recordings",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_conference_recordings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List Conferences
     # @param [Hash] opts the optional parameters
     # @option opts [String] :status Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;.
@@ -2312,6 +2493,7 @@ module Freeclimb
     # @option opts [Boolean] :capabilities_toll_free 
     # @option opts [Boolean] :capabilities_ten_dlc 
     # @option opts [Boolean] :capabilities_short_code 
+    # @option opts [String] :tfn_campaign_id Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID.
     # @option opts [Boolean] :offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
     # @return [IncomingNumberList]
     def list_incoming_numbers(opts = {})
@@ -2335,6 +2517,7 @@ module Freeclimb
     # @option opts [Boolean] :capabilities_toll_free 
     # @option opts [Boolean] :capabilities_ten_dlc 
     # @option opts [Boolean] :capabilities_short_code 
+    # @option opts [String] :tfn_campaign_id Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID.
     # @option opts [Boolean] :offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
     # @return [Array<(IncomingNumberList, Integer, Hash)>] IncomingNumberList data, response status code and response headers
     def list_incoming_numbers_with_http_info(opts = {})
@@ -2360,6 +2543,7 @@ module Freeclimb
       query_params[:'capabilities.tollFree'] = opts[:'capabilities_toll_free'] if !opts[:'capabilities_toll_free'].nil?
       query_params[:'capabilities.tenDLC'] = opts[:'capabilities_ten_dlc'] if !opts[:'capabilities_ten_dlc'].nil?
       query_params[:'capabilities.shortCode'] = opts[:'capabilities_short_code'] if !opts[:'capabilities_short_code'].nil?
+      query_params[:'tfn.campaignId'] = opts[:'tfn_campaign_id'] if !opts[:'tfn_campaign_id'].nil?
       query_params[:'offnet'] = opts[:'offnet'] if !opts[:'offnet'].nil?
 
       # header parameters
@@ -2731,6 +2915,75 @@ module Freeclimb
       return data, status_code, headers
     end
 
+    # Make a JWT for WebRTC calling
+    # Make a JWT for WebRTC calling
+    # @param create_web_rtc_token [CreateWebRTCToken] Information needed to craft a JWT compatible with the platforms WebRTC APIs
+    # @param [Hash] opts the optional parameters
+    # @return [String]
+    def make_a_webrtc_jwt(create_web_rtc_token, opts = {})
+      data, _status_code, _headers = make_a_webrtc_jwt_with_http_info(create_web_rtc_token, opts)
+      data
+    end
+
+    # Make a JWT for WebRTC calling
+    # Make a JWT for WebRTC calling
+    # @param create_web_rtc_token [CreateWebRTCToken] Information needed to craft a JWT compatible with the platforms WebRTC APIs
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
+    def make_a_webrtc_jwt_with_http_info(create_web_rtc_token, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.make_a_webrtc_jwt ...'
+      end
+
+      # verify the required parameter 'create_web_rtc_token' is set
+      if @api_client.config.client_side_validation && create_web_rtc_token.nil?
+        fail ArgumentError, "Missing the required parameter 'create_web_rtc_token' when calling DefaultApi.make_a_webrtc_jwt"
+      end
+      # resource path
+      local_var_path = '/Accounts/{accountId}/Calls/WebRTC/Token'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain'])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_web_rtc_token)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'String'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['fc']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.make_a_webrtc_jwt",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#make_a_webrtc_jwt\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Remove a Participant
     # @param conference_id [String] ID of the conference this participant is in.
     # @param call_id [String] ID of the Call associated with this participant.
@@ -2931,17 +3184,17 @@ module Freeclimb
     # @param conference_id [String] String that uniquely identifies this conference resource.
     # @param [Hash] opts the optional parameters
     # @option opts [UpdateConferenceRequest] :update_conference_request Conference Details to update
-    # @return [ConferenceResult]
+    # @return [nil]
     def update_a_conference(conference_id, opts = {})
-      data, _status_code, _headers = update_a_conference_with_http_info(conference_id, opts)
-      data
+      update_a_conference_with_http_info(conference_id, opts)
+      nil
     end
 
     # Update a Conference
     # @param conference_id [String] String that uniquely identifies this conference resource.
     # @param [Hash] opts the optional parameters
     # @option opts [UpdateConferenceRequest] :update_conference_request Conference Details to update
-    # @return [Array<(ConferenceResult, Integer, Hash)>] ConferenceResult data, response status code and response headers
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def update_a_conference_with_http_info(conference_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.update_a_conference ...'
@@ -2959,8 +3212,6 @@ module Freeclimb
 
       # header parameters
       header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       content_type = @api_client.select_header_content_type(['application/json'])
       if !content_type.nil?
@@ -2974,7 +3225,7 @@ module Freeclimb
       post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'update_conference_request'])
 
       # return_type
-      return_type = opts[:debug_return_type] || 'ConferenceResult'
+      return_type = opts[:debug_return_type]
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['fc']

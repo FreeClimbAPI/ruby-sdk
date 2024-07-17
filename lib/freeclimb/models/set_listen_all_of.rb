@@ -15,16 +15,12 @@ require 'time'
 
 module Freeclimb
   class SetListenAllOf
-    # ID of the call leg that is to be assigned the listen privilege. The Call must be in a Conference or an error will be triggered.
-    attr_accessor :call_id
-
     # Specifying `false` will silence the Conference for this Participant.
     attr_accessor :listen
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'call_id' => :'callId',
         :'listen' => :'listen'
       }
     end
@@ -37,7 +33,6 @@ module Freeclimb
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'call_id' => :'String',
         :'listen' => :'Boolean'
       }
     end
@@ -63,10 +58,6 @@ module Freeclimb
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'call_id')
-        self.call_id = attributes[:'call_id']
-      end
-
       if attributes.key?(:'listen')
         self.listen = attributes[:'listen']
       end
@@ -76,10 +67,6 @@ module Freeclimb
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @call_id.nil?
-        invalid_properties.push('invalid value for "call_id", call_id cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -87,9 +74,7 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
-      if @call_id.nil?
-        false
-      elsif @listen.nil?
+      if @listen.nil?
         false
       else
         list_invalid_properties.length() == 0
@@ -101,7 +86,6 @@ module Freeclimb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          call_id == o.call_id &&
           listen == o.listen
     end
 
@@ -114,7 +98,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [call_id, listen].hash
+      [listen].hash
     end
 
     # Builds the object from hash

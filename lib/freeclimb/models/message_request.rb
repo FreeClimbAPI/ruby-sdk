@@ -39,8 +39,8 @@ module Freeclimb
     # When the Message changes status, this URL is invoked using HTTP POST with the messageStatus parameters.  **Note:** This is a notification only; any PerCL returned is ignored.
     attr_accessor :notification_url
 
-    # String that uniquely identifies this account resource.
-    attr_accessor :account_id
+    # an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile.
+    attr_accessor :media_urls
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -53,7 +53,7 @@ module Freeclimb
         :'to' => :'to',
         :'text' => :'text',
         :'notification_url' => :'notificationUrl',
-        :'account_id' => :'accountId'
+        :'media_urls' => :'mediaUrls'
       }
     end
 
@@ -73,7 +73,7 @@ module Freeclimb
         :'to' => :'String',
         :'text' => :'String',
         :'notification_url' => :'String',
-        :'account_id' => :'String'
+        :'media_urls' => :'Array<String>'
       }
     end
 
@@ -138,8 +138,10 @@ module Freeclimb
         self.notification_url = attributes[:'notification_url']
       end
 
-      if attributes.key?(:'account_id')
-        self.account_id = attributes[:'account_id']
+      if attributes.key?(:'media_urls')
+        if (value = attributes[:'media_urls']).is_a?(Array)
+          self.media_urls = value
+        end
       end
     end
 
@@ -182,7 +184,7 @@ module Freeclimb
         false
       elsif @notification_url.nil?
         false
-      elsif @account_id.nil?
+      elsif @media_urls.nil?
         false
       else
         list_invalid_properties.length() == 0
@@ -202,7 +204,7 @@ module Freeclimb
           to == o.to &&
           text == o.text &&
           notification_url == o.notification_url &&
-          account_id == o.account_id
+          media_urls == o.media_urls
     end
 
     # @see the `==` method
@@ -214,7 +216,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, from, to, text, notification_url, account_id].hash
+      [uri, date_created, date_updated, revision, from, to, text, notification_url, media_urls].hash
     end
 
     # Builds the object from hash

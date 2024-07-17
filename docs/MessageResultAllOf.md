@@ -15,6 +15,7 @@
 | **brand_id** | **String** | The unique identifier for the brand associated with the message | [optional] |
 | **campaign_id** | **String** | The unique identifier for the campaign associated with the message | [optional] |
 | **segment_count** | **Float** | The number of segments into which the message was split | [optional] |
+| **media_urls** | **Array&lt;String&gt;** | an array of HTTP URLs which were attached this this message | [optional] |
 
 ## Example
 
@@ -32,7 +33,8 @@ instance = Freeclimb::MessageResultAllOf.new(
   notification_url: null,
   brand_id: null,
   campaign_id: null,
-  segment_count: null
+  segment_count: null,
+  media_urls: null
 )
 ```
 
