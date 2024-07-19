@@ -11,7 +11,11 @@ None
 
 <a name="4.6.0"></a>
 
-## [4.6.0] - 2024-07-10
+## [4.6.0] - 2024-07-19
+
+### Changed
+
+- GetDigit initialTimeoutMS property type change from string to integer
 
 ### Removed
 
