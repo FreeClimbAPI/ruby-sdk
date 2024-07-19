@@ -15,7 +15,7 @@ None
 
 ### Changed
 
-- GetDigit initialTimeoutMS property type change from string to integer.
+- GetDigit initialTimeoutMS property type change from string to integer
 
 ### Removed
 
