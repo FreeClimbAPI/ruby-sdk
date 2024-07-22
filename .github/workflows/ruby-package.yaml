@@ -24,6 +24,7 @@ jobs:
       - name: Start Prism Server
         run: |
           yarn install
+          ls -a
           ./node_modules/.bin/@stoplight/prism mock -h 127.0.0.1 openapi.json &
       - name: Set up Ruby
         uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
