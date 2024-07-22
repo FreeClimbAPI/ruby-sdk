@@ -20,6 +20,7 @@
 | **voice_enabled** | **Boolean** | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional] |
 | **sms_enabled** | **Boolean** | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional] |
 | **offnet** | **Boolean** | The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource. | [optional] |
+| **tfn** | [**TFN**](TFN.md) |  | [optional] |
 
 ## Example
 
@@ -42,7 +43,8 @@ instance = Freeclimb::IncomingNumberResult.new(
   country: null,
   voice_enabled: null,
   sms_enabled: null,
-  offnet: null
+  offnet: null,
+  tfn: null
 )
 ```
 

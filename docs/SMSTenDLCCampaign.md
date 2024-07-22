@@ -32,6 +32,11 @@
 | **sample5** | **String** | Message sample. Some campaign tiers require 5 or more message samples. | [optional] |
 | **message_flow** | **String** | Message flow description. | [optional] |
 | **help_message** | **String** | Help message of the campaign. | [optional] |
+| **optin_keywords** | **String** | Subscriber opt-in keywords. Multiple keywords are comma separated without space. | [optional] |
+| **optout_keywords** | **String** | Subscriber opt-out keywords. Multiple keywords are comma separated without space. | [optional] |
+| **help_keywords** | **String** | Subscriber help keywords. Multiple keywords are comma separated without space. | [optional] |
+| **optin_message** | **String** | Subscriber opt-in message. | [optional] |
+| **optout_message** | **String** | Subscriber opt-out message. | [optional] |
 | **reference_id** | **String** | Caller supplied campaign reference ID. If supplied, the value must be unique across all submitted campaigns. Can be used to prevent duplicate campaign registrations. | [optional] |
 | **mock** | **Boolean** | Campaign created from mock brand. Mocked campaign cannot be shared with an upstream CNP. |  |
 | **next_renewal_or_expiration_date** | **Date** | When the campaign would be due for its next renew/bill date. | [optional] |
@@ -70,6 +75,11 @@ instance = Freeclimb::SMSTenDLCCampaign.new(
   sample5: null,
   message_flow: null,
   help_message: null,
+  optin_keywords: null,
+  optout_keywords: null,
+  help_keywords: null,
+  optin_message: null,
+  optout_message: null,
   reference_id: null,
   mock: null,
   next_renewal_or_expiration_date: Fri Dec 31 19:00:00 EST 1999

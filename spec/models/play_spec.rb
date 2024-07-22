@@ -40,13 +40,6 @@ describe Freeclimb::Play do
     end
   end
 
-  describe 'test attribute "conference_id"' do
-    it 'should work' do
-      instance.conference_id = "TEST_STRING"
-      expect(instance.conference_id).to eq("TEST_STRING")  
-    end
-  end
-
   describe 'test attribute "privacy_mode"' do
     it 'should work' do
       instance.privacy_mode = false
@@ -59,7 +52,6 @@ describe Freeclimb::Play do
         expect{instance = Freeclimb::Play.new(
           file: "TS",
           loop: 1,
-          conference_id: "TS",
           privacy_mode: true,
         )}.not_to raise_error()
     end
@@ -67,7 +59,6 @@ describe Freeclimb::Play do
         expect{instance = Freeclimb::Play.new(
           file: "TS",
           loop: 1,
-          conference_id: "TS",
           privacy_mode: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -76,7 +67,6 @@ describe Freeclimb::Play do
         expect{instance = Freeclimb::Play.new(
           file: "TS",
           loop: 1,
-          conference_id: "TS",
           privacy_mode: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -88,7 +78,6 @@ describe Freeclimb::Play do
       instance = Freeclimb::Play.new(
           file: "TS",
           loop: 1,
-          conference_id: "TS",
           privacy_mode: true,
       )
       expect(instance.valid?).to eq(true)
@@ -111,13 +100,11 @@ describe Freeclimb::Play do
       instance_1 = Freeclimb::Play.new(
           file: "TS",
           loop: 1,
-          conference_id: "TS",
           privacy_mode: true,
       )
       instance_2 = Freeclimb::Play.new(
           file: "TS",
           loop: 1,
-          conference_id: "TS",
           privacy_mode: true,
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
@@ -126,13 +113,11 @@ describe Freeclimb::Play do
       instance_1 = Freeclimb::Play.new(
           file: "TS",
           loop: 1,
-          conference_id: "TS",
           privacy_mode: true,
       )
       instance_2 = Freeclimb::Play.new(
           file: "ST",
           loop: 0,
-          conference_id: "ST",
           privacy_mode: false,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
@@ -144,7 +129,6 @@ describe Freeclimb::Play do
       instance = Freeclimb::Play.new(
       file: "TS",
       loop: 1,
-      conference_id: "TS",
       privacy_mode: true,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
@@ -156,7 +140,6 @@ describe Freeclimb::Play do
       instance_1 = Freeclimb::Play.new(
         file: "TS",
         loop: 1,
-        conference_id: "TS",
         privacy_mode: true,
       )
       instance_2 = Freeclimb::Play.new
@@ -168,7 +151,6 @@ describe Freeclimb::Play do
     instance = Freeclimb::Play.new(
         file: "TS",
         loop: 1,
-        conference_id: "TS",
         privacy_mode: true,
     )
     it 'deserializes the data of file' do
@@ -176,9 +158,6 @@ describe Freeclimb::Play do
     end
     it 'deserializes the data of loop' do
       expect(instance._deserialize("Integer", instance.loop)).to be_a_kind_of(Integer)
-    end
-    it 'deserializes the data of conference_id' do
-      expect(instance._deserialize("String", instance.conference_id)).to be_a_kind_of(String)
     end
     it 'deserializes the data of privacy_mode' do
       expect(instance._deserialize("Boolean", instance.privacy_mode)).to be_a_kind_of(TrueClass)
@@ -190,7 +169,6 @@ describe Freeclimb::Play do
       instance = Freeclimb::Play.new(
         file: "TS",
         loop: 1,
-        conference_id: "TS",
         privacy_mode: true,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -202,7 +180,6 @@ describe Freeclimb::Play do
       instance = Freeclimb::Play.new(
         file: "TS",
         loop: 1,
-        conference_id: "TS",
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -212,13 +189,11 @@ describe Freeclimb::Play do
       instance_1 = Freeclimb::Play.new(
         file: "TS",
         loop: 1,
-        conference_id: "TS",
         privacy_mode: true,
       )
       instance_2 = Freeclimb::Play.new(
         file: "TS",
         loop: 1,
-        conference_id: "TS",
         privacy_mode: true,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -231,8 +206,6 @@ describe Freeclimb::Play do
       
         loop: 1,
       
-        conference_id: "TS",
-      
         privacy_mode: true,
       )
     it 'returns file in the form of hash' do
@@ -240,9 +213,6 @@ describe Freeclimb::Play do
     end
     it 'returns loop in the form of hash' do
       expect(instance._to_hash(instance.loop)).to eq(instance.loop)
-    end
-    it 'returns conference_id in the form of hash' do
-      expect(instance._to_hash(instance.conference_id)).to eq(instance.conference_id)
     end
     it 'returns privacy_mode in the form of hash' do
       expect(instance._to_hash(instance.privacy_mode)).to eq(instance.privacy_mode)

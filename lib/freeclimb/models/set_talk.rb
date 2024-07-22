@@ -16,16 +16,12 @@ require 'time'
 module Freeclimb
   # The `SetTalk` command enables or disables the talk privilege for a Participant in a Conference provided both calls are in the same conference. If 'true', no audio from that Participant is shared with the other Participants of the Conference.
   class SetTalk < PerclCommand
-    # ID of the call leg that is to be muted or unmuted. The Call must be in a Conference or an error will be triggered.
-    attr_accessor :call_id
-
     # Specifying `false` mutes the Participant.
     attr_accessor :talk
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'call_id' => :'callId',
         :'talk' => :'talk'
       }
     end
@@ -38,7 +34,6 @@ module Freeclimb
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'call_id' => :'String',
         :'talk' => :'Boolean'
       }
     end
@@ -75,10 +70,6 @@ module Freeclimb
       # call parent's initialize
       super(attributes)
 
-      if attributes.key?(:'call_id')
-        self.call_id = attributes[:'call_id']
-      end
-
       if attributes.key?(:'talk')
         self.talk = attributes[:'talk']
       end
@@ -89,10 +80,6 @@ module Freeclimb
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @call_id.nil?
-        invalid_properties.push('invalid value for "call_id", call_id cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -100,9 +87,7 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
-      if @call_id.nil?
-        false
-      elsif @talk.nil?
+      if @talk.nil?
         false
       else
         list_invalid_properties.length() == 0
@@ -114,7 +99,6 @@ module Freeclimb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          call_id == o.call_id &&
           talk == o.talk && super(o)
     end
 
@@ -127,7 +111,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [call_id, talk].hash
+      [talk].hash
     end
 
     # Builds the object from hash

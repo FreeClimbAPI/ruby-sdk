@@ -32,6 +32,8 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**get_ten_dlc_sms_campaigns**](DefaultApi.md#get_ten_dlc_sms_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns |
 | [**get_ten_dlc_sms_partner_campaign**](DefaultApi.md#get_ten_dlc_sms_partner_campaign) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId} | Get a 10DLC SMS Partner Campaign |
 | [**get_ten_dlc_sms_partner_campaigns**](DefaultApi.md#get_ten_dlc_sms_partner_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns |
+| [**get_toll_free_sms_campaign**](DefaultApi.md#get_toll_free_sms_campaign) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId} | Get a TollFree SMS Campaign |
+| [**get_toll_free_sms_campaigns**](DefaultApi.md#get_toll_free_sms_campaigns) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns | Get list of TollFree Campaigns |
 | [**list_active_queues**](DefaultApi.md#list_active_queues) | **GET** /Accounts/{accountId}/Queues | List Active Queues |
 | [**list_all_account_logs**](DefaultApi.md#list_all_account_logs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs |
 | [**list_applications**](DefaultApi.md#list_applications) | **GET** /Accounts/{accountId}/Applications | List applications |
@@ -39,6 +41,7 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**list_call_logs**](DefaultApi.md#list_call_logs) | **GET** /Accounts/{accountId}/Calls/{callId}/Logs | List Call Logs |
 | [**list_call_recordings**](DefaultApi.md#list_call_recordings) | **GET** /Accounts/{accountId}/Calls/{callId}/Recordings | List Call Recordings |
 | [**list_calls**](DefaultApi.md#list_calls) | **GET** /Accounts/{accountId}/Calls | List Calls |
+| [**list_conference_recordings**](DefaultApi.md#list_conference_recordings) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Recordings | List Conference Recordings |
 | [**list_conferences**](DefaultApi.md#list_conferences) | **GET** /Accounts/{accountId}/Conferences | List Conferences |
 | [**list_incoming_numbers**](DefaultApi.md#list_incoming_numbers) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers | List Incoming Numbers |
 | [**list_members**](DefaultApi.md#list_members) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members | List Members |
@@ -46,6 +49,7 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**list_recordings**](DefaultApi.md#list_recordings) | **GET** /Accounts/{accountId}/Recordings | List Recordings |
 | [**list_sms_messages**](DefaultApi.md#list_sms_messages) | **GET** /Accounts/{accountId}/Messages | List SMS Messages |
 | [**make_a_call**](DefaultApi.md#make_a_call) | **POST** /Accounts/{accountId}/Calls | Make a Call |
+| [**make_a_webrtc_jwt**](DefaultApi.md#make_a_webrtc_jwt) | **POST** /Accounts/{accountId}/Calls/WebRTC/Token | Make a JWT for WebRTC calling |
 | [**remove_a_participant**](DefaultApi.md#remove_a_participant) | **DELETE** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Remove a Participant |
 | [**send_an_sms_message**](DefaultApi.md#send_an_sms_message) | **POST** /Accounts/{accountId}/Messages | Send an SMS Message |
 | [**stream_a_recording_file**](DefaultApi.md#stream_a_recording_file) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Stream | Stream a Recording File |
@@ -2052,6 +2056,144 @@ end
 - **Accept**: application/json
 
 
+## get_toll_free_sms_campaign
+
+Get a TollFree SMS Campaign
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+campaign_id = 'campaign_id_example' # String | String that uniquely identifies this TollFree Campaign resource.
+
+
+begin
+
+  # Get a TollFree SMS Campaign
+  result = api_instance.get_toll_free_sms_campaign(campaign_id)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_toll_free_sms_campaign: #{e}"
+end
+```
+
+#### Using the get_toll_free_sms_campaign_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SMSTollFreeCampaign>, Integer, Hash)> get_toll_free_sms_campaign_with_http_info(account_id, campaign_id)
+
+```ruby
+begin
+  # Get a TollFree SMS Campaign
+  data, status_code, headers = api_instance.get_toll_free_sms_campaign_with_http_info(campaign_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SMSTollFreeCampaign>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_toll_free_sms_campaign_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+
+| **campaign_id** | **String** | String that uniquely identifies this TollFree Campaign resource. |  |
+
+
+### Return type
+
+[**SMSTollFreeCampaign**](SMSTollFreeCampaign.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_toll_free_sms_campaigns
+
+Get list of TollFree Campaigns
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+
+begin
+
+  # Get list of TollFree Campaigns
+  result = api_instance.get_toll_free_sms_campaigns()
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_toll_free_sms_campaigns: #{e}"
+end
+```
+
+#### Using the get_toll_free_sms_campaigns_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SMSTollFreeCampaignsListResult>, Integer, Hash)> get_toll_free_sms_campaigns_with_http_info(account_id)
+
+```ruby
+begin
+  # Get list of TollFree Campaigns
+  data, status_code, headers = api_instance.get_toll_free_sms_campaigns_with_http_info()
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SMSTollFreeCampaignsListResult>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_toll_free_sms_campaigns_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+
+
+### Return type
+
+[**SMSTollFreeCampaignsListResult**](SMSTollFreeCampaignsListResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## list_active_queues
 
 List Active Queues
@@ -2602,6 +2744,84 @@ end
 - **Accept**: application/json
 
 
+## list_conference_recordings
+
+List Conference Recordings
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+opts = {
+  call_id: 'call_id_example', # String | Show only Recordings made during the Call with this ID.
+  conference_id: 'conference_id_example', # String | Show only Recordings made during the conference with this ID.
+  date_created: 'date_created_example' # String | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+}
+
+begin
+
+  # List Conference Recordings
+  result = api_instance.list_conference_recordings(opts)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->list_conference_recordings: #{e}"
+end
+```
+
+#### Using the list_conference_recordings_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RecordingList>, Integer, Hash)> list_conference_recordings_with_http_info(account_id, opts)
+
+```ruby
+begin
+  # List Conference Recordings
+  data, status_code, headers = api_instance.list_conference_recordings_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RecordingList>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->list_conference_recordings_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+
+| **call_id** | **String** | Show only Recordings made during the Call with this ID. | [optional] |
+
+| **conference_id** | **String** | Show only Recordings made during the conference with this ID. | [optional] |
+
+| **date_created** | **String** | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] |
+
+
+### Return type
+
+[**RecordingList**](RecordingList.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## list_conferences
 
 List Conferences
@@ -2716,6 +2936,7 @@ opts = {
   capabilities_toll_free: true, # Boolean | 
   capabilities_ten_dlc: true, # Boolean | 
   capabilities_short_code: true, # Boolean | 
+  tfn_campaign_id: 'tfn_campaign_id_example', # String | Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID.
   offnet: true # Boolean | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
 }
 
@@ -2779,6 +3000,8 @@ end
 | **capabilities_ten_dlc** | **Boolean** |  | [optional] |
 
 | **capabilities_short_code** | **Boolean** |  | [optional] |
+
+| **tfn_campaign_id** | **String** | Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. | [optional] |
 
 | **offnet** | **Boolean** | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. | [optional] |
 
@@ -3190,6 +3413,79 @@ end
 - **Accept**: application/json
 
 
+## make_a_webrtc_jwt
+
+Make a JWT for WebRTC calling
+
+Make a JWT for WebRTC calling
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+create_web_rtc_token = Freeclimb::CreateWebRTCToken.new({to: 'to_example', from: 'from_example', uses: 37}) # CreateWebRTCToken | Information needed to craft a JWT compatible with the platforms WebRTC APIs
+
+
+begin
+
+  # Make a JWT for WebRTC calling
+  result = api_instance.make_a_webrtc_jwt(create_web_rtc_token)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->make_a_webrtc_jwt: #{e}"
+end
+```
+
+#### Using the make_a_webrtc_jwt_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(String, Integer, Hash)> make_a_webrtc_jwt_with_http_info(account_id, create_web_rtc_token)
+
+```ruby
+begin
+  # Make a JWT for WebRTC calling
+  data, status_code, headers = api_instance.make_a_webrtc_jwt_with_http_info(create_web_rtc_token)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => String
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->make_a_webrtc_jwt_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+
+| **create_web_rtc_token** | [**CreateWebRTCToken**](CreateWebRTCToken.md) | Information needed to craft a JWT compatible with the platforms WebRTC APIs |  |
+
+
+### Return type
+
+**String**
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: text/plain
+
+
 ## remove_a_participant
 
 Remove a Participant
@@ -3433,8 +3729,7 @@ opts = {
 begin
 
   # Update a Conference
-  result = api_instance.update_a_conference(conference_id, opts)
-  p result
+  api_instance.update_a_conference(conference_id, opts)
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->update_a_conference: #{e}"
 end
@@ -3442,9 +3737,9 @@ end
 
 #### Using the update_a_conference_with_http_info variant
 
-This returns an Array which contains the response data, status code and headers.
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(<ConferenceResult>, Integer, Hash)> update_a_conference_with_http_info(account_id, conference_id, opts)
+> <Array(nil, Integer, Hash)> update_a_conference_with_http_info(account_id, conference_id, opts)
 
 ```ruby
 begin
@@ -3452,7 +3747,7 @@ begin
   data, status_code, headers = api_instance.update_a_conference_with_http_info(conference_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ConferenceResult>
+  p data # => nil
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->update_a_conference_with_http_info: #{e}"
 end
@@ -3470,7 +3765,7 @@ end
 
 ### Return type
 
-[**ConferenceResult**](ConferenceResult.md)
+nil (empty response body)
 
 ### Authorization
 
@@ -3479,7 +3774,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 
 ## update_a_live_call

@@ -16,13 +16,9 @@ require 'time'
 module Freeclimb
   # The `TerminateConference` command terminates an existing Conference. Any active participants are hung up on by FreeClimb. If this is not the desired behavior, use the `RemoveFromConference` command to unbridge Calls that should not be hung up. Note: The Call requesting TerminateConference must be on the same Conference for this command to execute.
   class TerminateConference < PerclCommand
-    # ID of the conference to terminate.
-    attr_accessor :conference_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'conference_id' => :'conferenceId'
       }
     end
 
@@ -34,7 +30,6 @@ module Freeclimb
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'conference_id' => :'String'
       }
     end
 
@@ -47,8 +42,7 @@ module Freeclimb
     # List of class defined in allOf (OpenAPI v3)
     def self.openapi_all_of
       [
-      :'PerclCommand',
-      :'TerminateConferenceAllOf'
+      :'PerclCommand'
       ]
     end
 
@@ -69,10 +63,6 @@ module Freeclimb
 
       # call parent's initialize
       super(attributes)
-
-      if attributes.key?(:'conference_id')
-        self.conference_id = attributes[:'conference_id']
-      end
       self.command = "TerminateConference"
     end
 
@@ -80,10 +70,6 @@ module Freeclimb
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @conference_id.nil?
-        invalid_properties.push('invalid value for "conference_id", conference_id cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -91,19 +77,13 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
-      if @conference_id.nil?
-        false
-      else
-        list_invalid_properties.length() == 0
-      end
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          conference_id == o.conference_id && super(o)
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -115,7 +95,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [conference_id].hash
+      [].hash
     end
 
     # Builds the object from hash

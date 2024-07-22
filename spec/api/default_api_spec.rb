@@ -245,6 +245,10 @@ describe 'DefaultApi' do
     @account_request_update_an_account_test_value = Freeclimb::AccountRequest.new
 
     @incoming_number_request_update_an_incoming_number_test_value = Freeclimb::IncomingNumberRequest.new
+
+    @campaign_id_get_toll_free_sms_campaign_test_value = 'CX56XX4'
+
+    @create_web_rtc_token_make_a_webrtc_jwt_test_value=Freeclimb::CreateWebRTCToken.new({to: 'to_example', from: 'from_example', uses: 2})
   end
 
   after do
@@ -904,6 +908,50 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for get_toll_free_sms_campaign
+  # Get a TollFree SMS Campaign
+  # @param campaign_id String that uniquely identifies this TollFree Campaign resource.
+  # @param [Hash] opts the optional parameters
+  # @return [SMSTollFreeCampaign]
+  describe 'get_toll_free_sms_campaign test' do
+    it 'should work' do
+      
+      campaign_id = @campaign_id_get_toll_free_sms_campaign_test_value
+      
+      result = @api_instance.get_toll_free_sms_campaign(
+        campaign_id,
+        {
+          
+        }
+      )
+ 
+      expect(result).to be_a Freeclimb::SMSTollFreeCampaign
+      
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_toll_free_sms_campaigns
+  # Get list of TollFree Campaigns
+  # @param [Hash] opts the optional parameters
+  # @return [SMSTollFreeCampaignsListResult]
+  describe 'get_toll_free_sms_campaigns test' do
+    it 'should work' do
+      
+      
+      result = @api_instance.get_toll_free_sms_campaigns(
+        
+        {
+          
+        }
+      )
+ 
+      expect(result).to be_a Freeclimb::SMSTollFreeCampaignsListResult
+      
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for list_active_queues
   # List Active Queues
   # @param [Hash] opts the optional parameters
@@ -1097,6 +1145,33 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for list_conference_recordings
+  # List Conference Recordings
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
+  # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
+  # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+  # @return [RecordingList]
+  describe 'list_conference_recordings test' do
+    it 'should work' do
+      
+      call_id = @call_id_list_conference_recordings_test_value
+      conference_id = @conference_id_list_conference_recordings_test_value
+      date_created = @date_created_list_conference_recordings_test_value
+      
+      result = @api_instance.list_conference_recordings(
+        
+        {
+          :call_id => call_id,:conference_id => conference_id,:date_created => date_created,
+        }
+      )
+ 
+      expect(result).to be_a Freeclimb::RecordingList
+      
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for list_conferences
   # List Conferences
   # @param [Hash] opts the optional parameters
@@ -1143,6 +1218,7 @@ describe 'DefaultApi' do
   # @option opts [Boolean] :capabilities_toll_free 
   # @option opts [Boolean] :capabilities_ten_dlc 
   # @option opts [Boolean] :capabilities_short_code 
+  # @option opts [String] :tfn_campaign_id Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID.
   # @option opts [Boolean] :offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
   # @return [IncomingNumberList]
   describe 'list_incoming_numbers test' do
@@ -1162,12 +1238,13 @@ describe 'DefaultApi' do
       capabilities_toll_free = @capabilities_toll_free_list_incoming_numbers_test_value
       capabilities_ten_dlc = @capabilities_ten_dlc_list_incoming_numbers_test_value
       capabilities_short_code = @capabilities_short_code_list_incoming_numbers_test_value
+      tfn_campaign_id = @tfn_campaign_id_list_incoming_numbers_test_value
       offnet = @offnet_list_incoming_numbers_test_value
       
       result = @api_instance.list_incoming_numbers(
         
         {
-          :phone_number => phone_number,:_alias => _alias,:region => region,:country => country,:application_id => application_id,:has_application => has_application,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:has_campaign => has_campaign,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,:offnet => offnet,
+          :phone_number => phone_number,:_alias => _alias,:region => region,:country => country,:application_id => application_id,:has_application => has_application,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:has_campaign => has_campaign,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,:tfn_campaign_id => tfn_campaign_id,:offnet => offnet,
         }
       )
  
@@ -1314,6 +1391,30 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for make_a_webrtc_jwt
+  # Make a JWT for WebRTC calling
+  # Make a JWT for WebRTC calling
+  # @param create_web_rtc_token Information needed to craft a JWT compatible with the platforms WebRTC APIs
+  # @param [Hash] opts the optional parameters
+  # @return [String]
+  describe 'make_a_webrtc_jwt test' do
+    it 'should work' do
+      
+      create_web_rtc_token = @create_web_rtc_token_make_a_webrtc_jwt_test_value
+      
+      result = @api_instance.make_a_webrtc_jwt(
+        create_web_rtc_token,
+        {
+          
+        }
+      )
+ 
+      expect(result).to be_a String
+      
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for remove_a_participant
   # Remove a Participant
   # @param conference_id ID of the conference this participant is in.
@@ -1390,7 +1491,7 @@ describe 'DefaultApi' do
   # @param conference_id String that uniquely identifies this conference resource.
   # @param [Hash] opts the optional parameters
   # @option opts [UpdateConferenceRequest] :update_conference_request Conference Details to update
-  # @return [ConferenceResult]
+  # @return [nil]
   describe 'update_a_conference test' do
     it 'should work' do
       
@@ -1404,8 +1505,8 @@ describe 'DefaultApi' do
         }
       )
  
-      expect(result).to be_a Freeclimb::ConferenceResult
       
+      expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end

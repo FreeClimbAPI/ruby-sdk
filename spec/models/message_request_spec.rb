@@ -82,10 +82,10 @@ describe Freeclimb::MessageRequest do
     end
   end
 
-  describe 'test attribute "account_id"' do
+  describe 'test attribute "media_urls"' do
     it 'should work' do
-      instance.account_id = "TEST_STRING"
-      expect(instance.account_id).to eq("TEST_STRING")  
+      instance.media_urls = ["ELEMENT_1", "ELEMENT_2"]
+      expect(instance.media_urls).to eq(["ELEMENT_1", "ELEMENT_2"]) 
     end
   end
 
@@ -100,7 +100,7 @@ describe Freeclimb::MessageRequest do
           to: "TS",
           text: "TS",
           notification_url: "TS",
-          account_id: "TS",
+          media_urls: Array.new(),
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::MessageRequest' do
@@ -113,7 +113,7 @@ describe Freeclimb::MessageRequest do
           to: "TS",
           text: "TS",
           notification_url: "TS",
-          account_id: "TS",
+          media_urls: Array.new(),
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -127,7 +127,7 @@ describe Freeclimb::MessageRequest do
           to: "TS",
           text: "TS",
           notification_url: "TS",
-          account_id: "TS",
+          media_urls: Array.new(),
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -144,7 +144,7 @@ describe Freeclimb::MessageRequest do
           to: "TS",
           text: "TS",
           notification_url: "TS",
-          account_id: "TS",
+          media_urls: Array.new(),
       )
       expect(instance.valid?).to eq(true)
     end
@@ -174,7 +174,7 @@ describe Freeclimb::MessageRequest do
           to: "TS",
           text: "TS",
           notification_url: "TS",
-          account_id: "TS",
+          media_urls: [],
       )
       instance_2 = Freeclimb::MessageRequest.new(
           uri: "TS",
@@ -185,7 +185,7 @@ describe Freeclimb::MessageRequest do
           to: "TS",
           text: "TS",
           notification_url: "TS",
-          account_id: "TS",
+          media_urls: [],
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
@@ -199,7 +199,7 @@ describe Freeclimb::MessageRequest do
           to: "TS",
           text: "TS",
           notification_url: "TS",
-          account_id: "TS",
+          media_urls: [],
       )
       instance_2 = Freeclimb::MessageRequest.new(
           uri: "ST",
@@ -210,7 +210,7 @@ describe Freeclimb::MessageRequest do
           to: "ST",
           text: "ST",
           notification_url: "ST",
-          account_id: "ST",
+          media_urls: nil,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
@@ -227,7 +227,7 @@ describe Freeclimb::MessageRequest do
       to: "TS",
       text: "TS",
       notification_url: "TS",
-      account_id: "TS",
+      media_urls: Array.new(),
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -244,7 +244,7 @@ describe Freeclimb::MessageRequest do
         to: "TS",
         text: "TS",
         notification_url: "TS",
-        account_id: "TS",
+        media_urls: Array.new(),
       )
       instance_2 = Freeclimb::MessageRequest.new
       expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
@@ -261,7 +261,7 @@ describe Freeclimb::MessageRequest do
         to: "TS",
         text: "TS",
         notification_url: "TS",
-        account_id: "TS",
+        media_urls: Array.new(),
     )
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
@@ -287,8 +287,8 @@ describe Freeclimb::MessageRequest do
     it 'deserializes the data of notification_url' do
       expect(instance._deserialize("String", instance.notification_url)).to be_a_kind_of(String)
     end
-    it 'deserializes the data of account_id' do
-      expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
+    it 'deserializes the data of media_urls' do
+      expect(instance._deserialize("Array<String>", instance.media_urls)).to be_a_kind_of(Array)
     end
   end
 
@@ -303,7 +303,7 @@ describe Freeclimb::MessageRequest do
         to: "TS",
         text: "TS",
         notification_url: "TS",
-        account_id: "TS",
+        media_urls: Array.new(),
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -320,7 +320,7 @@ describe Freeclimb::MessageRequest do
         to: "TS",
         text: "TS",
         notification_url: "TS",
-        account_id: "TS",
+        media_urls: Array.new(),
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -335,7 +335,7 @@ describe Freeclimb::MessageRequest do
         to: "TS",
         text: "TS",
         notification_url: "TS",
-        account_id: "TS",
+        media_urls: Array.new(),
       )
       instance_2 = Freeclimb::MessageRequest.new(
         uri: "TS",
@@ -346,7 +346,7 @@ describe Freeclimb::MessageRequest do
         to: "TS",
         text: "TS",
         notification_url: "TS",
-        account_id: "TS",
+        media_urls: Array.new(),
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -370,7 +370,7 @@ describe Freeclimb::MessageRequest do
       
         notification_url: "TS",
       
-        account_id: "TS",
+        media_urls: Array.new(),
       )
     it 'returns uri in the form of hash' do
       expect(instance._to_hash(instance.uri)).to eq(instance.uri)
@@ -396,8 +396,8 @@ describe Freeclimb::MessageRequest do
     it 'returns notification_url in the form of hash' do
       expect(instance._to_hash(instance.notification_url)).to eq(instance.notification_url)
     end
-    it 'returns account_id in the form of hash' do
-      expect(instance._to_hash(instance.account_id)).to eq(instance.account_id)
+    it 'returns media_urls in the form of hash' do
+      expect(instance._to_hash(instance.media_urls)).to eq(instance.media_urls)
     end
   end
 

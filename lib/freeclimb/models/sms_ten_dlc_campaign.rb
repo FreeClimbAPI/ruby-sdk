@@ -98,6 +98,21 @@ module Freeclimb
     # Help message of the campaign.
     attr_accessor :help_message
 
+    # Subscriber opt-in keywords. Multiple keywords are comma separated without space.
+    attr_accessor :optin_keywords
+
+    # Subscriber opt-out keywords. Multiple keywords are comma separated without space.
+    attr_accessor :optout_keywords
+
+    # Subscriber help keywords. Multiple keywords are comma separated without space.
+    attr_accessor :help_keywords
+
+    # Subscriber opt-in message.
+    attr_accessor :optin_message
+
+    # Subscriber opt-out message.
+    attr_accessor :optout_message
+
     # Caller supplied campaign reference ID. If supplied, the value must be unique across all submitted campaigns. Can be used to prevent duplicate campaign registrations.
     attr_accessor :reference_id
 
@@ -160,6 +175,11 @@ module Freeclimb
         :'sample5' => :'sample5',
         :'message_flow' => :'messageFlow',
         :'help_message' => :'helpMessage',
+        :'optin_keywords' => :'optinKeywords',
+        :'optout_keywords' => :'optoutKeywords',
+        :'help_keywords' => :'helpKeywords',
+        :'optin_message' => :'optinMessage',
+        :'optout_message' => :'optoutMessage',
         :'reference_id' => :'referenceId',
         :'mock' => :'mock',
         :'next_renewal_or_expiration_date' => :'nextRenewalOrExpirationDate'
@@ -202,6 +222,11 @@ module Freeclimb
         :'sample5' => :'String',
         :'message_flow' => :'String',
         :'help_message' => :'String',
+        :'optin_keywords' => :'String',
+        :'optout_keywords' => :'String',
+        :'help_keywords' => :'String',
+        :'optin_message' => :'String',
+        :'optout_message' => :'String',
         :'reference_id' => :'String',
         :'mock' => :'Boolean',
         :'next_renewal_or_expiration_date' => :'Date'
@@ -366,6 +391,26 @@ module Freeclimb
         self.help_message = attributes[:'help_message']
       end
 
+      if attributes.key?(:'optin_keywords')
+        self.optin_keywords = attributes[:'optin_keywords']
+      end
+
+      if attributes.key?(:'optout_keywords')
+        self.optout_keywords = attributes[:'optout_keywords']
+      end
+
+      if attributes.key?(:'help_keywords')
+        self.help_keywords = attributes[:'help_keywords']
+      end
+
+      if attributes.key?(:'optin_message')
+        self.optin_message = attributes[:'optin_message']
+      end
+
+      if attributes.key?(:'optout_message')
+        self.optout_message = attributes[:'optout_message']
+      end
+
       if attributes.key?(:'reference_id')
         self.reference_id = attributes[:'reference_id']
       end
@@ -451,6 +496,26 @@ module Freeclimb
         invalid_properties.push('invalid value for "help_message", the character length must be smaller than or equal to 255.')
       end
 
+      if !@optin_keywords.nil? && @optin_keywords.to_s.length > 255
+        invalid_properties.push('invalid value for "optin_keywords", the character length must be smaller than or equal to 255.')
+      end
+
+      if !@optout_keywords.nil? && @optout_keywords.to_s.length > 255
+        invalid_properties.push('invalid value for "optout_keywords", the character length must be smaller than or equal to 255.')
+      end
+
+      if !@help_keywords.nil? && @help_keywords.to_s.length > 255
+        invalid_properties.push('invalid value for "help_keywords", the character length must be smaller than or equal to 255.')
+      end
+
+      if !@optin_message.nil? && @optin_message.to_s.length > 255
+        invalid_properties.push('invalid value for "optin_message", the character length must be smaller than or equal to 255.')
+      end
+
+      if !@optout_message.nil? && @optout_message.to_s.length > 255
+        invalid_properties.push('invalid value for "optout_message", the character length must be smaller than or equal to 255.')
+      end
+
       if !@reference_id.nil? && @reference_id.to_s.length > 50
         invalid_properties.push('invalid value for "reference_id", the character length must be smaller than or equal to 50.')
       end
@@ -505,6 +570,16 @@ module Freeclimb
       elsif @subscriber_help.nil?
         false
       elsif @sample1.nil?
+        false
+      elsif @optin_keywords.nil?
+        false
+      elsif @optout_keywords.nil?
+        false
+      elsif @help_keywords.nil?
+        false
+      elsif @optin_message.nil?
+        false
+      elsif @optout_message.nil?
         false
       elsif @mock.nil?
         false
@@ -656,6 +731,56 @@ module Freeclimb
     end
 
     # Custom attribute writer method with validation
+    # @param [Object] optin_keywords Value to be assigned
+    def optin_keywords=(optin_keywords)
+      if !optin_keywords.nil? && optin_keywords.to_s.length > 255
+        fail ArgumentError, 'invalid value for "optin_keywords", the character length must be smaller than or equal to 255.'
+      end
+
+      @optin_keywords = optin_keywords
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] optout_keywords Value to be assigned
+    def optout_keywords=(optout_keywords)
+      if !optout_keywords.nil? && optout_keywords.to_s.length > 255
+        fail ArgumentError, 'invalid value for "optout_keywords", the character length must be smaller than or equal to 255.'
+      end
+
+      @optout_keywords = optout_keywords
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] help_keywords Value to be assigned
+    def help_keywords=(help_keywords)
+      if !help_keywords.nil? && help_keywords.to_s.length > 255
+        fail ArgumentError, 'invalid value for "help_keywords", the character length must be smaller than or equal to 255.'
+      end
+
+      @help_keywords = help_keywords
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] optin_message Value to be assigned
+    def optin_message=(optin_message)
+      if !optin_message.nil? && optin_message.to_s.length > 255
+        fail ArgumentError, 'invalid value for "optin_message", the character length must be smaller than or equal to 255.'
+      end
+
+      @optin_message = optin_message
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] optout_message Value to be assigned
+    def optout_message=(optout_message)
+      if !optout_message.nil? && optout_message.to_s.length > 255
+        fail ArgumentError, 'invalid value for "optout_message", the character length must be smaller than or equal to 255.'
+      end
+
+      @optout_message = optout_message
+    end
+
+    # Custom attribute writer method with validation
     # @param [Object] reference_id Value to be assigned
     def reference_id=(reference_id)
       if !reference_id.nil? && reference_id.to_s.length > 50
@@ -698,6 +823,11 @@ module Freeclimb
           sample5 == o.sample5 &&
           message_flow == o.message_flow &&
           help_message == o.help_message &&
+          optin_keywords == o.optin_keywords &&
+          optout_keywords == o.optout_keywords &&
+          help_keywords == o.help_keywords &&
+          optin_message == o.optin_message &&
+          optout_message == o.optout_message &&
           reference_id == o.reference_id &&
           mock == o.mock &&
           next_renewal_or_expiration_date == o.next_renewal_or_expiration_date
@@ -712,7 +842,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_id, campaign_id, csp_id, reseller_id, status, create_date, auto_renewal, billed_date, brand_id, usecase, sub_usecases, description, embedded_link, embedded_phone, affiliate_marketing, number_pool, age_gated, direct_lending, subscriber_optin, subscriber_optout, subscriber_help, sample1, sample2, sample3, sample4, sample5, message_flow, help_message, reference_id, mock, next_renewal_or_expiration_date].hash
+      [account_id, campaign_id, csp_id, reseller_id, status, create_date, auto_renewal, billed_date, brand_id, usecase, sub_usecases, description, embedded_link, embedded_phone, affiliate_marketing, number_pool, age_gated, direct_lending, subscriber_optin, subscriber_optout, subscriber_help, sample1, sample2, sample3, sample4, sample5, message_flow, help_message, optin_keywords, optout_keywords, help_keywords, optin_message, optout_message, reference_id, mock, next_renewal_or_expiration_date].hash
     end
 
     # Builds the object from hash

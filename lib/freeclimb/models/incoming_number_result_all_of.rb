@@ -50,6 +50,8 @@ module Freeclimb
     # The offnet field is a boolean representing whether the number is offnet registered or not. This field will be rendered only for requests to the IncomingPhone number resource.
     attr_accessor :offnet
 
+    attr_accessor :tfn
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -64,7 +66,8 @@ module Freeclimb
         :'country' => :'country',
         :'voice_enabled' => :'voiceEnabled',
         :'sms_enabled' => :'smsEnabled',
-        :'offnet' => :'offnet'
+        :'offnet' => :'offnet',
+        :'tfn' => :'tfn'
       }
     end
 
@@ -87,7 +90,8 @@ module Freeclimb
         :'country' => :'String',
         :'voice_enabled' => :'Boolean',
         :'sms_enabled' => :'Boolean',
-        :'offnet' => :'Boolean'
+        :'offnet' => :'Boolean',
+        :'tfn' => :'TFN'
       }
     end
 
@@ -104,7 +108,7 @@ module Freeclimb
         :'country',
         :'voice_enabled',
         :'sms_enabled',
-        :'offnet'
+        :'offnet',
       ])
     end
 
@@ -170,6 +174,10 @@ module Freeclimb
       if attributes.key?(:'offnet')
         self.offnet = attributes[:'offnet']
       end
+
+      if attributes.key?(:'tfn')
+        self.tfn = attributes[:'tfn']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -184,6 +192,8 @@ module Freeclimb
     def valid?
       
       if @capabilities.nil?
+        false
+      elsif @tfn.nil?
         false
       else
         list_invalid_properties.length() == 0
@@ -206,7 +216,8 @@ module Freeclimb
           country == o.country &&
           voice_enabled == o.voice_enabled &&
           sms_enabled == o.sms_enabled &&
-          offnet == o.offnet
+          offnet == o.offnet &&
+          tfn == o.tfn
     end
 
     # @see the `==` method
@@ -218,7 +229,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [capabilities, campaign_id, phone_number_id, account_id, application_id, phone_number, _alias, region, country, voice_enabled, sms_enabled, offnet].hash
+      [capabilities, campaign_id, phone_number_id, account_id, application_id, phone_number, _alias, region, country, voice_enabled, sms_enabled, offnet, tfn].hash
     end
 
     # Builds the object from hash

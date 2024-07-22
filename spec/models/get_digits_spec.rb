@@ -56,8 +56,8 @@ describe Freeclimb::GetDigits do
 
   describe 'test attribute "initial_timeout_ms"' do
     it 'should work' do
-      instance.initial_timeout_ms = "TEST_STRING"
-      expect(instance.initial_timeout_ms).to eq("TEST_STRING")  
+      instance.initial_timeout_ms = 1
+      expect(instance.initial_timeout_ms).to eq(1) 
     end
   end
 
@@ -96,7 +96,7 @@ describe Freeclimb::GetDigits do
           digit_timeout_ms: 1,
           finish_on_key: "TS",
           flush_buffer: true,
-          initial_timeout_ms: "TS",
+          initial_timeout_ms: 1,
           max_digits: 1,
           min_digits: 1,
           prompts: Array.new(),
@@ -109,7 +109,7 @@ describe Freeclimb::GetDigits do
           digit_timeout_ms: 1,
           finish_on_key: "TS",
           flush_buffer: true,
-          initial_timeout_ms: "TS",
+          initial_timeout_ms: 1,
           max_digits: 1,
           min_digits: 1,
           prompts: Array.new(),
@@ -123,7 +123,7 @@ describe Freeclimb::GetDigits do
           digit_timeout_ms: 1,
           finish_on_key: "TS",
           flush_buffer: true,
-          initial_timeout_ms: "TS",
+          initial_timeout_ms: 1,
           max_digits: 1,
           min_digits: 1,
           prompts: Array.new(),
@@ -140,7 +140,7 @@ describe Freeclimb::GetDigits do
           digit_timeout_ms: 1,
           finish_on_key: "TS",
           flush_buffer: true,
-          initial_timeout_ms: "TS",
+          initial_timeout_ms: 1,
           max_digits: 1,
           min_digits: 1,
           prompts: Array.new(),
@@ -168,7 +168,7 @@ describe Freeclimb::GetDigits do
           digit_timeout_ms: 1,
           finish_on_key: "TS",
           flush_buffer: true,
-          initial_timeout_ms: "TS",
+          initial_timeout_ms: 1,
           max_digits: 1,
           min_digits: 1,
           prompts: [],
@@ -179,7 +179,7 @@ describe Freeclimb::GetDigits do
           digit_timeout_ms: 1,
           finish_on_key: "TS",
           flush_buffer: true,
-          initial_timeout_ms: "TS",
+          initial_timeout_ms: 1,
           max_digits: 1,
           min_digits: 1,
           prompts: [],
@@ -193,7 +193,7 @@ describe Freeclimb::GetDigits do
           digit_timeout_ms: 1,
           finish_on_key: "TS",
           flush_buffer: true,
-          initial_timeout_ms: "TS",
+          initial_timeout_ms: 1,
           max_digits: 1,
           min_digits: 1,
           prompts: [],
@@ -204,7 +204,7 @@ describe Freeclimb::GetDigits do
           digit_timeout_ms: 0,
           finish_on_key: "ST",
           flush_buffer: false,
-          initial_timeout_ms: "ST",
+          initial_timeout_ms: 0,
           max_digits: 0,
           min_digits: 0,
           prompts: nil,
@@ -221,7 +221,7 @@ describe Freeclimb::GetDigits do
       digit_timeout_ms: 1,
       finish_on_key: "TS",
       flush_buffer: true,
-      initial_timeout_ms: "TS",
+      initial_timeout_ms: 1,
       max_digits: 1,
       min_digits: 1,
       prompts: Array.new(),
@@ -238,7 +238,7 @@ describe Freeclimb::GetDigits do
         digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-        initial_timeout_ms: "TS",
+        initial_timeout_ms: 1,
         max_digits: 1,
         min_digits: 1,
         prompts: Array.new(),
@@ -255,7 +255,7 @@ describe Freeclimb::GetDigits do
         digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-        initial_timeout_ms: "TS",
+        initial_timeout_ms: 1,
         max_digits: 1,
         min_digits: 1,
         prompts: Array.new(),
@@ -274,7 +274,7 @@ describe Freeclimb::GetDigits do
       expect(instance._deserialize("Boolean", instance.flush_buffer)).to be_a_kind_of(TrueClass)
     end
     it 'deserializes the data of initial_timeout_ms' do
-      expect(instance._deserialize("String", instance.initial_timeout_ms)).to be_a_kind_of(String)
+      expect(instance._deserialize("Integer", instance.initial_timeout_ms)).to be_a_kind_of(Integer)
     end
     it 'deserializes the data of max_digits' do
       expect(instance._deserialize("Integer", instance.max_digits)).to be_a_kind_of(Integer)
@@ -297,7 +297,7 @@ describe Freeclimb::GetDigits do
         digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-        initial_timeout_ms: "TS",
+        initial_timeout_ms: 1,
         max_digits: 1,
         min_digits: 1,
         prompts: Array.new(),
@@ -314,7 +314,7 @@ describe Freeclimb::GetDigits do
         digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-        initial_timeout_ms: "TS",
+        initial_timeout_ms: 1,
         max_digits: 1,
         min_digits: 1,
         prompts: Array.new(),
@@ -329,7 +329,7 @@ describe Freeclimb::GetDigits do
         digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-        initial_timeout_ms: "TS",
+        initial_timeout_ms: 1,
         max_digits: 1,
         min_digits: 1,
         prompts: Array.new(),
@@ -340,7 +340,7 @@ describe Freeclimb::GetDigits do
         digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-        initial_timeout_ms: "TS",
+        initial_timeout_ms: 1,
         max_digits: 1,
         min_digits: 1,
         prompts: Array.new(),
@@ -360,7 +360,7 @@ describe Freeclimb::GetDigits do
       
         flush_buffer: true,
       
-        initial_timeout_ms: "TS",
+        initial_timeout_ms: 1,
       
         max_digits: 1,
       
