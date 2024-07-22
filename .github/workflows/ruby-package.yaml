@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
       - name: Install Prism
-        run: (yarn install)
+        run: (yarn install && ls -a && cd node_modules && ls -a && cd .bin && ls -a)
       - name: Start Prism Server
         run: (prism mock -h 127.0.0.1 openapi.json &)
       - name: Set up Ruby
