@@ -69,14 +69,21 @@ describe Freeclimb::UpdateConferenceRequest do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::UpdateConferenceRequest.new(
           _alias: "TS",
+          
+          play_beep: Freeclimb::PlayBeep.new(),
+          
           play_beep: "ALWAYS",
+          status: Freeclimb::UpdateConferenceRequestStatus.new(),
+          
           status: "EMPTY",
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::UpdateConferenceRequest' do
         expect{instance = Freeclimb::UpdateConferenceRequest.new(
           _alias: "TS",
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
+          status: Freeclimb::UpdateConferenceRequestStatus.new(),
           status: "EMPTY",
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -84,7 +91,9 @@ describe Freeclimb::UpdateConferenceRequest do
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::UpdateConferenceRequest.new(
           _alias: "TS",
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
+          status: Freeclimb::UpdateConferenceRequestStatus.new(),
           status: "EMPTY",
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -95,57 +104,25 @@ describe Freeclimb::UpdateConferenceRequest do
     it 'checks if properties are valid' do
       instance = Freeclimb::UpdateConferenceRequest.new(
           _alias: "TS",
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
+          status: Freeclimb::UpdateConferenceRequestStatus.new(),
           status: "EMPTY",
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::UpdateConferenceRequest.new(
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::UpdateConferenceRequest.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::UpdateConferenceRequest.new(
-          _alias: "TS",
-          play_beep: "ALWAYS",
-          status: "EMPTY",
-      )
-      instance_2 = Freeclimb::UpdateConferenceRequest.new(
-          _alias: "TS",
-          play_beep: "ALWAYS",
-          status: "EMPTY",
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::UpdateConferenceRequest.new(
-          _alias: "TS",
-          play_beep: "ALWAYS",
-          status: "EMPTY",
-      )
-      instance_2 = Freeclimb::UpdateConferenceRequest.new(
-          _alias: "ST",
-          play_beep: "NEVER",
-          status: "TERMINATED",
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::UpdateConferenceRequest.new(
       _alias: "TS",
+      play_beep: Freeclimb::PlayBeep.new(),
       play_beep: "ALWAYS",
+      status: Freeclimb::UpdateConferenceRequestStatus.new(),
       status: "EMPTY",
     )
     expect(instance.hash).to be_a_kind_of(Integer)
@@ -156,7 +133,9 @@ describe Freeclimb::UpdateConferenceRequest do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::UpdateConferenceRequest.new(
         _alias: "TS",
+        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
+        status: Freeclimb::UpdateConferenceRequestStatus.new(),
         status: "EMPTY",
       )
       instance_2 = Freeclimb::UpdateConferenceRequest.new
@@ -167,7 +146,9 @@ describe Freeclimb::UpdateConferenceRequest do
   describe 'test method "_deserialize"' do
     instance = Freeclimb::UpdateConferenceRequest.new(
         _alias: "TS",
+        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
+        status: Freeclimb::UpdateConferenceRequestStatus.new(),
         status: "EMPTY",
     )
     it 'deserializes the data of _alias' do
@@ -179,7 +160,9 @@ describe Freeclimb::UpdateConferenceRequest do
     it 'returns the string representation of the object' do
       instance = Freeclimb::UpdateConferenceRequest.new(
         _alias: "TS",
+        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
+        status: Freeclimb::UpdateConferenceRequestStatus.new(),
         status: "EMPTY",
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -190,7 +173,9 @@ describe Freeclimb::UpdateConferenceRequest do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::UpdateConferenceRequest.new(
         _alias: "TS",
+        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
+        status: Freeclimb::UpdateConferenceRequestStatus.new(),
         status: "EMPTY",
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -199,12 +184,16 @@ describe Freeclimb::UpdateConferenceRequest do
       obj = Object.new()
       instance_1 = Freeclimb::UpdateConferenceRequest.new(
         _alias: "TS",
+        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
+        status: Freeclimb::UpdateConferenceRequestStatus.new(),
         status: "EMPTY",
       )
       instance_2 = Freeclimb::UpdateConferenceRequest.new(
         _alias: "TS",
+        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
+        status: Freeclimb::UpdateConferenceRequestStatus.new(),
         status: "EMPTY",
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)

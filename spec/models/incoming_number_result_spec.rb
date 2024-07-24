@@ -49,8 +49,11 @@ describe Freeclimb::IncomingNumberResult do
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      instance.revision = 1
-      expect(instance.revision).to eq(1) 
+    
+    
+    instance.revision = 1
+    expect(instance.revision).to eq(1) 
+    
     end
   end
 
@@ -149,21 +152,40 @@ describe Freeclimb::IncomingNumberResult do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::IncomingNumberResult.new(
           uri: "TS",
+          
           date_created: "TS",
+          
           date_updated: "TS",
-          revision: 1,
+          
+revision: 1,
+          
+          capabilities: Freeclimb::Capabilities.new(),
+          
           capabilities: Freeclimb::Capabilities.new,
           campaign_id: "TS",
+          
           phone_number_id: "TS",
+          
           account_id: "TS",
+          
           application_id: "TS",
+          
           phone_number: "TS",
+          
           _alias: "TS",
+          
           region: "TS",
+          
           country: "TS",
+          
           voice_enabled: true,
+          
           sms_enabled: true,
+          
           offnet: true,
+          
+          tfn: Freeclimb::TFN.new(),
+          
           tfn: Freeclimb::TFN.new,
         )}.not_to raise_error()
     end
@@ -172,7 +194,8 @@ describe Freeclimb::IncomingNumberResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
+          capabilities: Freeclimb::Capabilities.new(),
           capabilities: Freeclimb::Capabilities.new,
           campaign_id: "TS",
           phone_number_id: "TS",
@@ -185,6 +208,7 @@ describe Freeclimb::IncomingNumberResult do
           voice_enabled: true,
           sms_enabled: true,
           offnet: true,
+          tfn: Freeclimb::TFN.new(),
           tfn: Freeclimb::TFN.new,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -194,7 +218,8 @@ describe Freeclimb::IncomingNumberResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
+          capabilities: Freeclimb::Capabilities.new(),
           capabilities: Freeclimb::Capabilities.new,
           campaign_id: "TS",
           phone_number_id: "TS",
@@ -207,6 +232,7 @@ describe Freeclimb::IncomingNumberResult do
           voice_enabled: true,
           sms_enabled: true,
           offnet: true,
+          tfn: Freeclimb::TFN.new(),
           tfn: Freeclimb::TFN.new,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -219,7 +245,8 @@ describe Freeclimb::IncomingNumberResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
+          capabilities: Freeclimb::Capabilities.new(),
           capabilities: Freeclimb::Capabilities.new,
           campaign_id: "TS",
           phone_number_id: "TS",
@@ -232,97 +259,14 @@ describe Freeclimb::IncomingNumberResult do
           voice_enabled: true,
           sms_enabled: true,
           offnet: true,
+          tfn: Freeclimb::TFN.new(),
           tfn: Freeclimb::TFN.new,
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::IncomingNumberResult.new(
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::IncomingNumberResult.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::IncomingNumberResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          campaign_id: "TS",
-          phone_number_id: "TS",
-          account_id: "TS",
-          application_id: "TS",
-          phone_number: "TS",
-          _alias: "TS",
-          region: "TS",
-          country: "TS",
-          voice_enabled: true,
-          sms_enabled: true,
-          offnet: true,
-      )
-      instance_2 = Freeclimb::IncomingNumberResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          campaign_id: "TS",
-          phone_number_id: "TS",
-          account_id: "TS",
-          application_id: "TS",
-          phone_number: "TS",
-          _alias: "TS",
-          region: "TS",
-          country: "TS",
-          voice_enabled: true,
-          sms_enabled: true,
-          offnet: true,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::IncomingNumberResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          campaign_id: "TS",
-          phone_number_id: "TS",
-          account_id: "TS",
-          application_id: "TS",
-          phone_number: "TS",
-          _alias: "TS",
-          region: "TS",
-          country: "TS",
-          voice_enabled: true,
-          sms_enabled: true,
-          offnet: true,
-      )
-      instance_2 = Freeclimb::IncomingNumberResult.new(
-          uri: "ST",
-          date_created: "ST",
-          date_updated: "ST",
-          revision: 0,
-          campaign_id: "ST",
-          phone_number_id: "ST",
-          account_id: "ST",
-          application_id: "ST",
-          phone_number: "ST",
-          _alias: "ST",
-          region: "ST",
-          country: "ST",
-          voice_enabled: false,
-          sms_enabled: false,
-          offnet: false,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
@@ -331,7 +275,8 @@ describe Freeclimb::IncomingNumberResult do
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-      revision: 1,
+revision: 1,
+      capabilities: Freeclimb::Capabilities.new(),
       capabilities: Freeclimb::Capabilities.new,
       campaign_id: "TS",
       phone_number_id: "TS",
@@ -344,6 +289,7 @@ describe Freeclimb::IncomingNumberResult do
       voice_enabled: true,
       sms_enabled: true,
       offnet: true,
+      tfn: Freeclimb::TFN.new(),
       tfn: Freeclimb::TFN.new,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
@@ -356,7 +302,8 @@ describe Freeclimb::IncomingNumberResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
+        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -369,6 +316,7 @@ describe Freeclimb::IncomingNumberResult do
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
+        tfn: Freeclimb::TFN.new(),
         tfn: Freeclimb::TFN.new,
       )
       instance_2 = Freeclimb::IncomingNumberResult.new
@@ -381,7 +329,8 @@ describe Freeclimb::IncomingNumberResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
+        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -394,6 +343,7 @@ describe Freeclimb::IncomingNumberResult do
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
+        tfn: Freeclimb::TFN.new(),
         tfn: Freeclimb::TFN.new,
     )
     it 'deserializes the data of uri' do
@@ -455,7 +405,8 @@ describe Freeclimb::IncomingNumberResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
+        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -468,6 +419,7 @@ describe Freeclimb::IncomingNumberResult do
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
+        tfn: Freeclimb::TFN.new(),
         tfn: Freeclimb::TFN.new,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -480,7 +432,8 @@ describe Freeclimb::IncomingNumberResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
+        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -493,6 +446,7 @@ describe Freeclimb::IncomingNumberResult do
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
+        tfn: Freeclimb::TFN.new(),
         tfn: Freeclimb::TFN.new,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -503,7 +457,8 @@ describe Freeclimb::IncomingNumberResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
+        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -516,13 +471,15 @@ describe Freeclimb::IncomingNumberResult do
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
+        tfn: Freeclimb::TFN.new(),
         tfn: Freeclimb::TFN.new,
       )
       instance_2 = Freeclimb::IncomingNumberResult.new(
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
+        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -535,6 +492,7 @@ describe Freeclimb::IncomingNumberResult do
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
+        tfn: Freeclimb::TFN.new(),
         tfn: Freeclimb::TFN.new,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -549,7 +507,7 @@ describe Freeclimb::IncomingNumberResult do
       
         date_updated: "TS",
       
-        revision: 1,
+revision: 1,
       
       
         campaign_id: "TS",

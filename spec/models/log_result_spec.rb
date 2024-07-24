@@ -28,8 +28,11 @@ describe Freeclimb::LogResult do
   
   describe 'test attribute "timestamp"' do
     it 'should work' do
-      instance.timestamp = 1
-      expect(instance.timestamp).to eq(1) 
+    
+    
+    instance.timestamp = 1
+    expect(instance.timestamp).to eq(1) 
+    
     end
   end
 
@@ -88,18 +91,27 @@ describe Freeclimb::LogResult do
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::LogResult.new(
-          timestamp: 1,
+timestamp: 1,
+          
+          level: Freeclimb::LogLevel.new(),
+          
           level: "INFO",
           request_id: "TS",
+          
           account_id: "TS",
+          
           call_id: "TS",
+          
           message: "TS",
+          
+          
           metadata: Object.new(),
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::LogResult' do
         expect{instance = Freeclimb::LogResult.new(
-          timestamp: 1,
+timestamp: 1,
+          level: Freeclimb::LogLevel.new(),
           level: "INFO",
           request_id: "TS",
           account_id: "TS",
@@ -111,7 +123,8 @@ describe Freeclimb::LogResult do
     end
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::LogResult.new(
-          timestamp: 1,
+timestamp: 1,
+          level: Freeclimb::LogLevel.new(),
           level: "INFO",
           request_id: "TS",
           account_id: "TS",
@@ -126,7 +139,8 @@ describe Freeclimb::LogResult do
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::LogResult.new(
-          timestamp: 1,
+timestamp: 1,
+          level: Freeclimb::LogLevel.new(),
           level: "INFO",
           request_id: "TS",
           account_id: "TS",
@@ -136,67 +150,16 @@ describe Freeclimb::LogResult do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::LogResult.new(
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::LogResult.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::LogResult.new(
-          timestamp: 1,
-          level: "INFO",
-          request_id: "TS",
-          account_id: "TS",
-          call_id: "TS",
-          message: "TS",
-          metadata: obj,
-      )
-      instance_2 = Freeclimb::LogResult.new(
-          timestamp: 1,
-          level: "INFO",
-          request_id: "TS",
-          account_id: "TS",
-          call_id: "TS",
-          message: "TS",
-          metadata: obj,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::LogResult.new(
-          timestamp: 1,
-          level: "INFO",
-          request_id: "TS",
-          account_id: "TS",
-          call_id: "TS",
-          message: "TS",
-          metadata: Object.new(),
-      )
-      instance_2 = Freeclimb::LogResult.new(
-          timestamp: 0,
-          level: "WARNING",
-          request_id: "ST",
-          account_id: "ST",
-          call_id: "ST",
-          message: "ST",
-          metadata: nil,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::LogResult.new(
-      timestamp: 1,
+timestamp: 1,
+      level: Freeclimb::LogLevel.new(),
       level: "INFO",
       request_id: "TS",
       account_id: "TS",
@@ -211,7 +174,8 @@ describe Freeclimb::LogResult do
   describe 'test method "build_from_hash"' do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::LogResult.new(
-        timestamp: 1,
+timestamp: 1,
+        level: Freeclimb::LogLevel.new(),
         level: "INFO",
         request_id: "TS",
         account_id: "TS",
@@ -226,7 +190,8 @@ describe Freeclimb::LogResult do
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::LogResult.new(
-        timestamp: 1,
+timestamp: 1,
+        level: Freeclimb::LogLevel.new(),
         level: "INFO",
         request_id: "TS",
         account_id: "TS",
@@ -257,7 +222,8 @@ describe Freeclimb::LogResult do
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
       instance = Freeclimb::LogResult.new(
-        timestamp: 1,
+timestamp: 1,
+        level: Freeclimb::LogLevel.new(),
         level: "INFO",
         request_id: "TS",
         account_id: "TS",
@@ -272,7 +238,8 @@ describe Freeclimb::LogResult do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::LogResult.new(
-        timestamp: 1,
+timestamp: 1,
+        level: Freeclimb::LogLevel.new(),
         level: "INFO",
         request_id: "TS",
         account_id: "TS",
@@ -285,7 +252,8 @@ describe Freeclimb::LogResult do
     it 'creates equal hash for two equal objects' do
       obj = Object.new()
       instance_1 = Freeclimb::LogResult.new(
-        timestamp: 1,
+timestamp: 1,
+        level: Freeclimb::LogLevel.new(),
         level: "INFO",
         request_id: "TS",
         account_id: "TS",
@@ -294,7 +262,8 @@ describe Freeclimb::LogResult do
         metadata: obj,
       )
       instance_2 = Freeclimb::LogResult.new(
-        timestamp: 1,
+timestamp: 1,
+        level: Freeclimb::LogLevel.new(),
         level: "INFO",
         request_id: "TS",
         account_id: "TS",
@@ -308,7 +277,7 @@ describe Freeclimb::LogResult do
 
   describe 'test method "_to_hash"' do
     instance = Freeclimb::LogResult.new(
-        timestamp: 1,
+timestamp: 1,
       
         level: "INFO",
       

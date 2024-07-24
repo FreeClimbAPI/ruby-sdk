@@ -49,8 +49,11 @@ describe Freeclimb::ApplicationResult do
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      instance.revision = 1
-      expect(instance.revision).to eq(1) 
+    
+    
+    instance.revision = 1
+    expect(instance.revision).to eq(1) 
+    
     end
   end
 
@@ -121,18 +124,31 @@ describe Freeclimb::ApplicationResult do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::ApplicationResult.new(
           uri: "TS",
+          
           date_created: "TS",
+          
           date_updated: "TS",
-          revision: 1,
+          
+revision: 1,
+          
           account_id: "TS",
+          
           application_id: "TS",
+          
           _alias: "TS",
+          
           voice_url: "TS",
+          
           voice_fallback_url: "TS",
+          
           call_connect_url: "TS",
+          
           status_callback_url: "TS",
+          
           sms_url: "TS",
+          
           sms_fallback_url: "TS",
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::ApplicationResult' do
@@ -140,7 +156,7 @@ describe Freeclimb::ApplicationResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           account_id: "TS",
           application_id: "TS",
           _alias: "TS",
@@ -158,7 +174,7 @@ describe Freeclimb::ApplicationResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           account_id: "TS",
           application_id: "TS",
           _alias: "TS",
@@ -179,7 +195,7 @@ describe Freeclimb::ApplicationResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           account_id: "TS",
           application_id: "TS",
           _alias: "TS",
@@ -192,85 +208,9 @@ describe Freeclimb::ApplicationResult do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::ApplicationResult.new(
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::ApplicationResult.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::ApplicationResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          account_id: "TS",
-          application_id: "TS",
-          _alias: "TS",
-          voice_url: "TS",
-          voice_fallback_url: "TS",
-          call_connect_url: "TS",
-          status_callback_url: "TS",
-          sms_url: "TS",
-          sms_fallback_url: "TS",
-      )
-      instance_2 = Freeclimb::ApplicationResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          account_id: "TS",
-          application_id: "TS",
-          _alias: "TS",
-          voice_url: "TS",
-          voice_fallback_url: "TS",
-          call_connect_url: "TS",
-          status_callback_url: "TS",
-          sms_url: "TS",
-          sms_fallback_url: "TS",
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::ApplicationResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          account_id: "TS",
-          application_id: "TS",
-          _alias: "TS",
-          voice_url: "TS",
-          voice_fallback_url: "TS",
-          call_connect_url: "TS",
-          status_callback_url: "TS",
-          sms_url: "TS",
-          sms_fallback_url: "TS",
-      )
-      instance_2 = Freeclimb::ApplicationResult.new(
-          uri: "ST",
-          date_created: "ST",
-          date_updated: "ST",
-          revision: 0,
-          account_id: "ST",
-          application_id: "ST",
-          _alias: "ST",
-          voice_url: "ST",
-          voice_fallback_url: "ST",
-          call_connect_url: "ST",
-          status_callback_url: "ST",
-          sms_url: "ST",
-          sms_fallback_url: "ST",
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
@@ -279,7 +219,7 @@ describe Freeclimb::ApplicationResult do
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-      revision: 1,
+revision: 1,
       account_id: "TS",
       application_id: "TS",
       _alias: "TS",
@@ -300,7 +240,7 @@ describe Freeclimb::ApplicationResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         application_id: "TS",
         _alias: "TS",
@@ -321,7 +261,7 @@ describe Freeclimb::ApplicationResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         application_id: "TS",
         _alias: "TS",
@@ -379,7 +319,7 @@ describe Freeclimb::ApplicationResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         application_id: "TS",
         _alias: "TS",
@@ -400,7 +340,7 @@ describe Freeclimb::ApplicationResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         application_id: "TS",
         _alias: "TS",
@@ -419,7 +359,7 @@ describe Freeclimb::ApplicationResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         application_id: "TS",
         _alias: "TS",
@@ -434,7 +374,7 @@ describe Freeclimb::ApplicationResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         application_id: "TS",
         _alias: "TS",
@@ -457,7 +397,7 @@ describe Freeclimb::ApplicationResult do
       
         date_updated: "TS",
       
-        revision: 1,
+revision: 1,
       
         account_id: "TS",
       

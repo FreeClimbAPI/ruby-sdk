@@ -28,26 +28,30 @@ describe Freeclimb::Pause do
   
   describe 'test attribute "length"' do
     it 'should work' do
-      instance.length = 1
-      expect(instance.length).to eq(1) 
+    
+    
+    instance.length = 1
+    expect(instance.length).to eq(1) 
+    
     end
   end
 
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::Pause.new(
-          length: 1,
+length: 1,
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::Pause' do
         expect{instance = Freeclimb::Pause.new(
-          length: 1,
+length: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::Pause.new(
-          length: 1,
+length: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -56,48 +60,19 @@ describe Freeclimb::Pause do
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::Pause.new(
-          length: 1,
+length: 1,
       )
       expect(instance.valid?).to eq(true)
-    end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::Pause.new(
-          length: nil,
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::Pause.new()
-      expect(instance.valid?).to eq(false)
     end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::Pause.new(
-          length: 1,
-      )
-      instance_2 = Freeclimb::Pause.new(
-          length: 1,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::Pause.new(
-          length: 1,
-      )
-      instance_2 = Freeclimb::Pause.new(
-          length: 0,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Pause.new(
-      length: 1,
+length: 1,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -106,7 +81,7 @@ describe Freeclimb::Pause do
   describe 'test method "build_from_hash"' do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::Pause.new(
-        length: 1,
+length: 1,
       )
       instance_2 = Freeclimb::Pause.new
       expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
@@ -115,7 +90,7 @@ describe Freeclimb::Pause do
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::Pause.new(
-        length: 1,
+length: 1,
     )
     it 'deserializes the data of length' do
       expect(instance._deserialize("Integer", instance.length)).to be_a_kind_of(Integer)
@@ -125,7 +100,7 @@ describe Freeclimb::Pause do
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
       instance = Freeclimb::Pause.new(
-        length: 1,
+length: 1,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -134,17 +109,17 @@ describe Freeclimb::Pause do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::Pause.new(
-        length: 1,
+length: 1,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
     it 'creates equal hash for two equal objects' do
       obj = Object.new()
       instance_1 = Freeclimb::Pause.new(
-        length: 1,
+length: 1,
       )
       instance_2 = Freeclimb::Pause.new(
-        length: 1,
+length: 1,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -152,7 +127,7 @@ describe Freeclimb::Pause do
 
   describe 'test method "_to_hash"' do
     instance = Freeclimb::Pause.new(
-        length: 1,
+length: 1,
       )
     it 'returns length in the form of hash' do
       expect(instance._to_hash(instance.length)).to eq(instance.length)

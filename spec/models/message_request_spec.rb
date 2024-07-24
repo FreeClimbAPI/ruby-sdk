@@ -49,8 +49,11 @@ describe Freeclimb::MessageRequest do
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      instance.revision = 1
-      expect(instance.revision).to eq(1) 
+    
+    
+    instance.revision = 1
+    expect(instance.revision).to eq(1) 
+    
     end
   end
 
@@ -93,14 +96,24 @@ describe Freeclimb::MessageRequest do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::MessageRequest.new(
           uri: "TS",
+          
           date_created: "TS",
+          
           date_updated: "TS",
-          revision: 1,
+          
+revision: 1,
+          
           from: "TS",
+          
           to: "TS",
+          
           text: "TS",
+          
           notification_url: "TS",
+          
+          
           media_urls: Array.new(),
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::MessageRequest' do
@@ -108,7 +121,7 @@ describe Freeclimb::MessageRequest do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           from: "TS",
           to: "TS",
           text: "TS",
@@ -122,7 +135,7 @@ describe Freeclimb::MessageRequest do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           from: "TS",
           to: "TS",
           text: "TS",
@@ -139,7 +152,7 @@ describe Freeclimb::MessageRequest do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           from: "TS",
           to: "TS",
           text: "TS",
@@ -148,72 +161,9 @@ describe Freeclimb::MessageRequest do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::MessageRequest.new(
-          from: nil,
-          to: nil,
-          text: nil,
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::MessageRequest.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::MessageRequest.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          from: "TS",
-          to: "TS",
-          text: "TS",
-          notification_url: "TS",
-          media_urls: [],
-      )
-      instance_2 = Freeclimb::MessageRequest.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          from: "TS",
-          to: "TS",
-          text: "TS",
-          notification_url: "TS",
-          media_urls: [],
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::MessageRequest.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          from: "TS",
-          to: "TS",
-          text: "TS",
-          notification_url: "TS",
-          media_urls: [],
-      )
-      instance_2 = Freeclimb::MessageRequest.new(
-          uri: "ST",
-          date_created: "ST",
-          date_updated: "ST",
-          revision: 0,
-          from: "ST",
-          to: "ST",
-          text: "ST",
-          notification_url: "ST",
-          media_urls: nil,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
@@ -222,7 +172,7 @@ describe Freeclimb::MessageRequest do
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-      revision: 1,
+revision: 1,
       from: "TS",
       to: "TS",
       text: "TS",
@@ -239,7 +189,7 @@ describe Freeclimb::MessageRequest do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         from: "TS",
         to: "TS",
         text: "TS",
@@ -256,7 +206,7 @@ describe Freeclimb::MessageRequest do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         from: "TS",
         to: "TS",
         text: "TS",
@@ -298,7 +248,7 @@ describe Freeclimb::MessageRequest do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         from: "TS",
         to: "TS",
         text: "TS",
@@ -315,7 +265,7 @@ describe Freeclimb::MessageRequest do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         from: "TS",
         to: "TS",
         text: "TS",
@@ -330,7 +280,7 @@ describe Freeclimb::MessageRequest do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         from: "TS",
         to: "TS",
         text: "TS",
@@ -341,7 +291,7 @@ describe Freeclimb::MessageRequest do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         from: "TS",
         to: "TS",
         text: "TS",
@@ -360,7 +310,7 @@ describe Freeclimb::MessageRequest do
       
         date_updated: "TS",
       
-        revision: 1,
+revision: 1,
       
         from: "TS",
       

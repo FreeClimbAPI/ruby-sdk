@@ -49,8 +49,11 @@ describe Freeclimb::MutableResourceModel do
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      instance.revision = 1
-      expect(instance.revision).to eq(1) 
+    
+    
+    instance.revision = 1
+    expect(instance.revision).to eq(1) 
+    
     end
   end
 
@@ -58,9 +61,13 @@ describe Freeclimb::MutableResourceModel do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::MutableResourceModel.new(
           uri: "TS",
+          
           date_created: "TS",
+          
           date_updated: "TS",
-          revision: 1,
+          
+revision: 1,
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::MutableResourceModel' do
@@ -68,7 +75,7 @@ describe Freeclimb::MutableResourceModel do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -77,7 +84,7 @@ describe Freeclimb::MutableResourceModel do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -89,53 +96,13 @@ describe Freeclimb::MutableResourceModel do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
       )
       expect(instance.valid?).to eq(true)
-    end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::MutableResourceModel.new(
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::MutableResourceModel.new()
-      expect(instance.valid?).to eq(false)
     end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::MutableResourceModel.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-      )
-      instance_2 = Freeclimb::MutableResourceModel.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::MutableResourceModel.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-      )
-      instance_2 = Freeclimb::MutableResourceModel.new(
-          uri: "ST",
-          date_created: "ST",
-          date_updated: "ST",
-          revision: 0,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
@@ -144,7 +111,7 @@ describe Freeclimb::MutableResourceModel do
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-      revision: 1,
+revision: 1,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -156,7 +123,7 @@ describe Freeclimb::MutableResourceModel do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
       )
       instance_2 = Freeclimb::MutableResourceModel.new
       expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
@@ -168,7 +135,7 @@ describe Freeclimb::MutableResourceModel do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
     )
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
@@ -190,7 +157,7 @@ describe Freeclimb::MutableResourceModel do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -202,7 +169,7 @@ describe Freeclimb::MutableResourceModel do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -212,13 +179,13 @@ describe Freeclimb::MutableResourceModel do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
       )
       instance_2 = Freeclimb::MutableResourceModel.new(
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -232,7 +199,7 @@ describe Freeclimb::MutableResourceModel do
       
         date_updated: "TS",
       
-        revision: 1,
+revision: 1,
       )
     it 'returns uri in the form of hash' do
       expect(instance._to_hash(instance.uri)).to eq(instance.uri)

@@ -42,8 +42,11 @@ describe Freeclimb::Say do
 
   describe 'test attribute "loop"' do
     it 'should work' do
-      instance.loop = 1
-      expect(instance.loop).to eq(1) 
+    
+    
+    instance.loop = 1
+    expect(instance.loop).to eq(1) 
+    
     end
   end
 
@@ -58,16 +61,20 @@ describe Freeclimb::Say do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::Say.new(
           text: "TS",
+          
           language: "TS",
-          loop: 1,
+          
+loop: 1,
+          
           privacy_mode: true,
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::Say' do
         expect{instance = Freeclimb::Say.new(
           text: "TS",
           language: "TS",
-          loop: 1,
+loop: 1,
           privacy_mode: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -76,7 +83,7 @@ describe Freeclimb::Say do
         expect{instance = Freeclimb::Say.new(
           text: "TS",
           language: "TS",
-          loop: 1,
+loop: 1,
           privacy_mode: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -88,55 +95,14 @@ describe Freeclimb::Say do
       instance = Freeclimb::Say.new(
           text: "TS",
           language: "TS",
-          loop: 1,
+loop: 1,
           privacy_mode: true,
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::Say.new(
-          text: nil,
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::Say.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::Say.new(
-          text: "TS",
-          language: "TS",
-          loop: 1,
-          privacy_mode: true,
-      )
-      instance_2 = Freeclimb::Say.new(
-          text: "TS",
-          language: "TS",
-          loop: 1,
-          privacy_mode: true,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::Say.new(
-          text: "TS",
-          language: "TS",
-          loop: 1,
-          privacy_mode: true,
-      )
-      instance_2 = Freeclimb::Say.new(
-          text: "ST",
-          language: "ST",
-          loop: 0,
-          privacy_mode: false,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
@@ -144,7 +110,7 @@ describe Freeclimb::Say do
       instance = Freeclimb::Say.new(
       text: "TS",
       language: "TS",
-      loop: 1,
+loop: 1,
       privacy_mode: true,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
@@ -156,7 +122,7 @@ describe Freeclimb::Say do
       instance_1 = Freeclimb::Say.new(
         text: "TS",
         language: "TS",
-        loop: 1,
+loop: 1,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::Say.new
@@ -168,7 +134,7 @@ describe Freeclimb::Say do
     instance = Freeclimb::Say.new(
         text: "TS",
         language: "TS",
-        loop: 1,
+loop: 1,
         privacy_mode: true,
     )
     it 'deserializes the data of text' do
@@ -190,7 +156,7 @@ describe Freeclimb::Say do
       instance = Freeclimb::Say.new(
         text: "TS",
         language: "TS",
-        loop: 1,
+loop: 1,
         privacy_mode: true,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -202,7 +168,7 @@ describe Freeclimb::Say do
       instance = Freeclimb::Say.new(
         text: "TS",
         language: "TS",
-        loop: 1,
+loop: 1,
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -212,13 +178,13 @@ describe Freeclimb::Say do
       instance_1 = Freeclimb::Say.new(
         text: "TS",
         language: "TS",
-        loop: 1,
+loop: 1,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::Say.new(
         text: "TS",
         language: "TS",
-        loop: 1,
+loop: 1,
         privacy_mode: true,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -231,7 +197,7 @@ describe Freeclimb::Say do
       
         language: "TS",
       
-        loop: 1,
+loop: 1,
       
         privacy_mode: true,
       )

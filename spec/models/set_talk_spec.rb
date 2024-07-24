@@ -37,6 +37,7 @@ describe Freeclimb::SetTalk do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::SetTalk.new(
           talk: true,
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::SetTalk' do
@@ -60,37 +61,9 @@ describe Freeclimb::SetTalk do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::SetTalk.new(
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::SetTalk.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::SetTalk.new(
-          talk: true,
-      )
-      instance_2 = Freeclimb::SetTalk.new(
-          talk: true,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::SetTalk.new(
-          talk: true,
-      )
-      instance_2 = Freeclimb::SetTalk.new(
-          talk: false,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do

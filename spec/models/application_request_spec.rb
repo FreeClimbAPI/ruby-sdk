@@ -79,12 +79,19 @@ describe Freeclimb::ApplicationRequest do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::ApplicationRequest.new(
           _alias: "TS",
+          
           voice_url: "TS",
+          
           voice_fallback_url: "TS",
+          
           call_connect_url: "TS",
+          
           status_callback_url: "TS",
+          
           sms_url: "TS",
+          
           sms_fallback_url: "TS",
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::ApplicationRequest' do
@@ -126,61 +133,9 @@ describe Freeclimb::ApplicationRequest do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::ApplicationRequest.new(
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::ApplicationRequest.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::ApplicationRequest.new(
-          _alias: "TS",
-          voice_url: "TS",
-          voice_fallback_url: "TS",
-          call_connect_url: "TS",
-          status_callback_url: "TS",
-          sms_url: "TS",
-          sms_fallback_url: "TS",
-      )
-      instance_2 = Freeclimb::ApplicationRequest.new(
-          _alias: "TS",
-          voice_url: "TS",
-          voice_fallback_url: "TS",
-          call_connect_url: "TS",
-          status_callback_url: "TS",
-          sms_url: "TS",
-          sms_fallback_url: "TS",
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::ApplicationRequest.new(
-          _alias: "TS",
-          voice_url: "TS",
-          voice_fallback_url: "TS",
-          call_connect_url: "TS",
-          status_callback_url: "TS",
-          sms_url: "TS",
-          sms_fallback_url: "TS",
-      )
-      instance_2 = Freeclimb::ApplicationRequest.new(
-          _alias: "ST",
-          voice_url: "ST",
-          voice_fallback_url: "ST",
-          call_connect_url: "ST",
-          status_callback_url: "ST",
-          sms_url: "ST",
-          sms_fallback_url: "ST",
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do

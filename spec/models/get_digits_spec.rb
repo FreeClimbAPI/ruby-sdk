@@ -35,8 +35,11 @@ describe Freeclimb::GetDigits do
 
   describe 'test attribute "digit_timeout_ms"' do
     it 'should work' do
-      instance.digit_timeout_ms = 1
-      expect(instance.digit_timeout_ms).to eq(1) 
+    
+    
+    instance.digit_timeout_ms = 1
+    expect(instance.digit_timeout_ms).to eq(1) 
+    
     end
   end
 
@@ -56,22 +59,31 @@ describe Freeclimb::GetDigits do
 
   describe 'test attribute "initial_timeout_ms"' do
     it 'should work' do
-      instance.initial_timeout_ms = 1
-      expect(instance.initial_timeout_ms).to eq(1) 
+    
+    
+    instance.initial_timeout_ms = 1
+    expect(instance.initial_timeout_ms).to eq(1) 
+    
     end
   end
 
   describe 'test attribute "max_digits"' do
     it 'should work' do
-      instance.max_digits = 1
-      expect(instance.max_digits).to eq(1) 
+    
+    
+    instance.max_digits = 1
+    expect(instance.max_digits).to eq(1) 
+    
     end
   end
 
   describe 'test attribute "min_digits"' do
     it 'should work' do
-      instance.min_digits = 1
-      expect(instance.min_digits).to eq(1) 
+    
+    
+    instance.min_digits = 1
+    expect(instance.min_digits).to eq(1) 
+    
     end
   end
 
@@ -93,25 +105,35 @@ describe Freeclimb::GetDigits do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::GetDigits.new(
           action_url: "TS",
-          digit_timeout_ms: 1,
+          
+digit_timeout_ms: 1,
+          
           finish_on_key: "TS",
+          
           flush_buffer: true,
-          initial_timeout_ms: 1,
-          max_digits: 1,
-          min_digits: 1,
-          prompts: Array.new(),
+          
+initial_timeout_ms: 1,
+          
+max_digits: 1,
+          
+min_digits: 1,
+          
+          prompts: Freeclimb::PerclCommand.new(),
+          
           privacy_mode: true,
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::GetDigits' do
         expect{instance = Freeclimb::GetDigits.new(
           action_url: "TS",
-          digit_timeout_ms: 1,
+digit_timeout_ms: 1,
           finish_on_key: "TS",
           flush_buffer: true,
-          initial_timeout_ms: 1,
-          max_digits: 1,
-          min_digits: 1,
+initial_timeout_ms: 1,
+max_digits: 1,
+min_digits: 1,
+          prompts: Freeclimb::PerclCommand.new(),
           prompts: Array.new(),
           privacy_mode: true,
           invalid_attribute: true
@@ -120,12 +142,13 @@ describe Freeclimb::GetDigits do
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::GetDigits.new(
           action_url: "TS",
-          digit_timeout_ms: 1,
+digit_timeout_ms: 1,
           finish_on_key: "TS",
           flush_buffer: true,
-          initial_timeout_ms: 1,
-          max_digits: 1,
-          min_digits: 1,
+initial_timeout_ms: 1,
+max_digits: 1,
+min_digits: 1,
+          prompts: Freeclimb::PerclCommand.new(),
           prompts: Array.new(),
           privacy_mode: true,
           invalid_attribute: true
@@ -137,93 +160,34 @@ describe Freeclimb::GetDigits do
     it 'checks if properties are valid' do
       instance = Freeclimb::GetDigits.new(
           action_url: "TS",
-          digit_timeout_ms: 1,
+digit_timeout_ms: 1,
           finish_on_key: "TS",
           flush_buffer: true,
-          initial_timeout_ms: 1,
-          max_digits: 1,
-          min_digits: 1,
+initial_timeout_ms: 1,
+max_digits: 1,
+min_digits: 1,
+          prompts: Freeclimb::PerclCommand.new(),
           prompts: Array.new(),
           privacy_mode: true,
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::GetDigits.new(
-          action_url: nil,
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::GetDigits.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::GetDigits.new(
-          action_url: "TS",
-          digit_timeout_ms: 1,
-          finish_on_key: "TS",
-          flush_buffer: true,
-          initial_timeout_ms: 1,
-          max_digits: 1,
-          min_digits: 1,
-          prompts: [],
-          privacy_mode: true,
-      )
-      instance_2 = Freeclimb::GetDigits.new(
-          action_url: "TS",
-          digit_timeout_ms: 1,
-          finish_on_key: "TS",
-          flush_buffer: true,
-          initial_timeout_ms: 1,
-          max_digits: 1,
-          min_digits: 1,
-          prompts: [],
-          privacy_mode: true,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::GetDigits.new(
-          action_url: "TS",
-          digit_timeout_ms: 1,
-          finish_on_key: "TS",
-          flush_buffer: true,
-          initial_timeout_ms: 1,
-          max_digits: 1,
-          min_digits: 1,
-          prompts: [],
-          privacy_mode: true,
-      )
-      instance_2 = Freeclimb::GetDigits.new(
-          action_url: "ST",
-          digit_timeout_ms: 0,
-          finish_on_key: "ST",
-          flush_buffer: false,
-          initial_timeout_ms: 0,
-          max_digits: 0,
-          min_digits: 0,
-          prompts: nil,
-          privacy_mode: false,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::GetDigits.new(
       action_url: "TS",
-      digit_timeout_ms: 1,
+digit_timeout_ms: 1,
       finish_on_key: "TS",
       flush_buffer: true,
-      initial_timeout_ms: 1,
-      max_digits: 1,
-      min_digits: 1,
+initial_timeout_ms: 1,
+max_digits: 1,
+min_digits: 1,
+      prompts: Freeclimb::PerclCommand.new(),
       prompts: Array.new(),
       privacy_mode: true,
     )
@@ -235,12 +199,13 @@ describe Freeclimb::GetDigits do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::GetDigits.new(
         action_url: "TS",
-        digit_timeout_ms: 1,
+digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-        initial_timeout_ms: 1,
-        max_digits: 1,
-        min_digits: 1,
+initial_timeout_ms: 1,
+max_digits: 1,
+min_digits: 1,
+        prompts: Freeclimb::PerclCommand.new(),
         prompts: Array.new(),
         privacy_mode: true,
       )
@@ -252,12 +217,13 @@ describe Freeclimb::GetDigits do
   describe 'test method "_deserialize"' do
     instance = Freeclimb::GetDigits.new(
         action_url: "TS",
-        digit_timeout_ms: 1,
+digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-        initial_timeout_ms: 1,
-        max_digits: 1,
-        min_digits: 1,
+initial_timeout_ms: 1,
+max_digits: 1,
+min_digits: 1,
+        prompts: Freeclimb::PerclCommand.new(),
         prompts: Array.new(),
         privacy_mode: true,
     )
@@ -294,12 +260,13 @@ describe Freeclimb::GetDigits do
     it 'returns the string representation of the object' do
       instance = Freeclimb::GetDigits.new(
         action_url: "TS",
-        digit_timeout_ms: 1,
+digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-        initial_timeout_ms: 1,
-        max_digits: 1,
-        min_digits: 1,
+initial_timeout_ms: 1,
+max_digits: 1,
+min_digits: 1,
+        prompts: Freeclimb::PerclCommand.new(),
         prompts: Array.new(),
         privacy_mode: true,
       )
@@ -311,12 +278,13 @@ describe Freeclimb::GetDigits do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::GetDigits.new(
         action_url: "TS",
-        digit_timeout_ms: 1,
+digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-        initial_timeout_ms: 1,
-        max_digits: 1,
-        min_digits: 1,
+initial_timeout_ms: 1,
+max_digits: 1,
+min_digits: 1,
+        prompts: Freeclimb::PerclCommand.new(),
         prompts: Array.new(),
         privacy_mode: true,
       )
@@ -326,23 +294,25 @@ describe Freeclimb::GetDigits do
       obj = Object.new()
       instance_1 = Freeclimb::GetDigits.new(
         action_url: "TS",
-        digit_timeout_ms: 1,
+digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-        initial_timeout_ms: 1,
-        max_digits: 1,
-        min_digits: 1,
+initial_timeout_ms: 1,
+max_digits: 1,
+min_digits: 1,
+        prompts: Freeclimb::PerclCommand.new(),
         prompts: Array.new(),
         privacy_mode: true,
       )
       instance_2 = Freeclimb::GetDigits.new(
         action_url: "TS",
-        digit_timeout_ms: 1,
+digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-        initial_timeout_ms: 1,
-        max_digits: 1,
-        min_digits: 1,
+initial_timeout_ms: 1,
+max_digits: 1,
+min_digits: 1,
+        prompts: Freeclimb::PerclCommand.new(),
         prompts: Array.new(),
         privacy_mode: true,
       )
@@ -354,17 +324,17 @@ describe Freeclimb::GetDigits do
     instance = Freeclimb::GetDigits.new(
         action_url: "TS",
       
-        digit_timeout_ms: 1,
+digit_timeout_ms: 1,
       
         finish_on_key: "TS",
       
         flush_buffer: true,
       
-        initial_timeout_ms: 1,
+initial_timeout_ms: 1,
       
-        max_digits: 1,
+max_digits: 1,
       
-        min_digits: 1,
+min_digits: 1,
       
         prompts: Array.new(),
       

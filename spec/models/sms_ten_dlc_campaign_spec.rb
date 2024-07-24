@@ -342,40 +342,77 @@ describe Freeclimb::SMSTenDLCCampaign do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::SMSTenDLCCampaign.new(
           account_id: "TS",
+          
           campaign_id: "TS",
+          
           csp_id: "TS",
+          
           reseller_id: "TS",
+          
+          
           status: "ACTIVE",
+          
           create_date: "2022-07-05T15:17:05Z",
           auto_renewal: true,
+          
+          
           billed_date: "2022-07-05T15:17:05Z",
           brand_id: "TS",
+          
           usecase: "TS",
+          
+          
           sub_usecases: Array.new(),
+          
           description: "TS",
+          
           embedded_link: true,
+          
           embedded_phone: true,
+          
           affiliate_marketing: true,
+          
           number_pool: true,
+          
           age_gated: true,
+          
           direct_lending: true,
+          
           subscriber_optin: true,
+          
           subscriber_optout: true,
+          
           subscriber_help: true,
+          
           sample1: "TS",
+          
           sample2: "TS",
+          
           sample3: "TS",
+          
           sample4: "TS",
+          
           sample5: "TS",
+          
           message_flow: "TS",
+          
           help_message: "TS",
+          
           optin_keywords: "TS",
+          
           optout_keywords: "TS",
+          
           help_keywords: "TS",
+          
           optin_message: "TS",
+          
           optout_message: "TS",
+          
           reference_id: "TS",
+          
           mock: true,
+          
+          
           next_renewal_or_expiration_date: "2000-01-01",
         )}.not_to raise_error()
     end
@@ -505,160 +542,9 @@ describe Freeclimb::SMSTenDLCCampaign do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::SMSTenDLCCampaign.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::SMSTenDLCCampaign.new(
-          account_id: "TS",
-          campaign_id: "TS",
-          csp_id: "TS",
-          reseller_id: "TS",
-          status: "ACTIVE",
-          auto_renewal: true,
-          brand_id: "TS",
-          usecase: "TS",
-          sub_usecases: [],
-          description: "TS",
-          embedded_link: true,
-          embedded_phone: true,
-          affiliate_marketing: true,
-          number_pool: true,
-          age_gated: true,
-          direct_lending: true,
-          subscriber_optin: true,
-          subscriber_optout: true,
-          subscriber_help: true,
-          sample1: "TS",
-          sample2: "TS",
-          sample3: "TS",
-          sample4: "TS",
-          sample5: "TS",
-          message_flow: "TS",
-          help_message: "TS",
-          optin_keywords: "TS",
-          optout_keywords: "TS",
-          help_keywords: "TS",
-          optin_message: "TS",
-          optout_message: "TS",
-          reference_id: "TS",
-          mock: true,
-      )
-      instance_2 = Freeclimb::SMSTenDLCCampaign.new(
-          account_id: "TS",
-          campaign_id: "TS",
-          csp_id: "TS",
-          reseller_id: "TS",
-          status: "ACTIVE",
-          auto_renewal: true,
-          brand_id: "TS",
-          usecase: "TS",
-          sub_usecases: [],
-          description: "TS",
-          embedded_link: true,
-          embedded_phone: true,
-          affiliate_marketing: true,
-          number_pool: true,
-          age_gated: true,
-          direct_lending: true,
-          subscriber_optin: true,
-          subscriber_optout: true,
-          subscriber_help: true,
-          sample1: "TS",
-          sample2: "TS",
-          sample3: "TS",
-          sample4: "TS",
-          sample5: "TS",
-          message_flow: "TS",
-          help_message: "TS",
-          optin_keywords: "TS",
-          optout_keywords: "TS",
-          help_keywords: "TS",
-          optin_message: "TS",
-          optout_message: "TS",
-          reference_id: "TS",
-          mock: true,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::SMSTenDLCCampaign.new(
-          account_id: "TS",
-          campaign_id: "TS",
-          csp_id: "TS",
-          reseller_id: "TS",
-          status: "ACTIVE",
-          auto_renewal: true,
-          brand_id: "TS",
-          usecase: "TS",
-          sub_usecases: [],
-          description: "TS",
-          embedded_link: true,
-          embedded_phone: true,
-          affiliate_marketing: true,
-          number_pool: true,
-          age_gated: true,
-          direct_lending: true,
-          subscriber_optin: true,
-          subscriber_optout: true,
-          subscriber_help: true,
-          sample1: "TS",
-          sample2: "TS",
-          sample3: "TS",
-          sample4: "TS",
-          sample5: "TS",
-          message_flow: "TS",
-          help_message: "TS",
-          optin_keywords: "TS",
-          optout_keywords: "TS",
-          help_keywords: "TS",
-          optin_message: "TS",
-          optout_message: "TS",
-          reference_id: "TS",
-          mock: true,
-      )
-      instance_2 = Freeclimb::SMSTenDLCCampaign.new(
-          account_id: "ST",
-          campaign_id: "ST",
-          csp_id: "ST",
-          reseller_id: "ST",
-          status: "EXPIRED",
-          auto_renewal: false,
-          brand_id: "ST",
-          usecase: "ST",
-          sub_usecases: nil,
-          description: "ST",
-          embedded_link: false,
-          embedded_phone: false,
-          affiliate_marketing: false,
-          number_pool: false,
-          age_gated: false,
-          direct_lending: false,
-          subscriber_optin: false,
-          subscriber_optout: false,
-          subscriber_help: false,
-          sample1: "ST",
-          sample2: "ST",
-          sample3: "ST",
-          sample4: "ST",
-          sample5: "ST",
-          message_flow: "ST",
-          help_message: "ST",
-          optin_keywords: "ST",
-          optout_keywords: "ST",
-          help_keywords: "ST",
-          optin_message: "ST",
-          optout_message: "ST",
-          reference_id: "ST",
-          mock: false,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do

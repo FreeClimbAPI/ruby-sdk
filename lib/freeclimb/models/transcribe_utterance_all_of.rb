@@ -14,14 +14,29 @@ require 'date'
 require 'time'
 
 module Freeclimb
-  class RemoveFromConferenceAllOf
-    # ID of the Call leg to be removed from the Conference. The Call must be in a Conference or an error will be triggered.
-    attr_accessor :call_id
+  # The `TranscribeUtterance` command transcribes the caller’s voice and returns transcription of the audio and optionally returns the recording of the audio transcribed.  `TranscribeUtterance` is blocking and is a terminal command. As such, the actionUrl property is required, and control of the Call picks up using the `PerCL` returned in response of the `actionUrl`. Recording and Transcription information is returned in the actionUrl request. If the reason this command ended was due to the call hanging up, any PerCL returned will not execute.
+  class TranscribeUtteranceAllOf
+    attr_accessor :action_url
+
+    attr_accessor :play_beep
+
+    attr_accessor :record
+
+    attr_accessor :privacy_for_logging
+
+    attr_accessor :privacy_for_recording
+
+    attr_accessor :prompts
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'call_id' => :'callId'
+        :'action_url' => :'actionUrl',
+        :'play_beep' => :'playBeep',
+        :'record' => :'record',
+        :'privacy_for_logging' => :'privacyForLogging',
+        :'privacy_for_recording' => :'privacyForRecording',
+        :'prompts' => :'prompts'
       }
     end
 
@@ -33,7 +48,12 @@ module Freeclimb
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'call_id' => :'String'
+        :'action_url' => :'String',
+        :'play_beep' => :'Boolean',
+        :'record' => :'TranscribeUtteranceAllOfRecord',
+        :'privacy_for_logging' => :'Boolean',
+        :'privacy_for_recording' => :'Boolean',
+        :'prompts' => :'Array<Object>'
       }
     end
 
@@ -47,19 +67,47 @@ module Freeclimb
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::RemoveFromConferenceAllOf` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::TranscribeUtteranceAllOf` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::RemoveFromConferenceAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::TranscribeUtteranceAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'call_id')
-        self.call_id = attributes[:'call_id']
+      if attributes.key?(:'action_url')
+        self.action_url = attributes[:'action_url']
+      end
+
+      if attributes.key?(:'play_beep')
+        self.play_beep = attributes[:'play_beep']
+      else
+        self.play_beep = false
+      end
+
+      if attributes.key?(:'record')
+        self.record = attributes[:'record']
+      end
+
+      if attributes.key?(:'privacy_for_logging')
+        self.privacy_for_logging = attributes[:'privacy_for_logging']
+      else
+        self.privacy_for_logging = false
+      end
+
+      if attributes.key?(:'privacy_for_recording')
+        self.privacy_for_recording = attributes[:'privacy_for_recording']
+      else
+        self.privacy_for_recording = false
+      end
+
+      if attributes.key?(:'prompts')
+        if (value = attributes[:'prompts']).is_a?(Array)
+          self.prompts = value
+        end
       end
     end
 
@@ -67,8 +115,8 @@ module Freeclimb
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @call_id.nil?
-        invalid_properties.push('invalid value for "call_id", call_id cannot be nil.')
+      if @action_url.nil?
+        invalid_properties.push('invalid value for "action_url", action_url cannot be nil.')
       end
 
       invalid_properties
@@ -78,11 +126,22 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
-      if @call_id.nil?
+      if @action_url.nil?
+        false
+      elsif @play_beep.nil?
+        false
+      elsif @record.nil?
+        false
+      elsif @privacy_for_logging.nil?
+        false
+      elsif @privacy_for_recording.nil?
+        false
+      elsif @prompts.nil?
         false
       else
         list_invalid_properties.length() == 0
       end
+
     end
 
     # Checks equality by comparing each attribute.
@@ -90,7 +149,12 @@ module Freeclimb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          call_id == o.call_id
+          action_url == o.action_url &&
+          play_beep == o.play_beep &&
+          record == o.record &&
+          privacy_for_logging == o.privacy_for_logging &&
+          privacy_for_recording == o.privacy_for_recording &&
+          prompts == o.prompts
     end
 
     # @see the `==` method
@@ -102,7 +166,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [call_id].hash
+      [action_url, play_beep, record, privacy_for_logging, privacy_for_recording, prompts].hash
     end
 
     # Builds the object from hash

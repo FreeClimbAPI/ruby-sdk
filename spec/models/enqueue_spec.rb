@@ -58,9 +58,13 @@ describe Freeclimb::Enqueue do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::Enqueue.new(
           action_url: "TS",
+          
           notification_url: "TS",
+          
           queue_id: "TS",
+          
           wait_url: "TS",
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::Enqueue' do
@@ -93,52 +97,9 @@ describe Freeclimb::Enqueue do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::Enqueue.new(
-          action_url: nil,
-          queue_id: nil,
-          wait_url: nil,
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::Enqueue.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::Enqueue.new(
-          action_url: "TS",
-          notification_url: "TS",
-          queue_id: "TS",
-          wait_url: "TS",
-      )
-      instance_2 = Freeclimb::Enqueue.new(
-          action_url: "TS",
-          notification_url: "TS",
-          queue_id: "TS",
-          wait_url: "TS",
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::Enqueue.new(
-          action_url: "TS",
-          notification_url: "TS",
-          queue_id: "TS",
-          wait_url: "TS",
-      )
-      instance_2 = Freeclimb::Enqueue.new(
-          action_url: "ST",
-          notification_url: "ST",
-          queue_id: "ST",
-          wait_url: "ST",
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do

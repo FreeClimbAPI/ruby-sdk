@@ -77,6 +77,8 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
+
+      true
     end
 
     # Checks equality by comparing each attribute.

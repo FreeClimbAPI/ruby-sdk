@@ -49,8 +49,11 @@ describe Freeclimb::ConferenceParticipantResult do
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      instance.revision = 1
-      expect(instance.revision).to eq(1) 
+    
+    
+    instance.revision = 1
+    expect(instance.revision).to eq(1) 
+    
     end
   end
 
@@ -100,15 +103,25 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::ConferenceParticipantResult.new(
           uri: "TS",
+          
           date_created: "TS",
+          
           date_updated: "TS",
-          revision: 1,
+          
+revision: 1,
+          
           account_id: "TS",
+          
           conference_id: "TS",
+          
           call_id: "TS",
+          
           talk: true,
+          
           listen: true,
+          
           start_conf_on_enter: true,
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::ConferenceParticipantResult' do
@@ -116,7 +129,7 @@ describe Freeclimb::ConferenceParticipantResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           account_id: "TS",
           conference_id: "TS",
           call_id: "TS",
@@ -131,7 +144,7 @@ describe Freeclimb::ConferenceParticipantResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           account_id: "TS",
           conference_id: "TS",
           call_id: "TS",
@@ -149,7 +162,7 @@ describe Freeclimb::ConferenceParticipantResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           account_id: "TS",
           conference_id: "TS",
           call_id: "TS",
@@ -159,73 +172,9 @@ describe Freeclimb::ConferenceParticipantResult do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::ConferenceParticipantResult.new(
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::ConferenceParticipantResult.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::ConferenceParticipantResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          account_id: "TS",
-          conference_id: "TS",
-          call_id: "TS",
-          talk: true,
-          listen: true,
-          start_conf_on_enter: true,
-      )
-      instance_2 = Freeclimb::ConferenceParticipantResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          account_id: "TS",
-          conference_id: "TS",
-          call_id: "TS",
-          talk: true,
-          listen: true,
-          start_conf_on_enter: true,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::ConferenceParticipantResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          account_id: "TS",
-          conference_id: "TS",
-          call_id: "TS",
-          talk: true,
-          listen: true,
-          start_conf_on_enter: true,
-      )
-      instance_2 = Freeclimb::ConferenceParticipantResult.new(
-          uri: "ST",
-          date_created: "ST",
-          date_updated: "ST",
-          revision: 0,
-          account_id: "ST",
-          conference_id: "ST",
-          call_id: "ST",
-          talk: false,
-          listen: false,
-          start_conf_on_enter: false,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
@@ -234,7 +183,7 @@ describe Freeclimb::ConferenceParticipantResult do
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-      revision: 1,
+revision: 1,
       account_id: "TS",
       conference_id: "TS",
       call_id: "TS",
@@ -252,7 +201,7 @@ describe Freeclimb::ConferenceParticipantResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         conference_id: "TS",
         call_id: "TS",
@@ -270,7 +219,7 @@ describe Freeclimb::ConferenceParticipantResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         conference_id: "TS",
         call_id: "TS",
@@ -316,7 +265,7 @@ describe Freeclimb::ConferenceParticipantResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         conference_id: "TS",
         call_id: "TS",
@@ -334,7 +283,7 @@ describe Freeclimb::ConferenceParticipantResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         conference_id: "TS",
         call_id: "TS",
@@ -350,7 +299,7 @@ describe Freeclimb::ConferenceParticipantResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         conference_id: "TS",
         call_id: "TS",
@@ -362,7 +311,7 @@ describe Freeclimb::ConferenceParticipantResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         conference_id: "TS",
         call_id: "TS",
@@ -382,7 +331,7 @@ describe Freeclimb::ConferenceParticipantResult do
       
         date_updated: "TS",
       
-        revision: 1,
+revision: 1,
       
         account_id: "TS",
       

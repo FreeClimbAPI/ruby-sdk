@@ -43,6 +43,17 @@ describe Freeclimb::TerminateConference do
     end
   end
 
+  describe 'test method "valid"' do
+    it 'checks if properties are valid' do
+      instance = Freeclimb::TerminateConference.new(
+      )
+      expect(instance.valid?).to eq(true)
+    end
+  end
+
+  describe 'test method "eql?"' do
+  end
+
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::TerminateConference.new(

@@ -245,10 +245,11 @@ describe 'DefaultApi' do
     @account_request_update_an_account_test_value = Freeclimb::AccountRequest.new
 
     @incoming_number_request_update_an_incoming_number_test_value = Freeclimb::IncomingNumberRequest.new
-
+  
     @campaign_id_get_toll_free_sms_campaign_test_value = 'CX56XX4'
 
     @create_web_rtc_token_make_a_webrtc_jwt_test_value=Freeclimb::CreateWebRTCToken.new({to: 'to_example', from: 'from_example', uses: 2})
+
   end
 
   after do
@@ -278,7 +279,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::IncomingNumberResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -301,7 +303,8 @@ describe 'DefaultApi' do
           :create_conference_request => create_conference_request,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::ConferenceResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -324,7 +327,8 @@ describe 'DefaultApi' do
           :queue_request => queue_request,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::QueueResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -347,7 +351,8 @@ describe 'DefaultApi' do
           :application_request => application_request,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::ApplicationResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -370,7 +375,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       
       expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -393,7 +399,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       
       expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -416,7 +423,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       
       expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -441,7 +449,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::QueueMember
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -464,7 +473,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::QueueMember
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -487,7 +497,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::File
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -510,7 +521,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::LogList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -533,7 +545,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::CallResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -556,7 +569,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::ConferenceResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -581,7 +595,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::QueueMember
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -606,7 +621,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::ConferenceParticipantResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -629,7 +645,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::QueueResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -652,7 +669,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::RecordingResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -673,7 +691,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::AccountResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -696,7 +715,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::ApplicationResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -719,7 +739,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::IncomingNumberResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -742,7 +763,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::MessageResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -765,7 +787,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::QueueMember
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -788,7 +811,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::SMSTenDLCBrand
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -809,7 +833,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::SMSTenDLCBrandsListResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -832,7 +857,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::SMSTenDLCCampaign
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -855,7 +881,8 @@ describe 'DefaultApi' do
           :brand_id => brand_id,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::SMSTenDLCCampaignsListResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -878,7 +905,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::SMSTenDLCPartnerCampaign
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -901,7 +929,8 @@ describe 'DefaultApi' do
           :brand_id => brand_id,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::SMSTenDLCPartnerCampaignsListResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -924,7 +953,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::SMSTollFreeCampaign
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -945,7 +975,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::SMSTollFreeCampaignsListResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -968,7 +999,8 @@ describe 'DefaultApi' do
           :_alias => _alias,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::QueueList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -989,7 +1021,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::LogList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1012,7 +1045,8 @@ describe 'DefaultApi' do
           :_alias => _alias,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::ApplicationList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1053,7 +1087,8 @@ describe 'DefaultApi' do
           :phone_number => phone_number,:region => region,:country => country,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::AvailableNumberList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1076,7 +1111,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::LogList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1101,7 +1137,8 @@ describe 'DefaultApi' do
           :date_created => date_created,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::RecordingList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1138,7 +1175,8 @@ describe 'DefaultApi' do
           :active => active,:to => to,:from => from,:status => status,:start_time => start_time,:end_time => end_time,:parent_call_id => parent_call_id,:application_id => application_id,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::CallList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1165,7 +1203,8 @@ describe 'DefaultApi' do
           :call_id => call_id,:conference_id => conference_id,:date_created => date_created,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::RecordingList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1194,7 +1233,8 @@ describe 'DefaultApi' do
           :status => status,:_alias => _alias,:date_created => date_created,:date_updated => date_updated,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::ConferenceList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1247,7 +1287,8 @@ describe 'DefaultApi' do
           :phone_number => phone_number,:_alias => _alias,:region => region,:country => country,:application_id => application_id,:has_application => has_application,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:has_campaign => has_campaign,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,:tfn_campaign_id => tfn_campaign_id,:offnet => offnet,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::IncomingNumberList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1270,7 +1311,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::QueueMemberList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1297,7 +1339,8 @@ describe 'DefaultApi' do
           :talk => talk,:listen => listen,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::ConferenceParticipantList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1324,7 +1367,8 @@ describe 'DefaultApi' do
           :call_id => call_id,:conference_id => conference_id,:date_created => date_created,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::RecordingList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1361,7 +1405,8 @@ describe 'DefaultApi' do
           :to => to,:from => from,:begin_time => begin_time,:end_time => end_time,:direction => direction,:campaign_id => campaign_id,:brand_id => brand_id,:is10_dlc => is10_dlc,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::MessagesList
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1384,7 +1429,8 @@ describe 'DefaultApi' do
           :make_call_request => make_call_request,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::CallResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1408,8 +1454,9 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      true
       expect(result).to be_a String
+      
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1433,7 +1480,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       
       expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1456,7 +1504,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::MessageResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1479,7 +1528,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::File
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1504,7 +1554,8 @@ describe 'DefaultApi' do
           :update_conference_request => update_conference_request,
         }
       )
- 
+      false
+      
       
       expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1529,7 +1580,8 @@ describe 'DefaultApi' do
           
         }
       )
- 
+      false
+      
       
       expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1556,7 +1608,8 @@ describe 'DefaultApi' do
           :update_conference_participant_request => update_conference_participant_request,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::ConferenceParticipantResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1581,7 +1634,8 @@ describe 'DefaultApi' do
           :queue_request => queue_request,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::QueueResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1604,7 +1658,8 @@ describe 'DefaultApi' do
           :account_request => account_request,
         }
       )
- 
+      false
+      
       
       expect(result).to be_nil
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1629,7 +1684,8 @@ describe 'DefaultApi' do
           :application_request => application_request,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::ApplicationResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1654,7 +1710,8 @@ describe 'DefaultApi' do
           :incoming_number_request => incoming_number_request,
         }
       )
- 
+      false
+      
       expect(result).to be_a Freeclimb::IncomingNumberResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

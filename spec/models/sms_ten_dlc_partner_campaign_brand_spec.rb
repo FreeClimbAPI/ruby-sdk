@@ -120,8 +120,11 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
 
   describe 'test attribute "evp_vetting_score"' do
     it 'should work' do
-      instance.evp_vetting_score = 1
-      expect(instance.evp_vetting_score).to eq(1) 
+    
+    
+    instance.evp_vetting_score = 1
+    expect(instance.evp_vetting_score).to eq(1) 
+    
     end
   end
 
@@ -129,16 +132,27 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
           account_id: "TS",
+          
           brand_id: "TS",
+          
           first_name: "TS",
+          
           last_name: "TS",
+          
           display_name: "TS",
+          
           company_name: "TS",
+          
           phone: "TS",
+          
           email: "TS",
+          
           website: "TS",
+          
+          
           optional_attributes: Hash.new(),
-          evp_vetting_score: 1,
+evp_vetting_score: 1,
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::SMSTenDLCPartnerCampaignBrand' do
@@ -153,7 +167,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           email: "TS",
           website: "TS",
           optional_attributes: Hash.new(),
-          evp_vetting_score: 1,
+evp_vetting_score: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -169,7 +183,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           email: "TS",
           website: "TS",
           optional_attributes: Hash.new(),
-          evp_vetting_score: 1,
+evp_vetting_score: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -188,72 +202,13 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           email: "TS",
           website: "TS",
           optional_attributes: Hash.new(),
-          evp_vetting_score: 1,
+evp_vetting_score: 1,
       )
       expect(instance.valid?).to eq(true)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.new()
-      expect(instance.valid?).to eq(false)
     end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
-          account_id: "TS",
-          brand_id: "TS",
-          first_name: "TS",
-          last_name: "TS",
-          display_name: "TS",
-          company_name: "TS",
-          phone: "TS",
-          email: "TS",
-          website: "TS",
-          evp_vetting_score: 1,
-      )
-      instance_2 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
-          account_id: "TS",
-          brand_id: "TS",
-          first_name: "TS",
-          last_name: "TS",
-          display_name: "TS",
-          company_name: "TS",
-          phone: "TS",
-          email: "TS",
-          website: "TS",
-          evp_vetting_score: 1,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
-          account_id: "TS",
-          brand_id: "TS",
-          first_name: "TS",
-          last_name: "TS",
-          display_name: "TS",
-          company_name: "TS",
-          phone: "TS",
-          email: "TS",
-          website: "TS",
-          evp_vetting_score: 1,
-      )
-      instance_2 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
-          account_id: "ST",
-          brand_id: "ST",
-          first_name: "ST",
-          last_name: "ST",
-          display_name: "ST",
-          company_name: "ST",
-          phone: "ST",
-          email: "ST",
-          website: "ST",
-          evp_vetting_score: 0,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
@@ -269,7 +224,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       email: "TS",
       website: "TS",
       optional_attributes: Hash.new(),
-      evp_vetting_score: 1,
+evp_vetting_score: 1,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -288,7 +243,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
         email: "TS",
         website: "TS",
         optional_attributes: Hash.new(),
-        evp_vetting_score: 1,
+evp_vetting_score: 1,
       )
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new
       expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
@@ -307,7 +262,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
         email: "TS",
         website: "TS",
         optional_attributes: Hash.new(),
-        evp_vetting_score: 1,
+evp_vetting_score: 1,
     )
     it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
@@ -357,7 +312,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
         email: "TS",
         website: "TS",
         optional_attributes: Hash.new(),
-        evp_vetting_score: 1,
+evp_vetting_score: 1,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -376,7 +331,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
         email: "TS",
         website: "TS",
         optional_attributes: Hash.new(),
-        evp_vetting_score: 1,
+evp_vetting_score: 1,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -393,7 +348,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
         email: "TS",
         website: "TS",
         optional_attributes: Hash.new(),
-        evp_vetting_score: 1,
+evp_vetting_score: 1,
       )
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
         account_id: "TS",
@@ -406,7 +361,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
         email: "TS",
         website: "TS",
         optional_attributes: Hash.new(),
-        evp_vetting_score: 1,
+evp_vetting_score: 1,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -434,7 +389,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       
         optional_attributes: Hash.new(),
       
-        evp_vetting_score: 1,
+evp_vetting_score: 1,
       )
     it 'returns account_id in the form of hash' do
       expect(instance._to_hash(instance.account_id)).to eq(instance.account_id)

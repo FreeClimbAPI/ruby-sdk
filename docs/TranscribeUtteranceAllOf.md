@@ -1,4 +1,4 @@
-# Freeclimb::TranscribeUtterance
+# Freeclimb::TranscribeUtteranceAllOf
 
 ## Properties
 
@@ -16,7 +16,7 @@
 ```ruby
 require 'freeclimb'
 
-instance = Freeclimb::TranscribeUtterance.new(
+instance = Freeclimb::TranscribeUtteranceAllOf.new(
   action_url: null,
   play_beep: null,
   record: null,

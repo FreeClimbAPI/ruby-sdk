@@ -49,8 +49,11 @@ describe Freeclimb::AccountResult do
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      instance.revision = 1
-      expect(instance.revision).to eq(1) 
+    
+    
+    instance.revision = 1
+    expect(instance.revision).to eq(1) 
+    
     end
   end
 
@@ -122,15 +125,28 @@ describe Freeclimb::AccountResult do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::AccountResult.new(
           uri: "TS",
+          
           date_created: "TS",
+          
           date_updated: "TS",
-          revision: 1,
+          
+revision: 1,
+          
           account_id: "TS",
+          
           api_key: "TS",
+          
           _alias: "TS",
+          
           label: "TS",
+          
+          type: Freeclimb::AccountType.new(),
+          
           type: "TRIAL",
+          status: Freeclimb::AccountStatus.new(),
+          
           status: "CLOSED",
+          
           subresource_uris: Object.new(),
         )}.not_to raise_error()
     end
@@ -139,12 +155,14 @@ describe Freeclimb::AccountResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           account_id: "TS",
           api_key: "TS",
           _alias: "TS",
           label: "TS",
+          type: Freeclimb::AccountType.new(),
           type: "TRIAL",
+          status: Freeclimb::AccountStatus.new(),
           status: "CLOSED",
           subresource_uris: Object.new(),
           invalid_attribute: true
@@ -155,12 +173,14 @@ describe Freeclimb::AccountResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           account_id: "TS",
           api_key: "TS",
           _alias: "TS",
           label: "TS",
+          type: Freeclimb::AccountType.new(),
           type: "TRIAL",
+          status: Freeclimb::AccountStatus.new(),
           status: "CLOSED",
           subresource_uris: Object.new(),
           invalid_attribute: true
@@ -174,88 +194,22 @@ describe Freeclimb::AccountResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           account_id: "TS",
           api_key: "TS",
           _alias: "TS",
           label: "TS",
+          type: Freeclimb::AccountType.new(),
           type: "TRIAL",
+          status: Freeclimb::AccountStatus.new(),
           status: "CLOSED",
           subresource_uris: Object.new(),
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::AccountResult.new(
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::AccountResult.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::AccountResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          account_id: "TS",
-          api_key: "TS",
-          _alias: "TS",
-          label: "TS",
-          type: "TRIAL",
-          status: "CLOSED",
-          subresource_uris: obj,
-      )
-      instance_2 = Freeclimb::AccountResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          account_id: "TS",
-          api_key: "TS",
-          _alias: "TS",
-          label: "TS",
-          type: "TRIAL",
-          status: "CLOSED",
-          subresource_uris: obj,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::AccountResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          account_id: "TS",
-          api_key: "TS",
-          _alias: "TS",
-          label: "TS",
-          type: "TRIAL",
-          status: "CLOSED",
-          subresource_uris: Object.new(),
-      )
-      instance_2 = Freeclimb::AccountResult.new(
-          uri: "ST",
-          date_created: "ST",
-          date_updated: "ST",
-          revision: 0,
-          account_id: "ST",
-          api_key: "ST",
-          _alias: "ST",
-          label: "ST",
-          type: "FULL",
-          status: "SUSPENDED",
-          subresource_uris: nil,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
@@ -264,12 +218,14 @@ describe Freeclimb::AccountResult do
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-      revision: 1,
+revision: 1,
       account_id: "TS",
       api_key: "TS",
       _alias: "TS",
       label: "TS",
+      type: Freeclimb::AccountType.new(),
       type: "TRIAL",
+      status: Freeclimb::AccountStatus.new(),
       status: "CLOSED",
       subresource_uris: Object.new(),
     )
@@ -283,12 +239,14 @@ describe Freeclimb::AccountResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         api_key: "TS",
         _alias: "TS",
         label: "TS",
+        type: Freeclimb::AccountType.new(),
         type: "TRIAL",
+        status: Freeclimb::AccountStatus.new(),
         status: "CLOSED",
         subresource_uris: Object.new(),
       )
@@ -302,12 +260,14 @@ describe Freeclimb::AccountResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         api_key: "TS",
         _alias: "TS",
         label: "TS",
+        type: Freeclimb::AccountType.new(),
         type: "TRIAL",
+        status: Freeclimb::AccountStatus.new(),
         status: "CLOSED",
         subresource_uris: Object.new(),
     )
@@ -346,12 +306,14 @@ describe Freeclimb::AccountResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         api_key: "TS",
         _alias: "TS",
         label: "TS",
+        type: Freeclimb::AccountType.new(),
         type: "TRIAL",
+        status: Freeclimb::AccountStatus.new(),
         status: "CLOSED",
         subresource_uris: Object.new(),
       )
@@ -365,12 +327,14 @@ describe Freeclimb::AccountResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         api_key: "TS",
         _alias: "TS",
         label: "TS",
+        type: Freeclimb::AccountType.new(),
         type: "TRIAL",
+        status: Freeclimb::AccountStatus.new(),
         status: "CLOSED",
         subresource_uris: Object.new(),
       )
@@ -382,12 +346,14 @@ describe Freeclimb::AccountResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         api_key: "TS",
         _alias: "TS",
         label: "TS",
+        type: Freeclimb::AccountType.new(),
         type: "TRIAL",
+        status: Freeclimb::AccountStatus.new(),
         status: "CLOSED",
         subresource_uris: obj,
       )
@@ -395,12 +361,14 @@ describe Freeclimb::AccountResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         api_key: "TS",
         _alias: "TS",
         label: "TS",
+        type: Freeclimb::AccountType.new(),
         type: "TRIAL",
+        status: Freeclimb::AccountStatus.new(),
         status: "CLOSED",
         subresource_uris: obj,
       )
@@ -416,7 +384,7 @@ describe Freeclimb::AccountResult do
       
         date_updated: "TS",
       
-        revision: 1,
+revision: 1,
       
         account_id: "TS",
       

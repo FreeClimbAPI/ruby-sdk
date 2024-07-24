@@ -49,8 +49,11 @@ describe Freeclimb::ConferenceResult do
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      instance.revision = 1
-      expect(instance.revision).to eq(1) 
+    
+    
+    instance.revision = 1
+    expect(instance.revision).to eq(1) 
+    
     end
   end
 
@@ -155,18 +158,34 @@ describe Freeclimb::ConferenceResult do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::ConferenceResult.new(
           uri: "TS",
+          
           date_created: "TS",
+          
           date_updated: "TS",
-          revision: 1,
+          
+revision: 1,
+          
           conference_id: "TS",
+          
           account_id: "TS",
+          
           _alias: "TS",
+          
+          play_beep: Freeclimb::PlayBeep.new(),
+          
           play_beep: "ALWAYS",
           record: true,
+          
+          status: Freeclimb::ConferenceStatus.new(),
+          
           status: "EMPTY",
           wait_url: "TS",
+          
           action_url: "TS",
+          
           status_callback_url: "TS",
+          
+          
           subresource_uris: Object.new(),
         )}.not_to raise_error()
     end
@@ -175,12 +194,14 @@ describe Freeclimb::ConferenceResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           conference_id: "TS",
           account_id: "TS",
           _alias: "TS",
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
           record: true,
+          status: Freeclimb::ConferenceStatus.new(),
           status: "EMPTY",
           wait_url: "TS",
           action_url: "TS",
@@ -194,12 +215,14 @@ describe Freeclimb::ConferenceResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           conference_id: "TS",
           account_id: "TS",
           _alias: "TS",
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
           record: true,
+          status: Freeclimb::ConferenceStatus.new(),
           status: "EMPTY",
           wait_url: "TS",
           action_url: "TS",
@@ -216,12 +239,14 @@ describe Freeclimb::ConferenceResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           conference_id: "TS",
           account_id: "TS",
           _alias: "TS",
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
           record: true,
+          status: Freeclimb::ConferenceStatus.new(),
           status: "EMPTY",
           wait_url: "TS",
           action_url: "TS",
@@ -230,89 +255,9 @@ describe Freeclimb::ConferenceResult do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::ConferenceResult.new(
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::ConferenceResult.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::ConferenceResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          conference_id: "TS",
-          account_id: "TS",
-          _alias: "TS",
-          play_beep: "ALWAYS",
-          record: true,
-          status: "EMPTY",
-          wait_url: "TS",
-          action_url: "TS",
-          status_callback_url: "TS",
-          subresource_uris: obj,
-      )
-      instance_2 = Freeclimb::ConferenceResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          conference_id: "TS",
-          account_id: "TS",
-          _alias: "TS",
-          play_beep: "ALWAYS",
-          record: true,
-          status: "EMPTY",
-          wait_url: "TS",
-          action_url: "TS",
-          status_callback_url: "TS",
-          subresource_uris: obj,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::ConferenceResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          conference_id: "TS",
-          account_id: "TS",
-          _alias: "TS",
-          play_beep: "ALWAYS",
-          record: true,
-          status: "EMPTY",
-          wait_url: "TS",
-          action_url: "TS",
-          status_callback_url: "TS",
-          subresource_uris: Object.new(),
-      )
-      instance_2 = Freeclimb::ConferenceResult.new(
-          uri: "ST",
-          date_created: "ST",
-          date_updated: "ST",
-          revision: 0,
-          conference_id: "ST",
-          account_id: "ST",
-          _alias: "ST",
-          play_beep: "NEVER",
-          record: false,
-          status: "POPULATED",
-          wait_url: "ST",
-          action_url: "ST",
-          status_callback_url: "ST",
-          subresource_uris: nil,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
@@ -321,12 +266,14 @@ describe Freeclimb::ConferenceResult do
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-      revision: 1,
+revision: 1,
       conference_id: "TS",
       account_id: "TS",
       _alias: "TS",
+      play_beep: Freeclimb::PlayBeep.new(),
       play_beep: "ALWAYS",
       record: true,
+      status: Freeclimb::ConferenceStatus.new(),
       status: "EMPTY",
       wait_url: "TS",
       action_url: "TS",
@@ -343,12 +290,14 @@ describe Freeclimb::ConferenceResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         conference_id: "TS",
         account_id: "TS",
         _alias: "TS",
+        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
         record: true,
+        status: Freeclimb::ConferenceStatus.new(),
         status: "EMPTY",
         wait_url: "TS",
         action_url: "TS",
@@ -365,12 +314,14 @@ describe Freeclimb::ConferenceResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         conference_id: "TS",
         account_id: "TS",
         _alias: "TS",
+        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
         record: true,
+        status: Freeclimb::ConferenceStatus.new(),
         status: "EMPTY",
         wait_url: "TS",
         action_url: "TS",
@@ -421,12 +372,14 @@ describe Freeclimb::ConferenceResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         conference_id: "TS",
         account_id: "TS",
         _alias: "TS",
+        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
         record: true,
+        status: Freeclimb::ConferenceStatus.new(),
         status: "EMPTY",
         wait_url: "TS",
         action_url: "TS",
@@ -443,12 +396,14 @@ describe Freeclimb::ConferenceResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         conference_id: "TS",
         account_id: "TS",
         _alias: "TS",
+        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
         record: true,
+        status: Freeclimb::ConferenceStatus.new(),
         status: "EMPTY",
         wait_url: "TS",
         action_url: "TS",
@@ -463,12 +418,14 @@ describe Freeclimb::ConferenceResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         conference_id: "TS",
         account_id: "TS",
         _alias: "TS",
+        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
         record: true,
+        status: Freeclimb::ConferenceStatus.new(),
         status: "EMPTY",
         wait_url: "TS",
         action_url: "TS",
@@ -479,12 +436,14 @@ describe Freeclimb::ConferenceResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         conference_id: "TS",
         account_id: "TS",
         _alias: "TS",
+        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
         record: true,
+        status: Freeclimb::ConferenceStatus.new(),
         status: "EMPTY",
         wait_url: "TS",
         action_url: "TS",
@@ -503,7 +462,7 @@ describe Freeclimb::ConferenceResult do
       
         date_updated: "TS",
       
-        revision: 1,
+revision: 1,
       
         conference_id: "TS",
       

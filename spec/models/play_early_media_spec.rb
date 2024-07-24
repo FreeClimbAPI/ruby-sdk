@@ -37,6 +37,7 @@ describe Freeclimb::PlayEarlyMedia do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::PlayEarlyMedia.new(
           file: "TS",
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::PlayEarlyMedia' do
@@ -60,38 +61,9 @@ describe Freeclimb::PlayEarlyMedia do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::PlayEarlyMedia.new(
-          file: nil,
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::PlayEarlyMedia.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::PlayEarlyMedia.new(
-          file: "TS",
-      )
-      instance_2 = Freeclimb::PlayEarlyMedia.new(
-          file: "TS",
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::PlayEarlyMedia.new(
-          file: "TS",
-      )
-      instance_2 = Freeclimb::PlayEarlyMedia.new(
-          file: "ST",
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do

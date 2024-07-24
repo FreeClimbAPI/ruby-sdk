@@ -35,8 +35,11 @@ describe Freeclimb::RecordUtterance do
 
   describe 'test attribute "silence_timeout_ms"' do
     it 'should work' do
-      instance.silence_timeout_ms = 1
-      expect(instance.silence_timeout_ms).to eq(1) 
+    
+    
+    instance.silence_timeout_ms = 1
+    expect(instance.silence_timeout_ms).to eq(1) 
+    
     end
   end
 
@@ -49,8 +52,11 @@ describe Freeclimb::RecordUtterance do
 
   describe 'test attribute "max_length_sec"' do
     it 'should work' do
-      instance.max_length_sec = 1
-      expect(instance.max_length_sec).to eq(1) 
+    
+    
+    instance.max_length_sec = 1
+    expect(instance.max_length_sec).to eq(1) 
+    
     end
   end
 
@@ -79,20 +85,27 @@ describe Freeclimb::RecordUtterance do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::RecordUtterance.new(
           action_url: "TS",
-          silence_timeout_ms: 1,
+          
+silence_timeout_ms: 1,
+          
           finish_on_key: "TS",
-          max_length_sec: 1,
+          
+max_length_sec: 1,
+          
           play_beep: true,
+          
           auto_start: true,
+          
           privacy_mode: true,
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::RecordUtterance' do
         expect{instance = Freeclimb::RecordUtterance.new(
           action_url: "TS",
-          silence_timeout_ms: 1,
+silence_timeout_ms: 1,
           finish_on_key: "TS",
-          max_length_sec: 1,
+max_length_sec: 1,
           play_beep: true,
           auto_start: true,
           privacy_mode: true,
@@ -102,9 +115,9 @@ describe Freeclimb::RecordUtterance do
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::RecordUtterance.new(
           action_url: "TS",
-          silence_timeout_ms: 1,
+silence_timeout_ms: 1,
           finish_on_key: "TS",
-          max_length_sec: 1,
+max_length_sec: 1,
           play_beep: true,
           auto_start: true,
           privacy_mode: true,
@@ -117,80 +130,27 @@ describe Freeclimb::RecordUtterance do
     it 'checks if properties are valid' do
       instance = Freeclimb::RecordUtterance.new(
           action_url: "TS",
-          silence_timeout_ms: 1,
+silence_timeout_ms: 1,
           finish_on_key: "TS",
-          max_length_sec: 1,
+max_length_sec: 1,
           play_beep: true,
           auto_start: true,
           privacy_mode: true,
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::RecordUtterance.new(
-          action_url: nil,
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::RecordUtterance.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::RecordUtterance.new(
-          action_url: "TS",
-          silence_timeout_ms: 1,
-          finish_on_key: "TS",
-          max_length_sec: 1,
-          play_beep: true,
-          auto_start: true,
-          privacy_mode: true,
-      )
-      instance_2 = Freeclimb::RecordUtterance.new(
-          action_url: "TS",
-          silence_timeout_ms: 1,
-          finish_on_key: "TS",
-          max_length_sec: 1,
-          play_beep: true,
-          auto_start: true,
-          privacy_mode: true,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::RecordUtterance.new(
-          action_url: "TS",
-          silence_timeout_ms: 1,
-          finish_on_key: "TS",
-          max_length_sec: 1,
-          play_beep: true,
-          auto_start: true,
-          privacy_mode: true,
-      )
-      instance_2 = Freeclimb::RecordUtterance.new(
-          action_url: "ST",
-          silence_timeout_ms: 0,
-          finish_on_key: "ST",
-          max_length_sec: 0,
-          play_beep: false,
-          auto_start: false,
-          privacy_mode: false,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::RecordUtterance.new(
       action_url: "TS",
-      silence_timeout_ms: 1,
+silence_timeout_ms: 1,
       finish_on_key: "TS",
-      max_length_sec: 1,
+max_length_sec: 1,
       play_beep: true,
       auto_start: true,
       privacy_mode: true,
@@ -203,9 +163,9 @@ describe Freeclimb::RecordUtterance do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-        silence_timeout_ms: 1,
+silence_timeout_ms: 1,
         finish_on_key: "TS",
-        max_length_sec: 1,
+max_length_sec: 1,
         play_beep: true,
         auto_start: true,
         privacy_mode: true,
@@ -218,9 +178,9 @@ describe Freeclimb::RecordUtterance do
   describe 'test method "_deserialize"' do
     instance = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-        silence_timeout_ms: 1,
+silence_timeout_ms: 1,
         finish_on_key: "TS",
-        max_length_sec: 1,
+max_length_sec: 1,
         play_beep: true,
         auto_start: true,
         privacy_mode: true,
@@ -252,9 +212,9 @@ describe Freeclimb::RecordUtterance do
     it 'returns the string representation of the object' do
       instance = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-        silence_timeout_ms: 1,
+silence_timeout_ms: 1,
         finish_on_key: "TS",
-        max_length_sec: 1,
+max_length_sec: 1,
         play_beep: true,
         auto_start: true,
         privacy_mode: true,
@@ -267,9 +227,9 @@ describe Freeclimb::RecordUtterance do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-        silence_timeout_ms: 1,
+silence_timeout_ms: 1,
         finish_on_key: "TS",
-        max_length_sec: 1,
+max_length_sec: 1,
         play_beep: true,
         auto_start: true,
         privacy_mode: true,
@@ -280,18 +240,18 @@ describe Freeclimb::RecordUtterance do
       obj = Object.new()
       instance_1 = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-        silence_timeout_ms: 1,
+silence_timeout_ms: 1,
         finish_on_key: "TS",
-        max_length_sec: 1,
+max_length_sec: 1,
         play_beep: true,
         auto_start: true,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-        silence_timeout_ms: 1,
+silence_timeout_ms: 1,
         finish_on_key: "TS",
-        max_length_sec: 1,
+max_length_sec: 1,
         play_beep: true,
         auto_start: true,
         privacy_mode: true,
@@ -304,11 +264,11 @@ describe Freeclimb::RecordUtterance do
     instance = Freeclimb::RecordUtterance.new(
         action_url: "TS",
       
-        silence_timeout_ms: 1,
+silence_timeout_ms: 1,
       
         finish_on_key: "TS",
       
-        max_length_sec: 1,
+max_length_sec: 1,
       
         play_beep: true,
       

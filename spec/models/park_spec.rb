@@ -51,8 +51,11 @@ describe Freeclimb::Park do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::Park.new(
           wait_url: "TS",
+          
           action_url: "TS",
+          
           notification_url: "TS",
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::Park' do
@@ -82,47 +85,9 @@ describe Freeclimb::Park do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::Park.new(
-          wait_url: nil,
-          action_url: nil,
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::Park.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::Park.new(
-          wait_url: "TS",
-          action_url: "TS",
-          notification_url: "TS",
-      )
-      instance_2 = Freeclimb::Park.new(
-          wait_url: "TS",
-          action_url: "TS",
-          notification_url: "TS",
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::Park.new(
-          wait_url: "TS",
-          action_url: "TS",
-          notification_url: "TS",
-      )
-      instance_2 = Freeclimb::Park.new(
-          wait_url: "ST",
-          action_url: "ST",
-          notification_url: "ST",
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do

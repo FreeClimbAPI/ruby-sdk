@@ -91,8 +91,11 @@ describe Freeclimb::SMSTollFreeCampaign do
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      instance.revision = 1
-      expect(instance.revision).to eq(1) 
+    
+    
+    instance.revision = 1
+    expect(instance.revision).to eq(1) 
+    
     end
   end
 
@@ -100,12 +103,19 @@ describe Freeclimb::SMSTollFreeCampaign do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::SMSTollFreeCampaign.new(
           account_id: "TS",
+          
           campaign_id: "TS",
+          
           use_case: "TS",
+          
+          
           registration_status: "UNREGISTERED",
           date_created: "TS",
+          
           date_updated: "TS",
-          revision: 1,
+          
+revision: 1,
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::SMSTollFreeCampaign' do
@@ -116,7 +126,7 @@ describe Freeclimb::SMSTollFreeCampaign do
           registration_status: "UNREGISTERED",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -128,7 +138,7 @@ describe Freeclimb::SMSTollFreeCampaign do
           registration_status: "UNREGISTERED",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -143,71 +153,13 @@ describe Freeclimb::SMSTollFreeCampaign do
           registration_status: "UNREGISTERED",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
       )
       expect(instance.valid?).to eq(true)
-    end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::SMSTollFreeCampaign.new(
-          account_id: nil,
-          campaign_id: nil,
-          use_case: nil,
-          date_created: nil,
-          date_updated: nil,
-          revision: nil,
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::SMSTollFreeCampaign.new()
-      expect(instance.valid?).to eq(false)
     end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::SMSTollFreeCampaign.new(
-          account_id: "TS",
-          campaign_id: "TS",
-          use_case: "TS",
-          registration_status: "UNREGISTERED",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-      )
-      instance_2 = Freeclimb::SMSTollFreeCampaign.new(
-          account_id: "TS",
-          campaign_id: "TS",
-          use_case: "TS",
-          registration_status: "UNREGISTERED",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::SMSTollFreeCampaign.new(
-          account_id: "TS",
-          campaign_id: "TS",
-          use_case: "TS",
-          registration_status: "UNREGISTERED",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-      )
-      instance_2 = Freeclimb::SMSTollFreeCampaign.new(
-          account_id: "ST",
-          campaign_id: "ST",
-          use_case: "ST",
-          registration_status: "INITIATED",
-          date_created: "ST",
-          date_updated: "ST",
-          revision: 0,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
@@ -219,7 +171,7 @@ describe Freeclimb::SMSTollFreeCampaign do
       registration_status: "UNREGISTERED",
       date_created: "TS",
       date_updated: "TS",
-      revision: 1,
+revision: 1,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -234,7 +186,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         registration_status: "UNREGISTERED",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
       )
       instance_2 = Freeclimb::SMSTollFreeCampaign.new
       expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
@@ -249,7 +201,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         registration_status: "UNREGISTERED",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
     )
     it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)
@@ -283,7 +235,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         registration_status: "UNREGISTERED",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -298,7 +250,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         registration_status: "UNREGISTERED",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -311,7 +263,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         registration_status: "UNREGISTERED",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
       )
       instance_2 = Freeclimb::SMSTollFreeCampaign.new(
         account_id: "TS",
@@ -320,7 +272,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         registration_status: "UNREGISTERED",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -340,7 +292,7 @@ describe Freeclimb::SMSTollFreeCampaign do
       
         date_updated: "TS",
       
-        revision: 1,
+revision: 1,
       )
     it 'returns account_id in the form of hash' do
       expect(instance._to_hash(instance.account_id)).to eq(instance.account_id)

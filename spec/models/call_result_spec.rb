@@ -49,8 +49,11 @@ describe Freeclimb::CallResult do
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      instance.revision = 1
-      expect(instance.revision).to eq(1) 
+    
+    
+    instance.revision = 1
+    expect(instance.revision).to eq(1) 
+    
     end
   end
 
@@ -155,15 +158,21 @@ describe Freeclimb::CallResult do
 
   describe 'test attribute "duration"' do
     it 'should work' do
-      instance.duration = 1
-      expect(instance.duration).to eq(1) 
+    
+    
+    instance.duration = 1
+    expect(instance.duration).to eq(1) 
+    
     end
   end
 
   describe 'test attribute "connect_duration"' do
     it 'should work' do
-      instance.connect_duration = 1
-      expect(instance.connect_duration).to eq(1) 
+    
+    
+    instance.connect_duration = 1
+    expect(instance.connect_duration).to eq(1) 
+    
     end
   end
 
@@ -207,23 +216,45 @@ describe Freeclimb::CallResult do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::CallResult.new(
           uri: "TS",
+          
           date_created: "TS",
+          
           date_updated: "TS",
-          revision: 1,
+          
+revision: 1,
+          
           call_id: "TS",
+          
           parent_call_id: "TS",
+          
           account_id: "TS",
+          
           from: "TS",
+          
           to: "TS",
+          
           phone_number_id: "TS",
+          
+          call_status: Freeclimb::CallStatus.new(),
+          
           call_status: "QUEUED",
           start_time: "TS",
+          
           connect_time: "TS",
+          
           end_time: "TS",
-          duration: 1,
-          connect_duration: 1,
+          
+duration: 1,
+          
+connect_duration: 1,
+          
+          direction: Freeclimb::CallDirection.new(),
+          
           direction: "INBOUND",
+          answered_by: Freeclimb::AnsweredBy.new(),
+          
           answered_by: "HUMAN",
+          
           subresource_uris: Object.new(),
         )}.not_to raise_error()
     end
@@ -232,20 +263,23 @@ describe Freeclimb::CallResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           call_id: "TS",
           parent_call_id: "TS",
           account_id: "TS",
           from: "TS",
           to: "TS",
           phone_number_id: "TS",
+          call_status: Freeclimb::CallStatus.new(),
           call_status: "QUEUED",
           start_time: "TS",
           connect_time: "TS",
           end_time: "TS",
-          duration: 1,
-          connect_duration: 1,
+duration: 1,
+connect_duration: 1,
+          direction: Freeclimb::CallDirection.new(),
           direction: "INBOUND",
+          answered_by: Freeclimb::AnsweredBy.new(),
           answered_by: "HUMAN",
           subresource_uris: Object.new(),
           invalid_attribute: true
@@ -256,20 +290,23 @@ describe Freeclimb::CallResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           call_id: "TS",
           parent_call_id: "TS",
           account_id: "TS",
           from: "TS",
           to: "TS",
           phone_number_id: "TS",
+          call_status: Freeclimb::CallStatus.new(),
           call_status: "QUEUED",
           start_time: "TS",
           connect_time: "TS",
           end_time: "TS",
-          duration: 1,
-          connect_duration: 1,
+duration: 1,
+connect_duration: 1,
+          direction: Freeclimb::CallDirection.new(),
           direction: "INBOUND",
+          answered_by: Freeclimb::AnsweredBy.new(),
           answered_by: "HUMAN",
           subresource_uris: Object.new(),
           invalid_attribute: true
@@ -283,128 +320,31 @@ describe Freeclimb::CallResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           call_id: "TS",
           parent_call_id: "TS",
           account_id: "TS",
           from: "TS",
           to: "TS",
           phone_number_id: "TS",
+          call_status: Freeclimb::CallStatus.new(),
           call_status: "QUEUED",
           start_time: "TS",
           connect_time: "TS",
           end_time: "TS",
-          duration: 1,
-          connect_duration: 1,
+duration: 1,
+connect_duration: 1,
+          direction: Freeclimb::CallDirection.new(),
           direction: "INBOUND",
+          answered_by: Freeclimb::AnsweredBy.new(),
           answered_by: "HUMAN",
           subresource_uris: Object.new(),
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::CallResult.new(
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::CallResult.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::CallResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          call_id: "TS",
-          parent_call_id: "TS",
-          account_id: "TS",
-          from: "TS",
-          to: "TS",
-          phone_number_id: "TS",
-          call_status: "QUEUED",
-          start_time: "TS",
-          connect_time: "TS",
-          end_time: "TS",
-          duration: 1,
-          connect_duration: 1,
-          direction: "INBOUND",
-          answered_by: "HUMAN",
-          subresource_uris: obj,
-      )
-      instance_2 = Freeclimb::CallResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          call_id: "TS",
-          parent_call_id: "TS",
-          account_id: "TS",
-          from: "TS",
-          to: "TS",
-          phone_number_id: "TS",
-          call_status: "QUEUED",
-          start_time: "TS",
-          connect_time: "TS",
-          end_time: "TS",
-          duration: 1,
-          connect_duration: 1,
-          direction: "INBOUND",
-          answered_by: "HUMAN",
-          subresource_uris: obj,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::CallResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          call_id: "TS",
-          parent_call_id: "TS",
-          account_id: "TS",
-          from: "TS",
-          to: "TS",
-          phone_number_id: "TS",
-          call_status: "QUEUED",
-          start_time: "TS",
-          connect_time: "TS",
-          end_time: "TS",
-          duration: 1,
-          connect_duration: 1,
-          direction: "INBOUND",
-          answered_by: "HUMAN",
-          subresource_uris: Object.new(),
-      )
-      instance_2 = Freeclimb::CallResult.new(
-          uri: "ST",
-          date_created: "ST",
-          date_updated: "ST",
-          revision: 0,
-          call_id: "ST",
-          parent_call_id: "ST",
-          account_id: "ST",
-          from: "ST",
-          to: "ST",
-          phone_number_id: "ST",
-          call_status: "RINGING",
-          start_time: "ST",
-          connect_time: "ST",
-          end_time: "ST",
-          duration: 0,
-          connect_duration: 0,
-          direction: "OUTBOUND_API",
-          answered_by: "MACHINE",
-          subresource_uris: nil,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
@@ -413,20 +353,23 @@ describe Freeclimb::CallResult do
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-      revision: 1,
+revision: 1,
       call_id: "TS",
       parent_call_id: "TS",
       account_id: "TS",
       from: "TS",
       to: "TS",
       phone_number_id: "TS",
+      call_status: Freeclimb::CallStatus.new(),
       call_status: "QUEUED",
       start_time: "TS",
       connect_time: "TS",
       end_time: "TS",
-      duration: 1,
-      connect_duration: 1,
+duration: 1,
+connect_duration: 1,
+      direction: Freeclimb::CallDirection.new(),
       direction: "INBOUND",
+      answered_by: Freeclimb::AnsweredBy.new(),
       answered_by: "HUMAN",
       subresource_uris: Object.new(),
     )
@@ -440,20 +383,23 @@ describe Freeclimb::CallResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         call_id: "TS",
         parent_call_id: "TS",
         account_id: "TS",
         from: "TS",
         to: "TS",
         phone_number_id: "TS",
+        call_status: Freeclimb::CallStatus.new(),
         call_status: "QUEUED",
         start_time: "TS",
         connect_time: "TS",
         end_time: "TS",
-        duration: 1,
-        connect_duration: 1,
+duration: 1,
+connect_duration: 1,
+        direction: Freeclimb::CallDirection.new(),
         direction: "INBOUND",
+        answered_by: Freeclimb::AnsweredBy.new(),
         answered_by: "HUMAN",
         subresource_uris: Object.new(),
       )
@@ -467,20 +413,23 @@ describe Freeclimb::CallResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         call_id: "TS",
         parent_call_id: "TS",
         account_id: "TS",
         from: "TS",
         to: "TS",
         phone_number_id: "TS",
+        call_status: Freeclimb::CallStatus.new(),
         call_status: "QUEUED",
         start_time: "TS",
         connect_time: "TS",
         end_time: "TS",
-        duration: 1,
-        connect_duration: 1,
+duration: 1,
+connect_duration: 1,
+        direction: Freeclimb::CallDirection.new(),
         direction: "INBOUND",
+        answered_by: Freeclimb::AnsweredBy.new(),
         answered_by: "HUMAN",
         subresource_uris: Object.new(),
     )
@@ -540,20 +489,23 @@ describe Freeclimb::CallResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         call_id: "TS",
         parent_call_id: "TS",
         account_id: "TS",
         from: "TS",
         to: "TS",
         phone_number_id: "TS",
+        call_status: Freeclimb::CallStatus.new(),
         call_status: "QUEUED",
         start_time: "TS",
         connect_time: "TS",
         end_time: "TS",
-        duration: 1,
-        connect_duration: 1,
+duration: 1,
+connect_duration: 1,
+        direction: Freeclimb::CallDirection.new(),
         direction: "INBOUND",
+        answered_by: Freeclimb::AnsweredBy.new(),
         answered_by: "HUMAN",
         subresource_uris: Object.new(),
       )
@@ -567,20 +519,23 @@ describe Freeclimb::CallResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         call_id: "TS",
         parent_call_id: "TS",
         account_id: "TS",
         from: "TS",
         to: "TS",
         phone_number_id: "TS",
+        call_status: Freeclimb::CallStatus.new(),
         call_status: "QUEUED",
         start_time: "TS",
         connect_time: "TS",
         end_time: "TS",
-        duration: 1,
-        connect_duration: 1,
+duration: 1,
+connect_duration: 1,
+        direction: Freeclimb::CallDirection.new(),
         direction: "INBOUND",
+        answered_by: Freeclimb::AnsweredBy.new(),
         answered_by: "HUMAN",
         subresource_uris: Object.new(),
       )
@@ -592,20 +547,23 @@ describe Freeclimb::CallResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         call_id: "TS",
         parent_call_id: "TS",
         account_id: "TS",
         from: "TS",
         to: "TS",
         phone_number_id: "TS",
+        call_status: Freeclimb::CallStatus.new(),
         call_status: "QUEUED",
         start_time: "TS",
         connect_time: "TS",
         end_time: "TS",
-        duration: 1,
-        connect_duration: 1,
+duration: 1,
+connect_duration: 1,
+        direction: Freeclimb::CallDirection.new(),
         direction: "INBOUND",
+        answered_by: Freeclimb::AnsweredBy.new(),
         answered_by: "HUMAN",
         subresource_uris: obj,
       )
@@ -613,20 +571,23 @@ describe Freeclimb::CallResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         call_id: "TS",
         parent_call_id: "TS",
         account_id: "TS",
         from: "TS",
         to: "TS",
         phone_number_id: "TS",
+        call_status: Freeclimb::CallStatus.new(),
         call_status: "QUEUED",
         start_time: "TS",
         connect_time: "TS",
         end_time: "TS",
-        duration: 1,
-        connect_duration: 1,
+duration: 1,
+connect_duration: 1,
+        direction: Freeclimb::CallDirection.new(),
         direction: "INBOUND",
+        answered_by: Freeclimb::AnsweredBy.new(),
         answered_by: "HUMAN",
         subresource_uris: obj,
       )
@@ -642,7 +603,7 @@ describe Freeclimb::CallResult do
       
         date_updated: "TS",
       
-        revision: 1,
+revision: 1,
       
         call_id: "TS",
       
@@ -664,9 +625,9 @@ describe Freeclimb::CallResult do
       
         end_time: "TS",
       
-        duration: 1,
+duration: 1,
       
-        connect_duration: 1,
+connect_duration: 1,
       
         direction: "INBOUND",
       

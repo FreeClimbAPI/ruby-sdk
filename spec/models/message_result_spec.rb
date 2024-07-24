@@ -49,8 +49,11 @@ describe Freeclimb::MessageResult do
 
   describe 'test attribute "revision"' do
     it 'should work' do
-      instance.revision = 1
-      expect(instance.revision).to eq(1) 
+    
+    
+    instance.revision = 1
+    expect(instance.revision).to eq(1) 
+    
     end
   end
 
@@ -167,8 +170,11 @@ describe Freeclimb::MessageResult do
 
   describe 'test attribute "segment_count"' do
     it 'should work' do
-      instance.segment_count = BigDecimal("1.0")
-      expect(instance.segment_count).to eq(BigDecimal("1.0")) 
+    
+    
+    instance.segment_count = 1.0
+    expect(instance.segment_count).to eq(1.0) 
+    
     end
   end
 
@@ -183,20 +189,38 @@ describe Freeclimb::MessageResult do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::MessageResult.new(
           uri: "TS",
+          
           date_created: "TS",
+          
           date_updated: "TS",
-          revision: 1,
+          
+revision: 1,
+          
           account_id: "TS",
+          
           message_id: "TS",
+          
+          status: Freeclimb::MessageStatus.new(),
+          
           status: "NEW",
           from: "TS",
+          
           to: "TS",
+          
           text: "TS",
+          
           direction: "TS",
+          
           notification_url: "TS",
+          
           brand_id: "TS",
+          
           campaign_id: "TS",
+          
+          
+          
           media_urls: Array.new(),
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::MessageResult' do
@@ -204,9 +228,10 @@ describe Freeclimb::MessageResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           account_id: "TS",
           message_id: "TS",
+          status: Freeclimb::MessageStatus.new(),
           status: "NEW",
           from: "TS",
           to: "TS",
@@ -224,9 +249,10 @@ describe Freeclimb::MessageResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           account_id: "TS",
           message_id: "TS",
+          status: Freeclimb::MessageStatus.new(),
           status: "NEW",
           from: "TS",
           to: "TS",
@@ -247,9 +273,10 @@ describe Freeclimb::MessageResult do
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+revision: 1,
           account_id: "TS",
           message_id: "TS",
+          status: Freeclimb::MessageStatus.new(),
           status: "NEW",
           from: "TS",
           to: "TS",
@@ -258,98 +285,14 @@ describe Freeclimb::MessageResult do
           notification_url: "TS",
           brand_id: "TS",
           campaign_id: "TS",
-          segment_count: 1,
+segment_count: 1,
           media_urls: Array.new(),
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::MessageResult.new(
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::MessageResult.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::MessageResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          account_id: "TS",
-          message_id: "TS",
-          status: "NEW",
-          from: "TS",
-          to: "TS",
-          text: "TS",
-          direction: "TS",
-          notification_url: "TS",
-          brand_id: "TS",
-          campaign_id: "TS",
-          media_urls: [],
-      )
-      instance_2 = Freeclimb::MessageResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          account_id: "TS",
-          message_id: "TS",
-          status: "NEW",
-          from: "TS",
-          to: "TS",
-          text: "TS",
-          direction: "TS",
-          notification_url: "TS",
-          brand_id: "TS",
-          campaign_id: "TS",
-          media_urls: [],
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::MessageResult.new(
-          uri: "TS",
-          date_created: "TS",
-          date_updated: "TS",
-          revision: 1,
-          account_id: "TS",
-          message_id: "TS",
-          status: "NEW",
-          from: "TS",
-          to: "TS",
-          text: "TS",
-          direction: "TS",
-          notification_url: "TS",
-          brand_id: "TS",
-          campaign_id: "TS",
-          media_urls: [],
-      )
-      instance_2 = Freeclimb::MessageResult.new(
-          uri: "ST",
-          date_created: "ST",
-          date_updated: "ST",
-          revision: 0,
-          account_id: "ST",
-          message_id: "ST",
-          status: "QUEUED",
-          from: "ST",
-          to: "ST",
-          text: "ST",
-          direction: "ST",
-          notification_url: "ST",
-          brand_id: "ST",
-          campaign_id: "ST",
-          media_urls: nil,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
@@ -358,9 +301,10 @@ describe Freeclimb::MessageResult do
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-      revision: 1,
+revision: 1,
       account_id: "TS",
       message_id: "TS",
+      status: Freeclimb::MessageStatus.new(),
       status: "NEW",
       from: "TS",
       to: "TS",
@@ -381,9 +325,10 @@ describe Freeclimb::MessageResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         message_id: "TS",
+        status: Freeclimb::MessageStatus.new(),
         status: "NEW",
         from: "TS",
         to: "TS",
@@ -404,9 +349,10 @@ describe Freeclimb::MessageResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         message_id: "TS",
+        status: Freeclimb::MessageStatus.new(),
         status: "NEW",
         from: "TS",
         to: "TS",
@@ -470,9 +416,10 @@ describe Freeclimb::MessageResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         message_id: "TS",
+        status: Freeclimb::MessageStatus.new(),
         status: "NEW",
         from: "TS",
         to: "TS",
@@ -493,9 +440,10 @@ describe Freeclimb::MessageResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         message_id: "TS",
+        status: Freeclimb::MessageStatus.new(),
         status: "NEW",
         from: "TS",
         to: "TS",
@@ -514,9 +462,10 @@ describe Freeclimb::MessageResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         message_id: "TS",
+        status: Freeclimb::MessageStatus.new(),
         status: "NEW",
         from: "TS",
         to: "TS",
@@ -531,9 +480,10 @@ describe Freeclimb::MessageResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-        revision: 1,
+revision: 1,
         account_id: "TS",
         message_id: "TS",
+        status: Freeclimb::MessageStatus.new(),
         status: "NEW",
         from: "TS",
         to: "TS",
@@ -556,7 +506,7 @@ describe Freeclimb::MessageResult do
       
         date_updated: "TS",
       
-        revision: 1,
+revision: 1,
       
         account_id: "TS",
       

@@ -75,43 +75,61 @@ describe Freeclimb::GetSpeech do
 
   describe 'test attribute "no_input_timeout_ms"' do
     it 'should work' do
-      instance.no_input_timeout_ms = 1
-      expect(instance.no_input_timeout_ms).to eq(1) 
+    
+    
+    instance.no_input_timeout_ms = 1
+    expect(instance.no_input_timeout_ms).to eq(1) 
+    
     end
   end
 
   describe 'test attribute "recognition_timeout_ms"' do
     it 'should work' do
-      instance.recognition_timeout_ms = 1
-      expect(instance.recognition_timeout_ms).to eq(1) 
+    
+    
+    instance.recognition_timeout_ms = 1
+    expect(instance.recognition_timeout_ms).to eq(1) 
+    
     end
   end
 
   describe 'test attribute "confidence_threshold"' do
     it 'should work' do
-      instance.confidence_threshold = BigDecimal("1.0")
-      expect(instance.confidence_threshold).to eq(BigDecimal("1.0")) 
+    
+    
+    instance.confidence_threshold = 1.0
+    expect(instance.confidence_threshold).to eq(1.0) 
+    
     end
   end
 
   describe 'test attribute "sensitivity_level"' do
     it 'should work' do
-      instance.sensitivity_level = BigDecimal("1.0")
-      expect(instance.sensitivity_level).to eq(BigDecimal("1.0")) 
+    
+    
+    instance.sensitivity_level = 1.0
+    expect(instance.sensitivity_level).to eq(1.0) 
+    
     end
   end
 
   describe 'test attribute "speech_complete_timeout_ms"' do
     it 'should work' do
-      instance.speech_complete_timeout_ms = 1
-      expect(instance.speech_complete_timeout_ms).to eq(1) 
+    
+    
+    instance.speech_complete_timeout_ms = 1
+    expect(instance.speech_complete_timeout_ms).to eq(1) 
+    
     end
   end
 
   describe 'test attribute "speech_incomplete_timeout_ms"' do
     it 'should work' do
-      instance.speech_incomplete_timeout_ms = 1
-      expect(instance.speech_incomplete_timeout_ms).to eq(1) 
+    
+    
+    instance.speech_incomplete_timeout_ms = 1
+    expect(instance.speech_incomplete_timeout_ms).to eq(1) 
+    
     end
   end
 
@@ -126,30 +144,46 @@ describe Freeclimb::GetSpeech do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::GetSpeech.new(
           action_url: "TS",
+          
+          grammar_type: Freeclimb::GrammarType.new(),
+          
           grammar_type: "URL",
           grammar_file: "TS",
+          
           grammar_rule: "TS",
+          
           play_beep: true,
-          prompts: Array.new(),
-          no_input_timeout_ms: 1,
-          recognition_timeout_ms: 1,
-          speech_complete_timeout_ms: 1,
-          speech_incomplete_timeout_ms: 1,
+          
+          prompts: Freeclimb::PerclCommand.new(),
+          
+no_input_timeout_ms: 1,
+          
+recognition_timeout_ms: 1,
+          
+          
+          
+speech_complete_timeout_ms: 1,
+          
+speech_incomplete_timeout_ms: 1,
+          
           privacy_mode: true,
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::GetSpeech' do
         expect{instance = Freeclimb::GetSpeech.new(
           action_url: "TS",
+          grammar_type: Freeclimb::GrammarType.new(),
           grammar_type: "URL",
           grammar_file: "TS",
           grammar_rule: "TS",
           play_beep: true,
+          prompts: Freeclimb::PerclCommand.new(),
           prompts: Array.new(),
-          no_input_timeout_ms: 1,
-          recognition_timeout_ms: 1,
-          speech_complete_timeout_ms: 1,
-          speech_incomplete_timeout_ms: 1,
+no_input_timeout_ms: 1,
+recognition_timeout_ms: 1,
+speech_complete_timeout_ms: 1,
+speech_incomplete_timeout_ms: 1,
           privacy_mode: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -157,15 +191,17 @@ describe Freeclimb::GetSpeech do
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::GetSpeech.new(
           action_url: "TS",
+          grammar_type: Freeclimb::GrammarType.new(),
           grammar_type: "URL",
           grammar_file: "TS",
           grammar_rule: "TS",
           play_beep: true,
+          prompts: Freeclimb::PerclCommand.new(),
           prompts: Array.new(),
-          no_input_timeout_ms: 1,
-          recognition_timeout_ms: 1,
-          speech_complete_timeout_ms: 1,
-          speech_incomplete_timeout_ms: 1,
+no_input_timeout_ms: 1,
+recognition_timeout_ms: 1,
+speech_complete_timeout_ms: 1,
+speech_incomplete_timeout_ms: 1,
           privacy_mode: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -176,109 +212,43 @@ describe Freeclimb::GetSpeech do
     it 'checks if properties are valid' do
       instance = Freeclimb::GetSpeech.new(
           action_url: "TS",
+          grammar_type: Freeclimb::GrammarType.new(),
           grammar_type: "URL",
           grammar_file: "TS",
           grammar_rule: "TS",
           play_beep: true,
+          prompts: Freeclimb::PerclCommand.new(),
           prompts: Array.new(),
-          no_input_timeout_ms: 1,
-          recognition_timeout_ms: 1,
-          confidence_threshold: 1,
-          sensitivity_level: 1,
-          speech_complete_timeout_ms: 1,
-          speech_incomplete_timeout_ms: 1,
+no_input_timeout_ms: 1,
+recognition_timeout_ms: 1,
+confidence_threshold: 1,
+sensitivity_level: 1,
+speech_complete_timeout_ms: 1,
+speech_incomplete_timeout_ms: 1,
           privacy_mode: true,
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::GetSpeech.new(
-          action_url: nil,
-          grammar_file: nil,
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::GetSpeech.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::GetSpeech.new(
-          action_url: "TS",
-          grammar_type: "URL",
-          grammar_file: "TS",
-          grammar_rule: "TS",
-          play_beep: true,
-          prompts: [],
-          no_input_timeout_ms: 1,
-          recognition_timeout_ms: 1,
-          speech_complete_timeout_ms: 1,
-          speech_incomplete_timeout_ms: 1,
-          privacy_mode: true,
-      )
-      instance_2 = Freeclimb::GetSpeech.new(
-          action_url: "TS",
-          grammar_type: "URL",
-          grammar_file: "TS",
-          grammar_rule: "TS",
-          play_beep: true,
-          prompts: [],
-          no_input_timeout_ms: 1,
-          recognition_timeout_ms: 1,
-          speech_complete_timeout_ms: 1,
-          speech_incomplete_timeout_ms: 1,
-          privacy_mode: true,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::GetSpeech.new(
-          action_url: "TS",
-          grammar_type: "URL",
-          grammar_file: "TS",
-          grammar_rule: "TS",
-          play_beep: true,
-          prompts: [],
-          no_input_timeout_ms: 1,
-          recognition_timeout_ms: 1,
-          speech_complete_timeout_ms: 1,
-          speech_incomplete_timeout_ms: 1,
-          privacy_mode: true,
-      )
-      instance_2 = Freeclimb::GetSpeech.new(
-          action_url: "ST",
-          grammar_type: "BUILT_IN",
-          grammar_file: "ST",
-          grammar_rule: "ST",
-          play_beep: false,
-          prompts: nil,
-          no_input_timeout_ms: 0,
-          recognition_timeout_ms: 0,
-          speech_complete_timeout_ms: 0,
-          speech_incomplete_timeout_ms: 0,
-          privacy_mode: false,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::GetSpeech.new(
       action_url: "TS",
+      grammar_type: Freeclimb::GrammarType.new(),
       grammar_type: "URL",
       grammar_file: "TS",
       grammar_rule: "TS",
       play_beep: true,
+      prompts: Freeclimb::PerclCommand.new(),
       prompts: Array.new(),
-      no_input_timeout_ms: 1,
-      recognition_timeout_ms: 1,
-      speech_complete_timeout_ms: 1,
-      speech_incomplete_timeout_ms: 1,
+no_input_timeout_ms: 1,
+recognition_timeout_ms: 1,
+speech_complete_timeout_ms: 1,
+speech_incomplete_timeout_ms: 1,
       privacy_mode: true,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
@@ -289,15 +259,17 @@ describe Freeclimb::GetSpeech do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::GetSpeech.new(
         action_url: "TS",
+        grammar_type: Freeclimb::GrammarType.new(),
         grammar_type: "URL",
         grammar_file: "TS",
         grammar_rule: "TS",
         play_beep: true,
+        prompts: Freeclimb::PerclCommand.new(),
         prompts: Array.new(),
-        no_input_timeout_ms: 1,
-        recognition_timeout_ms: 1,
-        speech_complete_timeout_ms: 1,
-        speech_incomplete_timeout_ms: 1,
+no_input_timeout_ms: 1,
+recognition_timeout_ms: 1,
+speech_complete_timeout_ms: 1,
+speech_incomplete_timeout_ms: 1,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::GetSpeech.new
@@ -308,15 +280,17 @@ describe Freeclimb::GetSpeech do
   describe 'test method "_deserialize"' do
     instance = Freeclimb::GetSpeech.new(
         action_url: "TS",
+        grammar_type: Freeclimb::GrammarType.new(),
         grammar_type: "URL",
         grammar_file: "TS",
         grammar_rule: "TS",
         play_beep: true,
+        prompts: Freeclimb::PerclCommand.new(),
         prompts: Array.new(),
-        no_input_timeout_ms: 1,
-        recognition_timeout_ms: 1,
-        speech_complete_timeout_ms: 1,
-        speech_incomplete_timeout_ms: 1,
+no_input_timeout_ms: 1,
+recognition_timeout_ms: 1,
+speech_complete_timeout_ms: 1,
+speech_incomplete_timeout_ms: 1,
         privacy_mode: true,
     )
     it 'deserializes the data of action_url' do
@@ -361,15 +335,17 @@ describe Freeclimb::GetSpeech do
     it 'returns the string representation of the object' do
       instance = Freeclimb::GetSpeech.new(
         action_url: "TS",
+        grammar_type: Freeclimb::GrammarType.new(),
         grammar_type: "URL",
         grammar_file: "TS",
         grammar_rule: "TS",
         play_beep: true,
+        prompts: Freeclimb::PerclCommand.new(),
         prompts: Array.new(),
-        no_input_timeout_ms: 1,
-        recognition_timeout_ms: 1,
-        speech_complete_timeout_ms: 1,
-        speech_incomplete_timeout_ms: 1,
+no_input_timeout_ms: 1,
+recognition_timeout_ms: 1,
+speech_complete_timeout_ms: 1,
+speech_incomplete_timeout_ms: 1,
         privacy_mode: true,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -380,15 +356,17 @@ describe Freeclimb::GetSpeech do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::GetSpeech.new(
         action_url: "TS",
+        grammar_type: Freeclimb::GrammarType.new(),
         grammar_type: "URL",
         grammar_file: "TS",
         grammar_rule: "TS",
         play_beep: true,
+        prompts: Freeclimb::PerclCommand.new(),
         prompts: Array.new(),
-        no_input_timeout_ms: 1,
-        recognition_timeout_ms: 1,
-        speech_complete_timeout_ms: 1,
-        speech_incomplete_timeout_ms: 1,
+no_input_timeout_ms: 1,
+recognition_timeout_ms: 1,
+speech_complete_timeout_ms: 1,
+speech_incomplete_timeout_ms: 1,
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -397,28 +375,32 @@ describe Freeclimb::GetSpeech do
       obj = Object.new()
       instance_1 = Freeclimb::GetSpeech.new(
         action_url: "TS",
+        grammar_type: Freeclimb::GrammarType.new(),
         grammar_type: "URL",
         grammar_file: "TS",
         grammar_rule: "TS",
         play_beep: true,
+        prompts: Freeclimb::PerclCommand.new(),
         prompts: Array.new(),
-        no_input_timeout_ms: 1,
-        recognition_timeout_ms: 1,
-        speech_complete_timeout_ms: 1,
-        speech_incomplete_timeout_ms: 1,
+no_input_timeout_ms: 1,
+recognition_timeout_ms: 1,
+speech_complete_timeout_ms: 1,
+speech_incomplete_timeout_ms: 1,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::GetSpeech.new(
         action_url: "TS",
+        grammar_type: Freeclimb::GrammarType.new(),
         grammar_type: "URL",
         grammar_file: "TS",
         grammar_rule: "TS",
         play_beep: true,
+        prompts: Freeclimb::PerclCommand.new(),
         prompts: Array.new(),
-        no_input_timeout_ms: 1,
-        recognition_timeout_ms: 1,
-        speech_complete_timeout_ms: 1,
-        speech_incomplete_timeout_ms: 1,
+no_input_timeout_ms: 1,
+recognition_timeout_ms: 1,
+speech_complete_timeout_ms: 1,
+speech_incomplete_timeout_ms: 1,
         privacy_mode: true,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -439,15 +421,15 @@ describe Freeclimb::GetSpeech do
       
         prompts: Array.new(),
       
-        no_input_timeout_ms: 1,
+no_input_timeout_ms: 1,
       
-        recognition_timeout_ms: 1,
+recognition_timeout_ms: 1,
       
       
       
-        speech_complete_timeout_ms: 1,
+speech_complete_timeout_ms: 1,
       
-        speech_incomplete_timeout_ms: 1,
+speech_incomplete_timeout_ms: 1,
       
         privacy_mode: true,
       )

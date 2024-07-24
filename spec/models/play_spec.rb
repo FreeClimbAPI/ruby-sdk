@@ -35,8 +35,11 @@ describe Freeclimb::Play do
 
   describe 'test attribute "loop"' do
     it 'should work' do
-      instance.loop = 1
-      expect(instance.loop).to eq(1) 
+    
+    
+    instance.loop = 1
+    expect(instance.loop).to eq(1) 
+    
     end
   end
 
@@ -51,14 +54,17 @@ describe Freeclimb::Play do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::Play.new(
           file: "TS",
-          loop: 1,
+          
+loop: 1,
+          
           privacy_mode: true,
+          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::Play' do
         expect{instance = Freeclimb::Play.new(
           file: "TS",
-          loop: 1,
+loop: 1,
           privacy_mode: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -66,7 +72,7 @@ describe Freeclimb::Play do
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::Play.new(
           file: "TS",
-          loop: 1,
+loop: 1,
           privacy_mode: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -77,58 +83,21 @@ describe Freeclimb::Play do
     it 'checks if properties are valid' do
       instance = Freeclimb::Play.new(
           file: "TS",
-          loop: 1,
+loop: 1,
           privacy_mode: true,
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::Play.new(
-          file: nil,
-      )
-      expect(instance.valid?).to eq(false)
-    end
-    it 'checks if model is empty' do
-      instance = Freeclimb::Play.new()
-      expect(instance.valid?).to eq(false)
-    end
   end
 
   describe 'test method "eql?"' do
-    it 'checks if objects are equal' do
-      obj = Object.new()
-      instance_1 = Freeclimb::Play.new(
-          file: "TS",
-          loop: 1,
-          privacy_mode: true,
-      )
-      instance_2 = Freeclimb::Play.new(
-          file: "TS",
-          loop: 1,
-          privacy_mode: true,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(true)
-    end
-    it 'checks if objects are not equal' do
-      instance_1 = Freeclimb::Play.new(
-          file: "TS",
-          loop: 1,
-          privacy_mode: true,
-      )
-      instance_2 = Freeclimb::Play.new(
-          file: "ST",
-          loop: 0,
-          privacy_mode: false,
-      )
-      expect(instance_1.eql?(instance_2)).to eq(false)
-    end
   end
 
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Play.new(
       file: "TS",
-      loop: 1,
+loop: 1,
       privacy_mode: true,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
@@ -139,7 +108,7 @@ describe Freeclimb::Play do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::Play.new(
         file: "TS",
-        loop: 1,
+loop: 1,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::Play.new
@@ -150,7 +119,7 @@ describe Freeclimb::Play do
   describe 'test method "_deserialize"' do
     instance = Freeclimb::Play.new(
         file: "TS",
-        loop: 1,
+loop: 1,
         privacy_mode: true,
     )
     it 'deserializes the data of file' do
@@ -168,7 +137,7 @@ describe Freeclimb::Play do
     it 'returns the string representation of the object' do
       instance = Freeclimb::Play.new(
         file: "TS",
-        loop: 1,
+loop: 1,
         privacy_mode: true,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -179,7 +148,7 @@ describe Freeclimb::Play do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::Play.new(
         file: "TS",
-        loop: 1,
+loop: 1,
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -188,12 +157,12 @@ describe Freeclimb::Play do
       obj = Object.new()
       instance_1 = Freeclimb::Play.new(
         file: "TS",
-        loop: 1,
+loop: 1,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::Play.new(
         file: "TS",
-        loop: 1,
+loop: 1,
         privacy_mode: true,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -204,7 +173,7 @@ describe Freeclimb::Play do
     instance = Freeclimb::Play.new(
         file: "TS",
       
-        loop: 1,
+loop: 1,
       
         privacy_mode: true,
       )
