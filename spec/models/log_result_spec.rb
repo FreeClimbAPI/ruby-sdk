@@ -166,8 +166,32 @@ describe Freeclimb::LogResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::LogResult.new(
+          timestamp: 2,
+          level: Freeclimb::LogLevel.new(),
+          level: "INFO",
+          request_id: "TS",
+          account_id: "TS",
+          call_id: "TS",
+          message: "TS",
+          metadata: Object.new(),
+      )
+      instance_2 = Freeclimb::LogResult.new(
+          timestamp: 1,
+          level: Freeclimb::LogLevel.new(),
+          level: "WARNING",
+          request_id: "ST",
+          account_id: "ST",
+          call_id: "ST",
+          message: "ST",
+          metadata: nil,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::LogResult.new(

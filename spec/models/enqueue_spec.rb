@@ -112,8 +112,24 @@ describe Freeclimb::Enqueue do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::Enqueue.new(
+          action_url: "TS",
+          notification_url: "TS",
+          queue_id: "TS",
+          wait_url: "TS",
+      )
+      instance_2 = Freeclimb::Enqueue.new(
+          action_url: "ST",
+          notification_url: "ST",
+          queue_id: "ST",
+          wait_url: "ST",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Enqueue.new(

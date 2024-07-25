@@ -103,8 +103,22 @@ describe Freeclimb::TranscribeUtteranceAllOfRecord do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+          save_recording: true,
+          max_length_sec: 60 - 1,
+          rcrd_termination_silence_time_ms: 3000 - 1,
+      )
+      instance_2 = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+          save_recording: false,
+          max_length_sec: 60 - 2,
+          rcrd_termination_silence_time_ms: 3000 - 2,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(

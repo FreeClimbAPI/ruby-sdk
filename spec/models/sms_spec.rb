@@ -112,8 +112,24 @@ describe Freeclimb::Sms do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::Sms.new(
+          to: "TS",
+          from: "TS",
+          text: "TS",
+          notification_url: "TS",
+      )
+      instance_2 = Freeclimb::Sms.new(
+          to: "ST",
+          from: "ST",
+          text: "ST",
+          notification_url: "ST",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Sms.new(

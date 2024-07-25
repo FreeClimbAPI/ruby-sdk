@@ -73,8 +73,18 @@ describe Freeclimb::Hangup do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::Hangup.new(
+          reason: "TS",
+      )
+      instance_2 = Freeclimb::Hangup.new(
+          reason: "ST",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Hangup.new(

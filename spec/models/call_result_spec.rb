@@ -366,8 +366,60 @@ describe Freeclimb::CallResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::CallResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 2,
+          call_id: "TS",
+          parent_call_id: "TS",
+          account_id: "TS",
+          from: "TS",
+          to: "TS",
+          phone_number_id: "TS",
+          call_status: Freeclimb::CallStatus.new(),
+          call_status: "QUEUED",
+          start_time: "TS",
+          connect_time: "TS",
+          end_time: "TS",
+          duration: 2,
+          connect_duration: 2,
+          direction: Freeclimb::CallDirection.new(),
+          direction: "INBOUND",
+          answered_by: Freeclimb::AnsweredBy.new(),
+          answered_by: "HUMAN",
+          subresource_uris: Object.new(),
+      )
+      instance_2 = Freeclimb::CallResult.new(
+          uri: "ST",
+          date_created: "ST",
+          date_updated: "ST",
+          revision: 1,
+          call_id: "ST",
+          parent_call_id: "ST",
+          account_id: "ST",
+          from: "ST",
+          to: "ST",
+          phone_number_id: "ST",
+          call_status: Freeclimb::CallStatus.new(),
+          call_status: "RINGING",
+          start_time: "ST",
+          connect_time: "ST",
+          end_time: "ST",
+          duration: 1,
+          connect_duration: 1,
+          direction: Freeclimb::CallDirection.new(),
+          direction: "OUTBOUND_API",
+          answered_by: Freeclimb::AnsweredBy.new(),
+          answered_by: "MACHINE",
+          subresource_uris: nil,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::CallResult.new(

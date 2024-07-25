@@ -157,8 +157,30 @@ describe Freeclimb::RecordUtterance do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::RecordUtterance.new(
+          action_url: "TS",
+          silence_timeout_ms: 2,
+          finish_on_key: "TS",
+          max_length_sec: 2,
+          play_beep: true,
+          auto_start: true,
+          privacy_mode: true,
+      )
+      instance_2 = Freeclimb::RecordUtterance.new(
+          action_url: "ST",
+          silence_timeout_ms: 1,
+          finish_on_key: "ST",
+          max_length_sec: 1,
+          play_beep: false,
+          auto_start: false,
+          privacy_mode: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::RecordUtterance.new(

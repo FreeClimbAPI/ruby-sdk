@@ -216,8 +216,38 @@ describe Freeclimb::QueueResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::QueueResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 2,
+          account_id: "TS",
+          queue_id: "TS",
+          _alias: "TS",
+          max_size: 2,
+          current_size: 2,
+          average_queue_removal_time: 2,
+          subresource_uris: Object.new(),
+      )
+      instance_2 = Freeclimb::QueueResult.new(
+          uri: "ST",
+          date_created: "ST",
+          date_updated: "ST",
+          revision: 1,
+          account_id: "ST",
+          queue_id: "ST",
+          _alias: "ST",
+          max_size: 1,
+          current_size: 1,
+          average_queue_removal_time: 1,
+          subresource_uris: nil,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::QueueResult.new(

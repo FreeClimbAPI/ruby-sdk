@@ -184,8 +184,34 @@ describe Freeclimb::QueueList do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::QueueList.new(
+          total: 2,
+          start: 2,
+          _end: 2,
+          page: 2,
+          num_pages: 2,
+          page_size: 2,
+          next_page_uri: "TS",
+          queues: Freeclimb::QueueResult.new(),
+          queues: [],
+      )
+      instance_2 = Freeclimb::QueueList.new(
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
+          next_page_uri: "ST",
+          queues: Freeclimb::QueueResult.new(),
+          queues: nil,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::QueueList.new(

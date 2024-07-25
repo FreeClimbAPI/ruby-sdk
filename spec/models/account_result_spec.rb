@@ -225,8 +225,42 @@ describe Freeclimb::AccountResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::AccountResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 2,
+          account_id: "TS",
+          api_key: "TS",
+          _alias: "TS",
+          label: "TS",
+          type: Freeclimb::AccountType.new(),
+          type: "TRIAL",
+          status: Freeclimb::AccountStatus.new(),
+          status: "CLOSED",
+          subresource_uris: Object.new(),
+      )
+      instance_2 = Freeclimb::AccountResult.new(
+          uri: "ST",
+          date_created: "ST",
+          date_updated: "ST",
+          revision: 1,
+          account_id: "ST",
+          api_key: "ST",
+          _alias: "ST",
+          label: "ST",
+          type: Freeclimb::AccountType.new(),
+          type: "FULL",
+          status: Freeclimb::AccountStatus.new(),
+          status: "SUSPENDED",
+          subresource_uris: nil,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::AccountResult.new(

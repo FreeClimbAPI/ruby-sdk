@@ -86,8 +86,20 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::UpdateConferenceParticipantRequest.new(
+          talk: true,
+          listen: true,
+      )
+      instance_2 = Freeclimb::UpdateConferenceParticipantRequest.new(
+          talk: false,
+          listen: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::UpdateConferenceParticipantRequest.new(

@@ -184,8 +184,34 @@ describe Freeclimb::ConferenceParticipantList do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::ConferenceParticipantList.new(
+          total: 2,
+          start: 2,
+          _end: 2,
+          page: 2,
+          num_pages: 2,
+          page_size: 2,
+          next_page_uri: "TS",
+          participants: Freeclimb::ConferenceParticipantResult.new(),
+          participants: [],
+      )
+      instance_2 = Freeclimb::ConferenceParticipantList.new(
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
+          next_page_uri: "ST",
+          participants: Freeclimb::ConferenceParticipantResult.new(),
+          participants: nil,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::ConferenceParticipantList.new(

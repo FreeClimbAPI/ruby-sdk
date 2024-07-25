@@ -191,8 +191,36 @@ describe Freeclimb::GetDigits do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::GetDigits.new(
+          action_url: "TS",
+          digit_timeout_ms: 2,
+          finish_on_key: "TS",
+          flush_buffer: true,
+          initial_timeout_ms: 2,
+          max_digits: 2,
+          min_digits: 2,
+          prompts: Freeclimb::PerclCommand.new(),
+          prompts: [],
+          privacy_mode: true,
+      )
+      instance_2 = Freeclimb::GetDigits.new(
+          action_url: "ST",
+          digit_timeout_ms: 1,
+          finish_on_key: "ST",
+          flush_buffer: false,
+          initial_timeout_ms: 1,
+          max_digits: 1,
+          min_digits: 1,
+          prompts: Freeclimb::PerclCommand.new(),
+          prompts: nil,
+          privacy_mode: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::GetDigits.new(

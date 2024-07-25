@@ -489,8 +489,72 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::SMSTenDLCPartnerCampaign.new(
+          account_id: "TS",
+          campaign_id: "TS",
+          status: "ACTIVE",
+          brand_id: "TS",
+          usecase: "TS",
+          description: "TS",
+          embedded_link: true,
+          embedded_phone: true,
+          affiliate_marketing: true,
+          number_pool: true,
+          age_gated: true,
+          direct_lending: true,
+          subscriber_optin: true,
+          subscriber_optout: true,
+          subscriber_help: true,
+          sample1: "TS",
+          sample2: "TS",
+          sample3: "TS",
+          sample4: "TS",
+          sample5: "TS",
+          message_flow: "TS",
+          help_message: "TS",
+          optin_keywords: "TS",
+          optout_keywords: "TS",
+          help_keywords: "TS",
+          optin_message: "TS",
+          optout_message: "TS",
+          brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new(),
+      )
+      instance_2 = Freeclimb::SMSTenDLCPartnerCampaign.new(
+          account_id: "ST",
+          campaign_id: "ST",
+          status: "EXPIRED",
+          brand_id: "ST",
+          usecase: "ST",
+          description: "ST",
+          embedded_link: false,
+          embedded_phone: false,
+          affiliate_marketing: false,
+          number_pool: false,
+          age_gated: false,
+          direct_lending: false,
+          subscriber_optin: false,
+          subscriber_optout: false,
+          subscriber_help: false,
+          sample1: "ST",
+          sample2: "ST",
+          sample3: "ST",
+          sample4: "ST",
+          sample5: "ST",
+          message_flow: "ST",
+          help_message: "ST",
+          optin_keywords: "ST",
+          optout_keywords: "ST",
+          help_keywords: "ST",
+          optin_message: "ST",
+          optout_message: "ST",
+          brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new(),
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SMSTenDLCPartnerCampaign.new(

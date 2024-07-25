@@ -200,8 +200,38 @@ describe Freeclimb::OutDial do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::OutDial.new(
+          action_url: "TS",
+          call_connect_url: "TS",
+          calling_number: "TS",
+          destination: "TS",
+          if_machine: Freeclimb::IfMachine.new(),
+          if_machine: "REDIRECT",
+          if_machine_url: "TS",
+          send_digits: "TS",
+          status_callback_url: "TS",
+          timeout: 2,
+          privacy_mode: true,
+      )
+      instance_2 = Freeclimb::OutDial.new(
+          action_url: "ST",
+          call_connect_url: "ST",
+          calling_number: "ST",
+          destination: "ST",
+          if_machine: Freeclimb::IfMachine.new(),
+          if_machine: "HANGUP",
+          if_machine_url: "ST",
+          send_digits: "ST",
+          status_callback_url: "ST",
+          timeout: 1,
+          privacy_mode: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::OutDial.new(

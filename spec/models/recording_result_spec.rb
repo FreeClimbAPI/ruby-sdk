@@ -183,8 +183,34 @@ describe Freeclimb::RecordingResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::RecordingResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 2,
+          recording_id: "TS",
+          account_id: "TS",
+          call_id: "TS",
+          duration_sec: 2,
+          conference_id: "TS",
+      )
+      instance_2 = Freeclimb::RecordingResult.new(
+          uri: "ST",
+          date_created: "ST",
+          date_updated: "ST",
+          revision: 1,
+          recording_id: "ST",
+          account_id: "ST",
+          call_id: "ST",
+          duration_sec: 1,
+          conference_id: "ST",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::RecordingResult.new(

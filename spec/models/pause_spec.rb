@@ -76,8 +76,18 @@ describe Freeclimb::Pause do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::Pause.new(
+          length: 2,
+      )
+      instance_2 = Freeclimb::Pause.new(
+          length: 1,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Pause.new(

@@ -102,8 +102,22 @@ describe Freeclimb::Play do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::Play.new(
+          file: "TS",
+          loop: 2,
+          privacy_mode: true,
+      )
+      instance_2 = Freeclimb::Play.new(
+          file: "ST",
+          loop: 1,
+          privacy_mode: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Play.new(

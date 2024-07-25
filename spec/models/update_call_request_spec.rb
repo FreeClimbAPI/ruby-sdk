@@ -80,8 +80,20 @@ describe Freeclimb::UpdateCallRequest do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::UpdateCallRequest.new(
+          status: Freeclimb::UpdateCallRequestStatus.new(),
+          status: "CANCELED",
+      )
+      instance_2 = Freeclimb::UpdateCallRequest.new(
+          status: Freeclimb::UpdateCallRequestStatus.new(),
+          status: "COMPLETED",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::UpdateCallRequest.new(

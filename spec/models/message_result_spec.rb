@@ -312,8 +312,48 @@ describe Freeclimb::MessageResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::MessageResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 2,
+          account_id: "TS",
+          message_id: "TS",
+          status: Freeclimb::MessageStatus.new(),
+          status: "NEW",
+          from: "TS",
+          to: "TS",
+          text: "TS",
+          direction: "TS",
+          notification_url: "TS",
+          brand_id: "TS",
+          campaign_id: "TS",
+          media_urls: [],
+      )
+      instance_2 = Freeclimb::MessageResult.new(
+          uri: "ST",
+          date_created: "ST",
+          date_updated: "ST",
+          revision: 1,
+          account_id: "ST",
+          message_id: "ST",
+          status: Freeclimb::MessageStatus.new(),
+          status: "QUEUED",
+          from: "ST",
+          to: "ST",
+          text: "ST",
+          direction: "ST",
+          notification_url: "ST",
+          brand_id: "ST",
+          campaign_id: "ST",
+          media_urls: nil,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::MessageResult.new(

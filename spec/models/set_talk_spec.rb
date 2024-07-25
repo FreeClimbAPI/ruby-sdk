@@ -73,8 +73,18 @@ describe Freeclimb::SetTalk do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::SetTalk.new(
+          talk: true,
+      )
+      instance_2 = Freeclimb::SetTalk.new(
+          talk: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SetTalk.new(

@@ -73,8 +73,18 @@ describe Freeclimb::TFN do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::TFN.new(
+          campaign_id: "TS",
+      )
+      instance_2 = Freeclimb::TFN.new(
+          campaign_id: "ST",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::TFN.new(

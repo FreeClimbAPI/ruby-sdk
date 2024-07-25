@@ -73,8 +73,18 @@ describe Freeclimb::SetListen do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::SetListen.new(
+          listen: true,
+      )
+      instance_2 = Freeclimb::SetListen.new(
+          listen: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SetListen.new(

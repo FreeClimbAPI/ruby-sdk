@@ -284,8 +284,50 @@ describe Freeclimb::IncomingNumberResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::IncomingNumberResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 2,
+          capabilities: Freeclimb::Capabilities.new(),
+          campaign_id: "TS",
+          phone_number_id: "TS",
+          account_id: "TS",
+          application_id: "TS",
+          phone_number: "TS",
+          _alias: "TS",
+          region: "TS",
+          country: "TS",
+          voice_enabled: true,
+          sms_enabled: true,
+          offnet: true,
+          tfn: Freeclimb::TFN.new(),
+      )
+      instance_2 = Freeclimb::IncomingNumberResult.new(
+          uri: "ST",
+          date_created: "ST",
+          date_updated: "ST",
+          revision: 1,
+          capabilities: Freeclimb::Capabilities.new(),
+          campaign_id: "ST",
+          phone_number_id: "ST",
+          account_id: "ST",
+          application_id: "ST",
+          phone_number: "ST",
+          _alias: "ST",
+          region: "ST",
+          country: "ST",
+          voice_enabled: false,
+          sms_enabled: false,
+          offnet: false,
+          tfn: Freeclimb::TFN.new(),
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::IncomingNumberResult.new(

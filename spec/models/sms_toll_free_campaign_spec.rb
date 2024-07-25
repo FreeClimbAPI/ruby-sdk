@@ -175,8 +175,30 @@ describe Freeclimb::SMSTollFreeCampaign do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::SMSTollFreeCampaign.new(
+          account_id: "TS",
+          campaign_id: "TS",
+          use_case: "TS",
+          registration_status: "UNREGISTERED",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 2,
+      )
+      instance_2 = Freeclimb::SMSTollFreeCampaign.new(
+          account_id: "ST",
+          campaign_id: "ST",
+          use_case: "ST",
+          registration_status: "INITIATED",
+          date_created: "ST",
+          date_updated: "ST",
+          revision: 1,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SMSTollFreeCampaign.new(

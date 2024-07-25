@@ -99,8 +99,22 @@ describe Freeclimb::IncomingNumberRequest do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::IncomingNumberRequest.new(
+          application_id: "TS",
+          _alias: "TS",
+          campaign_id: "TS",
+      )
+      instance_2 = Freeclimb::IncomingNumberRequest.new(
+          application_id: "ST",
+          _alias: "ST",
+          campaign_id: "ST",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::IncomingNumberRequest.new(

@@ -702,8 +702,74 @@ describe Freeclimb::SMSTenDLCBrand do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::SMSTenDLCBrand.new(
+          account_id: "TS",
+          entity_type: "PRIVATE_PROFIT",
+          csp_id: "TS",
+          brand_id: "TS",
+          first_name: "TS",
+          last_name: "TS",
+          display_name: "TS",
+          company_name: "TS",
+          ein: "TS",
+          ein_issuing_country: "TS",
+          phone: "TS",
+          street: "TS",
+          city: "TS",
+          state: "TS",
+          postal_code: "TS",
+          country: "TS",
+          email: "TS",
+          stock_symbol: "TS",
+          stock_exchange: "NONE",
+          ip_address: "TS",
+          website: "TS",
+          brand_relationship: "BASIC_ACCOUNT",
+          vertical: "TS",
+          alt_business_id: "TS",
+          alt_business_id_type: "NONE",
+          universal_ein: "TS",
+          reference_id: "TS",
+          mock: true,
+          identity_status: "SELF_DECLARED",
+      )
+      instance_2 = Freeclimb::SMSTenDLCBrand.new(
+          account_id: "ST",
+          entity_type: "PUBLIC_PROFIT",
+          csp_id: "ST",
+          brand_id: "ST",
+          first_name: "ST",
+          last_name: "ST",
+          display_name: "ST",
+          company_name: "ST",
+          ein: "ST",
+          ein_issuing_country: "ST",
+          phone: "ST",
+          street: "ST",
+          city: "ST",
+          state: "ST",
+          postal_code: "ST",
+          country: "ST",
+          email: "ST",
+          stock_symbol: "ST",
+          stock_exchange: "NASDAQ",
+          ip_address: "ST",
+          website: "ST",
+          brand_relationship: "SMALL_ACCOUNT",
+          vertical: "ST",
+          alt_business_id: "ST",
+          alt_business_id_type: "DUNS",
+          universal_ein: "ST",
+          reference_id: "ST",
+          mock: false,
+          identity_status: "UNVERIFIED",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SMSTenDLCBrand.new(

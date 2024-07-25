@@ -131,8 +131,26 @@ describe Freeclimb::QueueMember do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::QueueMember.new(
+          uri: "TS",
+          call_id: "TS",
+          wait_time: 2,
+          position: 2,
+          date_enqueued: "TS",
+      )
+      instance_2 = Freeclimb::QueueMember.new(
+          uri: "ST",
+          call_id: "ST",
+          wait_time: 1,
+          position: 1,
+          date_enqueued: "ST",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::QueueMember.new(

@@ -67,8 +67,18 @@ describe Freeclimb::PerclCommand do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::PerclCommand.new(
+          command: "TS",
+      )
+      instance_2 = Freeclimb::PerclCommand.new(
+          command: "ST",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::PerclCommand.new(

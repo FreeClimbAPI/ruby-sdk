@@ -177,8 +177,34 @@ describe Freeclimb::AddToConference do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::AddToConference.new(
+          allow_call_control: true,
+          call_control_sequence: "TS",
+          call_control_url: "TS",
+          conference_id: "TS",
+          leave_conference_url: "TS",
+          listen: true,
+          notification_url: "TS",
+          start_conf_on_enter: true,
+          talk: true,
+      )
+      instance_2 = Freeclimb::AddToConference.new(
+          allow_call_control: false,
+          call_control_sequence: "ST",
+          call_control_url: "ST",
+          conference_id: "ST",
+          leave_conference_url: "ST",
+          listen: false,
+          notification_url: "ST",
+          start_conf_on_enter: false,
+          talk: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::AddToConference.new(

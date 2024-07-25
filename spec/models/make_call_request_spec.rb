@@ -193,8 +193,36 @@ describe Freeclimb::MakeCallRequest do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::MakeCallRequest.new(
+          from: "TS",
+          to: "TS",
+          application_id: "TS",
+          send_digits: "TS",
+          if_machine: "TS",
+          if_machine_url: "TS",
+          timeout: 2,
+          parent_call_id: "TS",
+          privacy_mode: true,
+          call_connect_url: "TS",
+      )
+      instance_2 = Freeclimb::MakeCallRequest.new(
+          from: "ST",
+          to: "ST",
+          application_id: "ST",
+          send_digits: "ST",
+          if_machine: "ST",
+          if_machine_url: "ST",
+          timeout: 1,
+          parent_call_id: "ST",
+          privacy_mode: false,
+          call_connect_url: "ST",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::MakeCallRequest.new(

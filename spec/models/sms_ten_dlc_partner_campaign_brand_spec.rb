@@ -226,8 +226,36 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
+          account_id: "TS",
+          brand_id: "TS",
+          first_name: "TS",
+          last_name: "TS",
+          display_name: "TS",
+          company_name: "TS",
+          phone: "TS",
+          email: "TS",
+          website: "TS",
+          evp_vetting_score: 2,
+      )
+      instance_2 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
+          account_id: "ST",
+          brand_id: "ST",
+          first_name: "ST",
+          last_name: "ST",
+          display_name: "ST",
+          company_name: "ST",
+          phone: "ST",
+          email: "ST",
+          website: "ST",
+          evp_vetting_score: 1,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(

@@ -89,8 +89,20 @@ describe Freeclimb::QueueRequest do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::QueueRequest.new(
+          _alias: "TS",
+          max_size: 2,
+      )
+      instance_2 = Freeclimb::QueueRequest.new(
+          _alias: "ST",
+          max_size: 1,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::QueueRequest.new(

@@ -125,8 +125,26 @@ describe Freeclimb::Capabilities do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::Capabilities.new(
+          voice: true,
+          sms: true,
+          toll_free: true,
+          ten_dlc: true,
+          short_code: true,
+      )
+      instance_2 = Freeclimb::Capabilities.new(
+          voice: false,
+          sms: false,
+          toll_free: false,
+          ten_dlc: false,
+          short_code: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Capabilities.new(

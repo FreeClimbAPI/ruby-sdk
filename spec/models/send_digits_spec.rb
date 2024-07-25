@@ -102,8 +102,22 @@ describe Freeclimb::SendDigits do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::SendDigits.new(
+          digits: "TS",
+          pause_ms: 2,
+          privacy_mode: true,
+      )
+      instance_2 = Freeclimb::SendDigits.new(
+          digits: "ST",
+          pause_ms: 1,
+          privacy_mode: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SendDigits.new(

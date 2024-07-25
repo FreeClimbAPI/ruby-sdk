@@ -246,8 +246,42 @@ describe Freeclimb::GetSpeech do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::GetSpeech.new(
+          action_url: "TS",
+          grammar_type: Freeclimb::GrammarType.new(),
+          grammar_type: "URL",
+          grammar_file: "TS",
+          grammar_rule: "TS",
+          play_beep: true,
+          prompts: Freeclimb::PerclCommand.new(),
+          prompts: [],
+          no_input_timeout_ms: 2,
+          recognition_timeout_ms: 2,
+          speech_complete_timeout_ms: 2,
+          speech_incomplete_timeout_ms: 2,
+          privacy_mode: true,
+      )
+      instance_2 = Freeclimb::GetSpeech.new(
+          action_url: "ST",
+          grammar_type: Freeclimb::GrammarType.new(),
+          grammar_type: "BUILT_IN",
+          grammar_file: "ST",
+          grammar_rule: "ST",
+          play_beep: false,
+          prompts: Freeclimb::PerclCommand.new(),
+          prompts: nil,
+          no_input_timeout_ms: 1,
+          recognition_timeout_ms: 1,
+          speech_complete_timeout_ms: 1,
+          speech_incomplete_timeout_ms: 1,
+          privacy_mode: false,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::GetSpeech.new(

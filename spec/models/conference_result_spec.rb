@@ -276,8 +276,48 @@ describe Freeclimb::ConferenceResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
+    it 'checks if objects are not equal' do
+      instance_1 = Freeclimb::ConferenceResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 2,
+          conference_id: "TS",
+          account_id: "TS",
+          _alias: "TS",
+          play_beep: Freeclimb::PlayBeep.new(),
+          play_beep: "ALWAYS",
+          record: true,
+          status: Freeclimb::ConferenceStatus.new(),
+          status: "EMPTY",
+          wait_url: "TS",
+          action_url: "TS",
+          status_callback_url: "TS",
+          subresource_uris: Object.new(),
+      )
+      instance_2 = Freeclimb::ConferenceResult.new(
+          uri: "ST",
+          date_created: "ST",
+          date_updated: "ST",
+          revision: 1,
+          conference_id: "ST",
+          account_id: "ST",
+          _alias: "ST",
+          play_beep: Freeclimb::PlayBeep.new(),
+          play_beep: "NEVER",
+          record: false,
+          status: Freeclimb::ConferenceStatus.new(),
+          status: "POPULATED",
+          wait_url: "ST",
+          action_url: "ST",
+          status_callback_url: "ST",
+          subresource_uris: nil,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(false)
+    end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::ConferenceResult.new(
