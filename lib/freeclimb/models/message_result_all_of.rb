@@ -187,8 +187,6 @@ module Freeclimb
       
       if @account_id.nil?
         false
-      elsif @media_urls.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

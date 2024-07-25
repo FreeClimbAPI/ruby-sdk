@@ -63,13 +63,8 @@ describe Freeclimb::SetTalk do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::SetTalk.new(
-      
+      talk: nil,
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::SetTalk.new()
       expect(instance.valid?).to eq(false)
     end
     

@@ -674,15 +674,10 @@ describe Freeclimb::SMSTenDLCBrand do
       alt_business_id: nil,
                         
       reference_id: nil,
-                  
+                  mock: nil,
       
       mock: nil,            
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::SMSTenDLCBrand.new()
       expect(instance.valid?).to eq(false)
     end
     

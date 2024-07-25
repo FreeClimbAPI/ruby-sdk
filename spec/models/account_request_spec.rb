@@ -78,11 +78,6 @@ describe Freeclimb::AccountRequest do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::AccountRequest.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 

@@ -111,10 +111,6 @@ module Freeclimb
       
       if @save_recording.nil?
         false
-      elsif @max_length_sec.nil?
-        false
-      elsif @rcrd_termination_silence_time_ms.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

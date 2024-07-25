@@ -154,22 +154,6 @@ module Freeclimb
       
       if @action_url.nil?
         false
-      elsif @digit_timeout_ms.nil?
-        false
-      elsif @finish_on_key.nil?
-        false
-      elsif @flush_buffer.nil?
-        false
-      elsif @initial_timeout_ms.nil?
-        false
-      elsif @max_digits.nil?
-        false
-      elsif @min_digits.nil?
-        false
-      elsif @prompts.nil?
-        false
-      elsif @privacy_mode.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

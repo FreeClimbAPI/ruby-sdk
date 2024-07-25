@@ -90,13 +90,8 @@ describe Freeclimb::Play do
       instance = Freeclimb::Play.new(
       
       
-      file: nil,            
+      file: nil,            privacy_mode: nil,
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::Play.new()
       expect(instance.valid?).to eq(false)
     end
     
@@ -177,7 +172,7 @@ describe Freeclimb::Play do
     it 'returns the string representation of the object' do
       instance = Freeclimb::Play.new(
         file: "TS",
-loop: 1,
+        loop: 1,
         privacy_mode: true,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -188,7 +183,7 @@ loop: 1,
     it 'returns the object in the form of hash' do
       instance = Freeclimb::Play.new(
         file: "TS",
-loop: 1,
+        loop: 1,
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -197,12 +192,12 @@ loop: 1,
       obj = Object.new()
       instance_1 = Freeclimb::Play.new(
         file: "TS",
-loop: 1,
+        loop: 1,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::Play.new(
         file: "TS",
-loop: 1,
+        loop: 1,
         privacy_mode: true,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -213,7 +208,7 @@ loop: 1,
     instance = Freeclimb::Play.new(
         file: "TS",
       
-loop: 1,
+        loop: 1,
       
         privacy_mode: true,
       )

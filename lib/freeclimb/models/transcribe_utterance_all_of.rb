@@ -128,16 +128,6 @@ module Freeclimb
       
       if @action_url.nil?
         false
-      elsif @play_beep.nil?
-        false
-      elsif @record.nil?
-        false
-      elsif @privacy_for_logging.nil?
-        false
-      elsif @privacy_for_recording.nil?
-        false
-      elsif @prompts.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

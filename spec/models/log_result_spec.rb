@@ -146,11 +146,6 @@ describe Freeclimb::LogResult do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::LogResult.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 
@@ -269,7 +264,7 @@ describe Freeclimb::LogResult do
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
       instance = Freeclimb::LogResult.new(
-timestamp: 1,
+        timestamp: 1,
         level: "INFO",
         request_id: "TS",
         account_id: "TS",
@@ -284,7 +279,7 @@ timestamp: 1,
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::LogResult.new(
-timestamp: 1,
+        timestamp: 1,
         level: "INFO",
         request_id: "TS",
         account_id: "TS",
@@ -297,7 +292,7 @@ timestamp: 1,
     it 'creates equal hash for two equal objects' do
       obj = Object.new()
       instance_1 = Freeclimb::LogResult.new(
-timestamp: 1,
+        timestamp: 1,
         level: "INFO",
         request_id: "TS",
         account_id: "TS",
@@ -306,7 +301,7 @@ timestamp: 1,
         metadata: obj,
       )
       instance_2 = Freeclimb::LogResult.new(
-timestamp: 1,
+        timestamp: 1,
         level: "INFO",
         request_id: "TS",
         account_id: "TS",
@@ -320,7 +315,7 @@ timestamp: 1,
 
   describe 'test method "_to_hash"' do
     instance = Freeclimb::LogResult.new(
-timestamp: 1,
+        timestamp: 1,
       
         level: "INFO",
       

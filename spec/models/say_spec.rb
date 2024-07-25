@@ -101,13 +101,8 @@ describe Freeclimb::Say do
       instance = Freeclimb::Say.new(
       
       
-      text: nil,                  
+      text: nil,                  privacy_mode: nil,
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::Say.new()
       expect(instance.valid?).to eq(false)
     end
     
@@ -199,7 +194,7 @@ describe Freeclimb::Say do
       instance = Freeclimb::Say.new(
         text: "TS",
         language: "TS",
-loop: 1,
+        loop: 1,
         privacy_mode: true,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -211,7 +206,7 @@ loop: 1,
       instance = Freeclimb::Say.new(
         text: "TS",
         language: "TS",
-loop: 1,
+        loop: 1,
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -221,13 +216,13 @@ loop: 1,
       instance_1 = Freeclimb::Say.new(
         text: "TS",
         language: "TS",
-loop: 1,
+        loop: 1,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::Say.new(
         text: "TS",
         language: "TS",
-loop: 1,
+        loop: 1,
         privacy_mode: true,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -240,7 +235,7 @@ loop: 1,
       
         language: "TS",
       
-loop: 1,
+        loop: 1,
       
         privacy_mode: true,
       )

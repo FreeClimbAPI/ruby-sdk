@@ -190,11 +190,6 @@ describe Freeclimb::QueueResult do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::QueueResult.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 
@@ -355,13 +350,13 @@ describe Freeclimb::QueueResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         account_id: "TS",
         queue_id: "TS",
         _alias: "TS",
-max_size: 1,
-current_size: 1,
-average_queue_removal_time: 1,
+        max_size: 1,
+        current_size: 1,
+        average_queue_removal_time: 1,
         subresource_uris: Object.new(),
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -374,13 +369,13 @@ average_queue_removal_time: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         account_id: "TS",
         queue_id: "TS",
         _alias: "TS",
-max_size: 1,
-current_size: 1,
-average_queue_removal_time: 1,
+        max_size: 1,
+        current_size: 1,
+        average_queue_removal_time: 1,
         subresource_uris: Object.new(),
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -391,26 +386,26 @@ average_queue_removal_time: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         account_id: "TS",
         queue_id: "TS",
         _alias: "TS",
-max_size: 1,
-current_size: 1,
-average_queue_removal_time: 1,
+        max_size: 1,
+        current_size: 1,
+        average_queue_removal_time: 1,
         subresource_uris: obj,
       )
       instance_2 = Freeclimb::QueueResult.new(
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         account_id: "TS",
         queue_id: "TS",
         _alias: "TS",
-max_size: 1,
-current_size: 1,
-average_queue_removal_time: 1,
+        max_size: 1,
+        current_size: 1,
+        average_queue_removal_time: 1,
         subresource_uris: obj,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -425,7 +420,7 @@ average_queue_removal_time: 1,
       
         date_updated: "TS",
       
-revision: 1,
+        revision: 1,
       
         account_id: "TS",
       
@@ -433,11 +428,11 @@ revision: 1,
       
         _alias: "TS",
       
-max_size: 1,
+        max_size: 1,
       
-current_size: 1,
+        current_size: 1,
       
-average_queue_removal_time: 1,
+        average_queue_removal_time: 1,
       
         subresource_uris: Object.new(),
       )

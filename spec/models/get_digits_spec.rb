@@ -165,13 +165,8 @@ describe Freeclimb::GetDigits do
       instance = Freeclimb::GetDigits.new(
       
       
-      action_url: nil,                                                
+      action_url: nil,                  flush_buffer: nil,                              privacy_mode: nil,
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::GetDigits.new()
       expect(instance.valid?).to eq(false)
     end
     
@@ -316,12 +311,12 @@ describe Freeclimb::GetDigits do
     it 'returns the string representation of the object' do
       instance = Freeclimb::GetDigits.new(
         action_url: "TS",
-digit_timeout_ms: 1,
+        digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-initial_timeout_ms: 1,
-max_digits: 1,
-min_digits: 1,
+        initial_timeout_ms: 1,
+        max_digits: 1,
+        min_digits: 1,
         prompts: Array.new(),
         privacy_mode: true,
       )
@@ -333,12 +328,12 @@ min_digits: 1,
     it 'returns the object in the form of hash' do
       instance = Freeclimb::GetDigits.new(
         action_url: "TS",
-digit_timeout_ms: 1,
+        digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-initial_timeout_ms: 1,
-max_digits: 1,
-min_digits: 1,
+        initial_timeout_ms: 1,
+        max_digits: 1,
+        min_digits: 1,
         prompts: Array.new(),
         privacy_mode: true,
       )
@@ -348,23 +343,23 @@ min_digits: 1,
       obj = Object.new()
       instance_1 = Freeclimb::GetDigits.new(
         action_url: "TS",
-digit_timeout_ms: 1,
+        digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-initial_timeout_ms: 1,
-max_digits: 1,
-min_digits: 1,
+        initial_timeout_ms: 1,
+        max_digits: 1,
+        min_digits: 1,
         prompts: Array.new(),
         privacy_mode: true,
       )
       instance_2 = Freeclimb::GetDigits.new(
         action_url: "TS",
-digit_timeout_ms: 1,
+        digit_timeout_ms: 1,
         finish_on_key: "TS",
         flush_buffer: true,
-initial_timeout_ms: 1,
-max_digits: 1,
-min_digits: 1,
+        initial_timeout_ms: 1,
+        max_digits: 1,
+        min_digits: 1,
         prompts: Array.new(),
         privacy_mode: true,
       )
@@ -376,17 +371,17 @@ min_digits: 1,
     instance = Freeclimb::GetDigits.new(
         action_url: "TS",
       
-digit_timeout_ms: 1,
+        digit_timeout_ms: 1,
       
         finish_on_key: "TS",
       
         flush_buffer: true,
       
-initial_timeout_ms: 1,
+        initial_timeout_ms: 1,
       
-max_digits: 1,
+        max_digits: 1,
       
-min_digits: 1,
+        min_digits: 1,
       
         prompts: Array.new(),
       

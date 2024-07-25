@@ -120,13 +120,8 @@ describe Freeclimb::TranscribeUtterance do
       instance = Freeclimb::TranscribeUtterance.new(
       
       
-      action_url: nil,                              
+      action_url: nil,      play_beep: nil,            privacy_for_logging: nil,      privacy_for_recording: nil,      
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::TranscribeUtterance.new()
       expect(instance.valid?).to eq(false)
     end
     

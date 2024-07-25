@@ -74,13 +74,8 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::UpdateConferenceParticipantRequest.new(
-            
+      talk: nil,      listen: nil,
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::UpdateConferenceParticipantRequest.new()
       expect(instance.valid?).to eq(false)
     end
     

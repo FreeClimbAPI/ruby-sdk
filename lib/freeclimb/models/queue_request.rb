@@ -87,8 +87,6 @@ module Freeclimb
       
       if @_alias.nil?
         false
-      elsif @max_size.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

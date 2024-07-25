@@ -433,7 +433,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       usecase: "T" * 20,
             
       description: "T" * 4096,
-                                                                  
+            embedded_link: nil,      embedded_phone: nil,      affiliate_marketing: nil,      number_pool: nil,      age_gated: nil,      direct_lending: nil,      subscriber_optin: nil,      subscriber_optout: nil,      subscriber_help: nil,      
       sample1: nil,
             
       sample2: nil,
@@ -459,11 +459,6 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       optout_message: nil,
             
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::SMSTenDLCPartnerCampaign.new()
       expect(instance.valid?).to eq(false)
     end
     

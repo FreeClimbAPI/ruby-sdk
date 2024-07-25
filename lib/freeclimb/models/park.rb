@@ -115,10 +115,6 @@ module Freeclimb
       
       if @wait_url.nil?
         false
-      elsif @action_url.nil?
-        false
-      elsif @notification_url.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

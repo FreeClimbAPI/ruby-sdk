@@ -69,11 +69,6 @@ describe Freeclimb::Redirect do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::Redirect.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 

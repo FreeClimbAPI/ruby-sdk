@@ -514,7 +514,7 @@ describe Freeclimb::SMSTenDLCCampaign do
       
       csp_id: nil,      
       reseller_id: nil,
-                                    
+                        auto_renewal: nil,            
       brand_id: "T" * 8,
             
       usecase: "T" * 20,
@@ -522,7 +522,7 @@ describe Freeclimb::SMSTenDLCCampaign do
       
       sub_usecases: nil,      
       description: "T" * 4096,
-                                                                  
+            embedded_link: nil,      embedded_phone: nil,      affiliate_marketing: nil,      number_pool: nil,      age_gated: nil,      direct_lending: nil,      subscriber_optin: nil,      subscriber_optout: nil,      subscriber_help: nil,      
       sample1: nil,
             
       sample2: nil,
@@ -548,15 +548,10 @@ describe Freeclimb::SMSTenDLCCampaign do
       optout_message: nil,
             
       reference_id: nil,
-            
+            mock: nil,
       
       mock: nil,      
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::SMSTenDLCCampaign.new()
       expect(instance.valid?).to eq(false)
     end
     

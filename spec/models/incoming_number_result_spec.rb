@@ -242,13 +242,8 @@ describe Freeclimb::IncomingNumberResult do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::IncomingNumberResult.new(
-                                                                                                      
+                                                                                    voice_enabled: nil,      sms_enabled: nil,      offnet: nil,      
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::IncomingNumberResult.new()
       expect(instance.valid?).to eq(false)
     end
     
@@ -471,7 +466,7 @@ describe Freeclimb::IncomingNumberResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -496,7 +491,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -519,7 +514,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -538,7 +533,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -565,7 +560,7 @@ revision: 1,
       
         date_updated: "TS",
       
-revision: 1,
+        revision: 1,
       
       
         campaign_id: "TS",

@@ -216,13 +216,8 @@ describe Freeclimb::GetSpeech do
       
       action_url: nil,            
       
-      grammar_file: nil,                                                            
+      grammar_file: nil,            play_beep: nil,                                                privacy_mode: nil,
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::GetSpeech.new()
       expect(instance.valid?).to eq(false)
     end
     
@@ -399,10 +394,10 @@ describe Freeclimb::GetSpeech do
         grammar_rule: "TS",
         play_beep: true,
         prompts: Array.new(),
-no_input_timeout_ms: 1,
-recognition_timeout_ms: 1,
-speech_complete_timeout_ms: 1,
-speech_incomplete_timeout_ms: 1,
+        no_input_timeout_ms: 1,
+        recognition_timeout_ms: 1,
+        speech_complete_timeout_ms: 1,
+        speech_incomplete_timeout_ms: 1,
         privacy_mode: true,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -418,10 +413,10 @@ speech_incomplete_timeout_ms: 1,
         grammar_rule: "TS",
         play_beep: true,
         prompts: Array.new(),
-no_input_timeout_ms: 1,
-recognition_timeout_ms: 1,
-speech_complete_timeout_ms: 1,
-speech_incomplete_timeout_ms: 1,
+        no_input_timeout_ms: 1,
+        recognition_timeout_ms: 1,
+        speech_complete_timeout_ms: 1,
+        speech_incomplete_timeout_ms: 1,
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -435,10 +430,10 @@ speech_incomplete_timeout_ms: 1,
         grammar_rule: "TS",
         play_beep: true,
         prompts: Array.new(),
-no_input_timeout_ms: 1,
-recognition_timeout_ms: 1,
-speech_complete_timeout_ms: 1,
-speech_incomplete_timeout_ms: 1,
+        no_input_timeout_ms: 1,
+        recognition_timeout_ms: 1,
+        speech_complete_timeout_ms: 1,
+        speech_incomplete_timeout_ms: 1,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::GetSpeech.new(
@@ -448,10 +443,10 @@ speech_incomplete_timeout_ms: 1,
         grammar_rule: "TS",
         play_beep: true,
         prompts: Array.new(),
-no_input_timeout_ms: 1,
-recognition_timeout_ms: 1,
-speech_complete_timeout_ms: 1,
-speech_incomplete_timeout_ms: 1,
+        no_input_timeout_ms: 1,
+        recognition_timeout_ms: 1,
+        speech_complete_timeout_ms: 1,
+        speech_incomplete_timeout_ms: 1,
         privacy_mode: true,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -472,15 +467,15 @@ speech_incomplete_timeout_ms: 1,
       
         prompts: Array.new(),
       
-no_input_timeout_ms: 1,
+        no_input_timeout_ms: 1,
       
-recognition_timeout_ms: 1,
+        recognition_timeout_ms: 1,
       
       
       
-speech_complete_timeout_ms: 1,
+        speech_complete_timeout_ms: 1,
       
-speech_incomplete_timeout_ms: 1,
+        speech_incomplete_timeout_ms: 1,
       
         privacy_mode: true,
       )

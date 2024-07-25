@@ -205,26 +205,6 @@ module Freeclimb
       
       if @account_id.nil?
         false
-      elsif @brand_id.nil?
-        false
-      elsif @first_name.nil?
-        false
-      elsif @last_name.nil?
-        false
-      elsif @display_name.nil?
-        false
-      elsif @company_name.nil?
-        false
-      elsif @phone.nil?
-        false
-      elsif @email.nil?
-        false
-      elsif @website.nil?
-        false
-      elsif @optional_attributes.nil?
-        false
-      elsif @evp_vetting_score.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

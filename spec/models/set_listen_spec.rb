@@ -63,13 +63,8 @@ describe Freeclimb::SetListen do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::SetListen.new(
-      
+      listen: nil,
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::SetListen.new()
       expect(instance.valid?).to eq(false)
     end
     

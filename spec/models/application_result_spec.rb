@@ -202,11 +202,6 @@ describe Freeclimb::ApplicationResult do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::ApplicationResult.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 
@@ -387,7 +382,7 @@ describe Freeclimb::ApplicationResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         account_id: "TS",
         application_id: "TS",
         _alias: "TS",
@@ -408,7 +403,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         account_id: "TS",
         application_id: "TS",
         _alias: "TS",
@@ -427,7 +422,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         account_id: "TS",
         application_id: "TS",
         _alias: "TS",
@@ -442,7 +437,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         account_id: "TS",
         application_id: "TS",
         _alias: "TS",
@@ -465,7 +460,7 @@ revision: 1,
       
         date_updated: "TS",
       
-revision: 1,
+        revision: 1,
       
         account_id: "TS",
       

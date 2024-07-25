@@ -178,13 +178,8 @@ describe Freeclimb::OutDial do
       
       calling_number: nil,      
       
-      destination: nil,                                    
+      destination: nil,                                    privacy_mode: nil,
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::OutDial.new()
       expect(instance.valid?).to eq(false)
     end
     
@@ -343,7 +338,7 @@ describe Freeclimb::OutDial do
         if_machine_url: "TS",
         send_digits: "TS",
         status_callback_url: "TS",
-timeout: 1,
+        timeout: 1,
         privacy_mode: true,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -361,7 +356,7 @@ timeout: 1,
         if_machine_url: "TS",
         send_digits: "TS",
         status_callback_url: "TS",
-timeout: 1,
+        timeout: 1,
         privacy_mode: true,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -377,7 +372,7 @@ timeout: 1,
         if_machine_url: "TS",
         send_digits: "TS",
         status_callback_url: "TS",
-timeout: 1,
+        timeout: 1,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::OutDial.new(
@@ -389,7 +384,7 @@ timeout: 1,
         if_machine_url: "TS",
         send_digits: "TS",
         status_callback_url: "TS",
-timeout: 1,
+        timeout: 1,
         privacy_mode: true,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -414,7 +409,7 @@ timeout: 1,
       
         status_callback_url: "TS",
       
-timeout: 1,
+        timeout: 1,
       
         privacy_mode: true,
       )

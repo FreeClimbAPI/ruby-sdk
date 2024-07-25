@@ -170,22 +170,6 @@ module Freeclimb
       
       if @uri.nil?
         false
-      elsif @date_created.nil?
-        false
-      elsif @date_updated.nil?
-        false
-      elsif @revision.nil?
-        false
-      elsif @from.nil?
-        false
-      elsif @to.nil?
-        false
-      elsif @text.nil?
-        false
-      elsif @notification_url.nil?
-        false
-      elsif @media_urls.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

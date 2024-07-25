@@ -161,11 +161,6 @@ describe Freeclimb::RecordingResult do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::RecordingResult.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 
@@ -306,11 +301,11 @@ describe Freeclimb::RecordingResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         recording_id: "TS",
         account_id: "TS",
         call_id: "TS",
-duration_sec: 1,
+        duration_sec: 1,
         conference_id: "TS",
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -323,11 +318,11 @@ duration_sec: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         recording_id: "TS",
         account_id: "TS",
         call_id: "TS",
-duration_sec: 1,
+        duration_sec: 1,
         conference_id: "TS",
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -338,22 +333,22 @@ duration_sec: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         recording_id: "TS",
         account_id: "TS",
         call_id: "TS",
-duration_sec: 1,
+        duration_sec: 1,
         conference_id: "TS",
       )
       instance_2 = Freeclimb::RecordingResult.new(
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         recording_id: "TS",
         account_id: "TS",
         call_id: "TS",
-duration_sec: 1,
+        duration_sec: 1,
         conference_id: "TS",
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -368,7 +363,7 @@ duration_sec: 1,
       
         date_updated: "TS",
       
-revision: 1,
+        revision: 1,
       
         recording_id: "TS",
       
@@ -376,7 +371,7 @@ revision: 1,
       
         call_id: "TS",
       
-duration_sec: 1,
+        duration_sec: 1,
       
         conference_id: "TS",
       )

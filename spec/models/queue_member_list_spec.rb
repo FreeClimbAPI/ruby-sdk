@@ -162,11 +162,6 @@ describe Freeclimb::QueueMemberList do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::QueueMemberList.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 
@@ -298,12 +293,12 @@ describe Freeclimb::QueueMemberList do
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
       instance = Freeclimb::QueueMemberList.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+        total: 1,
+        start: 1,
+        _end: 1,
+        page: 1,
+        num_pages: 1,
+        page_size: 1,
         next_page_uri: "TS",
         queue_members: Array.new(),
       )
@@ -314,12 +309,12 @@ page_size: 1,
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::QueueMemberList.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+        total: 1,
+        start: 1,
+        _end: 1,
+        page: 1,
+        num_pages: 1,
+        page_size: 1,
         next_page_uri: "TS",
         queue_members: Array.new(),
       )
@@ -328,22 +323,22 @@ page_size: 1,
     it 'creates equal hash for two equal objects' do
       obj = Object.new()
       instance_1 = Freeclimb::QueueMemberList.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+        total: 1,
+        start: 1,
+        _end: 1,
+        page: 1,
+        num_pages: 1,
+        page_size: 1,
         next_page_uri: "TS",
         queue_members: Array.new(),
       )
       instance_2 = Freeclimb::QueueMemberList.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+        total: 1,
+        start: 1,
+        _end: 1,
+        page: 1,
+        num_pages: 1,
+        page_size: 1,
         next_page_uri: "TS",
         queue_members: Array.new(),
       )
@@ -353,17 +348,17 @@ page_size: 1,
 
   describe 'test method "_to_hash"' do
     instance = Freeclimb::QueueMemberList.new(
-total: 1,
+        total: 1,
       
-start: 1,
+        start: 1,
       
-_end: 1,
+        _end: 1,
       
-page: 1,
+        page: 1,
       
-num_pages: 1,
+        num_pages: 1,
       
-page_size: 1,
+        page_size: 1,
       
         next_page_uri: "TS",
       

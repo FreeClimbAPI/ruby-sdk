@@ -117,11 +117,6 @@ describe Freeclimb::QueueMember do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::QueueMember.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 
@@ -221,8 +216,8 @@ describe Freeclimb::QueueMember do
       instance = Freeclimb::QueueMember.new(
         uri: "TS",
         call_id: "TS",
-wait_time: 1,
-position: 1,
+        wait_time: 1,
+        position: 1,
         date_enqueued: "TS",
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -234,8 +229,8 @@ position: 1,
       instance = Freeclimb::QueueMember.new(
         uri: "TS",
         call_id: "TS",
-wait_time: 1,
-position: 1,
+        wait_time: 1,
+        position: 1,
         date_enqueued: "TS",
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -245,15 +240,15 @@ position: 1,
       instance_1 = Freeclimb::QueueMember.new(
         uri: "TS",
         call_id: "TS",
-wait_time: 1,
-position: 1,
+        wait_time: 1,
+        position: 1,
         date_enqueued: "TS",
       )
       instance_2 = Freeclimb::QueueMember.new(
         uri: "TS",
         call_id: "TS",
-wait_time: 1,
-position: 1,
+        wait_time: 1,
+        position: 1,
         date_enqueued: "TS",
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -266,9 +261,9 @@ position: 1,
       
         call_id: "TS",
       
-wait_time: 1,
+        wait_time: 1,
       
-position: 1,
+        position: 1,
       
         date_enqueued: "TS",
       )

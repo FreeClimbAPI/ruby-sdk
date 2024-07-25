@@ -236,13 +236,8 @@ describe Freeclimb::ConferenceResult do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::ConferenceResult.new(
-                                                                                    
+                                                      record: nil,                              
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::ConferenceResult.new()
       expect(instance.valid?).to eq(false)
     end
     
@@ -437,7 +432,7 @@ describe Freeclimb::ConferenceResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         conference_id: "TS",
         account_id: "TS",
         _alias: "TS",
@@ -459,7 +454,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         conference_id: "TS",
         account_id: "TS",
         _alias: "TS",
@@ -479,7 +474,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         conference_id: "TS",
         account_id: "TS",
         _alias: "TS",
@@ -495,7 +490,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         conference_id: "TS",
         account_id: "TS",
         _alias: "TS",
@@ -519,7 +514,7 @@ revision: 1,
       
         date_updated: "TS",
       
-revision: 1,
+        revision: 1,
       
         conference_id: "TS",
       

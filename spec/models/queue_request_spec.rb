@@ -81,11 +81,6 @@ describe Freeclimb::QueueRequest do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::QueueRequest.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 
@@ -154,7 +149,7 @@ describe Freeclimb::QueueRequest do
     it 'returns the string representation of the object' do
       instance = Freeclimb::QueueRequest.new(
         _alias: "TS",
-max_size: 1,
+        max_size: 1,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -164,7 +159,7 @@ max_size: 1,
     it 'returns the object in the form of hash' do
       instance = Freeclimb::QueueRequest.new(
         _alias: "TS",
-max_size: 1,
+        max_size: 1,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -172,11 +167,11 @@ max_size: 1,
       obj = Object.new()
       instance_1 = Freeclimb::QueueRequest.new(
         _alias: "TS",
-max_size: 1,
+        max_size: 1,
       )
       instance_2 = Freeclimb::QueueRequest.new(
         _alias: "TS",
-max_size: 1,
+        max_size: 1,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -186,7 +181,7 @@ max_size: 1,
     instance = Freeclimb::QueueRequest.new(
         _alias: "TS",
       
-max_size: 1,
+        max_size: 1,
       )
     it 'returns _alias in the form of hash' do
       expect(instance._to_hash(instance._alias)).to eq(instance._alias)

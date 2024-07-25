@@ -173,18 +173,6 @@ module Freeclimb
       
       if @account_id.nil?
         false
-      elsif @campaign_id.nil?
-        false
-      elsif @use_case.nil?
-        false
-      elsif @registration_status.nil?
-        false
-      elsif @date_created.nil?
-        false
-      elsif @date_updated.nil?
-        false
-      elsif @revision.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

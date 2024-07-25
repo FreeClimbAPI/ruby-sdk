@@ -107,11 +107,6 @@ describe Freeclimb::UpdateConferenceRequest do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::UpdateConferenceRequest.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 

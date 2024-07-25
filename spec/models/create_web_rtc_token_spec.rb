@@ -96,11 +96,6 @@ describe Freeclimb::CreateWebRTCToken do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::CreateWebRTCToken.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 
@@ -180,7 +175,7 @@ describe Freeclimb::CreateWebRTCToken do
       instance = Freeclimb::CreateWebRTCToken.new(
         to: "TS",
         from: "TS",
-uses: 1,
+        uses: 1,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -191,7 +186,7 @@ uses: 1,
       instance = Freeclimb::CreateWebRTCToken.new(
         to: "TS",
         from: "TS",
-uses: 1,
+        uses: 1,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -200,12 +195,12 @@ uses: 1,
       instance_1 = Freeclimb::CreateWebRTCToken.new(
         to: "TS",
         from: "TS",
-uses: 1,
+        uses: 1,
       )
       instance_2 = Freeclimb::CreateWebRTCToken.new(
         to: "TS",
         from: "TS",
-uses: 1,
+        uses: 1,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -217,7 +212,7 @@ uses: 1,
       
         from: "TS",
       
-uses: 1,
+        uses: 1,
       )
     it 'returns to in the form of hash' do
       expect(instance._to_hash(instance.to)).to eq(instance.to)

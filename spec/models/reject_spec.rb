@@ -67,11 +67,6 @@ describe Freeclimb::Reject do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::Reject.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 

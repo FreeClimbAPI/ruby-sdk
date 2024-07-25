@@ -133,13 +133,8 @@ describe Freeclimb::CreateConference do
       instance = Freeclimb::CreateConference.new(
       
       
-      action_url: nil,                              
+      action_url: nil,      _alias: nil,            record: nil,            
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::CreateConference.new()
       expect(instance.valid?).to eq(false)
     end
     

@@ -103,11 +103,6 @@ describe Freeclimb::MutableResourceModel do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::MutableResourceModel.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 
@@ -198,7 +193,7 @@ describe Freeclimb::MutableResourceModel do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -210,7 +205,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -220,13 +215,13 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
       )
       instance_2 = Freeclimb::MutableResourceModel.new(
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -240,7 +235,7 @@ revision: 1,
       
         date_updated: "TS",
       
-revision: 1,
+        revision: 1,
       )
     it 'returns uri in the form of hash' do
       expect(instance._to_hash(instance.uri)).to eq(instance.uri)

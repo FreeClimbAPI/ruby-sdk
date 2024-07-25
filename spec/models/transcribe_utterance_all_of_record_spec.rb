@@ -89,17 +89,12 @@ describe Freeclimb::TranscribeUtteranceAllOfRecord do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
-            
+      save_recording: nil,      
       
       max_length_sec: nil,      
       
       rcrd_termination_silence_time_ms: nil,
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::TranscribeUtteranceAllOfRecord.new()
       expect(instance.valid?).to eq(false)
     end
     

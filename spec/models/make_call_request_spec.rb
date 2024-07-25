@@ -169,13 +169,8 @@ describe Freeclimb::MakeCallRequest do
       
       from: nil,      
       
-      to: nil,                                                
+      to: nil,                                          privacy_mode: nil,      
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::MakeCallRequest.new()
       expect(instance.valid?).to eq(false)
     end
     
@@ -331,7 +326,7 @@ describe Freeclimb::MakeCallRequest do
         send_digits: "TS",
         if_machine: "TS",
         if_machine_url: "TS",
-timeout: 1,
+        timeout: 1,
         parent_call_id: "TS",
         privacy_mode: true,
         call_connect_url: "TS",
@@ -349,7 +344,7 @@ timeout: 1,
         send_digits: "TS",
         if_machine: "TS",
         if_machine_url: "TS",
-timeout: 1,
+        timeout: 1,
         parent_call_id: "TS",
         privacy_mode: true,
         call_connect_url: "TS",
@@ -365,7 +360,7 @@ timeout: 1,
         send_digits: "TS",
         if_machine: "TS",
         if_machine_url: "TS",
-timeout: 1,
+        timeout: 1,
         parent_call_id: "TS",
         privacy_mode: true,
         call_connect_url: "TS",
@@ -377,7 +372,7 @@ timeout: 1,
         send_digits: "TS",
         if_machine: "TS",
         if_machine_url: "TS",
-timeout: 1,
+        timeout: 1,
         parent_call_id: "TS",
         privacy_mode: true,
         call_connect_url: "TS",
@@ -400,7 +395,7 @@ timeout: 1,
       
         if_machine_url: "TS",
       
-timeout: 1,
+        timeout: 1,
       
         parent_call_id: "TS",
       

@@ -137,13 +137,8 @@ describe Freeclimb::RecordUtterance do
       instance = Freeclimb::RecordUtterance.new(
       
       
-      action_url: nil,                                    
+      action_url: nil,                        play_beep: nil,      auto_start: nil,      privacy_mode: nil,
       )
-      expect(instance.valid?).to eq(false)
-    end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::RecordUtterance.new()
       expect(instance.valid?).to eq(false)
     end
     
@@ -264,9 +259,9 @@ describe Freeclimb::RecordUtterance do
     it 'returns the string representation of the object' do
       instance = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-silence_timeout_ms: 1,
+        silence_timeout_ms: 1,
         finish_on_key: "TS",
-max_length_sec: 1,
+        max_length_sec: 1,
         play_beep: true,
         auto_start: true,
         privacy_mode: true,
@@ -279,9 +274,9 @@ max_length_sec: 1,
     it 'returns the object in the form of hash' do
       instance = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-silence_timeout_ms: 1,
+        silence_timeout_ms: 1,
         finish_on_key: "TS",
-max_length_sec: 1,
+        max_length_sec: 1,
         play_beep: true,
         auto_start: true,
         privacy_mode: true,
@@ -292,18 +287,18 @@ max_length_sec: 1,
       obj = Object.new()
       instance_1 = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-silence_timeout_ms: 1,
+        silence_timeout_ms: 1,
         finish_on_key: "TS",
-max_length_sec: 1,
+        max_length_sec: 1,
         play_beep: true,
         auto_start: true,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-silence_timeout_ms: 1,
+        silence_timeout_ms: 1,
         finish_on_key: "TS",
-max_length_sec: 1,
+        max_length_sec: 1,
         play_beep: true,
         auto_start: true,
         privacy_mode: true,
@@ -316,11 +311,11 @@ max_length_sec: 1,
     instance = Freeclimb::RecordUtterance.new(
         action_url: "TS",
       
-silence_timeout_ms: 1,
+        silence_timeout_ms: 1,
       
         finish_on_key: "TS",
       
-max_length_sec: 1,
+        max_length_sec: 1,
       
         play_beep: true,
       

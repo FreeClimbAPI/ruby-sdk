@@ -318,11 +318,6 @@ describe Freeclimb::CallResult do
       )
       expect(instance.valid?).to eq(false)
     end
-
-    it 'checks if model is empty' do
-      instance = Freeclimb::CallResult.new()
-      expect(instance.valid?).to eq(false)
-    end
     
   end
 
@@ -566,7 +561,7 @@ describe Freeclimb::CallResult do
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         call_id: "TS",
         parent_call_id: "TS",
         account_id: "TS",
@@ -577,8 +572,8 @@ revision: 1,
         start_time: "TS",
         connect_time: "TS",
         end_time: "TS",
-duration: 1,
-connect_duration: 1,
+        duration: 1,
+        connect_duration: 1,
         direction: "INBOUND",
         answered_by: "HUMAN",
         subresource_uris: Object.new(),
@@ -593,7 +588,7 @@ connect_duration: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         call_id: "TS",
         parent_call_id: "TS",
         account_id: "TS",
@@ -604,8 +599,8 @@ revision: 1,
         start_time: "TS",
         connect_time: "TS",
         end_time: "TS",
-duration: 1,
-connect_duration: 1,
+        duration: 1,
+        connect_duration: 1,
         direction: "INBOUND",
         answered_by: "HUMAN",
         subresource_uris: Object.new(),
@@ -618,7 +613,7 @@ connect_duration: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         call_id: "TS",
         parent_call_id: "TS",
         account_id: "TS",
@@ -629,8 +624,8 @@ revision: 1,
         start_time: "TS",
         connect_time: "TS",
         end_time: "TS",
-duration: 1,
-connect_duration: 1,
+        duration: 1,
+        connect_duration: 1,
         direction: "INBOUND",
         answered_by: "HUMAN",
         subresource_uris: obj,
@@ -639,7 +634,7 @@ connect_duration: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         call_id: "TS",
         parent_call_id: "TS",
         account_id: "TS",
@@ -650,8 +645,8 @@ revision: 1,
         start_time: "TS",
         connect_time: "TS",
         end_time: "TS",
-duration: 1,
-connect_duration: 1,
+        duration: 1,
+        connect_duration: 1,
         direction: "INBOUND",
         answered_by: "HUMAN",
         subresource_uris: obj,
@@ -668,7 +663,7 @@ connect_duration: 1,
       
         date_updated: "TS",
       
-revision: 1,
+        revision: 1,
       
         call_id: "TS",
       
@@ -690,9 +685,9 @@ revision: 1,
       
         end_time: "TS",
       
-duration: 1,
+        duration: 1,
       
-connect_duration: 1,
+        connect_duration: 1,
       
         direction: "INBOUND",
       

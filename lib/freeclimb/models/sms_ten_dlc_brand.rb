@@ -488,66 +488,6 @@ module Freeclimb
       
       if @account_id.nil?
         false
-      elsif @entity_type.nil?
-        false
-      elsif @csp_id.nil?
-        false
-      elsif @brand_id.nil?
-        false
-      elsif @first_name.nil?
-        false
-      elsif @last_name.nil?
-        false
-      elsif @display_name.nil?
-        false
-      elsif @company_name.nil?
-        false
-      elsif @ein.nil?
-        false
-      elsif @ein_issuing_country.nil?
-        false
-      elsif @phone.nil?
-        false
-      elsif @street.nil?
-        false
-      elsif @city.nil?
-        false
-      elsif @state.nil?
-        false
-      elsif @postal_code.nil?
-        false
-      elsif @country.nil?
-        false
-      elsif @email.nil?
-        false
-      elsif @stock_symbol.nil?
-        false
-      elsif @stock_exchange.nil?
-        false
-      elsif @ip_address.nil?
-        false
-      elsif @website.nil?
-        false
-      elsif @brand_relationship.nil?
-        false
-      elsif @vertical.nil?
-        false
-      elsif @alt_business_id.nil?
-        false
-      elsif @alt_business_id_type.nil?
-        false
-      elsif @universal_ein.nil?
-        false
-      elsif @reference_id.nil?
-        false
-      elsif @optional_attributes.nil?
-        false
-      elsif @mock.nil?
-        false
-      elsif @identity_status.nil?
-        false
-      elsif @create_date.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

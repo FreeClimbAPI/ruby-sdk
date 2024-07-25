@@ -134,18 +134,6 @@ module Freeclimb
       
       if @action_url.nil?
         false
-      elsif @silence_timeout_ms.nil?
-        false
-      elsif @finish_on_key.nil?
-        false
-      elsif @max_length_sec.nil?
-        false
-      elsif @play_beep.nil?
-        false
-      elsif @auto_start.nil?
-        false
-      elsif @privacy_mode.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

@@ -128,12 +128,6 @@ module Freeclimb
       
       if @action_url.nil?
         false
-      elsif @notification_url.nil?
-        false
-      elsif @queue_id.nil?
-        false
-      elsif @wait_url.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end
