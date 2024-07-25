@@ -77,7 +77,6 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
-
       true
     end
 
@@ -220,4 +219,5 @@ module Freeclimb
     end
 
   end
+
 end

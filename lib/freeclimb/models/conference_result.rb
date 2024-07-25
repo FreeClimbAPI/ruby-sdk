@@ -220,7 +220,6 @@ module Freeclimb
       else
         list_invalid_properties.length() == 0
       end
-
     end
 
     # Checks equality by comparing each attribute.
@@ -375,4 +374,5 @@ module Freeclimb
     end
 
   end
+
 end

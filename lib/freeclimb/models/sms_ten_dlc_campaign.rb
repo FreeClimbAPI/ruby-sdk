@@ -586,7 +586,6 @@ module Freeclimb
       else
         list_invalid_properties.length() == 0
       end
-
     end
 
     # Custom attribute writer method with validation
@@ -965,4 +964,5 @@ module Freeclimb
     end
 
   end
+
 end

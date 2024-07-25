@@ -551,7 +551,6 @@ module Freeclimb
       else
         list_invalid_properties.length() == 0
       end
-
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -983,4 +982,5 @@ module Freeclimb
     end
 
   end
+
 end
