@@ -44,9 +44,7 @@ describe Freeclimb::AccountRequest do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::AccountRequest.new(
           _alias: "TS",
-          
           label: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::AccountRequest' do
@@ -64,7 +62,7 @@ describe Freeclimb::AccountRequest do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::AccountRequest.new(
@@ -76,6 +74,18 @@ describe Freeclimb::AccountRequest do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::AccountRequest.new(
+          _alias: "TS",
+          label: "TS",
+      )
+      instance_2 = Freeclimb::AccountRequest.new(
+          _alias: "TS",
+          label: "TS",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do

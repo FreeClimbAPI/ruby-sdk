@@ -37,7 +37,6 @@ describe Freeclimb::SetListen do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::SetListen.new(
           listen: true,
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::SetListen' do
@@ -53,7 +52,7 @@ describe Freeclimb::SetListen do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::SetListen.new(
@@ -64,6 +63,16 @@ describe Freeclimb::SetListen do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::SetListen.new(
+          listen: true,
+      )
+      instance_2 = Freeclimb::SetListen.new(
+          listen: true,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do

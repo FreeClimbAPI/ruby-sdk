@@ -71,23 +71,18 @@ describe Freeclimb::QueueMember do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::QueueMember.new(
           uri: "TS",
-          
           call_id: "TS",
-          
-wait_time: 1,
-          
-position: 1,
-          
+          wait_time: 1,
+          position: 1,
           date_enqueued: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::QueueMember' do
         expect{instance = Freeclimb::QueueMember.new(
           uri: "TS",
           call_id: "TS",
-wait_time: 1,
-position: 1,
+          wait_time: 1,
+          position: 1,
           date_enqueued: "TS",
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -96,21 +91,21 @@ position: 1,
         expect{instance = Freeclimb::QueueMember.new(
           uri: "TS",
           call_id: "TS",
-wait_time: 1,
-position: 1,
+          wait_time: 1,
+          position: 1,
           date_enqueued: "TS",
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::QueueMember.new(
           uri: "TS",
           call_id: "TS",
-wait_time: 1,
-position: 1,
+          wait_time: 1,
+          position: 1,
           date_enqueued: "TS",
       )
       expect(instance.valid?).to eq(true)
@@ -118,6 +113,24 @@ position: 1,
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::QueueMember.new(
+          uri: "TS",
+          call_id: "TS",
+          wait_time: 1,
+          position: 1,
+          date_enqueued: "TS",
+      )
+      instance_2 = Freeclimb::QueueMember.new(
+          uri: "TS",
+          call_id: "TS",
+          wait_time: 1,
+          position: 1,
+          date_enqueued: "TS",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
@@ -125,8 +138,8 @@ position: 1,
       instance = Freeclimb::QueueMember.new(
       uri: "TS",
       call_id: "TS",
-wait_time: 1,
-position: 1,
+      wait_time: 1,
+      position: 1,
       date_enqueued: "TS",
     )
     expect(instance.hash).to be_a_kind_of(Integer)
@@ -138,8 +151,8 @@ position: 1,
       instance_1 = Freeclimb::QueueMember.new(
         uri: "TS",
         call_id: "TS",
-wait_time: 1,
-position: 1,
+        wait_time: 1,
+        position: 1,
         date_enqueued: "TS",
       )
       instance_2 = Freeclimb::QueueMember.new
@@ -151,8 +164,8 @@ position: 1,
     instance = Freeclimb::QueueMember.new(
         uri: "TS",
         call_id: "TS",
-wait_time: 1,
-position: 1,
+        wait_time: 1,
+        position: 1,
         date_enqueued: "TS",
     )
     it 'deserializes the data of uri' do

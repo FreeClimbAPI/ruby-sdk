@@ -103,25 +103,15 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::ConferenceParticipantResult.new(
           uri: "TS",
-          
           date_created: "TS",
-          
           date_updated: "TS",
-          
-revision: 1,
-          
+          revision: 1,
           account_id: "TS",
-          
           conference_id: "TS",
-          
           call_id: "TS",
-          
           talk: true,
-          
           listen: true,
-          
           start_conf_on_enter: true,
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::ConferenceParticipantResult' do
@@ -129,7 +119,7 @@ revision: 1,
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           account_id: "TS",
           conference_id: "TS",
           call_id: "TS",
@@ -144,7 +134,7 @@ revision: 1,
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           account_id: "TS",
           conference_id: "TS",
           call_id: "TS",
@@ -155,14 +145,14 @@ revision: 1,
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::ConferenceParticipantResult.new(
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           account_id: "TS",
           conference_id: "TS",
           call_id: "TS",
@@ -175,6 +165,34 @@ revision: 1,
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::ConferenceParticipantResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          account_id: "TS",
+          conference_id: "TS",
+          call_id: "TS",
+          talk: true,
+          listen: true,
+          start_conf_on_enter: true,
+      )
+      instance_2 = Freeclimb::ConferenceParticipantResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          account_id: "TS",
+          conference_id: "TS",
+          call_id: "TS",
+          talk: true,
+          listen: true,
+          start_conf_on_enter: true,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
@@ -183,7 +201,7 @@ revision: 1,
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-revision: 1,
+      revision: 1,
       account_id: "TS",
       conference_id: "TS",
       call_id: "TS",
@@ -201,7 +219,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         account_id: "TS",
         conference_id: "TS",
         call_id: "TS",
@@ -219,7 +237,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         account_id: "TS",
         conference_id: "TS",
         call_id: "TS",

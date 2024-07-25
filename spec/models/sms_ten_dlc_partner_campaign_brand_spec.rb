@@ -132,27 +132,16 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
           account_id: "TS",
-          
           brand_id: "TS",
-          
           first_name: "TS",
-          
           last_name: "TS",
-          
           display_name: "TS",
-          
           company_name: "TS",
-          
           phone: "TS",
-          
           email: "TS",
-          
           website: "TS",
-          
-          
           optional_attributes: Hash.new(),
-evp_vetting_score: 1,
-          
+          evp_vetting_score: 1,
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::SMSTenDLCPartnerCampaignBrand' do
@@ -167,7 +156,7 @@ evp_vetting_score: 1,
           email: "TS",
           website: "TS",
           optional_attributes: Hash.new(),
-evp_vetting_score: 1,
+          evp_vetting_score: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -183,12 +172,12 @@ evp_vetting_score: 1,
           email: "TS",
           website: "TS",
           optional_attributes: Hash.new(),
-evp_vetting_score: 1,
+          evp_vetting_score: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
@@ -202,13 +191,41 @@ evp_vetting_score: 1,
           email: "TS",
           website: "TS",
           optional_attributes: Hash.new(),
-evp_vetting_score: 1,
+          evp_vetting_score: 1,
       )
       expect(instance.valid?).to eq(true)
     end
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
+          account_id: "TS",
+          brand_id: "TS",
+          first_name: "TS",
+          last_name: "TS",
+          display_name: "TS",
+          company_name: "TS",
+          phone: "TS",
+          email: "TS",
+          website: "TS",
+          evp_vetting_score: 1,
+      )
+      instance_2 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
+          account_id: "TS",
+          brand_id: "TS",
+          first_name: "TS",
+          last_name: "TS",
+          display_name: "TS",
+          company_name: "TS",
+          phone: "TS",
+          email: "TS",
+          website: "TS",
+          evp_vetting_score: 1,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
@@ -224,7 +241,7 @@ evp_vetting_score: 1,
       email: "TS",
       website: "TS",
       optional_attributes: Hash.new(),
-evp_vetting_score: 1,
+      evp_vetting_score: 1,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -243,7 +260,7 @@ evp_vetting_score: 1,
         email: "TS",
         website: "TS",
         optional_attributes: Hash.new(),
-evp_vetting_score: 1,
+        evp_vetting_score: 1,
       )
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new
       expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
@@ -262,7 +279,7 @@ evp_vetting_score: 1,
         email: "TS",
         website: "TS",
         optional_attributes: Hash.new(),
-evp_vetting_score: 1,
+        evp_vetting_score: 1,
     )
     it 'deserializes the data of account_id' do
       expect(instance._deserialize("String", instance.account_id)).to be_a_kind_of(String)

@@ -37,7 +37,6 @@ describe Freeclimb::TFN do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::TFN.new(
           campaign_id: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::TFN' do
@@ -53,7 +52,7 @@ describe Freeclimb::TFN do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::TFN.new(
@@ -64,6 +63,16 @@ describe Freeclimb::TFN do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::TFN.new(
+          campaign_id: "TS",
+      )
+      instance_2 = Freeclimb::TFN.new(
+          campaign_id: "TS",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do

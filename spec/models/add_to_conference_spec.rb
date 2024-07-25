@@ -93,23 +93,14 @@ describe Freeclimb::AddToConference do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::AddToConference.new(
           allow_call_control: true,
-          
           call_control_sequence: "TS",
-          
           call_control_url: "TS",
-          
           conference_id: "TS",
-          
           leave_conference_url: "TS",
-          
           listen: true,
-          
           notification_url: "TS",
-          
           start_conf_on_enter: true,
-          
           talk: true,
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::AddToConference' do
@@ -141,7 +132,7 @@ describe Freeclimb::AddToConference do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::AddToConference.new(
@@ -160,6 +151,32 @@ describe Freeclimb::AddToConference do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::AddToConference.new(
+          allow_call_control: true,
+          call_control_sequence: "TS",
+          call_control_url: "TS",
+          conference_id: "TS",
+          leave_conference_url: "TS",
+          listen: true,
+          notification_url: "TS",
+          start_conf_on_enter: true,
+          talk: true,
+      )
+      instance_2 = Freeclimb::AddToConference.new(
+          allow_call_control: true,
+          call_control_sequence: "TS",
+          call_control_url: "TS",
+          conference_id: "TS",
+          leave_conference_url: "TS",
+          listen: true,
+          notification_url: "TS",
+          start_conf_on_enter: true,
+          talk: true,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do

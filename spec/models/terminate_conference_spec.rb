@@ -42,7 +42,7 @@ describe Freeclimb::TerminateConference do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::TerminateConference.new(
@@ -52,6 +52,14 @@ describe Freeclimb::TerminateConference do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::TerminateConference.new(
+      )
+      instance_2 = Freeclimb::TerminateConference.new(
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do

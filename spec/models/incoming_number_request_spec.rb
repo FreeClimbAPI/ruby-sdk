@@ -51,11 +51,8 @@ describe Freeclimb::IncomingNumberRequest do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::IncomingNumberRequest.new(
           application_id: "TS",
-          
           _alias: "TS",
-          
           campaign_id: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::IncomingNumberRequest' do
@@ -75,7 +72,7 @@ describe Freeclimb::IncomingNumberRequest do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::IncomingNumberRequest.new(
@@ -88,6 +85,20 @@ describe Freeclimb::IncomingNumberRequest do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::IncomingNumberRequest.new(
+          application_id: "TS",
+          _alias: "TS",
+          campaign_id: "TS",
+      )
+      instance_2 = Freeclimb::IncomingNumberRequest.new(
+          application_id: "TS",
+          _alias: "TS",
+          campaign_id: "TS",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do

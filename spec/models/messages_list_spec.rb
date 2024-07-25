@@ -103,65 +103,54 @@ describe Freeclimb::MessagesList do
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::MessagesList.new(
-total: 1,
-          
-start: 1,
-          
-_end: 1,
-          
-page: 1,
-          
-num_pages: 1,
-          
-page_size: 1,
-          
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
           next_page_uri: "TS",
-          
-          messages: Freeclimb::MessageResult.new(),
-          
+          messages: Array.new(),
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::MessagesList' do
         expect{instance = Freeclimb::MessagesList.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
           next_page_uri: "TS",
-          messages: Freeclimb::MessageResult.new(),
           messages: Array.new(),
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::MessagesList.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
           next_page_uri: "TS",
-          messages: Freeclimb::MessageResult.new(),
           messages: Array.new(),
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::MessagesList.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
           next_page_uri: "TS",
-          messages: Freeclimb::MessageResult.new(),
           messages: Array.new(),
       )
       expect(instance.valid?).to eq(true)
@@ -169,19 +158,44 @@ page_size: 1,
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::MessagesList.new(
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
+          next_page_uri: "TS",
+          messages: Freeclimb::MessageResult.new(),
+          messages: [],
+      )
+      instance_2 = Freeclimb::MessagesList.new(
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
+          next_page_uri: "TS",
+          messages: Freeclimb::MessageResult.new(),
+          messages: [],
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::MessagesList.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+      total: 1,
+      start: 1,
+      _end: 1,
+      page: 1,
+      num_pages: 1,
+      page_size: 1,
       next_page_uri: "TS",
-      messages: Freeclimb::MessageResult.new(),
       messages: Array.new(),
     )
     expect(instance.hash).to be_a_kind_of(Integer)
@@ -191,14 +205,13 @@ page_size: 1,
   describe 'test method "build_from_hash"' do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::MessagesList.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+        total: 1,
+        start: 1,
+        _end: 1,
+        page: 1,
+        num_pages: 1,
+        page_size: 1,
         next_page_uri: "TS",
-        messages: Freeclimb::MessageResult.new(),
         messages: Array.new(),
       )
       instance_2 = Freeclimb::MessagesList.new
@@ -208,14 +221,13 @@ page_size: 1,
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::MessagesList.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+        total: 1,
+        start: 1,
+        _end: 1,
+        page: 1,
+        num_pages: 1,
+        page_size: 1,
         next_page_uri: "TS",
-        messages: Freeclimb::MessageResult.new(),
         messages: Array.new(),
     )
     it 'deserializes the data of total' do
@@ -254,7 +266,6 @@ page: 1,
 num_pages: 1,
 page_size: 1,
         next_page_uri: "TS",
-        messages: Freeclimb::MessageResult.new(),
         messages: Array.new(),
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -271,7 +282,6 @@ page: 1,
 num_pages: 1,
 page_size: 1,
         next_page_uri: "TS",
-        messages: Freeclimb::MessageResult.new(),
         messages: Array.new(),
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -286,7 +296,6 @@ page: 1,
 num_pages: 1,
 page_size: 1,
         next_page_uri: "TS",
-        messages: Freeclimb::MessageResult.new(),
         messages: Array.new(),
       )
       instance_2 = Freeclimb::MessagesList.new(
@@ -297,7 +306,6 @@ page: 1,
 num_pages: 1,
 page_size: 1,
         next_page_uri: "TS",
-        messages: Freeclimb::MessageResult.new(),
         messages: Array.new(),
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)

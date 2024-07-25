@@ -79,25 +79,16 @@ describe Freeclimb::AvailableNumber do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::AvailableNumber.new(
           capabilities: Freeclimb::Capabilities.new(),
-          
-          capabilities: Freeclimb::Capabilities.new,
           campaign_id: "TS",
-          
           phone_number: "TS",
-          
           voice_enabled: true,
-          
           sms_enabled: true,
-          
           region: "TS",
-          
           country: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::AvailableNumber' do
         expect{instance = Freeclimb::AvailableNumber.new(
-          capabilities: Freeclimb::Capabilities.new(),
           capabilities: Freeclimb::Capabilities.new,
           campaign_id: "TS",
           phone_number: "TS",
@@ -110,7 +101,6 @@ describe Freeclimb::AvailableNumber do
     end
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::AvailableNumber.new(
-          capabilities: Freeclimb::Capabilities.new(),
           capabilities: Freeclimb::Capabilities.new,
           campaign_id: "TS",
           phone_number: "TS",
@@ -122,12 +112,11 @@ describe Freeclimb::AvailableNumber do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::AvailableNumber.new(
           capabilities: Freeclimb::Capabilities.new(),
-          capabilities: Freeclimb::Capabilities.new,
           campaign_id: "TS",
           phone_number: "TS",
           voice_enabled: true,
@@ -140,13 +129,34 @@ describe Freeclimb::AvailableNumber do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::AvailableNumber.new(
+          capabilities: Freeclimb::Capabilities.new(),
+          campaign_id: "TS",
+          phone_number: "TS",
+          voice_enabled: true,
+          sms_enabled: true,
+          region: "TS",
+          country: "TS",
+      )
+      instance_2 = Freeclimb::AvailableNumber.new(
+          capabilities: Freeclimb::Capabilities.new(),
+          campaign_id: "TS",
+          phone_number: "TS",
+          voice_enabled: true,
+          sms_enabled: true,
+          region: "TS",
+          country: "TS",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::AvailableNumber.new(
       capabilities: Freeclimb::Capabilities.new(),
-      capabilities: Freeclimb::Capabilities.new,
       campaign_id: "TS",
       phone_number: "TS",
       voice_enabled: true,
@@ -162,7 +172,6 @@ describe Freeclimb::AvailableNumber do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::AvailableNumber.new(
         capabilities: Freeclimb::Capabilities.new(),
-        capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number: "TS",
         voice_enabled: true,
@@ -177,7 +186,6 @@ describe Freeclimb::AvailableNumber do
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::AvailableNumber.new(
-        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number: "TS",
@@ -212,7 +220,6 @@ describe Freeclimb::AvailableNumber do
   describe 'test method "to_s"' do
     it 'returns the string representation of the object' do
       instance = Freeclimb::AvailableNumber.new(
-        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number: "TS",
@@ -228,7 +235,6 @@ describe Freeclimb::AvailableNumber do
   describe 'test method "to_hash"' do
     it 'returns the object in the form of hash' do
       instance = Freeclimb::AvailableNumber.new(
-        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number: "TS",
@@ -242,7 +248,6 @@ describe Freeclimb::AvailableNumber do
     it 'creates equal hash for two equal objects' do
       obj = Object.new()
       instance_1 = Freeclimb::AvailableNumber.new(
-        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number: "TS",
@@ -252,7 +257,6 @@ describe Freeclimb::AvailableNumber do
         country: "TS",
       )
       instance_2 = Freeclimb::AvailableNumber.new(
-        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number: "TS",

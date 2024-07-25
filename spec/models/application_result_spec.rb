@@ -124,31 +124,18 @@ describe Freeclimb::ApplicationResult do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::ApplicationResult.new(
           uri: "TS",
-          
           date_created: "TS",
-          
           date_updated: "TS",
-          
-revision: 1,
-          
+          revision: 1,
           account_id: "TS",
-          
           application_id: "TS",
-          
           _alias: "TS",
-          
           voice_url: "TS",
-          
           voice_fallback_url: "TS",
-          
           call_connect_url: "TS",
-          
           status_callback_url: "TS",
-          
           sms_url: "TS",
-          
           sms_fallback_url: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::ApplicationResult' do
@@ -156,7 +143,7 @@ revision: 1,
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           account_id: "TS",
           application_id: "TS",
           _alias: "TS",
@@ -174,7 +161,7 @@ revision: 1,
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           account_id: "TS",
           application_id: "TS",
           _alias: "TS",
@@ -188,14 +175,14 @@ revision: 1,
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::ApplicationResult.new(
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           account_id: "TS",
           application_id: "TS",
           _alias: "TS",
@@ -211,6 +198,40 @@ revision: 1,
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::ApplicationResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          account_id: "TS",
+          application_id: "TS",
+          _alias: "TS",
+          voice_url: "TS",
+          voice_fallback_url: "TS",
+          call_connect_url: "TS",
+          status_callback_url: "TS",
+          sms_url: "TS",
+          sms_fallback_url: "TS",
+      )
+      instance_2 = Freeclimb::ApplicationResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          account_id: "TS",
+          application_id: "TS",
+          _alias: "TS",
+          voice_url: "TS",
+          voice_fallback_url: "TS",
+          call_connect_url: "TS",
+          status_callback_url: "TS",
+          sms_url: "TS",
+          sms_fallback_url: "TS",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
@@ -219,7 +240,7 @@ revision: 1,
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-revision: 1,
+      revision: 1,
       account_id: "TS",
       application_id: "TS",
       _alias: "TS",
@@ -240,7 +261,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         account_id: "TS",
         application_id: "TS",
         _alias: "TS",
@@ -261,7 +282,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         account_id: "TS",
         application_id: "TS",
         _alias: "TS",

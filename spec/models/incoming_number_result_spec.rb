@@ -152,41 +152,22 @@ describe Freeclimb::IncomingNumberResult do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::IncomingNumberResult.new(
           uri: "TS",
-          
           date_created: "TS",
-          
           date_updated: "TS",
-          
-revision: 1,
-          
+          revision: 1,
           capabilities: Freeclimb::Capabilities.new(),
-          
-          capabilities: Freeclimb::Capabilities.new,
           campaign_id: "TS",
-          
           phone_number_id: "TS",
-          
           account_id: "TS",
-          
           application_id: "TS",
-          
           phone_number: "TS",
-          
           _alias: "TS",
-          
           region: "TS",
-          
           country: "TS",
-          
           voice_enabled: true,
-          
           sms_enabled: true,
-          
           offnet: true,
-          
           tfn: Freeclimb::TFN.new(),
-          
-          tfn: Freeclimb::TFN.new,
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::IncomingNumberResult' do
@@ -194,8 +175,7 @@ revision: 1,
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
-          capabilities: Freeclimb::Capabilities.new(),
+          revision: 1,
           capabilities: Freeclimb::Capabilities.new,
           campaign_id: "TS",
           phone_number_id: "TS",
@@ -208,7 +188,6 @@ revision: 1,
           voice_enabled: true,
           sms_enabled: true,
           offnet: true,
-          tfn: Freeclimb::TFN.new(),
           tfn: Freeclimb::TFN.new,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -218,8 +197,7 @@ revision: 1,
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
-          capabilities: Freeclimb::Capabilities.new(),
+          revision: 1,
           capabilities: Freeclimb::Capabilities.new,
           campaign_id: "TS",
           phone_number_id: "TS",
@@ -232,22 +210,20 @@ revision: 1,
           voice_enabled: true,
           sms_enabled: true,
           offnet: true,
-          tfn: Freeclimb::TFN.new(),
           tfn: Freeclimb::TFN.new,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::IncomingNumberResult.new(
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           capabilities: Freeclimb::Capabilities.new(),
-          capabilities: Freeclimb::Capabilities.new,
           campaign_id: "TS",
           phone_number_id: "TS",
           account_id: "TS",
@@ -260,13 +236,54 @@ revision: 1,
           sms_enabled: true,
           offnet: true,
           tfn: Freeclimb::TFN.new(),
-          tfn: Freeclimb::TFN.new,
       )
       expect(instance.valid?).to eq(true)
     end
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::IncomingNumberResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          capabilities: Freeclimb::Capabilities.new(),
+          campaign_id: "TS",
+          phone_number_id: "TS",
+          account_id: "TS",
+          application_id: "TS",
+          phone_number: "TS",
+          _alias: "TS",
+          region: "TS",
+          country: "TS",
+          voice_enabled: true,
+          sms_enabled: true,
+          offnet: true,
+          tfn: Freeclimb::TFN.new(),
+      )
+      instance_2 = Freeclimb::IncomingNumberResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          capabilities: Freeclimb::Capabilities.new(),
+          campaign_id: "TS",
+          phone_number_id: "TS",
+          account_id: "TS",
+          application_id: "TS",
+          phone_number: "TS",
+          _alias: "TS",
+          region: "TS",
+          country: "TS",
+          voice_enabled: true,
+          sms_enabled: true,
+          offnet: true,
+          tfn: Freeclimb::TFN.new(),
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
@@ -275,9 +292,8 @@ revision: 1,
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-revision: 1,
+      revision: 1,
       capabilities: Freeclimb::Capabilities.new(),
-      capabilities: Freeclimb::Capabilities.new,
       campaign_id: "TS",
       phone_number_id: "TS",
       account_id: "TS",
@@ -290,7 +306,6 @@ revision: 1,
       sms_enabled: true,
       offnet: true,
       tfn: Freeclimb::TFN.new(),
-      tfn: Freeclimb::TFN.new,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -302,9 +317,8 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         capabilities: Freeclimb::Capabilities.new(),
-        capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
         account_id: "TS",
@@ -317,7 +331,6 @@ revision: 1,
         sms_enabled: true,
         offnet: true,
         tfn: Freeclimb::TFN.new(),
-        tfn: Freeclimb::TFN.new,
       )
       instance_2 = Freeclimb::IncomingNumberResult.new
       expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
@@ -329,8 +342,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
-        capabilities: Freeclimb::Capabilities.new(),
+        revision: 1,
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -343,7 +355,6 @@ revision: 1,
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
-        tfn: Freeclimb::TFN.new(),
         tfn: Freeclimb::TFN.new,
     )
     it 'deserializes the data of uri' do
@@ -406,7 +417,6 @@ revision: 1,
         date_created: "TS",
         date_updated: "TS",
 revision: 1,
-        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -419,7 +429,6 @@ revision: 1,
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
-        tfn: Freeclimb::TFN.new(),
         tfn: Freeclimb::TFN.new,
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -433,7 +442,6 @@ revision: 1,
         date_created: "TS",
         date_updated: "TS",
 revision: 1,
-        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -446,7 +454,6 @@ revision: 1,
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
-        tfn: Freeclimb::TFN.new(),
         tfn: Freeclimb::TFN.new,
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -458,7 +465,6 @@ revision: 1,
         date_created: "TS",
         date_updated: "TS",
 revision: 1,
-        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -471,7 +477,6 @@ revision: 1,
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
-        tfn: Freeclimb::TFN.new(),
         tfn: Freeclimb::TFN.new,
       )
       instance_2 = Freeclimb::IncomingNumberResult.new(
@@ -479,7 +484,6 @@ revision: 1,
         date_created: "TS",
         date_updated: "TS",
 revision: 1,
-        capabilities: Freeclimb::Capabilities.new(),
         capabilities: Freeclimb::Capabilities.new,
         campaign_id: "TS",
         phone_number_id: "TS",
@@ -492,7 +496,6 @@ revision: 1,
         voice_enabled: true,
         sms_enabled: true,
         offnet: true,
-        tfn: Freeclimb::TFN.new(),
         tfn: Freeclimb::TFN.new,
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)

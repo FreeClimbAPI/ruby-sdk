@@ -44,9 +44,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::UpdateConferenceParticipantRequest.new(
           talk: true,
-          
           listen: true,
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::UpdateConferenceParticipantRequest' do
@@ -64,7 +62,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::UpdateConferenceParticipantRequest.new(
@@ -76,6 +74,18 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::UpdateConferenceParticipantRequest.new(
+          talk: true,
+          listen: true,
+      )
+      instance_2 = Freeclimb::UpdateConferenceParticipantRequest.new(
+          talk: true,
+          listen: true,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do

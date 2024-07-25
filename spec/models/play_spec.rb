@@ -54,17 +54,14 @@ describe Freeclimb::Play do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::Play.new(
           file: "TS",
-          
-loop: 1,
-          
+          loop: 1,
           privacy_mode: true,
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::Play' do
         expect{instance = Freeclimb::Play.new(
           file: "TS",
-loop: 1,
+          loop: 1,
           privacy_mode: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -72,18 +69,18 @@ loop: 1,
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::Play.new(
           file: "TS",
-loop: 1,
+          loop: 1,
           privacy_mode: true,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::Play.new(
           file: "TS",
-loop: 1,
+          loop: 1,
           privacy_mode: true,
       )
       expect(instance.valid?).to eq(true)
@@ -91,13 +88,27 @@ loop: 1,
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::Play.new(
+          file: "TS",
+          loop: 1,
+          privacy_mode: true,
+      )
+      instance_2 = Freeclimb::Play.new(
+          file: "TS",
+          loop: 1,
+          privacy_mode: true,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Play.new(
       file: "TS",
-loop: 1,
+      loop: 1,
       privacy_mode: true,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
@@ -108,7 +119,7 @@ loop: 1,
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::Play.new(
         file: "TS",
-loop: 1,
+        loop: 1,
         privacy_mode: true,
       )
       instance_2 = Freeclimb::Play.new
@@ -119,7 +130,7 @@ loop: 1,
   describe 'test method "_deserialize"' do
     instance = Freeclimb::Play.new(
         file: "TS",
-loop: 1,
+        loop: 1,
         privacy_mode: true,
     )
     it 'deserializes the data of file' do

@@ -85,27 +85,20 @@ describe Freeclimb::RecordUtterance do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::RecordUtterance.new(
           action_url: "TS",
-          
-silence_timeout_ms: 1,
-          
+          silence_timeout_ms: 1,
           finish_on_key: "TS",
-          
-max_length_sec: 1,
-          
+          max_length_sec: 1,
           play_beep: true,
-          
           auto_start: true,
-          
           privacy_mode: true,
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::RecordUtterance' do
         expect{instance = Freeclimb::RecordUtterance.new(
           action_url: "TS",
-silence_timeout_ms: 1,
+          silence_timeout_ms: 1,
           finish_on_key: "TS",
-max_length_sec: 1,
+          max_length_sec: 1,
           play_beep: true,
           auto_start: true,
           privacy_mode: true,
@@ -115,9 +108,9 @@ max_length_sec: 1,
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::RecordUtterance.new(
           action_url: "TS",
-silence_timeout_ms: 1,
+          silence_timeout_ms: 1,
           finish_on_key: "TS",
-max_length_sec: 1,
+          max_length_sec: 1,
           play_beep: true,
           auto_start: true,
           privacy_mode: true,
@@ -125,14 +118,14 @@ max_length_sec: 1,
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::RecordUtterance.new(
           action_url: "TS",
-silence_timeout_ms: 1,
+          silence_timeout_ms: 1,
           finish_on_key: "TS",
-max_length_sec: 1,
+          max_length_sec: 1,
           play_beep: true,
           auto_start: true,
           privacy_mode: true,
@@ -142,15 +135,37 @@ max_length_sec: 1,
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::RecordUtterance.new(
+          action_url: "TS",
+          silence_timeout_ms: 1,
+          finish_on_key: "TS",
+          max_length_sec: 1,
+          play_beep: true,
+          auto_start: true,
+          privacy_mode: true,
+      )
+      instance_2 = Freeclimb::RecordUtterance.new(
+          action_url: "TS",
+          silence_timeout_ms: 1,
+          finish_on_key: "TS",
+          max_length_sec: 1,
+          play_beep: true,
+          auto_start: true,
+          privacy_mode: true,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::RecordUtterance.new(
       action_url: "TS",
-silence_timeout_ms: 1,
+      silence_timeout_ms: 1,
       finish_on_key: "TS",
-max_length_sec: 1,
+      max_length_sec: 1,
       play_beep: true,
       auto_start: true,
       privacy_mode: true,
@@ -163,9 +178,9 @@ max_length_sec: 1,
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-silence_timeout_ms: 1,
+        silence_timeout_ms: 1,
         finish_on_key: "TS",
-max_length_sec: 1,
+        max_length_sec: 1,
         play_beep: true,
         auto_start: true,
         privacy_mode: true,
@@ -178,9 +193,9 @@ max_length_sec: 1,
   describe 'test method "_deserialize"' do
     instance = Freeclimb::RecordUtterance.new(
         action_url: "TS",
-silence_timeout_ms: 1,
+        silence_timeout_ms: 1,
         finish_on_key: "TS",
-max_length_sec: 1,
+        max_length_sec: 1,
         play_beep: true,
         auto_start: true,
         privacy_mode: true,

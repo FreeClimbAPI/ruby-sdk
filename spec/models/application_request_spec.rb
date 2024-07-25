@@ -79,19 +79,12 @@ describe Freeclimb::ApplicationRequest do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::ApplicationRequest.new(
           _alias: "TS",
-          
           voice_url: "TS",
-          
           voice_fallback_url: "TS",
-          
           call_connect_url: "TS",
-          
           status_callback_url: "TS",
-          
           sms_url: "TS",
-          
           sms_fallback_url: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::ApplicationRequest' do
@@ -119,7 +112,7 @@ describe Freeclimb::ApplicationRequest do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::ApplicationRequest.new(
@@ -136,6 +129,28 @@ describe Freeclimb::ApplicationRequest do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::ApplicationRequest.new(
+          _alias: "TS",
+          voice_url: "TS",
+          voice_fallback_url: "TS",
+          call_connect_url: "TS",
+          status_callback_url: "TS",
+          sms_url: "TS",
+          sms_fallback_url: "TS",
+      )
+      instance_2 = Freeclimb::ApplicationRequest.new(
+          _alias: "TS",
+          voice_url: "TS",
+          voice_fallback_url: "TS",
+          call_connect_url: "TS",
+          status_callback_url: "TS",
+          sms_url: "TS",
+          sms_fallback_url: "TS",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do

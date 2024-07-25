@@ -85,25 +85,17 @@ describe Freeclimb::CreateConference do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::CreateConference.new(
           action_url: "TS",
-          
           _alias: true,
-          
-          play_beep: Freeclimb::PlayBeep.new(),
-          
           play_beep: "ALWAYS",
           record: true,
-          
           status_callback_url: "TS",
-          
           wait_url: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::CreateConference' do
         expect{instance = Freeclimb::CreateConference.new(
           action_url: "TS",
           _alias: true,
-          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
           record: true,
           status_callback_url: "TS",
@@ -115,7 +107,6 @@ describe Freeclimb::CreateConference do
         expect{instance = Freeclimb::CreateConference.new(
           action_url: "TS",
           _alias: true,
-          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
           record: true,
           status_callback_url: "TS",
@@ -124,13 +115,12 @@ describe Freeclimb::CreateConference do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::CreateConference.new(
           action_url: "TS",
           _alias: true,
-          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
           record: true,
           status_callback_url: "TS",
@@ -141,6 +131,28 @@ describe Freeclimb::CreateConference do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::CreateConference.new(
+          action_url: "TS",
+          _alias: true,
+          play_beep: Freeclimb::PlayBeep.new(),
+          play_beep: "ALWAYS",
+          record: true,
+          status_callback_url: "TS",
+          wait_url: "TS",
+      )
+      instance_2 = Freeclimb::CreateConference.new(
+          action_url: "TS",
+          _alias: true,
+          play_beep: Freeclimb::PlayBeep.new(),
+          play_beep: "ALWAYS",
+          record: true,
+          status_callback_url: "TS",
+          wait_url: "TS",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
@@ -148,7 +160,6 @@ describe Freeclimb::CreateConference do
       instance = Freeclimb::CreateConference.new(
       action_url: "TS",
       _alias: true,
-      play_beep: Freeclimb::PlayBeep.new(),
       play_beep: "ALWAYS",
       record: true,
       status_callback_url: "TS",
@@ -163,7 +174,6 @@ describe Freeclimb::CreateConference do
       instance_1 = Freeclimb::CreateConference.new(
         action_url: "TS",
         _alias: true,
-        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
         record: true,
         status_callback_url: "TS",
@@ -178,7 +188,6 @@ describe Freeclimb::CreateConference do
     instance = Freeclimb::CreateConference.new(
         action_url: "TS",
         _alias: true,
-        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
         record: true,
         status_callback_url: "TS",
@@ -206,7 +215,6 @@ describe Freeclimb::CreateConference do
       instance = Freeclimb::CreateConference.new(
         action_url: "TS",
         _alias: true,
-        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
         record: true,
         status_callback_url: "TS",
@@ -221,7 +229,6 @@ describe Freeclimb::CreateConference do
       instance = Freeclimb::CreateConference.new(
         action_url: "TS",
         _alias: true,
-        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
         record: true,
         status_callback_url: "TS",
@@ -234,7 +241,6 @@ describe Freeclimb::CreateConference do
       instance_1 = Freeclimb::CreateConference.new(
         action_url: "TS",
         _alias: true,
-        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
         record: true,
         status_callback_url: "TS",
@@ -243,7 +249,6 @@ describe Freeclimb::CreateConference do
       instance_2 = Freeclimb::CreateConference.new(
         action_url: "TS",
         _alias: true,
-        play_beep: Freeclimb::PlayBeep.new(),
         play_beep: "ALWAYS",
         record: true,
         status_callback_url: "TS",

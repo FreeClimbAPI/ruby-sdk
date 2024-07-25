@@ -51,11 +51,8 @@ describe Freeclimb::BuyIncomingNumberRequest do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::BuyIncomingNumberRequest.new(
           phone_number: "TS",
-          
           _alias: "TS",
-          
           application_id: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::BuyIncomingNumberRequest' do
@@ -75,7 +72,7 @@ describe Freeclimb::BuyIncomingNumberRequest do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::BuyIncomingNumberRequest.new(
@@ -88,6 +85,20 @@ describe Freeclimb::BuyIncomingNumberRequest do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::BuyIncomingNumberRequest.new(
+          phone_number: "TS",
+          _alias: "TS",
+          application_id: "TS",
+      )
+      instance_2 = Freeclimb::BuyIncomingNumberRequest.new(
+          phone_number: "TS",
+          _alias: "TS",
+          application_id: "TS",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do

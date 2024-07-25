@@ -99,23 +99,14 @@ describe Freeclimb::RecordingResult do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::RecordingResult.new(
           uri: "TS",
-          
           date_created: "TS",
-          
           date_updated: "TS",
-          
-revision: 1,
-          
+          revision: 1,
           recording_id: "TS",
-          
           account_id: "TS",
-          
           call_id: "TS",
-          
-duration_sec: 1,
-          
+          duration_sec: 1,
           conference_id: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::RecordingResult' do
@@ -123,11 +114,11 @@ duration_sec: 1,
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           recording_id: "TS",
           account_id: "TS",
           call_id: "TS",
-duration_sec: 1,
+          duration_sec: 1,
           conference_id: "TS",
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -137,28 +128,28 @@ duration_sec: 1,
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           recording_id: "TS",
           account_id: "TS",
           call_id: "TS",
-duration_sec: 1,
+          duration_sec: 1,
           conference_id: "TS",
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::RecordingResult.new(
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           recording_id: "TS",
           account_id: "TS",
           call_id: "TS",
-duration_sec: 1,
+          duration_sec: 1,
           conference_id: "TS",
       )
       expect(instance.valid?).to eq(true)
@@ -166,6 +157,32 @@ duration_sec: 1,
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::RecordingResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          recording_id: "TS",
+          account_id: "TS",
+          call_id: "TS",
+          duration_sec: 1,
+          conference_id: "TS",
+      )
+      instance_2 = Freeclimb::RecordingResult.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          recording_id: "TS",
+          account_id: "TS",
+          call_id: "TS",
+          duration_sec: 1,
+          conference_id: "TS",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
@@ -174,11 +191,11 @@ duration_sec: 1,
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-revision: 1,
+      revision: 1,
       recording_id: "TS",
       account_id: "TS",
       call_id: "TS",
-duration_sec: 1,
+      duration_sec: 1,
       conference_id: "TS",
     )
     expect(instance.hash).to be_a_kind_of(Integer)
@@ -191,11 +208,11 @@ duration_sec: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         recording_id: "TS",
         account_id: "TS",
         call_id: "TS",
-duration_sec: 1,
+        duration_sec: 1,
         conference_id: "TS",
       )
       instance_2 = Freeclimb::RecordingResult.new
@@ -208,11 +225,11 @@ duration_sec: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         recording_id: "TS",
         account_id: "TS",
         call_id: "TS",
-duration_sec: 1,
+        duration_sec: 1,
         conference_id: "TS",
     )
     it 'deserializes the data of uri' do

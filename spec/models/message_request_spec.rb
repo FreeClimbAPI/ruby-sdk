@@ -96,24 +96,14 @@ describe Freeclimb::MessageRequest do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::MessageRequest.new(
           uri: "TS",
-          
           date_created: "TS",
-          
           date_updated: "TS",
-          
-revision: 1,
-          
+          revision: 1,
           from: "TS",
-          
           to: "TS",
-          
           text: "TS",
-          
           notification_url: "TS",
-          
-          
           media_urls: Array.new(),
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::MessageRequest' do
@@ -121,7 +111,7 @@ revision: 1,
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           from: "TS",
           to: "TS",
           text: "TS",
@@ -135,7 +125,7 @@ revision: 1,
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           from: "TS",
           to: "TS",
           text: "TS",
@@ -145,14 +135,14 @@ revision: 1,
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::MessageRequest.new(
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-revision: 1,
+          revision: 1,
           from: "TS",
           to: "TS",
           text: "TS",
@@ -164,6 +154,32 @@ revision: 1,
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::MessageRequest.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          from: "TS",
+          to: "TS",
+          text: "TS",
+          notification_url: "TS",
+          media_urls: [],
+      )
+      instance_2 = Freeclimb::MessageRequest.new(
+          uri: "TS",
+          date_created: "TS",
+          date_updated: "TS",
+          revision: 1,
+          from: "TS",
+          to: "TS",
+          text: "TS",
+          notification_url: "TS",
+          media_urls: [],
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
@@ -172,7 +188,7 @@ revision: 1,
       uri: "TS",
       date_created: "TS",
       date_updated: "TS",
-revision: 1,
+      revision: 1,
       from: "TS",
       to: "TS",
       text: "TS",
@@ -189,7 +205,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         from: "TS",
         to: "TS",
         text: "TS",
@@ -206,7 +222,7 @@ revision: 1,
         uri: "TS",
         date_created: "TS",
         date_updated: "TS",
-revision: 1,
+        revision: 1,
         from: "TS",
         to: "TS",
         text: "TS",

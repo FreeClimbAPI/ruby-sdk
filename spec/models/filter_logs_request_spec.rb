@@ -37,7 +37,6 @@ describe Freeclimb::FilterLogsRequest do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::FilterLogsRequest.new(
           pql: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::FilterLogsRequest' do
@@ -53,7 +52,7 @@ describe Freeclimb::FilterLogsRequest do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::FilterLogsRequest.new(
@@ -64,6 +63,16 @@ describe Freeclimb::FilterLogsRequest do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::FilterLogsRequest.new(
+          pql: "TS",
+      )
+      instance_2 = Freeclimb::FilterLogsRequest.new(
+          pql: "TS",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do

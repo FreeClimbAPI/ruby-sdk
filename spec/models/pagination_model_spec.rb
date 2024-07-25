@@ -96,57 +96,50 @@ describe Freeclimb::PaginationModel do
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::PaginationModel.new(
-total: 1,
-          
-start: 1,
-          
-_end: 1,
-          
-page: 1,
-          
-num_pages: 1,
-          
-page_size: 1,
-          
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
           next_page_uri: "TS",
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::PaginationModel' do
         expect{instance = Freeclimb::PaginationModel.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
           next_page_uri: "TS",
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
     it 'fails to initialize with invalid attribute' do
         expect{instance = Freeclimb::PaginationModel.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
           next_page_uri: "TS",
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::PaginationModel.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
           next_page_uri: "TS",
       )
       expect(instance.valid?).to eq(true)
@@ -154,17 +147,39 @@ page_size: 1,
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::PaginationModel.new(
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
+          next_page_uri: "TS",
+      )
+      instance_2 = Freeclimb::PaginationModel.new(
+          total: 1,
+          start: 1,
+          _end: 1,
+          page: 1,
+          num_pages: 1,
+          page_size: 1,
+          next_page_uri: "TS",
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::PaginationModel.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+      total: 1,
+      start: 1,
+      _end: 1,
+      page: 1,
+      num_pages: 1,
+      page_size: 1,
       next_page_uri: "TS",
     )
     expect(instance.hash).to be_a_kind_of(Integer)
@@ -174,12 +189,12 @@ page_size: 1,
   describe 'test method "build_from_hash"' do
     it 'builds equivalent model from hash code' do
       instance_1 = Freeclimb::PaginationModel.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+        total: 1,
+        start: 1,
+        _end: 1,
+        page: 1,
+        num_pages: 1,
+        page_size: 1,
         next_page_uri: "TS",
       )
       instance_2 = Freeclimb::PaginationModel.new
@@ -189,12 +204,12 @@ page_size: 1,
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::PaginationModel.new(
-total: 1,
-start: 1,
-_end: 1,
-page: 1,
-num_pages: 1,
-page_size: 1,
+        total: 1,
+        start: 1,
+        _end: 1,
+        page: 1,
+        num_pages: 1,
+        page_size: 1,
         next_page_uri: "TS",
     )
     it 'deserializes the data of total' do

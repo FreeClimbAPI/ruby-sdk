@@ -55,11 +55,8 @@ describe Freeclimb::TranscribeUtteranceAllOfRecord do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
           save_recording: true,
-          
           max_length_sec: 60,
-          
           rcrd_termination_silence_time_ms: 3000,
-          
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::TranscribeUtteranceAllOfRecord' do
@@ -79,7 +76,7 @@ describe Freeclimb::TranscribeUtteranceAllOfRecord do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
@@ -92,6 +89,20 @@ describe Freeclimb::TranscribeUtteranceAllOfRecord do
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+          save_recording: true,
+          max_length_sec: 60,
+          rcrd_termination_silence_time_ms: 3000,
+      )
+      instance_2 = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+          save_recording: true,
+          max_length_sec: 60,
+          rcrd_termination_silence_time_ms: 3000,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do

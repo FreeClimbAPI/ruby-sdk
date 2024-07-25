@@ -54,18 +54,15 @@ describe Freeclimb::CreateWebRTCToken do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::CreateWebRTCToken.new(
           to: "TS",
-          
           from: "TS",
-          
-uses: 1,
-          
+          uses: 1,
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::CreateWebRTCToken' do
         expect{instance = Freeclimb::CreateWebRTCToken.new(
           to: "TS",
           from: "TS",
-uses: 1,
+          uses: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -73,24 +70,38 @@ uses: 1,
         expect{instance = Freeclimb::CreateWebRTCToken.new(
           to: "TS",
           from: "TS",
-uses: 1,
+          uses: 1,
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::CreateWebRTCToken.new(
           to: "TS",
           from: "TS",
-uses: 1,
+          uses: 1,
       )
       expect(instance.valid?).to eq(true)
     end
   end
 
   describe 'test method "eql?"' do
+    it 'checks if objects are equal' do
+      obj = Object.new()
+      instance_1 = Freeclimb::CreateWebRTCToken.new(
+          to: "TS",
+          from: "TS",
+          uses: 1,
+      )
+      instance_2 = Freeclimb::CreateWebRTCToken.new(
+          to: "TS",
+          from: "TS",
+          uses: 1,
+      )
+      expect(instance_1.eql?(instance_2)).to eq(true)
+    end
   end
 
   describe 'test method "hash"' do
@@ -98,7 +109,7 @@ uses: 1,
       instance = Freeclimb::CreateWebRTCToken.new(
       to: "TS",
       from: "TS",
-uses: 1,
+      uses: 1,
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -109,7 +120,7 @@ uses: 1,
       instance_1 = Freeclimb::CreateWebRTCToken.new(
         to: "TS",
         from: "TS",
-uses: 1,
+        uses: 1,
       )
       instance_2 = Freeclimb::CreateWebRTCToken.new
       expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
@@ -120,7 +131,7 @@ uses: 1,
     instance = Freeclimb::CreateWebRTCToken.new(
         to: "TS",
         from: "TS",
-uses: 1,
+        uses: 1,
     )
     it 'deserializes the data of to' do
       expect(instance._deserialize("String", instance.to)).to be_a_kind_of(String)
