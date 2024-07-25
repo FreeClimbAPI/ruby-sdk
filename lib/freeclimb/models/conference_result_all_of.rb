@@ -321,5 +321,4 @@ module Freeclimb
     end
 
   end
-
 end
