@@ -633,6 +633,59 @@ describe Freeclimb::SMSTenDLCBrand do
       )
       expect(instance.valid?).to eq(true)
     end
+
+    it 'checks if properties are invalid' do
+      instance = Freeclimb::SMSTenDLCBrand.new(
+                              
+      first_name: nil,
+            
+      last_name: nil,
+            
+      display_name: "T" * 255,
+            
+      company_name: nil,
+            
+      ein: nil,
+            
+      ein_issuing_country: nil,
+            
+      phone: "T" * 20,
+            
+      street: nil,
+            
+      city: nil,
+            
+      state: nil,
+            
+      postal_code: nil,
+            
+      country: "T" * 2,
+            
+      email: "T" * 100,
+            
+      stock_symbol: nil,
+                  
+      ip_address: nil,
+            
+      website: nil,
+                  
+      vertical: "T" * 50,
+            
+      alt_business_id: nil,
+                        
+      reference_id: nil,
+                  
+      
+      mock: nil,            
+      )
+      expect(instance.valid?).to eq(false)
+    end
+
+    it 'checks if model is empty' do
+      instance = Freeclimb::SMSTenDLCBrand.new()
+      expect(instance.valid?).to eq(false)
+    end
+    
   end
 
   describe 'test method "eql?"' do

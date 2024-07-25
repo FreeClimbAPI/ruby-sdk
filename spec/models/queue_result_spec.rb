@@ -183,6 +183,19 @@ describe Freeclimb::QueueResult do
       )
       expect(instance.valid?).to eq(true)
     end
+
+    it 'checks if properties are invalid' do
+      instance = Freeclimb::QueueResult.new(
+                                                                  
+      )
+      expect(instance.valid?).to eq(false)
+    end
+
+    it 'checks if model is empty' do
+      instance = Freeclimb::QueueResult.new()
+      expect(instance.valid?).to eq(false)
+    end
+    
   end
 
   describe 'test method "eql?"' do

@@ -85,6 +85,23 @@ describe Freeclimb::CreateWebRTCToken do
       )
       expect(instance.valid?).to eq(true)
     end
+
+    it 'checks if properties are invalid' do
+      instance = Freeclimb::CreateWebRTCToken.new(
+      
+      
+      to: nil,      
+      
+      from: nil,      uses: 1,
+      )
+      expect(instance.valid?).to eq(false)
+    end
+
+    it 'checks if model is empty' do
+      instance = Freeclimb::CreateWebRTCToken.new()
+      expect(instance.valid?).to eq(false)
+    end
+    
   end
 
   describe 'test method "eql?"' do

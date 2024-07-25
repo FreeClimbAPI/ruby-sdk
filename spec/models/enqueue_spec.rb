@@ -93,6 +93,25 @@ describe Freeclimb::Enqueue do
       )
       expect(instance.valid?).to eq(true)
     end
+
+    it 'checks if properties are invalid' do
+      instance = Freeclimb::Enqueue.new(
+      
+      
+      action_url: nil,            
+      
+      queue_id: nil,      
+      
+      wait_url: nil,
+      )
+      expect(instance.valid?).to eq(false)
+    end
+
+    it 'checks if model is empty' do
+      instance = Freeclimb::Enqueue.new()
+      expect(instance.valid?).to eq(false)
+    end
+    
   end
 
   describe 'test method "eql?"' do

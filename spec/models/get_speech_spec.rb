@@ -209,6 +209,23 @@ describe Freeclimb::GetSpeech do
       )
       expect(instance.valid?).to eq(true)
     end
+
+    it 'checks if properties are invalid' do
+      instance = Freeclimb::GetSpeech.new(
+      
+      
+      action_url: nil,            
+      
+      grammar_file: nil,                                                            
+      )
+      expect(instance.valid?).to eq(false)
+    end
+
+    it 'checks if model is empty' do
+      instance = Freeclimb::GetSpeech.new()
+      expect(instance.valid?).to eq(false)
+    end
+    
   end
 
   describe 'test method "eql?"' do
