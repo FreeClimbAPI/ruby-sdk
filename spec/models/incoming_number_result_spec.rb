@@ -30,6 +30,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.date_created = "TEST_STRING"
       expect(instance.date_created).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -51,14 +54,15 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
     
     
-    instance.revision = 1
-    expect(instance.revision).to eq(1) 
+      instance.revision = 1
+      expect(instance.revision).to eq(1)
     
     end
   end
 
   describe 'test attribute "capabilities"' do
     it 'should work' do
+        
       instance.capabilities = Freeclimb::Capabilities.new
       expect(instance.capabilities).to be_instance_of(Freeclimb::Capabilities)
     end
@@ -68,6 +72,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.campaign_id = "TEST_STRING"
       expect(instance.campaign_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -75,6 +80,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.phone_number_id = "TEST_STRING"
       expect(instance.phone_number_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -82,6 +88,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -89,6 +96,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.application_id = "TEST_STRING"
       expect(instance.application_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -96,6 +104,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.phone_number = "TEST_STRING"
       expect(instance.phone_number).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -103,6 +112,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -110,6 +120,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.region = "TEST_STRING"
       expect(instance.region).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -117,6 +128,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.country = "TEST_STRING"
       expect(instance.country).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -124,6 +136,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.voice_enabled = false
       expect(instance.voice_enabled).to eq(false)        
+        
     end
   end
 
@@ -131,6 +144,7 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.sms_enabled = false
       expect(instance.sms_enabled).to eq(false)        
+        
     end
   end
 
@@ -138,11 +152,13 @@ describe Freeclimb::IncomingNumberResult do
     it 'should work' do
       instance.offnet = false
       expect(instance.offnet).to eq(false)        
+        
     end
   end
 
   describe 'test attribute "tfn"' do
     it 'should work' do
+        
       instance.tfn = Freeclimb::TFN.new
       expect(instance.tfn).to be_instance_of(Freeclimb::TFN)
     end

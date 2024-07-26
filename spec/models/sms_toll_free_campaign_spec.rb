@@ -30,6 +30,7 @@ describe Freeclimb::SMSTollFreeCampaign do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::SMSTollFreeCampaign do
     it 'should work' do
       instance.campaign_id = "TEST_STRING"
       expect(instance.campaign_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::SMSTollFreeCampaign do
     it 'should work' do
       instance.use_case = "TEST_STRING"
       expect(instance.use_case).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -79,6 +82,7 @@ describe Freeclimb::SMSTollFreeCampaign do
     it 'should work' do
       instance.date_created = "TEST_STRING"
       expect(instance.date_created).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -86,6 +90,7 @@ describe Freeclimb::SMSTollFreeCampaign do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -93,8 +98,8 @@ describe Freeclimb::SMSTollFreeCampaign do
     it 'should work' do
     
     
-    instance.revision = 1
-    expect(instance.revision).to eq(1) 
+      instance.revision = 1
+      expect(instance.revision).to eq(1)
     
     end
   end

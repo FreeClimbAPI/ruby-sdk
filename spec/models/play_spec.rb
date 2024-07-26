@@ -30,6 +30,7 @@ describe Freeclimb::Play do
     it 'should work' do
       instance.file = "TEST_STRING"
       expect(instance.file).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,8 +38,8 @@ describe Freeclimb::Play do
     it 'should work' do
     
     
-    instance.loop = 1
-    expect(instance.loop).to eq(1) 
+      instance.loop = 1
+      expect(instance.loop).to eq(1)
     
     end
   end
@@ -47,6 +48,7 @@ describe Freeclimb::Play do
     it 'should work' do
       instance.privacy_mode = false
       expect(instance.privacy_mode).to eq(false)        
+        
     end
   end
 

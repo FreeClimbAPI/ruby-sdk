@@ -30,6 +30,7 @@ describe Freeclimb::AccountRequest do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::AccountRequest do
     it 'should work' do
       instance.label = "TEST_STRING"
       expect(instance.label).to eq("TEST_STRING")  
+        
     end
   end
 

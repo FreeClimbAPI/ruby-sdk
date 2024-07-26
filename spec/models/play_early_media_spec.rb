@@ -30,6 +30,7 @@ describe Freeclimb::PlayEarlyMedia do
     it 'should work' do
       instance.file = "TEST_STRING"
       expect(instance.file).to eq("TEST_STRING")  
+        
     end
   end
 

@@ -30,6 +30,7 @@ describe Freeclimb::Say do
     it 'should work' do
       instance.text = "TEST_STRING"
       expect(instance.text).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::Say do
     it 'should work' do
       instance.language = "TEST_STRING"
       expect(instance.language).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,8 +46,8 @@ describe Freeclimb::Say do
     it 'should work' do
     
     
-    instance.loop = 1
-    expect(instance.loop).to eq(1) 
+      instance.loop = 1
+      expect(instance.loop).to eq(1)
     
     end
   end
@@ -54,6 +56,7 @@ describe Freeclimb::Say do
     it 'should work' do
       instance.privacy_mode = false
       expect(instance.privacy_mode).to eq(false)        
+        
     end
   end
 

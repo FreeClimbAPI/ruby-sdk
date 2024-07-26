@@ -30,6 +30,7 @@ describe Freeclimb::SetListen do
     it 'should work' do
       instance.listen = false
       expect(instance.listen).to eq(false)        
+        
     end
   end
 

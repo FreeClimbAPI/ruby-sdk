@@ -30,8 +30,8 @@ describe Freeclimb::LogResult do
     it 'should work' do
     
     
-    instance.timestamp = 1
-    expect(instance.timestamp).to eq(1) 
+      instance.timestamp = 1
+      expect(instance.timestamp).to eq(1)
     
     end
   end
@@ -56,6 +56,7 @@ describe Freeclimb::LogResult do
     it 'should work' do
       instance.request_id = "TEST_STRING"
       expect(instance.request_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -63,6 +64,7 @@ describe Freeclimb::LogResult do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -70,6 +72,7 @@ describe Freeclimb::LogResult do
     it 'should work' do
       instance.call_id = "TEST_STRING"
       expect(instance.call_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -77,11 +80,13 @@ describe Freeclimb::LogResult do
     it 'should work' do
       instance.message = "TEST_STRING"
       expect(instance.message).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "metadata"' do
     it 'should work' do
+        
       testObject = Object.new()
       instance.metadata = testObject
       expect(instance.metadata).to eq(testObject)

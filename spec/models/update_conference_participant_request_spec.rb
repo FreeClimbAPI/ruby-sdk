@@ -30,6 +30,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
     it 'should work' do
       instance.talk = false
       expect(instance.talk).to eq(false)        
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
     it 'should work' do
       instance.listen = false
       expect(instance.listen).to eq(false)        
+        
     end
   end
 

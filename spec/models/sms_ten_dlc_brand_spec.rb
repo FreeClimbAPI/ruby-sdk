@@ -30,6 +30,7 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -65,6 +66,7 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'should work' do
       instance.csp_id = "TEST_STRING"
       expect(instance.csp_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -72,6 +74,7 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'should work' do
       instance.brand_id = "TEST_STRING"
       expect(instance.brand_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -427,6 +430,7 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'should work' do
       instance.universal_ein = "TEST_STRING"
       expect(instance.universal_ein).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -442,6 +446,7 @@ describe Freeclimb::SMSTenDLCBrand do
 
   describe 'test attribute "optional_attributes"' do
     it 'should work' do
+        
       testObject = Object.new()
       instance.optional_attributes = testObject
       expect(instance.optional_attributes).to eq(testObject)
@@ -452,6 +457,7 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'should work' do
       instance.mock = false
       expect(instance.mock).to eq(false)        
+        
     end
   end
 
@@ -483,6 +489,7 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'should work' do
       instance.create_date = "2022-07-05T15:17:05Z"
       expect(instance.create_date).to eq("2022-07-05T15:17:05Z")  
+        
     end
   end
 

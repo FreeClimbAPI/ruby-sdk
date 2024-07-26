@@ -30,6 +30,7 @@ describe Freeclimb::QueueResult do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::QueueResult do
     it 'should work' do
       instance.date_created = "TEST_STRING"
       expect(instance.date_created).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::QueueResult do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -51,8 +54,8 @@ describe Freeclimb::QueueResult do
     it 'should work' do
     
     
-    instance.revision = 1
-    expect(instance.revision).to eq(1) 
+      instance.revision = 1
+      expect(instance.revision).to eq(1)
     
     end
   end
@@ -61,6 +64,7 @@ describe Freeclimb::QueueResult do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -68,6 +72,7 @@ describe Freeclimb::QueueResult do
     it 'should work' do
       instance.queue_id = "TEST_STRING"
       expect(instance.queue_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -75,6 +80,7 @@ describe Freeclimb::QueueResult do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -82,8 +88,8 @@ describe Freeclimb::QueueResult do
     it 'should work' do
     
     
-    instance.max_size = 1
-    expect(instance.max_size).to eq(1) 
+      instance.max_size = 1
+      expect(instance.max_size).to eq(1)
     
     end
   end
@@ -92,8 +98,8 @@ describe Freeclimb::QueueResult do
     it 'should work' do
     
     
-    instance.current_size = 1
-    expect(instance.current_size).to eq(1) 
+      instance.current_size = 1
+      expect(instance.current_size).to eq(1)
     
     end
   end
@@ -102,14 +108,15 @@ describe Freeclimb::QueueResult do
     it 'should work' do
     
     
-    instance.average_queue_removal_time = 1
-    expect(instance.average_queue_removal_time).to eq(1) 
+      instance.average_queue_removal_time = 1
+      expect(instance.average_queue_removal_time).to eq(1)
     
     end
   end
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
+        
       testObject = Object.new()
       instance.subresource_uris = testObject
       expect(instance.subresource_uris).to eq(testObject)

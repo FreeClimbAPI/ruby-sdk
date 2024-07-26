@@ -30,6 +30,7 @@ describe Freeclimb::UpdateConferenceRequest do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
+        
     end
   end
 

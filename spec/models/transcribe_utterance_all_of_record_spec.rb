@@ -30,13 +30,15 @@ describe Freeclimb::TranscribeUtteranceAllOfRecord do
     it 'should work' do
       instance.save_recording = false
       expect(instance.save_recording).to eq(false)        
+        
     end
   end
 
   describe 'test attribute "max_length_sec"' do
     it 'should work' do
-    instance.max_length_sec = 60
-    expect(instance.max_length_sec).to eq(60) 
+     instance.max_length_sec = 60
+      expect(instance.max_length_sec).to eq(60)
+    
     
     
     end
@@ -44,8 +46,9 @@ describe Freeclimb::TranscribeUtteranceAllOfRecord do
 
   describe 'test attribute "rcrd_termination_silence_time_ms"' do
     it 'should work' do
-    instance.rcrd_termination_silence_time_ms = 3000
-    expect(instance.rcrd_termination_silence_time_ms).to eq(3000) 
+     instance.rcrd_termination_silence_time_ms = 3000
+      expect(instance.rcrd_termination_silence_time_ms).to eq(3000)
+    
     
     
     end

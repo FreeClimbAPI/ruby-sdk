@@ -30,6 +30,7 @@ describe Freeclimb::OutDial do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::OutDial do
     it 'should work' do
       instance.call_connect_url = "TEST_STRING"
       expect(instance.call_connect_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::OutDial do
     it 'should work' do
       instance.calling_number = "TEST_STRING"
       expect(instance.calling_number).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -51,6 +54,7 @@ describe Freeclimb::OutDial do
     it 'should work' do
       instance.destination = "TEST_STRING"
       expect(instance.destination).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -70,6 +74,7 @@ describe Freeclimb::OutDial do
     it 'should work' do
       instance.if_machine_url = "TEST_STRING"
       expect(instance.if_machine_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -77,6 +82,7 @@ describe Freeclimb::OutDial do
     it 'should work' do
       instance.send_digits = "TEST_STRING"
       expect(instance.send_digits).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -84,6 +90,7 @@ describe Freeclimb::OutDial do
     it 'should work' do
       instance.status_callback_url = "TEST_STRING"
       expect(instance.status_callback_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -91,8 +98,8 @@ describe Freeclimb::OutDial do
     it 'should work' do
     
     
-    instance.timeout = 1
-    expect(instance.timeout).to eq(1) 
+      instance.timeout = 1
+      expect(instance.timeout).to eq(1)
     
     end
   end
@@ -101,6 +108,7 @@ describe Freeclimb::OutDial do
     it 'should work' do
       instance.privacy_mode = false
       expect(instance.privacy_mode).to eq(false)        
+        
     end
   end
 

@@ -30,6 +30,7 @@ describe Freeclimb::Capabilities do
     it 'should work' do
       instance.voice = false
       expect(instance.voice).to eq(false)        
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::Capabilities do
     it 'should work' do
       instance.sms = false
       expect(instance.sms).to eq(false)        
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::Capabilities do
     it 'should work' do
       instance.toll_free = false
       expect(instance.toll_free).to eq(false)        
+        
     end
   end
 
@@ -51,6 +54,7 @@ describe Freeclimb::Capabilities do
     it 'should work' do
       instance.ten_dlc = false
       expect(instance.ten_dlc).to eq(false)        
+        
     end
   end
 
@@ -58,6 +62,7 @@ describe Freeclimb::Capabilities do
     it 'should work' do
       instance.short_code = false
       expect(instance.short_code).to eq(false)        
+        
     end
   end
 

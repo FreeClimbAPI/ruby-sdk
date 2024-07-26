@@ -30,6 +30,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.date_created = "TEST_STRING"
       expect(instance.date_created).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -51,8 +54,8 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
     
     
-    instance.revision = 1
-    expect(instance.revision).to eq(1) 
+      instance.revision = 1
+      expect(instance.revision).to eq(1)
     
     end
   end
@@ -61,6 +64,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -68,6 +72,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.conference_id = "TEST_STRING"
       expect(instance.conference_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -75,6 +80,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.call_id = "TEST_STRING"
       expect(instance.call_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -82,6 +88,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.talk = false
       expect(instance.talk).to eq(false)        
+        
     end
   end
 
@@ -89,6 +96,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.listen = false
       expect(instance.listen).to eq(false)        
+        
     end
   end
 
@@ -96,6 +104,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.start_conf_on_enter = false
       expect(instance.start_conf_on_enter).to eq(false)        
+        
     end
   end
 

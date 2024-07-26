@@ -30,6 +30,7 @@ describe Freeclimb::TranscribeUtterance do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,11 +38,13 @@ describe Freeclimb::TranscribeUtterance do
     it 'should work' do
       instance.play_beep = false
       expect(instance.play_beep).to eq(false)        
+        
     end
   end
 
   describe 'test attribute "record"' do
     it 'should work' do
+        
       instance.record = Freeclimb::TranscribeUtteranceAllOfRecord.new
       expect(instance.record).to be_instance_of(Freeclimb::TranscribeUtteranceAllOfRecord)
     end
@@ -51,6 +54,7 @@ describe Freeclimb::TranscribeUtterance do
     it 'should work' do
       instance.privacy_for_logging = false
       expect(instance.privacy_for_logging).to eq(false)        
+        
     end
   end
 
@@ -58,11 +62,13 @@ describe Freeclimb::TranscribeUtterance do
     it 'should work' do
       instance.privacy_for_recording = false
       expect(instance.privacy_for_recording).to eq(false)        
+        
     end
   end
 
   describe 'test attribute "prompts"' do
     it 'should work' do
+        
       instance.prompts = ["ELEMENT_1", "ELEMENT_2"]
       expect(instance.prompts).to eq(["ELEMENT_1", "ELEMENT_2"]) 
     end

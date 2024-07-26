@@ -30,6 +30,7 @@ describe Freeclimb::QueueMember do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::QueueMember do
     it 'should work' do
       instance.call_id = "TEST_STRING"
       expect(instance.call_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,8 +46,8 @@ describe Freeclimb::QueueMember do
     it 'should work' do
     
     
-    instance.wait_time = 1
-    expect(instance.wait_time).to eq(1) 
+      instance.wait_time = 1
+      expect(instance.wait_time).to eq(1)
     
     end
   end
@@ -54,8 +56,8 @@ describe Freeclimb::QueueMember do
     it 'should work' do
     
     
-    instance.position = 1
-    expect(instance.position).to eq(1) 
+      instance.position = 1
+      expect(instance.position).to eq(1)
     
     end
   end
@@ -64,6 +66,7 @@ describe Freeclimb::QueueMember do
     it 'should work' do
       instance.date_enqueued = "TEST_STRING"
       expect(instance.date_enqueued).to eq("TEST_STRING")  
+        
     end
   end
 

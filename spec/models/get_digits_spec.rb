@@ -30,6 +30,7 @@ describe Freeclimb::GetDigits do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,8 +38,8 @@ describe Freeclimb::GetDigits do
     it 'should work' do
     
     
-    instance.digit_timeout_ms = 1
-    expect(instance.digit_timeout_ms).to eq(1) 
+      instance.digit_timeout_ms = 1
+      expect(instance.digit_timeout_ms).to eq(1)
     
     end
   end
@@ -47,6 +48,7 @@ describe Freeclimb::GetDigits do
     it 'should work' do
       instance.finish_on_key = "TEST_STRING"
       expect(instance.finish_on_key).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -54,6 +56,7 @@ describe Freeclimb::GetDigits do
     it 'should work' do
       instance.flush_buffer = false
       expect(instance.flush_buffer).to eq(false)        
+        
     end
   end
 
@@ -61,8 +64,8 @@ describe Freeclimb::GetDigits do
     it 'should work' do
     
     
-    instance.initial_timeout_ms = 1
-    expect(instance.initial_timeout_ms).to eq(1) 
+      instance.initial_timeout_ms = 1
+      expect(instance.initial_timeout_ms).to eq(1)
     
     end
   end
@@ -71,8 +74,8 @@ describe Freeclimb::GetDigits do
     it 'should work' do
     
     
-    instance.max_digits = 1
-    expect(instance.max_digits).to eq(1) 
+      instance.max_digits = 1
+      expect(instance.max_digits).to eq(1)
     
     end
   end
@@ -81,14 +84,15 @@ describe Freeclimb::GetDigits do
     it 'should work' do
     
     
-    instance.min_digits = 1
-    expect(instance.min_digits).to eq(1) 
+      instance.min_digits = 1
+      expect(instance.min_digits).to eq(1)
     
     end
   end
 
   describe 'test attribute "prompts"' do
     it 'should work' do
+        
       instance.prompts = ["ELEMENT_1", "ELEMENT_2"]
       expect(instance.prompts).to eq(["ELEMENT_1", "ELEMENT_2"]) 
     end
@@ -98,6 +102,7 @@ describe Freeclimb::GetDigits do
     it 'should work' do
       instance.privacy_mode = false
       expect(instance.privacy_mode).to eq(false)        
+        
     end
   end
 

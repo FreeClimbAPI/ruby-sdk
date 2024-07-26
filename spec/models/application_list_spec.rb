@@ -30,8 +30,8 @@ describe Freeclimb::ApplicationList do
     it 'should work' do
     
     
-    instance.total = 1
-    expect(instance.total).to eq(1) 
+      instance.total = 1
+      expect(instance.total).to eq(1)
     
     end
   end
@@ -40,8 +40,8 @@ describe Freeclimb::ApplicationList do
     it 'should work' do
     
     
-    instance.start = 1
-    expect(instance.start).to eq(1) 
+      instance.start = 1
+      expect(instance.start).to eq(1)
     
     end
   end
@@ -50,8 +50,8 @@ describe Freeclimb::ApplicationList do
     it 'should work' do
     
     
-    instance._end = 1
-    expect(instance._end).to eq(1) 
+      instance._end = 1
+      expect(instance._end).to eq(1)
     
     end
   end
@@ -60,8 +60,8 @@ describe Freeclimb::ApplicationList do
     it 'should work' do
     
     
-    instance.page = 1
-    expect(instance.page).to eq(1) 
+      instance.page = 1
+      expect(instance.page).to eq(1)
     
     end
   end
@@ -70,8 +70,8 @@ describe Freeclimb::ApplicationList do
     it 'should work' do
     
     
-    instance.num_pages = 1
-    expect(instance.num_pages).to eq(1) 
+      instance.num_pages = 1
+      expect(instance.num_pages).to eq(1)
     
     end
   end
@@ -80,8 +80,8 @@ describe Freeclimb::ApplicationList do
     it 'should work' do
     
     
-    instance.page_size = 1
-    expect(instance.page_size).to eq(1) 
+      instance.page_size = 1
+      expect(instance.page_size).to eq(1)
     
     end
   end
@@ -90,11 +90,13 @@ describe Freeclimb::ApplicationList do
     it 'should work' do
       instance.next_page_uri = "TEST_STRING"
       expect(instance.next_page_uri).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "applications"' do
     it 'should work' do
+        
       instance.applications = ["ELEMENT_1", "ELEMENT_2"]
       expect(instance.applications).to eq(["ELEMENT_1", "ELEMENT_2"]) 
     end

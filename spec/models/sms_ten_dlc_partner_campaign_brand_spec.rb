@@ -30,6 +30,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     it 'should work' do
       instance.brand_id = "TEST_STRING"
       expect(instance.brand_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -112,6 +114,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
 
   describe 'test attribute "optional_attributes"' do
     it 'should work' do
+        
       testObject = Object.new()
       instance.optional_attributes = testObject
       expect(instance.optional_attributes).to eq(testObject)
@@ -122,8 +125,8 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     it 'should work' do
     
     
-    instance.evp_vetting_score = 1
-    expect(instance.evp_vetting_score).to eq(1) 
+      instance.evp_vetting_score = 1
+      expect(instance.evp_vetting_score).to eq(1)
     
     end
   end

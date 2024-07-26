@@ -28,6 +28,7 @@ describe Freeclimb::AvailableNumber do
   
   describe 'test attribute "capabilities"' do
     it 'should work' do
+        
       instance.capabilities = Freeclimb::Capabilities.new
       expect(instance.capabilities).to be_instance_of(Freeclimb::Capabilities)
     end
@@ -37,6 +38,7 @@ describe Freeclimb::AvailableNumber do
     it 'should work' do
       instance.campaign_id = "TEST_STRING"
       expect(instance.campaign_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::AvailableNumber do
     it 'should work' do
       instance.phone_number = "TEST_STRING"
       expect(instance.phone_number).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -51,6 +54,7 @@ describe Freeclimb::AvailableNumber do
     it 'should work' do
       instance.voice_enabled = false
       expect(instance.voice_enabled).to eq(false)        
+        
     end
   end
 
@@ -58,6 +62,7 @@ describe Freeclimb::AvailableNumber do
     it 'should work' do
       instance.sms_enabled = false
       expect(instance.sms_enabled).to eq(false)        
+        
     end
   end
 
@@ -65,6 +70,7 @@ describe Freeclimb::AvailableNumber do
     it 'should work' do
       instance.region = "TEST_STRING"
       expect(instance.region).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -72,6 +78,7 @@ describe Freeclimb::AvailableNumber do
     it 'should work' do
       instance.country = "TEST_STRING"
       expect(instance.country).to eq("TEST_STRING")  
+        
     end
   end
 

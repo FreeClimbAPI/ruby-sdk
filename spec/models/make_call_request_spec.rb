@@ -30,6 +30,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.from = "TEST_STRING"
       expect(instance.from).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.to = "TEST_STRING"
       expect(instance.to).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.application_id = "TEST_STRING"
       expect(instance.application_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -51,6 +54,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.send_digits = "TEST_STRING"
       expect(instance.send_digits).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -58,6 +62,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.if_machine = "TEST_STRING"
       expect(instance.if_machine).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -65,6 +70,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.if_machine_url = "TEST_STRING"
       expect(instance.if_machine_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -72,8 +78,8 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
     
     
-    instance.timeout = 1
-    expect(instance.timeout).to eq(1) 
+      instance.timeout = 1
+      expect(instance.timeout).to eq(1)
     
     end
   end
@@ -82,6 +88,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.parent_call_id = "TEST_STRING"
       expect(instance.parent_call_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -89,6 +96,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.privacy_mode = false
       expect(instance.privacy_mode).to eq(false)        
+        
     end
   end
 
@@ -96,6 +104,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.call_connect_url = "TEST_STRING"
       expect(instance.call_connect_url).to eq("TEST_STRING")  
+        
     end
   end
 

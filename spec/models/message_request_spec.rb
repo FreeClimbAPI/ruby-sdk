@@ -30,6 +30,7 @@ describe Freeclimb::MessageRequest do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::MessageRequest do
     it 'should work' do
       instance.date_created = "TEST_STRING"
       expect(instance.date_created).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::MessageRequest do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -51,8 +54,8 @@ describe Freeclimb::MessageRequest do
     it 'should work' do
     
     
-    instance.revision = 1
-    expect(instance.revision).to eq(1) 
+      instance.revision = 1
+      expect(instance.revision).to eq(1)
     
     end
   end
@@ -61,6 +64,7 @@ describe Freeclimb::MessageRequest do
     it 'should work' do
       instance.from = "TEST_STRING"
       expect(instance.from).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -68,6 +72,7 @@ describe Freeclimb::MessageRequest do
     it 'should work' do
       instance.to = "TEST_STRING"
       expect(instance.to).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -75,6 +80,7 @@ describe Freeclimb::MessageRequest do
     it 'should work' do
       instance.text = "TEST_STRING"
       expect(instance.text).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -82,11 +88,13 @@ describe Freeclimb::MessageRequest do
     it 'should work' do
       instance.notification_url = "TEST_STRING"
       expect(instance.notification_url).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "media_urls"' do
     it 'should work' do
+        
       instance.media_urls = ["ELEMENT_1", "ELEMENT_2"]
       expect(instance.media_urls).to eq(["ELEMENT_1", "ELEMENT_2"]) 
     end

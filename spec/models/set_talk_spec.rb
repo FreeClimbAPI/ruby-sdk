@@ -30,6 +30,7 @@ describe Freeclimb::SetTalk do
     it 'should work' do
       instance.talk = false
       expect(instance.talk).to eq(false)        
+        
     end
   end
 
