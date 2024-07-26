@@ -74,7 +74,9 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::UpdateConferenceParticipantRequest.new(
-      talk: nil,      listen: nil,
+        talk: nil,
+        listen: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

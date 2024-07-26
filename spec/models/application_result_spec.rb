@@ -198,7 +198,7 @@ describe Freeclimb::ApplicationResult do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::ApplicationResult.new(
-                                                                              
+        
       )
       expect(instance.valid?).to eq(false)
     end

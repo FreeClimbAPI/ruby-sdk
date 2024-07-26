@@ -158,7 +158,7 @@ describe Freeclimb::SMSTenDLCBrandsListResult do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::SMSTenDLCBrandsListResult.new(
-                                                
+        
       )
       expect(instance.valid?).to eq(false)
     end

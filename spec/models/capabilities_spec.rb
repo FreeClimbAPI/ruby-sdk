@@ -107,17 +107,22 @@ describe Freeclimb::Capabilities do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::Capabilities.new(
-      voice: nil,
-      
-      voice: nil,      sms: nil,
-      
-      sms: nil,      toll_free: nil,
-      
-      toll_free: nil,      ten_dlc: nil,
-      
-      ten_dlc: nil,      short_code: nil,
-      
-      short_code: nil,
+        voice: nil,
+        
+        voice: nil,
+        sms: nil,
+        
+        sms: nil,
+        toll_free: nil,
+        
+        toll_free: nil,
+        ten_dlc: nil,
+        
+        ten_dlc: nil,
+        short_code: nil,
+        
+        short_code: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

@@ -198,21 +198,14 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
-                  
-      first_name: nil,
-            
-      last_name: nil,
-            
-      display_name: nil,
-            
-      company_name: nil,
-            
-      phone: "T" * 20,
-            
-      email: "T" * 100,
-            
-      website: nil,
-                  
+        first_name: nil,
+        last_name: nil,
+        display_name: nil,
+        company_name: nil,
+        
+        phone: "T" * 20,
+        email: "T" * 100,website: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

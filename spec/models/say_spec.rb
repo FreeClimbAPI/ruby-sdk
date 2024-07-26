@@ -99,9 +99,10 @@ describe Freeclimb::Say do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::Say.new(
-      
-      
-      text: nil,                  privacy_mode: nil,
+        
+        text: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

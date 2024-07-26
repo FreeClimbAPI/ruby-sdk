@@ -63,9 +63,9 @@ describe Freeclimb::Redirect do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::Redirect.new(
-      
-      
-      action_url: nil,
+        
+        action_url: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

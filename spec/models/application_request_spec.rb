@@ -129,7 +129,7 @@ describe Freeclimb::ApplicationRequest do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::ApplicationRequest.new(
-                                          
+        
       )
       expect(instance.valid?).to eq(false)
     end

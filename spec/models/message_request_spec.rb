@@ -154,13 +154,13 @@ describe Freeclimb::MessageRequest do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::MessageRequest.new(
-                              
-      
-      from: nil,      
-      
-      to: nil,      
-      
-      text: nil,            
+        
+        from: nil,
+        
+        to: nil,
+        
+        text: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

@@ -88,9 +88,10 @@ describe Freeclimb::Play do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::Play.new(
-      
-      
-      file: nil,            privacy_mode: nil,
+        
+        file: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

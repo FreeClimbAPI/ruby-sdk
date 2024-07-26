@@ -85,7 +85,7 @@ describe Freeclimb::IncomingNumberRequest do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::IncomingNumberRequest.new(
-                  
+        
       )
       expect(instance.valid?).to eq(false)
     end

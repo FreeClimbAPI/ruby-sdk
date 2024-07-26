@@ -88,11 +88,11 @@ describe Freeclimb::CreateWebRTCToken do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::CreateWebRTCToken.new(
-      
-      
-      to: nil,      
-      
-      from: nil,      uses: 1,
+        
+        to: nil,
+        
+        from: nil,
+        uses: 1,
       )
       expect(instance.valid?).to eq(false)
     end

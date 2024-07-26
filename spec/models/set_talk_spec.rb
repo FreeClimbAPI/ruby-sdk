@@ -63,7 +63,8 @@ describe Freeclimb::SetTalk do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::SetTalk.new(
-      talk: nil,
+        talk: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

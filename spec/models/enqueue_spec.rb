@@ -96,13 +96,13 @@ describe Freeclimb::Enqueue do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::Enqueue.new(
-      
-      
-      action_url: nil,            
-      
-      queue_id: nil,      
-      
-      wait_url: nil,
+        
+        action_url: nil,
+        
+        queue_id: nil,
+        
+        wait_url: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

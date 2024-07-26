@@ -85,9 +85,9 @@ describe Freeclimb::BuyIncomingNumberRequest do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::BuyIncomingNumberRequest.new(
-      
-      
-      phone_number: nil,            
+        
+        phone_number: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

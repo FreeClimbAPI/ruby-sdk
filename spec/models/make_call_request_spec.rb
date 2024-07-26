@@ -165,11 +165,12 @@ describe Freeclimb::MakeCallRequest do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::MakeCallRequest.new(
-      
-      
-      from: nil,      
-      
-      to: nil,                                          privacy_mode: nil,      
+        
+        from: nil,
+        
+        to: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

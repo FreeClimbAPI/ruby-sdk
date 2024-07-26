@@ -242,7 +242,10 @@ describe Freeclimb::IncomingNumberResult do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::IncomingNumberResult.new(
-                                                                                    voice_enabled: nil,      sms_enabled: nil,      offnet: nil,      
+        voice_enabled: nil,
+        sms_enabled: nil,
+        offnet: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

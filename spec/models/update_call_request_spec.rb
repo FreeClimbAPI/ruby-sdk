@@ -68,9 +68,9 @@ describe Freeclimb::UpdateCallRequest do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::UpdateCallRequest.new(
-      
-      
-      status: nil,
+        
+        status: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

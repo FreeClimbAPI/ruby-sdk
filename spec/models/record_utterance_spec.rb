@@ -135,9 +135,12 @@ describe Freeclimb::RecordUtterance do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::RecordUtterance.new(
-      
-      
-      action_url: nil,                        play_beep: nil,      auto_start: nil,      privacy_mode: nil,
+        
+        action_url: nil,
+        play_beep: nil,
+        auto_start: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

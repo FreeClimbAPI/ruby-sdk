@@ -63,9 +63,9 @@ describe Freeclimb::TFN do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::TFN.new(
-      
-      
-      campaign_id: nil,
+        
+        campaign_id: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

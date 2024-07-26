@@ -99,7 +99,7 @@ describe Freeclimb::MutableResourceModel do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::MutableResourceModel.new(
-                        
+        
       )
       expect(instance.valid?).to eq(false)
     end

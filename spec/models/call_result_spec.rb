@@ -314,7 +314,7 @@ describe Freeclimb::CallResult do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::CallResult.new(
-                                                                                                                  
+        
       )
       expect(instance.valid?).to eq(false)
     end

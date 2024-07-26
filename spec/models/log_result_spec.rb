@@ -142,7 +142,7 @@ describe Freeclimb::LogResult do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::LogResult.new(
-                                          
+        
       )
       expect(instance.valid?).to eq(false)
     end

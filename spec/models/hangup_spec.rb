@@ -63,7 +63,7 @@ describe Freeclimb::Hangup do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::Hangup.new(
-      
+        
       )
       expect(instance.valid?).to eq(false)
     end

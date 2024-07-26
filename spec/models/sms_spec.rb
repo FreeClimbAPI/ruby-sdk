@@ -96,13 +96,13 @@ describe Freeclimb::Sms do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::Sms.new(
-      
-      
-      to: nil,      
-      
-      from: nil,      
-      
-      text: nil,      
+        
+        to: nil,
+        
+        from: nil,
+        
+        text: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

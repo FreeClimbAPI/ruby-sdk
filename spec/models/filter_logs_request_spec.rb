@@ -63,9 +63,9 @@ describe Freeclimb::FilterLogsRequest do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::FilterLogsRequest.new(
-      
-      
-      pql: nil,
+        
+        pql: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

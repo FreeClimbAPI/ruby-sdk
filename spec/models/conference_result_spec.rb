@@ -236,7 +236,8 @@ describe Freeclimb::ConferenceResult do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::ConferenceResult.new(
-                                                      record: nil,                              
+        record: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

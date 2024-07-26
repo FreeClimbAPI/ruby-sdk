@@ -131,9 +131,11 @@ describe Freeclimb::CreateConference do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::CreateConference.new(
-      
-      
-      action_url: nil,      _alias: nil,            record: nil,            
+        
+        action_url: nil,
+        _alias: nil,
+        record: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

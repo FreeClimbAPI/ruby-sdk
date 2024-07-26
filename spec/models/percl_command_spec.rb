@@ -57,7 +57,7 @@ describe Freeclimb::PerclCommand do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::PerclCommand.new(
-      
+        
       )
       expect(instance.valid?).to eq(false)
     end

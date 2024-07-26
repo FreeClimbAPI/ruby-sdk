@@ -147,7 +147,7 @@ describe Freeclimb::PaginationModel do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::PaginationModel.new(
-                                          
+        
       )
       expect(instance.valid?).to eq(false)
     end

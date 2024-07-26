@@ -170,15 +170,16 @@ describe Freeclimb::OutDial do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::OutDial.new(
-      
-      
-      action_url: nil,      
-      
-      call_connect_url: nil,      
-      
-      calling_number: nil,      
-      
-      destination: nil,                                    privacy_mode: nil,
+        
+        action_url: nil,
+        
+        call_connect_url: nil,
+        
+        calling_number: nil,
+        
+        destination: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

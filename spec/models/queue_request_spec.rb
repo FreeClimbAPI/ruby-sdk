@@ -77,7 +77,7 @@ describe Freeclimb::QueueRequest do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::QueueRequest.new(
-            
+        
       )
       expect(instance.valid?).to eq(false)
     end

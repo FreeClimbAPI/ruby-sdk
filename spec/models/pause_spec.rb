@@ -66,9 +66,9 @@ describe Freeclimb::Pause do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::Pause.new(
-      
-      
-      length: nil,
+        
+        length: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

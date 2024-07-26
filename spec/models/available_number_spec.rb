@@ -129,7 +129,9 @@ describe Freeclimb::AvailableNumber do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::AvailableNumber.new(
-                        voice_enabled: nil,      sms_enabled: nil,            
+        voice_enabled: nil,
+        sms_enabled: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

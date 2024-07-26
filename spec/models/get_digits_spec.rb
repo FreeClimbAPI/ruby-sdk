@@ -163,9 +163,11 @@ describe Freeclimb::GetDigits do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::GetDigits.new(
-      
-      
-      action_url: nil,                  flush_buffer: nil,                              privacy_mode: nil,
+        
+        action_url: nil,
+        flush_buffer: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

@@ -88,9 +88,10 @@ describe Freeclimb::SendDigits do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::SendDigits.new(
-      
-      
-      digits: nil,            privacy_mode: nil,
+        
+        digits: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

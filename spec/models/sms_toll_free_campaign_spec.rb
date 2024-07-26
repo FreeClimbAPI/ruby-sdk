@@ -153,19 +153,19 @@ describe Freeclimb::SMSTollFreeCampaign do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::SMSTollFreeCampaign.new(
-      
-      
-      account_id: nil,      
-      
-      campaign_id: nil,      
-      
-      use_case: nil,            
-      
-      date_created: nil,      
-      
-      date_updated: nil,      
-      
-      revision: nil,
+        
+        account_id: nil,
+        
+        campaign_id: nil,
+        
+        use_case: nil,
+        
+        date_created: nil,
+        
+        date_updated: nil,
+        
+        revision: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end

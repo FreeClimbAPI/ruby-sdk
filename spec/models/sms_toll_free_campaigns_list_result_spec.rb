@@ -158,7 +158,7 @@ describe Freeclimb::SMSTollFreeCampaignsListResult do
 
     it 'checks if properties are invalid' do
       instance = Freeclimb::SMSTollFreeCampaignsListResult.new(
-                                                
+        
       )
       expect(instance.valid?).to eq(false)
     end
