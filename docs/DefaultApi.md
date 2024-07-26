@@ -2762,16 +2762,17 @@ end
 
 api_instance = Freeclimb::DefaultApi.new
 
+conference_id = 'conference_id_example' # String | Show only Recordings made during the conference with this ID.
+
 opts = {
   call_id: 'call_id_example', # String | Show only Recordings made during the Call with this ID.
-  conference_id: 'conference_id_example', # String | Show only Recordings made during the conference with this ID.
   date_created: 'date_created_example' # String | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
 }
 
 begin
 
   # List Conference Recordings
-  result = api_instance.list_conference_recordings(opts)
+  result = api_instance.list_conference_recordings(conference_id, opts)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_conference_recordings: #{e}"
@@ -2782,12 +2783,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RecordingList>, Integer, Hash)> list_conference_recordings_with_http_info(account_id, opts)
+> <Array(<RecordingList>, Integer, Hash)> list_conference_recordings_with_http_info(account_id, conference_id, opts)
 
 ```ruby
 begin
   # List Conference Recordings
-  data, status_code, headers = api_instance.list_conference_recordings_with_http_info(opts)
+  data, status_code, headers = api_instance.list_conference_recordings_with_http_info(conference_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <RecordingList>
@@ -2801,9 +2802,9 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 
-| **call_id** | **String** | Show only Recordings made during the Call with this ID. | [optional] |
+| **conference_id** | **String** | Show only Recordings made during the conference with this ID. |  |
 
-| **conference_id** | **String** | Show only Recordings made during the conference with this ID. | [optional] |
+| **call_id** | **String** | Show only Recordings made during the Call with this ID. | [optional] |
 
 | **date_created** | **String** | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] |
 

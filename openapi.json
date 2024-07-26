@@ -2039,6 +2039,7 @@
               "mediaUrls": {
                 "type": "array",
                 "description": "an array of HTTP URLs which are to be used as attachments to the message. This will force the message into being an MMS message and must be done using a from number which is MMS capabile.",
+                "x-is-list": true,
                 "items": {
                   "type": "string",
                   "format": "uri"
@@ -2132,6 +2133,7 @@
               "mediaUrls": {
                 "type": "array",
                 "description": "an array of HTTP URLs which were attached this this message",
+                "x-is-list": true,
                 "items": {
                   "type": "string",
                   "format": "uri"
@@ -3417,6 +3419,7 @@
               },
               "prompts": {
                 "type": "array",
+                "x-is-list": true,
                 "items": {}
               }
             }
@@ -4731,15 +4734,6 @@
             }
           },
           {
-            "name": "conferenceId",
-            "in": "query",
-            "description": "Show only Recordings made during the conference with this ID.",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "dateCreated",
             "in": "query",
             "description": "Only show Recordings created on this date, formatted as *YYYY-MM-DD*.",
@@ -4750,6 +4744,15 @@
           },
           {
             "$ref": "#/components/parameters/AccountId"
+          },
+          {
+            "name": "conferenceId",
+            "in": "path",
+            "description": "Show only Recordings made during the conference with this ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {

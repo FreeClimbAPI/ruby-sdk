@@ -248,6 +248,8 @@ describe 'DefaultApi' do
   
     @campaign_id_get_toll_free_sms_campaign_test_value = 'CX56XX4'
 
+    @conference_id_list_conference_recordings_test_value = 'conferenceId_example'
+
     @create_web_rtc_token_make_a_webrtc_jwt_test_value=Freeclimb::CreateWebRTCToken.new({to: 'to_example', from: 'from_example', uses: 2})
 
   end
@@ -1185,22 +1187,22 @@ describe 'DefaultApi' do
 
   # unit tests for list_conference_recordings
   # List Conference Recordings
+  # @param conference_id Show only Recordings made during the conference with this ID.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
-  # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
   # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
   # @return [RecordingList]
   describe 'list_conference_recordings test' do
     it 'should work' do
       
-      call_id = @call_id_list_conference_recordings_test_value
       conference_id = @conference_id_list_conference_recordings_test_value
+      call_id = @call_id_list_conference_recordings_test_value
       date_created = @date_created_list_conference_recordings_test_value
       
       result = @api_instance.list_conference_recordings(
-        
+        conference_id,
         {
-          :call_id => call_id,:conference_id => conference_id,:date_created => date_created,
+          :call_id => call_id,:date_created => date_created,
         }
       )
       false
