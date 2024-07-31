@@ -30,6 +30,7 @@ describe Freeclimb::Enqueue do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::Enqueue do
     it 'should work' do
       instance.notification_url = "TEST_STRING"
       expect(instance.notification_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::Enqueue do
     it 'should work' do
       instance.queue_id = "TEST_STRING"
       expect(instance.queue_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -51,6 +54,7 @@ describe Freeclimb::Enqueue do
     it 'should work' do
       instance.wait_url = "TEST_STRING"
       expect(instance.wait_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -82,7 +86,7 @@ describe Freeclimb::Enqueue do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::Enqueue.new(
@@ -93,18 +97,20 @@ describe Freeclimb::Enqueue do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::Enqueue.new(
-          action_url: nil,
-          queue_id: nil,
-          wait_url: nil,
+        
+        action_url: nil,
+        
+        queue_id: nil,
+        
+        wait_url: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::Enqueue.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -124,6 +130,7 @@ describe Freeclimb::Enqueue do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::Enqueue.new(
           action_url: "TS",
@@ -140,7 +147,7 @@ describe Freeclimb::Enqueue do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Enqueue.new(

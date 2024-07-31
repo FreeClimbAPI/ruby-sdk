@@ -30,6 +30,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
     it 'should work' do
       instance.brand_id = "TEST_STRING"
       expect(instance.brand_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -112,6 +114,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
 
   describe 'test attribute "optional_attributes"' do
     it 'should work' do
+        
       testObject = Object.new()
       instance.optional_attributes = testObject
       expect(instance.optional_attributes).to eq(testObject)
@@ -120,8 +123,11 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
 
   describe 'test attribute "evp_vetting_score"' do
     it 'should work' do
+    
+    
       instance.evp_vetting_score = 1
-      expect(instance.evp_vetting_score).to eq(1) 
+      expect(instance.evp_vetting_score).to eq(1)
+    
     end
   end
 
@@ -174,7 +180,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
@@ -192,10 +198,21 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.new()
+
+    it 'checks if properties are invalid' do
+      instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
+        first_name: nil,
+        last_name: nil,
+        display_name: nil,
+        company_name: nil,
+        
+        phone: "T" * 20,
+        email: "T" * 100,website: nil,
+        
+      )
       expect(instance.valid?).to eq(false)
     end
+    
   end
 
   describe 'test method "eql?"' do
@@ -227,6 +244,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
           account_id: "TS",
@@ -238,7 +256,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           phone: "TS",
           email: "TS",
           website: "TS",
-          evp_vetting_score: 1,
+          evp_vetting_score: 2,
       )
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
           account_id: "ST",
@@ -250,12 +268,12 @@ describe Freeclimb::SMSTenDLCPartnerCampaignBrand do
           phone: "ST",
           email: "ST",
           website: "ST",
-          evp_vetting_score: 0,
+          evp_vetting_score: 1,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(

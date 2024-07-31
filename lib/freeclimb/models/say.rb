@@ -122,12 +122,6 @@ module Freeclimb
       
       if @text.nil?
         false
-      elsif @language.nil?
-        false
-      elsif @loop.nil?
-        false
-      elsif @privacy_mode.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

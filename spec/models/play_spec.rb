@@ -30,13 +30,17 @@ describe Freeclimb::Play do
     it 'should work' do
       instance.file = "TEST_STRING"
       expect(instance.file).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "loop"' do
     it 'should work' do
+    
+    
       instance.loop = 1
-      expect(instance.loop).to eq(1) 
+      expect(instance.loop).to eq(1)
+    
     end
   end
 
@@ -44,6 +48,7 @@ describe Freeclimb::Play do
     it 'should work' do
       instance.privacy_mode = false
       expect(instance.privacy_mode).to eq(false)        
+        
     end
   end
 
@@ -72,7 +77,7 @@ describe Freeclimb::Play do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::Play.new(
@@ -82,16 +87,17 @@ describe Freeclimb::Play do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::Play.new(
-          file: nil,
+        
+        file: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::Play.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -109,21 +115,22 @@ describe Freeclimb::Play do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::Play.new(
           file: "TS",
-          loop: 1,
+          loop: 2,
           privacy_mode: true,
       )
       instance_2 = Freeclimb::Play.new(
           file: "ST",
-          loop: 0,
+          loop: 1,
           privacy_mode: false,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Play.new(

@@ -30,6 +30,7 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -65,6 +66,7 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'should work' do
       instance.csp_id = "TEST_STRING"
       expect(instance.csp_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -72,6 +74,7 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'should work' do
       instance.brand_id = "TEST_STRING"
       expect(instance.brand_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -427,6 +430,7 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'should work' do
       instance.universal_ein = "TEST_STRING"
       expect(instance.universal_ein).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -442,6 +446,7 @@ describe Freeclimb::SMSTenDLCBrand do
 
   describe 'test attribute "optional_attributes"' do
     it 'should work' do
+        
       testObject = Object.new()
       instance.optional_attributes = testObject
       expect(instance.optional_attributes).to eq(testObject)
@@ -452,6 +457,7 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'should work' do
       instance.mock = false
       expect(instance.mock).to eq(false)        
+        
     end
   end
 
@@ -483,6 +489,7 @@ describe Freeclimb::SMSTenDLCBrand do
     it 'should work' do
       instance.create_date = "2022-07-05T15:17:05Z"
       expect(instance.create_date).to eq("2022-07-05T15:17:05Z")  
+        
     end
   end
 
@@ -595,7 +602,7 @@ describe Freeclimb::SMSTenDLCBrand do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::SMSTenDLCBrand.new(
@@ -633,10 +640,36 @@ describe Freeclimb::SMSTenDLCBrand do
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::SMSTenDLCBrand.new()
+
+    it 'checks if properties are invalid' do
+      instance = Freeclimb::SMSTenDLCBrand.new(
+        first_name: nil,
+        last_name: nil,
+        
+        display_name: "T" * 255,company_name: nil,
+        ein: nil,
+        ein_issuing_country: nil,
+        
+        phone: "T" * 20,street: nil,
+        city: nil,
+        state: nil,
+        postal_code: nil,
+        
+        country: "T" * 2,
+        email: "T" * 100,stock_symbol: nil,
+        ip_address: nil,
+        website: nil,
+        
+        vertical: "T" * 50,alt_business_id: nil,
+        reference_id: nil,
+        mock: nil,
+        
+        mock: nil,
+        
+      )
       expect(instance.valid?).to eq(false)
     end
+    
   end
 
   describe 'test method "eql?"' do
@@ -706,6 +739,7 @@ describe Freeclimb::SMSTenDLCBrand do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::SMSTenDLCBrand.new(
           account_id: "TS",
@@ -772,7 +806,7 @@ describe Freeclimb::SMSTenDLCBrand do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SMSTenDLCBrand.new(

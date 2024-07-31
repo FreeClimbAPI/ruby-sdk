@@ -98,10 +98,6 @@ module Freeclimb
       
       if @phone_number.nil?
         false
-      elsif @_alias.nil?
-        false
-      elsif @application_id.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

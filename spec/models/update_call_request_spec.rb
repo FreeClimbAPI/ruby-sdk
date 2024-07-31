@@ -57,7 +57,7 @@ describe Freeclimb::UpdateCallRequest do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::UpdateCallRequest.new(
@@ -65,40 +65,45 @@ describe Freeclimb::UpdateCallRequest do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::UpdateCallRequest.new(
-          status: nil,
+        
+        status: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::UpdateCallRequest.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
       obj = Object.new()
       instance_1 = Freeclimb::UpdateCallRequest.new(
+          status: Freeclimb::UpdateCallRequestStatus.new(),
           status: "CANCELED",
       )
       instance_2 = Freeclimb::UpdateCallRequest.new(
+          status: Freeclimb::UpdateCallRequestStatus.new(),
           status: "CANCELED",
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::UpdateCallRequest.new(
+          status: Freeclimb::UpdateCallRequestStatus.new(),
           status: "CANCELED",
       )
       instance_2 = Freeclimb::UpdateCallRequest.new(
+          status: Freeclimb::UpdateCallRequestStatus.new(),
           status: "COMPLETED",
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::UpdateCallRequest.new(

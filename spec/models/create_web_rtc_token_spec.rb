@@ -30,6 +30,7 @@ describe Freeclimb::CreateWebRTCToken do
     it 'should work' do
       instance.to = "TEST_STRING"
       expect(instance.to).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,13 +38,18 @@ describe Freeclimb::CreateWebRTCToken do
     it 'should work' do
       instance.from = "TEST_STRING"
       expect(instance.from).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "uses"' do
     it 'should work' do
+    
       instance.uses = 1
       expect(instance.uses).to eq(1) 
+    
+    
+    
     end
   end
 
@@ -72,7 +78,7 @@ describe Freeclimb::CreateWebRTCToken do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::CreateWebRTCToken.new(
@@ -82,19 +88,18 @@ describe Freeclimb::CreateWebRTCToken do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::CreateWebRTCToken.new(
-          to: nil,
-          from: nil,
-          uses: nil,
-          uses: 2,
+        
+        to: nil,
+        
+        from: nil,
+        uses: 1,
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::CreateWebRTCToken.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -112,21 +117,22 @@ describe Freeclimb::CreateWebRTCToken do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::CreateWebRTCToken.new(
           to: "TS",
           from: "TS",
-          uses: 1,
+          uses: 1 + 1,
       )
       instance_2 = Freeclimb::CreateWebRTCToken.new(
           to: "ST",
           from: "ST",
-          uses: 2,
+          uses: 1 + 2,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::CreateWebRTCToken.new(

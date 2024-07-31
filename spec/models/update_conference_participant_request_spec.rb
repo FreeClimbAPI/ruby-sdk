@@ -30,6 +30,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
     it 'should work' do
       instance.talk = false
       expect(instance.talk).to eq(false)        
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
     it 'should work' do
       instance.listen = false
       expect(instance.listen).to eq(false)        
+        
     end
   end
 
@@ -62,7 +64,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::UpdateConferenceParticipantRequest.new(
@@ -71,15 +73,16 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::UpdateConferenceParticipantRequest.new(
+        talk: nil,
+        listen: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::UpdateConferenceParticipantRequest.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -95,6 +98,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::UpdateConferenceParticipantRequest.new(
           talk: true,
@@ -107,7 +111,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::UpdateConferenceParticipantRequest.new(

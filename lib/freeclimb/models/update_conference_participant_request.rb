@@ -85,8 +85,6 @@ module Freeclimb
       
       if @talk.nil?
         false
-      elsif @listen.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

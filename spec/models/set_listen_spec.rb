@@ -30,6 +30,7 @@ describe Freeclimb::SetListen do
     it 'should work' do
       instance.listen = false
       expect(instance.listen).to eq(false)        
+        
     end
   end
 
@@ -52,7 +53,7 @@ describe Freeclimb::SetListen do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::SetListen.new(
@@ -60,15 +61,15 @@ describe Freeclimb::SetListen do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::SetListen.new(
+        listen: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::SetListen.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -82,6 +83,7 @@ describe Freeclimb::SetListen do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::SetListen.new(
           listen: true,
@@ -92,7 +94,7 @@ describe Freeclimb::SetListen do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SetListen.new(

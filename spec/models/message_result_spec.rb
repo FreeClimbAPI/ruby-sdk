@@ -30,6 +30,7 @@ describe Freeclimb::MessageResult do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::MessageResult do
     it 'should work' do
       instance.date_created = "TEST_STRING"
       expect(instance.date_created).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,13 +46,17 @@ describe Freeclimb::MessageResult do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "revision"' do
     it 'should work' do
+    
+    
       instance.revision = 1
-      expect(instance.revision).to eq(1) 
+      expect(instance.revision).to eq(1)
+    
     end
   end
 
@@ -58,6 +64,7 @@ describe Freeclimb::MessageResult do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -65,6 +72,7 @@ describe Freeclimb::MessageResult do
     it 'should work' do
       instance.message_id = "TEST_STRING"
       expect(instance.message_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -120,6 +128,7 @@ describe Freeclimb::MessageResult do
     it 'should work' do
       instance.from = "TEST_STRING"
       expect(instance.from).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -127,6 +136,7 @@ describe Freeclimb::MessageResult do
     it 'should work' do
       instance.to = "TEST_STRING"
       expect(instance.to).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -134,6 +144,7 @@ describe Freeclimb::MessageResult do
     it 'should work' do
       instance.text = "TEST_STRING"
       expect(instance.text).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -141,6 +152,7 @@ describe Freeclimb::MessageResult do
     it 'should work' do
       instance.direction = "TEST_STRING"
       expect(instance.direction).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -148,6 +160,7 @@ describe Freeclimb::MessageResult do
     it 'should work' do
       instance.notification_url = "TEST_STRING"
       expect(instance.notification_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -155,6 +168,7 @@ describe Freeclimb::MessageResult do
     it 'should work' do
       instance.brand_id = "TEST_STRING"
       expect(instance.brand_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -162,18 +176,23 @@ describe Freeclimb::MessageResult do
     it 'should work' do
       instance.campaign_id = "TEST_STRING"
       expect(instance.campaign_id).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "segment_count"' do
     it 'should work' do
-      instance.segment_count = BigDecimal("1.0")
-      expect(instance.segment_count).to eq(BigDecimal("1.0")) 
+        
+    
+      instance.segment_count = 1.0
+      expect(instance.segment_count).to eq(1.0)
+    
     end
   end
 
   describe 'test attribute "media_urls"' do
     it 'should work' do
+        
       instance.media_urls = ["ELEMENT_1", "ELEMENT_2"]
       expect(instance.media_urls).to eq(["ELEMENT_1", "ELEMENT_2"]) 
     end
@@ -240,7 +259,7 @@ describe Freeclimb::MessageResult do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::MessageResult.new(
@@ -263,15 +282,14 @@ describe Freeclimb::MessageResult do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::MessageResult.new(
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::MessageResult.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -284,6 +302,7 @@ describe Freeclimb::MessageResult do
           revision: 1,
           account_id: "TS",
           message_id: "TS",
+          status: Freeclimb::MessageStatus.new(),
           status: "NEW",
           from: "TS",
           to: "TS",
@@ -301,6 +320,7 @@ describe Freeclimb::MessageResult do
           revision: 1,
           account_id: "TS",
           message_id: "TS",
+          status: Freeclimb::MessageStatus.new(),
           status: "NEW",
           from: "TS",
           to: "TS",
@@ -313,14 +333,16 @@ describe Freeclimb::MessageResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::MessageResult.new(
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+          revision: 2,
           account_id: "TS",
           message_id: "TS",
+          status: Freeclimb::MessageStatus.new(),
           status: "NEW",
           from: "TS",
           to: "TS",
@@ -335,9 +357,10 @@ describe Freeclimb::MessageResult do
           uri: "ST",
           date_created: "ST",
           date_updated: "ST",
-          revision: 0,
+          revision: 1,
           account_id: "ST",
           message_id: "ST",
+          status: Freeclimb::MessageStatus.new(),
           status: "QUEUED",
           from: "ST",
           to: "ST",
@@ -351,7 +374,7 @@ describe Freeclimb::MessageResult do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::MessageResult.new(

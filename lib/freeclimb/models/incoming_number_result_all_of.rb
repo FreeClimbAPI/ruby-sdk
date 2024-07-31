@@ -193,8 +193,6 @@ module Freeclimb
       
       if @capabilities.nil?
         false
-      elsif @tfn.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

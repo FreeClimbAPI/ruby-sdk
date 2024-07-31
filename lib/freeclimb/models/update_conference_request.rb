@@ -95,8 +95,6 @@ module Freeclimb
       
       if @_alias.nil?
         false
-      elsif @status.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

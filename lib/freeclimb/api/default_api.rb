@@ -2347,33 +2347,37 @@ module Freeclimb
     end
 
     # List Conference Recordings
+    # @param conference_id [String] Show only Recordings made during the conference with this ID.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
-    # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
     # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
     # @return [RecordingList]
-    def list_conference_recordings(opts = {})
-      data, _status_code, _headers = list_conference_recordings_with_http_info(opts)
+    def list_conference_recordings(conference_id, opts = {})
+      data, _status_code, _headers = list_conference_recordings_with_http_info(conference_id, opts)
       data
     end
 
     # List Conference Recordings
+    # @param conference_id [String] Show only Recordings made during the conference with this ID.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
-    # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
     # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
     # @return [Array<(RecordingList, Integer, Hash)>] RecordingList data, response status code and response headers
-    def list_conference_recordings_with_http_info(opts = {})
+    def list_conference_recordings_with_http_info(conference_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_conference_recordings ...'
       end
+
+      # verify the required parameter 'conference_id' is set
+      if @api_client.config.client_side_validation && conference_id.nil?
+        fail ArgumentError, "Missing the required parameter 'conference_id' when calling DefaultApi.list_conference_recordings"
+      end
       # resource path
-      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/Accounts/{accountId}/Conferences/{conferenceId}/Recordings'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'conferenceId' + '}', CGI.escape(conference_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'callId'] = opts[:'call_id'] if !opts[:'call_id'].nil?
-      query_params[:'conferenceId'] = opts[:'conference_id'] if !opts[:'conference_id'].nil?
       query_params[:'dateCreated'] = opts[:'date_created'] if !opts[:'date_created'].nil?
 
       # header parameters

@@ -40,9 +40,9 @@ module Freeclimb
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
@@ -50,7 +50,7 @@ module Freeclimb
       {
         :'action_url' => :'String',
         :'play_beep' => :'Boolean',
-        :'record' => :'TranscribeUtteranceRecord',
+        :'record' => :'TranscribeUtteranceAllOfRecord',
         :'privacy_for_logging' => :'Boolean',
         :'privacy_for_recording' => :'Boolean',
         :'prompts' => :'Array<Object>'
@@ -66,7 +66,8 @@ module Freeclimb
     # List of class defined in allOf (OpenAPI v3)
     def self.openapi_all_of
       [
-      :'PerclCommand'
+      :'PerclCommand',
+      :'TranscribeUtteranceAllOf'
       ]
     end
 
@@ -84,6 +85,9 @@ module Freeclimb
         end
         h[k.to_sym] = v
       }
+
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'action_url')
         self.action_url = attributes[:'action_url']
@@ -122,7 +126,7 @@ module Freeclimb
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @action_url.nil?
         invalid_properties.push('invalid value for "action_url", action_url cannot be nil.')
       end
@@ -135,16 +139,6 @@ module Freeclimb
     def valid?
       
       if @action_url.nil?
-        false
-      elsif @play_beep.nil?
-        false
-      elsif @record.nil?
-        false
-      elsif @privacy_for_logging.nil?
-        false
-      elsif @privacy_for_recording.nil?
-        false
-      elsif @prompts.nil?
         false
       else
         list_invalid_properties.length() == 0
@@ -161,7 +155,7 @@ module Freeclimb
           record == o.record &&
           privacy_for_logging == o.privacy_for_logging &&
           privacy_for_recording == o.privacy_for_recording &&
-          prompts == o.prompts
+          prompts == o.prompts && super(o)
     end
 
     # @see the `==` method
@@ -188,6 +182,7 @@ module Freeclimb
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       self.class.openapi_types.each_pair do |key, type|
         if attributes[self.class.attribute_map[key]].nil? && self.class.openapi_nullable.include?(key)
           self.send("#{key}=", nil)

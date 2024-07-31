@@ -30,6 +30,7 @@ describe Freeclimb::AccountResult do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::AccountResult do
     it 'should work' do
       instance.date_created = "TEST_STRING"
       expect(instance.date_created).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,13 +46,17 @@ describe Freeclimb::AccountResult do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "revision"' do
     it 'should work' do
+    
+    
       instance.revision = 1
-      expect(instance.revision).to eq(1) 
+      expect(instance.revision).to eq(1)
+    
     end
   end
 
@@ -58,6 +64,7 @@ describe Freeclimb::AccountResult do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -65,6 +72,7 @@ describe Freeclimb::AccountResult do
     it 'should work' do
       instance.api_key = "TEST_STRING"
       expect(instance.api_key).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -72,6 +80,7 @@ describe Freeclimb::AccountResult do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -79,6 +88,7 @@ describe Freeclimb::AccountResult do
     it 'should work' do
       instance.label = "TEST_STRING"
       expect(instance.label).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -112,6 +122,7 @@ describe Freeclimb::AccountResult do
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
+        
       testObject = Object.new()
       instance.subresource_uris = testObject
       expect(instance.subresource_uris).to eq(testObject)
@@ -167,7 +178,7 @@ describe Freeclimb::AccountResult do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::AccountResult.new(
@@ -185,15 +196,14 @@ describe Freeclimb::AccountResult do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::AccountResult.new(
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::AccountResult.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -208,7 +218,9 @@ describe Freeclimb::AccountResult do
           api_key: "TS",
           _alias: "TS",
           label: "TS",
+          type: Freeclimb::AccountType.new(),
           type: "TRIAL",
+          status: Freeclimb::AccountStatus.new(),
           status: "CLOSED",
           subresource_uris: obj,
       )
@@ -221,23 +233,28 @@ describe Freeclimb::AccountResult do
           api_key: "TS",
           _alias: "TS",
           label: "TS",
+          type: Freeclimb::AccountType.new(),
           type: "TRIAL",
+          status: Freeclimb::AccountStatus.new(),
           status: "CLOSED",
           subresource_uris: obj,
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::AccountResult.new(
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+          revision: 2,
           account_id: "TS",
           api_key: "TS",
           _alias: "TS",
           label: "TS",
+          type: Freeclimb::AccountType.new(),
           type: "TRIAL",
+          status: Freeclimb::AccountStatus.new(),
           status: "CLOSED",
           subresource_uris: Object.new(),
       )
@@ -245,19 +262,21 @@ describe Freeclimb::AccountResult do
           uri: "ST",
           date_created: "ST",
           date_updated: "ST",
-          revision: 0,
+          revision: 1,
           account_id: "ST",
           api_key: "ST",
           _alias: "ST",
           label: "ST",
+          type: Freeclimb::AccountType.new(),
           type: "FULL",
+          status: Freeclimb::AccountStatus.new(),
           status: "SUSPENDED",
           subresource_uris: nil,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::AccountResult.new(

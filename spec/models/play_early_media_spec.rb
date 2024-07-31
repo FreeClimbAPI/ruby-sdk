@@ -30,6 +30,7 @@ describe Freeclimb::PlayEarlyMedia do
     it 'should work' do
       instance.file = "TEST_STRING"
       expect(instance.file).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -52,7 +53,7 @@ describe Freeclimb::PlayEarlyMedia do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::PlayEarlyMedia.new(
@@ -60,16 +61,16 @@ describe Freeclimb::PlayEarlyMedia do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::PlayEarlyMedia.new(
-          file: nil,
+        
+        file: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::PlayEarlyMedia.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -83,6 +84,7 @@ describe Freeclimb::PlayEarlyMedia do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::PlayEarlyMedia.new(
           file: "TS",
@@ -93,7 +95,7 @@ describe Freeclimb::PlayEarlyMedia do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::PlayEarlyMedia.new(

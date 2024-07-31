@@ -46,7 +46,7 @@ describe Freeclimb::PerclCommand do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::PerclCommand.new(
@@ -54,15 +54,14 @@ describe Freeclimb::PerclCommand do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::PerclCommand.new(
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::PerclCommand.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -76,6 +75,7 @@ describe Freeclimb::PerclCommand do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::PerclCommand.new(
           command: "TS",
@@ -86,7 +86,7 @@ describe Freeclimb::PerclCommand do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::PerclCommand.new(

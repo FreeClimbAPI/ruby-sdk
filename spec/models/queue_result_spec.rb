@@ -30,6 +30,7 @@ describe Freeclimb::QueueResult do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::QueueResult do
     it 'should work' do
       instance.date_created = "TEST_STRING"
       expect(instance.date_created).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,13 +46,17 @@ describe Freeclimb::QueueResult do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "revision"' do
     it 'should work' do
+    
+    
       instance.revision = 1
-      expect(instance.revision).to eq(1) 
+      expect(instance.revision).to eq(1)
+    
     end
   end
 
@@ -58,6 +64,7 @@ describe Freeclimb::QueueResult do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -65,6 +72,7 @@ describe Freeclimb::QueueResult do
     it 'should work' do
       instance.queue_id = "TEST_STRING"
       expect(instance.queue_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -72,32 +80,43 @@ describe Freeclimb::QueueResult do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "max_size"' do
     it 'should work' do
+    
+    
       instance.max_size = 1
-      expect(instance.max_size).to eq(1) 
+      expect(instance.max_size).to eq(1)
+    
     end
   end
 
   describe 'test attribute "current_size"' do
     it 'should work' do
+    
+    
       instance.current_size = 1
-      expect(instance.current_size).to eq(1) 
+      expect(instance.current_size).to eq(1)
+    
     end
   end
 
   describe 'test attribute "average_queue_removal_time"' do
     it 'should work' do
+    
+    
       instance.average_queue_removal_time = 1
-      expect(instance.average_queue_removal_time).to eq(1) 
+      expect(instance.average_queue_removal_time).to eq(1)
+    
     end
   end
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
+        
       testObject = Object.new()
       instance.subresource_uris = testObject
       expect(instance.subresource_uris).to eq(testObject)
@@ -153,7 +172,7 @@ describe Freeclimb::QueueResult do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::QueueResult.new(
@@ -171,15 +190,14 @@ describe Freeclimb::QueueResult do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::QueueResult.new(
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::QueueResult.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -213,37 +231,38 @@ describe Freeclimb::QueueResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::QueueResult.new(
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+          revision: 2,
           account_id: "TS",
           queue_id: "TS",
           _alias: "TS",
-          max_size: 1,
-          current_size: 1,
-          average_queue_removal_time: 1,
+          max_size: 2,
+          current_size: 2,
+          average_queue_removal_time: 2,
           subresource_uris: Object.new(),
       )
       instance_2 = Freeclimb::QueueResult.new(
           uri: "ST",
           date_created: "ST",
           date_updated: "ST",
-          revision: 0,
+          revision: 1,
           account_id: "ST",
           queue_id: "ST",
           _alias: "ST",
-          max_size: 0,
-          current_size: 0,
-          average_queue_removal_time: 0,
+          max_size: 1,
+          current_size: 1,
+          average_queue_removal_time: 1,
           subresource_uris: nil,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::QueueResult.new(

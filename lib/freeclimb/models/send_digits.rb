@@ -111,10 +111,6 @@ module Freeclimb
       
       if @digits.nil?
         false
-      elsif @pause_ms.nil?
-        false
-      elsif @privacy_mode.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

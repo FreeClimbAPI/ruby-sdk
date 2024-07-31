@@ -126,14 +126,6 @@ module Freeclimb
       
       if @from.nil?
         false
-      elsif @to.nil?
-        false
-      elsif @text.nil?
-        false
-      elsif @notification_url.nil?
-        false
-      elsif @media_urls.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

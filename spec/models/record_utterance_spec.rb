@@ -30,13 +30,17 @@ describe Freeclimb::RecordUtterance do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "silence_timeout_ms"' do
     it 'should work' do
+    
+    
       instance.silence_timeout_ms = 1
-      expect(instance.silence_timeout_ms).to eq(1) 
+      expect(instance.silence_timeout_ms).to eq(1)
+    
     end
   end
 
@@ -44,13 +48,17 @@ describe Freeclimb::RecordUtterance do
     it 'should work' do
       instance.finish_on_key = "TEST_STRING"
       expect(instance.finish_on_key).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "max_length_sec"' do
     it 'should work' do
+    
+    
       instance.max_length_sec = 1
-      expect(instance.max_length_sec).to eq(1) 
+      expect(instance.max_length_sec).to eq(1)
+    
     end
   end
 
@@ -58,6 +66,7 @@ describe Freeclimb::RecordUtterance do
     it 'should work' do
       instance.play_beep = false
       expect(instance.play_beep).to eq(false)        
+        
     end
   end
 
@@ -65,6 +74,7 @@ describe Freeclimb::RecordUtterance do
     it 'should work' do
       instance.auto_start = false
       expect(instance.auto_start).to eq(false)        
+        
     end
   end
 
@@ -72,6 +82,7 @@ describe Freeclimb::RecordUtterance do
     it 'should work' do
       instance.privacy_mode = false
       expect(instance.privacy_mode).to eq(false)        
+        
     end
   end
 
@@ -112,7 +123,7 @@ describe Freeclimb::RecordUtterance do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::RecordUtterance.new(
@@ -126,16 +137,19 @@ describe Freeclimb::RecordUtterance do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::RecordUtterance.new(
-          action_url: nil,
+        
+        action_url: nil,
+        play_beep: nil,
+        auto_start: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::RecordUtterance.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -161,21 +175,22 @@ describe Freeclimb::RecordUtterance do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::RecordUtterance.new(
           action_url: "TS",
-          silence_timeout_ms: 1,
+          silence_timeout_ms: 2,
           finish_on_key: "TS",
-          max_length_sec: 1,
+          max_length_sec: 2,
           play_beep: true,
           auto_start: true,
           privacy_mode: true,
       )
       instance_2 = Freeclimb::RecordUtterance.new(
           action_url: "ST",
-          silence_timeout_ms: 0,
+          silence_timeout_ms: 1,
           finish_on_key: "ST",
-          max_length_sec: 0,
+          max_length_sec: 1,
           play_beep: false,
           auto_start: false,
           privacy_mode: false,
@@ -183,7 +198,7 @@ describe Freeclimb::RecordUtterance do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::RecordUtterance.new(

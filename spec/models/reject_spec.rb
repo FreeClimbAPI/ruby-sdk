@@ -30,6 +30,7 @@ describe Freeclimb::Reject do
     it 'should work' do
       instance.reason = "TEST_STRING"
       expect(instance.reason).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -52,7 +53,7 @@ describe Freeclimb::Reject do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::Reject.new(
@@ -60,15 +61,14 @@ describe Freeclimb::Reject do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::Reject.new(
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::Reject.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -82,6 +82,7 @@ describe Freeclimb::Reject do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::Reject.new(
           reason: "TS",
@@ -92,7 +93,7 @@ describe Freeclimb::Reject do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Reject.new(

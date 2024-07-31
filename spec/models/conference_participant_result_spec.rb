@@ -30,6 +30,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.date_created = "TEST_STRING"
       expect(instance.date_created).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,13 +46,17 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "revision"' do
     it 'should work' do
+    
+    
       instance.revision = 1
-      expect(instance.revision).to eq(1) 
+      expect(instance.revision).to eq(1)
+    
     end
   end
 
@@ -58,6 +64,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -65,6 +72,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.conference_id = "TEST_STRING"
       expect(instance.conference_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -72,6 +80,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.call_id = "TEST_STRING"
       expect(instance.call_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -79,6 +88,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.talk = false
       expect(instance.talk).to eq(false)        
+        
     end
   end
 
@@ -86,6 +96,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.listen = false
       expect(instance.listen).to eq(false)        
+        
     end
   end
 
@@ -93,6 +104,7 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'should work' do
       instance.start_conf_on_enter = false
       expect(instance.start_conf_on_enter).to eq(false)        
+        
     end
   end
 
@@ -142,7 +154,7 @@ describe Freeclimb::ConferenceParticipantResult do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::ConferenceParticipantResult.new(
@@ -159,15 +171,17 @@ describe Freeclimb::ConferenceParticipantResult do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::ConferenceParticipantResult.new(
+        talk: nil,
+        listen: nil,
+        start_conf_on_enter: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::ConferenceParticipantResult.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -199,12 +213,13 @@ describe Freeclimb::ConferenceParticipantResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::ConferenceParticipantResult.new(
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+          revision: 2,
           account_id: "TS",
           conference_id: "TS",
           call_id: "TS",
@@ -216,7 +231,7 @@ describe Freeclimb::ConferenceParticipantResult do
           uri: "ST",
           date_created: "ST",
           date_updated: "ST",
-          revision: 0,
+          revision: 1,
           account_id: "ST",
           conference_id: "ST",
           call_id: "ST",
@@ -227,7 +242,7 @@ describe Freeclimb::ConferenceParticipantResult do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::ConferenceParticipantResult.new(

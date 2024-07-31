@@ -14,14 +14,19 @@ require 'date'
 require 'time'
 
 module Freeclimb
-  class RemoveFromConferenceAllOf
-    # ID of the Call leg to be removed from the Conference. The Call must be in a Conference or an error will be triggered.
-    attr_accessor :call_id
+  class TranscribeUtteranceAllOfRecord
+    attr_accessor :save_recording
+
+    attr_accessor :max_length_sec
+
+    attr_accessor :rcrd_termination_silence_time_ms
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'call_id' => :'callId'
+        :'save_recording' => :'saveRecording',
+        :'max_length_sec' => :'maxLengthSec',
+        :'rcrd_termination_silence_time_ms' => :'rcrdTerminationSilenceTimeMs'
       }
     end
 
@@ -33,7 +38,9 @@ module Freeclimb
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'call_id' => :'String'
+        :'save_recording' => :'Boolean',
+        :'max_length_sec' => :'Integer',
+        :'rcrd_termination_silence_time_ms' => :'Integer'
       }
     end
 
@@ -47,19 +54,31 @@ module Freeclimb
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::RemoveFromConferenceAllOf` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::TranscribeUtteranceAllOfRecord` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::RemoveFromConferenceAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::TranscribeUtteranceAllOfRecord`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'call_id')
-        self.call_id = attributes[:'call_id']
+      if attributes.key?(:'save_recording')
+        self.save_recording = attributes[:'save_recording']
+      else
+        self.save_recording = false
+      end
+
+      if attributes.key?(:'max_length_sec')
+        self.max_length_sec = attributes[:'max_length_sec']
+      else
+        self.max_length_sec = 60
+      end
+
+      if attributes.key?(:'rcrd_termination_silence_time_ms')
+        self.rcrd_termination_silence_time_ms = attributes[:'rcrd_termination_silence_time_ms']
       end
     end
 
@@ -67,8 +86,20 @@ module Freeclimb
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @call_id.nil?
-        invalid_properties.push('invalid value for "call_id", call_id cannot be nil.')
+      if !@max_length_sec.nil? && @max_length_sec > 60
+        invalid_properties.push('invalid value for "max_length_sec", must be smaller than or equal to 60.')
+      end
+
+      if !@max_length_sec.nil? && @max_length_sec < 1
+        invalid_properties.push('invalid value for "max_length_sec", must be greater than or equal to 1.')
+      end
+
+      if !@rcrd_termination_silence_time_ms.nil? && @rcrd_termination_silence_time_ms > 3000
+        invalid_properties.push('invalid value for "rcrd_termination_silence_time_ms", must be smaller than or equal to 3000.')
+      end
+
+      if !@rcrd_termination_silence_time_ms.nil? && @rcrd_termination_silence_time_ms <= 0
+        invalid_properties.push('invalid value for "rcrd_termination_silence_time_ms", must be greater than 0.')
       end
 
       invalid_properties
@@ -78,11 +109,39 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
-      if @call_id.nil?
+      if @save_recording.nil?
         false
       else
         list_invalid_properties.length() == 0
       end
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] max_length_sec Value to be assigned
+    def max_length_sec=(max_length_sec)
+      if !max_length_sec.nil? && max_length_sec > 60
+        fail ArgumentError, 'invalid value for "max_length_sec", must be smaller than or equal to 60.'
+      end
+
+      if !max_length_sec.nil? && max_length_sec < 1
+        fail ArgumentError, 'invalid value for "max_length_sec", must be greater than or equal to 1.'
+      end
+
+      @max_length_sec = max_length_sec
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] rcrd_termination_silence_time_ms Value to be assigned
+    def rcrd_termination_silence_time_ms=(rcrd_termination_silence_time_ms)
+      if !rcrd_termination_silence_time_ms.nil? && rcrd_termination_silence_time_ms > 3000
+        fail ArgumentError, 'invalid value for "rcrd_termination_silence_time_ms", must be smaller than or equal to 3000.'
+      end
+
+      if !rcrd_termination_silence_time_ms.nil? && rcrd_termination_silence_time_ms <= 0
+        fail ArgumentError, 'invalid value for "rcrd_termination_silence_time_ms", must be greater than 0.'
+      end
+
+      @rcrd_termination_silence_time_ms = rcrd_termination_silence_time_ms
     end
 
     # Checks equality by comparing each attribute.
@@ -90,7 +149,9 @@ module Freeclimb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          call_id == o.call_id
+          save_recording == o.save_recording &&
+          max_length_sec == o.max_length_sec &&
+          rcrd_termination_silence_time_ms == o.rcrd_termination_silence_time_ms
     end
 
     # @see the `==` method
@@ -102,7 +163,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [call_id].hash
+      [save_recording, max_length_sec, rcrd_termination_silence_time_ms].hash
     end
 
     # Builds the object from hash

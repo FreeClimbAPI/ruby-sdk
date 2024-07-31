@@ -30,6 +30,7 @@ describe Freeclimb::SMSTollFreeCampaign do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::SMSTollFreeCampaign do
     it 'should work' do
       instance.campaign_id = "TEST_STRING"
       expect(instance.campaign_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::SMSTollFreeCampaign do
     it 'should work' do
       instance.use_case = "TEST_STRING"
       expect(instance.use_case).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -79,6 +82,7 @@ describe Freeclimb::SMSTollFreeCampaign do
     it 'should work' do
       instance.date_created = "TEST_STRING"
       expect(instance.date_created).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -86,13 +90,17 @@ describe Freeclimb::SMSTollFreeCampaign do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "revision"' do
     it 'should work' do
+    
+    
       instance.revision = 1
-      expect(instance.revision).to eq(1) 
+      expect(instance.revision).to eq(1)
+    
     end
   end
 
@@ -133,7 +141,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::SMSTollFreeCampaign.new(
@@ -147,21 +155,26 @@ describe Freeclimb::SMSTollFreeCampaign do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::SMSTollFreeCampaign.new(
-          account_id: nil,
-          campaign_id: nil,
-          use_case: nil,
-          date_created: nil,
-          date_updated: nil,
-          revision: nil,
+        
+        account_id: nil,
+        
+        campaign_id: nil,
+        
+        use_case: nil,
+        
+        date_created: nil,
+        
+        date_updated: nil,
+        
+        revision: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::SMSTollFreeCampaign.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -187,6 +200,7 @@ describe Freeclimb::SMSTollFreeCampaign do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::SMSTollFreeCampaign.new(
           account_id: "TS",
@@ -195,7 +209,7 @@ describe Freeclimb::SMSTollFreeCampaign do
           registration_status: "UNREGISTERED",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+          revision: 2,
       )
       instance_2 = Freeclimb::SMSTollFreeCampaign.new(
           account_id: "ST",
@@ -204,12 +218,12 @@ describe Freeclimb::SMSTollFreeCampaign do
           registration_status: "INITIATED",
           date_created: "ST",
           date_updated: "ST",
-          revision: 0,
+          revision: 1,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SMSTollFreeCampaign.new(

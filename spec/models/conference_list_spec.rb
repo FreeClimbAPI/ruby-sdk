@@ -28,43 +28,61 @@ describe Freeclimb::ConferenceList do
   
   describe 'test attribute "total"' do
     it 'should work' do
+    
+    
       instance.total = 1
-      expect(instance.total).to eq(1) 
+      expect(instance.total).to eq(1)
+    
     end
   end
 
   describe 'test attribute "start"' do
     it 'should work' do
+    
+    
       instance.start = 1
-      expect(instance.start).to eq(1) 
+      expect(instance.start).to eq(1)
+    
     end
   end
 
   describe 'test attribute "_end"' do
     it 'should work' do
+    
+    
       instance._end = 1
-      expect(instance._end).to eq(1) 
+      expect(instance._end).to eq(1)
+    
     end
   end
 
   describe 'test attribute "page"' do
     it 'should work' do
+    
+    
       instance.page = 1
-      expect(instance.page).to eq(1) 
+      expect(instance.page).to eq(1)
+    
     end
   end
 
   describe 'test attribute "num_pages"' do
     it 'should work' do
+    
+    
       instance.num_pages = 1
-      expect(instance.num_pages).to eq(1) 
+      expect(instance.num_pages).to eq(1)
+    
     end
   end
 
   describe 'test attribute "page_size"' do
     it 'should work' do
+    
+    
       instance.page_size = 1
-      expect(instance.page_size).to eq(1) 
+      expect(instance.page_size).to eq(1)
+    
     end
   end
 
@@ -72,11 +90,13 @@ describe Freeclimb::ConferenceList do
     it 'should work' do
       instance.next_page_uri = "TEST_STRING"
       expect(instance.next_page_uri).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "conferences"' do
     it 'should work' do
+        
       instance.conferences = ["ELEMENT_1", "ELEMENT_2"]
       expect(instance.conferences).to eq(["ELEMENT_1", "ELEMENT_2"]) 
     end
@@ -122,7 +142,7 @@ describe Freeclimb::ConferenceList do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::ConferenceList.new(
@@ -137,15 +157,14 @@ describe Freeclimb::ConferenceList do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::ConferenceList.new(
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::ConferenceList.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -159,6 +178,7 @@ describe Freeclimb::ConferenceList do
           num_pages: 1,
           page_size: 1,
           next_page_uri: "TS",
+          conferences: Freeclimb::ConferenceResult.new(),
           conferences: [],
       )
       instance_2 = Freeclimb::ConferenceList.new(
@@ -169,35 +189,39 @@ describe Freeclimb::ConferenceList do
           num_pages: 1,
           page_size: 1,
           next_page_uri: "TS",
+          conferences: Freeclimb::ConferenceResult.new(),
           conferences: [],
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::ConferenceList.new(
+          total: 2,
+          start: 2,
+          _end: 2,
+          page: 2,
+          num_pages: 2,
+          page_size: 2,
+          next_page_uri: "TS",
+          conferences: Freeclimb::ConferenceResult.new(),
+          conferences: [],
+      )
+      instance_2 = Freeclimb::ConferenceList.new(
           total: 1,
           start: 1,
           _end: 1,
           page: 1,
           num_pages: 1,
           page_size: 1,
-          next_page_uri: "TS",
-          conferences: [],
-      )
-      instance_2 = Freeclimb::ConferenceList.new(
-          total: 0,
-          start: 0,
-          _end: 0,
-          page: 0,
-          num_pages: 0,
-          page_size: 0,
           next_page_uri: "ST",
+          conferences: Freeclimb::ConferenceResult.new(),
           conferences: nil,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::ConferenceList.new(

@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.6.1"></a>
+
+## [4.6.1] - 2024-07-24
+
+### Changed
+
+- Fix test file format and some value updates, also fix SDK file auto-generation issue
+
 <a name="4.6.0"></a>
 
 ## [4.6.0] - 2024-07-19

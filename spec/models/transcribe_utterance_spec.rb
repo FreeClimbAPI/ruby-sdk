@@ -30,6 +30,7 @@ describe Freeclimb::TranscribeUtterance do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,17 +38,15 @@ describe Freeclimb::TranscribeUtterance do
     it 'should work' do
       instance.play_beep = false
       expect(instance.play_beep).to eq(false)        
+        
     end
   end
 
   describe 'test attribute "record"' do
     it 'should work' do
-      instance.record = Freeclimb::TranscribeUtteranceRecord.new(
-        save_recording: true,
-        max_length_sec: 1,
-        rcrd_termination_silence_time_ms: 1,
-      )
-      expect(instance.record).to be_instance_of(Freeclimb::TranscribeUtteranceRecord)
+        
+      instance.record = Freeclimb::TranscribeUtteranceAllOfRecord.new
+      expect(instance.record).to be_instance_of(Freeclimb::TranscribeUtteranceAllOfRecord)
     end
   end
 
@@ -55,6 +54,7 @@ describe Freeclimb::TranscribeUtterance do
     it 'should work' do
       instance.privacy_for_logging = false
       expect(instance.privacy_for_logging).to eq(false)        
+        
     end
   end
 
@@ -62,11 +62,13 @@ describe Freeclimb::TranscribeUtterance do
     it 'should work' do
       instance.privacy_for_recording = false
       expect(instance.privacy_for_recording).to eq(false)        
+        
     end
   end
 
   describe 'test attribute "prompts"' do
     it 'should work' do
+        
       instance.prompts = ["ELEMENT_1", "ELEMENT_2"]
       expect(instance.prompts).to eq(["ELEMENT_1", "ELEMENT_2"]) 
     end
@@ -77,11 +79,7 @@ describe Freeclimb::TranscribeUtterance do
         expect{instance = Freeclimb::TranscribeUtterance.new(
           action_url: "TS",
           play_beep: true,
-          record: Freeclimb::TranscribeUtteranceRecord.new(
-            save_recording: true,
-            max_length_sec: 1,
-            rcrd_termination_silence_time_ms: 1,
-          ),
+          record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
           privacy_for_logging: true,
           privacy_for_recording: true,
           prompts: Array.new(),
@@ -91,11 +89,7 @@ describe Freeclimb::TranscribeUtterance do
         expect{instance = Freeclimb::TranscribeUtterance.new(
           action_url: "TS",
           play_beep: true,
-          record: Freeclimb::TranscribeUtteranceRecord.new(
-            save_recording: true,
-            max_length_sec: 1,
-            rcrd_termination_silence_time_ms: 1,
-          ),
+          record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
           privacy_for_logging: true,
           privacy_for_recording: true,
           prompts: Array.new(),
@@ -106,11 +100,7 @@ describe Freeclimb::TranscribeUtterance do
         expect{instance = Freeclimb::TranscribeUtterance.new(
           action_url: "TS",
           play_beep: true,
-          record: Freeclimb::TranscribeUtteranceRecord.new(
-            save_recording: true,
-            max_length_sec: 1,
-            rcrd_termination_silence_time_ms: 1,
-          ),
+          record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
           privacy_for_logging: true,
           privacy_for_recording: true,
           prompts: Array.new(),
@@ -118,33 +108,32 @@ describe Freeclimb::TranscribeUtterance do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::TranscribeUtterance.new(
           action_url: "TS",
           play_beep: true,
-          record: Freeclimb::TranscribeUtteranceRecord.new(
-            save_recording: true,
-            max_length_sec: 1,
-            rcrd_termination_silence_time_ms: 1,
-          ),
+          record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
           privacy_for_logging: true,
           privacy_for_recording: true,
           prompts: Array.new(),
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::TranscribeUtterance.new(
-          action_url: nil,
+        
+        action_url: nil,
+        play_beep: nil,
+        privacy_for_logging: nil,
+        privacy_for_recording: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::TranscribeUtterance.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -153,11 +142,7 @@ describe Freeclimb::TranscribeUtterance do
       instance_1 = Freeclimb::TranscribeUtterance.new(
           action_url: "TS",
           play_beep: true,
-          record: Freeclimb::TranscribeUtteranceRecord.new(
-            save_recording: true,
-            max_length_sec: 1,
-            rcrd_termination_silence_time_ms: 1,
-          ),
+          record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
           privacy_for_logging: true,
           privacy_for_recording: true,
           prompts: [],
@@ -165,26 +150,19 @@ describe Freeclimb::TranscribeUtterance do
       instance_2 = Freeclimb::TranscribeUtterance.new(
           action_url: "TS",
           play_beep: true,
-          record: Freeclimb::TranscribeUtteranceRecord.new(
-            save_recording: true,
-            max_length_sec: 1,
-            rcrd_termination_silence_time_ms: 1,
-          ),
+          record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
           privacy_for_logging: true,
           privacy_for_recording: true,
           prompts: [],
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::TranscribeUtterance.new(
           action_url: "TS",
           play_beep: true,
-          record: Freeclimb::TranscribeUtteranceRecord.new(
-            save_recording: true,
-            max_length_sec: 2,
-            rcrd_termination_silence_time_ms: 2,
-          ),
+          record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
           privacy_for_logging: true,
           privacy_for_recording: true,
           prompts: [],
@@ -192,11 +170,7 @@ describe Freeclimb::TranscribeUtterance do
       instance_2 = Freeclimb::TranscribeUtterance.new(
           action_url: "ST",
           play_beep: false,
-          record: Freeclimb::TranscribeUtteranceRecord.new(
-            save_recording: true,
-            max_length_sec: 1,
-            rcrd_termination_silence_time_ms: 1,
-          ),
+          record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
           privacy_for_logging: false,
           privacy_for_recording: false,
           prompts: nil,
@@ -204,17 +178,13 @@ describe Freeclimb::TranscribeUtterance do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::TranscribeUtterance.new(
       action_url: "TS",
       play_beep: true,
-      record: Freeclimb::TranscribeUtteranceRecord.new(
-        save_recording: true,
-        max_length_sec: 1,
-        rcrd_termination_silence_time_ms: 1,
-      ),
+      record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
       privacy_for_logging: true,
       privacy_for_recording: true,
       prompts: Array.new(),
@@ -228,11 +198,7 @@ describe Freeclimb::TranscribeUtterance do
       instance_1 = Freeclimb::TranscribeUtterance.new(
         action_url: "TS",
         play_beep: true,
-        record: Freeclimb::TranscribeUtteranceRecord.new(
-          save_recording: true,
-          max_length_sec: 1,
-          rcrd_termination_silence_time_ms: 1,
-        ),
+        record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
         privacy_for_logging: true,
         privacy_for_recording: true,
         prompts: Array.new(),
@@ -246,11 +212,7 @@ describe Freeclimb::TranscribeUtterance do
     instance = Freeclimb::TranscribeUtterance.new(
         action_url: "TS",
         play_beep: true,
-        record: Freeclimb::TranscribeUtteranceRecord.new(
-          save_recording: true,
-          max_length_sec: 1,
-          rcrd_termination_silence_time_ms: 1,
-        ),
+        record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
         privacy_for_logging: true,
         privacy_for_recording: true,
         prompts: Array.new(),
@@ -262,7 +224,7 @@ describe Freeclimb::TranscribeUtterance do
       expect(instance._deserialize("Boolean", instance.play_beep)).to be_a_kind_of(TrueClass)
     end
     it 'deserializes the data of record' do
-      expect(instance._deserialize("Object", instance.record)).to be_a_kind_of(Freeclimb::TranscribeUtteranceRecord)
+      expect(instance._deserialize("Object", instance.record)).to be_a_kind_of(Freeclimb::TranscribeUtteranceAllOfRecord)
     end
     it 'deserializes the data of privacy_for_logging' do
       expect(instance._deserialize("Boolean", instance.privacy_for_logging)).to be_a_kind_of(TrueClass)
@@ -280,11 +242,7 @@ describe Freeclimb::TranscribeUtterance do
       instance = Freeclimb::TranscribeUtterance.new(
         action_url: "TS",
         play_beep: true,
-        record: Freeclimb::TranscribeUtteranceRecord.new(
-          save_recording: true,
-          max_length_sec: 1,
-          rcrd_termination_silence_time_ms: 1,
-        ),
+        record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
         privacy_for_logging: true,
         privacy_for_recording: true,
         prompts: Array.new(),
@@ -298,11 +256,7 @@ describe Freeclimb::TranscribeUtterance do
       instance = Freeclimb::TranscribeUtterance.new(
         action_url: "TS",
         play_beep: true,
-        record: Freeclimb::TranscribeUtteranceRecord.new(
-          save_recording: true,
-          max_length_sec: 1,
-          rcrd_termination_silence_time_ms: 1,
-        ),
+        record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
         privacy_for_logging: true,
         privacy_for_recording: true,
         prompts: Array.new(),
@@ -314,11 +268,7 @@ describe Freeclimb::TranscribeUtterance do
       instance_1 = Freeclimb::TranscribeUtterance.new(
         action_url: "TS",
         play_beep: true,
-        record: Freeclimb::TranscribeUtteranceRecord.new(
-          save_recording: true,
-          max_length_sec: 1,
-          rcrd_termination_silence_time_ms: 1,
-        ),
+        record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
         privacy_for_logging: true,
         privacy_for_recording: true,
         prompts: Array.new(),
@@ -326,11 +276,7 @@ describe Freeclimb::TranscribeUtterance do
       instance_2 = Freeclimb::TranscribeUtterance.new(
         action_url: "TS",
         play_beep: true,
-        record: Freeclimb::TranscribeUtteranceRecord.new(
-          save_recording: true,
-          max_length_sec: 1,
-          rcrd_termination_silence_time_ms: 1,
-        ),
+        record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
         privacy_for_logging: true,
         privacy_for_recording: true,
         prompts: Array.new(),
@@ -344,12 +290,7 @@ describe Freeclimb::TranscribeUtterance do
         action_url: "TS",
       
         play_beep: true,
-
-        record: Freeclimb::TranscribeUtteranceRecord.new(
-          save_recording: true,
-          max_length_sec: 1,
-          rcrd_termination_silence_time_ms: 1,
-        ),
+      
       
         privacy_for_logging: true,
       
@@ -364,7 +305,7 @@ describe Freeclimb::TranscribeUtterance do
       expect(instance._to_hash(instance.play_beep)).to eq(instance.play_beep)
     end
     it 'returns record in the form of hash' do
-      expect(instance._to_hash(instance.record)).to eq({:maxLengthSec=>1, :rcrdTerminationSilenceTimeMs=>1, :saveRecording=>true})
+      expect(instance._to_hash(instance.record)).to eq(instance.record)
     end
     it 'returns privacy_for_logging in the form of hash' do
       expect(instance._to_hash(instance.privacy_for_logging)).to eq(instance.privacy_for_logging)

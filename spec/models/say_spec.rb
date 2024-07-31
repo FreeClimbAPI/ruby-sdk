@@ -30,6 +30,7 @@ describe Freeclimb::Say do
     it 'should work' do
       instance.text = "TEST_STRING"
       expect(instance.text).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,13 +38,17 @@ describe Freeclimb::Say do
     it 'should work' do
       instance.language = "TEST_STRING"
       expect(instance.language).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "loop"' do
     it 'should work' do
+    
+    
       instance.loop = 1
-      expect(instance.loop).to eq(1) 
+      expect(instance.loop).to eq(1)
+    
     end
   end
 
@@ -51,6 +56,7 @@ describe Freeclimb::Say do
     it 'should work' do
       instance.privacy_mode = false
       expect(instance.privacy_mode).to eq(false)        
+        
     end
   end
 
@@ -82,7 +88,7 @@ describe Freeclimb::Say do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::Say.new(
@@ -93,16 +99,17 @@ describe Freeclimb::Say do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::Say.new(
-          text: nil,
+        
+        text: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::Say.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -122,23 +129,24 @@ describe Freeclimb::Say do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::Say.new(
           text: "TS",
           language: "TS",
-          loop: 1,
+          loop: 2,
           privacy_mode: true,
       )
       instance_2 = Freeclimb::Say.new(
           text: "ST",
           language: "ST",
-          loop: 0,
+          loop: 1,
           privacy_mode: false,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Say.new(

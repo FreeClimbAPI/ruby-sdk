@@ -114,12 +114,6 @@ module Freeclimb
       
       if @_alias.nil?
         false
-      elsif @record.nil?
-        false
-      elsif @wait_url.nil?
-        false
-      elsif @status_callback_url.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

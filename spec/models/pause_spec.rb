@@ -28,8 +28,11 @@ describe Freeclimb::Pause do
   
   describe 'test attribute "length"' do
     it 'should work' do
+    
+    
       instance.length = 1
-      expect(instance.length).to eq(1) 
+      expect(instance.length).to eq(1)
+    
     end
   end
 
@@ -52,7 +55,7 @@ describe Freeclimb::Pause do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::Pause.new(
@@ -60,16 +63,16 @@ describe Freeclimb::Pause do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::Pause.new(
-          length: nil,
+        
+        length: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::Pause.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -83,17 +86,18 @@ describe Freeclimb::Pause do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::Pause.new(
-          length: 1,
+          length: 2,
       )
       instance_2 = Freeclimb::Pause.new(
-          length: 0,
+          length: 1,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Pause.new(

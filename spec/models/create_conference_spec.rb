@@ -30,6 +30,7 @@ describe Freeclimb::CreateConference do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::CreateConference do
     it 'should work' do
       instance._alias = false
       expect(instance._alias).to eq(false)        
+        
     end
   end
 
@@ -64,6 +66,7 @@ describe Freeclimb::CreateConference do
     it 'should work' do
       instance.record = false
       expect(instance.record).to eq(false)        
+        
     end
   end
 
@@ -71,6 +74,7 @@ describe Freeclimb::CreateConference do
     it 'should work' do
       instance.status_callback_url = "TEST_STRING"
       expect(instance.status_callback_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -78,6 +82,7 @@ describe Freeclimb::CreateConference do
     it 'should work' do
       instance.wait_url = "TEST_STRING"
       expect(instance.wait_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -115,7 +120,7 @@ describe Freeclimb::CreateConference do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::CreateConference.new(
@@ -128,16 +133,18 @@ describe Freeclimb::CreateConference do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::CreateConference.new(
-          action_url: nil,
+        
+        action_url: nil,
+        _alias: nil,
+        record: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::CreateConference.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -146,6 +153,7 @@ describe Freeclimb::CreateConference do
       instance_1 = Freeclimb::CreateConference.new(
           action_url: "TS",
           _alias: true,
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
           record: true,
           status_callback_url: "TS",
@@ -154,6 +162,7 @@ describe Freeclimb::CreateConference do
       instance_2 = Freeclimb::CreateConference.new(
           action_url: "TS",
           _alias: true,
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
           record: true,
           status_callback_url: "TS",
@@ -161,10 +170,12 @@ describe Freeclimb::CreateConference do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::CreateConference.new(
           action_url: "TS",
           _alias: true,
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
           record: true,
           status_callback_url: "TS",
@@ -173,6 +184,7 @@ describe Freeclimb::CreateConference do
       instance_2 = Freeclimb::CreateConference.new(
           action_url: "ST",
           _alias: false,
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "NEVER",
           record: false,
           status_callback_url: "ST",
@@ -181,7 +193,7 @@ describe Freeclimb::CreateConference do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::CreateConference.new(

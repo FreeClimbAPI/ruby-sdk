@@ -30,6 +30,7 @@ describe Freeclimb::Capabilities do
     it 'should work' do
       instance.voice = false
       expect(instance.voice).to eq(false)        
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::Capabilities do
     it 'should work' do
       instance.sms = false
       expect(instance.sms).to eq(false)        
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::Capabilities do
     it 'should work' do
       instance.toll_free = false
       expect(instance.toll_free).to eq(false)        
+        
     end
   end
 
@@ -51,6 +54,7 @@ describe Freeclimb::Capabilities do
     it 'should work' do
       instance.ten_dlc = false
       expect(instance.ten_dlc).to eq(false)        
+        
     end
   end
 
@@ -58,6 +62,7 @@ describe Freeclimb::Capabilities do
     it 'should work' do
       instance.short_code = false
       expect(instance.short_code).to eq(false)        
+        
     end
   end
 
@@ -92,7 +97,7 @@ describe Freeclimb::Capabilities do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::Capabilities.new(
@@ -104,20 +109,29 @@ describe Freeclimb::Capabilities do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::Capabilities.new(
-          voice: nil,
-          sms: nil,
-          toll_free: nil,
-          ten_dlc: nil,
-          short_code: nil,
+        voice: nil,
+        
+        voice: nil,
+        sms: nil,
+        
+        sms: nil,
+        toll_free: nil,
+        
+        toll_free: nil,
+        ten_dlc: nil,
+        
+        ten_dlc: nil,
+        short_code: nil,
+        
+        short_code: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::Capabilities.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -139,6 +153,7 @@ describe Freeclimb::Capabilities do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::Capabilities.new(
           voice: true,
@@ -157,7 +172,7 @@ describe Freeclimb::Capabilities do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Capabilities.new(

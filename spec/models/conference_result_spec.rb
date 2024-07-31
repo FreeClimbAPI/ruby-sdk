@@ -30,6 +30,7 @@ describe Freeclimb::ConferenceResult do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::ConferenceResult do
     it 'should work' do
       instance.date_created = "TEST_STRING"
       expect(instance.date_created).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,13 +46,17 @@ describe Freeclimb::ConferenceResult do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "revision"' do
     it 'should work' do
+    
+    
       instance.revision = 1
-      expect(instance.revision).to eq(1) 
+      expect(instance.revision).to eq(1)
+    
     end
   end
 
@@ -58,6 +64,7 @@ describe Freeclimb::ConferenceResult do
     it 'should work' do
       instance.conference_id = "TEST_STRING"
       expect(instance.conference_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -65,6 +72,7 @@ describe Freeclimb::ConferenceResult do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -72,6 +80,7 @@ describe Freeclimb::ConferenceResult do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -99,6 +108,7 @@ describe Freeclimb::ConferenceResult do
     it 'should work' do
       instance.record = false
       expect(instance.record).to eq(false)        
+        
     end
   end
 
@@ -126,6 +136,7 @@ describe Freeclimb::ConferenceResult do
     it 'should work' do
       instance.wait_url = "TEST_STRING"
       expect(instance.wait_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -133,6 +144,7 @@ describe Freeclimb::ConferenceResult do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -140,11 +152,13 @@ describe Freeclimb::ConferenceResult do
     it 'should work' do
       instance.status_callback_url = "TEST_STRING"
       expect(instance.status_callback_url).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
+        
       testObject = Object.new()
       instance.subresource_uris = testObject
       expect(instance.subresource_uris).to eq(testObject)
@@ -209,7 +223,7 @@ describe Freeclimb::ConferenceResult do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::ConferenceResult.new(
@@ -230,15 +244,15 @@ describe Freeclimb::ConferenceResult do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::ConferenceResult.new(
+        record: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::ConferenceResult.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -252,8 +266,10 @@ describe Freeclimb::ConferenceResult do
           conference_id: "TS",
           account_id: "TS",
           _alias: "TS",
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
           record: true,
+          status: Freeclimb::ConferenceStatus.new(),
           status: "EMPTY",
           wait_url: "TS",
           action_url: "TS",
@@ -268,8 +284,10 @@ describe Freeclimb::ConferenceResult do
           conference_id: "TS",
           account_id: "TS",
           _alias: "TS",
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
           record: true,
+          status: Freeclimb::ConferenceStatus.new(),
           status: "EMPTY",
           wait_url: "TS",
           action_url: "TS",
@@ -278,17 +296,20 @@ describe Freeclimb::ConferenceResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::ConferenceResult.new(
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+          revision: 2,
           conference_id: "TS",
           account_id: "TS",
           _alias: "TS",
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "ALWAYS",
           record: true,
+          status: Freeclimb::ConferenceStatus.new(),
           status: "EMPTY",
           wait_url: "TS",
           action_url: "TS",
@@ -299,12 +320,14 @@ describe Freeclimb::ConferenceResult do
           uri: "ST",
           date_created: "ST",
           date_updated: "ST",
-          revision: 0,
+          revision: 1,
           conference_id: "ST",
           account_id: "ST",
           _alias: "ST",
+          play_beep: Freeclimb::PlayBeep.new(),
           play_beep: "NEVER",
           record: false,
+          status: Freeclimb::ConferenceStatus.new(),
           status: "POPULATED",
           wait_url: "ST",
           action_url: "ST",
@@ -314,7 +337,7 @@ describe Freeclimb::ConferenceResult do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::ConferenceResult.new(

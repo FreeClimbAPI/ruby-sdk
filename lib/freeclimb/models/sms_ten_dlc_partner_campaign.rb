@@ -443,50 +443,6 @@ module Freeclimb
       
       if @account_id.nil?
         false
-      elsif @campaign_id.nil?
-        false
-      elsif @status.nil?
-        false
-      elsif @create_date.nil?
-        false
-      elsif @brand_id.nil?
-        false
-      elsif @usecase.nil?
-        false
-      elsif @description.nil?
-        false
-      elsif @embedded_link.nil?
-        false
-      elsif @embedded_phone.nil?
-        false
-      elsif @affiliate_marketing.nil?
-        false
-      elsif @number_pool.nil?
-        false
-      elsif @age_gated.nil?
-        false
-      elsif @direct_lending.nil?
-        false
-      elsif @subscriber_optin.nil?
-        false
-      elsif @subscriber_optout.nil?
-        false
-      elsif @subscriber_help.nil?
-        false
-      elsif @sample1.nil?
-        false
-      elsif @optin_keywords.nil?
-        false
-      elsif @optout_keywords.nil?
-        false
-      elsif @help_keywords.nil?
-        false
-      elsif @optin_message.nil?
-        false
-      elsif @optout_message.nil?
-        false
-      elsif @brand.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

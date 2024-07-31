@@ -30,6 +30,7 @@ describe Freeclimb::BuyIncomingNumberRequest do
     it 'should work' do
       instance.phone_number = "TEST_STRING"
       expect(instance.phone_number).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::BuyIncomingNumberRequest do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::BuyIncomingNumberRequest do
     it 'should work' do
       instance.application_id = "TEST_STRING"
       expect(instance.application_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -72,7 +75,7 @@ describe Freeclimb::BuyIncomingNumberRequest do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::BuyIncomingNumberRequest.new(
@@ -82,16 +85,16 @@ describe Freeclimb::BuyIncomingNumberRequest do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::BuyIncomingNumberRequest.new(
-          phone_number: nil,
+        
+        phone_number: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::BuyIncomingNumberRequest.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -109,6 +112,7 @@ describe Freeclimb::BuyIncomingNumberRequest do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::BuyIncomingNumberRequest.new(
           phone_number: "TS",
@@ -123,7 +127,7 @@ describe Freeclimb::BuyIncomingNumberRequest do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::BuyIncomingNumberRequest.new(

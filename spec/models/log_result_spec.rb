@@ -28,8 +28,11 @@ describe Freeclimb::LogResult do
   
   describe 'test attribute "timestamp"' do
     it 'should work' do
+    
+    
       instance.timestamp = 1
-      expect(instance.timestamp).to eq(1) 
+      expect(instance.timestamp).to eq(1)
+    
     end
   end
 
@@ -53,6 +56,7 @@ describe Freeclimb::LogResult do
     it 'should work' do
       instance.request_id = "TEST_STRING"
       expect(instance.request_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -60,6 +64,7 @@ describe Freeclimb::LogResult do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -67,6 +72,7 @@ describe Freeclimb::LogResult do
     it 'should work' do
       instance.call_id = "TEST_STRING"
       expect(instance.call_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -74,11 +80,13 @@ describe Freeclimb::LogResult do
     it 'should work' do
       instance.message = "TEST_STRING"
       expect(instance.message).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "metadata"' do
     it 'should work' do
+        
       testObject = Object.new()
       instance.metadata = testObject
       expect(instance.metadata).to eq(testObject)
@@ -122,7 +130,7 @@ describe Freeclimb::LogResult do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::LogResult.new(
@@ -136,15 +144,14 @@ describe Freeclimb::LogResult do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::LogResult.new(
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::LogResult.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -152,6 +159,7 @@ describe Freeclimb::LogResult do
       obj = Object.new()
       instance_1 = Freeclimb::LogResult.new(
           timestamp: 1,
+          level: Freeclimb::LogLevel.new(),
           level: "INFO",
           request_id: "TS",
           account_id: "TS",
@@ -161,6 +169,7 @@ describe Freeclimb::LogResult do
       )
       instance_2 = Freeclimb::LogResult.new(
           timestamp: 1,
+          level: Freeclimb::LogLevel.new(),
           level: "INFO",
           request_id: "TS",
           account_id: "TS",
@@ -170,9 +179,11 @@ describe Freeclimb::LogResult do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::LogResult.new(
-          timestamp: 1,
+          timestamp: 2,
+          level: Freeclimb::LogLevel.new(),
           level: "INFO",
           request_id: "TS",
           account_id: "TS",
@@ -181,7 +192,8 @@ describe Freeclimb::LogResult do
           metadata: Object.new(),
       )
       instance_2 = Freeclimb::LogResult.new(
-          timestamp: 0,
+          timestamp: 1,
+          level: Freeclimb::LogLevel.new(),
           level: "WARNING",
           request_id: "ST",
           account_id: "ST",
@@ -192,7 +204,7 @@ describe Freeclimb::LogResult do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::LogResult.new(

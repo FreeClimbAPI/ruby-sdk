@@ -30,6 +30,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     it 'should work' do
       instance.campaign_id = "TEST_STRING"
       expect(instance.campaign_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -60,6 +62,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     it 'should work' do
       instance.create_date = "2022-07-05T15:17:05Z"
       expect(instance.create_date).to eq("2022-07-05T15:17:05Z")  
+        
     end
   end
 
@@ -97,6 +100,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     it 'should work' do
       instance.embedded_link = false
       expect(instance.embedded_link).to eq(false)        
+        
     end
   end
 
@@ -104,6 +108,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     it 'should work' do
       instance.embedded_phone = false
       expect(instance.embedded_phone).to eq(false)        
+        
     end
   end
 
@@ -111,6 +116,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     it 'should work' do
       instance.affiliate_marketing = false
       expect(instance.affiliate_marketing).to eq(false)        
+        
     end
   end
 
@@ -118,6 +124,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     it 'should work' do
       instance.number_pool = false
       expect(instance.number_pool).to eq(false)        
+        
     end
   end
 
@@ -125,6 +132,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     it 'should work' do
       instance.age_gated = false
       expect(instance.age_gated).to eq(false)        
+        
     end
   end
 
@@ -132,6 +140,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     it 'should work' do
       instance.direct_lending = false
       expect(instance.direct_lending).to eq(false)        
+        
     end
   end
 
@@ -139,6 +148,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     it 'should work' do
       instance.subscriber_optin = false
       expect(instance.subscriber_optin).to eq(false)        
+        
     end
   end
 
@@ -146,6 +156,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     it 'should work' do
       instance.subscriber_optout = false
       expect(instance.subscriber_optout).to eq(false)        
+        
     end
   end
 
@@ -153,6 +164,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     it 'should work' do
       instance.subscriber_help = false
       expect(instance.subscriber_help).to eq(false)        
+        
     end
   end
 
@@ -278,6 +290,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
 
   describe 'test attribute "brand"' do
     it 'should work' do
+        
       instance.brand = Freeclimb::SMSTenDLCPartnerCampaignBrand.new
       expect(instance.brand).to be_instance_of(Freeclimb::SMSTenDLCPartnerCampaignBrand)
     end
@@ -314,7 +327,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
           help_keywords: "TS",
           optin_message: "TS",
           optout_message: "TS",
-          brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new,
+          brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new(),
         )}.not_to raise_error()
     end
     it 'fails to initialize with input argument that is not a hash in Freeclimb::SMSTenDLCPartnerCampaign' do
@@ -386,7 +399,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
@@ -418,14 +431,44 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
           help_keywords: "TS",
           optin_message: "TS",
           optout_message: "TS",
-          brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new,
+          brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new(),
       )
       expect(instance.valid?).to eq(true)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::SMSTenDLCPartnerCampaign.new()
+
+    it 'checks if properties are invalid' do
+      instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
+        
+        campaign_id: nil,
+        
+        brand_id: "T" * 8,
+        usecase: "T" * 20,
+        description: "T" * 4096,embedded_link: nil,
+        embedded_phone: nil,
+        affiliate_marketing: nil,
+        number_pool: nil,
+        age_gated: nil,
+        direct_lending: nil,
+        subscriber_optin: nil,
+        subscriber_optout: nil,
+        subscriber_help: nil,
+        sample1: nil,
+        sample2: nil,
+        sample3: nil,
+        sample4: nil,
+        sample5: nil,
+        message_flow: nil,
+        help_message: nil,
+        optin_keywords: nil,
+        optout_keywords: nil,
+        help_keywords: nil,
+        optin_message: nil,
+        optout_message: nil,
+        
+      )
       expect(instance.valid?).to eq(false)
     end
+    
   end
 
   describe 'test method "eql?"' do
@@ -459,6 +502,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
           help_keywords: "TS",
           optin_message: "TS",
           optout_message: "TS",
+          brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new(),
       )
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaign.new(
           account_id: "TS",
@@ -488,9 +532,11 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
           help_keywords: "TS",
           optin_message: "TS",
           optout_message: "TS",
+          brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new(),
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::SMSTenDLCPartnerCampaign.new(
           account_id: "TS",
@@ -520,6 +566,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
           help_keywords: "TS",
           optin_message: "TS",
           optout_message: "TS",
+          brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new(),
       )
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaign.new(
           account_id: "ST",
@@ -549,11 +596,12 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
           help_keywords: "ST",
           optin_message: "ST",
           optout_message: "ST",
+          brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new(),
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
@@ -585,7 +633,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       help_keywords: "TS",
       optin_message: "TS",
       optout_message: "TS",
-      brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new,
+      brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new(),
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -622,7 +670,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
         help_keywords: "TS",
         optin_message: "TS",
         optout_message: "TS",
-        brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new,
+        brand: Freeclimb::SMSTenDLCPartnerCampaignBrand.new(),
       )
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaign.new
       expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))

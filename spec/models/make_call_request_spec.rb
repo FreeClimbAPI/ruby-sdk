@@ -30,6 +30,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.from = "TEST_STRING"
       expect(instance.from).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.to = "TEST_STRING"
       expect(instance.to).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.application_id = "TEST_STRING"
       expect(instance.application_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -51,6 +54,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.send_digits = "TEST_STRING"
       expect(instance.send_digits).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -58,6 +62,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.if_machine = "TEST_STRING"
       expect(instance.if_machine).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -65,13 +70,17 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.if_machine_url = "TEST_STRING"
       expect(instance.if_machine_url).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "timeout"' do
     it 'should work' do
+    
+    
       instance.timeout = 1
-      expect(instance.timeout).to eq(1) 
+      expect(instance.timeout).to eq(1)
+    
     end
   end
 
@@ -79,6 +88,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.parent_call_id = "TEST_STRING"
       expect(instance.parent_call_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -86,6 +96,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.privacy_mode = false
       expect(instance.privacy_mode).to eq(false)        
+        
     end
   end
 
@@ -93,6 +104,7 @@ describe Freeclimb::MakeCallRequest do
     it 'should work' do
       instance.call_connect_url = "TEST_STRING"
       expect(instance.call_connect_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -142,7 +154,7 @@ describe Freeclimb::MakeCallRequest do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::MakeCallRequest.new(
@@ -159,17 +171,19 @@ describe Freeclimb::MakeCallRequest do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::MakeCallRequest.new(
-          from: nil,
-          to: nil,
+        
+        from: nil,
+        
+        to: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::MakeCallRequest.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -201,6 +215,7 @@ describe Freeclimb::MakeCallRequest do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::MakeCallRequest.new(
           from: "TS",
@@ -209,7 +224,7 @@ describe Freeclimb::MakeCallRequest do
           send_digits: "TS",
           if_machine: "TS",
           if_machine_url: "TS",
-          timeout: 1,
+          timeout: 2,
           parent_call_id: "TS",
           privacy_mode: true,
           call_connect_url: "TS",
@@ -221,7 +236,7 @@ describe Freeclimb::MakeCallRequest do
           send_digits: "ST",
           if_machine: "ST",
           if_machine_url: "ST",
-          timeout: 0,
+          timeout: 1,
           parent_call_id: "ST",
           privacy_mode: false,
           call_connect_url: "ST",
@@ -229,7 +244,7 @@ describe Freeclimb::MakeCallRequest do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::MakeCallRequest.new(

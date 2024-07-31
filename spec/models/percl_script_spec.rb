@@ -28,6 +28,7 @@ describe Freeclimb::PerclScript do
   
   describe 'test attribute "commands"' do
     it 'should work' do
+        
       instance.commands = ["ELEMENT_1", "ELEMENT_2"]
       expect(instance.commands).to eq(["ELEMENT_1", "ELEMENT_2"]) 
     end
@@ -52,7 +53,7 @@ describe Freeclimb::PerclScript do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::PerclScript.new(
@@ -60,39 +61,43 @@ describe Freeclimb::PerclScript do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::PerclScript.new(
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::PerclScript.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
     it 'checks if objects are equal' do
       obj = Object.new()
       instance_1 = Freeclimb::PerclScript.new(
+          commands: Freeclimb::PerclCommand.new(),
           commands: [],
       )
       instance_2 = Freeclimb::PerclScript.new(
+          commands: Freeclimb::PerclCommand.new(),
           commands: [],
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::PerclScript.new(
+          commands: Freeclimb::PerclCommand.new(),
           commands: [],
       )
       instance_2 = Freeclimb::PerclScript.new(
+          commands: Freeclimb::PerclCommand.new(),
           commands: nil,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::PerclScript.new(

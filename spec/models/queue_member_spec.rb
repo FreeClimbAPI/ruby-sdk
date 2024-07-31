@@ -30,6 +30,7 @@ describe Freeclimb::QueueMember do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,20 +38,27 @@ describe Freeclimb::QueueMember do
     it 'should work' do
       instance.call_id = "TEST_STRING"
       expect(instance.call_id).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "wait_time"' do
     it 'should work' do
+    
+    
       instance.wait_time = 1
-      expect(instance.wait_time).to eq(1) 
+      expect(instance.wait_time).to eq(1)
+    
     end
   end
 
   describe 'test attribute "position"' do
     it 'should work' do
+    
+    
       instance.position = 1
-      expect(instance.position).to eq(1) 
+      expect(instance.position).to eq(1)
+    
     end
   end
 
@@ -58,6 +66,7 @@ describe Freeclimb::QueueMember do
     it 'should work' do
       instance.date_enqueued = "TEST_STRING"
       expect(instance.date_enqueued).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -92,7 +101,7 @@ describe Freeclimb::QueueMember do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::QueueMember.new(
@@ -104,15 +113,14 @@ describe Freeclimb::QueueMember do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::QueueMember.new(
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::QueueMember.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -134,25 +142,26 @@ describe Freeclimb::QueueMember do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::QueueMember.new(
           uri: "TS",
           call_id: "TS",
-          wait_time: 1,
-          position: 1,
+          wait_time: 2,
+          position: 2,
           date_enqueued: "TS",
       )
       instance_2 = Freeclimb::QueueMember.new(
           uri: "ST",
           call_id: "ST",
-          wait_time: 0,
-          position: 0,
+          wait_time: 1,
+          position: 1,
           date_enqueued: "ST",
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::QueueMember.new(

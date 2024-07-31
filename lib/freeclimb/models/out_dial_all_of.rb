@@ -172,24 +172,6 @@ module Freeclimb
       
       if @action_url.nil?
         false
-      elsif @call_connect_url.nil?
-        false
-      elsif @calling_number.nil?
-        false
-      elsif @destination.nil?
-        false
-      elsif @if_machine.nil?
-        false
-      elsif @if_machine_url.nil?
-        false
-      elsif @send_digits.nil?
-        false
-      elsif @status_callback_url.nil?
-        false
-      elsif @timeout.nil?
-        false
-      elsif @privacy_mode.nil?
-        false
       else
         list_invalid_properties.length() == 0
       end

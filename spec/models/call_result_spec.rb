@@ -30,6 +30,7 @@ describe Freeclimb::CallResult do
     it 'should work' do
       instance.uri = "TEST_STRING"
       expect(instance.uri).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::CallResult do
     it 'should work' do
       instance.date_created = "TEST_STRING"
       expect(instance.date_created).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,13 +46,17 @@ describe Freeclimb::CallResult do
     it 'should work' do
       instance.date_updated = "TEST_STRING"
       expect(instance.date_updated).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "revision"' do
     it 'should work' do
+    
+    
       instance.revision = 1
-      expect(instance.revision).to eq(1) 
+      expect(instance.revision).to eq(1)
+    
     end
   end
 
@@ -58,6 +64,7 @@ describe Freeclimb::CallResult do
     it 'should work' do
       instance.call_id = "TEST_STRING"
       expect(instance.call_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -65,6 +72,7 @@ describe Freeclimb::CallResult do
     it 'should work' do
       instance.parent_call_id = "TEST_STRING"
       expect(instance.parent_call_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -72,6 +80,7 @@ describe Freeclimb::CallResult do
     it 'should work' do
       instance.account_id = "TEST_STRING"
       expect(instance.account_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -79,6 +88,7 @@ describe Freeclimb::CallResult do
     it 'should work' do
       instance.from = "TEST_STRING"
       expect(instance.from).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -86,6 +96,7 @@ describe Freeclimb::CallResult do
     it 'should work' do
       instance.to = "TEST_STRING"
       expect(instance.to).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -93,6 +104,7 @@ describe Freeclimb::CallResult do
     it 'should work' do
       instance.phone_number_id = "TEST_STRING"
       expect(instance.phone_number_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -136,6 +148,7 @@ describe Freeclimb::CallResult do
     it 'should work' do
       instance.start_time = "TEST_STRING"
       expect(instance.start_time).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -143,6 +156,7 @@ describe Freeclimb::CallResult do
     it 'should work' do
       instance.connect_time = "TEST_STRING"
       expect(instance.connect_time).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -150,20 +164,27 @@ describe Freeclimb::CallResult do
     it 'should work' do
       instance.end_time = "TEST_STRING"
       expect(instance.end_time).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "duration"' do
     it 'should work' do
+    
+    
       instance.duration = 1
-      expect(instance.duration).to eq(1) 
+      expect(instance.duration).to eq(1)
+    
     end
   end
 
   describe 'test attribute "connect_duration"' do
     it 'should work' do
+    
+    
       instance.connect_duration = 1
-      expect(instance.connect_duration).to eq(1) 
+      expect(instance.connect_duration).to eq(1)
+    
     end
   end
 
@@ -197,6 +218,7 @@ describe Freeclimb::CallResult do
 
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
+        
       testObject = Object.new()
       instance.subresource_uris = testObject
       expect(instance.subresource_uris).to eq(testObject)
@@ -276,7 +298,7 @@ describe Freeclimb::CallResult do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::CallResult.new(
@@ -302,15 +324,14 @@ describe Freeclimb::CallResult do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::CallResult.new(
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::CallResult.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -327,13 +348,16 @@ describe Freeclimb::CallResult do
           from: "TS",
           to: "TS",
           phone_number_id: "TS",
+          call_status: Freeclimb::CallStatus.new(),
           call_status: "QUEUED",
           start_time: "TS",
           connect_time: "TS",
           end_time: "TS",
           duration: 1,
           connect_duration: 1,
+          direction: Freeclimb::CallDirection.new(),
           direction: "INBOUND",
+          answered_by: Freeclimb::AnsweredBy.new(),
           answered_by: "HUMAN",
           subresource_uris: obj,
       )
@@ -348,37 +372,44 @@ describe Freeclimb::CallResult do
           from: "TS",
           to: "TS",
           phone_number_id: "TS",
+          call_status: Freeclimb::CallStatus.new(),
           call_status: "QUEUED",
           start_time: "TS",
           connect_time: "TS",
           end_time: "TS",
           duration: 1,
           connect_duration: 1,
+          direction: Freeclimb::CallDirection.new(),
           direction: "INBOUND",
+          answered_by: Freeclimb::AnsweredBy.new(),
           answered_by: "HUMAN",
           subresource_uris: obj,
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::CallResult.new(
           uri: "TS",
           date_created: "TS",
           date_updated: "TS",
-          revision: 1,
+          revision: 2,
           call_id: "TS",
           parent_call_id: "TS",
           account_id: "TS",
           from: "TS",
           to: "TS",
           phone_number_id: "TS",
+          call_status: Freeclimb::CallStatus.new(),
           call_status: "QUEUED",
           start_time: "TS",
           connect_time: "TS",
           end_time: "TS",
-          duration: 1,
-          connect_duration: 1,
+          duration: 2,
+          connect_duration: 2,
+          direction: Freeclimb::CallDirection.new(),
           direction: "INBOUND",
+          answered_by: Freeclimb::AnsweredBy.new(),
           answered_by: "HUMAN",
           subresource_uris: Object.new(),
       )
@@ -386,27 +417,30 @@ describe Freeclimb::CallResult do
           uri: "ST",
           date_created: "ST",
           date_updated: "ST",
-          revision: 0,
+          revision: 1,
           call_id: "ST",
           parent_call_id: "ST",
           account_id: "ST",
           from: "ST",
           to: "ST",
           phone_number_id: "ST",
+          call_status: Freeclimb::CallStatus.new(),
           call_status: "RINGING",
           start_time: "ST",
           connect_time: "ST",
           end_time: "ST",
-          duration: 0,
-          connect_duration: 0,
+          duration: 1,
+          connect_duration: 1,
+          direction: Freeclimb::CallDirection.new(),
           direction: "OUTBOUND_API",
+          answered_by: Freeclimb::AnsweredBy.new(),
           answered_by: "MACHINE",
           subresource_uris: nil,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::CallResult.new(

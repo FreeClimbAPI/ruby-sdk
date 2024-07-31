@@ -30,13 +30,17 @@ describe Freeclimb::GetDigits do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "digit_timeout_ms"' do
     it 'should work' do
+    
+    
       instance.digit_timeout_ms = 1
-      expect(instance.digit_timeout_ms).to eq(1) 
+      expect(instance.digit_timeout_ms).to eq(1)
+    
     end
   end
 
@@ -44,6 +48,7 @@ describe Freeclimb::GetDigits do
     it 'should work' do
       instance.finish_on_key = "TEST_STRING"
       expect(instance.finish_on_key).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -51,32 +56,43 @@ describe Freeclimb::GetDigits do
     it 'should work' do
       instance.flush_buffer = false
       expect(instance.flush_buffer).to eq(false)        
+        
     end
   end
 
   describe 'test attribute "initial_timeout_ms"' do
     it 'should work' do
+    
+    
       instance.initial_timeout_ms = 1
-      expect(instance.initial_timeout_ms).to eq(1) 
+      expect(instance.initial_timeout_ms).to eq(1)
+    
     end
   end
 
   describe 'test attribute "max_digits"' do
     it 'should work' do
+    
+    
       instance.max_digits = 1
-      expect(instance.max_digits).to eq(1) 
+      expect(instance.max_digits).to eq(1)
+    
     end
   end
 
   describe 'test attribute "min_digits"' do
     it 'should work' do
+    
+    
       instance.min_digits = 1
-      expect(instance.min_digits).to eq(1) 
+      expect(instance.min_digits).to eq(1)
+    
     end
   end
 
   describe 'test attribute "prompts"' do
     it 'should work' do
+        
       instance.prompts = ["ELEMENT_1", "ELEMENT_2"]
       expect(instance.prompts).to eq(["ELEMENT_1", "ELEMENT_2"]) 
     end
@@ -86,6 +102,7 @@ describe Freeclimb::GetDigits do
     it 'should work' do
       instance.privacy_mode = false
       expect(instance.privacy_mode).to eq(false)        
+        
     end
   end
 
@@ -132,7 +149,7 @@ describe Freeclimb::GetDigits do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::GetDigits.new(
@@ -148,16 +165,18 @@ describe Freeclimb::GetDigits do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::GetDigits.new(
-          action_url: nil,
+        
+        action_url: nil,
+        flush_buffer: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::GetDigits.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -171,6 +190,7 @@ describe Freeclimb::GetDigits do
           initial_timeout_ms: 1,
           max_digits: 1,
           min_digits: 1,
+          prompts: Freeclimb::PerclCommand.new(),
           prompts: [],
           privacy_mode: true,
       )
@@ -182,38 +202,42 @@ describe Freeclimb::GetDigits do
           initial_timeout_ms: 1,
           max_digits: 1,
           min_digits: 1,
+          prompts: Freeclimb::PerclCommand.new(),
           prompts: [],
           privacy_mode: true,
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::GetDigits.new(
           action_url: "TS",
-          digit_timeout_ms: 1,
+          digit_timeout_ms: 2,
           finish_on_key: "TS",
           flush_buffer: true,
-          initial_timeout_ms: 1,
-          max_digits: 1,
-          min_digits: 1,
+          initial_timeout_ms: 2,
+          max_digits: 2,
+          min_digits: 2,
+          prompts: Freeclimb::PerclCommand.new(),
           prompts: [],
           privacy_mode: true,
       )
       instance_2 = Freeclimb::GetDigits.new(
           action_url: "ST",
-          digit_timeout_ms: 0,
+          digit_timeout_ms: 1,
           finish_on_key: "ST",
           flush_buffer: false,
-          initial_timeout_ms: 0,
-          max_digits: 0,
-          min_digits: 0,
+          initial_timeout_ms: 1,
+          max_digits: 1,
+          min_digits: 1,
+          prompts: Freeclimb::PerclCommand.new(),
           prompts: nil,
           privacy_mode: false,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::GetDigits.new(

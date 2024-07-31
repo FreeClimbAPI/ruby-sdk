@@ -30,6 +30,7 @@ describe Freeclimb::AddToConference do
     it 'should work' do
       instance.allow_call_control = false
       expect(instance.allow_call_control).to eq(false)        
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::AddToConference do
     it 'should work' do
       instance.call_control_sequence = "TEST_STRING"
       expect(instance.call_control_sequence).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::AddToConference do
     it 'should work' do
       instance.call_control_url = "TEST_STRING"
       expect(instance.call_control_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -51,6 +54,7 @@ describe Freeclimb::AddToConference do
     it 'should work' do
       instance.conference_id = "TEST_STRING"
       expect(instance.conference_id).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -58,6 +62,7 @@ describe Freeclimb::AddToConference do
     it 'should work' do
       instance.leave_conference_url = "TEST_STRING"
       expect(instance.leave_conference_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -65,6 +70,7 @@ describe Freeclimb::AddToConference do
     it 'should work' do
       instance.listen = false
       expect(instance.listen).to eq(false)        
+        
     end
   end
 
@@ -72,6 +78,7 @@ describe Freeclimb::AddToConference do
     it 'should work' do
       instance.notification_url = "TEST_STRING"
       expect(instance.notification_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -79,6 +86,7 @@ describe Freeclimb::AddToConference do
     it 'should work' do
       instance.start_conf_on_enter = false
       expect(instance.start_conf_on_enter).to eq(false)        
+        
     end
   end
 
@@ -86,6 +94,7 @@ describe Freeclimb::AddToConference do
     it 'should work' do
       instance.talk = false
       expect(instance.talk).to eq(false)        
+        
     end
   end
 
@@ -132,7 +141,7 @@ describe Freeclimb::AddToConference do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::AddToConference.new(
@@ -148,16 +157,20 @@ describe Freeclimb::AddToConference do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::AddToConference.new(
-          conference_id: nil,
+        allow_call_control: nil,
+        
+        conference_id: nil,
+        listen: nil,
+        start_conf_on_enter: nil,
+        talk: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::AddToConference.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -187,6 +200,7 @@ describe Freeclimb::AddToConference do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::AddToConference.new(
           allow_call_control: true,
@@ -213,7 +227,7 @@ describe Freeclimb::AddToConference do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::AddToConference.new(

@@ -30,13 +30,17 @@ describe Freeclimb::QueueRequest do
     it 'should work' do
       instance._alias = "TEST_STRING"
       expect(instance._alias).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "max_size"' do
     it 'should work' do
+    
+    
       instance.max_size = 1
-      expect(instance.max_size).to eq(1) 
+      expect(instance.max_size).to eq(1)
+    
     end
   end
 
@@ -62,7 +66,7 @@ describe Freeclimb::QueueRequest do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::QueueRequest.new(
@@ -71,15 +75,14 @@ describe Freeclimb::QueueRequest do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::QueueRequest.new(
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::QueueRequest.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -95,19 +98,20 @@ describe Freeclimb::QueueRequest do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::QueueRequest.new(
           _alias: "TS",
-          max_size: 1,
+          max_size: 2,
       )
       instance_2 = Freeclimb::QueueRequest.new(
           _alias: "ST",
-          max_size: 0,
+          max_size: 1,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::QueueRequest.new(

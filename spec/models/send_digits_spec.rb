@@ -30,13 +30,17 @@ describe Freeclimb::SendDigits do
     it 'should work' do
       instance.digits = "TEST_STRING"
       expect(instance.digits).to eq("TEST_STRING")  
+        
     end
   end
 
   describe 'test attribute "pause_ms"' do
     it 'should work' do
+    
+    
       instance.pause_ms = 1
-      expect(instance.pause_ms).to eq(1) 
+      expect(instance.pause_ms).to eq(1)
+    
     end
   end
 
@@ -44,6 +48,7 @@ describe Freeclimb::SendDigits do
     it 'should work' do
       instance.privacy_mode = false
       expect(instance.privacy_mode).to eq(false)        
+        
     end
   end
 
@@ -72,7 +77,7 @@ describe Freeclimb::SendDigits do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::SendDigits.new(
@@ -82,16 +87,17 @@ describe Freeclimb::SendDigits do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::SendDigits.new(
-          digits: nil,
+        
+        digits: nil,
+        privacy_mode: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::SendDigits.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -109,21 +115,22 @@ describe Freeclimb::SendDigits do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::SendDigits.new(
           digits: "TS",
-          pause_ms: 1,
+          pause_ms: 2,
           privacy_mode: true,
       )
       instance_2 = Freeclimb::SendDigits.new(
           digits: "ST",
-          pause_ms: 0,
+          pause_ms: 1,
           privacy_mode: false,
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::SendDigits.new(

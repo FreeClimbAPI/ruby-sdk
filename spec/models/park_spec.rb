@@ -30,6 +30,7 @@ describe Freeclimb::Park do
     it 'should work' do
       instance.wait_url = "TEST_STRING"
       expect(instance.wait_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -37,6 +38,7 @@ describe Freeclimb::Park do
     it 'should work' do
       instance.action_url = "TEST_STRING"
       expect(instance.action_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -44,6 +46,7 @@ describe Freeclimb::Park do
     it 'should work' do
       instance.notification_url = "TEST_STRING"
       expect(instance.notification_url).to eq("TEST_STRING")  
+        
     end
   end
 
@@ -72,7 +75,7 @@ describe Freeclimb::Park do
         )}.to raise_error(ArgumentError)
     end
   end
-
+  
   describe 'test method "valid"' do
     it 'checks if properties are valid' do
       instance = Freeclimb::Park.new(
@@ -82,17 +85,18 @@ describe Freeclimb::Park do
       )
       expect(instance.valid?).to eq(true)
     end
+
     it 'checks if properties are invalid' do
       instance = Freeclimb::Park.new(
-          wait_url: nil,
-          action_url: nil,
+        
+        wait_url: nil,
+        
+        action_url: nil,
+        
       )
       expect(instance.valid?).to eq(false)
     end
-    it 'checks if model is empty' do
-      instance = Freeclimb::Park.new()
-      expect(instance.valid?).to eq(false)
-    end
+    
   end
 
   describe 'test method "eql?"' do
@@ -110,6 +114,7 @@ describe Freeclimb::Park do
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
+    
     it 'checks if objects are not equal' do
       instance_1 = Freeclimb::Park.new(
           wait_url: "TS",
@@ -124,7 +129,7 @@ describe Freeclimb::Park do
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
   end
-
+  
   describe 'test method "hash"' do
     it 'calculates hash code' do
       instance = Freeclimb::Park.new(
