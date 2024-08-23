@@ -2920,7 +2920,6 @@ module Freeclimb
     end
 
     # Make a JWT for WebRTC calling
-    # Make a JWT for WebRTC calling
     # @param create_web_rtc_token [CreateWebRTCToken] Information needed to craft a JWT compatible with the platforms WebRTC APIs
     # @param [Hash] opts the optional parameters
     # @return [String]
@@ -2929,7 +2928,6 @@ module Freeclimb
       data
     end
 
-    # Make a JWT for WebRTC calling
     # Make a JWT for WebRTC calling
     # @param create_web_rtc_token [CreateWebRTCToken] Information needed to craft a JWT compatible with the platforms WebRTC APIs
     # @param [Hash] opts the optional parameters

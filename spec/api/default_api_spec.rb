@@ -1441,7 +1441,6 @@ describe 'DefaultApi' do
 
   # unit tests for make_a_webrtc_jwt
   # Make a JWT for WebRTC calling
-  # Make a JWT for WebRTC calling
   # @param create_web_rtc_token Information needed to craft a JWT compatible with the platforms WebRTC APIs
   # @param [Hash] opts the optional parameters
   # @return [String]
