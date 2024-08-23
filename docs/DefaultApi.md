@@ -3418,8 +3418,6 @@ end
 
 Make a JWT for WebRTC calling
 
-Make a JWT for WebRTC calling
-
 ### Examples
 
 ```ruby
