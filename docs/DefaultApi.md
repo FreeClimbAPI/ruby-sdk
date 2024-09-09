@@ -5,61 +5,117 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**buy_a_phone_number**](DefaultApi.md#buy_a_phone_number) | **POST** /Accounts/{accountId}/IncomingPhoneNumbers | Buy a Phone Number |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**create_a_conference**](DefaultApi.md#create_a_conference) | **POST** /Accounts/{accountId}/Conferences | Create a Conference |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**create_a_queue**](DefaultApi.md#create_a_queue) | **POST** /Accounts/{accountId}/Queues | Create a Queue |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**create_an_application**](DefaultApi.md#create_an_application) | **POST** /Accounts/{accountId}/Applications | Create an application |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**delete_a_recording**](DefaultApi.md#delete_a_recording) | **DELETE** /Accounts/{accountId}/Recordings/{recordingId} | Delete a Recording |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**delete_an_application**](DefaultApi.md#delete_an_application) | **DELETE** /Accounts/{accountId}/Applications/{applicationId} | Delete an application |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**delete_an_incoming_number**](DefaultApi.md#delete_an_incoming_number) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**dequeue_a_member**](DefaultApi.md#dequeue_a_member) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/{callId} | Dequeue a Member |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**dequeue_head_member**](DefaultApi.md#dequeue_head_member) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Dequeue Head Member |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**download_a_recording_file**](DefaultApi.md#download_a_recording_file) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Download | Download a Recording File |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**filter_logs**](DefaultApi.md#filter_logs) | **POST** /Accounts/{accountId}/Logs | Filter Logs |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_a_call**](DefaultApi.md#get_a_call) | **GET** /Accounts/{accountId}/Calls/{callId} | Get a Call |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_a_conference**](DefaultApi.md#get_a_conference) | **GET** /Accounts/{accountId}/Conferences/{conferenceId} | Get a Conference |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_a_member**](DefaultApi.md#get_a_member) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/{callId} | Get a Member |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_a_participant**](DefaultApi.md#get_a_participant) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Get a Participant |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_a_queue**](DefaultApi.md#get_a_queue) | **GET** /Accounts/{accountId}/Queues/{queueId} | Get a Queue |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_a_recording**](DefaultApi.md#get_a_recording) | **GET** /Accounts/{accountId}/Recordings/{recordingId} | Get a Recording |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_an_account**](DefaultApi.md#get_an_account) | **GET** /Accounts/{accountId} | Get an Account |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_an_application**](DefaultApi.md#get_an_application) | **GET** /Accounts/{accountId}/Applications/{applicationId} | Get an Application |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_an_incoming_number**](DefaultApi.md#get_an_incoming_number) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_an_sms_message**](DefaultApi.md#get_an_sms_message) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_head_member**](DefaultApi.md#get_head_member) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_ten_dlc_sms_brand**](DefaultApi.md#get_ten_dlc_sms_brand) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands/{brandId} | Get a 10DLC SMS Brand |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_ten_dlc_sms_brands**](DefaultApi.md#get_ten_dlc_sms_brands) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands | Get list of SMS 10DLC Brands |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_ten_dlc_sms_campaign**](DefaultApi.md#get_ten_dlc_sms_campaign) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns/{campaignId} | Get a 10DLC SMS Campaign |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_ten_dlc_sms_campaigns**](DefaultApi.md#get_ten_dlc_sms_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/Campaigns | Get list of SMS 10DLC Campaigns |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_ten_dlc_sms_partner_campaign**](DefaultApi.md#get_ten_dlc_sms_partner_campaign) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns/{campaignId} | Get a 10DLC SMS Partner Campaign |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_ten_dlc_sms_partner_campaigns**](DefaultApi.md#get_ten_dlc_sms_partner_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_toll_free_sms_campaign**](DefaultApi.md#get_toll_free_sms_campaign) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId} | Get a TollFree SMS Campaign |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_toll_free_sms_campaigns**](DefaultApi.md#get_toll_free_sms_campaigns) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns | Get list of TollFree Campaigns |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_active_queues**](DefaultApi.md#list_active_queues) | **GET** /Accounts/{accountId}/Queues | List Active Queues |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_all_account_logs**](DefaultApi.md#list_all_account_logs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_applications**](DefaultApi.md#list_applications) | **GET** /Accounts/{accountId}/Applications | List applications |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_available_numbers**](DefaultApi.md#list_available_numbers) | **GET** /AvailablePhoneNumbers | List available numbers |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_call_logs**](DefaultApi.md#list_call_logs) | **GET** /Accounts/{accountId}/Calls/{callId}/Logs | List Call Logs |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_call_recordings**](DefaultApi.md#list_call_recordings) | **GET** /Accounts/{accountId}/Calls/{callId}/Recordings | List Call Recordings |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_calls**](DefaultApi.md#list_calls) | **GET** /Accounts/{accountId}/Calls | List Calls |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_conference_recordings**](DefaultApi.md#list_conference_recordings) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Recordings | List Conference Recordings |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_conferences**](DefaultApi.md#list_conferences) | **GET** /Accounts/{accountId}/Conferences | List Conferences |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_incoming_numbers**](DefaultApi.md#list_incoming_numbers) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers | List Incoming Numbers |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_members**](DefaultApi.md#list_members) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members | List Members |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_participants**](DefaultApi.md#list_participants) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Participants | List Participants |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_recordings**](DefaultApi.md#list_recordings) | **GET** /Accounts/{accountId}/Recordings | List Recordings |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_sms_messages**](DefaultApi.md#list_sms_messages) | **GET** /Accounts/{accountId}/Messages | List SMS Messages |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**make_a_call**](DefaultApi.md#make_a_call) | **POST** /Accounts/{accountId}/Calls | Make a Call |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**make_a_webrtc_jwt**](DefaultApi.md#make_a_webrtc_jwt) | **POST** /Accounts/{accountId}/Calls/WebRTC/Token | Make a JWT for WebRTC calling |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**remove_a_participant**](DefaultApi.md#remove_a_participant) | **DELETE** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Remove a Participant |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**send_an_sms_message**](DefaultApi.md#send_an_sms_message) | **POST** /Accounts/{accountId}/Messages | Send an SMS Message |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**stream_a_recording_file**](DefaultApi.md#stream_a_recording_file) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Stream | Stream a Recording File |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**update_a_conference**](DefaultApi.md#update_a_conference) | **POST** /Accounts/{accountId}/Conferences/{conferenceId} | Update a Conference |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**update_a_live_call**](DefaultApi.md#update_a_live_call) | **POST** /Accounts/{accountId}/Calls/{callId} | Update a Live Call |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**update_a_participant**](DefaultApi.md#update_a_participant) | **POST** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Update a Participant |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**update_a_queue**](DefaultApi.md#update_a_queue) | **POST** /Accounts/{accountId}/Queues/{queueId} | Update a Queue |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**update_an_account**](DefaultApi.md#update_an_account) | **POST** /Accounts/{accountId} | Manage an account |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**update_an_application**](DefaultApi.md#update_an_application) | **POST** /Accounts/{accountId}/Applications/{applicationId} | Update an application |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**update_an_incoming_number**](DefaultApi.md#update_an_incoming_number) | **POST** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Update an Incoming Number |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 
 
 ## buy_a_phone_number
@@ -115,7 +171,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **buy_incoming_number_request** | [**BuyIncomingNumberRequest**](BuyIncomingNumberRequest.md) | Incoming Number transaction details |  |
 
 
@@ -187,7 +242,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **create_conference_request** | [**CreateConferenceRequest**](CreateConferenceRequest.md) | Conference to create | [optional] |
 
 
@@ -259,7 +313,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **queue_request** | [**QueueRequest**](QueueRequest.md) | Queue details used to create a queue | [optional] |
 
 
@@ -331,7 +384,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **application_request** | [**ApplicationRequest**](ApplicationRequest.md) | Application Details | [optional] |
 
 
@@ -401,7 +453,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **recording_id** | **String** | String that uniquely identifies this recording resource. |  |
 
 
@@ -471,7 +522,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **application_id** | **String** | String that uniquely identifies this application resource. |  |
 
 
@@ -541,7 +591,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **phone_number_id** | **String** | String that uniquely identifies this phone number resource. |  |
 
 
@@ -614,9 +663,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **queue_id** | **String** | String that uniquely identifies the Queue that the Member belongs to. |  |
-
 | **call_id** | **String** | ID if the Call that the Member belongs to |  |
 
 
@@ -687,7 +734,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **queue_id** | **String** | String that uniquely identifies this queue resource. |  |
 
 
@@ -758,7 +804,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **recording_id** | **String** | String that uniquely identifies this recording resource. |  |
 
 
@@ -829,7 +874,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **filter_logs_request** | [**FilterLogsRequest**](FilterLogsRequest.md) | Filter logs request paramters |  |
 
 
@@ -900,7 +944,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **call_id** | **String** | String that uniquely identifies this call resource. |  |
 
 
@@ -971,7 +1014,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **conference_id** | **String** | A string that uniquely identifies this conference resource. |  |
 
 
@@ -1044,9 +1086,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **queue_id** | **String** | String that uniquely identifies the Queue that the Member belongs to. |  |
-
 | **call_id** | **String** | ID of the Call that the Member belongs to |  |
 
 
@@ -1119,9 +1159,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **conference_id** | **String** | ID of the conference this participant is in. |  |
-
 | **call_id** | **String** | ID of the Call associated with this participant. |  |
 
 
@@ -1192,7 +1230,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **queue_id** | **String** | A string that uniquely identifies this queue resource. |  |
 
 
@@ -1263,7 +1300,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **recording_id** | **String** | String that uniquely identifies this recording resource. |  |
 
 
@@ -1401,7 +1437,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **application_id** | **String** | A string that uniquely identifies this application resource. |  |
 
 
@@ -1472,7 +1507,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **phone_number_id** | **String** | String that uniquely identifies this phone number resource. |  |
 
 
@@ -1543,7 +1577,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **message_id** | **String** | String that uniquely identifies this Message resource. |  |
 
 
@@ -1614,7 +1647,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **queue_id** | **String** | String that uniquely identifies the Queue that the Member belongs to. |  |
 
 
@@ -1685,7 +1717,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **brand_id** | **String** | String that uniquely identifies this brand resource. |  |
 
 
@@ -1823,7 +1854,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **campaign_id** | **String** | String that uniquely identifies this campaign resource. |  |
 
 
@@ -1895,7 +1925,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **brand_id** | **String** | The unique identifier for a brand | [optional] |
 
 
@@ -1966,7 +1995,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **campaign_id** | **String** | String that uniquely identifies this campaign resource. |  |
 
 
@@ -2038,7 +2066,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **brand_id** | **String** | The unique identifier for a brand | [optional] |
 
 
@@ -2109,7 +2136,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **campaign_id** | **String** | String that uniquely identifies this TollFree Campaign resource. |  |
 
 
@@ -2248,7 +2274,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **_alias** | **String** | Return only the Queue resources with aliases that exactly match this name. | [optional] |
 
 
@@ -2387,7 +2412,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **_alias** | **String** | Return only applications with aliases that exactly match this value. | [optional] |
 
 
@@ -2468,25 +2492,15 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **phone_number** | **String** | PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format. | [optional] |
-
 | **region** | **String** | State or province of this phone number. | [optional] |
-
 | **country** | **String** | Country of this phone number. | [optional] |
-
 | **voice_enabled** | **Boolean** | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional][default to true] |
-
 | **sms_enabled** | **Boolean** | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional][default to true] |
-
 | **capabilities_voice** | **Boolean** |  | [optional] |
-
 | **capabilities_sms** | **Boolean** |  | [optional] |
-
 | **capabilities_toll_free** | **Boolean** |  | [optional] |
-
 | **capabilities_ten_dlc** | **Boolean** |  | [optional] |
-
 | **capabilities_short_code** | **Boolean** |  | [optional] |
 
 
@@ -2557,7 +2571,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **call_id** | **String** | String that uniquely identifies this call resource. |  |
 
 
@@ -2631,9 +2644,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **call_id** | **String** | String that uniquely identifies this call resource. |  |
-
 | **date_created** | **String** | Only show recordings created on the specified date, in the form *YYYY-MM-DD*. | [optional] |
 
 
@@ -2712,21 +2723,13 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **active** | **Boolean** | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. | [optional][default to false] |
-
 | **to** | **String** | Only show Calls to this phone number. | [optional] |
-
 | **from** | **String** | Only show Calls from this phone number. | [optional] |
-
 | **status** | [**CallStatus**](.md) | Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;. | [optional] |
-
 | **start_time** | **String** | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
-
 | **end_time** | **String** | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. | [optional] |
-
 | **parent_call_id** | **String** | Only show Calls spawned by the call with this ID. | [optional] |
-
 | **application_id** | [**Array&lt;String&gt;**](String.md) | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. | [optional] |
 
 
@@ -2801,11 +2804,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **conference_id** | **String** | Show only Recordings made during the conference with this ID. |  |
-
 | **call_id** | **String** | Show only Recordings made during the Call with this ID. | [optional] |
-
 | **date_created** | **String** | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] |
 
 
@@ -2880,13 +2880,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **status** | **String** | Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;. | [optional] |
-
 | **_alias** | **String** | List Conferences whose alias exactly matches this string. | [optional] |
-
 | **date_created** | **String** | Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*. | [optional] |
-
 | **date_updated** | **String** | Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*. | [optional] |
 
 
@@ -2973,37 +2969,21 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **phone_number** | **String** | Only show incoming phone number resources that match this PCRE-compatible regular expression. | [optional] |
-
 | **_alias** | **String** | Only show incoming phone numbers with aliases that exactly match this value. | [optional] |
-
 | **region** | **String** | State or province of this phone number. | [optional] |
-
 | **country** | **String** | Country of this phone number. | [optional] |
-
 | **application_id** | **String** | ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. | [optional] |
-
 | **has_application** | **Boolean** | Indication of whether the phone number has an application linked to it. | [optional][default to false] |
-
 | **voice_enabled** | **Boolean** | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional][default to true] |
-
 | **sms_enabled** | **Boolean** | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional][default to true] |
-
 | **has_campaign** | **Boolean** | Indication of whether the phone number has a campaign associated with it | [optional] |
-
 | **capabilities_voice** | **Boolean** |  | [optional] |
-
 | **capabilities_sms** | **Boolean** |  | [optional] |
-
 | **capabilities_toll_free** | **Boolean** |  | [optional] |
-
 | **capabilities_ten_dlc** | **Boolean** |  | [optional] |
-
 | **capabilities_short_code** | **Boolean** |  | [optional] |
-
 | **tfn_campaign_id** | **String** | Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID. | [optional] |
-
 | **offnet** | **Boolean** | Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource. | [optional] |
 
 
@@ -3074,7 +3054,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **queue_id** | **String** | String that uniquely identifies the Queue that the Member belongs to. |  |
 
 
@@ -3149,11 +3128,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **conference_id** | **String** | ID of the conference this participant is in. |  |
-
 | **talk** | **Boolean** | Only show Participants with the talk privilege. | [optional] |
-
 | **listen** | **Boolean** | Only show Participants with the listen privilege. | [optional] |
 
 
@@ -3227,11 +3203,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **call_id** | **String** | Show only Recordings made during the Call with this ID. | [optional] |
-
 | **conference_id** | **String** | Show only Recordings made during the conference with this ID. | [optional] |
-
 | **date_created** | **String** | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] |
 
 
@@ -3310,21 +3283,13 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **to** | **String** | Only show Messages to this phone number. | [optional] |
-
 | **from** | **String** | Only show Messages from this phone number. | [optional] |
-
 | **begin_time** | **String** | Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*. | [optional] |
-
 | **end_time** | **String** | Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*.. | [optional] |
-
 | **direction** | [**MessageDirection**](.md) | Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb. | [optional] |
-
 | **campaign_id** | **String** | Only show messages associated with this campaign ID. | [optional] |
-
 | **brand_id** | **String** | Only show messages associated with this brand ID | [optional] |
-
 | **is10_dlc** | **Boolean** | Only show messages that were sent as part of a 10DLC campaign. | [optional] |
 
 
@@ -3396,7 +3361,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **make_call_request** | [**MakeCallRequest**](MakeCallRequest.md) | Call details for making a call | [optional] |
 
 
@@ -3467,7 +3431,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **create_web_rtc_token** | [**CreateWebRTCToken**](CreateWebRTCToken.md) | Information needed to craft a JWT compatible with the platforms WebRTC APIs |  |
 
 
@@ -3539,9 +3502,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **conference_id** | **String** | ID of the conference this participant is in. |  |
-
 | **call_id** | **String** | ID of the Call associated with this participant. |  |
 
 
@@ -3612,7 +3573,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **message_request** | [**MessageRequest**](MessageRequest.md) | Details to create a message |  |
 
 
@@ -3683,7 +3643,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **recording_id** | **String** | String that uniquely identifies this recording resource. |  |
 
 
@@ -3756,9 +3715,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **conference_id** | **String** | String that uniquely identifies this conference resource. |  |
-
 | **update_conference_request** | [**UpdateConferenceRequest**](UpdateConferenceRequest.md) | Conference Details to update | [optional] |
 
 
@@ -3830,9 +3787,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **call_id** | **String** | String that uniquely identifies this call resource. |  |
-
 | **update_call_request** | [**UpdateCallRequest**](UpdateCallRequest.md) | Call details to update |  |
 
 
@@ -3908,11 +3863,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **conference_id** | **String** | ID of the conference this participant is in. |  |
-
 | **call_id** | **String** | ID of the Call associated with this participant. |  |
-
 | **update_conference_participant_request** | [**UpdateConferenceParticipantRequest**](UpdateConferenceParticipantRequest.md) | Conference participant details to update | [optional] |
 
 
@@ -3986,9 +3938,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **queue_id** | **String** | A string that uniquely identifies this Queue resource. |  |
-
 | **queue_request** | [**QueueRequest**](QueueRequest.md) | Queue Details to update | [optional] |
 
 
@@ -4059,7 +4009,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **account_request** | [**AccountRequest**](AccountRequest.md) | Account details to update | [optional] |
 
 
@@ -4133,9 +4082,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **application_id** | **String** | A string that uniquely identifies this application resource. |  |
-
 | **application_request** | [**ApplicationRequest**](ApplicationRequest.md) | Application details to update. | [optional] |
 
 
@@ -4209,9 +4156,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-
 | **phone_number_id** | **String** | String that uniquely identifies this phone number resource. |  |
-
 | **incoming_number_request** | [**IncomingNumberRequest**](IncomingNumberRequest.md) | Incoming Number details to update | [optional] |
 
 
@@ -4226,5 +4171,83 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+## get_next_page
+
+Get next page of a paginated resource
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+opts = {
+  _alias: '_alias_example' # String | Return only applications with aliases that exactly match this value.
+}
+
+begin
+
+  # List applications
+  result = api_instance.list_applications(opts)
+  p result
+  # Get next page of applications
+  next_page_result = api_instance.get_next_page(result)
+  p next_page_result
+rescue Freeclimb::ApiError => e
+  puts "Error: #{e}"
+end
+```
+
+#### Using the get_next_page_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(, Integer, Hash)> get_next_page_with_http_info(response, opts)
+
+```ruby
+begin
+  # List applications
+  data, status_code, headers = api_instance.list_applications_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ApplicationList>
+  # Get next page of applications
+  next_page_data, next_page_status_code, next_page_headers = api_instance.get_next_page(data)
+  p next_page_data
+  p next_page_status_code
+  p next_page_headers
+rescue Freeclimb::ApiError => e
+  puts "Error: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| response | Object | Response from request to get a paginated resource | | 
+
+### Return type
+
+Type of response parameter
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
