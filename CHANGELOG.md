@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 None
 
+<a name="4.7.0"></a>
+
+## [4.7.0] - 2024-09-12
+
+### Added
+
+- getNextPage functionality for paginated resources
+
 <a name="4.6.2"></a>
 
 ## [4.6.2] - 2024-07-23

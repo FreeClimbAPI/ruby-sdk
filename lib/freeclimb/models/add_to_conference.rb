@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module Freeclimb
-  # The `AddToConference` command adds a Participant to a Conference. If this Participant currently is in another Conference, the Participant is first removed from that Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via `AddToConference`.
+  # The `AddToConference` command adds a Participant to a Conference. Two Call legs can be bridged together by creating a Conference and adding both Call legs to it via `AddToConference`.
   class AddToConference < PerclCommand
     # If `true`, Call control will be enabled for this Participant's Call leg.
     attr_accessor :allow_call_control

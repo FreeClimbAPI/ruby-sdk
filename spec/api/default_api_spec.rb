@@ -1719,4 +1719,509 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for get_next_page get_ten_dlc_sms_brands
+  # Get list of SMS 10DLC Brands
+  # @param [Hash] opts the optional parameters
+  # @return [SMSTenDLCBrandsListResult]
+  describe 'get_ten_dlc_sms_brands_get_next_page test' do
+    it 'should work' do
+      
+      
+      result = @api_instance.get_ten_dlc_sms_brands(
+        
+        {
+          
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Messages/10DLC/Brands?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::SMSTenDLCBrandsListResult
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page get_ten_dlc_sms_campaigns
+  # Get list of SMS 10DLC Campaigns
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :brand_id The unique identifier for a brand
+  # @return [SMSTenDLCCampaignsListResult]
+  describe 'get_ten_dlc_sms_campaigns_get_next_page test' do
+    it 'should work' do
+      
+      brand_id = @brand_id_get_ten_dlc_sms_campaigns_test_value
+      
+      result = @api_instance.get_ten_dlc_sms_campaigns(
+        
+        {
+          :brand_id => brand_id,
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Messages/10DLC/Campaigns?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::SMSTenDLCCampaignsListResult
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page get_ten_dlc_sms_partner_campaigns
+  # Get list of SMS 10DLC Partner Campaigns
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :brand_id The unique identifier for a brand
+  # @return [SMSTenDLCPartnerCampaignsListResult]
+  describe 'get_ten_dlc_sms_partner_campaigns_get_next_page test' do
+    it 'should work' do
+      
+      brand_id = @brand_id_get_ten_dlc_sms_partner_campaigns_test_value
+      
+      result = @api_instance.get_ten_dlc_sms_partner_campaigns(
+        
+        {
+          :brand_id => brand_id,
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::SMSTenDLCPartnerCampaignsListResult
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page get_toll_free_sms_campaigns
+  # Get list of TollFree Campaigns
+  # @param [Hash] opts the optional parameters
+  # @return [SMSTollFreeCampaignsListResult]
+  describe 'get_toll_free_sms_campaigns_get_next_page test' do
+    it 'should work' do
+      
+      
+      result = @api_instance.get_toll_free_sms_campaigns(
+        
+        {
+          
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Messages/TollFree/Campaigns?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::SMSTollFreeCampaignsListResult
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_active_queues
+  # List Active Queues
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :_alias Return only the Queue resources with aliases that exactly match this name.
+  # @return [QueueList]
+  describe 'list_active_queues_get_next_page test' do
+    it 'should work' do
+      
+      _alias = @_alias_list_active_queues_test_value
+      
+      result = @api_instance.list_active_queues(
+        
+        {
+          :_alias => _alias,
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Queues?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::QueueList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_all_account_logs
+  # List All Account Logs
+  # @param [Hash] opts the optional parameters
+  # @return [LogList]
+  describe 'list_all_account_logs_get_next_page test' do
+    it 'should work' do
+      
+      
+      result = @api_instance.list_all_account_logs(
+        
+        {
+          
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Logs?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::LogList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_applications
+  # List applications
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :_alias Return only applications with aliases that exactly match this value.
+  # @return [ApplicationList]
+  describe 'list_applications_get_next_page test' do
+    it 'should work' do
+      
+      _alias = @_alias_list_applications_test_value
+      
+      result = @api_instance.list_applications(
+        
+        {
+          :_alias => _alias,
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Applications?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::ApplicationList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_available_numbers
+  # List available numbers
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :phone_number PCRE-compatible regular expression to filter against &#x60;phoneNumber&#x60; field, which is in E.164 format.
+  # @option opts [String] :region State or province of this phone number.
+  # @option opts [String] :country Country of this phone number.
+  # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
+  # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
+  # @option opts [Boolean] :capabilities_voice 
+  # @option opts [Boolean] :capabilities_sms 
+  # @option opts [Boolean] :capabilities_toll_free 
+  # @option opts [Boolean] :capabilities_ten_dlc 
+  # @option opts [Boolean] :capabilities_short_code 
+  # @return [AvailableNumberList]
+  describe 'list_available_numbers_get_next_page test' do
+    it 'should work' do
+      
+      phone_number = @phone_number_list_available_numbers_test_value
+      region = @region_list_available_numbers_test_value
+      country = @country_list_available_numbers_test_value
+      voice_enabled = @voice_enabled_list_available_numbers_test_value
+      sms_enabled = @sms_enabled_list_available_numbers_test_value
+      capabilities_voice = @capabilities_voice_list_available_numbers_test_value
+      capabilities_sms = @capabilities_sms_list_available_numbers_test_value
+      capabilities_toll_free = @capabilities_toll_free_list_available_numbers_test_value
+      capabilities_ten_dlc = @capabilities_ten_dlc_list_available_numbers_test_value
+      capabilities_short_code = @capabilities_short_code_list_available_numbers_test_value
+      
+      result = @api_instance.list_available_numbers(
+        
+        {
+          :phone_number => phone_number,:region => region,:country => country,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,
+        }
+      )
+      result.next_page_uri = "/AvailablePhoneNumbers?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::AvailableNumberList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_call_logs
+  # List Call Logs
+  # @param call_id String that uniquely identifies this call resource.
+  # @param [Hash] opts the optional parameters
+  # @return [LogList]
+  describe 'list_call_logs_get_next_page test' do
+    it 'should work' do
+      
+      call_id = @call_id_list_call_logs_test_value
+      
+      result = @api_instance.list_call_logs(
+        call_id,
+        {
+          
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Calls/{callId}/Logs?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::LogList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_call_recordings
+  # List Call Recordings
+  # @param call_id String that uniquely identifies this call resource.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
+  # @return [RecordingList]
+  describe 'list_call_recordings_get_next_page test' do
+    it 'should work' do
+      
+      call_id = @call_id_list_call_recordings_test_value
+      date_created = @date_created_list_call_recordings_test_value
+      
+      result = @api_instance.list_call_recordings(
+        call_id,
+        {
+          :date_created => date_created,
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Calls/{callId}/Recordings?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::RecordingList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_calls
+  # List Calls
+  # @param [Hash] opts the optional parameters
+  # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
+  # @option opts [String] :to Only show Calls to this phone number.
+  # @option opts [String] :from Only show Calls from this phone number.
+  # @option opts [CallStatus] :status Only show Calls currently in this status. May be &#x60;queued&#x60;, &#x60;ringing&#x60;, &#x60;inProgress&#x60;, &#x60;canceled&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;, &#x60;busy&#x60;, or &#x60;noAnswer&#x60;.
+  # @option opts [String] :start_time Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
+  # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
+  # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
+  # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
+  # @return [CallList]
+  describe 'list_calls_get_next_page test' do
+    it 'should work' do
+      
+      active = @active_list_calls_test_value
+      to = @to_list_calls_test_value
+      from = @from_list_calls_test_value
+      status = @status_list_calls_test_value
+      start_time = @start_time_list_calls_test_value
+      end_time = @end_time_list_calls_test_value
+      parent_call_id = @parent_call_id_list_calls_test_value
+      application_id = @application_id_list_calls_test_value
+      
+      result = @api_instance.list_calls(
+        
+        {
+          :active => active,:to => to,:from => from,:status => status,:start_time => start_time,:end_time => end_time,:parent_call_id => parent_call_id,:application_id => application_id,
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Calls?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::CallList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_conference_recordings
+  # List Conference Recordings
+  # @param conference_id Show only Recordings made during the conference with this ID.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
+  # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+  # @return [RecordingList]
+  describe 'list_conference_recordings_get_next_page test' do
+    it 'should work' do
+      
+      conference_id = @conference_id_list_conference_recordings_test_value
+      call_id = @call_id_list_conference_recordings_test_value
+      date_created = @date_created_list_conference_recordings_test_value
+      
+      result = @api_instance.list_conference_recordings(
+        conference_id,
+        {
+          :call_id => call_id,:date_created => date_created,
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Conferences/{conferenceId}/Recordings?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::RecordingList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_conferences
+  # List Conferences
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :status Only show conferences that currently have the specified status. Valid values: &#x60;empty&#x60;, &#x60;populated&#x60;, &#x60;inProgress&#x60;, or &#x60;terminated&#x60;.
+  # @option opts [String] :_alias List Conferences whose alias exactly matches this string.
+  # @option opts [String] :date_created Only show Conferences that were created on the specified date, in the form *YYYY-MM-DD*.
+  # @option opts [String] :date_updated Only show Conferences that were last updated on the specified date, in the form *YYYY-MM-DD*.
+  # @return [ConferenceList]
+  describe 'list_conferences_get_next_page test' do
+    it 'should work' do
+      
+      status = @status_list_conferences_test_value
+      _alias = @_alias_list_conferences_test_value
+      date_created = @date_created_list_conferences_test_value
+      date_updated = @date_updated_list_conferences_test_value
+      
+      result = @api_instance.list_conferences(
+        
+        {
+          :status => status,:_alias => _alias,:date_created => date_created,:date_updated => date_updated,
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Conferences?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::ConferenceList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_incoming_numbers
+  # List Incoming Numbers
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :phone_number Only show incoming phone number resources that match this PCRE-compatible regular expression.
+  # @option opts [String] :_alias Only show incoming phone numbers with aliases that exactly match this value.
+  # @option opts [String] :region State or province of this phone number.
+  # @option opts [String] :country Country of this phone number.
+  # @option opts [String] :application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
+  # @option opts [Boolean] :has_application Indication of whether the phone number has an application linked to it.
+  # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
+  # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
+  # @option opts [Boolean] :has_campaign Indication of whether the phone number has a campaign associated with it
+  # @option opts [Boolean] :capabilities_voice 
+  # @option opts [Boolean] :capabilities_sms 
+  # @option opts [Boolean] :capabilities_toll_free 
+  # @option opts [Boolean] :capabilities_ten_dlc 
+  # @option opts [Boolean] :capabilities_short_code 
+  # @option opts [String] :tfn_campaign_id Only show incoming phone number resources that have been assigned to the provided TFNCampaign ID.
+  # @option opts [Boolean] :offnet Indication of whether the phone number was registered as an offnet number. This field will be rendered only for requests to the IncomingPhone number resource.
+  # @return [IncomingNumberList]
+  describe 'list_incoming_numbers_get_next_page test' do
+    it 'should work' do
+      
+      phone_number = @phone_number_list_incoming_numbers_test_value
+      _alias = @_alias_list_incoming_numbers_test_value
+      region = @region_list_incoming_numbers_test_value
+      country = @country_list_incoming_numbers_test_value
+      application_id = @application_id_list_incoming_numbers_test_value
+      has_application = @has_application_list_incoming_numbers_test_value
+      voice_enabled = @voice_enabled_list_incoming_numbers_test_value
+      sms_enabled = @sms_enabled_list_incoming_numbers_test_value
+      has_campaign = @has_campaign_list_incoming_numbers_test_value
+      capabilities_voice = @capabilities_voice_list_incoming_numbers_test_value
+      capabilities_sms = @capabilities_sms_list_incoming_numbers_test_value
+      capabilities_toll_free = @capabilities_toll_free_list_incoming_numbers_test_value
+      capabilities_ten_dlc = @capabilities_ten_dlc_list_incoming_numbers_test_value
+      capabilities_short_code = @capabilities_short_code_list_incoming_numbers_test_value
+      tfn_campaign_id = @tfn_campaign_id_list_incoming_numbers_test_value
+      offnet = @offnet_list_incoming_numbers_test_value
+      
+      result = @api_instance.list_incoming_numbers(
+        
+        {
+          :phone_number => phone_number,:_alias => _alias,:region => region,:country => country,:application_id => application_id,:has_application => has_application,:voice_enabled => voice_enabled,:sms_enabled => sms_enabled,:has_campaign => has_campaign,:capabilities_voice => capabilities_voice,:capabilities_sms => capabilities_sms,:capabilities_toll_free => capabilities_toll_free,:capabilities_ten_dlc => capabilities_ten_dlc,:capabilities_short_code => capabilities_short_code,:tfn_campaign_id => tfn_campaign_id,:offnet => offnet,
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/IncomingPhoneNumbers?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::IncomingNumberList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_members
+  # List Members
+  # @param queue_id String that uniquely identifies the Queue that the Member belongs to.
+  # @param [Hash] opts the optional parameters
+  # @return [QueueMemberList]
+  describe 'list_members_get_next_page test' do
+    it 'should work' do
+      
+      queue_id = @queue_id_list_members_test_value
+      
+      result = @api_instance.list_members(
+        queue_id,
+        {
+          
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Queues/{queueId}/Members?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::QueueMemberList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_participants
+  # List Participants
+  # @param conference_id ID of the conference this participant is in.
+  # @param [Hash] opts the optional parameters
+  # @option opts [Boolean] :talk Only show Participants with the talk privilege.
+  # @option opts [Boolean] :listen Only show Participants with the listen privilege.
+  # @return [ConferenceParticipantList]
+  describe 'list_participants_get_next_page test' do
+    it 'should work' do
+      
+      conference_id = @conference_id_list_participants_test_value
+      talk = @talk_list_participants_test_value
+      listen = @listen_list_participants_test_value
+      
+      result = @api_instance.list_participants(
+        conference_id,
+        {
+          :talk => talk,:listen => listen,
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Conferences/{conferenceId}/Participants?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::ConferenceParticipantList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_recordings
+  # List Recordings
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
+  # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
+  # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+  # @return [RecordingList]
+  describe 'list_recordings_get_next_page test' do
+    it 'should work' do
+      
+      call_id = @call_id_list_recordings_test_value
+      conference_id = @conference_id_list_recordings_test_value
+      date_created = @date_created_list_recordings_test_value
+      
+      result = @api_instance.list_recordings(
+        
+        {
+          :call_id => call_id,:conference_id => conference_id,:date_created => date_created,
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Recordings?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::RecordingList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_sms_messages
+  # List SMS Messages
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :to Only show Messages to this phone number.
+  # @option opts [String] :from Only show Messages from this phone number.
+  # @option opts [String] :begin_time Only show Messages sent at or after this time (GMT), given as *YYYY-MM-DD hh:mm:ss*.
+  # @option opts [String] :end_time Only show messages sent at or before this time (GMT), given as *YYYY-MM-DD hh:mm*..
+  # @option opts [MessageDirection] :direction Either &#x60;inbound&#x60; or &#x60;outbound&#x60;. Only show Messages that were either *sent from* or *received by* FreeClimb.
+  # @option opts [String] :campaign_id Only show messages associated with this campaign ID.
+  # @option opts [String] :brand_id Only show messages associated with this brand ID
+  # @option opts [Boolean] :is10_dlc Only show messages that were sent as part of a 10DLC campaign.
+  # @return [MessagesList]
+  describe 'list_sms_messages_get_next_page test' do
+    it 'should work' do
+      
+      to = @to_list_sms_messages_test_value
+      from = @from_list_sms_messages_test_value
+      begin_time = @begin_time_list_sms_messages_test_value
+      end_time = @end_time_list_sms_messages_test_value
+      direction = @direction_list_sms_messages_test_value
+      campaign_id = @campaign_id_list_sms_messages_test_value
+      brand_id = @brand_id_list_sms_messages_test_value
+      is10_dlc = @is10_dlc_list_sms_messages_test_value
+      
+      result = @api_instance.list_sms_messages(
+        
+        {
+          :to => to,:from => from,:begin_time => begin_time,:end_time => end_time,:direction => direction,:campaign_id => campaign_id,:brand_id => brand_id,:is10_dlc => is10_dlc,
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Messages?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::MessagesList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end
+
