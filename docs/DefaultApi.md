@@ -64,6 +64,8 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_toll_free_sms_campaigns**](DefaultApi.md#get_toll_free_sms_campaigns) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns | Get list of TollFree Campaigns |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
+| [**knowledgebase_completion**](DefaultApi.md#knowledgebase_completion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_active_queues**](DefaultApi.md#list_active_queues) | **GET** /Accounts/{accountId}/Queues | List Active Queues |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_all_account_logs**](DefaultApi.md#list_all_account_logs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs |
@@ -2217,6 +2219,80 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## knowledgebase_completion
+
+Query the knowledge base
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+knowledge_base_id = 'knowledge_base_id_example' # String | A string that uniquely identifies the KnowledgeBase resource.
+
+opts = {
+  completion_request: Freeclimb::CompletionRequest.new({query: 'query_example'}) # CompletionRequest | Completion request details
+}
+
+begin
+
+  # Query the knowledge base
+  result = api_instance.knowledgebase_completion(knowledge_base_id, opts)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->knowledgebase_completion: #{e}"
+end
+```
+
+#### Using the knowledgebase_completion_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CompletionResult>, Integer, Hash)> knowledgebase_completion_with_http_info(account_id, knowledge_base_id, opts)
+
+```ruby
+begin
+  # Query the knowledge base
+  data, status_code, headers = api_instance.knowledgebase_completion_with_http_info(knowledge_base_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CompletionResult>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->knowledgebase_completion_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **knowledge_base_id** | **String** | A string that uniquely identifies the KnowledgeBase resource. |  |
+| **completion_request** | [**CompletionRequest**](CompletionRequest.md) | Completion request details | [optional] |
+
+
+### Return type
+
+[**CompletionResult**](CompletionResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

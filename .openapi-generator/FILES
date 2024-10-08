@@ -27,6 +27,8 @@ docs/CallResult.md
 docs/CallResultAllOf.md
 docs/CallStatus.md
 docs/Capabilities.md
+docs/CompletionRequest.md
+docs/CompletionResult.md
 docs/ConferenceList.md
 docs/ConferenceListAllOf.md
 docs/ConferenceParticipantList.md
@@ -177,6 +179,8 @@ lib/freeclimb/models/call_result.rb
 lib/freeclimb/models/call_result_all_of.rb
 lib/freeclimb/models/call_status.rb
 lib/freeclimb/models/capabilities.rb
+lib/freeclimb/models/completion_request.rb
+lib/freeclimb/models/completion_result.rb
 lib/freeclimb/models/conference_list.rb
 lib/freeclimb/models/conference_list_all_of.rb
 lib/freeclimb/models/conference_participant_list.rb
@@ -299,4 +303,5 @@ lib/freeclimb/models/update_conference_request_status.rb
 lib/freeclimb/version.rb
 spec/api_client_spec.rb
 spec/configuration_spec.rb
+spec/models/completion_request_spec.rb
 spec/spec_helper.rb

@@ -44,14 +44,17 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
 
 
   describe 'test attribute "status"' do
+  
     it 'assigns value ACTIVE' do
       instance.status = "ACTIVE"
       expect(instance.status).to eq("ACTIVE")  
     end
+  
     it 'assigns value EXPIRED' do
       instance.status = "EXPIRED"
       expect(instance.status).to eq("EXPIRED")  
     end
+  
     it 'throws error on invalid enum' do
       instance = Freeclimb::SMSTenDLCPartnerCampaign.new
       expect{instance.status = "INVALID_ENUM"}.to raise_error(ArgumentError)
@@ -301,7 +304,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
         expect{instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
           account_id: "TS",
           campaign_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           create_date: "2022-07-05T15:17:05Z",
           brand_id: "TS",
           usecase: "TS",
@@ -334,7 +337,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
         expect{instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
           account_id: "TS",
           campaign_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           create_date: "2022-07-05T15:17:05Z",
           brand_id: "TS",
           usecase: "TS",
@@ -368,7 +371,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
         expect{instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
           account_id: "TS",
           campaign_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           create_date: "2022-07-05T15:17:05Z",
           brand_id: "TS",
           usecase: "TS",
@@ -405,7 +408,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
           account_id: "TS",
           campaign_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           create_date: "2022-07-05T15:17:05Z",
           brand_id: "TS",
           usecase: "TS",
@@ -477,7 +480,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       instance_1 = Freeclimb::SMSTenDLCPartnerCampaign.new(
           account_id: "TS",
           campaign_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           brand_id: "TS",
           usecase: "TS",
           description: "TS",
@@ -507,7 +510,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaign.new(
           account_id: "TS",
           campaign_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           brand_id: "TS",
           usecase: "TS",
           description: "TS",
@@ -541,7 +544,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       instance_1 = Freeclimb::SMSTenDLCPartnerCampaign.new(
           account_id: "TS",
           campaign_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           brand_id: "TS",
           usecase: "TS",
           description: "TS",
@@ -571,7 +574,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaign.new(
           account_id: "ST",
           campaign_id: "ST",
-          status: "EXPIRED",
+          status:"ACTIVE",
           brand_id: "ST",
           usecase: "ST",
           description: "ST",
@@ -607,7 +610,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
       account_id: "TS",
       campaign_id: "TS",
-      status: "ACTIVE",
+      status:"ACTIVE",
       create_date: "2022-07-05T15:17:05Z",
       brand_id: "TS",
       usecase: "TS",
@@ -644,7 +647,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       instance_1 = Freeclimb::SMSTenDLCPartnerCampaign.new(
         account_id: "TS",
         campaign_id: "TS",
-        status: "ACTIVE",
+        status:"ACTIVE",
         create_date: "2022-07-05T15:17:05Z",
         brand_id: "TS",
         usecase: "TS",
@@ -681,7 +684,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
     instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
         account_id: "TS",
         campaign_id: "TS",
-        status: "ACTIVE",
+        status:"ACTIVE",
         create_date: "2022-07-05T15:17:05Z",
         brand_id: "TS",
         usecase: "TS",
@@ -803,7 +806,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
         account_id: "TS",
         campaign_id: "TS",
-        status: "ACTIVE",
+        status:"ACTIVE",
         create_date: "2022-07-05T15:17:05Z",
         brand_id: "TS",
         usecase: "TS",
@@ -840,7 +843,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
         account_id: "TS",
         campaign_id: "TS",
-        status: "ACTIVE",
+        status:"ACTIVE",
         create_date: "2022-07-05T15:17:05Z",
         brand_id: "TS",
         usecase: "TS",
@@ -875,7 +878,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       instance_1 = Freeclimb::SMSTenDLCPartnerCampaign.new(
         account_id: "TS",
         campaign_id: "TS",
-        status: "ACTIVE",
+        status:"ACTIVE",
         create_date: "2022-07-05T15:17:05Z",
         brand_id: "TS",
         usecase: "TS",
@@ -906,7 +909,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaign.new(
         account_id: "TS",
         campaign_id: "TS",
-        status: "ACTIVE",
+        status:"ACTIVE",
         create_date: "2022-07-05T15:17:05Z",
         brand_id: "TS",
         usecase: "TS",
@@ -944,7 +947,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       
         campaign_id: "TS",
       
-        status: "ACTIVE",
+        status:"ACTIVE",
       
         create_date: "2022-07-05T15:17:05Z",
       
