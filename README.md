@@ -129,6 +129,7 @@ Class | Method | HTTP request | Description
 *Freeclimb::DefaultApi* | [**get_ten_dlc_sms_partner_campaigns**](docs/DefaultApi.md#get_ten_dlc_sms_partner_campaigns) | **GET** /Accounts/{accountId}/Messages/10DLC/PartnerCampaigns | Get list of SMS 10DLC Partner Campaigns
 *Freeclimb::DefaultApi* | [**get_toll_free_sms_campaign**](docs/DefaultApi.md#get_toll_free_sms_campaign) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns/{campaignId} | Get a TollFree SMS Campaign
 *Freeclimb::DefaultApi* | [**get_toll_free_sms_campaigns**](docs/DefaultApi.md#get_toll_free_sms_campaigns) | **GET** /Accounts/{accountId}/Messages/TollFree/Campaigns | Get list of TollFree Campaigns
+*Freeclimb::DefaultApi* | [**knowledgebase_completion**](docs/DefaultApi.md#knowledgebase_completion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base
 *Freeclimb::DefaultApi* | [**list_active_queues**](docs/DefaultApi.md#list_active_queues) | **GET** /Accounts/{accountId}/Queues | List Active Queues
 *Freeclimb::DefaultApi* | [**list_all_account_logs**](docs/DefaultApi.md#list_all_account_logs) | **GET** /Accounts/{accountId}/Logs | List All Account Logs
 *Freeclimb::DefaultApi* | [**list_applications**](docs/DefaultApi.md#list_applications) | **GET** /Accounts/{accountId}/Applications | List applications
@@ -183,6 +184,8 @@ Class | Method | HTTP request | Description
  - [Freeclimb::CallResultAllOf](docs/CallResultAllOf.md)
  - [Freeclimb::CallStatus](docs/CallStatus.md)
  - [Freeclimb::Capabilities](docs/Capabilities.md)
+ - [Freeclimb::CompletionRequest](docs/CompletionRequest.md)
+ - [Freeclimb::CompletionResult](docs/CompletionResult.md)
  - [Freeclimb::ConferenceList](docs/ConferenceList.md)
  - [Freeclimb::ConferenceListAllOf](docs/ConferenceListAllOf.md)
  - [Freeclimb::ConferenceParticipantList](docs/ConferenceParticipantList.md)
