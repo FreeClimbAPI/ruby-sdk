@@ -277,6 +277,75 @@ module Freeclimb
       return data, status_code, headers
     end
 
+    # Query the knowledge base
+    # @param knowledge_base_id [String] A string that uniquely identifies the KnowledgeBase resource.
+    # @param [Hash] opts the optional parameters
+    # @option opts [CompletionRequest] :completion_request Completion request details
+    # @return [CompletionResult]
+    def create_knowledge_base_completion(knowledge_base_id, opts = {})
+      data, _status_code, _headers = create_knowledge_base_completion_with_http_info(knowledge_base_id, opts)
+      data
+    end
+
+    # Query the knowledge base
+    # @param knowledge_base_id [String] A string that uniquely identifies the KnowledgeBase resource.
+    # @param [Hash] opts the optional parameters
+    # @option opts [CompletionRequest] :completion_request Completion request details
+    # @return [Array<(CompletionResult, Integer, Hash)>] CompletionResult data, response status code and response headers
+    def create_knowledge_base_completion_with_http_info(knowledge_base_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.create_knowledge_base_completion ...'
+      end
+
+      # verify the required parameter 'knowledge_base_id' is set
+      if @api_client.config.client_side_validation && knowledge_base_id.nil?
+        fail ArgumentError, "Missing the required parameter 'knowledge_base_id' when calling DefaultApi.create_knowledge_base_completion"
+      end
+      # resource path
+      local_var_path = '/Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'knowledgeBaseId' + '}', CGI.escape(knowledge_base_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'completion_request'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CompletionResult'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['fc']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.create_knowledge_base_completion",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_knowledge_base_completion\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Delete a Recording
     # @param recording_id [String] String that uniquely identifies this recording resource.
     # @param [Hash] opts the optional parameters
@@ -1876,75 +1945,6 @@ module Freeclimb
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#get_toll_free_sms_campaigns\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Query the knowledge base
-    # @param knowledge_base_id [String] A string that uniquely identifies the KnowledgeBase resource.
-    # @param [Hash] opts the optional parameters
-    # @option opts [CompletionRequest] :completion_request Completion request details
-    # @return [CompletionResult]
-    def knowledgebase_completion(knowledge_base_id, opts = {})
-      data, _status_code, _headers = knowledgebase_completion_with_http_info(knowledge_base_id, opts)
-      data
-    end
-
-    # Query the knowledge base
-    # @param knowledge_base_id [String] A string that uniquely identifies the KnowledgeBase resource.
-    # @param [Hash] opts the optional parameters
-    # @option opts [CompletionRequest] :completion_request Completion request details
-    # @return [Array<(CompletionResult, Integer, Hash)>] CompletionResult data, response status code and response headers
-    def knowledgebase_completion_with_http_info(knowledge_base_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DefaultApi.knowledgebase_completion ...'
-      end
-
-      # verify the required parameter 'knowledge_base_id' is set
-      if @api_client.config.client_side_validation && knowledge_base_id.nil?
-        fail ArgumentError, "Missing the required parameter 'knowledge_base_id' when calling DefaultApi.knowledgebase_completion"
-      end
-      # resource path
-      local_var_path = '/Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion'.sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s)).sub('{' + 'knowledgeBaseId' + '}', CGI.escape(knowledge_base_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'completion_request'])
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'CompletionResult'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['fc']
-
-      new_options = opts.merge(
-        :operation => :"DefaultApi.knowledgebase_completion",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DefaultApi#knowledgebase_completion\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

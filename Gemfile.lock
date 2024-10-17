@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    freeclimb (4.7.0)
+    freeclimb (4.8.0)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM
@@ -36,7 +36,7 @@ GEM
     facets (3.1.0)
     factory_bot (6.5.0)
       activesupport (>= 5.0.0)
-    ffi (1.17.0)
+    ffi (1.17.0-arm64-darwin)
     hashdiff (1.1.1)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
