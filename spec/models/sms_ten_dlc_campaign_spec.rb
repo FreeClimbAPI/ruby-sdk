@@ -528,12 +528,12 @@ describe Freeclimb::SMSTenDLCCampaign do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::SMSTenDLCCampaign.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::SMSTenDLCCampaign.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

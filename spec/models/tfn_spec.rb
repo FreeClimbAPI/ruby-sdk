@@ -63,12 +63,12 @@ describe Freeclimb::TFN do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TFN.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::TFN.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

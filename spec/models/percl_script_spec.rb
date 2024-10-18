@@ -63,12 +63,12 @@ describe Freeclimb::PerclScript do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::PerclScript.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::PerclScript.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

@@ -692,12 +692,12 @@ describe Freeclimb::SMSTenDLCBrand do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::SMSTenDLCBrand.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::SMSTenDLCBrand.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

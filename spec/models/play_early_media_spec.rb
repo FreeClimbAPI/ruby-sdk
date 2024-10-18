@@ -63,12 +63,12 @@ describe Freeclimb::PlayEarlyMedia do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::PlayEarlyMedia.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::PlayEarlyMedia.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

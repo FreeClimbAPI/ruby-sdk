@@ -146,12 +146,12 @@ describe Freeclimb::LogResult do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::LogResult.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::LogResult.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

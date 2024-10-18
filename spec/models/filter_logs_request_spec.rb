@@ -63,12 +63,12 @@ describe Freeclimb::FilterLogsRequest do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::FilterLogsRequest.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::FilterLogsRequest.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

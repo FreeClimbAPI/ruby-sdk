@@ -159,12 +159,12 @@ describe Freeclimb::LogList do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::LogList.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::LogList.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

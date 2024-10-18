@@ -163,12 +163,12 @@ describe Freeclimb::RecordingResult do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::RecordingResult.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::RecordingResult.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

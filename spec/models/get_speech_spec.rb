@@ -217,12 +217,12 @@ describe Freeclimb::GetSpeech do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::GetSpeech.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::GetSpeech.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

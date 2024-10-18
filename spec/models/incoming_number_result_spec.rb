@@ -257,12 +257,12 @@ describe Freeclimb::IncomingNumberResult do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::IncomingNumberResult.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::IncomingNumberResult.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

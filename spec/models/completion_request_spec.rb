@@ -65,12 +65,12 @@ describe Freeclimb::CompletionRequest do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::CompletionRequest.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::CompletionRequest.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

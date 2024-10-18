@@ -123,12 +123,12 @@ describe Freeclimb::CreateConferenceRequest do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::CreateConferenceRequest.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::CreateConferenceRequest.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

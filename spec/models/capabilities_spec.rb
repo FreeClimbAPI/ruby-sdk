@@ -111,12 +111,12 @@ describe Freeclimb::Capabilities do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::Capabilities.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::Capabilities.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

@@ -63,12 +63,12 @@ describe Freeclimb::Reject do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::Reject.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::Reject.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

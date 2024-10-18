@@ -123,12 +123,12 @@ describe Freeclimb::TranscribeUtterance do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtterance.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::TranscribeUtterance.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

@@ -246,12 +246,12 @@ describe Freeclimb::ConferenceResult do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::ConferenceResult.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::ConferenceResult.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 

@@ -159,12 +159,12 @@ describe Freeclimb::AvailableNumberList do
     end
 
 
-    # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::AvailableNumberList.new(
+    skip 'checks if properties are invalid' do
+      instance = Freeclimb::AvailableNumberList.new(
         
-    #   )
-    #   expect(instance.valid?).to eq(false)
-    # end
+      )
+      expect(instance.valid?).to eq(false)
+    end
     
   end
 
