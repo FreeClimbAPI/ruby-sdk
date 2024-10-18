@@ -64,7 +64,7 @@ describe Freeclimb::FilterLogsRequest do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::FilterLogsRequest.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

@@ -247,7 +247,7 @@ describe Freeclimb::ConferenceResult do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::ConferenceResult.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

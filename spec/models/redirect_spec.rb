@@ -64,7 +64,7 @@ describe Freeclimb::Redirect do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::Redirect.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

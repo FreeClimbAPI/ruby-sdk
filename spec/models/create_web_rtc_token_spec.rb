@@ -91,7 +91,7 @@ describe Freeclimb::CreateWebRTCToken do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::CreateWebRTCToken.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

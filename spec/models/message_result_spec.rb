@@ -285,7 +285,7 @@ describe Freeclimb::MessageResult do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::MessageResult.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

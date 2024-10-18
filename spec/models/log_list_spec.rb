@@ -160,7 +160,7 @@ describe Freeclimb::LogList do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::LogList.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

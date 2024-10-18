@@ -136,7 +136,7 @@ describe Freeclimb::AvailableNumber do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::AvailableNumber.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

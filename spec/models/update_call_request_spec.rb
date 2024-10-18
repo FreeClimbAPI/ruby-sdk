@@ -68,7 +68,7 @@ describe Freeclimb::UpdateCallRequest do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::UpdateCallRequest.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

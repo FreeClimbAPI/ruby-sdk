@@ -441,7 +441,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

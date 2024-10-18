@@ -64,7 +64,7 @@ describe Freeclimb::PerclScript do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::PerclScript.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

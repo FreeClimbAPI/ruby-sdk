@@ -160,7 +160,7 @@ describe Freeclimb::IncomingNumberList do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::IncomingNumberList.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

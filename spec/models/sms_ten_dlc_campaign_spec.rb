@@ -529,7 +529,7 @@ describe Freeclimb::SMSTenDLCCampaign do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::SMSTenDLCCampaign.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

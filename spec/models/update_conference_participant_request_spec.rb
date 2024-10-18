@@ -76,7 +76,7 @@ describe Freeclimb::UpdateConferenceParticipantRequest do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::UpdateConferenceParticipantRequest.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

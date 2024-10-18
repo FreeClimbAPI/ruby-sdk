@@ -90,7 +90,7 @@ describe Freeclimb::Play do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::Play.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

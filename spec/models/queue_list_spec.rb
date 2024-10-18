@@ -160,7 +160,7 @@ describe Freeclimb::QueueList do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::QueueList.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)

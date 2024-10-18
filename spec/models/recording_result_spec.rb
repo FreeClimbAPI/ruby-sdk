@@ -164,7 +164,7 @@ describe Freeclimb::RecordingResult do
 
 
     # it 'checks if properties are invalid' do
-    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
+    #   instance = Freeclimb::RecordingResult.new(
         
     #   )
     #   expect(instance.valid?).to eq(false)
