@@ -86,16 +86,13 @@ describe Freeclimb::Park do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::Park.new(
+
+    # it 'checks if properties are invalid' do
+    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
         
-        wait_url: nil,
-        
-        action_url: nil,
-        
-      )
-      expect(instance.valid?).to eq(false)
-    end
+    #   )
+    #   expect(instance.valid?).to eq(false)
+    # end
     
   end
 

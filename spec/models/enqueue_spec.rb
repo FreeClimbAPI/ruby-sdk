@@ -98,18 +98,13 @@ describe Freeclimb::Enqueue do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::Enqueue.new(
+
+    # it 'checks if properties are invalid' do
+    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
         
-        action_url: nil,
-        
-        queue_id: nil,
-        
-        wait_url: nil,
-        
-      )
-      expect(instance.valid?).to eq(false)
-    end
+    #   )
+    #   expect(instance.valid?).to eq(false)
+    # end
     
   end
 

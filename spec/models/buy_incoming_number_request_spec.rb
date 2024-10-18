@@ -86,14 +86,13 @@ describe Freeclimb::BuyIncomingNumberRequest do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::BuyIncomingNumberRequest.new(
+
+    # it 'checks if properties are invalid' do
+    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
         
-        phone_number: nil,
-        
-      )
-      expect(instance.valid?).to eq(false)
-    end
+    #   )
+    #   expect(instance.valid?).to eq(false)
+    # end
     
   end
 

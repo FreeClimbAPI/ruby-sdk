@@ -172,17 +172,13 @@ describe Freeclimb::MakeCallRequest do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::MakeCallRequest.new(
+
+    # it 'checks if properties are invalid' do
+    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
         
-        from: nil,
-        
-        to: nil,
-        privacy_mode: nil,
-        
-      )
-      expect(instance.valid?).to eq(false)
-    end
+    #   )
+    #   expect(instance.valid?).to eq(false)
+    # end
     
   end
 

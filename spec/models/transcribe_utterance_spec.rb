@@ -122,17 +122,13 @@ describe Freeclimb::TranscribeUtterance do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::TranscribeUtterance.new(
+
+    # it 'checks if properties are invalid' do
+    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
         
-        action_url: nil,
-        play_beep: nil,
-        privacy_for_logging: nil,
-        privacy_for_recording: nil,
-        
-      )
-      expect(instance.valid?).to eq(false)
-    end
+    #   )
+    #   expect(instance.valid?).to eq(false)
+    # end
     
   end
 

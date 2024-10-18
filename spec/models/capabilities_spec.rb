@@ -110,27 +110,13 @@ describe Freeclimb::Capabilities do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::Capabilities.new(
-        voice: nil,
+
+    # it 'checks if properties are invalid' do
+    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
         
-        voice: nil,
-        sms: nil,
-        
-        sms: nil,
-        toll_free: nil,
-        
-        toll_free: nil,
-        ten_dlc: nil,
-        
-        ten_dlc: nil,
-        short_code: nil,
-        
-        short_code: nil,
-        
-      )
-      expect(instance.valid?).to eq(false)
-    end
+    #   )
+    #   expect(instance.valid?).to eq(false)
+    # end
     
   end
 

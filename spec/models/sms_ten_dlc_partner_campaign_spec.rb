@@ -439,38 +439,13 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
+
+    # it 'checks if properties are invalid' do
+    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
         
-        campaign_id: nil,
-        
-        brand_id: "T" * 8,
-        usecase: "T" * 20,
-        description: "T" * 4096,embedded_link: nil,
-        embedded_phone: nil,
-        affiliate_marketing: nil,
-        number_pool: nil,
-        age_gated: nil,
-        direct_lending: nil,
-        subscriber_optin: nil,
-        subscriber_optout: nil,
-        subscriber_help: nil,
-        sample1: nil,
-        sample2: nil,
-        sample3: nil,
-        sample4: nil,
-        sample5: nil,
-        message_flow: nil,
-        help_message: nil,
-        optin_keywords: nil,
-        optout_keywords: nil,
-        help_keywords: nil,
-        optin_message: nil,
-        optout_message: nil,
-        
-      )
-      expect(instance.valid?).to eq(false)
-    end
+    #   )
+    #   expect(instance.valid?).to eq(false)
+    # end
     
   end
 

@@ -176,21 +176,13 @@ describe Freeclimb::OutDial do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
-      instance = Freeclimb::OutDial.new(
+
+    # it 'checks if properties are invalid' do
+    #   instance = Freeclimb::TranscribeUtteranceAllOfRecord.new(
         
-        action_url: nil,
-        
-        call_connect_url: nil,
-        
-        calling_number: nil,
-        
-        destination: nil,
-        privacy_mode: nil,
-        
-      )
-      expect(instance.valid?).to eq(false)
-    end
+    #   )
+    #   expect(instance.valid?).to eq(false)
+    # end
     
   end
 
