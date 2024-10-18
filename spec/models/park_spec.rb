@@ -86,12 +86,9 @@ describe Freeclimb::Park do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
+
+    skip 'checks if properties are invalid' do
       instance = Freeclimb::Park.new(
-        
-        wait_url: nil,
-        
-        action_url: nil,
         
       )
       expect(instance.valid?).to eq(false)

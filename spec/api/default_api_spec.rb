@@ -252,6 +252,9 @@ describe 'DefaultApi' do
 
     @create_web_rtc_token_make_a_webrtc_jwt_test_value=Freeclimb::CreateWebRTCToken.new({to: 'to_example', from: 'from_example', uses: 2})
 
+    @knowledge_base_id_create_knowledge_base_completion_test_value= 'knowledgeBaseId_example'
+
+    @completion_request_create_knowledge_base_completion_test_value=Freeclimb::CompletionRequest.new({query: 'query_example'})
   end
 
   after do
@@ -356,6 +359,32 @@ describe 'DefaultApi' do
       false
       
       expect(result).to be_a Freeclimb::ApplicationResult
+      
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for create_knowledge_base_completion
+  # Query the knowledge base
+  # @param knowledge_base_id A string that uniquely identifies the KnowledgeBase resource.
+  # @param [Hash] opts the optional parameters
+  # @option opts [CompletionRequest] :completion_request Completion request details
+  # @return [CompletionResult]
+  describe 'create_knowledge_base_completion test' do
+    it 'should work' do
+      
+      knowledge_base_id = @knowledge_base_id_create_knowledge_base_completion_test_value
+      completion_request = @completion_request_create_knowledge_base_completion_test_value
+      
+      result = @api_instance.create_knowledge_base_completion(
+        knowledge_base_id,
+        {
+          :completion_request => completion_request,
+        }
+      )
+      false
+      
+      expect(result).to be_a Freeclimb::CompletionResult
       
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

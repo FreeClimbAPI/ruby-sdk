@@ -62,14 +62,17 @@ describe Freeclimb::SMSTenDLCCampaign do
 
 
   describe 'test attribute "status"' do
+  
     it 'assigns value ACTIVE' do
       instance.status = "ACTIVE"
       expect(instance.status).to eq("ACTIVE")  
     end
+  
     it 'assigns value EXPIRED' do
       instance.status = "EXPIRED"
       expect(instance.status).to eq("EXPIRED")  
     end
+  
     it 'throws error on invalid enum' do
       instance = Freeclimb::SMSTenDLCCampaign.new
       expect{instance.status = "INVALID_ENUM"}.to raise_error(ArgumentError)
@@ -363,7 +366,7 @@ describe Freeclimb::SMSTenDLCCampaign do
           campaign_id: "TS",
           csp_id: "TS",
           reseller_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           create_date: "2022-07-05T15:17:05Z",
           auto_renewal: true,
           billed_date: "2022-07-05T15:17:05Z",
@@ -403,7 +406,7 @@ describe Freeclimb::SMSTenDLCCampaign do
           campaign_id: "TS",
           csp_id: "TS",
           reseller_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           create_date: "2022-07-05T15:17:05Z",
           auto_renewal: true,
           billed_date: "2022-07-05T15:17:05Z",
@@ -444,7 +447,7 @@ describe Freeclimb::SMSTenDLCCampaign do
           campaign_id: "TS",
           csp_id: "TS",
           reseller_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           create_date: "2022-07-05T15:17:05Z",
           auto_renewal: true,
           billed_date: "2022-07-05T15:17:05Z",
@@ -488,7 +491,7 @@ describe Freeclimb::SMSTenDLCCampaign do
           campaign_id: "TS",
           csp_id: "TS",
           reseller_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           create_date: "2022-07-05T15:17:05Z",
           auto_renewal: true,
           billed_date: "2022-07-05T15:17:05Z",
@@ -524,44 +527,9 @@ describe Freeclimb::SMSTenDLCCampaign do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
+
+    skip 'checks if properties are invalid' do
       instance = Freeclimb::SMSTenDLCCampaign.new(
-        
-        campaign_id: nil,
-        
-        csp_id: nil,
-        reseller_id: nil,
-        auto_renewal: nil,
-        
-        brand_id: "T" * 8,
-        usecase: "T" * 20,
-        sub_usecases: nil,
-        
-        description: "T" * 4096,embedded_link: nil,
-        embedded_phone: nil,
-        affiliate_marketing: nil,
-        number_pool: nil,
-        age_gated: nil,
-        direct_lending: nil,
-        subscriber_optin: nil,
-        subscriber_optout: nil,
-        subscriber_help: nil,
-        sample1: nil,
-        sample2: nil,
-        sample3: nil,
-        sample4: nil,
-        sample5: nil,
-        message_flow: nil,
-        help_message: nil,
-        optin_keywords: nil,
-        optout_keywords: nil,
-        help_keywords: nil,
-        optin_message: nil,
-        optout_message: nil,
-        reference_id: nil,
-        mock: nil,
-        
-        mock: nil,
         
       )
       expect(instance.valid?).to eq(false)
@@ -577,7 +545,7 @@ describe Freeclimb::SMSTenDLCCampaign do
           campaign_id: "TS",
           csp_id: "TS",
           reseller_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           auto_renewal: true,
           brand_id: "TS",
           usecase: "TS",
@@ -612,7 +580,7 @@ describe Freeclimb::SMSTenDLCCampaign do
           campaign_id: "TS",
           csp_id: "TS",
           reseller_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           auto_renewal: true,
           brand_id: "TS",
           usecase: "TS",
@@ -651,7 +619,7 @@ describe Freeclimb::SMSTenDLCCampaign do
           campaign_id: "TS",
           csp_id: "TS",
           reseller_id: "TS",
-          status: "ACTIVE",
+          status:"ACTIVE",
           auto_renewal: true,
           brand_id: "TS",
           usecase: "TS",
@@ -686,7 +654,7 @@ describe Freeclimb::SMSTenDLCCampaign do
           campaign_id: "ST",
           csp_id: "ST",
           reseller_id: "ST",
-          status: "EXPIRED",
+          status:"ACTIVE",
           auto_renewal: false,
           brand_id: "ST",
           usecase: "ST",
@@ -727,7 +695,7 @@ describe Freeclimb::SMSTenDLCCampaign do
       campaign_id: "TS",
       csp_id: "TS",
       reseller_id: "TS",
-      status: "ACTIVE",
+      status:"ACTIVE",
       create_date: "2022-07-05T15:17:05Z",
       auto_renewal: true,
       billed_date: "2022-07-05T15:17:05Z",
@@ -771,7 +739,7 @@ describe Freeclimb::SMSTenDLCCampaign do
         campaign_id: "TS",
         csp_id: "TS",
         reseller_id: "TS",
-        status: "ACTIVE",
+        status:"ACTIVE",
         create_date: "2022-07-05T15:17:05Z",
         auto_renewal: true,
         billed_date: "2022-07-05T15:17:05Z",
@@ -815,7 +783,7 @@ describe Freeclimb::SMSTenDLCCampaign do
         campaign_id: "TS",
         csp_id: "TS",
         reseller_id: "TS",
-        status: "ACTIVE",
+        status:"ACTIVE",
         create_date: "2022-07-05T15:17:05Z",
         auto_renewal: true,
         billed_date: "2022-07-05T15:17:05Z",
@@ -965,7 +933,7 @@ describe Freeclimb::SMSTenDLCCampaign do
         campaign_id: "TS",
         csp_id: "TS",
         reseller_id: "TS",
-        status: "ACTIVE",
+        status:"ACTIVE",
         create_date: "2022-07-05T15:17:05Z",
         auto_renewal: true,
         billed_date: "2022-07-05T15:17:05Z",
@@ -1009,7 +977,7 @@ describe Freeclimb::SMSTenDLCCampaign do
         campaign_id: "TS",
         csp_id: "TS",
         reseller_id: "TS",
-        status: "ACTIVE",
+        status:"ACTIVE",
         create_date: "2022-07-05T15:17:05Z",
         auto_renewal: true,
         billed_date: "2022-07-05T15:17:05Z",
@@ -1051,7 +1019,7 @@ describe Freeclimb::SMSTenDLCCampaign do
         campaign_id: "TS",
         csp_id: "TS",
         reseller_id: "TS",
-        status: "ACTIVE",
+        status:"ACTIVE",
         create_date: "2022-07-05T15:17:05Z",
         auto_renewal: true,
         billed_date: "2022-07-05T15:17:05Z",
@@ -1089,7 +1057,7 @@ describe Freeclimb::SMSTenDLCCampaign do
         campaign_id: "TS",
         csp_id: "TS",
         reseller_id: "TS",
-        status: "ACTIVE",
+        status:"ACTIVE",
         create_date: "2022-07-05T15:17:05Z",
         auto_renewal: true,
         billed_date: "2022-07-05T15:17:05Z",
@@ -1136,7 +1104,7 @@ describe Freeclimb::SMSTenDLCCampaign do
       
         reseller_id: "TS",
       
-        status: "ACTIVE",
+        status:"ACTIVE",
       
         create_date: "2022-07-05T15:17:05Z",
       

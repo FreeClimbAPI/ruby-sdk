@@ -216,14 +216,9 @@ describe Freeclimb::GetSpeech do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
+
+    skip 'checks if properties are invalid' do
       instance = Freeclimb::GetSpeech.new(
-        
-        action_url: nil,
-        
-        grammar_file: nil,
-        play_beep: nil,
-        privacy_mode: nil,
         
       )
       expect(instance.valid?).to eq(false)

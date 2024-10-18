@@ -82,7 +82,7 @@ instance = Freeclimb::SMSTenDLCCampaign.new(
   optout_message: null,
   reference_id: null,
   mock: null,
-  next_renewal_or_expiration_date: Fri Dec 31 18:00:00 CST 1999
+  next_renewal_or_expiration_date: Fri Dec 31 19:00:00 EST 1999
 )
 ```
 

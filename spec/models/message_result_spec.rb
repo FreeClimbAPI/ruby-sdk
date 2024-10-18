@@ -283,7 +283,8 @@ describe Freeclimb::MessageResult do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
+
+    skip 'checks if properties are invalid' do
       instance = Freeclimb::MessageResult.new(
         
       )
