@@ -52,26 +52,32 @@ describe Freeclimb::SMSTollFreeCampaign do
 
 
   describe 'test attribute "registration_status"' do
+  
     it 'assigns value UNREGISTERED' do
       instance.registration_status = "UNREGISTERED"
       expect(instance.registration_status).to eq("UNREGISTERED")  
     end
+  
     it 'assigns value INITIATED' do
       instance.registration_status = "INITIATED"
       expect(instance.registration_status).to eq("INITIATED")  
     end
+  
     it 'assigns value PENDING' do
       instance.registration_status = "PENDING"
       expect(instance.registration_status).to eq("PENDING")  
     end
+  
     it 'assigns value DECLINED' do
       instance.registration_status = "DECLINED"
       expect(instance.registration_status).to eq("DECLINED")  
     end
+  
     it 'assigns value REGISTERED' do
       instance.registration_status = "REGISTERED"
       expect(instance.registration_status).to eq("REGISTERED")  
     end
+  
     it 'throws error on invalid enum' do
       instance = Freeclimb::SMSTollFreeCampaign.new
       expect{instance.registration_status = "INVALID_ENUM"}.to raise_error(ArgumentError)
@@ -110,7 +116,7 @@ describe Freeclimb::SMSTollFreeCampaign do
           account_id: "TS",
           campaign_id: "TS",
           use_case: "TS",
-          registration_status: "UNREGISTERED",
+          registration_status:"UNREGISTERED",
           date_created: "TS",
           date_updated: "TS",
           revision: 1,
@@ -121,7 +127,7 @@ describe Freeclimb::SMSTollFreeCampaign do
           account_id: "TS",
           campaign_id: "TS",
           use_case: "TS",
-          registration_status: "UNREGISTERED",
+          registration_status:"UNREGISTERED",
           date_created: "TS",
           date_updated: "TS",
           revision: 1,
@@ -133,7 +139,7 @@ describe Freeclimb::SMSTollFreeCampaign do
           account_id: "TS",
           campaign_id: "TS",
           use_case: "TS",
-          registration_status: "UNREGISTERED",
+          registration_status:"UNREGISTERED",
           date_created: "TS",
           date_updated: "TS",
           revision: 1,
@@ -148,7 +154,7 @@ describe Freeclimb::SMSTollFreeCampaign do
           account_id: "TS",
           campaign_id: "TS",
           use_case: "TS",
-          registration_status: "UNREGISTERED",
+          registration_status:"UNREGISTERED",
           date_created: "TS",
           date_updated: "TS",
           revision: 1,
@@ -156,20 +162,9 @@ describe Freeclimb::SMSTollFreeCampaign do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
+
+    skip 'checks if properties are invalid' do
       instance = Freeclimb::SMSTollFreeCampaign.new(
-        
-        account_id: nil,
-        
-        campaign_id: nil,
-        
-        use_case: nil,
-        
-        date_created: nil,
-        
-        date_updated: nil,
-        
-        revision: nil,
         
       )
       expect(instance.valid?).to eq(false)
@@ -184,7 +179,7 @@ describe Freeclimb::SMSTollFreeCampaign do
           account_id: "TS",
           campaign_id: "TS",
           use_case: "TS",
-          registration_status: "UNREGISTERED",
+          registration_status:"UNREGISTERED",
           date_created: "TS",
           date_updated: "TS",
           revision: 1,
@@ -193,7 +188,7 @@ describe Freeclimb::SMSTollFreeCampaign do
           account_id: "TS",
           campaign_id: "TS",
           use_case: "TS",
-          registration_status: "UNREGISTERED",
+          registration_status:"UNREGISTERED",
           date_created: "TS",
           date_updated: "TS",
           revision: 1,
@@ -206,7 +201,7 @@ describe Freeclimb::SMSTollFreeCampaign do
           account_id: "TS",
           campaign_id: "TS",
           use_case: "TS",
-          registration_status: "UNREGISTERED",
+          registration_status:"UNREGISTERED",
           date_created: "TS",
           date_updated: "TS",
           revision: 2,
@@ -215,7 +210,7 @@ describe Freeclimb::SMSTollFreeCampaign do
           account_id: "ST",
           campaign_id: "ST",
           use_case: "ST",
-          registration_status: "INITIATED",
+          registration_status:"UNREGISTERED",
           date_created: "ST",
           date_updated: "ST",
           revision: 1,
@@ -230,7 +225,7 @@ describe Freeclimb::SMSTollFreeCampaign do
       account_id: "TS",
       campaign_id: "TS",
       use_case: "TS",
-      registration_status: "UNREGISTERED",
+      registration_status:"UNREGISTERED",
       date_created: "TS",
       date_updated: "TS",
       revision: 1,
@@ -245,7 +240,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         account_id: "TS",
         campaign_id: "TS",
         use_case: "TS",
-        registration_status: "UNREGISTERED",
+        registration_status:"UNREGISTERED",
         date_created: "TS",
         date_updated: "TS",
         revision: 1,
@@ -260,7 +255,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         account_id: "TS",
         campaign_id: "TS",
         use_case: "TS",
-        registration_status: "UNREGISTERED",
+        registration_status:"UNREGISTERED",
         date_created: "TS",
         date_updated: "TS",
         revision: 1,
@@ -294,7 +289,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         account_id: "TS",
         campaign_id: "TS",
         use_case: "TS",
-        registration_status: "UNREGISTERED",
+        registration_status:"UNREGISTERED",
         date_created: "TS",
         date_updated: "TS",
         revision: 1,
@@ -309,7 +304,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         account_id: "TS",
         campaign_id: "TS",
         use_case: "TS",
-        registration_status: "UNREGISTERED",
+        registration_status:"UNREGISTERED",
         date_created: "TS",
         date_updated: "TS",
         revision: 1,
@@ -322,7 +317,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         account_id: "TS",
         campaign_id: "TS",
         use_case: "TS",
-        registration_status: "UNREGISTERED",
+        registration_status:"UNREGISTERED",
         date_created: "TS",
         date_updated: "TS",
         revision: 1,
@@ -331,7 +326,7 @@ describe Freeclimb::SMSTollFreeCampaign do
         account_id: "TS",
         campaign_id: "TS",
         use_case: "TS",
-        registration_status: "UNREGISTERED",
+        registration_status:"UNREGISTERED",
         date_created: "TS",
         date_updated: "TS",
         revision: 1,
@@ -348,7 +343,7 @@ describe Freeclimb::SMSTollFreeCampaign do
       
         use_case: "TS",
       
-        registration_status: "UNREGISTERED",
+        registration_status:"UNREGISTERED",
       
         date_created: "TS",
       

@@ -40,3 +40,4 @@ build/
 
 .DS_Store
 git_push.sh
+/node_modules

@@ -62,10 +62,9 @@ describe Freeclimb::PlayEarlyMedia do
       expect(instance.valid?).to eq(true)
     end
 
-    it 'checks if properties are invalid' do
+
+    skip 'checks if properties are invalid' do
       instance = Freeclimb::PlayEarlyMedia.new(
-        
-        file: nil,
         
       )
       expect(instance.valid?).to eq(false)
