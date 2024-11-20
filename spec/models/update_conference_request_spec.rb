@@ -54,7 +54,6 @@ describe Freeclimb::UpdateConferenceRequest do
     end
   end
 
-
   describe 'test attribute "status"' do
     it 'assigns value EMPTY' do
       instance.status = Freeclimb::UpdateConferenceRequestStatus::EMPTY
@@ -65,7 +64,6 @@ describe Freeclimb::UpdateConferenceRequest do
       expect(instance.status).to eq(Freeclimb::UpdateConferenceRequestStatus::TERMINATED)  
     end
   end
-
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::UpdateConferenceRequest.new(

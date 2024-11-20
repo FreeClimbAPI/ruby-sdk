@@ -16,6 +16,13 @@ require 'time'
 module Freeclimb
   # The OutDial command has started and the actionUrl is being invoked. This request is made in the context of the parent call (Call leg that invoked). A PerCL response is expected.
   class OutDialStartWebhook < Webhook
+    def self.deserialize(payload)
+      return nil if payload.nil? || payload.empty?
+      data = JSON.parse("[#{payload}]")[0]
+      inverted_attributes = self.attribute_map.invert
+      hash = self.acceptable_attributes.uniq.map { |k| [inverted_attributes[k], data[k.to_s]] }.to_h
+      return OutDialStartWebhook.new(hash)
+    end
     # Context or reason why this request is being made. Will be outDialStart - The OutDial command has started and the actionUrl is being invoked.
     attr_accessor :request_type
 

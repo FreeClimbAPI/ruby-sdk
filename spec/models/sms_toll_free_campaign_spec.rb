@@ -73,7 +73,6 @@ describe Freeclimb::SMSTollFreeCampaign do
       expect(instance.registration_status).to eq(Freeclimb::SMSTollFreeCampaignRegistrationStatus::REGISTERED)  
     end
   end
-
   describe 'test attribute "date_created"' do
     it 'should work' do
       instance.date_created = "TEST_STRING"

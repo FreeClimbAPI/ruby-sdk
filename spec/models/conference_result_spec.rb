@@ -103,7 +103,6 @@ describe Freeclimb::ConferenceResult do
       expect(instance.play_beep).to eq(Freeclimb::PlayBeep::EXIT_ONLY)  
     end
   end
-
   describe 'test attribute "record"' do
     it 'should work' do
       instance.record = false
@@ -131,7 +130,6 @@ describe Freeclimb::ConferenceResult do
       expect(instance.status).to eq(Freeclimb::ConferenceStatus::TERMINATED)  
     end
   end
-
   describe 'test attribute "wait_url"' do
     it 'should work' do
       instance.wait_url = "TEST_STRING"

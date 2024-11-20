@@ -37,7 +37,6 @@ describe Freeclimb::UpdateCallRequest do
       expect(instance.status).to eq(Freeclimb::UpdateCallRequestStatus::COMPLETED)  
     end
   end
-
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::UpdateCallRequest.new(

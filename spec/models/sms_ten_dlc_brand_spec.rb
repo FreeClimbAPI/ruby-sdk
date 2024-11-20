@@ -57,7 +57,6 @@ describe Freeclimb::SMSTenDLCBrand do
       expect(instance.entity_type).to eq(Freeclimb::SMSTenDLCBrandEntityType::SOLE_PROPRIETOR)  
     end
   end
-
   describe 'test attribute "csp_id"' do
     it 'should work' do
       instance.csp_id = "TEST_STRING"
@@ -325,7 +324,6 @@ describe Freeclimb::SMSTenDLCBrand do
       expect(instance.stock_exchange).to eq(Freeclimb::SMSTenDLCBrandStockExchange::OTHER)  
     end
   end
-
   describe 'test attribute "ip_address"' do
     it 'should assign a value of maxLength' do
       instance.ip_address = "T" * 50
@@ -369,7 +367,6 @@ describe Freeclimb::SMSTenDLCBrand do
       expect(instance.brand_relationship).to eq(Freeclimb::SMSTenDLCBrandRelationship::KEY_ACCOUNT)  
     end
   end
-
   describe 'test attribute "vertical"' do
     it 'should assign a value of maxLength' do
       instance.vertical = "T" * 50
@@ -409,7 +406,6 @@ describe Freeclimb::SMSTenDLCBrand do
       expect(instance.alt_business_id_type).to eq(Freeclimb::SMSTenDLCBrandAltBusinessIdType::LEI)  
     end
   end
-
   describe 'test attribute "universal_ein"' do
     it 'should work' do
       instance.universal_ein = "TEST_STRING"
@@ -464,7 +460,6 @@ describe Freeclimb::SMSTenDLCBrand do
       expect(instance.identity_status).to eq(Freeclimb::SMSTenDLCBrandIdentityStatus::VETTED_VERIFIED)  
     end
   end
-
   describe 'test attribute "create_date"' do
     it 'should work' do
       instance.create_date = "2022-07-05T15:17:05Z"

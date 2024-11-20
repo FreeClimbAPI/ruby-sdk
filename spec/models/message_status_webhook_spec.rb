@@ -25,6 +25,12 @@ describe Freeclimb::MessageStatusWebhook do
       expect(instance).to be_instance_of(Freeclimb::MessageStatusWebhook)
     end
   end
+  describe '.deserialize' do
+    it 'deserializes a json payload into instance of MessageStatusWebhook' do
+      payload = '{ "requestType": "messageStatus" }'
+      expect(Freeclimb::MessageStatusWebhook.deserialize(payload)).to be_instance_of(Freeclimb::MessageStatusWebhook)
+    end
+  end
   
   describe 'test attribute "request_type"' do
     it 'should work' do
@@ -145,7 +151,6 @@ describe Freeclimb::MessageStatusWebhook do
       expect(instance.status).to eq(Freeclimb::MessageStatus::UNKNOWN)  
     end
   end
-
   describe 'test attribute "phone_number_id"' do
     it 'should work' do
       instance.phone_number_id = "TEST_STRING"

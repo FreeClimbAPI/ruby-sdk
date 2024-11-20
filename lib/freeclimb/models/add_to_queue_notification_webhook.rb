@@ -16,6 +16,13 @@ require 'time'
 module Freeclimb
   # A Call has been added to a Queue and the Enqueue command’s notificationUrl is being invoked. This is a notification only; any PerCL returned will be ignored.
   class AddToQueueNotificationWebhook < Webhook
+    def self.deserialize(payload)
+      return nil if payload.nil? || payload.empty?
+      data = JSON.parse("[#{payload}]")[0]
+      inverted_attributes = self.attribute_map.invert
+      hash = self.acceptable_attributes.uniq.map { |k| [inverted_attributes[k], data[k.to_s]] }.to_h
+      return AddToQueueNotificationWebhook.new(hash)
+    end
     # Context or reason why this request is being made. Will be addToQueueNotification - A call has been added to a queue and the Enqueue command’s notificationUrl is being invoked.
     attr_accessor :request_type
 

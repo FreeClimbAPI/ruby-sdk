@@ -25,6 +25,12 @@ describe Freeclimb::MachineDetectedWebhook do
       expect(instance).to be_instance_of(Freeclimb::MachineDetectedWebhook)
     end
   end
+  describe '.deserialize' do
+    it 'deserializes a json payload into instance of MachineDetectedWebhook' do
+      payload = '{ "requestType": "machineDetected" }'
+      expect(Freeclimb::MachineDetectedWebhook.deserialize(payload)).to be_instance_of(Freeclimb::MachineDetectedWebhook)
+    end
+  end
   
   describe 'test attribute "request_type"' do
     it 'should work' do
@@ -102,7 +108,6 @@ describe Freeclimb::MachineDetectedWebhook do
     end
   end
 
-
   describe 'test attribute "direction"' do
     it 'assigns value INBOUND' do
       instance.direction = Freeclimb::CallDirection::INBOUND
@@ -117,7 +122,6 @@ describe Freeclimb::MachineDetectedWebhook do
       expect(instance.direction).to eq(Freeclimb::CallDirection::OUTBOUND_DIAL)  
     end
   end
-
   describe 'test attribute "conference_id"' do
     it 'should work' do
       instance.conference_id = "TEST_STRING"
@@ -153,7 +157,6 @@ describe Freeclimb::MachineDetectedWebhook do
       expect(instance.machine_type).to eq(Freeclimb::MachineType::FAX_MODEM)  
     end
   end
-
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::MachineDetectedWebhook.new(

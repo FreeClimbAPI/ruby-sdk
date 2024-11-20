@@ -16,6 +16,13 @@ require 'time'
 module Freeclimb
   # An SMS has been received by the platform and is being delivered to the smsUrl of the customer application that is associated with the destination number. A PerCL response will be ignored.
   class MessageDeliveryWebhook < Webhook
+    def self.deserialize(payload)
+      return nil if payload.nil? || payload.empty?
+      data = JSON.parse("[#{payload}]")[0]
+      inverted_attributes = self.attribute_map.invert
+      hash = self.acceptable_attributes.uniq.map { |k| [inverted_attributes[k], data[k.to_s]] }.to_h
+      return MessageDeliveryWebhook.new(hash)
+    end
     # Value will be messageDelivery - An SMS message has been received by the platform and is being delivered to the customer application associated with the destination number.
     attr_accessor :request_type
 

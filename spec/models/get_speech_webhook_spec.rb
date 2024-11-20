@@ -25,6 +25,12 @@ describe Freeclimb::GetSpeechWebhook do
       expect(instance).to be_instance_of(Freeclimb::GetSpeechWebhook)
     end
   end
+  describe '.deserialize' do
+    it 'deserializes a json payload into instance of GetSpeechWebhook' do
+      payload = '{ "requestType": "getSpeech" }'
+      expect(Freeclimb::GetSpeechWebhook.deserialize(payload)).to be_instance_of(Freeclimb::GetSpeechWebhook)
+    end
+  end
   
   describe 'test attribute "request_type"' do
     it 'should work' do
@@ -102,7 +108,6 @@ describe Freeclimb::GetSpeechWebhook do
     end
   end
 
-
   describe 'test attribute "direction"' do
     it 'assigns value INBOUND' do
       instance.direction = Freeclimb::CallDirection::INBOUND
@@ -117,7 +122,6 @@ describe Freeclimb::GetSpeechWebhook do
       expect(instance.direction).to eq(Freeclimb::CallDirection::OUTBOUND_DIAL)  
     end
   end
-
   describe 'test attribute "conference_id"' do
     it 'should work' do
       instance.conference_id = "TEST_STRING"
@@ -161,7 +165,6 @@ describe Freeclimb::GetSpeechWebhook do
       expect(instance.reason).to eq(Freeclimb::GetSpeechReason::RECOGNITION)  
     end
   end
-
   describe 'test attribute "recognition_result"' do
     it 'should work' do
       instance.recognition_result = "TEST_STRING"

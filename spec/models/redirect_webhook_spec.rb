@@ -25,6 +25,12 @@ describe Freeclimb::RedirectWebhook do
       expect(instance).to be_instance_of(Freeclimb::RedirectWebhook)
     end
   end
+  describe '.deserialize' do
+    it 'deserializes a json payload into instance of RedirectWebhook' do
+      payload = '{ "requestType": "redirect" }'
+      expect(Freeclimb::RedirectWebhook.deserialize(payload)).to be_instance_of(Freeclimb::RedirectWebhook)
+    end
+  end
   
   describe 'test attribute "request_type"' do
     it 'should work' do
@@ -102,7 +108,6 @@ describe Freeclimb::RedirectWebhook do
     end
   end
 
-
   describe 'test attribute "direction"' do
     it 'assigns value INBOUND' do
       instance.direction = Freeclimb::CallDirection::INBOUND
@@ -117,7 +122,6 @@ describe Freeclimb::RedirectWebhook do
       expect(instance.direction).to eq(Freeclimb::CallDirection::OUTBOUND_DIAL)  
     end
   end
-
   describe 'test attribute "conference_id"' do
     it 'should work' do
       instance.conference_id = "TEST_STRING"

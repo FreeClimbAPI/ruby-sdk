@@ -16,6 +16,13 @@ require 'time'
 module Freeclimb
   # The statusCallbackUrl request includes Recording information for a Conference that ended. This is a notification only; any PerCL returned will be ignored.
   class ConferenceRecordingStatusWebhook < Webhook
+    def self.deserialize(payload)
+      return nil if payload.nil? || payload.empty?
+      data = JSON.parse("[#{payload}]")[0]
+      inverted_attributes = self.attribute_map.invert
+      hash = self.acceptable_attributes.uniq.map { |k| [inverted_attributes[k], data[k.to_s]] }.to_h
+      return ConferenceRecordingStatusWebhook.new(hash)
+    end
     # Context or reason why this request is being made. Will be conferenceRecordingStatus - The statusCallbackUrl request includes Recording information for a Conference that ended.
     attr_accessor :request_type
 

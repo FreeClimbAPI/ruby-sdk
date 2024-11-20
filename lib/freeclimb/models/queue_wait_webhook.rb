@@ -16,6 +16,13 @@ require 'time'
 module Freeclimb
   # A queued Call is requesting instructions to execute during the wait in the Queue and the corresponding waitUrl is being invoked. A PerCL response is expected. The following are the only PerCL commands supported in the PerCL script response to a request to the waitUrl: Play,Say,Pause,GetDigits,Dequeue,Hangup
   class QueueWaitWebhook < Webhook
+    def self.deserialize(payload)
+      return nil if payload.nil? || payload.empty?
+      data = JSON.parse("[#{payload}]")[0]
+      inverted_attributes = self.attribute_map.invert
+      hash = self.acceptable_attributes.uniq.map { |k| [inverted_attributes[k], data[k.to_s]] }.to_h
+      return QueueWaitWebhook.new(hash)
+    end
     # Context or reason why this request is being made. Will be queueWait - A queued call is requesting instructions to execute during the wait in the queue and the corresponding waitUrl is being invoked.
     attr_accessor :request_type
 

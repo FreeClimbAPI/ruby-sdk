@@ -104,7 +104,6 @@ describe Freeclimb::AccountResult do
     end
   end
 
-
   describe 'test attribute "status"' do
     it 'assigns value CLOSED' do
       instance.status = Freeclimb::AccountStatus::CLOSED
@@ -119,7 +118,6 @@ describe Freeclimb::AccountResult do
       expect(instance.status).to eq(Freeclimb::AccountStatus::ACTIVE)  
     end
   end
-
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
         

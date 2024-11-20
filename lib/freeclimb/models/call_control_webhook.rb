@@ -16,6 +16,13 @@ require 'time'
 module Freeclimb
   # The digit sequence defined in the callControlSequence attribute of the AddToConference PerCL command has been entered by the Conference participant. A PerCL response is expected. If invalid PerCL is provided, the call leg which triggered this webhook will terminate.
   class CallControlWebhook < Webhook
+    def self.deserialize(payload)
+      return nil if payload.nil? || payload.empty?
+      data = JSON.parse("[#{payload}]")[0]
+      inverted_attributes = self.attribute_map.invert
+      hash = self.acceptable_attributes.uniq.map { |k| [inverted_attributes[k], data[k.to_s]] }.to_h
+      return CallControlWebhook.new(hash)
+    end
     # Context or reason why this request is being made. Will be callControl.
     attr_accessor :request_type
 

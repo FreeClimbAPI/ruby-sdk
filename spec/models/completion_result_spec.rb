@@ -45,7 +45,6 @@ describe Freeclimb::CompletionResult do
       expect(instance.status).to eq(Freeclimb::CompletionResultStatus::NO_CONTEXT)  
     end
   end
-
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::CompletionResult.new(

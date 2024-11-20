@@ -123,7 +123,6 @@ describe Freeclimb::MessageResult do
       expect(instance.status).to eq(Freeclimb::MessageStatus::UNKNOWN)  
     end
   end
-
   describe 'test attribute "from"' do
     it 'should work' do
       instance.from = "TEST_STRING"

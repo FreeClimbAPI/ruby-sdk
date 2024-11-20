@@ -16,6 +16,13 @@ require 'time'
 module Freeclimb
   # An outbound call spawned by OutDial detected an answer by a machine (answering machine or fax/modem machine) and ifMachineUrl is being invoked. A PerCL response is expected.
   class MachineDetectedWebhook < Webhook
+    def self.deserialize(payload)
+      return nil if payload.nil? || payload.empty?
+      data = JSON.parse("[#{payload}]")[0]
+      inverted_attributes = self.attribute_map.invert
+      hash = self.acceptable_attributes.uniq.map { |k| [inverted_attributes[k], data[k.to_s]] }.to_h
+      return MachineDetectedWebhook.new(hash)
+    end
     # Context or reason why this request is being made. Will be machineDetected - An outbound call spawned by OutDial was answered by a machine and the ifMachineUrl is being invoked.
     attr_accessor :request_type
 

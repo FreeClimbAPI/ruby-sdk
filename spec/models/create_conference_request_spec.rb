@@ -53,7 +53,6 @@ describe Freeclimb::CreateConferenceRequest do
       expect(instance.play_beep).to eq(Freeclimb::PlayBeep::EXIT_ONLY)  
     end
   end
-
   describe 'test attribute "record"' do
     it 'should work' do
       instance.record = false

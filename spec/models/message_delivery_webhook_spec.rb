@@ -25,6 +25,12 @@ describe Freeclimb::MessageDeliveryWebhook do
       expect(instance).to be_instance_of(Freeclimb::MessageDeliveryWebhook)
     end
   end
+  describe '.deserialize' do
+    it 'deserializes a json payload into instance of MessageDeliveryWebhook' do
+      payload = '{ "requestType": "messageDelivery" }'
+      expect(Freeclimb::MessageDeliveryWebhook.deserialize(payload)).to be_instance_of(Freeclimb::MessageDeliveryWebhook)
+    end
+  end
   
   describe 'test attribute "request_type"' do
     it 'should work' do

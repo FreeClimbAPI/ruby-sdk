@@ -69,7 +69,6 @@ describe Freeclimb::OutDial do
       expect(instance.if_machine).to eq(Freeclimb::IfMachine::HANGUP)  
     end
   end
-
   describe 'test attribute "if_machine_url"' do
     it 'should work' do
       instance.if_machine_url = "TEST_STRING"

@@ -71,7 +71,6 @@ describe Freeclimb::SMSTenDLCCampaign do
       expect(instance.status).to eq(Freeclimb::SMSTenDLCCampaignStatus::EXPIRED)  
     end
   end
-
   describe 'test attribute "create_date"' do
     it 'should work' do
       instance.create_date = "2022-07-05T15:17:05Z"

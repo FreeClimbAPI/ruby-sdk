@@ -51,7 +51,6 @@ describe Freeclimb::LogResult do
       expect(instance.level).to eq(Freeclimb::LogLevel::ERROR)  
     end
   end
-
   describe 'test attribute "request_id"' do
     it 'should work' do
       instance.request_id = "TEST_STRING"

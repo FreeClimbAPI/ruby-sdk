@@ -143,7 +143,6 @@ describe Freeclimb::CallResult do
       expect(instance.call_status).to eq(Freeclimb::CallStatus::NO_ANSWER)  
     end
   end
-
   describe 'test attribute "start_time"' do
     it 'should work' do
       instance.start_time = "TEST_STRING"
@@ -204,7 +203,6 @@ describe Freeclimb::CallResult do
     end
   end
 
-
   describe 'test attribute "answered_by"' do
     it 'assigns value HUMAN' do
       instance.answered_by = Freeclimb::AnsweredBy::HUMAN
@@ -215,7 +213,6 @@ describe Freeclimb::CallResult do
       expect(instance.answered_by).to eq(Freeclimb::AnsweredBy::MACHINE)  
     end
   end
-
   describe 'test attribute "subresource_uris"' do
     it 'should work' do
         

@@ -25,6 +25,12 @@ describe Freeclimb::CallStatusWebhook do
       expect(instance).to be_instance_of(Freeclimb::CallStatusWebhook)
     end
   end
+  describe '.deserialize' do
+    it 'deserializes a json payload into instance of CallStatusWebhook' do
+      payload = '{ "requestType": "callStatus" }'
+      expect(Freeclimb::CallStatusWebhook.deserialize(payload)).to be_instance_of(Freeclimb::CallStatusWebhook)
+    end
+  end
   
   describe 'test attribute "request_type"' do
     it 'should work' do
@@ -101,7 +107,6 @@ describe Freeclimb::CallStatusWebhook do
       expect(instance.call_status).to eq(Freeclimb::CallStatus::NO_ANSWER)  
     end
   end
-
 
   describe 'test attribute "call_ended_reason"' do
     it 'assigns value BUSY' do
@@ -198,7 +203,6 @@ describe Freeclimb::CallStatusWebhook do
     end
   end
 
-
   describe 'test attribute "direction"' do
     it 'assigns value INBOUND' do
       instance.direction = Freeclimb::CallDirection::INBOUND
@@ -213,7 +217,6 @@ describe Freeclimb::CallStatusWebhook do
       expect(instance.direction).to eq(Freeclimb::CallDirection::OUTBOUND_DIAL)  
     end
   end
-
   describe 'test attribute "conference_id"' do
     it 'should work' do
       instance.conference_id = "TEST_STRING"

@@ -25,6 +25,12 @@ describe Freeclimb::CallControlWebhook do
       expect(instance).to be_instance_of(Freeclimb::CallControlWebhook)
     end
   end
+  describe '.deserialize' do
+    it 'deserializes a json payload into instance of CallControlWebhook' do
+      payload = '{ "requestType": "callControl" }'
+      expect(Freeclimb::CallControlWebhook.deserialize(payload)).to be_instance_of(Freeclimb::CallControlWebhook)
+    end
+  end
   
   describe 'test attribute "request_type"' do
     it 'should work' do

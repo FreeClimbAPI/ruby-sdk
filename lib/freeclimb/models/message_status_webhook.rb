@@ -16,6 +16,13 @@ require 'time'
 module Freeclimb
   # An outbound SMS has changed status and the notificationUrl from the Sms command or Send an SMS request is being invoked. A PerCL response will be ignored.
   class MessageStatusWebhook < Webhook
+    def self.deserialize(payload)
+      return nil if payload.nil? || payload.empty?
+      data = JSON.parse("[#{payload}]")[0]
+      inverted_attributes = self.attribute_map.invert
+      hash = self.acceptable_attributes.uniq.map { |k| [inverted_attributes[k], data[k.to_s]] }.to_h
+      return MessageStatusWebhook.new(hash)
+    end
     # Value will be messageStatus - An outbound SMS has changed status and the Sms command's notificationUrl is being invoked.
     attr_accessor :request_type
 

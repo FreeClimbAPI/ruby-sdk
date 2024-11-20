@@ -16,6 +16,13 @@ require 'time'
 module Freeclimb
   # An inbound Call to a number registered on FreeClimb will trigger a request to the voiceUrl of the application the number is assigned to. FreeClimb expects to receive PerCL in response to this request in order to process the Call. The following parameters are sent as the POST body.
   class InboundCallWebhook < Webhook
+    def self.deserialize(payload)
+      return nil if payload.nil? || payload.empty?
+      data = JSON.parse("[#{payload}]")[0]
+      inverted_attributes = self.attribute_map.invert
+      hash = self.acceptable_attributes.uniq.map { |k| [inverted_attributes[k], data[k.to_s]] }.to_h
+      return InboundCallWebhook.new(hash)
+    end
     # Context or reason why this request is being made. Will be inboundCall - An inbound call was received and the voiceUrl is being invoked.
     attr_accessor :request_type
 

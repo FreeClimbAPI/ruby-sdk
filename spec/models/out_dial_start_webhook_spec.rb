@@ -25,6 +25,12 @@ describe Freeclimb::OutDialStartWebhook do
       expect(instance).to be_instance_of(Freeclimb::OutDialStartWebhook)
     end
   end
+  describe '.deserialize' do
+    it 'deserializes a json payload into instance of OutDialStartWebhook' do
+      payload = '{ "requestType": "outDialStart" }'
+      expect(Freeclimb::OutDialStartWebhook.deserialize(payload)).to be_instance_of(Freeclimb::OutDialStartWebhook)
+    end
+  end
   
   describe 'test attribute "request_type"' do
     it 'should work' do
@@ -102,7 +108,6 @@ describe Freeclimb::OutDialStartWebhook do
     end
   end
 
-
   describe 'test attribute "direction"' do
     it 'assigns value INBOUND' do
       instance.direction = Freeclimb::CallDirection::INBOUND
@@ -117,7 +122,6 @@ describe Freeclimb::OutDialStartWebhook do
       expect(instance.direction).to eq(Freeclimb::CallDirection::OUTBOUND_DIAL)  
     end
   end
-
   describe 'test attribute "conference_id"' do
     it 'should work' do
       instance.conference_id = "TEST_STRING"

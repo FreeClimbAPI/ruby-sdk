@@ -25,6 +25,12 @@ describe Freeclimb::TranscribeWebhook do
       expect(instance).to be_instance_of(Freeclimb::TranscribeWebhook)
     end
   end
+  describe '.deserialize' do
+    it 'deserializes a json payload into instance of TranscribeWebhook' do
+      payload = '{ "requestType": "transcribe" }'
+      expect(Freeclimb::TranscribeWebhook.deserialize(payload)).to be_instance_of(Freeclimb::TranscribeWebhook)
+    end
+  end
   
   describe 'test attribute "request_type"' do
     it 'should work' do
@@ -122,7 +128,6 @@ describe Freeclimb::TranscribeWebhook do
     end
   end
 
-
   describe 'test attribute "record_term_reason"' do
     it 'assigns value FINISH_KEY' do
       instance.record_term_reason = Freeclimb::RecordUtteranceTermReason::FINISH_KEY
@@ -141,7 +146,6 @@ describe Freeclimb::TranscribeWebhook do
       expect(instance.record_term_reason).to eq(Freeclimb::RecordUtteranceTermReason::MAX_LENGTH)  
     end
   end
-
   describe 'test attribute "digit"' do
     it 'should work' do
       instance.digit = "TEST_STRING"
@@ -181,7 +185,6 @@ describe Freeclimb::TranscribeWebhook do
       expect(instance.barge_in_reason).to eq(Freeclimb::BargeInReason::BARGE_IN_BY_ENERGY)  
     end
   end
-
   describe 'test attribute "barged_in_prompt_no"' do
     it 'should work' do
     
@@ -253,7 +256,6 @@ describe Freeclimb::TranscribeWebhook do
       expect(instance.transcribe_reason).to eq(Freeclimb::TranscribeReason::NO_INPUT)  
     end
   end
-
   describe 'test attribute "transcription_duration_ms"' do
     it 'should work' do
     

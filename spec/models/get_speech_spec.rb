@@ -45,7 +45,6 @@ describe Freeclimb::GetSpeech do
       expect(instance.grammar_type).to eq(Freeclimb::GrammarType::BUILT_IN)  
     end
   end
-
   describe 'test attribute "grammar_file"' do
     it 'should work' do
       instance.grammar_file = "TEST_STRING"
