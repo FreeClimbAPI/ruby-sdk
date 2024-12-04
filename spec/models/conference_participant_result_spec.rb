@@ -100,6 +100,14 @@ describe Freeclimb::ConferenceParticipantResult do
     end
   end
 
+  describe 'test attribute "dtmf_pass_through"' do
+    it 'should work' do
+      instance.dtmf_pass_through = false
+      expect(instance.dtmf_pass_through).to eq(false)        
+        
+    end
+  end
+
   describe 'test attribute "start_conf_on_enter"' do
     it 'should work' do
       instance.start_conf_on_enter = false
@@ -129,6 +137,8 @@ describe Freeclimb::ConferenceParticipantResult do
           
           listen: true,
           
+          dtmf_pass_through: true,
+          
           start_conf_on_enter: true,
           
         )}.not_to raise_error()
@@ -152,6 +162,8 @@ describe Freeclimb::ConferenceParticipantResult do
           talk: true,
           
           listen: true,
+          
+          dtmf_pass_through: true,
           
           start_conf_on_enter: true,
           
@@ -177,6 +189,8 @@ describe Freeclimb::ConferenceParticipantResult do
           talk: true,
           
           listen: true,
+          
+          dtmf_pass_through: true,
           
           start_conf_on_enter: true,
           
@@ -205,6 +219,8 @@ describe Freeclimb::ConferenceParticipantResult do
           talk: true,
           
           listen: true,
+          
+          dtmf_pass_through: true,
           
           start_conf_on_enter: true,
           
@@ -244,6 +260,8 @@ describe Freeclimb::ConferenceParticipantResult do
           
           listen: true,
           
+          dtmf_pass_through: true,
+          
           start_conf_on_enter: true,
           
       )
@@ -265,6 +283,8 @@ describe Freeclimb::ConferenceParticipantResult do
           talk: true,
           
           listen: true,
+          
+          dtmf_pass_through: true,
           
           start_conf_on_enter: true,
           
@@ -292,6 +312,8 @@ describe Freeclimb::ConferenceParticipantResult do
           
           listen: true,
           
+          dtmf_pass_through: true,
+          
           start_conf_on_enter: true,
           
       )
@@ -313,6 +335,8 @@ describe Freeclimb::ConferenceParticipantResult do
           talk: false,
           
           listen: false,
+          
+          dtmf_pass_through: false,
           
           start_conf_on_enter: false,
           
@@ -342,6 +366,8 @@ describe Freeclimb::ConferenceParticipantResult do
       
       listen: true,
       
+      dtmf_pass_through: true,
+      
       start_conf_on_enter: true,
       
     )
@@ -370,6 +396,8 @@ describe Freeclimb::ConferenceParticipantResult do
         
         listen: true,
         
+        dtmf_pass_through: true,
+        
         start_conf_on_enter: true,
         
       )
@@ -391,6 +419,8 @@ describe Freeclimb::ConferenceParticipantResult do
         talk: true,
         
         listen: true,
+        
+        dtmf_pass_through: true,
         
         start_conf_on_enter: true,
         
@@ -419,6 +449,8 @@ describe Freeclimb::ConferenceParticipantResult do
         talk: true,
         
         listen: true,
+        
+        dtmf_pass_through: true,
         
         start_conf_on_enter: true,
         
@@ -450,6 +482,9 @@ describe Freeclimb::ConferenceParticipantResult do
     it 'deserializes the data of listen' do
       expect(instance._deserialize("Boolean", instance.listen)).to be_a_kind_of(TrueClass)
     end
+    it 'deserializes the data of dtmf_pass_through' do
+      expect(instance._deserialize("Boolean", instance.dtmf_pass_through)).to be_a_kind_of(TrueClass)
+    end
     it 'deserializes the data of start_conf_on_enter' do
       expect(instance._deserialize("Boolean", instance.start_conf_on_enter)).to be_a_kind_of(TrueClass)
     end
@@ -475,6 +510,8 @@ describe Freeclimb::ConferenceParticipantResult do
         talk: true,
         
         listen: true,
+        
+        dtmf_pass_through: true,
         
         start_conf_on_enter: true,
         
@@ -504,6 +541,8 @@ describe Freeclimb::ConferenceParticipantResult do
         
         listen: true,
         
+        dtmf_pass_through: true,
+        
         start_conf_on_enter: true,
         
       )
@@ -530,6 +569,8 @@ describe Freeclimb::ConferenceParticipantResult do
         
         listen: true,
         
+        dtmf_pass_through: true,
+        
         start_conf_on_enter: true,
         
       )
@@ -551,6 +592,8 @@ describe Freeclimb::ConferenceParticipantResult do
         talk: true,
         
         listen: true,
+        
+        dtmf_pass_through: true,
         
         start_conf_on_enter: true,
         
@@ -588,6 +631,9 @@ describe Freeclimb::ConferenceParticipantResult do
         listen: true,
         
       
+        dtmf_pass_through: true,
+        
+      
         start_conf_on_enter: true,
         
       )
@@ -617,6 +663,9 @@ describe Freeclimb::ConferenceParticipantResult do
     end
     it 'returns listen in the form of hash' do
       expect(instance._to_hash(instance.listen)).to eq(instance.listen)
+    end
+    it 'returns dtmf_pass_through in the form of hash' do
+      expect(instance._to_hash(instance.dtmf_pass_through)).to eq(instance.dtmf_pass_through)
     end
     it 'returns start_conf_on_enter in the form of hash' do
       expect(instance._to_hash(instance.start_conf_on_enter)).to eq(instance.start_conf_on_enter)

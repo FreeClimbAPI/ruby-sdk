@@ -98,6 +98,14 @@ describe Freeclimb::AddToConference do
     end
   end
 
+  describe 'test attribute "dtmf_pass_through"' do
+    it 'should work' do
+      instance.dtmf_pass_through = false
+      expect(instance.dtmf_pass_through).to eq(false)        
+        
+    end
+  end
+
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::AddToConference.new(
@@ -118,6 +126,8 @@ describe Freeclimb::AddToConference do
           start_conf_on_enter: true,
           
           talk: true,
+          
+          dtmf_pass_through: true,
           
         )}.not_to raise_error()
     end
@@ -141,6 +151,8 @@ describe Freeclimb::AddToConference do
           
           talk: true,
           
+          dtmf_pass_through: true,
+          
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -163,6 +175,8 @@ describe Freeclimb::AddToConference do
           start_conf_on_enter: true,
           
           talk: true,
+          
+          dtmf_pass_through: true,
           
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -189,6 +203,8 @@ describe Freeclimb::AddToConference do
           start_conf_on_enter: true,
           
           talk: true,
+          
+          dtmf_pass_through: true,
           
       )
       expect(instance.valid?).to eq(true)
@@ -226,6 +242,8 @@ describe Freeclimb::AddToConference do
           
           talk: true,
           
+          dtmf_pass_through: true,
+          
       )
       instance_2 = Freeclimb::AddToConference.new(
           allow_call_control: true,
@@ -245,6 +263,8 @@ describe Freeclimb::AddToConference do
           start_conf_on_enter: true,
           
           talk: true,
+          
+          dtmf_pass_through: true,
           
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
@@ -270,6 +290,8 @@ describe Freeclimb::AddToConference do
           
           talk: true,
           
+          dtmf_pass_through: true,
+          
       )
       instance_2 = Freeclimb::AddToConference.new(
           allow_call_control: false,
@@ -289,6 +311,8 @@ describe Freeclimb::AddToConference do
           start_conf_on_enter: false,
           
           talk: false,
+          
+          dtmf_pass_through: false,
           
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
@@ -316,6 +340,8 @@ describe Freeclimb::AddToConference do
       
       talk: true,
       
+      dtmf_pass_through: true,
+      
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -342,6 +368,8 @@ describe Freeclimb::AddToConference do
         
         talk: true,
         
+        dtmf_pass_through: true,
+        
       )
       instance_2 = Freeclimb::AddToConference.new(
         allow_call_control: true,
@@ -361,6 +389,8 @@ describe Freeclimb::AddToConference do
         start_conf_on_enter: true,
         
         talk: true,
+        
+        dtmf_pass_through: true,
         
       )
 
@@ -387,6 +417,8 @@ describe Freeclimb::AddToConference do
         start_conf_on_enter: true,
         
         talk: true,
+        
+        dtmf_pass_through: true,
         
     )
     it 'deserializes the data of allow_call_control' do
@@ -416,6 +448,9 @@ describe Freeclimb::AddToConference do
     it 'deserializes the data of talk' do
       expect(instance._deserialize("Boolean", instance.talk)).to be_a_kind_of(TrueClass)
     end
+    it 'deserializes the data of dtmf_pass_through' do
+      expect(instance._deserialize("Boolean", instance.dtmf_pass_through)).to be_a_kind_of(TrueClass)
+    end
   end
 
   describe 'test method "to_s"' do
@@ -438,6 +473,8 @@ describe Freeclimb::AddToConference do
         start_conf_on_enter: true,
         
         talk: true,
+        
+        dtmf_pass_through: true,
         
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -465,6 +502,8 @@ describe Freeclimb::AddToConference do
         
         talk: true,
         
+        dtmf_pass_through: true,
+        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -489,6 +528,8 @@ describe Freeclimb::AddToConference do
         
         talk: true,
         
+        dtmf_pass_through: true,
+        
       )
       instance_2 = Freeclimb::AddToConference.new(
         allow_call_control: true,
@@ -508,6 +549,8 @@ describe Freeclimb::AddToConference do
         start_conf_on_enter: true,
         
         talk: true,
+        
+        dtmf_pass_through: true,
         
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -542,6 +585,9 @@ describe Freeclimb::AddToConference do
       
         talk: true,
         
+      
+        dtmf_pass_through: true,
+        
       )
     it 'returns allow_call_control in the form of hash' do
       expect(instance._to_hash(instance.allow_call_control)).to eq(instance.allow_call_control)
@@ -569,6 +615,9 @@ describe Freeclimb::AddToConference do
     end
     it 'returns talk in the form of hash' do
       expect(instance._to_hash(instance.talk)).to eq(instance.talk)
+    end
+    it 'returns dtmf_pass_through in the form of hash' do
+      expect(instance._to_hash(instance.dtmf_pass_through)).to eq(instance.dtmf_pass_through)
     end
   end
 

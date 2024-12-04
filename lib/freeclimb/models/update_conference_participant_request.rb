@@ -21,11 +21,15 @@ module Freeclimb
     # (Optional) Default is `true`. Setting to `false` silences the Conference for this Participant. FreeClimb returns an error and ignores any other value.
     attr_accessor :listen
 
+    # (Optional) Default is `true`. Setting to `false` mutes dtmf audio for this Participant. FreeClimb returns an error and ignores any other value.
+    attr_accessor :dtmf_pass_through
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'talk' => :'talk',
-        :'listen' => :'listen'
+        :'listen' => :'listen',
+        :'dtmf_pass_through' => :'dtmfPassThrough'
       }
     end
 
@@ -38,7 +42,8 @@ module Freeclimb
     def self.openapi_types
       {
         :'talk' => :'Boolean',
-        :'listen' => :'Boolean'
+        :'listen' => :'Boolean',
+        :'dtmf_pass_through' => :'Boolean'
       }
     end
 
@@ -70,6 +75,10 @@ module Freeclimb
       if attributes.key?(:'listen')
         self.listen = attributes[:'listen']
       end
+
+      if attributes.key?(:'dtmf_pass_through')
+        self.dtmf_pass_through = attributes[:'dtmf_pass_through']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -96,7 +105,8 @@ module Freeclimb
       return true if self.equal?(o)
       self.class == o.class &&
           talk == o.talk &&
-          listen == o.listen
+          listen == o.listen &&
+          dtmf_pass_through == o.dtmf_pass_through
     end
 
     # @see the `==` method
@@ -108,7 +118,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [talk, listen].hash
+      [talk, listen, dtmf_pass_through].hash
     end
 
     # Builds the object from hash

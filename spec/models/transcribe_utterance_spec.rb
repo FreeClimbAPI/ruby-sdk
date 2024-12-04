@@ -45,8 +45,8 @@ describe Freeclimb::TranscribeUtterance do
   describe 'test attribute "record"' do
     it 'should work' do
         
-      instance.record = Freeclimb::TranscribeUtteranceAllOfRecord.new
-      expect(instance.record).to be_instance_of(Freeclimb::TranscribeUtteranceAllOfRecord)
+      instance.record = Freeclimb::TranscribeUtteranceRecord.new
+      expect(instance.record).to be_instance_of(Freeclimb::TranscribeUtteranceRecord)
     end
   end
 
@@ -82,7 +82,7 @@ describe Freeclimb::TranscribeUtterance do
           play_beep: true,
           
           
-          record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
+          record: Freeclimb::TranscribeUtteranceRecord.new(),
           privacy_for_logging: true,
           
           privacy_for_recording: true,
@@ -98,7 +98,7 @@ describe Freeclimb::TranscribeUtterance do
           play_beep: true,
           
           
-          record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
+          record: Freeclimb::TranscribeUtteranceRecord.new,
           privacy_for_logging: true,
           
           privacy_for_recording: true,
@@ -115,7 +115,7 @@ describe Freeclimb::TranscribeUtterance do
           play_beep: true,
           
           
-          record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
+          record: Freeclimb::TranscribeUtteranceRecord.new,
           privacy_for_logging: true,
           
           privacy_for_recording: true,
@@ -135,7 +135,7 @@ describe Freeclimb::TranscribeUtterance do
           play_beep: true,
           
           
-          record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
+          record: Freeclimb::TranscribeUtteranceRecord.new(),
           privacy_for_logging: true,
           
           privacy_for_recording: true,
@@ -164,7 +164,7 @@ describe Freeclimb::TranscribeUtterance do
           
           play_beep: true,
           
-          record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
+          record: Freeclimb::TranscribeUtteranceRecord.new(),
           
           privacy_for_logging: true,
           
@@ -178,7 +178,7 @@ describe Freeclimb::TranscribeUtterance do
           
           play_beep: true,
           
-          record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
+          record: Freeclimb::TranscribeUtteranceRecord.new(),
           
           privacy_for_logging: true,
           
@@ -196,7 +196,7 @@ describe Freeclimb::TranscribeUtterance do
           
           play_beep: true,
           
-          record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
+          record: Freeclimb::TranscribeUtteranceRecord.new(),
           
           privacy_for_logging: true,
           
@@ -210,7 +210,7 @@ describe Freeclimb::TranscribeUtterance do
           
           play_beep: false,
           
-          record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
+          record: Freeclimb::TranscribeUtteranceRecord.new(),
           
           privacy_for_logging: false,
           
@@ -231,7 +231,7 @@ describe Freeclimb::TranscribeUtterance do
       play_beep: true,
       
       
-      record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
+      record: Freeclimb::TranscribeUtteranceRecord.new(),
       privacy_for_logging: true,
       
       privacy_for_recording: true,
@@ -251,7 +251,7 @@ describe Freeclimb::TranscribeUtterance do
         play_beep: true,
         
         
-        record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
+        record: Freeclimb::TranscribeUtteranceRecord.new(),
         privacy_for_logging: true,
         
         privacy_for_recording: true,
@@ -265,7 +265,7 @@ describe Freeclimb::TranscribeUtterance do
         play_beep: true,
         
         
-        record: Freeclimb::TranscribeUtteranceAllOfRecord.new(),
+        record: Freeclimb::TranscribeUtteranceRecord.new(),
         privacy_for_logging: true,
         
         privacy_for_recording: true,
@@ -285,7 +285,7 @@ describe Freeclimb::TranscribeUtterance do
         play_beep: true,
         
         
-        record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
+        record: Freeclimb::TranscribeUtteranceRecord.new,
         privacy_for_logging: true,
         
         privacy_for_recording: true,
@@ -300,7 +300,7 @@ describe Freeclimb::TranscribeUtterance do
       expect(instance._deserialize("Boolean", instance.play_beep)).to be_a_kind_of(TrueClass)
     end
     it 'deserializes the data of record' do
-      expect(instance._deserialize("Object", instance.record)).to be_a_kind_of(Freeclimb::TranscribeUtteranceAllOfRecord)
+      expect(instance._deserialize("Object", instance.record)).to be_a_kind_of(Freeclimb::TranscribeUtteranceRecord)
     end
     it 'deserializes the data of privacy_for_logging' do
       expect(instance._deserialize("Boolean", instance.privacy_for_logging)).to be_a_kind_of(TrueClass)
@@ -309,7 +309,7 @@ describe Freeclimb::TranscribeUtterance do
       expect(instance._deserialize("Boolean", instance.privacy_for_recording)).to be_a_kind_of(TrueClass)
     end
     it 'deserializes the data of prompts' do
-      expect(instance._deserialize("Array<Object>", instance.prompts)).to be_a_kind_of(Array)
+      expect(instance._deserialize("Array<PerclCommand>", instance.prompts)).to be_a_kind_of(Array)
     end
   end
 
@@ -321,7 +321,7 @@ describe Freeclimb::TranscribeUtterance do
         play_beep: true,
         
         
-        record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
+        record: Freeclimb::TranscribeUtteranceRecord.new,
         privacy_for_logging: true,
         
         privacy_for_recording: true,
@@ -341,7 +341,7 @@ describe Freeclimb::TranscribeUtterance do
         play_beep: true,
         
         
-        record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
+        record: Freeclimb::TranscribeUtteranceRecord.new,
         privacy_for_logging: true,
         
         privacy_for_recording: true,
@@ -359,7 +359,7 @@ describe Freeclimb::TranscribeUtterance do
         play_beep: true,
         
         
-        record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
+        record: Freeclimb::TranscribeUtteranceRecord.new,
         privacy_for_logging: true,
         
         privacy_for_recording: true,
@@ -373,7 +373,7 @@ describe Freeclimb::TranscribeUtterance do
         play_beep: true,
         
         
-        record: Freeclimb::TranscribeUtteranceAllOfRecord.new,
+        record: Freeclimb::TranscribeUtteranceRecord.new,
         privacy_for_logging: true,
         
         privacy_for_recording: true,

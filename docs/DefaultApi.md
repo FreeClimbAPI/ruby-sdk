@@ -3169,7 +3169,8 @@ conference_id = 'conference_id_example' # String | ID of the conference this par
 
 opts = {
   talk: true, # Boolean | Only show Participants with the talk privilege.
-  listen: true # Boolean | Only show Participants with the listen privilege.
+  listen: true, # Boolean | Only show Participants with the listen privilege.
+  dtmf_pass_through: true # Boolean | Only show Participants with the dtmfPassThrough privilege.
 }
 
 begin
@@ -3207,6 +3208,7 @@ end
 | **conference_id** | **String** | ID of the conference this participant is in. |  |
 | **talk** | **Boolean** | Only show Participants with the talk privilege. | [optional] |
 | **listen** | **Boolean** | Only show Participants with the listen privilege. | [optional] |
+| **dtmf_pass_through** | **Boolean** | Only show Participants with the dtmfPassThrough privilege. | [optional] |
 
 
 ### Return type

@@ -125,6 +125,7 @@ docs/SMSTollFreeCampaignRegistrationStatus.md
 docs/SMSTollFreeCampaignsListResult.md
 docs/Say.md
 docs/SendDigits.md
+docs/SetDTMFPassThrough.md
 docs/SetListen.md
 docs/SetTalk.md
 docs/Sms.md
@@ -134,7 +135,7 @@ docs/TerminateConference.md
 docs/TranscribeReason.md
 docs/TranscribeTermReason.md
 docs/TranscribeUtterance.md
-docs/TranscribeUtteranceAllOfRecord.md
+docs/TranscribeUtteranceRecord.md
 docs/TranscribeWebhook.md
 docs/Unpark.md
 docs/UpdateCallRequest.md
@@ -252,6 +253,7 @@ lib/freeclimb/models/remove_from_queue_notification_webhook.rb
 lib/freeclimb/models/request_type.rb
 lib/freeclimb/models/say.rb
 lib/freeclimb/models/send_digits.rb
+lib/freeclimb/models/set_dtmf_pass_through.rb
 lib/freeclimb/models/set_listen.rb
 lib/freeclimb/models/set_talk.rb
 lib/freeclimb/models/sms.rb
@@ -278,7 +280,7 @@ lib/freeclimb/models/tfn.rb
 lib/freeclimb/models/transcribe_reason.rb
 lib/freeclimb/models/transcribe_term_reason.rb
 lib/freeclimb/models/transcribe_utterance.rb
-lib/freeclimb/models/transcribe_utterance_all_of_record.rb
+lib/freeclimb/models/transcribe_utterance_record.rb
 lib/freeclimb/models/transcribe_webhook.rb
 lib/freeclimb/models/unpark.rb
 lib/freeclimb/models/update_call_request.rb
@@ -391,6 +393,7 @@ spec/models/remove_from_queue_notification_webhook_spec.rb
 spec/models/request_type_spec.rb
 spec/models/say_spec.rb
 spec/models/send_digits_spec.rb
+spec/models/set_dtmf_pass_through_spec.rb
 spec/models/set_listen_spec.rb
 spec/models/set_talk_spec.rb
 spec/models/sms_spec.rb
@@ -416,7 +419,7 @@ spec/models/terminate_conference_spec.rb
 spec/models/tfn_spec.rb
 spec/models/transcribe_reason_spec.rb
 spec/models/transcribe_term_reason_spec.rb
-spec/models/transcribe_utterance_all_of_record_spec.rb
+spec/models/transcribe_utterance_record_spec.rb
 spec/models/transcribe_utterance_spec.rb
 spec/models/transcribe_webhook_spec.rb
 spec/models/unpark_spec.rb

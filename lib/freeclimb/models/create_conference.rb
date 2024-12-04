@@ -126,8 +126,6 @@ module Freeclimb
 
       if attributes.key?(:'play_beep')
         self.play_beep = attributes[:'play_beep']
-      else
-        self.play_beep = 'always'
       end
 
       if attributes.key?(:'record')

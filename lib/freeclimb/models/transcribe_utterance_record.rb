@@ -14,46 +14,33 @@ require 'date'
 require 'time'
 
 module Freeclimb
-  # The `TranscribeUtterance` command transcribes the caller’s voice and returns transcription of the audio and optionally returns the recording of the audio transcribed.  `TranscribeUtterance` is blocking and is a terminal command. As such, the actionUrl property is required, and control of the Call picks up using the `PerCL` returned in response of the `actionUrl`. Recording and Transcription information is returned in the actionUrl request. If the reason this command ended was due to the call hanging up, any PerCL returned will not execute.
-  class TranscribeUtterance < PerclCommand
-    attr_accessor :action_url
+  class TranscribeUtteranceRecord
+    attr_accessor :save_recording
 
-    attr_accessor :play_beep
+    attr_accessor :max_length_sec
 
-    attr_accessor :record
-
-    attr_accessor :privacy_for_logging
-
-    attr_accessor :privacy_for_recording
-
-    attr_accessor :prompts
+    attr_accessor :rcrd_termination_silence_time_ms
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'action_url' => :'actionUrl',
-        :'play_beep' => :'playBeep',
-        :'record' => :'record',
-        :'privacy_for_logging' => :'privacyForLogging',
-        :'privacy_for_recording' => :'privacyForRecording',
-        :'prompts' => :'prompts'
+        :'save_recording' => :'saveRecording',
+        :'max_length_sec' => :'maxLengthSec',
+        :'rcrd_termination_silence_time_ms' => :'rcrdTerminationSilenceTimeMs'
       }
     end
 
-    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
+    # Returns all the JSON keys this model knows about
     def self.acceptable_attributes
-      attribute_map.values.concat(superclass.acceptable_attributes)
+      attribute_map.values
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'action_url' => :'String',
-        :'play_beep' => :'Boolean',
-        :'record' => :'TranscribeUtteranceRecord',
-        :'privacy_for_logging' => :'Boolean',
-        :'privacy_for_recording' => :'Boolean',
-        :'prompts' => :'Array<PerclCommand>'
+        :'save_recording' => :'Boolean',
+        :'max_length_sec' => :'Integer',
+        :'rcrd_termination_silence_time_ms' => :'Integer'
       }
     end
 
@@ -63,71 +50,56 @@ module Freeclimb
       ])
     end
 
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-      :'PerclCommand'
-      ]
-    end
-
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::TranscribeUtterance` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::TranscribeUtteranceRecord` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::TranscribeUtterance`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::TranscribeUtteranceRecord`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      # call parent's initialize
-      super(attributes)
-
-      if attributes.key?(:'action_url')
-        self.action_url = attributes[:'action_url']
-      end
-
-      if attributes.key?(:'play_beep')
-        self.play_beep = attributes[:'play_beep']
+      if attributes.key?(:'save_recording')
+        self.save_recording = attributes[:'save_recording']
       else
-        self.play_beep = false
+        self.save_recording = false
       end
 
-      if attributes.key?(:'record')
-        self.record = attributes[:'record']
-      end
-
-      if attributes.key?(:'privacy_for_logging')
-        self.privacy_for_logging = attributes[:'privacy_for_logging']
+      if attributes.key?(:'max_length_sec')
+        self.max_length_sec = attributes[:'max_length_sec']
       else
-        self.privacy_for_logging = false
+        self.max_length_sec = 60
       end
 
-      if attributes.key?(:'privacy_for_recording')
-        self.privacy_for_recording = attributes[:'privacy_for_recording']
-      else
-        self.privacy_for_recording = false
+      if attributes.key?(:'rcrd_termination_silence_time_ms')
+        self.rcrd_termination_silence_time_ms = attributes[:'rcrd_termination_silence_time_ms']
       end
-
-      if attributes.key?(:'prompts')
-        if (value = attributes[:'prompts']).is_a?(Array)
-          self.prompts = value
-        end
-      end
-      self.command = "TranscribeUtterance"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
-      if @action_url.nil?
-        invalid_properties.push('invalid value for "action_url", action_url cannot be nil.')
+      invalid_properties = Array.new
+      if !@max_length_sec.nil? && @max_length_sec > 60
+        invalid_properties.push('invalid value for "max_length_sec", must be smaller than or equal to 60.')
+      end
+
+      if !@max_length_sec.nil? && @max_length_sec < 1
+        invalid_properties.push('invalid value for "max_length_sec", must be greater than or equal to 1.')
+      end
+
+      if !@rcrd_termination_silence_time_ms.nil? && @rcrd_termination_silence_time_ms > 3000
+        invalid_properties.push('invalid value for "rcrd_termination_silence_time_ms", must be smaller than or equal to 3000.')
+      end
+
+      if !@rcrd_termination_silence_time_ms.nil? && @rcrd_termination_silence_time_ms < 1
+        invalid_properties.push('invalid value for "rcrd_termination_silence_time_ms", must be greater than or equal to 1.')
       end
 
       invalid_properties
@@ -137,11 +109,39 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
-      if @action_url.nil?
+      if @save_recording.nil?
         false
       else
         list_invalid_properties.length() == 0
       end
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] max_length_sec Value to be assigned
+    def max_length_sec=(max_length_sec)
+      if !max_length_sec.nil? && max_length_sec > 60
+        fail ArgumentError, 'invalid value for "max_length_sec", must be smaller than or equal to 60.'
+      end
+
+      if !max_length_sec.nil? && max_length_sec < 1
+        fail ArgumentError, 'invalid value for "max_length_sec", must be greater than or equal to 1.'
+      end
+
+      @max_length_sec = max_length_sec
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] rcrd_termination_silence_time_ms Value to be assigned
+    def rcrd_termination_silence_time_ms=(rcrd_termination_silence_time_ms)
+      if !rcrd_termination_silence_time_ms.nil? && rcrd_termination_silence_time_ms > 3000
+        fail ArgumentError, 'invalid value for "rcrd_termination_silence_time_ms", must be smaller than or equal to 3000.'
+      end
+
+      if !rcrd_termination_silence_time_ms.nil? && rcrd_termination_silence_time_ms < 1
+        fail ArgumentError, 'invalid value for "rcrd_termination_silence_time_ms", must be greater than or equal to 1.'
+      end
+
+      @rcrd_termination_silence_time_ms = rcrd_termination_silence_time_ms
     end
 
     # Checks equality by comparing each attribute.
@@ -149,12 +149,9 @@ module Freeclimb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          action_url == o.action_url &&
-          play_beep == o.play_beep &&
-          record == o.record &&
-          privacy_for_logging == o.privacy_for_logging &&
-          privacy_for_recording == o.privacy_for_recording &&
-          prompts == o.prompts && super(o)
+          save_recording == o.save_recording &&
+          max_length_sec == o.max_length_sec &&
+          rcrd_termination_silence_time_ms == o.rcrd_termination_silence_time_ms
     end
 
     # @see the `==` method
@@ -166,7 +163,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [action_url, play_beep, record, privacy_for_logging, privacy_for_recording, prompts].hash
+      [save_recording, max_length_sec, rcrd_termination_silence_time_ms].hash
     end
 
     # Builds the object from hash
@@ -181,7 +178,6 @@ module Freeclimb
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
-      super(attributes)
       self.class.openapi_types.each_pair do |key, type|
         if attributes[self.class.attribute_map[key]].nil? && self.class.openapi_nullable.include?(key)
           self.send("#{key}=", nil)
@@ -257,7 +253,7 @@ module Freeclimb
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = super
+      hash = {}
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

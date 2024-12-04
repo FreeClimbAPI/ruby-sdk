@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module Freeclimb
-  # The `SetListen` command enables or disables the listen privilege for a Conference Participant provided both calls are in the same conference. The Participant can hear what the other participants are saying only if this privilege is enabled.
+  # The `SetListen` command enables or disables the listen privilege for this Conference Participant. The Participant can hear what the other participants are saying only if this privilege is enabled.
   class SetListen < PerclCommand
     # Specifying `false` will silence the Conference for this Participant.
     attr_accessor :listen

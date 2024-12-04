@@ -14,33 +14,27 @@ require 'date'
 require 'time'
 
 module Freeclimb
-  class TranscribeUtteranceAllOfRecord
-    attr_accessor :save_recording
-
-    attr_accessor :max_length_sec
-
-    attr_accessor :rcrd_termination_silence_time_ms
+  # The `SetDTMFPassThrough` command enables or disables the dtmfPassThrough privilege for this Conference Participant. If 'true', DTMFs will be passed through from this Participant to all other Participants in the Conference
+  class SetDTMFPassThrough < PerclCommand
+    # Specifying `false` mutes the Participant's dtmf audio.
+    attr_accessor :dtmf_pass_through
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'save_recording' => :'saveRecording',
-        :'max_length_sec' => :'maxLengthSec',
-        :'rcrd_termination_silence_time_ms' => :'rcrdTerminationSilenceTimeMs'
+        :'dtmf_pass_through' => :'dtmfPassThrough'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'save_recording' => :'Boolean',
-        :'max_length_sec' => :'Integer',
-        :'rcrd_termination_silence_time_ms' => :'Integer'
+        :'dtmf_pass_through' => :'Boolean'
       }
     end
 
@@ -50,58 +44,41 @@ module Freeclimb
       ])
     end
 
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'PerclCommand'
+      ]
+    end
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::TranscribeUtteranceAllOfRecord` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::SetDTMFPassThrough` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::TranscribeUtteranceAllOfRecord`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::SetDTMFPassThrough`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'save_recording')
-        self.save_recording = attributes[:'save_recording']
-      else
-        self.save_recording = false
-      end
+      # call parent's initialize
+      super(attributes)
 
-      if attributes.key?(:'max_length_sec')
-        self.max_length_sec = attributes[:'max_length_sec']
-      else
-        self.max_length_sec = 60
+      if attributes.key?(:'dtmf_pass_through')
+        self.dtmf_pass_through = attributes[:'dtmf_pass_through']
       end
-
-      if attributes.key?(:'rcrd_termination_silence_time_ms')
-        self.rcrd_termination_silence_time_ms = attributes[:'rcrd_termination_silence_time_ms']
-      end
+      self.command = "SetDTMFPassThrough"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      if !@max_length_sec.nil? && @max_length_sec > 60
-        invalid_properties.push('invalid value for "max_length_sec", must be smaller than or equal to 60.')
-      end
-
-      if !@max_length_sec.nil? && @max_length_sec < 1
-        invalid_properties.push('invalid value for "max_length_sec", must be greater than or equal to 1.')
-      end
-
-      if !@rcrd_termination_silence_time_ms.nil? && @rcrd_termination_silence_time_ms > 3000
-        invalid_properties.push('invalid value for "rcrd_termination_silence_time_ms", must be smaller than or equal to 3000.')
-      end
-
-      if !@rcrd_termination_silence_time_ms.nil? && @rcrd_termination_silence_time_ms <= 0
-        invalid_properties.push('invalid value for "rcrd_termination_silence_time_ms", must be greater than 0.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -109,39 +86,11 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
-      if @save_recording.nil?
+      if @dtmf_pass_through.nil?
         false
       else
         list_invalid_properties.length() == 0
       end
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] max_length_sec Value to be assigned
-    def max_length_sec=(max_length_sec)
-      if !max_length_sec.nil? && max_length_sec > 60
-        fail ArgumentError, 'invalid value for "max_length_sec", must be smaller than or equal to 60.'
-      end
-
-      if !max_length_sec.nil? && max_length_sec < 1
-        fail ArgumentError, 'invalid value for "max_length_sec", must be greater than or equal to 1.'
-      end
-
-      @max_length_sec = max_length_sec
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] rcrd_termination_silence_time_ms Value to be assigned
-    def rcrd_termination_silence_time_ms=(rcrd_termination_silence_time_ms)
-      if !rcrd_termination_silence_time_ms.nil? && rcrd_termination_silence_time_ms > 3000
-        fail ArgumentError, 'invalid value for "rcrd_termination_silence_time_ms", must be smaller than or equal to 3000.'
-      end
-
-      if !rcrd_termination_silence_time_ms.nil? && rcrd_termination_silence_time_ms <= 0
-        fail ArgumentError, 'invalid value for "rcrd_termination_silence_time_ms", must be greater than 0.'
-      end
-
-      @rcrd_termination_silence_time_ms = rcrd_termination_silence_time_ms
     end
 
     # Checks equality by comparing each attribute.
@@ -149,9 +98,7 @@ module Freeclimb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          save_recording == o.save_recording &&
-          max_length_sec == o.max_length_sec &&
-          rcrd_termination_silence_time_ms == o.rcrd_termination_silence_time_ms
+          dtmf_pass_through == o.dtmf_pass_through && super(o)
     end
 
     # @see the `==` method
@@ -163,7 +110,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [save_recording, max_length_sec, rcrd_termination_silence_time_ms].hash
+      [dtmf_pass_through].hash
     end
 
     # Builds the object from hash
@@ -178,6 +125,7 @@ module Freeclimb
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       self.class.openapi_types.each_pair do |key, type|
         if attributes[self.class.attribute_map[key]].nil? && self.class.openapi_nullable.include?(key)
           self.send("#{key}=", nil)
@@ -253,7 +201,7 @@ module Freeclimb
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

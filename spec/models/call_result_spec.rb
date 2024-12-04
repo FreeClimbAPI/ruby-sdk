@@ -222,6 +222,14 @@ describe Freeclimb::CallResult do
     end
   end
 
+  describe 'test attribute "application_id"' do
+    it 'should work' do
+      instance.application_id = "TEST_STRING"
+      expect(instance.application_id).to eq("TEST_STRING")  
+        
+    end
+  end
+
   describe 'test method "initialize"' do
     it 'properly initializes with values' do
         expect{instance = Freeclimb::CallResult.new(
@@ -265,6 +273,8 @@ describe Freeclimb::CallResult do
           answered_by: Freeclimb::AnsweredBy::HUMAN,
           
           subresource_uris: Object.new(),
+          
+          application_id: "TS",
           
         )}.not_to raise_error()
     end
@@ -311,6 +321,8 @@ describe Freeclimb::CallResult do
           
           subresource_uris: Object.new(),
           
+          application_id: "TS",
+          
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
     end
@@ -356,6 +368,8 @@ describe Freeclimb::CallResult do
           answered_by: Freeclimb::AnsweredBy::HUMAN,
           
           subresource_uris: Object.new(),
+          
+          application_id: "TS",
           
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -405,6 +419,8 @@ describe Freeclimb::CallResult do
           answered_by: Freeclimb::AnsweredBy::HUMAN,
           
           subresource_uris: Object.new(),
+          
+          application_id: "TS",
           
       )
       expect(instance.valid?).to eq(true)
@@ -465,6 +481,8 @@ describe Freeclimb::CallResult do
           
           subresource_uris: obj,
           
+          application_id: "TS",
+          
       )
       instance_2 = Freeclimb::CallResult.new(
           uri: "TS",
@@ -507,6 +525,8 @@ describe Freeclimb::CallResult do
           answered_by: Freeclimb::AnsweredBy::HUMAN,
           
           subresource_uris: obj,
+          
+          application_id: "TS",
           
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
@@ -555,6 +575,8 @@ describe Freeclimb::CallResult do
           
           subresource_uris: Object.new(),
           
+          application_id: "TS",
+          
       )
       instance_2 = Freeclimb::CallResult.new(
           uri: "ST",
@@ -597,6 +619,8 @@ describe Freeclimb::CallResult do
           answered_by: nil,
           
           subresource_uris: nil,
+          
+          application_id: "ST",
           
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
@@ -647,6 +671,8 @@ describe Freeclimb::CallResult do
       
       subresource_uris: Object.new(),
       
+      application_id: "TS",
+      
     )
     expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -696,6 +722,8 @@ describe Freeclimb::CallResult do
         
         subresource_uris: Object.new(),
         
+        application_id: "TS",
+        
       )
       instance_2 = Freeclimb::CallResult.new(
         uri: "TS",
@@ -738,6 +766,8 @@ describe Freeclimb::CallResult do
         answered_by: Freeclimb::AnsweredBy::HUMAN,
         
         subresource_uris: Object.new(),
+        
+        application_id: "TS",
         
       )
 
@@ -788,6 +818,8 @@ describe Freeclimb::CallResult do
         
         subresource_uris: Object.new(),
         
+        application_id: "TS",
+        
     )
     it 'deserializes the data of uri' do
       expect(instance._deserialize("String", instance.uri)).to be_a_kind_of(String)
@@ -837,6 +869,9 @@ describe Freeclimb::CallResult do
     it 'deserializes the data of subresource_uris' do
       expect(instance._deserialize("Object", instance.subresource_uris)).to be_a_kind_of(Object)
     end
+    it 'deserializes the data of application_id' do
+      expect(instance._deserialize("String", instance.application_id)).to be_a_kind_of(String)
+    end
   end
 
   describe 'test method "to_s"' do
@@ -882,6 +917,8 @@ describe Freeclimb::CallResult do
         answered_by: Freeclimb::AnsweredBy::HUMAN,
         
         subresource_uris: Object.new(),
+        
+        application_id: "TS",
         
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -932,6 +969,8 @@ describe Freeclimb::CallResult do
         
         subresource_uris: Object.new(),
         
+        application_id: "TS",
+        
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -979,6 +1018,8 @@ describe Freeclimb::CallResult do
         
         subresource_uris: obj,
         
+        application_id: "TS",
+        
       )
       instance_2 = Freeclimb::CallResult.new(
         uri: "TS",
@@ -1021,6 +1062,8 @@ describe Freeclimb::CallResult do
         answered_by: Freeclimb::AnsweredBy::HUMAN,
         
         subresource_uris: obj,
+        
+        application_id: "TS",
         
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -1088,6 +1131,9 @@ describe Freeclimb::CallResult do
       
         subresource_uris: Object.new(),
         
+      
+        application_id: "TS",
+        
       )
     it 'returns uri in the form of hash' do
       expect(instance._to_hash(instance.uri)).to eq(instance.uri)
@@ -1145,6 +1191,9 @@ describe Freeclimb::CallResult do
     end
     it 'returns subresource_uris in the form of hash' do
       expect(instance._to_hash(instance.subresource_uris)).to eq(instance.subresource_uris)
+    end
+    it 'returns application_id in the form of hash' do
+      expect(instance._to_hash(instance.application_id)).to eq(instance.application_id)
     end
   end
 
