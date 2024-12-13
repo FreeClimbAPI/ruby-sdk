@@ -8,7 +8,7 @@
 | **campaign_id** | **String** | Alphanumeric identifier assigned by the registry for a campaign. This identifier is required by the NetNumber OSR SMS enabling process of 10DLC. |  |
 | **csp_id** | **String** | Alphanumeric identifier of the CSP associated with this campaign. |  |
 | **reseller_id** | **String** | Alphanumeric identifier of the reseller that you want to associate with this campaign. | [optional] |
-| **status** | **String** | Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status.  | [optional] |
+| **status** | [**SMSTenDLCCampaignStatus**](SMSTenDLCCampaignStatus.md) |  | [optional] |
 | **create_date** | **Time** | Unix timestamp when campaign was created. | [optional] |
 | **auto_renewal** | **Boolean** | Campaign subscription auto-renewal status. | [optional] |
 | **billed_date** | **Time** | Campaign recent billed date. | [optional] |

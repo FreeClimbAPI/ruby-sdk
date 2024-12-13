@@ -6,10 +6,10 @@
 | ---- | ---- | ----------- | ----- |
 | **action_url** | **String** |  |  |
 | **play_beep** | **Boolean** |  | [optional][default to false] |
-| **record** | [**TranscribeUtteranceAllOfRecord**](TranscribeUtteranceAllOfRecord.md) |  | [optional] |
+| **record** | [**TranscribeUtteranceRecord**](TranscribeUtteranceRecord.md) |  | [optional] |
 | **privacy_for_logging** | **Boolean** |  | [optional][default to false] |
 | **privacy_for_recording** | **Boolean** |  | [optional][default to false] |
-| **prompts** | **Array&lt;Object&gt;** |  | [optional] |
+| **prompts** | [**Array&lt;PerclCommand&gt;**](PerclCommand.md) |  | [optional] |
 
 ## Example
 
