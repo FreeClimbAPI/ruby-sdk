@@ -140,6 +140,8 @@ describe Freeclimb::InboundCallWebhook do
 
   describe 'test attribute "parent_call_id"' do
     it 'should work' do
+      instance.parent_call_id = "TEST_STRING"
+      expect(instance.parent_call_id).to eq("TEST_STRING")  
         
     end
   end
@@ -167,6 +169,7 @@ describe Freeclimb::InboundCallWebhook do
           
           queue_id: "TS",
           
+          parent_call_id: "TS",
           
         )}.not_to raise_error()
     end
@@ -192,6 +195,7 @@ describe Freeclimb::InboundCallWebhook do
           
           queue_id: "TS",
           
+          parent_call_id: "TS",
           
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -218,6 +222,7 @@ describe Freeclimb::InboundCallWebhook do
           
           queue_id: "TS",
           
+          parent_call_id: "TS",
           
           invalid_attribute: true
         )}.to raise_error(ArgumentError)
@@ -247,6 +252,7 @@ describe Freeclimb::InboundCallWebhook do
           
           queue_id: "TS",
           
+          parent_call_id: "TS",
           
       )
       expect(instance.valid?).to eq(true)
@@ -286,6 +292,7 @@ describe Freeclimb::InboundCallWebhook do
           
           queue_id: "TS",
           
+          parent_call_id: "TS",
           
       )
       instance_2 = Freeclimb::InboundCallWebhook.new(
@@ -309,6 +316,7 @@ describe Freeclimb::InboundCallWebhook do
           
           queue_id: "TS",
           
+          parent_call_id: "TS",
           
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
@@ -336,6 +344,7 @@ describe Freeclimb::InboundCallWebhook do
           
           queue_id: "TS",
           
+          parent_call_id: "TS",
           
       )
       instance_2 = Freeclimb::InboundCallWebhook.new(
@@ -359,6 +368,7 @@ describe Freeclimb::InboundCallWebhook do
           
           queue_id: "ST",
           
+          parent_call_id: "ST",
           
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
@@ -388,6 +398,7 @@ describe Freeclimb::InboundCallWebhook do
       
       queue_id: "TS",
       
+      parent_call_id: "TS",
       
     )
     expect(instance.hash).to be_a_kind_of(Integer)
@@ -417,6 +428,7 @@ describe Freeclimb::InboundCallWebhook do
         
         queue_id: "TS",
         
+        parent_call_id: "TS",
         
       )
       instance_2 = Freeclimb::InboundCallWebhook.new(
@@ -440,6 +452,7 @@ describe Freeclimb::InboundCallWebhook do
         
         queue_id: "TS",
         
+        parent_call_id: "TS",
         
       )
 
@@ -469,6 +482,7 @@ describe Freeclimb::InboundCallWebhook do
         
         queue_id: "TS",
         
+        parent_call_id: "TS",
         
     )
     it 'deserializes the data of request_type' do
@@ -493,7 +507,7 @@ describe Freeclimb::InboundCallWebhook do
       expect(instance._deserialize("String", instance.queue_id)).to be_a_kind_of(String)
     end
     it 'deserializes the data of parent_call_id' do
-      expect(instance._deserialize("Object", instance.parent_call_id)).to be_a_kind_of(Object)
+      expect(instance._deserialize("String", instance.parent_call_id)).to be_a_kind_of(String)
     end
   end
 
@@ -520,6 +534,7 @@ describe Freeclimb::InboundCallWebhook do
         
         queue_id: "TS",
         
+        parent_call_id: "TS",
         
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
@@ -549,6 +564,7 @@ describe Freeclimb::InboundCallWebhook do
         
         queue_id: "TS",
         
+        parent_call_id: "TS",
         
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -576,6 +592,7 @@ describe Freeclimb::InboundCallWebhook do
         
         queue_id: "TS",
         
+        parent_call_id: "TS",
         
       )
       instance_2 = Freeclimb::InboundCallWebhook.new(
@@ -599,6 +616,7 @@ describe Freeclimb::InboundCallWebhook do
         
         queue_id: "TS",
         
+        parent_call_id: "TS",
         
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
@@ -636,6 +654,7 @@ describe Freeclimb::InboundCallWebhook do
         queue_id: "TS",
         
       
+        parent_call_id: "TS",
         
       )
     it 'returns request_type in the form of hash' do

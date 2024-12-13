@@ -13,7 +13,7 @@
 | **direction** | [**CallDirection**](CallDirection.md) |  | [optional] |
 | **conference_id** | **String** | This is only populated if request pertains to a Conference. Otherwise, it is set to null. | [optional] |
 | **queue_id** | **String** | This is only populated if the request pertains to a Queue. Otherwise, it is set to null. | [optional] |
-| **parent_call_id** | **Object** |  | [optional] |
+| **parent_call_id** | **String** |  | [optional] |
 
 ## Example
 

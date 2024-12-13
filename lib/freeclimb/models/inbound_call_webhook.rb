@@ -105,7 +105,7 @@ module Freeclimb
         :'direction' => :'CallDirection',
         :'conference_id' => :'String',
         :'queue_id' => :'String',
-        :'parent_call_id' => :'Object'
+        :'parent_call_id' => :'String'
       }
     end
 
