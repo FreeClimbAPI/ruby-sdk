@@ -13,6 +13,7 @@
 | **call_id** | **String** | ID of the Call associated with this Participant. | [optional] |
 | **talk** | **Boolean** | True if this Participant has talk privileges in the Conference. False otherwise. | [optional] |
 | **listen** | **Boolean** | True if this Participant has listen privileges in the Conference. False otherwise. | [optional] |
+| **dtmf_pass_through** | **Boolean** | True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise. | [optional] |
 | **start_conf_on_enter** | **Boolean** | True if this Participant joining the Conference caused the Conference to start (status &#x3D; inProgress). False otherwise. | [optional] |
 
 ## Example
@@ -30,6 +31,7 @@ instance = Freeclimb::ConferenceParticipantResult.new(
   call_id: null,
   talk: null,
   listen: null,
+  dtmf_pass_through: null,
   start_conf_on_enter: null
 )
 ```

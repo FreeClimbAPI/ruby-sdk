@@ -125,6 +125,7 @@ module Freeclimb
         :'brand_id',
         :'campaign_id',
         :'segment_count',
+        :'media_urls'
       ])
     end
 

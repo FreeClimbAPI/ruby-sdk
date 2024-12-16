@@ -13,6 +13,7 @@
 | **notification_url** | **String** | When the Participant enters the Conference, this URL will be invoked using an HTTP POST request with the standard request parameters. | [optional] |
 | **start_conf_on_enter** | **Boolean** | Flag that indicates whether a Conference starts upon entry of this particular Participant. This is usually set to &#x60;true&#x60; for moderators and &#x60;false&#x60; for all other Participants. | [optional] |
 | **talk** | **Boolean** | If &#x60;true&#x60;, the Participant joins the Conference with talk privileges. This may be modified later via the REST API or &#x60;SetTalk&#x60; PerCL command.  | [optional] |
+| **dtmf_pass_through** | **Boolean** | If &#x60;true&#x60;, the Participant joins the Conference with dtmfPassThrough privileges. This may be modified later via the REST API or &#x60;SetDTMFPassThrough&#x60; PerCL command.  | [optional] |
 
 ## Example
 
@@ -28,7 +29,8 @@ instance = Freeclimb::AddToConferenceAllOf.new(
   listen: null,
   notification_url: null,
   start_conf_on_enter: null,
-  talk: null
+  talk: null,
+  dtmf_pass_through: null
 )
 ```
 

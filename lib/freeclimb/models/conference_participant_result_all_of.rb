@@ -30,6 +30,9 @@ module Freeclimb
     # True if this Participant has listen privileges in the Conference. False otherwise.
     attr_accessor :listen
 
+    # True if this Participant had dtmfPassThrough privileges in the Conference. False otherwise.
+    attr_accessor :dtmf_pass_through
+
     # True if this Participant joining the Conference caused the Conference to start (status = inProgress). False otherwise.
     attr_accessor :start_conf_on_enter
 
@@ -41,6 +44,7 @@ module Freeclimb
         :'call_id' => :'callId',
         :'talk' => :'talk',
         :'listen' => :'listen',
+        :'dtmf_pass_through' => :'dtmfPassThrough',
         :'start_conf_on_enter' => :'startConfOnEnter'
       }
     end
@@ -58,6 +62,7 @@ module Freeclimb
         :'call_id' => :'String',
         :'talk' => :'Boolean',
         :'listen' => :'Boolean',
+        :'dtmf_pass_through' => :'Boolean',
         :'start_conf_on_enter' => :'Boolean'
       }
     end
@@ -70,6 +75,7 @@ module Freeclimb
         :'call_id',
         :'talk',
         :'listen',
+        :'dtmf_pass_through',
         :'start_conf_on_enter'
       ])
     end
@@ -109,6 +115,10 @@ module Freeclimb
         self.listen = attributes[:'listen']
       end
 
+      if attributes.key?(:'dtmf_pass_through')
+        self.dtmf_pass_through = attributes[:'dtmf_pass_through']
+      end
+
       if attributes.key?(:'start_conf_on_enter')
         self.start_conf_on_enter = attributes[:'start_conf_on_enter']
       end
@@ -142,6 +152,7 @@ module Freeclimb
           call_id == o.call_id &&
           talk == o.talk &&
           listen == o.listen &&
+          dtmf_pass_through == o.dtmf_pass_through &&
           start_conf_on_enter == o.start_conf_on_enter
     end
 
@@ -154,7 +165,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_id, conference_id, call_id, talk, listen, start_conf_on_enter].hash
+      [account_id, conference_id, call_id, talk, listen, dtmf_pass_through, start_conf_on_enter].hash
     end
 
     # Builds the object from hash
