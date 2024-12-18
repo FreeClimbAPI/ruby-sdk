@@ -57,6 +57,9 @@ module Freeclimb
     # The list of subresources for this Call. These include things like logs and recordings associated with the Call.
     attr_accessor :subresource_uris
 
+    # ApplicationId associated with the Call.
+    attr_accessor :application_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -74,7 +77,8 @@ module Freeclimb
         :'connect_duration' => :'connectDuration',
         :'direction' => :'direction',
         :'answered_by' => :'answeredBy',
-        :'subresource_uris' => :'subresourceUris'
+        :'subresource_uris' => :'subresourceUris',
+        :'application_id' => :'applicationId'
       }
     end
 
@@ -100,7 +104,8 @@ module Freeclimb
         :'connect_duration' => :'Integer',
         :'direction' => :'CallDirection',
         :'answered_by' => :'AnsweredBy',
-        :'subresource_uris' => :'Object'
+        :'subresource_uris' => :'Object',
+        :'application_id' => :'String'
       }
     end
 
@@ -121,7 +126,8 @@ module Freeclimb
         :'connect_duration',
         :'direction',
         :'answered_by',
-        :'subresource_uris'
+        :'subresource_uris',
+        :'application_id'
       ])
     end
 
@@ -199,6 +205,10 @@ module Freeclimb
       if attributes.key?(:'subresource_uris')
         self.subresource_uris = attributes[:'subresource_uris']
       end
+
+      if attributes.key?(:'application_id')
+        self.application_id = attributes[:'application_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -238,7 +248,8 @@ module Freeclimb
           connect_duration == o.connect_duration &&
           direction == o.direction &&
           answered_by == o.answered_by &&
-          subresource_uris == o.subresource_uris
+          subresource_uris == o.subresource_uris &&
+          application_id == o.application_id
     end
 
     # @see the `==` method
@@ -250,7 +261,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [call_id, parent_call_id, account_id, from, to, phone_number_id, call_status, start_time, connect_time, end_time, duration, connect_duration, direction, answered_by, subresource_uris].hash
+      [call_id, parent_call_id, account_id, from, to, phone_number_id, call_status, start_time, connect_time, end_time, duration, connect_duration, direction, answered_by, subresource_uris, application_id].hash
     end
 
     # Builds the object from hash

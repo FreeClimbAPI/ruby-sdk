@@ -43,6 +43,9 @@ module Freeclimb
     # If `true`, the Participant joins the Conference with talk privileges. This may be modified later via the REST API or `SetTalk` PerCL command. 
     attr_accessor :talk
 
+    # If `true`, the Participant joins the Conference with dtmfPassThrough privileges. This may be modified later via the REST API or `SetDTMFPassThrough` PerCL command. 
+    attr_accessor :dtmf_pass_through
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,7 +57,8 @@ module Freeclimb
         :'listen' => :'listen',
         :'notification_url' => :'notificationUrl',
         :'start_conf_on_enter' => :'startConfOnEnter',
-        :'talk' => :'talk'
+        :'talk' => :'talk',
+        :'dtmf_pass_through' => :'dtmfPassThrough'
       }
     end
 
@@ -74,7 +78,8 @@ module Freeclimb
         :'listen' => :'Boolean',
         :'notification_url' => :'String',
         :'start_conf_on_enter' => :'Boolean',
-        :'talk' => :'Boolean'
+        :'talk' => :'Boolean',
+        :'dtmf_pass_through' => :'Boolean'
       }
     end
 
@@ -145,6 +150,10 @@ module Freeclimb
       if attributes.key?(:'talk')
         self.talk = attributes[:'talk']
       end
+
+      if attributes.key?(:'dtmf_pass_through')
+        self.dtmf_pass_through = attributes[:'dtmf_pass_through']
+      end
       self.command = "AddToConference"
     end
 
@@ -183,7 +192,8 @@ module Freeclimb
           listen == o.listen &&
           notification_url == o.notification_url &&
           start_conf_on_enter == o.start_conf_on_enter &&
-          talk == o.talk && super(o)
+          talk == o.talk &&
+          dtmf_pass_through == o.dtmf_pass_through && super(o)
     end
 
     # @see the `==` method
@@ -195,7 +205,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [allow_call_control, call_control_sequence, call_control_url, conference_id, leave_conference_url, listen, notification_url, start_conf_on_enter, talk].hash
+      [allow_call_control, call_control_sequence, call_control_url, conference_id, leave_conference_url, listen, notification_url, start_conf_on_enter, talk, dtmf_pass_through].hash
     end
 
     # Builds the object from hash

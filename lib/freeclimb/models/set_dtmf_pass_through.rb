@@ -14,70 +14,26 @@ require 'date'
 require 'time'
 
 module Freeclimb
-  class AddToConferenceAllOf
-    # If `true`, Call control will be enabled for this Participant's Call leg.
-    attr_accessor :allow_call_control
-
-    # Defines a sequence of digits that, when entered by this caller, invokes the `callControlUrl`. Only digits plus '*', and '#' may be used.
-    attr_accessor :call_control_sequence
-
-    # URL to be invoked when this Participant enters the digit sequence defined in the `callControlSequence` attribute.
-    attr_accessor :call_control_url
-
-    # ID of the Conference to which to add the Participant (Call leg). Conference must exist or an error will result.
-    attr_accessor :conference_id
-
-    # URL to be invoked when the Participant leaves the Conference. 
-    attr_accessor :leave_conference_url
-
-    # If `true`, the Participant joins the Conference with listen privileges. This may be modified later via the REST API or `SetListen` PerCL command.
-    attr_accessor :listen
-
-    # When the Participant enters the Conference, this URL will be invoked using an HTTP POST request with the standard request parameters.
-    attr_accessor :notification_url
-
-    # Flag that indicates whether a Conference starts upon entry of this particular Participant. This is usually set to `true` for moderators and `false` for all other Participants.
-    attr_accessor :start_conf_on_enter
-
-    # If `true`, the Participant joins the Conference with talk privileges. This may be modified later via the REST API or `SetTalk` PerCL command. 
-    attr_accessor :talk
-
-    # If `true`, the Participant joins the Conference with dtmfPassThrough privileges. This may be modified later via the REST API or `SetDTMFPassThrough` PerCL command. 
+  # The `SetDTMFPassThrough` command enables or disables the dtmfPassThrough privilege for this Conference Participant. If 'true', DTMFs will be passed through from this Participant to all other Participants in the Conference
+  class SetDTMFPassThrough < PerclCommand
+    # Specifying `false` mutes the Participant's dtmf audio.
     attr_accessor :dtmf_pass_through
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'allow_call_control' => :'allowCallControl',
-        :'call_control_sequence' => :'callControlSequence',
-        :'call_control_url' => :'callControlUrl',
-        :'conference_id' => :'conferenceId',
-        :'leave_conference_url' => :'leaveConferenceUrl',
-        :'listen' => :'listen',
-        :'notification_url' => :'notificationUrl',
-        :'start_conf_on_enter' => :'startConfOnEnter',
-        :'talk' => :'talk',
         :'dtmf_pass_through' => :'dtmfPassThrough'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'allow_call_control' => :'Boolean',
-        :'call_control_sequence' => :'String',
-        :'call_control_url' => :'String',
-        :'conference_id' => :'String',
-        :'leave_conference_url' => :'String',
-        :'listen' => :'Boolean',
-        :'notification_url' => :'String',
-        :'start_conf_on_enter' => :'Boolean',
-        :'talk' => :'Boolean',
         :'dtmf_pass_through' => :'Boolean'
       }
     end
@@ -88,70 +44,42 @@ module Freeclimb
       ])
     end
 
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'PerclCommand',
+      :'SetDTMFPassThroughAllOf'
+      ]
+    end
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::AddToConferenceAllOf` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::SetDTMFPassThrough` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::AddToConferenceAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::SetDTMFPassThrough`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'allow_call_control')
-        self.allow_call_control = attributes[:'allow_call_control']
-      end
-
-      if attributes.key?(:'call_control_sequence')
-        self.call_control_sequence = attributes[:'call_control_sequence']
-      end
-
-      if attributes.key?(:'call_control_url')
-        self.call_control_url = attributes[:'call_control_url']
-      end
-
-      if attributes.key?(:'conference_id')
-        self.conference_id = attributes[:'conference_id']
-      end
-
-      if attributes.key?(:'leave_conference_url')
-        self.leave_conference_url = attributes[:'leave_conference_url']
-      end
-
-      if attributes.key?(:'listen')
-        self.listen = attributes[:'listen']
-      end
-
-      if attributes.key?(:'notification_url')
-        self.notification_url = attributes[:'notification_url']
-      end
-
-      if attributes.key?(:'start_conf_on_enter')
-        self.start_conf_on_enter = attributes[:'start_conf_on_enter']
-      end
-
-      if attributes.key?(:'talk')
-        self.talk = attributes[:'talk']
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'dtmf_pass_through')
         self.dtmf_pass_through = attributes[:'dtmf_pass_through']
       end
+      self.command = "SetDTMFPassThrough"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      if @conference_id.nil?
-        invalid_properties.push('invalid value for "conference_id", conference_id cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -159,7 +87,7 @@ module Freeclimb
     # @return true if the model is valid
     def valid?
       
-      if @allow_call_control.nil?
+      if @dtmf_pass_through.nil?
         false
       else
         list_invalid_properties.length() == 0
@@ -171,16 +99,7 @@ module Freeclimb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          allow_call_control == o.allow_call_control &&
-          call_control_sequence == o.call_control_sequence &&
-          call_control_url == o.call_control_url &&
-          conference_id == o.conference_id &&
-          leave_conference_url == o.leave_conference_url &&
-          listen == o.listen &&
-          notification_url == o.notification_url &&
-          start_conf_on_enter == o.start_conf_on_enter &&
-          talk == o.talk &&
-          dtmf_pass_through == o.dtmf_pass_through
+          dtmf_pass_through == o.dtmf_pass_through && super(o)
     end
 
     # @see the `==` method
@@ -192,7 +111,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [allow_call_control, call_control_sequence, call_control_url, conference_id, leave_conference_url, listen, notification_url, start_conf_on_enter, talk, dtmf_pass_through].hash
+      [dtmf_pass_through].hash
     end
 
     # Builds the object from hash
@@ -207,6 +126,7 @@ module Freeclimb
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       self.class.openapi_types.each_pair do |key, type|
         if attributes[self.class.attribute_map[key]].nil? && self.class.openapi_nullable.include?(key)
           self.send("#{key}=", nil)
@@ -282,7 +202,7 @@ module Freeclimb
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

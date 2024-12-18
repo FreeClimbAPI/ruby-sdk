@@ -19,6 +19,7 @@
 | **direction** | [**CallDirection**](CallDirection.md) |  | [optional] |
 | **answered_by** | [**AnsweredBy**](AnsweredBy.md) |  | [optional] |
 | **subresource_uris** | **Object** | The list of subresources for this Call. These include things like logs and recordings associated with the Call. | [optional] |
+| **application_id** | **String** | ApplicationId associated with the Call. | [optional] |
 
 ## Example
 
@@ -40,7 +41,8 @@ instance = Freeclimb::CallResultAllOf.new(
   connect_duration: null,
   direction: null,
   answered_by: null,
-  subresource_uris: null
+  subresource_uris: null,
+  application_id: null
 )
 ```
 

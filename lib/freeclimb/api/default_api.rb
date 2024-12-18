@@ -2720,6 +2720,7 @@ module Freeclimb
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :talk Only show Participants with the talk privilege.
     # @option opts [Boolean] :listen Only show Participants with the listen privilege.
+    # @option opts [Boolean] :dtmf_pass_through Only show Participants with the dtmfPassThrough privilege.
     # @return [ConferenceParticipantList]
     def list_participants(conference_id, opts = {})
       data, _status_code, _headers = list_participants_with_http_info(conference_id, opts)
@@ -2731,6 +2732,7 @@ module Freeclimb
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :talk Only show Participants with the talk privilege.
     # @option opts [Boolean] :listen Only show Participants with the listen privilege.
+    # @option opts [Boolean] :dtmf_pass_through Only show Participants with the dtmfPassThrough privilege.
     # @return [Array<(ConferenceParticipantList, Integer, Hash)>] ConferenceParticipantList data, response status code and response headers
     def list_participants_with_http_info(conference_id, opts = {})
       if @api_client.config.debugging
@@ -2748,6 +2750,7 @@ module Freeclimb
       query_params = opts[:query_params] || {}
       query_params[:'talk'] = opts[:'talk'] if !opts[:'talk'].nil?
       query_params[:'listen'] = opts[:'listen'] if !opts[:'listen'].nil?
+      query_params[:'dtmfPassThrough'] = opts[:'dtmf_pass_through'] if !opts[:'dtmf_pass_through'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
