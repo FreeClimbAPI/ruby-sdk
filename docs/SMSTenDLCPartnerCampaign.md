@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **account_id** | **String** | ID of the account that created this Queue. | [optional] |
 | **campaign_id** | **String** | Alphanumeric identifier assigned by the registry for a campaign. This identifier is required by the NetNumber OSR SMS enabling process of 10DLC. |  |
-| **status** | **String** | Current campaign status. Possible values: ACTIVE, EXPIRED. A newly created campaign defaults to ACTIVE status.  | [optional] |
+| **status** | [**SMSTenDLCPartnerCampaignStatus**](SMSTenDLCPartnerCampaignStatus.md) |  | [optional] |
 | **create_date** | **Time** | Unix timestamp when campaign was created. | [optional] |
 | **brand_id** | **String** | Alphanumeric identifier of the brand associated with this campaign. |  |
 | **usecase** | **String** | Campaign usecase. Must be of defined valid types. Use &#x60;/registry/enum/usecase&#x60; operation to retrieve usecases available for given brand. |  |
