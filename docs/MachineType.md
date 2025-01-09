@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **ANSWERING_MACHINE** | **MachineType** |  | Represented in Ruby as "answeringMachine" |
-| **FAX_MACHINE** | **MachineType** |  | Represented in Ruby as "faxMachine" |
+| **ANSWERING_MACHINE** | **MachineType** |  | Represented in Ruby as "answering machine" |
+| **FAX_MODEM** | **MachineType** |  | Represented in Ruby as "fax modem" |
 
 ## Example
 

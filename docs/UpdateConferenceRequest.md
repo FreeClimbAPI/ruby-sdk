@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **_alias** | **String** | Description for this conference. Maximum 64 characters. | [optional] |
-| **play_beep** | [**PlayBeep**](PlayBeep.md) |  | [optional][default to &#39;always&#39;] |
+| **play_beep** | [**PlayBeep**](PlayBeep.md) |  | [optional] |
 | **status** | [**UpdateConferenceRequestStatus**](UpdateConferenceRequestStatus.md) |  | [optional] |
 
 ## Example

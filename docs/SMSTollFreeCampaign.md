@@ -7,7 +7,7 @@
 | **account_id** | **String** | ID of the account that created this toll-free campaign |  |
 | **campaign_id** | **String** | Alphanumeric identifier used by the platform to identify this toll-free campaign |  |
 | **use_case** | **String** |  |  |
-| **registration_status** | **String** | Current toll-free campaign registration status.Possible values: UNREGISTERED,INITIATED,PENDING,DECLINED,REGISTERED. A newly created campaign defaults to INITIATED status.  |  |
+| **registration_status** | [**SMSTollFreeCampaignRegistrationStatus**](SMSTollFreeCampaignRegistrationStatus.md) |  |  |
 | **date_created** | **String** |  |  |
 | **date_updated** | **String** |  |  |
 | **revision** | **Integer** |  |  |
