@@ -131,6 +131,7 @@ docs/SetTalk.md
 docs/Sms.md
 docs/StartRecordCall.md
 docs/TFN.md
+docs/TFNCampaign.md
 docs/TerminateConference.md
 docs/TranscribeReason.md
 docs/TranscribeTermReason.md
@@ -277,6 +278,7 @@ lib/freeclimb/models/sms_toll_free_campaigns_list_result.rb
 lib/freeclimb/models/start_record_call.rb
 lib/freeclimb/models/terminate_conference.rb
 lib/freeclimb/models/tfn.rb
+lib/freeclimb/models/tfn_campaign.rb
 lib/freeclimb/models/transcribe_reason.rb
 lib/freeclimb/models/transcribe_term_reason.rb
 lib/freeclimb/models/transcribe_utterance.rb
@@ -417,6 +419,7 @@ spec/models/sms_toll_free_campaign_spec.rb
 spec/models/sms_toll_free_campaigns_list_result_spec.rb
 spec/models/start_record_call_spec.rb
 spec/models/terminate_conference_spec.rb
+spec/models/tfn_campaign_spec.rb
 spec/models/tfn_spec.rb
 spec/models/transcribe_reason_spec.rb
 spec/models/transcribe_term_reason_spec.rb

@@ -62,6 +62,14 @@ module Freeclimb
     # an array of HTTP URLs which were attached this this message
     attr_accessor :media_urls
 
+    attr_accessor :tfn
+
+    # String that uniquely identifies the phoneNumber resource used to send this Message
+    attr_accessor :phone_number_id
+
+    # String that uniquely identifies the Application resource used to send this Message
+    attr_accessor :application_id
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -102,7 +110,10 @@ module Freeclimb
         :'brand_id' => :'brandId',
         :'campaign_id' => :'campaignId',
         :'segment_count' => :'segmentCount',
-        :'media_urls' => :'mediaUrls'
+        :'media_urls' => :'mediaUrls',
+        :'tfn' => :'tfn',
+        :'phone_number_id' => :'phoneNumberId',
+        :'application_id' => :'applicationId'
       }
     end
 
@@ -129,7 +140,10 @@ module Freeclimb
         :'brand_id' => :'String',
         :'campaign_id' => :'String',
         :'segment_count' => :'Float',
-        :'media_urls' => :'Array<String>'
+        :'media_urls' => :'Array<String>',
+        :'tfn' => :'TFN',
+        :'phone_number_id' => :'String',
+        :'application_id' => :'String'
       }
     end
 
@@ -147,7 +161,9 @@ module Freeclimb
         :'brand_id',
         :'campaign_id',
         :'segment_count',
-        :'media_urls'
+        :'media_urls',
+        :'phone_number_id',
+        :'application_id'
       ])
     end
 
@@ -238,6 +254,18 @@ module Freeclimb
           self.media_urls = value
         end
       end
+
+      if attributes.key?(:'tfn')
+        self.tfn = attributes[:'tfn']
+      end
+
+      if attributes.key?(:'phone_number_id')
+        self.phone_number_id = attributes[:'phone_number_id']
+      end
+
+      if attributes.key?(:'application_id')
+        self.application_id = attributes[:'application_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -278,7 +306,10 @@ module Freeclimb
           brand_id == o.brand_id &&
           campaign_id == o.campaign_id &&
           segment_count == o.segment_count &&
-          media_urls == o.media_urls
+          media_urls == o.media_urls &&
+          tfn == o.tfn &&
+          phone_number_id == o.phone_number_id &&
+          application_id == o.application_id
     end
 
     # @see the `==` method
@@ -290,7 +321,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, account_id, message_id, status, from, to, text, direction, notification_url, brand_id, campaign_id, segment_count, media_urls].hash
+      [uri, date_created, date_updated, revision, account_id, message_id, status, from, to, text, direction, notification_url, brand_id, campaign_id, segment_count, media_urls, tfn, phone_number_id, application_id].hash
     end
 
     # Builds the object from hash

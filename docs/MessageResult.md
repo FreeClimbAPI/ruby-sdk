@@ -20,6 +20,9 @@
 | **campaign_id** | **String** | The unique identifier for the campaign associated with the message | [optional] |
 | **segment_count** | **Float** | The number of segments into which the message was split | [optional] |
 | **media_urls** | **Array&lt;String&gt;** | an array of HTTP URLs which were attached this this message | [optional] |
+| **tfn** | [**TFN**](TFN.md) |  | [optional] |
+| **phone_number_id** | **String** | String that uniquely identifies the phoneNumber resource used to send this Message | [optional] |
+| **application_id** | **String** | String that uniquely identifies the Application resource used to send this Message | [optional] |
 
 ## Example
 
@@ -42,7 +45,10 @@ instance = Freeclimb::MessageResult.new(
   brand_id: null,
   campaign_id: null,
   segment_count: null,
-  media_urls: null
+  media_urls: null,
+  tfn: null,
+  phone_number_id: null,
+  application_id: null
 )
 ```
 

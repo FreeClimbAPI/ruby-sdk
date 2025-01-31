@@ -279,9 +279,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.buy_a_phone_number(
         buy_incoming_number_request,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -401,9 +399,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.delete_a_recording(
         recording_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -425,9 +421,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.delete_an_application(
         application_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -449,9 +443,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.delete_an_incoming_number(
         phone_number_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -475,9 +467,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.dequeue_a_member(
         queue_id, call_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -499,9 +489,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.dequeue_head_member(
         queue_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -523,9 +511,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.download_a_recording_file(
         recording_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -547,9 +533,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.filter_logs(
         filter_logs_request,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -571,9 +555,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_a_call(
         call_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -595,9 +577,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_a_conference(
         conference_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -621,9 +601,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_a_member(
         queue_id, call_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -647,9 +625,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_a_participant(
         conference_id, call_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -671,9 +647,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_a_queue(
         queue_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -695,9 +669,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_a_recording(
         recording_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -717,9 +689,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_an_account(
         
-        {
-          
-        }
+        {}
       )
       false
       
@@ -741,9 +711,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_an_application(
         application_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -765,9 +733,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_an_incoming_number(
         phone_number_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -789,9 +755,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_an_sms_message(
         message_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -813,9 +777,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_head_member(
         queue_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -837,9 +799,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_ten_dlc_sms_brand(
         brand_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -859,9 +819,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_ten_dlc_sms_brands(
         
-        {
-          
-        }
+        {}
       )
       false
       
@@ -883,9 +841,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_ten_dlc_sms_campaign(
         campaign_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -931,9 +887,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_ten_dlc_sms_partner_campaign(
         campaign_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -979,9 +933,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_toll_free_sms_campaign(
         campaign_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -1001,9 +953,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_toll_free_sms_campaigns(
         
-        {
-          
-        }
+        {}
       )
       false
       
@@ -1047,9 +997,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.list_all_account_logs(
         
-        {
-          
-        }
+        {}
       )
       false
       
@@ -1137,9 +1085,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.list_call_logs(
         call_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -1337,9 +1283,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.list_members(
         queue_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -1481,9 +1425,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.make_a_webrtc_jwt(
         create_web_rtc_token,
-        {
-          
-        }
+        {}
       )
       true
       expect(result).to be_a String
@@ -1507,9 +1449,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.remove_a_participant(
         conference_id, call_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -1531,9 +1471,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.send_an_sms_message(
         message_request,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -1555,9 +1493,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.stream_a_recording_file(
         recording_id,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -1607,9 +1543,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.update_a_live_call(
         call_id, update_call_request,
-        {
-          
-        }
+        {}
       )
       false
       
@@ -1761,9 +1695,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.filter_logs(
         filter_logs_request,
-        {
-          
-        }
+        {}
       )
       result.next_page_uri = "/Accounts/{accountId}/Logs?cursor=1"
       next_page_result = @api_instance.get_next_page(result)
@@ -1782,9 +1714,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_ten_dlc_sms_brands(
         
-        {
-          
-        }
+        {}
       )
       result.next_page_uri = "/Accounts/{accountId}/Messages/10DLC/Brands?cursor=1"
       next_page_result = @api_instance.get_next_page(result)
@@ -1849,9 +1779,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.get_toll_free_sms_campaigns(
         
-        {
-          
-        }
+        {}
       )
       result.next_page_uri = "/Accounts/{accountId}/Messages/TollFree/Campaigns?cursor=1"
       next_page_result = @api_instance.get_next_page(result)
@@ -1893,9 +1821,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.list_all_account_logs(
         
-        {
-          
-        }
+        {}
       )
       result.next_page_uri = "/Accounts/{accountId}/Logs?cursor=1"
       next_page_result = @api_instance.get_next_page(result)
@@ -1980,9 +1906,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.list_call_logs(
         call_id,
-        {
-          
-        }
+        {}
       )
       result.next_page_uri = "/Accounts/{accountId}/Calls/{callId}/Logs?cursor=1"
       next_page_result = @api_instance.get_next_page(result)
@@ -2174,9 +2098,7 @@ describe 'DefaultApi' do
       
       result = @api_instance.list_members(
         queue_id,
-        {
-          
-        }
+        {}
       )
       result.next_page_uri = "/Accounts/{accountId}/Queues/{queueId}/Members?cursor=1"
       next_page_result = @api_instance.get_next_page(result)

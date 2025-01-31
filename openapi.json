@@ -151,12 +151,7 @@
       },
       "GetDigitsReason": {
         "type": "string",
-        "enum": [
-          "finishKey",
-          "timeout",
-          "maxDigits",
-          "tone"
-        ],
+        "enum": ["finishKey", "timeout", "maxDigits", "tone"],
         "description": "This field explains how the GetDigits action ended. The value is one of the below: •finishKey - The finish key as specified had been pressed by the caller. Digit string has all keys up to, but not including, the finish key.  •timeout - The timeout limit was reached prior to any other criteria being met. If any digits were collected, they will be included.  •maxDigits - The maximum number of digits was reached and digit collection ended.  •tone - Answering machine or fax tone detection occurred, interrupting digit collection. Any digits received up to this point are included in this webhook."
       },
       "ConferenceStatus": {
@@ -420,12 +415,7 @@
       "SMSTenDLCBrandIdentityStatus": {
         "type": "string",
         "description": "TCR assessment of the brand identification status.",
-        "enum": [
-          "SELF_DECLARED",
-          "UNVERIFIED",
-          "VERIFIED",
-          "VETTED_VERIFIED"
-        ]
+        "enum": ["SELF_DECLARED", "UNVERIFIED", "VERIFIED", "VETTED_VERIFIED"]
       },
       "CompletionResultStatus": {
         "type": "string",
@@ -494,32 +484,32 @@
       "Webhook": {
         "type": "object",
         "discriminator": {
-         "propertyName": "requestType",
-         "mapping": {
-           "addToConferenceNotification":  "#/components/schemas/AddToConferenceNotificationWebhook",
-           "addToQueueNotification": "#/components/schemas/AddToQueueNotificationWebhook",
-           "callControl": "#/components/schemas/CallControlWebhook",
-           "callStatus": "#/components/schemas/CallStatusWebhook",
-           "conferenceRecordingStatus": "#/components/schemas/ConferenceRecordingStatusWebhook",
-           "conferenceStatus": "#/components/schemas/ConferenceStatusWebhook",
-           "createConference": "#/components/schemas/CreateConferenceWebhook",
-           "dequeue": "#/components/schemas/DequeueWebhook",
-           "getDigits": "#/components/schemas/GetDigitsWebhook",
-           "getSpeech": "#/components/schemas/GetSpeechWebhook",
-           "inboundCall": "#/components/schemas/InboundCallWebhook",
-           "leaveConference": "#/components/schemas/LeaveConferenceWebhook",
-           "machineDetected": "#/components/schemas/MachineDetectedWebhook",
-           "messageDelivery": "#/components/schemas/MessageDeliveryWebhook",
-           "messageStatus": "#/components/schemas/MessageStatusWebhook",
-           "outDialApiConnect": "#/components/schemas/OutDialApiConnectWebhook",
-           "outDialConnect": "#/components/schemas/OutDialConnectWebhook",
-           "outDialStart": "#/components/schemas/OutDialStartWebhook",
-           "queueWait": "#/components/schemas/QueueWaitWebhook",
-           "record": "#/components/schemas/RecordWebhook",
-           "redirect": "#/components/schemas/RedirectWebhook",
-           "removeFromQueueNotification": "#/components/schemas/RemoveFromQueueNotificationWebhook",
-           "transcribe": "#/components/schemas/TranscribeWebhook"
-         }
+          "propertyName": "requestType",
+          "mapping": {
+            "addToConferenceNotification": "#/components/schemas/AddToConferenceNotificationWebhook",
+            "addToQueueNotification": "#/components/schemas/AddToQueueNotificationWebhook",
+            "callControl": "#/components/schemas/CallControlWebhook",
+            "callStatus": "#/components/schemas/CallStatusWebhook",
+            "conferenceRecordingStatus": "#/components/schemas/ConferenceRecordingStatusWebhook",
+            "conferenceStatus": "#/components/schemas/ConferenceStatusWebhook",
+            "createConference": "#/components/schemas/CreateConferenceWebhook",
+            "dequeue": "#/components/schemas/DequeueWebhook",
+            "getDigits": "#/components/schemas/GetDigitsWebhook",
+            "getSpeech": "#/components/schemas/GetSpeechWebhook",
+            "inboundCall": "#/components/schemas/InboundCallWebhook",
+            "leaveConference": "#/components/schemas/LeaveConferenceWebhook",
+            "machineDetected": "#/components/schemas/MachineDetectedWebhook",
+            "messageDelivery": "#/components/schemas/MessageDeliveryWebhook",
+            "messageStatus": "#/components/schemas/MessageStatusWebhook",
+            "outDialApiConnect": "#/components/schemas/OutDialApiConnectWebhook",
+            "outDialConnect": "#/components/schemas/OutDialConnectWebhook",
+            "outDialStart": "#/components/schemas/OutDialStartWebhook",
+            "queueWait": "#/components/schemas/QueueWaitWebhook",
+            "record": "#/components/schemas/RecordWebhook",
+            "redirect": "#/components/schemas/RedirectWebhook",
+            "removeFromQueueNotification": "#/components/schemas/RemoveFromQueueNotificationWebhook",
+            "transcribe": "#/components/schemas/TranscribeWebhook"
+          }
         },
         "properties": {
           "requestType": {
@@ -3596,10 +3586,75 @@
                   "format": "uri"
                 },
                 "nullable": true
+              },
+              "tfn": {
+                "$ref": "#/components/schemas/TFN",
+                "nullable": true
+              },
+              "phoneNumberId": {
+                "type": "string",
+                "description": "String that uniquely identifies the phoneNumber resource used to send this Message",
+                "nullable": true
+              },
+              "applicationId": {
+                "type": "string",
+                "description": "String that uniquely identifies the Application resource used to send this Message",
+                "nullable": true
               }
             }
           }
         ]
+      },
+      "TFNCampaign": {
+        "type": "object",
+        "required": [
+          "accountId",
+          "campaignId",
+          "useCase",
+          "registrationStatus",
+          "dateCreated",
+          "dateUpdated",
+          "dateCreatedISO",
+          "dateUpdatedISO",
+          "revision"
+        ],
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "description": "ID of the account that created this participant.",
+            "nullable": true
+          },
+          "campaignId": {
+            "$ref": "#/components/schemas/TFNCampaignId"
+          },
+          "useCase": {
+            "type": "string"
+          },
+          "registrationStatus": {
+            "$ref": "#/components/schemas/SMSTollFreeCampaignRegistrationStatus"
+          },
+          "dateCreated": {
+            "type": "string"
+          },
+          "dateUpdated": {
+            "type": "string"
+          },
+          "dateCreatedISO": {
+            "type": "string"
+          },
+          "dateUpdatedISO": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer"
+          }
+        }
+      },
+      "TFNCampaignId": {
+        "type": "string",
+        "description": "TFNCampaignId",
+        "pattern": "cmptfn_[a-fA-F0-9]{40}",
+        "example": "cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a"
       },
       "CreateConferenceRequest": {
         "type": "object",

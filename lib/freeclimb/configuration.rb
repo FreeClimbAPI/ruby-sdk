@@ -236,8 +236,7 @@ module Freeclimb
     end
 
     def operation_server_settings
-      {
-      }
+      {}
     end
 
     # Returns URL based on server settings
