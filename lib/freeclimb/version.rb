@@ -11,5 +11,5 @@ OpenAPI Generator version: 7.9.0
 =end
 
 module Freeclimb
-  VERSION = '5.0.0'
+  VERSION = '5.1.0'
 end

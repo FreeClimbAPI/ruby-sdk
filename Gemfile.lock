@@ -1,13 +1,13 @@
 PATH
   remote: .
   specs:
-    freeclimb (5.0.0)
+    freeclimb (5.1.0)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (8.0.1)
+    activesupport (7.2.2.1)
       base64
       benchmark (>= 0.3)
       bigdecimal
@@ -19,7 +19,6 @@ GEM
       minitest (>= 5.1)
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
-      uri (>= 0.13.1)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.2)
@@ -33,7 +32,6 @@ GEM
     crack (1.0.0)
       bigdecimal
       rexml
-    date (3.4.1)
     diff-lcs (1.5.1)
     drb (2.2.1)
     ethon (0.16.0)
@@ -42,25 +40,26 @@ GEM
     factory_bot (6.5.0)
       activesupport (>= 5.0.0)
     ffi (1.17.1)
-    ffi (1.17.1-aarch64-linux-gnu)
+    ffi (1.17.1-aarch64-linux)
     ffi (1.17.1-aarch64-linux-musl)
-    ffi (1.17.1-arm-linux-gnu)
+    ffi (1.17.1-arm-linux)
     ffi (1.17.1-arm-linux-musl)
     ffi (1.17.1-arm64-darwin)
-    ffi (1.17.1-x86-linux-gnu)
+    ffi (1.17.1-x86-linux)
     ffi (1.17.1-x86-linux-musl)
     ffi (1.17.1-x86_64-darwin)
-    ffi (1.17.1-x86_64-linux-gnu)
+    ffi (1.17.1-x86_64-linux)
     ffi (1.17.1-x86_64-linux-musl)
     hashdiff (1.1.2)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
-    jaro_winkler (1.5.6)
+    json (2.9.1)
+    language_server-protocol (3.17.0.4)
     logger (1.6.4)
     method_source (1.1.0)
     minitest (5.25.4)
     parallel (1.26.3)
-    parser (3.3.6.0)
+    parser (3.3.7.0)
       ast (~> 2.4.1)
       racc
     pry (0.14.2)
@@ -69,13 +68,11 @@ GEM
     pry-byebug (3.10.1)
       byebug (~> 11.0)
       pry (>= 0.13, < 0.15)
-    psych (5.2.2)
-      date
-      stringio
     public_suffix (6.0.1)
     racc (1.8.1)
     rainbow (3.1.1)
     rake (13.0.6)
+    regexp_parser (2.10.0)
     rexml (3.4.0)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
@@ -90,39 +87,45 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.2)
-    rubocop (0.66.0)
-      jaro_winkler (~> 1.5.1)
+    rubocop (1.71.1)
+      json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
-      parser (>= 2.5, != 2.5.1.1)
-      psych (>= 3.1.0)
+      parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 2.9.3, < 3.0)
+      rubocop-ast (>= 1.38.0, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 1.6)
+      unicode-display_width (>= 2.4.0, < 4.0)
+    rubocop-ast (1.38.0)
+      parser (>= 3.3.1.0)
+    rubocop-rspec (3.4.0)
+      rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
-    stringio (3.1.2)
     typhoeus (1.4.1)
       ethon (>= 0.9.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (1.5.0)
-    uri (1.0.2)
+    unicode-display_width (3.1.4)
+      unicode-emoji (~> 4.0, >= 4.0.4)
+    unicode-emoji (4.0.4)
     webmock (3.24.0)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
-  aarch64-linux-gnu
+  aarch64-linux
   aarch64-linux-musl
-  arm-linux-gnu
+  arm-linux
   arm-linux-musl
   arm64-darwin
   ruby
-  x86-linux-gnu
+  x86-linux
   x86-linux-musl
   x86_64-darwin
-  x86_64-linux-gnu
+  x86_64-linux
   x86_64-linux-musl
 
 DEPENDENCIES
@@ -132,7 +135,8 @@ DEPENDENCIES
   pry-byebug
   rake (~> 13.0.6)
   rspec (~> 3.6, >= 3.6.0)
-  rubocop (~> 0.66.0)
+  rubocop (~> 1.71.1)
+  rubocop-rspec
   webmock (~> 3.14)
 
 BUNDLED WITH
