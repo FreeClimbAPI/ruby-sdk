@@ -16,6 +16,7 @@ None
 ### Added
 
 - CampaignTFN and MessageResultsAllOfTfn models
+- Introduce standard gem package for formatting our Ruby SDK files
 
 <a name="5.0.0"></a>
 
