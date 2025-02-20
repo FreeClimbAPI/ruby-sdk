@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    freeclimb (5.1.0)
+    freeclimb (5.1.1)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM
@@ -103,8 +103,6 @@ GEM
     rubocop-performance (1.23.1)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
-    rubocop-rspec (3.4.0)
-      rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
     standard (1.45.0)
@@ -151,8 +149,6 @@ DEPENDENCIES
   pry-byebug
   rake (~> 13.0.6)
   rspec (~> 3.6, >= 3.6.0)
-  rubocop (~> 1.71.1)
-  rubocop-rspec
   standard
   webmock (~> 3.14)
 
