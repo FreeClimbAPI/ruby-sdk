@@ -209,7 +209,7 @@ end
 api_instance = Freeclimb::DefaultApi.new
 
 opts = {
-  create_conference_request: Freeclimb::CreateConferenceRequest.new # CreateConferenceRequest | Conference to create
+  create_conference_request: Freeclimb::CreateConferenceRequest.new({status_callback_url: 'status_callback_url_example'}) # CreateConferenceRequest | Conference to create
 }
 
 begin

@@ -3658,6 +3658,9 @@
       },
       "CreateConferenceRequest": {
         "type": "object",
+        "required": [
+          "statusCallbackUrl"
+        ],
         "properties": {
           "alias": {
             "type": "string",
