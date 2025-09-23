@@ -12,11 +12,15 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**create_an_application**](DefaultApi.md#create_an_application) | **POST** /Accounts/{accountId}/Applications | Create an application |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
+| [**create_export**](DefaultApi.md#create_export) | **POST** /Accounts/{accountId}/Exports | Create an Export |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**create_knowledge_base_completion**](DefaultApi.md#create_knowledge_base_completion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**delete_a_recording**](DefaultApi.md#delete_a_recording) | **DELETE** /Accounts/{accountId}/Recordings/{recordingId} | Delete a Recording |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**delete_an_application**](DefaultApi.md#delete_an_application) | **DELETE** /Accounts/{accountId}/Applications/{applicationId} | Delete an application |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
+| [**delete_an_export**](DefaultApi.md#delete_an_export) | **DELETE** /Accounts/{accountId}/Exports/{exportId} | Delete an Export |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**delete_an_incoming_number**](DefaultApi.md#delete_an_incoming_number) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
@@ -25,6 +29,8 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**dequeue_head_member**](DefaultApi.md#dequeue_head_member) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Dequeue Head Member |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**download_a_recording_file**](DefaultApi.md#download_a_recording_file) | **GET** /Accounts/{accountId}/Recordings/{recordingId}/Download | Download a Recording File |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
+| [**download_an_export**](DefaultApi.md#download_an_export) | **GET** /Accounts/{accountId}/Exports/{exportId}/Download | Download an Export |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**filter_logs**](DefaultApi.md#filter_logs) | **POST** /Accounts/{accountId}/Logs | Filter Logs |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
@@ -43,6 +49,8 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**get_an_account**](DefaultApi.md#get_an_account) | **GET** /Accounts/{accountId} | Get an Account |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_an_application**](DefaultApi.md#get_an_application) | **GET** /Accounts/{accountId}/Applications/{applicationId} | Get an Application |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
+| [**get_an_export**](DefaultApi.md#get_an_export) | **GET** /Accounts/{accountId}/Exports/{exportId} | Get an Export |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_an_incoming_number**](DefaultApi.md#get_an_incoming_number) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Get an Incoming Number |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
@@ -83,6 +91,8 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**list_conference_recordings**](DefaultApi.md#list_conference_recordings) | **GET** /Accounts/{accountId}/Conferences/{conferenceId}/Recordings | List Conference Recordings |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_conferences**](DefaultApi.md#list_conferences) | **GET** /Accounts/{accountId}/Conferences | List Conferences |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
+| [**list_exports**](DefaultApi.md#list_exports) | **GET** /Accounts/{accountId}/Exports | List Exports |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_incoming_numbers**](DefaultApi.md#list_incoming_numbers) | **GET** /Accounts/{accountId}/IncomingPhoneNumbers | List Incoming Numbers |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
@@ -403,6 +413,77 @@ end
 - **Accept**: application/json
 
 
+## create_export
+
+Create an Export
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+opts = {
+  export_request: Freeclimb::ExportRequest.new({resource_type: Freeclimb::ExportResourceType::MESSAGES, output: Freeclimb::ExportRequestOutput.new}) # ExportRequest | A JSON object containing export creation parameters
+}
+
+begin
+
+  # Create an Export
+  result = api_instance.create_export(opts)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->create_export: #{e}"
+end
+```
+
+#### Using the create_export_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ExportResult>, Integer, Hash)> create_export_with_http_info(account_id, opts)
+
+```ruby
+begin
+  # Create an Export
+  data, status_code, headers = api_instance.create_export_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ExportResult>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->create_export_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **export_request** | [**ExportRequest**](ExportRequest.md) | A JSON object containing export creation parameters | [optional] |
+
+
+### Return type
+
+[**ExportResult**](ExportResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## create_knowledge_base_completion
 
 Query the knowledge base
@@ -599,6 +680,75 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **application_id** | **String** | String that uniquely identifies this application resource. |  |
+
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## delete_an_export
+
+Delete an Export
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+export_id = 'export_id_example' # String | A string that uniquely identifies this export resource.
+
+
+begin
+
+  # Delete an Export
+  api_instance.delete_an_export(export_id)
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->delete_an_export: #{e}"
+end
+```
+
+#### Using the delete_an_export_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> delete_an_export_with_http_info(account_id, export_id)
+
+```ruby
+begin
+  # Delete an Export
+  data, status_code, headers = api_instance.delete_an_export_with_http_info(export_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->delete_an_export_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **export_id** | **String** | A string that uniquely identifies this export resource. |  |
 
 
 ### Return type
@@ -895,6 +1045,76 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: audio/x-wav
+
+
+## download_an_export
+
+Download an Export
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+export_id = 'export_id_example' # String | A string that uniquely identifies this export resource.
+
+
+begin
+
+  # Download an Export
+  result = api_instance.download_an_export(export_id)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->download_an_export: #{e}"
+end
+```
+
+#### Using the download_an_export_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(String, Integer, Hash)> download_an_export_with_http_info(account_id, export_id)
+
+```ruby
+begin
+  # Download an Export
+  data, status_code, headers = api_instance.download_an_export_with_http_info(export_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => String
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->download_an_export_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **export_id** | **String** | A string that uniquely identifies this export resource. |  |
+
+
+### Return type
+
+**String**
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/csv
 
 
 ## filter_logs
@@ -1519,6 +1739,76 @@ end
 ### Return type
 
 [**ApplicationResult**](ApplicationResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_an_export
+
+Get an Export
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+export_id = 'export_id_example' # String | A string that uniquely identifies this export resource.
+
+
+begin
+
+  # Get an Export
+  result = api_instance.get_an_export(export_id)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_an_export: #{e}"
+end
+```
+
+#### Using the get_an_export_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ExportResult>, Integer, Hash)> get_an_export_with_http_info(account_id, export_id)
+
+```ruby
+begin
+  # Get an Export
+  data, status_code, headers = api_instance.get_an_export_with_http_info(export_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ExportResult>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_an_export_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **export_id** | **String** | A string that uniquely identifies this export resource. |  |
+
+
+### Return type
+
+[**ExportResult**](ExportResult.md)
 
 ### Authorization
 
@@ -2764,7 +3054,9 @@ opts = {
   start_time: 'start_time_example', # String | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
   end_time: 'end_time_example', # String | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
   parent_call_id: 'parent_call_id_example', # String | Only show Calls spawned by the call with this ID.
-  application_id: ['inner_example'] # Array<String> | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
+  application_id: ['inner_example'], # Array<String> | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
+  risk_score_min: 56, # Integer | The minimum riskScore that should be included in the list.
+  risk_score_max: 56 # Integer | The maximum riskScore that should be included in the list.
 }
 
 begin
@@ -2807,6 +3099,8 @@ end
 | **end_time** | **String** | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss. | [optional] |
 | **parent_call_id** | **String** | Only show Calls spawned by the call with this ID. | [optional] |
 | **application_id** | [**Array&lt;String&gt;**](String.md) | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. | [optional] |
+| **risk_score_min** | **Integer** | The minimum riskScore that should be included in the list. | [optional] |
+| **risk_score_max** | **Integer** | The maximum riskScore that should be included in the list. | [optional] |
 
 
 ### Return type
@@ -2965,6 +3259,79 @@ end
 ### Return type
 
 [**ConferenceList**](ConferenceList.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_exports
+
+List Exports
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+opts = {
+  status: Freeclimb::ExportStatus::INTAKING, # ExportStatus | Status of export
+  cursor: 'cursor_example' # String | Used to reference pages of a list of exports
+}
+
+begin
+
+  # List Exports
+  result = api_instance.list_exports(opts)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->list_exports: #{e}"
+end
+```
+
+#### Using the list_exports_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ExportList>, Integer, Hash)> list_exports_with_http_info(account_id, opts)
+
+```ruby
+begin
+  # List Exports
+  data, status_code, headers = api_instance.list_exports_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ExportList>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->list_exports_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **status** | [**ExportStatus**](.md) | Status of export | [optional] |
+| **cursor** | **String** | Used to reference pages of a list of exports | [optional] |
+
+
+### Return type
+
+[**ExportList**](ExportList.md)
 
 ### Authorization
 

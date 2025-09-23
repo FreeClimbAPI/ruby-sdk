@@ -252,6 +252,12 @@ describe "DefaultApi" do
     @knowledge_base_id_create_knowledge_base_completion_test_value = "knowledgeBaseId_example"
 
     @completion_request_create_knowledge_base_completion_test_value = Freeclimb::CompletionRequest.new({query: "query_example"})
+
+    @export_id_download_an_export_test_value = "download_exportId_example"
+
+    @export_id_delete_an_export_test_value = "delete_exportId_example"
+
+    @export_id_get_an_export_test_value = "get_exportId_example"
   end
 
   after do
@@ -348,6 +354,27 @@ describe "DefaultApi" do
     end
   end
 
+  # unit tests for create_export
+  # Create an Export
+  # @param [Hash] opts the optional parameters
+  # @option opts [ExportRequest] :export_request A JSON object containing export creation parameters
+  # @return [ExportResult]
+  describe "create_export test" do
+    it "should work" do
+      export_request = @export_request_create_export_test_value
+
+      result = @api_instance.create_export(
+        {
+          export_request: export_request
+        }
+      )
+
+      expect(result).to be_a Freeclimb::ExportResult
+
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for create_knowledge_base_completion
   # Query the knowledge base
   # @param knowledge_base_id A string that uniquely identifies the KnowledgeBase resource.
@@ -402,6 +429,25 @@ describe "DefaultApi" do
 
       result = @api_instance.delete_an_application(
         application_id,
+        {}
+      )
+
+      expect(result).to be_nil
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for delete_an_export
+  # Delete an Export
+  # @param export_id A string that uniquely identifies this export resource.
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe "delete_an_export test" do
+    it "should work" do
+      export_id = @export_id_delete_an_export_test_value
+
+      result = @api_instance.delete_an_export(
+        export_id,
         {}
       )
 
@@ -486,6 +532,25 @@ describe "DefaultApi" do
       )
 
       expect(result).to be_a Freeclimb::File
+
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for download_an_export
+  # Download an Export
+  # @param export_id A string that uniquely identifies this export resource.
+  # @param [Hash] opts the optional parameters
+  # @return [String]
+  describe "download_an_export test" do
+    it "should work" do
+      export_id = @export_id_download_an_export_test_value
+
+      result = @api_instance.download_an_export(
+        export_id,
+        {}
+      )
+      expect(result).to be_a String
 
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -666,6 +731,26 @@ describe "DefaultApi" do
       )
 
       expect(result).to be_a Freeclimb::ApplicationResult
+
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_an_export
+  # Get an Export
+  # @param export_id A string that uniquely identifies this export resource.
+  # @param [Hash] opts the optional parameters
+  # @return [ExportResult]
+  describe "get_an_export test" do
+    it "should work" do
+      export_id = @export_id_get_an_export_test_value
+
+      result = @api_instance.get_an_export(
+        export_id,
+        {}
+      )
+
+      expect(result).to be_a Freeclimb::ExportResult
 
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1037,6 +1122,8 @@ describe "DefaultApi" do
   # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
   # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
   # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
+  # @option opts [Integer] :risk_score_min The minimum riskScore that should be included in the list.
+  # @option opts [Integer] :risk_score_max The maximum riskScore that should be included in the list.
   # @return [CallList]
   describe "list_calls test" do
     it "should work" do
@@ -1048,10 +1135,12 @@ describe "DefaultApi" do
       end_time = @end_time_list_calls_test_value
       parent_call_id = @parent_call_id_list_calls_test_value
       application_id = @application_id_list_calls_test_value
+      risk_score_min = @risk_score_min_list_calls_test_value
+      risk_score_max = @risk_score_max_list_calls_test_value
 
       result = @api_instance.list_calls(
         {
-          active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id
+          active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id, risk_score_min: risk_score_min, risk_score_max: risk_score_max
         }
       )
 
@@ -1109,6 +1198,29 @@ describe "DefaultApi" do
       )
 
       expect(result).to be_a Freeclimb::ConferenceList
+
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for list_exports
+  # List Exports
+  # @param [Hash] opts the optional parameters
+  # @option opts [ExportStatus] :status Status of export
+  # @option opts [String] :cursor Used to reference pages of a list of exports
+  # @return [ExportList]
+  describe "list_exports test" do
+    it "should work" do
+      status = @status_list_exports_test_value
+      cursor = @cursor_list_exports_test_value
+
+      result = @api_instance.list_exports(
+        {
+          status: status, cursor: cursor
+        }
+      )
+
+      expect(result).to be_a Freeclimb::ExportList
 
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1782,6 +1894,8 @@ describe "DefaultApi" do
   # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
   # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
   # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
+  # @option opts [Integer] :risk_score_min The minimum riskScore that should be included in the list.
+  # @option opts [Integer] :risk_score_max The maximum riskScore that should be included in the list.
   # @return [CallList]
   describe "list_calls_get_next_page test" do
     it "should work" do
@@ -1793,10 +1907,12 @@ describe "DefaultApi" do
       end_time = @end_time_list_calls_test_value
       parent_call_id = @parent_call_id_list_calls_test_value
       application_id = @application_id_list_calls_test_value
+      risk_score_min = @risk_score_min_list_calls_test_value
+      risk_score_max = @risk_score_max_list_calls_test_value
 
       result = @api_instance.list_calls(
         {
-          active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id
+          active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id, risk_score_min: risk_score_min, risk_score_max: risk_score_max
         }
       )
       result.next_page_uri = "/Accounts/{accountId}/Calls?cursor=1"
@@ -1855,6 +1971,29 @@ describe "DefaultApi" do
       result.next_page_uri = "/Accounts/{accountId}/Conferences?cursor=1"
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::ConferenceList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_exports
+  # List Exports
+  # @param [Hash] opts the optional parameters
+  # @option opts [ExportStatus] :status Status of export
+  # @option opts [String] :cursor Used to reference pages of a list of exports
+  # @return [ExportList]
+  describe "list_exports_get_next_page test" do
+    it "should work" do
+      status = @status_list_exports_test_value
+      cursor = @cursor_list_exports_test_value
+
+      result = @api_instance.list_exports(
+        {
+          status: status, cursor: cursor
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Exports?cursor=1"
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::ExportList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end

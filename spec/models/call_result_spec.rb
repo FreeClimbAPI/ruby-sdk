@@ -95,38 +95,38 @@ describe Freeclimb::CallResult do
     end
   end
 
-  describe 'test attribute "call_status"' do
+  describe 'test attribute "status"' do
     it "assigns value QUEUED" do
-      instance.call_status = Freeclimb::CallStatus::QUEUED
-      expect(instance.call_status).to eq(Freeclimb::CallStatus::QUEUED)
+      instance.status = Freeclimb::CallStatus::QUEUED
+      expect(instance.status).to eq(Freeclimb::CallStatus::QUEUED)
     end
     it "assigns value RINGING" do
-      instance.call_status = Freeclimb::CallStatus::RINGING
-      expect(instance.call_status).to eq(Freeclimb::CallStatus::RINGING)
+      instance.status = Freeclimb::CallStatus::RINGING
+      expect(instance.status).to eq(Freeclimb::CallStatus::RINGING)
     end
     it "assigns value IN_PROGRESS" do
-      instance.call_status = Freeclimb::CallStatus::IN_PROGRESS
-      expect(instance.call_status).to eq(Freeclimb::CallStatus::IN_PROGRESS)
+      instance.status = Freeclimb::CallStatus::IN_PROGRESS
+      expect(instance.status).to eq(Freeclimb::CallStatus::IN_PROGRESS)
     end
     it "assigns value CANCELED" do
-      instance.call_status = Freeclimb::CallStatus::CANCELED
-      expect(instance.call_status).to eq(Freeclimb::CallStatus::CANCELED)
+      instance.status = Freeclimb::CallStatus::CANCELED
+      expect(instance.status).to eq(Freeclimb::CallStatus::CANCELED)
     end
     it "assigns value COMPLETED" do
-      instance.call_status = Freeclimb::CallStatus::COMPLETED
-      expect(instance.call_status).to eq(Freeclimb::CallStatus::COMPLETED)
+      instance.status = Freeclimb::CallStatus::COMPLETED
+      expect(instance.status).to eq(Freeclimb::CallStatus::COMPLETED)
     end
     it "assigns value FAILED" do
-      instance.call_status = Freeclimb::CallStatus::FAILED
-      expect(instance.call_status).to eq(Freeclimb::CallStatus::FAILED)
+      instance.status = Freeclimb::CallStatus::FAILED
+      expect(instance.status).to eq(Freeclimb::CallStatus::FAILED)
     end
     it "assigns value BUSY" do
-      instance.call_status = Freeclimb::CallStatus::BUSY
-      expect(instance.call_status).to eq(Freeclimb::CallStatus::BUSY)
+      instance.status = Freeclimb::CallStatus::BUSY
+      expect(instance.status).to eq(Freeclimb::CallStatus::BUSY)
     end
     it "assigns value NO_ANSWER" do
-      instance.call_status = Freeclimb::CallStatus::NO_ANSWER
-      expect(instance.call_status).to eq(Freeclimb::CallStatus::NO_ANSWER)
+      instance.status = Freeclimb::CallStatus::NO_ANSWER
+      expect(instance.status).to eq(Freeclimb::CallStatus::NO_ANSWER)
     end
   end
   describe 'test attribute "start_time"' do
@@ -231,7 +231,7 @@ describe Freeclimb::CallResult do
 
           phone_number_id: "TS",
 
-          call_status: Freeclimb::CallStatus::QUEUED,
+          status: Freeclimb::CallStatus::QUEUED,
 
           start_time: "TS",
 
@@ -276,7 +276,7 @@ describe Freeclimb::CallResult do
 
           phone_number_id: "TS",
 
-          call_status: Freeclimb::CallStatus::QUEUED,
+          status: Freeclimb::CallStatus::QUEUED,
 
           start_time: "TS",
 
@@ -323,7 +323,7 @@ describe Freeclimb::CallResult do
 
           phone_number_id: "TS",
 
-          call_status: Freeclimb::CallStatus::QUEUED,
+          status: Freeclimb::CallStatus::QUEUED,
 
           start_time: "TS",
 
@@ -372,7 +372,7 @@ describe Freeclimb::CallResult do
 
         phone_number_id: "TS",
 
-        call_status: Freeclimb::CallStatus::QUEUED,
+        status: Freeclimb::CallStatus::QUEUED,
 
         start_time: "TS",
 
@@ -427,7 +427,7 @@ describe Freeclimb::CallResult do
 
         phone_number_id: "TS",
 
-        call_status: Freeclimb::CallStatus::QUEUED,
+        status: Freeclimb::CallStatus::QUEUED,
 
         start_time: "TS",
 
@@ -468,7 +468,7 @@ describe Freeclimb::CallResult do
 
         phone_number_id: "TS",
 
-        call_status: Freeclimb::CallStatus::QUEUED,
+        status: Freeclimb::CallStatus::QUEUED,
 
         start_time: "TS",
 
@@ -513,7 +513,7 @@ describe Freeclimb::CallResult do
 
         phone_number_id: "TS",
 
-        call_status: Freeclimb::CallStatus::QUEUED,
+        status: Freeclimb::CallStatus::QUEUED,
 
         start_time: "TS",
 
@@ -556,7 +556,7 @@ describe Freeclimb::CallResult do
 
         phone_number_id: "ST",
 
-        call_status: nil,
+        status: nil,
 
         start_time: "ST",
 
@@ -603,7 +603,7 @@ describe Freeclimb::CallResult do
 
         phone_number_id: "TS",
 
-        call_status: Freeclimb::CallStatus::QUEUED,
+        status: Freeclimb::CallStatus::QUEUED,
 
         start_time: "TS",
 
@@ -650,7 +650,7 @@ describe Freeclimb::CallResult do
 
         phone_number_id: "TS",
 
-        call_status: Freeclimb::CallStatus::QUEUED,
+        status: Freeclimb::CallStatus::QUEUED,
 
         start_time: "TS",
 
@@ -691,7 +691,7 @@ describe Freeclimb::CallResult do
 
         phone_number_id: "TS",
 
-        call_status: Freeclimb::CallStatus::QUEUED,
+        status: Freeclimb::CallStatus::QUEUED,
 
         start_time: "TS",
 
@@ -738,7 +738,7 @@ describe Freeclimb::CallResult do
 
       phone_number_id: "TS",
 
-      call_status: Freeclimb::CallStatus::QUEUED,
+      status: Freeclimb::CallStatus::QUEUED,
 
       start_time: "TS",
 
@@ -850,7 +850,7 @@ describe Freeclimb::CallResult do
 
         phone_number_id: "TS",
 
-        call_status: Freeclimb::CallStatus::QUEUED,
+        status: Freeclimb::CallStatus::QUEUED,
 
         start_time: "TS",
 
@@ -897,7 +897,7 @@ describe Freeclimb::CallResult do
 
         phone_number_id: "TS",
 
-        call_status: Freeclimb::CallStatus::QUEUED,
+        status: Freeclimb::CallStatus::QUEUED,
 
         start_time: "TS",
 
@@ -943,7 +943,7 @@ describe Freeclimb::CallResult do
 
         phone_number_id: "TS",
 
-        call_status: Freeclimb::CallStatus::QUEUED,
+        status: Freeclimb::CallStatus::QUEUED,
 
         start_time: "TS",
 
@@ -984,7 +984,7 @@ describe Freeclimb::CallResult do
 
         phone_number_id: "TS",
 
-        call_status: Freeclimb::CallStatus::QUEUED,
+        status: Freeclimb::CallStatus::QUEUED,
 
         start_time: "TS",
 
@@ -1030,7 +1030,7 @@ describe Freeclimb::CallResult do
 
       phone_number_id: "TS",
 
-      call_status: Freeclimb::CallStatus::QUEUED,
+      status: Freeclimb::CallStatus::QUEUED,
 
       start_time: "TS",
 
@@ -1078,8 +1078,8 @@ describe Freeclimb::CallResult do
     it "returns phone_number_id in the form of hash" do
       expect(instance._to_hash(instance.phone_number_id)).to eq(instance.phone_number_id)
     end
-    it "returns call_status in the form of hash" do
-      expect(instance._to_hash(instance.call_status)).to eq(instance.call_status)
+    it "returns status in the form of hash" do
+      expect(instance._to_hash(instance.status)).to eq(instance.status)
     end
     it "returns start_time in the form of hash" do
       expect(instance._to_hash(instance.start_time)).to eq(instance.start_time)

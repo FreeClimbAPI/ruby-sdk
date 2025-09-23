@@ -8,6 +8,27 @@
 # OpenAPI Generator version: 7.9.0
 #
 
+require "date"
+require "time"
+
 module Freeclimb
-  VERSION = "5.3.0"
+  class ExportOutputType
+    CSV = "csv".freeze
+
+    # Builds the enum from string
+    # @param [String] The enum value in the form of the string
+    # @return [String] The enum value
+    def self.build_from_hash(value)
+      new.build_from_hash(value)
+    end
+
+    # Builds the enum from string
+    # @param [String] The enum value in the form of the string
+    # @return [String] The enum value
+    def build_from_hash(value)
+      constantValues = ExportOutputType.constants.select { |c| ExportOutputType.const_get(c) == value }
+      raise "Invalid ENUM value #{value} for class #ExportOutputType" if constantValues.empty?
+      value
+    end
+  end
 end

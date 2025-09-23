@@ -276,6 +276,68 @@ module Freeclimb
       [data, status_code, headers]
     end
 
+    # Create an Export
+    # @param [Hash] opts the optional parameters
+    # @option opts [ExportRequest] :export_request A JSON object containing export creation parameters
+    # @return [ExportResult]
+    def create_export(opts = {})
+      data, _status_code, _headers = create_export_with_http_info(opts)
+      data
+    end
+
+    # Create an Export
+    # @param [Hash] opts the optional parameters
+    # @option opts [ExportRequest] :export_request A JSON object containing export creation parameters
+    # @return [Array<(ExportResult, Integer, Hash)>] ExportResult data, response status code and response headers
+    def create_export_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: DefaultApi.create_export ..."
+      end
+      # resource path
+      local_var_path = "/Accounts/{accountId}/Exports".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params["Accept"] = @api_client.select_header_accept(["application/json"])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(["application/json"])
+      if !content_type.nil?
+        header_params["Content-Type"] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:export_request])
+
+      # return_type
+      return_type = opts[:debug_return_type] || "ExportResult"
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ["fc"]
+
+      new_options = opts.merge(
+        operation: :"DefaultApi.create_export",
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_export\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Query the knowledge base
     # @param knowledge_base_id [String] A string that uniquely identifies the KnowledgeBase resource.
     # @param [Hash] opts the optional parameters
@@ -461,6 +523,66 @@ module Freeclimb
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#delete_an_application\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Delete an Export
+    # @param export_id [String] A string that uniquely identifies this export resource.
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def delete_an_export(export_id, opts = {})
+      delete_an_export_with_http_info(export_id, opts)
+      nil
+    end
+
+    # Delete an Export
+    # @param export_id [String] A string that uniquely identifies this export resource.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def delete_an_export_with_http_info(export_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: DefaultApi.delete_an_export ..."
+      end
+
+      # verify the required parameter 'export_id' is set
+      if @api_client.config.client_side_validation && export_id.nil?
+        fail ArgumentError, "Missing the required parameter 'export_id' when calling DefaultApi.delete_an_export"
+      end
+      # resource path
+      local_var_path = "/Accounts/{accountId}/Exports/{exportId}".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s)).sub("{" + "exportId" + "}", CGI.escape(export_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ["fc"]
+
+      new_options = opts.merge(
+        operation: :"DefaultApi.delete_an_export",
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_an_export\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
     end
@@ -714,6 +836,68 @@ module Freeclimb
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#download_a_recording_file\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Download an Export
+    # @param export_id [String] A string that uniquely identifies this export resource.
+    # @param [Hash] opts the optional parameters
+    # @return [String]
+    def download_an_export(export_id, opts = {})
+      data, _status_code, _headers = download_an_export_with_http_info(export_id, opts)
+      data
+    end
+
+    # Download an Export
+    # @param export_id [String] A string that uniquely identifies this export resource.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
+    def download_an_export_with_http_info(export_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: DefaultApi.download_an_export ..."
+      end
+
+      # verify the required parameter 'export_id' is set
+      if @api_client.config.client_side_validation && export_id.nil?
+        fail ArgumentError, "Missing the required parameter 'export_id' when calling DefaultApi.download_an_export"
+      end
+      # resource path
+      local_var_path = "/Accounts/{accountId}/Exports/{exportId}/Download".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s)).sub("{" + "exportId" + "}", CGI.escape(export_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params["Accept"] = @api_client.select_header_accept(["text/csv"])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || "String"
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ["fc"]
+
+      new_options = opts.merge(
+        operation: :"DefaultApi.download_an_export",
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#download_an_export\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
     end
@@ -1284,6 +1468,68 @@ module Freeclimb
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#get_an_application\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # Get an Export
+    # @param export_id [String] A string that uniquely identifies this export resource.
+    # @param [Hash] opts the optional parameters
+    # @return [ExportResult]
+    def get_an_export(export_id, opts = {})
+      data, _status_code, _headers = get_an_export_with_http_info(export_id, opts)
+      data
+    end
+
+    # Get an Export
+    # @param export_id [String] A string that uniquely identifies this export resource.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ExportResult, Integer, Hash)>] ExportResult data, response status code and response headers
+    def get_an_export_with_http_info(export_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: DefaultApi.get_an_export ..."
+      end
+
+      # verify the required parameter 'export_id' is set
+      if @api_client.config.client_side_validation && export_id.nil?
+        fail ArgumentError, "Missing the required parameter 'export_id' when calling DefaultApi.get_an_export"
+      end
+      # resource path
+      local_var_path = "/Accounts/{accountId}/Exports/{exportId}".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s)).sub("{" + "exportId" + "}", CGI.escape(export_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params["Accept"] = @api_client.select_header_accept(["application/json"])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || "ExportResult"
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ["fc"]
+
+      new_options = opts.merge(
+        operation: :"DefaultApi.get_an_export",
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_an_export\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
     end
@@ -2341,6 +2587,8 @@ module Freeclimb
     # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
     # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
     # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
+    # @option opts [Integer] :risk_score_min The minimum riskScore that should be included in the list.
+    # @option opts [Integer] :risk_score_max The maximum riskScore that should be included in the list.
     # @return [CallList]
     def list_calls(opts = {})
       data, _status_code, _headers = list_calls_with_http_info(opts)
@@ -2357,6 +2605,8 @@ module Freeclimb
     # @option opts [String] :end_time Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
     # @option opts [String] :parent_call_id Only show Calls spawned by the call with this ID.
     # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
+    # @option opts [Integer] :risk_score_min The minimum riskScore that should be included in the list.
+    # @option opts [Integer] :risk_score_max The maximum riskScore that should be included in the list.
     # @return [Array<(CallList, Integer, Hash)>] CallList data, response status code and response headers
     def list_calls_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -2379,6 +2629,8 @@ module Freeclimb
       query_params[:endTime] = opts[:end_time] if !opts[:end_time].nil?
       query_params[:parentCallId] = opts[:parent_call_id] if !opts[:parent_call_id].nil?
       query_params[:applicationId] = @api_client.build_collection_param(opts[:application_id], :multi) if !opts[:application_id].nil?
+      query_params[:riskScoreMin] = opts[:risk_score_min] if !opts[:risk_score_min].nil?
+      query_params[:riskScoreMax] = opts[:risk_score_max] if !opts[:risk_score_max].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2545,6 +2797,67 @@ module Freeclimb
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_conferences\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
+    # List Exports
+    # @param [Hash] opts the optional parameters
+    # @option opts [ExportStatus] :status Status of export
+    # @option opts [String] :cursor Used to reference pages of a list of exports
+    # @return [ExportList]
+    def list_exports(opts = {})
+      data, _status_code, _headers = list_exports_with_http_info(opts)
+      data
+    end
+
+    # List Exports
+    # @param [Hash] opts the optional parameters
+    # @option opts [ExportStatus] :status Status of export
+    # @option opts [String] :cursor Used to reference pages of a list of exports
+    # @return [Array<(ExportList, Integer, Hash)>] ExportList data, response status code and response headers
+    def list_exports_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: DefaultApi.list_exports ..."
+      end
+      # resource path
+      local_var_path = "/Accounts/{accountId}/Exports".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:status] = opts[:status] if !opts[:status].nil?
+      query_params[:cursor] = opts[:cursor] if !opts[:cursor].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params["Accept"] = @api_client.select_header_accept(["application/json"])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || "ExportList"
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ["fc"]
+
+      new_options = opts.merge(
+        operation: :"DefaultApi.list_exports",
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_exports\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       [data, status_code, headers]
     end

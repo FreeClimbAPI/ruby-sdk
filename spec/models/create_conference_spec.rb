@@ -34,8 +34,8 @@ describe Freeclimb::CreateConference do
 
   describe 'test attribute "_alias"' do
     it "should work" do
-      instance._alias = false
-      expect(instance._alias).to eq(false)
+      instance._alias = "TEST_STRING"
+      expect(instance._alias).to eq("TEST_STRING")
     end
   end
 
@@ -78,30 +78,20 @@ describe Freeclimb::CreateConference do
     end
   end
 
+  describe 'test attribute "parent_call_id"' do
+    it "should work" do
+      instance.parent_call_id = "TEST_STRING"
+      expect(instance.parent_call_id).to eq("TEST_STRING")
+    end
+  end
+
   describe 'test method "initialize"' do
     it "properly initializes with values" do
       expect {
         Freeclimb::CreateConference.new(
           action_url: "TS",
 
-          _alias: true,
-
-          play_beep: Freeclimb::PlayBeep::ALWAYS,
-
-          record: true,
-
-          status_callback_url: "TS",
-
-          wait_url: "TS"
-        )
-      }.not_to raise_error
-    end
-    it "fails to initialize with input argument that is not a hash in Freeclimb::CreateConference" do
-      expect {
-        Freeclimb::CreateConference.new(
-          action_url: "TS",
-
-          _alias: true,
+          _alias: "TS",
 
           play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -110,6 +100,27 @@ describe Freeclimb::CreateConference do
           status_callback_url: "TS",
 
           wait_url: "TS",
+
+          parent_call_id: "TS"
+        )
+      }.not_to raise_error
+    end
+    it "fails to initialize with input argument that is not a hash in Freeclimb::CreateConference" do
+      expect {
+        Freeclimb::CreateConference.new(
+          action_url: "TS",
+
+          _alias: "TS",
+
+          play_beep: Freeclimb::PlayBeep::ALWAYS,
+
+          record: true,
+
+          status_callback_url: "TS",
+
+          wait_url: "TS",
+
+          parent_call_id: "TS",
 
           invalid_attribute: true
         )
@@ -120,7 +131,7 @@ describe Freeclimb::CreateConference do
         Freeclimb::CreateConference.new(
           action_url: "TS",
 
-          _alias: true,
+          _alias: "TS",
 
           play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -129,6 +140,8 @@ describe Freeclimb::CreateConference do
           status_callback_url: "TS",
 
           wait_url: "TS",
+
+          parent_call_id: "TS",
 
           invalid_attribute: true
         )
@@ -141,7 +154,7 @@ describe Freeclimb::CreateConference do
       instance = Freeclimb::CreateConference.new(
         action_url: "TS",
 
-        _alias: true,
+        _alias: "TS",
 
         play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -149,7 +162,9 @@ describe Freeclimb::CreateConference do
 
         status_callback_url: "TS",
 
-        wait_url: "TS"
+        wait_url: "TS",
+
+        parent_call_id: "TS"
       )
       expect(instance.valid?).to eq(true)
     end
@@ -166,7 +181,7 @@ describe Freeclimb::CreateConference do
       instance_1 = Freeclimb::CreateConference.new(
         action_url: "TS",
 
-        _alias: true,
+        _alias: "TS",
 
         play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -174,12 +189,14 @@ describe Freeclimb::CreateConference do
 
         status_callback_url: "TS",
 
-        wait_url: "TS"
+        wait_url: "TS",
+
+        parent_call_id: "TS"
       )
       instance_2 = Freeclimb::CreateConference.new(
         action_url: "TS",
 
-        _alias: true,
+        _alias: "TS",
 
         play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -187,7 +204,9 @@ describe Freeclimb::CreateConference do
 
         status_callback_url: "TS",
 
-        wait_url: "TS"
+        wait_url: "TS",
+
+        parent_call_id: "TS"
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end
@@ -196,7 +215,7 @@ describe Freeclimb::CreateConference do
       instance_1 = Freeclimb::CreateConference.new(
         action_url: "TS",
 
-        _alias: true,
+        _alias: "TS",
 
         play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -204,12 +223,14 @@ describe Freeclimb::CreateConference do
 
         status_callback_url: "TS",
 
-        wait_url: "TS"
+        wait_url: "TS",
+
+        parent_call_id: "TS"
       )
       instance_2 = Freeclimb::CreateConference.new(
         action_url: "ST",
 
-        _alias: false,
+        _alias: "ST",
 
         play_beep: nil,
 
@@ -217,7 +238,9 @@ describe Freeclimb::CreateConference do
 
         status_callback_url: "ST",
 
-        wait_url: "ST"
+        wait_url: "ST",
+
+        parent_call_id: "ST"
       )
       expect(instance_1.eql?(instance_2)).to eq(false)
     end
@@ -228,7 +251,7 @@ describe Freeclimb::CreateConference do
       instance = Freeclimb::CreateConference.new(
         action_url: "TS",
 
-        _alias: true,
+        _alias: "TS",
 
         play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -236,7 +259,9 @@ describe Freeclimb::CreateConference do
 
         status_callback_url: "TS",
 
-        wait_url: "TS"
+        wait_url: "TS",
+
+        parent_call_id: "TS"
       )
       expect(instance.hash).to be_a_kind_of(Integer)
     end
@@ -247,7 +272,7 @@ describe Freeclimb::CreateConference do
       instance_1 = Freeclimb::CreateConference.new(
         action_url: "TS",
 
-        _alias: true,
+        _alias: "TS",
 
         play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -255,12 +280,14 @@ describe Freeclimb::CreateConference do
 
         status_callback_url: "TS",
 
-        wait_url: "TS"
+        wait_url: "TS",
+
+        parent_call_id: "TS"
       )
       instance_2 = Freeclimb::CreateConference.new(
         action_url: "TS",
 
-        _alias: true,
+        _alias: "TS",
 
         play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -268,7 +295,9 @@ describe Freeclimb::CreateConference do
 
         status_callback_url: "TS",
 
-        wait_url: "TS"
+        wait_url: "TS",
+
+        parent_call_id: "TS"
       )
 
       expect(instance_2.build_from_hash(instance_1.hash)).to eq(instance_1.build_from_hash(instance_1.hash))
@@ -279,7 +308,7 @@ describe Freeclimb::CreateConference do
     instance = Freeclimb::CreateConference.new(
       action_url: "TS",
 
-      _alias: true,
+      _alias: "TS",
 
       play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -287,14 +316,16 @@ describe Freeclimb::CreateConference do
 
       status_callback_url: "TS",
 
-      wait_url: "TS"
+      wait_url: "TS",
+
+      parent_call_id: "TS"
     )
     it "deserializes the data of action_url" do
       expect(instance._deserialize("String", instance.action_url)).to be_a_kind_of(String)
     end
 
     it "deserializes the data of _alias" do
-      expect(instance._deserialize("Boolean", instance._alias)).to be_a_kind_of(TrueClass)
+      expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
     end
 
     it "deserializes the data of record" do
@@ -307,6 +338,10 @@ describe Freeclimb::CreateConference do
     it "deserializes the data of wait_url" do
       expect(instance._deserialize("String", instance.wait_url)).to be_a_kind_of(String)
     end
+
+    it "deserializes the data of parent_call_id" do
+      expect(instance._deserialize("String", instance.parent_call_id)).to be_a_kind_of(String)
+    end
   end
 
   describe 'test method "to_s"' do
@@ -314,7 +349,7 @@ describe Freeclimb::CreateConference do
       instance = Freeclimb::CreateConference.new(
         action_url: "TS",
 
-        _alias: true,
+        _alias: "TS",
 
         play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -322,7 +357,9 @@ describe Freeclimb::CreateConference do
 
         status_callback_url: "TS",
 
-        wait_url: "TS"
+        wait_url: "TS",
+
+        parent_call_id: "TS"
       )
       expect(instance.to_s).to eq(instance.to_hash.to_s)
     end
@@ -333,7 +370,7 @@ describe Freeclimb::CreateConference do
       instance = Freeclimb::CreateConference.new(
         action_url: "TS",
 
-        _alias: true,
+        _alias: "TS",
 
         play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -341,7 +378,9 @@ describe Freeclimb::CreateConference do
 
         status_callback_url: "TS",
 
-        wait_url: "TS"
+        wait_url: "TS",
+
+        parent_call_id: "TS"
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
@@ -349,7 +388,7 @@ describe Freeclimb::CreateConference do
       instance_1 = Freeclimb::CreateConference.new(
         action_url: "TS",
 
-        _alias: true,
+        _alias: "TS",
 
         play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -357,12 +396,14 @@ describe Freeclimb::CreateConference do
 
         status_callback_url: "TS",
 
-        wait_url: "TS"
+        wait_url: "TS",
+
+        parent_call_id: "TS"
       )
       instance_2 = Freeclimb::CreateConference.new(
         action_url: "TS",
 
-        _alias: true,
+        _alias: "TS",
 
         play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -370,7 +411,9 @@ describe Freeclimb::CreateConference do
 
         status_callback_url: "TS",
 
-        wait_url: "TS"
+        wait_url: "TS",
+
+        parent_call_id: "TS"
       )
       expect(instance_1.to_hash).to eq(instance_2.to_hash)
     end
@@ -380,7 +423,7 @@ describe Freeclimb::CreateConference do
     instance = Freeclimb::CreateConference.new(
       action_url: "TS",
 
-      _alias: true,
+      _alias: "TS",
 
       play_beep: Freeclimb::PlayBeep::ALWAYS,
 
@@ -388,7 +431,9 @@ describe Freeclimb::CreateConference do
 
       status_callback_url: "TS",
 
-      wait_url: "TS"
+      wait_url: "TS",
+
+      parent_call_id: "TS"
     )
     it "returns action_url in the form of hash" do
       expect(instance._to_hash(instance.action_url)).to eq(instance.action_url)
@@ -407,6 +452,9 @@ describe Freeclimb::CreateConference do
     end
     it "returns wait_url in the form of hash" do
       expect(instance._to_hash(instance.wait_url)).to eq(instance.wait_url)
+    end
+    it "returns parent_call_id in the form of hash" do
+      expect(instance._to_hash(instance.parent_call_id)).to eq(instance.parent_call_id)
     end
   end
 end

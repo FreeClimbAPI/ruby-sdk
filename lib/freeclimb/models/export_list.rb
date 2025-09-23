@@ -12,92 +12,81 @@ require "date"
 require "time"
 
 module Freeclimb
-  # The `CreateConference` command does exactly what its name implies — it creates an unpopulated Conference (one without any Participants). Once created, a Conference remains in FreeClimb until explicitly terminated by a customer. Once a Conference has been terminated, it can no longer be used.
-  class CreateConference < PerclCommand
-    #  This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response.
-    attr_accessor :action_url
+  class ExportList
+    # Total amount of requested resource.
+    attr_accessor :total
 
-    # Descriptive name for the Conference.
-    attr_accessor :_alias
+    # Resource index at start of current page
+    attr_accessor :start
 
-    attr_accessor :play_beep
+    # Resource index at end of current page
+    attr_accessor :_end
 
-    # When set to `true`, the entire Conference is recorded. The `statusCallbackUrl` of the Conference will receive a `conferenceRecordingEnded` Webhook when the Conference transitions from the `inProgress` to empty state.
-    attr_accessor :record
+    # Current page
+    attr_accessor :page
 
-    # This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available.
-    attr_accessor :status_callback_url
+    # Total number of pages
+    attr_accessor :num_pages
 
-    # If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb.
-    attr_accessor :wait_url
+    # Number of items per page
+    attr_accessor :page_size
 
-    # ID of the Call that created this leg (child call).
-    attr_accessor :parent_call_id
+    # Uri to retrieve the next page of items
+    attr_accessor :next_page_uri
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    attr_accessor :exports
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        action_url: :actionUrl,
-        _alias: :alias,
-        play_beep: :playBeep,
-        record: :record,
-        status_callback_url: :statusCallbackUrl,
-        wait_url: :waitUrl,
-        parent_call_id: :parentCallId
+        total: :total,
+        start: :start,
+        _end: :end,
+        page: :page,
+        num_pages: :numPages,
+        page_size: :pageSize,
+        next_page_uri: :nextPageUri,
+        exports: :exports
       }
     end
 
-    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
+    # Returns all the JSON keys this model knows about
     def self.acceptable_attributes
-      attribute_map.values.concat(superclass.acceptable_attributes)
+      attribute_map.values
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        action_url: :String,
-        _alias: :String,
-        play_beep: :PlayBeep,
-        record: :Boolean,
-        status_callback_url: :String,
-        wait_url: :String,
-        parent_call_id: :String
+        total: :Integer,
+        start: :Integer,
+        _end: :Integer,
+        page: :Integer,
+        num_pages: :Integer,
+        page_size: :Integer,
+        next_page_uri: :String,
+        exports: :"Array<ExportResult>"
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :play_beep
+        :total,
+        :start,
+        :_end,
+        :page,
+        :num_pages,
+        :page_size,
+        :next_page_uri,
+        :exports
       ])
     end
 
     # List of class defined in allOf (OpenAPI v3)
     def self.openapi_all_of
       [
-        :PerclCommand
+        :PaginationModel
       ]
     end
 
@@ -105,65 +94,62 @@ module Freeclimb
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if !attributes.is_a?(Hash)
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::CreateConference` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::ExportList` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if !self.class.attribute_map.key?(k.to_sym)
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::CreateConference`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::ExportList`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      # call parent's initialize
-      super
-
-      if attributes.key?(:action_url)
-        self.action_url = attributes[:action_url]
+      if attributes.key?(:total)
+        self.total = attributes[:total]
       end
 
-      if attributes.key?(:_alias)
-        self._alias = attributes[:_alias]
+      if attributes.key?(:start)
+        self.start = attributes[:start]
       end
 
-      if attributes.key?(:play_beep)
-        self.play_beep = attributes[:play_beep]
+      if attributes.key?(:_end)
+        self._end = attributes[:_end]
       end
 
-      if attributes.key?(:record)
-        self.record = attributes[:record]
+      if attributes.key?(:page)
+        self.page = attributes[:page]
       end
 
-      if attributes.key?(:status_callback_url)
-        self.status_callback_url = attributes[:status_callback_url]
+      if attributes.key?(:num_pages)
+        self.num_pages = attributes[:num_pages]
       end
 
-      if attributes.key?(:wait_url)
-        self.wait_url = attributes[:wait_url]
+      if attributes.key?(:page_size)
+        self.page_size = attributes[:page_size]
       end
 
-      if attributes.key?(:parent_call_id)
-        self.parent_call_id = attributes[:parent_call_id]
+      if attributes.key?(:next_page_uri)
+        self.next_page_uri = attributes[:next_page_uri]
       end
-      self.command = "CreateConference"
+
+      if attributes.key?(:exports)
+        if (value = attributes[:exports]).is_a?(Array)
+          self.exports = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
-      if @action_url.nil?
-        invalid_properties.push('invalid value for "action_url", action_url cannot be nil.')
-      end
-
-      invalid_properties
+      []
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      if @action_url.nil?
+      if @total.nil?
         false
       else
         list_invalid_properties.length == 0
@@ -175,13 +161,14 @@ module Freeclimb
     def ==(other)
       return true if equal?(other)
       self.class == other.class &&
-        action_url == other.action_url &&
-        _alias == other._alias &&
-        play_beep == other.play_beep &&
-        record == other.record &&
-        status_callback_url == other.status_callback_url &&
-        wait_url == other.wait_url &&
-        parent_call_id == other.parent_call_id && super
+        total == other.total &&
+        start == other.start &&
+        _end == other._end &&
+        page == other.page &&
+        num_pages == other.num_pages &&
+        page_size == other.page_size &&
+        next_page_uri == other.next_page_uri &&
+        exports == other.exports
     end
 
     # @see the `==` method
@@ -193,7 +180,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [action_url, _alias, play_beep, record, status_callback_url, wait_url, parent_call_id].hash
+      [total, start, _end, page, num_pages, page_size, next_page_uri, exports].hash
     end
 
     # Builds the object from hash
@@ -208,7 +195,6 @@ module Freeclimb
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
-      super
       self.class.openapi_types.each_pair do |key, type|
         if attributes[self.class.attribute_map[key]].nil? && self.class.openapi_nullable.include?(key)
           send(:"#{key}=", nil)
@@ -284,7 +270,7 @@ module Freeclimb
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = super
+      hash = {}
       self.class.attribute_map.each_pair do |attr, param|
         value = send(attr)
         if value.nil?

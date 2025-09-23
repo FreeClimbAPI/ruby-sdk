@@ -8,6 +8,32 @@
 # OpenAPI Generator version: 7.9.0
 #
 
+require "date"
+require "time"
+
 module Freeclimb
-  VERSION = "5.3.0"
+  class ExportStatus
+    INTAKING = "intaking".freeze
+    QUEUED = "queued".freeze
+    IN_PROGRESS = "inProgress".freeze
+    COMPLETED = "completed".freeze
+    FAILED = "failed".freeze
+    DELETED = "deleted".freeze
+
+    # Builds the enum from string
+    # @param [String] The enum value in the form of the string
+    # @return [String] The enum value
+    def self.build_from_hash(value)
+      new.build_from_hash(value)
+    end
+
+    # Builds the enum from string
+    # @param [String] The enum value in the form of the string
+    # @return [String] The enum value
+    def build_from_hash(value)
+      constantValues = ExportStatus.constants.select { |c| ExportStatus.const_get(c) == value }
+      raise "Invalid ENUM value #{value} for class #ExportStatus" if constantValues.empty?
+      value
+    end
+  end
 end
