@@ -432,7 +432,7 @@ end
 api_instance = Freeclimb::DefaultApi.new
 
 opts = {
-  export_request: Freeclimb::ExportRequest.new({resource_type: Freeclimb::ExportResourceType::MESSAGES, output: Freeclimb::ExportRequestOutput.new}) # ExportRequest | A JSON object containing export creation parameters
+  export_request: Freeclimb::ExportRequest.new({resource_type: Freeclimb::ExportResourceType::MESSAGES, output: Freeclimb::ExportRequestOutput.new({type: Freeclimb::ExportOutputType::CSV})}) # ExportRequest | A JSON object containing export creation parameters
 }
 
 begin

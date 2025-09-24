@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | [**ExportOutputType**](ExportOutputType.md) |  | [optional] |
+| **type** | [**ExportOutputType**](ExportOutputType.md) |  |  |
 
 ## Example
 

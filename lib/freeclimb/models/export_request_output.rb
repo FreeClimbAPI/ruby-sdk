@@ -84,7 +84,12 @@ module Freeclimb
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      []
+      invalid_properties = []
+      if @type.nil?
+        invalid_properties.push('invalid value for "type", type cannot be nil.')
+      end
+
+      invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid

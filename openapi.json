@@ -4862,6 +4862,17 @@
           "csv"
         ]
       },
+      "ExportRequestOutput": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ExportOutputType"
+          }
+        }
+      },
       "ExportResultOutput": {
         "type": "object",
         "required": [
@@ -4998,12 +5009,7 @@
             }
           },
           "output": {
-            "type": "object",
-            "properties": {
-              "type": {
-                "$ref": "#/components/schemas/ExportOutputType"
-              }
-            }
+            "$ref": "#/components/schemas/ExportRequestOutput"
           },
           "query": {
             "type": "object"
