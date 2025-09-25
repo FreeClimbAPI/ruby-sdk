@@ -12,27 +12,34 @@ require "date"
 require "time"
 
 module Freeclimb
-  # The `CreateConference` command does exactly what its name implies — it creates an unpopulated Conference (one without any Participants). Once created, a Conference remains in FreeClimb until explicitly terminated by a customer. Once a Conference has been terminated, it can no longer be used.
-  class CreateConference < PerclCommand
-    #  This URL is invoked once the Conference is successfully created. Actions on the Conference, such as adding Participants, can be performed via the PerCL script returned in the response.
-    attr_accessor :action_url
+  class ExportResult
+    # String that uniquely identifies this account resource.
+    attr_accessor :account_id
 
-    # Descriptive name for the Conference.
-    attr_accessor :_alias
+    attr_accessor :uri
 
-    attr_accessor :play_beep
+    attr_accessor :date_created
 
-    # When set to `true`, the entire Conference is recorded. The `statusCallbackUrl` of the Conference will receive a `conferenceRecordingEnded` Webhook when the Conference transitions from the `inProgress` to empty state.
-    attr_accessor :record
+    attr_accessor :date_updated
 
-    # This URL is invoked when the status of the Conference changes or when a recording of the Conference has become available.
-    attr_accessor :status_callback_url
+    attr_accessor :revision
 
-    # If specified, this URL provides the custom hold music for the Conference when it is in the populated state. This attribute is always fetched using HTTP GET and is fetched just once – when the Conference is created. The URL must be an audio file that is reachable and readable by FreeClimb.
-    attr_accessor :wait_url
+    # String that uniquely identifies this export resource
+    attr_accessor :export_id
 
-    # ID of the Call that created this leg (child call).
-    attr_accessor :parent_call_id
+    attr_accessor :status
+
+    attr_accessor :size
+
+    attr_accessor :resource_type
+
+    # Query params used to filter exported documents
+    attr_accessor :query
+
+    # Desired fields of exported documents
+    attr_accessor :format
+
+    attr_accessor :output
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -59,102 +66,164 @@ module Freeclimb
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        action_url: :actionUrl,
-        _alias: :alias,
-        play_beep: :playBeep,
-        record: :record,
-        status_callback_url: :statusCallbackUrl,
-        wait_url: :waitUrl,
-        parent_call_id: :parentCallId
+        account_id: :accountId,
+        uri: :uri,
+        date_created: :dateCreated,
+        date_updated: :dateUpdated,
+        revision: :revision,
+        export_id: :exportId,
+        status: :status,
+        size: :size,
+        resource_type: :resourceType,
+        query: :query,
+        format: :format,
+        output: :output
       }
     end
 
-    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
+    # Returns all the JSON keys this model knows about
     def self.acceptable_attributes
-      attribute_map.values.concat(superclass.acceptable_attributes)
+      attribute_map.values
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        action_url: :String,
-        _alias: :String,
-        play_beep: :PlayBeep,
-        record: :Boolean,
-        status_callback_url: :String,
-        wait_url: :String,
-        parent_call_id: :String
+        account_id: :String,
+        uri: :String,
+        date_created: :String,
+        date_updated: :String,
+        revision: :Integer,
+        export_id: :String,
+        status: :ExportStatus,
+        size: :Integer,
+        resource_type: :ExportResourceType,
+        query: :Object,
+        format: :"Array<String>",
+        output: :ExportResultOutput
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :play_beep
+        :account_id,
+        :export_id
       ])
-    end
-
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-        :PerclCommand
-      ]
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if !attributes.is_a?(Hash)
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::CreateConference` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::ExportResult` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if !self.class.attribute_map.key?(k.to_sym)
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::CreateConference`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::ExportResult`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      # call parent's initialize
-      super
-
-      if attributes.key?(:action_url)
-        self.action_url = attributes[:action_url]
+      if attributes.key?(:account_id)
+        self.account_id = attributes[:account_id]
       end
 
-      if attributes.key?(:_alias)
-        self._alias = attributes[:_alias]
+      if attributes.key?(:uri)
+        self.uri = attributes[:uri]
       end
 
-      if attributes.key?(:play_beep)
-        self.play_beep = attributes[:play_beep]
+      if attributes.key?(:date_created)
+        self.date_created = attributes[:date_created]
       end
 
-      if attributes.key?(:record)
-        self.record = attributes[:record]
+      if attributes.key?(:date_updated)
+        self.date_updated = attributes[:date_updated]
       end
 
-      if attributes.key?(:status_callback_url)
-        self.status_callback_url = attributes[:status_callback_url]
+      if attributes.key?(:revision)
+        self.revision = attributes[:revision]
       end
 
-      if attributes.key?(:wait_url)
-        self.wait_url = attributes[:wait_url]
+      if attributes.key?(:export_id)
+        self.export_id = attributes[:export_id]
       end
 
-      if attributes.key?(:parent_call_id)
-        self.parent_call_id = attributes[:parent_call_id]
+      if attributes.key?(:status)
+        self.status = attributes[:status]
       end
-      self.command = "CreateConference"
+
+      if attributes.key?(:size)
+        self.size = attributes[:size]
+      end
+
+      if attributes.key?(:resource_type)
+        self.resource_type = attributes[:resource_type]
+      end
+
+      if attributes.key?(:query)
+        self.query = attributes[:query]
+      end
+
+      if attributes.key?(:format)
+        if (value = attributes[:format]).is_a?(Array)
+          self.format = value
+        end
+      end
+
+      if attributes.key?(:output)
+        self.output = attributes[:output]
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
-      if @action_url.nil?
-        invalid_properties.push('invalid value for "action_url", action_url cannot be nil.')
+      invalid_properties = []
+      if @uri.nil?
+        invalid_properties.push('invalid value for "uri", uri cannot be nil.')
+      end
+
+      if @date_created.nil?
+        invalid_properties.push('invalid value for "date_created", date_created cannot be nil.')
+      end
+
+      if @date_updated.nil?
+        invalid_properties.push('invalid value for "date_updated", date_updated cannot be nil.')
+      end
+
+      if @revision.nil?
+        invalid_properties.push('invalid value for "revision", revision cannot be nil.')
+      end
+
+      if @revision < 0
+        invalid_properties.push('invalid value for "revision", must be greater than or equal to 0.')
+      end
+
+      if @status.nil?
+        invalid_properties.push('invalid value for "status", status cannot be nil.')
+      end
+
+      if @size.nil?
+        invalid_properties.push('invalid value for "size", size cannot be nil.')
+      end
+
+      if @resource_type.nil?
+        invalid_properties.push('invalid value for "resource_type", resource_type cannot be nil.')
+      end
+
+      if @query.nil?
+        invalid_properties.push('invalid value for "query", query cannot be nil.')
+      end
+
+      if @format.nil?
+        invalid_properties.push('invalid value for "format", format cannot be nil.')
+      end
+
+      if @output.nil?
+        invalid_properties.push('invalid value for "output", output cannot be nil.')
       end
 
       invalid_properties
@@ -163,11 +232,25 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      if @action_url.nil?
+      if @account_id.nil?
         false
       else
         list_invalid_properties.length == 0
       end
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] revision Value to be assigned
+    def revision=(revision)
+      if revision.nil?
+        fail ArgumentError, "revision cannot be nil"
+      end
+
+      if revision < 0
+        fail ArgumentError, 'invalid value for "revision", must be greater than or equal to 0.'
+      end
+
+      @revision = revision
     end
 
     # Checks equality by comparing each attribute.
@@ -175,13 +258,18 @@ module Freeclimb
     def ==(other)
       return true if equal?(other)
       self.class == other.class &&
-        action_url == other.action_url &&
-        _alias == other._alias &&
-        play_beep == other.play_beep &&
-        record == other.record &&
-        status_callback_url == other.status_callback_url &&
-        wait_url == other.wait_url &&
-        parent_call_id == other.parent_call_id && super
+        account_id == other.account_id &&
+        uri == other.uri &&
+        date_created == other.date_created &&
+        date_updated == other.date_updated &&
+        revision == other.revision &&
+        export_id == other.export_id &&
+        status == other.status &&
+        size == other.size &&
+        resource_type == other.resource_type &&
+        query == other.query &&
+        format == other.format &&
+        output == other.output
     end
 
     # @see the `==` method
@@ -193,7 +281,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [action_url, _alias, play_beep, record, status_callback_url, wait_url, parent_call_id].hash
+      [account_id, uri, date_created, date_updated, revision, export_id, status, size, resource_type, query, format, output].hash
     end
 
     # Builds the object from hash
@@ -208,7 +296,6 @@ module Freeclimb
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
-      super
       self.class.openapi_types.each_pair do |key, type|
         if attributes[self.class.attribute_map[key]].nil? && self.class.openapi_nullable.include?(key)
           send(:"#{key}=", nil)
@@ -284,7 +371,7 @@ module Freeclimb
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = super
+      hash = {}
       self.class.attribute_map.each_pair do |attr, param|
         value = send(attr)
         if value.nil?
