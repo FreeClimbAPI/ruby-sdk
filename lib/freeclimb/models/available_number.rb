@@ -21,12 +21,6 @@ module Freeclimb
     # The phone number, in E.164 format (+ country code and phone number: +18003608245).
     attr_accessor :phone_number
 
-    # Typically set to true for all numbers.
-    attr_accessor :voice_enabled
-
-    # Indicates whether the phone number can send and receive SMS messages.
-    attr_accessor :sms_enabled
-
     # The state or province of this phone number.
     attr_accessor :region
 
@@ -39,8 +33,6 @@ module Freeclimb
         capabilities: :capabilities,
         campaign_id: :campaignId,
         phone_number: :phoneNumber,
-        voice_enabled: :voiceEnabled,
-        sms_enabled: :smsEnabled,
         region: :region,
         country: :country
       }
@@ -57,8 +49,6 @@ module Freeclimb
         capabilities: :Capabilities,
         campaign_id: :String,
         phone_number: :String,
-        voice_enabled: :Boolean,
-        sms_enabled: :Boolean,
         region: :String,
         country: :String
       }
@@ -69,8 +59,6 @@ module Freeclimb
       Set.new([
         :campaign_id,
         :phone_number,
-        :voice_enabled,
-        :sms_enabled,
         :region,
         :country
       ])
@@ -101,14 +89,6 @@ module Freeclimb
 
       if attributes.key?(:phone_number)
         self.phone_number = attributes[:phone_number]
-      end
-
-      if attributes.key?(:voice_enabled)
-        self.voice_enabled = attributes[:voice_enabled]
-      end
-
-      if attributes.key?(:sms_enabled)
-        self.sms_enabled = attributes[:sms_enabled]
       end
 
       if attributes.key?(:region)
@@ -144,8 +124,6 @@ module Freeclimb
         capabilities == other.capabilities &&
         campaign_id == other.campaign_id &&
         phone_number == other.phone_number &&
-        voice_enabled == other.voice_enabled &&
-        sms_enabled == other.sms_enabled &&
         region == other.region &&
         country == other.country
     end
@@ -159,7 +137,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [capabilities, campaign_id, phone_number, voice_enabled, sms_enabled, region, country].hash
+      [capabilities, campaign_id, phone_number, region, country].hash
     end
 
     # Builds the object from hash

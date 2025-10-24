@@ -40,6 +40,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.buy_a_phone_number ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.buy_a_phone_number, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'buy_incoming_number_request' is set
       if @api_client.config.client_side_validation && buy_incoming_number_request.nil?
@@ -107,6 +111,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.create_a_conference ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.create_a_conference, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Conferences".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -169,6 +178,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.create_a_queue ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.create_a_queue, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Queues".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -231,6 +245,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.create_an_application ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.create_an_application, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Applications".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -276,6 +295,79 @@ module Freeclimb
       [data, status_code, headers]
     end
 
+    # Create a Blob
+    # Create a new Blob belonging to the requesting account.
+    # @param create_blob_request [CreateBlobRequest] An object defining a new blob. A request body must be provided but the blob may be empty.
+    # @param [Hash] opts the optional parameters
+    # @return [BlobResult]
+    def create_blob(create_blob_request, opts = {})
+      data, _status_code, _headers = create_blob_with_http_info(create_blob_request, opts)
+      data
+    end
+
+    # Create a Blob
+    # Create a new Blob belonging to the requesting account.
+    # @param create_blob_request [CreateBlobRequest] An object defining a new blob. A request body must be provided but the blob may be empty.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(BlobResult, Integer, Hash)>] BlobResult data, response status code and response headers
+    def create_blob_with_http_info(create_blob_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: DefaultApi.create_blob ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.create_blob, must conform to the pattern #{pattern}."
+      end
+
+      # verify the required parameter 'create_blob_request' is set
+      if @api_client.config.client_side_validation && create_blob_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_blob_request' when calling DefaultApi.create_blob"
+      end
+      # resource path
+      local_var_path = "/Accounts/{accountId}/Blobs".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params["Accept"] = @api_client.select_header_accept(["application/json"])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(["application/json"])
+      if !content_type.nil?
+        header_params["Content-Type"] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_blob_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || "BlobResult"
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ["fc"]
+
+      new_options = opts.merge(
+        operation: :"DefaultApi.create_blob",
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_blob\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Create an Export
     # @param [Hash] opts the optional parameters
     # @option opts [ExportRequest] :export_request A JSON object containing export creation parameters
@@ -293,6 +385,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.create_export ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.create_export, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Exports".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -356,6 +453,10 @@ module Freeclimb
     def create_knowledge_base_completion_with_http_info(knowledge_base_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.create_knowledge_base_completion ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.create_knowledge_base_completion, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'knowledge_base_id' is set
@@ -424,6 +525,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.delete_a_recording ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.delete_a_recording, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'recording_id' is set
       if @api_client.config.client_side_validation && recording_id.nil?
@@ -483,6 +588,10 @@ module Freeclimb
     def delete_an_application_with_http_info(application_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.delete_an_application ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.delete_an_application, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'application_id' is set
@@ -544,6 +653,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.delete_an_export ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.delete_an_export, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'export_id' is set
       if @api_client.config.client_side_validation && export_id.nil?
@@ -604,6 +717,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.delete_an_incoming_number ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.delete_an_incoming_number, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'phone_number_id' is set
       if @api_client.config.client_side_validation && phone_number_id.nil?
@@ -647,6 +764,82 @@ module Freeclimb
       [data, status_code, headers]
     end
 
+    # Delete Blob
+    # Deletes a blob or specific keys from a blob. If no keys are specified in the request body, the entire blob is deleted (returns 204). If specific keys are provided, only those keys are removed and the remaining blob is returned (returns 200).
+    # @param blob_id [String] String that uniquely identifies this Blob resource.
+    # @param [Hash] opts the optional parameters
+    # @option opts [Array<String>] :key key within blob to remove
+    # @return [BlobResult]
+    def delete_blob(blob_id, opts = {})
+      data, _status_code, _headers = delete_blob_with_http_info(blob_id, opts)
+      data
+    end
+
+    # Delete Blob
+    # Deletes a blob or specific keys from a blob. If no keys are specified in the request body, the entire blob is deleted (returns 204). If specific keys are provided, only those keys are removed and the remaining blob is returned (returns 200).
+    # @param blob_id [String] String that uniquely identifies this Blob resource.
+    # @param [Hash] opts the optional parameters
+    # @option opts [Array<String>] :key key within blob to remove
+    # @return [Array<(BlobResult, Integer, Hash)>] BlobResult data, response status code and response headers
+    def delete_blob_with_http_info(blob_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: DefaultApi.delete_blob ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.delete_blob, must conform to the pattern #{pattern}."
+      end
+
+      # verify the required parameter 'blob_id' is set
+      if @api_client.config.client_side_validation && blob_id.nil?
+        fail ArgumentError, "Missing the required parameter 'blob_id' when calling DefaultApi.delete_blob"
+      end
+      pattern = /BL[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && blob_id !~ pattern
+        fail ArgumentError, "invalid value for 'blob_id' when calling DefaultApi.delete_blob, must conform to the pattern #{pattern}."
+      end
+
+      # resource path
+      local_var_path = "/Accounts/{accountId}/Blobs/{blobId}".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s)).sub("{" + "blobId" + "}", CGI.escape(blob_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:key] = @api_client.build_collection_param(opts[:key], :multi) if !opts[:key].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params["Accept"] = @api_client.select_header_accept(["application/json"])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || "BlobResult"
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ["fc"]
+
+      new_options = opts.merge(
+        operation: :"DefaultApi.delete_blob",
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_blob\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Dequeue a Member
     # @param queue_id [String] String that uniquely identifies the Queue that the Member belongs to.
     # @param call_id [String] ID if the Call that the Member belongs to
@@ -665,6 +858,10 @@ module Freeclimb
     def dequeue_a_member_with_http_info(queue_id, call_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.dequeue_a_member ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.dequeue_a_member, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'queue_id' is set
@@ -733,6 +930,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.dequeue_head_member ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.dequeue_head_member, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'queue_id' is set
       if @api_client.config.client_side_validation && queue_id.nil?
@@ -795,6 +996,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.download_a_recording_file ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.download_a_recording_file, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'recording_id' is set
       if @api_client.config.client_side_validation && recording_id.nil?
@@ -809,7 +1014,7 @@ module Freeclimb
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params["Accept"] = @api_client.select_header_accept(["audio/x-wav"])
+      header_params["Accept"] = @api_client.select_header_accept(["audio/wav"])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -856,6 +1061,10 @@ module Freeclimb
     def download_an_export_with_http_info(export_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.download_an_export ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.download_an_export, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'export_id' is set
@@ -918,6 +1127,10 @@ module Freeclimb
     def filter_logs_with_http_info(filter_logs_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.filter_logs ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.filter_logs, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'filter_logs_request' is set
@@ -986,6 +1199,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_a_call ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_a_call, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'call_id' is set
       if @api_client.config.client_side_validation && call_id.nil?
@@ -1047,6 +1264,10 @@ module Freeclimb
     def get_a_conference_with_http_info(conference_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_a_conference ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_a_conference, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'conference_id' is set
@@ -1111,6 +1332,10 @@ module Freeclimb
     def get_a_member_with_http_info(queue_id, call_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_a_member ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_a_member, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'queue_id' is set
@@ -1181,6 +1406,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_a_participant ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_a_participant, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'conference_id' is set
       if @api_client.config.client_side_validation && conference_id.nil?
@@ -1248,6 +1477,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_a_queue ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_a_queue, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'queue_id' is set
       if @api_client.config.client_side_validation && queue_id.nil?
@@ -1310,6 +1543,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_a_recording ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_a_recording, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'recording_id' is set
       if @api_client.config.client_side_validation && recording_id.nil?
@@ -1370,6 +1607,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_an_account ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_an_account, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -1426,6 +1668,10 @@ module Freeclimb
     def get_an_application_with_http_info(application_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_an_application ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_an_application, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'application_id' is set
@@ -1489,6 +1735,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_an_export ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_an_export, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'export_id' is set
       if @api_client.config.client_side_validation && export_id.nil?
@@ -1550,6 +1800,10 @@ module Freeclimb
     def get_an_incoming_number_with_http_info(phone_number_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_an_incoming_number ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_an_incoming_number, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'phone_number_id' is set
@@ -1613,6 +1867,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_an_sms_message ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_an_sms_message, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'message_id' is set
       if @api_client.config.client_side_validation && message_id.nil?
@@ -1658,6 +1916,79 @@ module Freeclimb
       [data, status_code, headers]
     end
 
+    # Get Blob
+    # Retrieves a specified blob
+    # @param blob_id [String] String that uniquely identifies this Blob resource.
+    # @param [Hash] opts the optional parameters
+    # @return [BlobResult]
+    def get_blob(blob_id, opts = {})
+      data, _status_code, _headers = get_blob_with_http_info(blob_id, opts)
+      data
+    end
+
+    # Get Blob
+    # Retrieves a specified blob
+    # @param blob_id [String] String that uniquely identifies this Blob resource.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(BlobResult, Integer, Hash)>] BlobResult data, response status code and response headers
+    def get_blob_with_http_info(blob_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: DefaultApi.get_blob ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_blob, must conform to the pattern #{pattern}."
+      end
+
+      # verify the required parameter 'blob_id' is set
+      if @api_client.config.client_side_validation && blob_id.nil?
+        fail ArgumentError, "Missing the required parameter 'blob_id' when calling DefaultApi.get_blob"
+      end
+      pattern = /BL[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && blob_id !~ pattern
+        fail ArgumentError, "invalid value for 'blob_id' when calling DefaultApi.get_blob, must conform to the pattern #{pattern}."
+      end
+
+      # resource path
+      local_var_path = "/Accounts/{accountId}/Blobs/{blobId}".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s)).sub("{" + "blobId" + "}", CGI.escape(blob_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params["Accept"] = @api_client.select_header_accept(["application/json"])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || "BlobResult"
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ["fc"]
+
+      new_options = opts.merge(
+        operation: :"DefaultApi.get_blob",
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_blob\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Get Head Member
     # @param queue_id [String] String that uniquely identifies the Queue that the Member belongs to.
     # @param [Hash] opts the optional parameters
@@ -1674,6 +2005,10 @@ module Freeclimb
     def get_head_member_with_http_info(queue_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_head_member ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_head_member, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'queue_id' is set
@@ -1737,6 +2072,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_ten_dlc_sms_brand ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_ten_dlc_sms_brand, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'brand_id' is set
       if @api_client.config.client_side_validation && brand_id.nil?
@@ -1797,6 +2136,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_ten_dlc_sms_brands ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_ten_dlc_sms_brands, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Messages/10DLC/Brands".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -1853,6 +2197,10 @@ module Freeclimb
     def get_ten_dlc_sms_campaign_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_ten_dlc_sms_campaign ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_ten_dlc_sms_campaign, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'campaign_id' is set
@@ -1916,6 +2264,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_ten_dlc_sms_campaigns ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_ten_dlc_sms_campaigns, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Messages/10DLC/Campaigns".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -1973,6 +2326,10 @@ module Freeclimb
     def get_ten_dlc_sms_partner_campaign_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_ten_dlc_sms_partner_campaign ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_ten_dlc_sms_partner_campaign, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'campaign_id' is set
@@ -2036,6 +2393,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_ten_dlc_sms_partner_campaigns ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_ten_dlc_sms_partner_campaigns, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -2093,6 +2455,10 @@ module Freeclimb
     def get_toll_free_sms_campaign_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_toll_free_sms_campaign ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_toll_free_sms_campaign, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'campaign_id' is set
@@ -2154,6 +2520,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.get_toll_free_sms_campaigns ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.get_toll_free_sms_campaigns, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Messages/TollFree/Campaigns".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -2211,6 +2582,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_active_queues ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_active_queues, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Queues".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -2267,6 +2643,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_all_account_logs ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_all_account_logs, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Logs".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -2324,6 +2705,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_applications ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_applications, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Applications".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -2450,6 +2836,74 @@ module Freeclimb
       [data, status_code, headers]
     end
 
+    # List Blobs belonging to an account.
+    # List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :_alias Filter blobs by alias
+    # @option opts [String] :cursor Used to reference pages of a list of blobs
+    # @return [BlobListResponse]
+    def list_blobs(opts = {})
+      data, _status_code, _headers = list_blobs_with_http_info(opts)
+      data
+    end
+
+    # List Blobs belonging to an account.
+    # List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :_alias Filter blobs by alias
+    # @option opts [String] :cursor Used to reference pages of a list of blobs
+    # @return [Array<(BlobListResponse, Integer, Hash)>] BlobListResponse data, response status code and response headers
+    def list_blobs_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: DefaultApi.list_blobs ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_blobs, must conform to the pattern #{pattern}."
+      end
+
+      # resource path
+      local_var_path = "/Accounts/{accountId}/Blobs".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:alias] = opts[:_alias] if !opts[:_alias].nil?
+      query_params[:cursor] = opts[:cursor] if !opts[:cursor].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params["Accept"] = @api_client.select_header_accept(["application/json"])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || "BlobListResponse"
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ["fc"]
+
+      new_options = opts.merge(
+        operation: :"DefaultApi.list_blobs",
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_blobs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # List Call Logs
     # @param call_id [String] String that uniquely identifies this call resource.
     # @param [Hash] opts the optional parameters
@@ -2466,6 +2920,10 @@ module Freeclimb
     def list_call_logs_with_http_info(call_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_call_logs ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_call_logs, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'call_id' is set
@@ -2530,6 +2988,10 @@ module Freeclimb
     def list_call_recordings_with_http_info(call_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_call_recordings ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_call_recordings, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'call_id' is set
@@ -2612,6 +3074,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_calls ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_calls, must conform to the pattern #{pattern}."
+      end
+
       if @api_client.config.client_side_validation && !opts[:application_id].nil? && opts[:application_id].length > 16
         fail ArgumentError, 'invalid value for "opts[:"application_id"]" when calling DefaultApi.list_calls, number of items must be less than or equal to 16.'
       end
@@ -2687,6 +3154,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_conference_recordings ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_conference_recordings, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'conference_id' is set
       if @api_client.config.client_side_validation && conference_id.nil?
@@ -2757,6 +3228,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_conferences ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_conferences, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Conferences".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -2820,6 +3296,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_exports ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_exports, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Exports".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -2870,8 +3351,6 @@ module Freeclimb
     # @option opts [String] :country Country of this phone number.
     # @option opts [String] :application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
     # @option opts [Boolean] :has_application Indication of whether the phone number has an application linked to it. (default to false)
-    # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers. (default to true)
-    # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. (default to true)
     # @option opts [Boolean] :has_campaign Indication of whether the phone number has a campaign associated with it
     # @option opts [Boolean] :capabilities_voice
     # @option opts [Boolean] :capabilities_sms
@@ -2894,8 +3373,6 @@ module Freeclimb
     # @option opts [String] :country Country of this phone number.
     # @option opts [String] :application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
     # @option opts [Boolean] :has_application Indication of whether the phone number has an application linked to it.
-    # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
-    # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
     # @option opts [Boolean] :has_campaign Indication of whether the phone number has a campaign associated with it
     # @option opts [Boolean] :capabilities_voice
     # @option opts [Boolean] :capabilities_sms
@@ -2909,6 +3386,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_incoming_numbers ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_incoming_numbers, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/IncomingPhoneNumbers".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -2920,8 +3402,6 @@ module Freeclimb
       query_params[:country] = opts[:country] if !opts[:country].nil?
       query_params[:applicationId] = opts[:application_id] if !opts[:application_id].nil?
       query_params[:hasApplication] = opts[:has_application] if !opts[:has_application].nil?
-      query_params[:voiceEnabled] = opts[:voice_enabled] if !opts[:voice_enabled].nil?
-      query_params[:smsEnabled] = opts[:sms_enabled] if !opts[:sms_enabled].nil?
       query_params[:hasCampaign] = opts[:has_campaign] if !opts[:has_campaign].nil?
       query_params[:"capabilities.voice"] = opts[:capabilities_voice] if !opts[:capabilities_voice].nil?
       query_params[:"capabilities.sms"] = opts[:capabilities_sms] if !opts[:capabilities_sms].nil?
@@ -2981,6 +3461,10 @@ module Freeclimb
     def list_members_with_http_info(queue_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_members ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_members, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'queue_id' is set
@@ -3049,6 +3533,10 @@ module Freeclimb
     def list_participants_with_http_info(conference_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_participants ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_participants, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'conference_id' is set
@@ -3119,6 +3607,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_recordings ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_recordings, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Recordings".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -3193,6 +3686,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.list_sms_messages ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.list_sms_messages, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Messages".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -3258,6 +3756,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.make_a_call ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.make_a_call, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}/Calls".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -3320,6 +3823,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.make_a_webrtc_jwt ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.make_a_webrtc_jwt, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'create_web_rtc_token' is set
       if @api_client.config.client_side_validation && create_web_rtc_token.nil?
@@ -3370,6 +3877,90 @@ module Freeclimb
       [data, status_code, headers]
     end
 
+    # Modify Blob
+    # Modifys a pre existing blob by either adding new fields, or modifying existing fields
+    # @param blob_id [String] String that uniquely identifies this Blob resource.
+    # @param modify_blob_request [ModifyBlobRequest] Request body to specify keys to modify. Or new keys to add onto the already existing blob
+    # @param [Hash] opts the optional parameters
+    # @return [BlobResult]
+    def modify_blob(blob_id, modify_blob_request, opts = {})
+      data, _status_code, _headers = modify_blob_with_http_info(blob_id, modify_blob_request, opts)
+      data
+    end
+
+    # Modify Blob
+    # Modifys a pre existing blob by either adding new fields, or modifying existing fields
+    # @param blob_id [String] String that uniquely identifies this Blob resource.
+    # @param modify_blob_request [ModifyBlobRequest] Request body to specify keys to modify. Or new keys to add onto the already existing blob
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(BlobResult, Integer, Hash)>] BlobResult data, response status code and response headers
+    def modify_blob_with_http_info(blob_id, modify_blob_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: DefaultApi.modify_blob ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.modify_blob, must conform to the pattern #{pattern}."
+      end
+
+      # verify the required parameter 'blob_id' is set
+      if @api_client.config.client_side_validation && blob_id.nil?
+        fail ArgumentError, "Missing the required parameter 'blob_id' when calling DefaultApi.modify_blob"
+      end
+      pattern = /BL[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && blob_id !~ pattern
+        fail ArgumentError, "invalid value for 'blob_id' when calling DefaultApi.modify_blob, must conform to the pattern #{pattern}."
+      end
+
+      # verify the required parameter 'modify_blob_request' is set
+      if @api_client.config.client_side_validation && modify_blob_request.nil?
+        fail ArgumentError, "Missing the required parameter 'modify_blob_request' when calling DefaultApi.modify_blob"
+      end
+      # resource path
+      local_var_path = "/Accounts/{accountId}/Blobs/{blobId}".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s)).sub("{" + "blobId" + "}", CGI.escape(blob_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params["Accept"] = @api_client.select_header_accept(["application/json"])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(["application/json"])
+      if !content_type.nil?
+        header_params["Content-Type"] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(modify_blob_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || "BlobResult"
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ["fc"]
+
+      new_options = opts.merge(
+        operation: :"DefaultApi.modify_blob",
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#modify_blob\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Remove a Participant
     # @param conference_id [String] ID of the conference this participant is in.
     # @param call_id [String] ID of the Call associated with this participant.
@@ -3388,6 +3979,10 @@ module Freeclimb
     def remove_a_participant_with_http_info(conference_id, call_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.remove_a_participant ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.remove_a_participant, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'conference_id' is set
@@ -3437,6 +4032,90 @@ module Freeclimb
       [data, status_code, headers]
     end
 
+    # Replace Blob
+    # Replaces the blob content with the provided values.
+    # @param blob_id [String] String that uniquely identifies this Blob resource.
+    # @param replace_blob_request [ReplaceBlobRequest] JSON object containing blob key the contents of which will be used to override the enitre blob contents.
+    # @param [Hash] opts the optional parameters
+    # @return [BlobResult]
+    def replace_blob(blob_id, replace_blob_request, opts = {})
+      data, _status_code, _headers = replace_blob_with_http_info(blob_id, replace_blob_request, opts)
+      data
+    end
+
+    # Replace Blob
+    # Replaces the blob content with the provided values.
+    # @param blob_id [String] String that uniquely identifies this Blob resource.
+    # @param replace_blob_request [ReplaceBlobRequest] JSON object containing blob key the contents of which will be used to override the enitre blob contents.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(BlobResult, Integer, Hash)>] BlobResult data, response status code and response headers
+    def replace_blob_with_http_info(blob_id, replace_blob_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: DefaultApi.replace_blob ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.replace_blob, must conform to the pattern #{pattern}."
+      end
+
+      # verify the required parameter 'blob_id' is set
+      if @api_client.config.client_side_validation && blob_id.nil?
+        fail ArgumentError, "Missing the required parameter 'blob_id' when calling DefaultApi.replace_blob"
+      end
+      pattern = /BL[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && blob_id !~ pattern
+        fail ArgumentError, "invalid value for 'blob_id' when calling DefaultApi.replace_blob, must conform to the pattern #{pattern}."
+      end
+
+      # verify the required parameter 'replace_blob_request' is set
+      if @api_client.config.client_side_validation && replace_blob_request.nil?
+        fail ArgumentError, "Missing the required parameter 'replace_blob_request' when calling DefaultApi.replace_blob"
+      end
+      # resource path
+      local_var_path = "/Accounts/{accountId}/Blobs/{blobId}".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s)).sub("{" + "blobId" + "}", CGI.escape(blob_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params["Accept"] = @api_client.select_header_accept(["application/json"])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(["application/json"])
+      if !content_type.nil?
+        header_params["Content-Type"] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(replace_blob_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || "BlobResult"
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ["fc"]
+
+      new_options = opts.merge(
+        operation: :"DefaultApi.replace_blob",
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#replace_blob\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Send an SMS Message
     # @param message_request [MessageRequest] Details to create a message
     # @param [Hash] opts the optional parameters
@@ -3453,6 +4132,10 @@ module Freeclimb
     def send_an_sms_message_with_http_info(message_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.send_an_sms_message ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.send_an_sms_message, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'message_request' is set
@@ -3521,6 +4204,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.stream_a_recording_file ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.stream_a_recording_file, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'recording_id' is set
       if @api_client.config.client_side_validation && recording_id.nil?
@@ -3535,7 +4222,7 @@ module Freeclimb
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params["Accept"] = @api_client.select_header_accept(["audio/x-wav"])
+      header_params["Accept"] = @api_client.select_header_accept(["audio/wav"])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -3584,6 +4271,10 @@ module Freeclimb
     def update_a_conference_with_http_info(conference_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.update_a_conference ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.update_a_conference, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'conference_id' is set
@@ -3651,6 +4342,10 @@ module Freeclimb
     def update_a_live_call_with_http_info(call_id, update_call_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.update_a_live_call ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.update_a_live_call, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'call_id' is set
@@ -3726,6 +4421,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.update_a_participant ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.update_a_participant, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'conference_id' is set
       if @api_client.config.client_side_validation && conference_id.nil?
@@ -3800,6 +4499,10 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.update_a_queue ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.update_a_queue, must conform to the pattern #{pattern}."
+      end
 
       # verify the required parameter 'queue_id' is set
       if @api_client.config.client_side_validation && queue_id.nil?
@@ -3867,6 +4570,11 @@ module Freeclimb
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.update_an_account ..."
       end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.update_an_account, must conform to the pattern #{pattern}."
+      end
+
       # resource path
       local_var_path = "/Accounts/{accountId}".sub("{" + "accountId" + "}", CGI.escape(account_id.to_s))
 
@@ -3928,6 +4636,10 @@ module Freeclimb
     def update_an_application_with_http_info(application_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.update_an_application ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.update_an_application, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'application_id' is set
@@ -3997,6 +4709,10 @@ module Freeclimb
     def update_an_incoming_number_with_http_info(phone_number_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: DefaultApi.update_an_incoming_number ..."
+      end
+      pattern = /AC[0-9a-fA-F]{40}/
+      if @api_client.config.client_side_validation && account_id !~ pattern
+        fail ArgumentError, "invalid value for 'account_id' when calling DefaultApi.update_an_incoming_number, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'phone_number_id' is set

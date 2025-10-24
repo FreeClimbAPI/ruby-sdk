@@ -116,20 +116,6 @@ describe Freeclimb::IncomingNumberResult do
     end
   end
 
-  describe 'test attribute "voice_enabled"' do
-    it "should work" do
-      instance.voice_enabled = false
-      expect(instance.voice_enabled).to eq(false)
-    end
-  end
-
-  describe 'test attribute "sms_enabled"' do
-    it "should work" do
-      instance.sms_enabled = false
-      expect(instance.sms_enabled).to eq(false)
-    end
-  end
-
   describe 'test attribute "offnet"' do
     it "should work" do
       instance.offnet = false
@@ -174,10 +160,6 @@ describe Freeclimb::IncomingNumberResult do
 
           country: "TS",
 
-          voice_enabled: true,
-
-          sms_enabled: true,
-
           offnet: true,
 
           tfn: TFN.new
@@ -212,10 +194,6 @@ describe Freeclimb::IncomingNumberResult do
           region: "TS",
 
           country: "TS",
-
-          voice_enabled: true,
-
-          sms_enabled: true,
 
           offnet: true,
 
@@ -253,10 +231,6 @@ describe Freeclimb::IncomingNumberResult do
           region: "TS",
 
           country: "TS",
-
-          voice_enabled: true,
-
-          sms_enabled: true,
 
           offnet: true,
 
@@ -296,10 +270,6 @@ describe Freeclimb::IncomingNumberResult do
         region: "TS",
 
         country: "TS",
-
-        voice_enabled: true,
-
-        sms_enabled: true,
 
         offnet: true,
 
@@ -348,10 +318,6 @@ describe Freeclimb::IncomingNumberResult do
 
         country: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         offnet: true,
 
         tfn: obj_TFN
@@ -382,10 +348,6 @@ describe Freeclimb::IncomingNumberResult do
         region: "TS",
 
         country: "TS",
-
-        voice_enabled: true,
-
-        sms_enabled: true,
 
         offnet: true,
 
@@ -422,10 +384,6 @@ describe Freeclimb::IncomingNumberResult do
 
         country: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         offnet: true,
 
         tfn: TFN.new
@@ -456,10 +414,6 @@ describe Freeclimb::IncomingNumberResult do
         region: "ST",
 
         country: "ST",
-
-        voice_enabled: false,
-
-        sms_enabled: false,
 
         offnet: false,
 
@@ -498,10 +452,6 @@ describe Freeclimb::IncomingNumberResult do
 
         country: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         offnet: true,
 
         tfn: TFN.new
@@ -539,10 +489,6 @@ describe Freeclimb::IncomingNumberResult do
 
         country: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         offnet: true,
 
         tfn: TFN.new
@@ -573,10 +519,6 @@ describe Freeclimb::IncomingNumberResult do
         region: "TS",
 
         country: "TS",
-
-        voice_enabled: true,
-
-        sms_enabled: true,
 
         offnet: true,
 
@@ -614,10 +556,6 @@ describe Freeclimb::IncomingNumberResult do
       region: "TS",
 
       country: "TS",
-
-      voice_enabled: true,
-
-      sms_enabled: true,
 
       offnet: true,
 
@@ -675,14 +613,6 @@ describe Freeclimb::IncomingNumberResult do
       expect(instance._deserialize("String", instance.country)).to be_a_kind_of(String)
     end
 
-    it "deserializes the data of voice_enabled" do
-      expect(instance._deserialize("Boolean", instance.voice_enabled)).to be_a_kind_of(TrueClass)
-    end
-
-    it "deserializes the data of sms_enabled" do
-      expect(instance._deserialize("Boolean", instance.sms_enabled)).to be_a_kind_of(TrueClass)
-    end
-
     it "deserializes the data of offnet" do
       expect(instance._deserialize("Boolean", instance.offnet)).to be_a_kind_of(TrueClass)
     end
@@ -721,10 +651,6 @@ describe Freeclimb::IncomingNumberResult do
 
         country: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         offnet: true,
 
         tfn: TFN.new
@@ -761,10 +687,6 @@ describe Freeclimb::IncomingNumberResult do
         region: "TS",
 
         country: "TS",
-
-        voice_enabled: true,
-
-        sms_enabled: true,
 
         offnet: true,
 
@@ -804,10 +726,6 @@ describe Freeclimb::IncomingNumberResult do
 
         country: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         offnet: true,
 
         tfn: obj
@@ -838,10 +756,6 @@ describe Freeclimb::IncomingNumberResult do
         region: "TS",
 
         country: "TS",
-
-        voice_enabled: true,
-
-        sms_enabled: true,
 
         offnet: true,
 
@@ -876,10 +790,6 @@ describe Freeclimb::IncomingNumberResult do
       region: "TS",
 
       country: "TS",
-
-      voice_enabled: true,
-
-      sms_enabled: true,
 
       offnet: true
     )
@@ -921,12 +831,6 @@ describe Freeclimb::IncomingNumberResult do
     end
     it "returns country in the form of hash" do
       expect(instance._to_hash(instance.country)).to eq(instance.country)
-    end
-    it "returns voice_enabled in the form of hash" do
-      expect(instance._to_hash(instance.voice_enabled)).to eq(instance.voice_enabled)
-    end
-    it "returns sms_enabled in the form of hash" do
-      expect(instance._to_hash(instance.sms_enabled)).to eq(instance.sms_enabled)
     end
     it "returns offnet in the form of hash" do
       expect(instance._to_hash(instance.offnet)).to eq(instance.offnet)

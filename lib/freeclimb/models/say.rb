@@ -17,22 +17,25 @@ module Freeclimb
     # The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.
     attr_accessor :text
 
-    # Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
-    attr_accessor :language
-
     # Number of times the text is said. Specifying '0' causes the `Say` action to loop until the Call is hung up.
     attr_accessor :loop
 
     # Parameter `privacyMode` will not log the `text` as required by PCI compliance.
     attr_accessor :privacy_mode
 
+    attr_accessor :engine
+
+    # Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
+    attr_accessor :language
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         text: :text,
-        language: :language,
         loop: :loop,
-        privacy_mode: :privacyMode
+        privacy_mode: :privacyMode,
+        engine: :engine,
+        language: :language
       }
     end
 
@@ -45,9 +48,10 @@ module Freeclimb
     def self.openapi_types
       {
         text: :String,
-        language: :String,
         loop: :Integer,
-        privacy_mode: :Boolean
+        privacy_mode: :Boolean,
+        engine: :SayStandardEngine,
+        language: :String
       }
     end
 
@@ -85,10 +89,6 @@ module Freeclimb
         self.text = attributes[:text]
       end
 
-      if attributes.key?(:language)
-        self.language = attributes[:language]
-      end
-
       self.loop = if attributes.key?(:loop)
         attributes[:loop]
       else
@@ -97,6 +97,14 @@ module Freeclimb
 
       if attributes.key?(:privacy_mode)
         self.privacy_mode = attributes[:privacy_mode]
+      end
+
+      if attributes.key?(:engine)
+        self.engine = attributes[:engine]
+      end
+
+      if attributes.key?(:language)
+        self.language = attributes[:language]
       end
       self.command = "Say"
     end
@@ -107,6 +115,10 @@ module Freeclimb
       invalid_properties = super
       if @text.nil?
         invalid_properties.push('invalid value for "text", text cannot be nil.')
+      end
+
+      if @engine.nil?
+        invalid_properties.push('invalid value for "engine", engine cannot be nil.')
       end
 
       invalid_properties
@@ -128,9 +140,10 @@ module Freeclimb
       return true if equal?(other)
       self.class == other.class &&
         text == other.text &&
-        language == other.language &&
         loop == other.loop &&
-        privacy_mode == other.privacy_mode && super
+        privacy_mode == other.privacy_mode &&
+        engine == other.engine &&
+        language == other.language && super
     end
 
     # @see the `==` method
@@ -142,7 +155,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [text, language, loop, privacy_mode].hash
+      [text, loop, privacy_mode, engine, language].hash
     end
 
     # Builds the object from hash

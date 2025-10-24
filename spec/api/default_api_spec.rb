@@ -18,14 +18,15 @@ require "facets/string/snakecase"
 describe "DefaultApi" do
   before do
     # run before each test
+    @account_id_test_value = "AC0123456789abcdefABCDEF0123456789abcdef00"
     Freeclimb.configure do |config|
       # Configure HTTP basic authorization: fc
       config.scheme = "http"
       config.host = "http://127.0.0.1:4010/"
       config.base_path = "/"
       config.server_index = nil
-      config.username = "ACCOUNT_ID"
-      config.password = "API_KEY"
+      config.username = @account_id_test_value
+      config.password = "API_KEY56789abcdefABCDEF0123456789abcdef00"
     end
 
     @api_client = Freeclimb::ApiClient.new
@@ -258,6 +259,26 @@ describe "DefaultApi" do
     @export_id_delete_an_export_test_value = "delete_exportId_example"
 
     @export_id_get_an_export_test_value = "get_exportId_example"
+
+    @create_blob_request_create_blob_test_value = Freeclimb::CreateBlobRequest.new({_alias: "alias_example", expires_at: "expires_at_example", blob: {}})
+
+    @blob_id_delete_blob_test_value = "BL0123456789abcdefABCDEF0123456789abcdef00"
+
+    @blob_id_get_blob_test_value = "BL0123456789abcdefABCDEF0123456789abcdef00"
+
+    @alias_list_blobs_test_value = "alias_example"
+
+    @blob_id_modify_blob_test_value = "BL0123456789abcdefABCDEF0123456789abcdef00"
+
+    @key_delete_blob_test_value = ["key_example"]
+
+    @cursor_list_blobs_test_value = "cursor_example"
+
+    @modify_blob_request_modify_blob_test_value = Freeclimb::ModifyBlobRequest.new({blob: {}, _alias: "alias_example"})
+
+    @replace_blob_request_replace_blob_test_value = Freeclimb::ReplaceBlobRequest.new({blob: {}})
+
+    @blob_id_replace_blob_test_value = "BL0123456789abcdefABCDEF0123456789abcdef00"
   end
 
   after do
@@ -349,6 +370,27 @@ describe "DefaultApi" do
       )
 
       expect(result).to be_a Freeclimb::ApplicationResult
+
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for create_blob
+  # Create a Blob
+  # Create a new Blob belonging to the requesting account.
+  # @param create_blob_request An object defining a new blob. A request body must be provided but the blob may be empty.
+  # @param [Hash] opts the optional parameters
+  # @return [BlobResult]
+  describe "create_blob test" do
+    it "should work" do
+      create_blob_request = @create_blob_request_create_blob_test_value
+
+      result = @api_instance.create_blob(
+        create_blob_request,
+        {}
+      )
+
+      expect(result).to be_a Freeclimb::BlobResult
 
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -471,6 +513,31 @@ describe "DefaultApi" do
       )
 
       expect(result).to be_nil
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for delete_blob
+  # Delete Blob
+  # Deletes a blob or specific keys from a blob. If no keys are specified in the request body, the entire blob is deleted (returns 204). If specific keys are provided, only those keys are removed and the remaining blob is returned (returns 200).
+  # @param blob_id String that uniquely identifies this Blob resource.
+  # @param [Hash] opts the optional parameters
+  # @option opts [Array<String>] :key key within blob to remove
+  # @return [BlobResult]
+  describe "delete_blob test" do
+    it "should work" do
+      blob_id = @blob_id_delete_blob_test_value
+      key = @key_delete_blob_test_value
+
+      result = @api_instance.delete_blob(
+        blob_id,
+        {
+          key: key
+        }
+      )
+
+      expect(result).to be_a Freeclimb::BlobResult
+
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -796,6 +863,27 @@ describe "DefaultApi" do
     end
   end
 
+  # unit tests for get_blob
+  # Get Blob
+  # Retrieves a specified blob
+  # @param blob_id String that uniquely identifies this Blob resource.
+  # @param [Hash] opts the optional parameters
+  # @return [BlobResult]
+  describe "get_blob test" do
+    it "should work" do
+      blob_id = @blob_id_get_blob_test_value
+
+      result = @api_instance.get_blob(
+        blob_id,
+        {}
+      )
+
+      expect(result).to be_a Freeclimb::BlobResult
+
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_head_member
   # Get Head Member
   # @param queue_id String that uniquely identifies the Queue that the Member belongs to.
@@ -1067,6 +1155,30 @@ describe "DefaultApi" do
     end
   end
 
+  # unit tests for list_blobs
+  # List Blobs belonging to an account.
+  # List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :_alias Filter blobs by alias
+  # @option opts [String] :cursor Used to reference pages of a list of blobs
+  # @return [BlobListResponse]
+  describe "list_blobs test" do
+    it "should work" do
+      _alias = @_alias_list_blobs_test_value
+      cursor = @cursor_list_blobs_test_value
+
+      result = @api_instance.list_blobs(
+        {
+          _alias: _alias, cursor: cursor
+        }
+      )
+
+      expect(result).to be_a Freeclimb::BlobListResponse
+
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for list_call_logs
   # List Call Logs
   # @param call_id String that uniquely identifies this call resource.
@@ -1235,8 +1347,6 @@ describe "DefaultApi" do
   # @option opts [String] :country Country of this phone number.
   # @option opts [String] :application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
   # @option opts [Boolean] :has_application Indication of whether the phone number has an application linked to it.
-  # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
-  # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
   # @option opts [Boolean] :has_campaign Indication of whether the phone number has a campaign associated with it
   # @option opts [Boolean] :capabilities_voice
   # @option opts [Boolean] :capabilities_sms
@@ -1254,8 +1364,6 @@ describe "DefaultApi" do
       country = @country_list_incoming_numbers_test_value
       application_id = @application_id_list_incoming_numbers_test_value
       has_application = @has_application_list_incoming_numbers_test_value
-      voice_enabled = @voice_enabled_list_incoming_numbers_test_value
-      sms_enabled = @sms_enabled_list_incoming_numbers_test_value
       has_campaign = @has_campaign_list_incoming_numbers_test_value
       capabilities_voice = @capabilities_voice_list_incoming_numbers_test_value
       capabilities_sms = @capabilities_sms_list_incoming_numbers_test_value
@@ -1267,7 +1375,7 @@ describe "DefaultApi" do
 
       result = @api_instance.list_incoming_numbers(
         {
-          phone_number: phone_number, _alias: _alias, region: region, country: country, application_id: application_id, has_application: has_application, voice_enabled: voice_enabled, sms_enabled: sms_enabled, has_campaign: has_campaign, capabilities_voice: capabilities_voice, capabilities_sms: capabilities_sms, capabilities_toll_free: capabilities_toll_free, capabilities_ten_dlc: capabilities_ten_dlc, capabilities_short_code: capabilities_short_code, tfn_campaign_id: tfn_campaign_id, offnet: offnet
+          phone_number: phone_number, _alias: _alias, region: region, country: country, application_id: application_id, has_application: has_application, has_campaign: has_campaign, capabilities_voice: capabilities_voice, capabilities_sms: capabilities_sms, capabilities_toll_free: capabilities_toll_free, capabilities_ten_dlc: capabilities_ten_dlc, capabilities_short_code: capabilities_short_code, tfn_campaign_id: tfn_campaign_id, offnet: offnet
         }
       )
 
@@ -1425,6 +1533,29 @@ describe "DefaultApi" do
     end
   end
 
+  # unit tests for modify_blob
+  # Modify Blob
+  # Modifys a pre existing blob by either adding new fields, or modifying existing fields
+  # @param blob_id String that uniquely identifies this Blob resource.
+  # @param modify_blob_request Request body to specify keys to modify. Or new keys to add onto the already existing blob
+  # @param [Hash] opts the optional parameters
+  # @return [BlobResult]
+  describe "modify_blob test" do
+    it "should work" do
+      blob_id = @blob_id_modify_blob_test_value
+      modify_blob_request = @modify_blob_request_modify_blob_test_value
+
+      result = @api_instance.modify_blob(
+        blob_id, modify_blob_request,
+        {}
+      )
+
+      expect(result).to be_a Freeclimb::BlobResult
+
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for remove_a_participant
   # Remove a Participant
   # @param conference_id ID of the conference this participant is in.
@@ -1442,6 +1573,29 @@ describe "DefaultApi" do
       )
 
       expect(result).to be_nil
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for replace_blob
+  # Replace Blob
+  # Replaces the blob content with the provided values.
+  # @param blob_id String that uniquely identifies this Blob resource.
+  # @param replace_blob_request JSON object containing blob key the contents of which will be used to override the enitre blob contents.
+  # @param [Hash] opts the optional parameters
+  # @return [BlobResult]
+  describe "replace_blob test" do
+    it "should work" do
+      blob_id = @blob_id_replace_blob_test_value
+      replace_blob_request = @replace_blob_request_replace_blob_test_value
+
+      result = @api_instance.replace_blob(
+        blob_id, replace_blob_request,
+        {}
+      )
+
+      expect(result).to be_a Freeclimb::BlobResult
+
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1661,7 +1815,7 @@ describe "DefaultApi" do
         filter_logs_request,
         {}
       )
-      result.next_page_uri = "/Accounts/{accountId}/Logs?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Logs?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::LogList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1677,7 +1831,7 @@ describe "DefaultApi" do
       result = @api_instance.get_ten_dlc_sms_brands(
         {}
       )
-      result.next_page_uri = "/Accounts/{accountId}/Messages/10DLC/Brands?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Messages/10DLC/Brands?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::SMSTenDLCBrandsListResult
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1698,7 +1852,7 @@ describe "DefaultApi" do
           brand_id: brand_id
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/Messages/10DLC/Campaigns?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Messages/10DLC/Campaigns?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::SMSTenDLCCampaignsListResult
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1719,7 +1873,7 @@ describe "DefaultApi" do
           brand_id: brand_id
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Messages/10DLC/PartnerCampaigns?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::SMSTenDLCPartnerCampaignsListResult
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1735,7 +1889,7 @@ describe "DefaultApi" do
       result = @api_instance.get_toll_free_sms_campaigns(
         {}
       )
-      result.next_page_uri = "/Accounts/{accountId}/Messages/TollFree/Campaigns?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Messages/TollFree/Campaigns?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::SMSTollFreeCampaignsListResult
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1756,7 +1910,7 @@ describe "DefaultApi" do
           _alias: _alias
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/Queues?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Queues?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::QueueList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1772,7 +1926,7 @@ describe "DefaultApi" do
       result = @api_instance.list_all_account_logs(
         {}
       )
-      result.next_page_uri = "/Accounts/{accountId}/Logs?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Logs?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::LogList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1793,7 +1947,7 @@ describe "DefaultApi" do
           _alias: _alias
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/Applications?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Applications?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::ApplicationList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1832,9 +1986,33 @@ describe "DefaultApi" do
           phone_number: phone_number, region: region, country: country, voice_enabled: voice_enabled, sms_enabled: sms_enabled, capabilities_voice: capabilities_voice, capabilities_sms: capabilities_sms, capabilities_toll_free: capabilities_toll_free, capabilities_ten_dlc: capabilities_ten_dlc, capabilities_short_code: capabilities_short_code
         }
       )
-      result.next_page_uri = "/AvailablePhoneNumbers?cursor=1"
+      result.next_page_uri = "/AvailablePhoneNumbers?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::AvailableNumberList
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_next_page list_blobs
+  # List Blobs belonging to an account.
+  # List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :_alias Filter blobs by alias
+  # @option opts [String] :cursor Used to reference pages of a list of blobs
+  # @return [BlobListResponse]
+  describe "list_blobs_get_next_page test" do
+    it "should work" do
+      _alias = @_alias_list_blobs_test_value
+      cursor = @cursor_list_blobs_test_value
+
+      result = @api_instance.list_blobs(
+        {
+          _alias: _alias, cursor: cursor
+        }
+      )
+      result.next_page_uri = "/Accounts/{accountId}/Blobs?cursor=1".sub("{accountId}", @account_id_test_value)
+      next_page_result = @api_instance.get_next_page(result)
+      expect(next_page_result).to be_a Freeclimb::BlobListResponse
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
@@ -1852,7 +2030,7 @@ describe "DefaultApi" do
         call_id,
         {}
       )
-      result.next_page_uri = "/Accounts/{accountId}/Calls/{callId}/Logs?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Calls/{callId}/Logs?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::LogList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1876,7 +2054,7 @@ describe "DefaultApi" do
           date_created: date_created
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/Calls/{callId}/Recordings?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Calls/{callId}/Recordings?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::RecordingList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1915,7 +2093,7 @@ describe "DefaultApi" do
           active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id, risk_score_min: risk_score_min, risk_score_max: risk_score_max
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/Calls?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Calls?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::CallList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1941,7 +2119,7 @@ describe "DefaultApi" do
           call_id: call_id, date_created: date_created
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/Conferences/{conferenceId}/Recordings?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Conferences/{conferenceId}/Recordings?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::RecordingList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1968,7 +2146,7 @@ describe "DefaultApi" do
           status: status, _alias: _alias, date_created: date_created, date_updated: date_updated
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/Conferences?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Conferences?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::ConferenceList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -1991,7 +2169,7 @@ describe "DefaultApi" do
           status: status, cursor: cursor
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/Exports?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Exports?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::ExportList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2007,8 +2185,6 @@ describe "DefaultApi" do
   # @option opts [String] :country Country of this phone number.
   # @option opts [String] :application_id ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
   # @option opts [Boolean] :has_application Indication of whether the phone number has an application linked to it.
-  # @option opts [Boolean] :voice_enabled Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
-  # @option opts [Boolean] :sms_enabled Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
   # @option opts [Boolean] :has_campaign Indication of whether the phone number has a campaign associated with it
   # @option opts [Boolean] :capabilities_voice
   # @option opts [Boolean] :capabilities_sms
@@ -2026,8 +2202,6 @@ describe "DefaultApi" do
       country = @country_list_incoming_numbers_test_value
       application_id = @application_id_list_incoming_numbers_test_value
       has_application = @has_application_list_incoming_numbers_test_value
-      voice_enabled = @voice_enabled_list_incoming_numbers_test_value
-      sms_enabled = @sms_enabled_list_incoming_numbers_test_value
       has_campaign = @has_campaign_list_incoming_numbers_test_value
       capabilities_voice = @capabilities_voice_list_incoming_numbers_test_value
       capabilities_sms = @capabilities_sms_list_incoming_numbers_test_value
@@ -2039,10 +2213,10 @@ describe "DefaultApi" do
 
       result = @api_instance.list_incoming_numbers(
         {
-          phone_number: phone_number, _alias: _alias, region: region, country: country, application_id: application_id, has_application: has_application, voice_enabled: voice_enabled, sms_enabled: sms_enabled, has_campaign: has_campaign, capabilities_voice: capabilities_voice, capabilities_sms: capabilities_sms, capabilities_toll_free: capabilities_toll_free, capabilities_ten_dlc: capabilities_ten_dlc, capabilities_short_code: capabilities_short_code, tfn_campaign_id: tfn_campaign_id, offnet: offnet
+          phone_number: phone_number, _alias: _alias, region: region, country: country, application_id: application_id, has_application: has_application, has_campaign: has_campaign, capabilities_voice: capabilities_voice, capabilities_sms: capabilities_sms, capabilities_toll_free: capabilities_toll_free, capabilities_ten_dlc: capabilities_ten_dlc, capabilities_short_code: capabilities_short_code, tfn_campaign_id: tfn_campaign_id, offnet: offnet
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/IncomingPhoneNumbers?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/IncomingPhoneNumbers?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::IncomingNumberList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2062,7 +2236,7 @@ describe "DefaultApi" do
         queue_id,
         {}
       )
-      result.next_page_uri = "/Accounts/{accountId}/Queues/{queueId}/Members?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Queues/{queueId}/Members?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::QueueMemberList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2090,7 +2264,7 @@ describe "DefaultApi" do
           talk: talk, listen: listen, dtmf_pass_through: dtmf_pass_through
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/Conferences/{conferenceId}/Participants?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Conferences/{conferenceId}/Participants?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::ConferenceParticipantList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2115,7 +2289,7 @@ describe "DefaultApi" do
           call_id: call_id, conference_id: conference_id, date_created: date_created
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/Recordings?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Recordings?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::RecordingList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2150,7 +2324,7 @@ describe "DefaultApi" do
           to: to, from: from, begin_time: begin_time, end_time: end_time, direction: direction, campaign_id: campaign_id, brand_id: brand_id, is10_dlc: is10_dlc
         }
       )
-      result.next_page_uri = "/Accounts/{accountId}/Messages?cursor=1"
+      result.next_page_uri = "/Accounts/{accountId}/Messages?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)
       expect(next_page_result).to be_a Freeclimb::MessagesList
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

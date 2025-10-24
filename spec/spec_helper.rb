@@ -119,7 +119,7 @@ end
 
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = "TEST_ACCOUNT_ID"
+  config.username = "AC0123456789abcdefABCDEF0123456789abcdef00"
   config.password = "TEST_API_KEY"
 end
 
