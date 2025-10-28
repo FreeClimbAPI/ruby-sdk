@@ -940,14 +940,11 @@ api_instance = Freeclimb::DefaultApi.new
 
 blob_id = 'blob_id_example' # String | String that uniquely identifies this Blob resource.
 
-opts = {
-  key: ['inner_example'] # Array<String> | key within blob to remove
-}
 
 begin
 
   # Delete Blob
-  result = api_instance.delete_blob(blob_id, opts)
+  result = api_instance.delete_blob(blob_id)
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->delete_blob: #{e}"
@@ -958,12 +955,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BlobResult>, Integer, Hash)> delete_blob_with_http_info(account_id, blob_id, opts)
+> <Array(<BlobResult>, Integer, Hash)> delete_blob_with_http_info(account_id, blob_id)
 
 ```ruby
 begin
   # Delete Blob
-  data, status_code, headers = api_instance.delete_blob_with_http_info(blob_id, opts)
+  data, status_code, headers = api_instance.delete_blob_with_http_info(blob_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BlobResult>
@@ -977,7 +974,6 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **blob_id** | **String** | String that uniquely identifies this Blob resource. |  |
-| **key** | [**Array&lt;String&gt;**](String.md) | key within blob to remove | [optional] |
 
 
 ### Return type
@@ -3136,15 +3132,11 @@ end
 
 api_instance = Freeclimb::DefaultApi.new
 
-opts = {
-  _alias: '_alias_example', # String | Filter blobs by alias
-  cursor: 'cursor_example' # String | Used to reference pages of a list of blobs
-}
 
 begin
 
   # List Blobs belonging to an account.
-  result = api_instance.list_blobs(opts)
+  result = api_instance.list_blobs()
   p result
 rescue Freeclimb::ApiError => e
   puts "Error when calling DefaultApi->list_blobs: #{e}"
@@ -3155,12 +3147,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BlobListResponse>, Integer, Hash)> list_blobs_with_http_info(account_id, opts)
+> <Array(<BlobListResponse>, Integer, Hash)> list_blobs_with_http_info(account_id)
 
 ```ruby
 begin
   # List Blobs belonging to an account.
-  data, status_code, headers = api_instance.list_blobs_with_http_info(opts)
+  data, status_code, headers = api_instance.list_blobs_with_http_info()
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BlobListResponse>
@@ -3173,8 +3165,6 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **_alias** | **String** | Filter blobs by alias | [optional] |
-| **cursor** | **String** | Used to reference pages of a list of blobs | [optional] |
 
 
 ### Return type

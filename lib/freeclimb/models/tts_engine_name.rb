@@ -12,33 +12,10 @@ require "date"
 require "time"
 
 module Freeclimb
-  class SayStandardCulture
-    CA_ES = "ca-ES".freeze
-    DA_DK = "da-DK".freeze
-    DE_DE = "de-DE".freeze
-    EN_AU = "en-AU".freeze
-    EN_CA = "en-CA".freeze
-    EN_GB = "en-GB".freeze
-    EN_IN = "en-IN".freeze
-    EN_US = "en-US".freeze
-    ES_ES = "es-ES".freeze
-    ES_MX = "es-MX".freeze
-    FI_FI = "fi-FI".freeze
-    FR_CA = "fr-CA".freeze
-    FR_FR = "fr-FR".freeze
-    IT_IT = "it-IT".freeze
-    JA_JP = "ja-JP".freeze
-    KO_KR = "ko-KR".freeze
-    NB_NO = "nb-NO".freeze
-    NL_NL = "nl-NL".freeze
-    PL_PL = "pl-PL".freeze
-    PT_BR = "pt-BR".freeze
-    PT_PT = "pt-PT".freeze
-    RU_RU = "ru-RU".freeze
-    SV_SE = "sv-SE".freeze
-    ZH_CN = "zh-CN".freeze
-    ZH_HK = "zh-HK".freeze
-    ZH_TW = "zh-TW".freeze
+  class TTSEngineName
+    FREECLIMB_STANDARD = "freeclimb.standard".freeze
+    FREECLIMB_NEURAL = "freeclimb.neural".freeze
+    ELEVEN_LABS = "ElevenLabs".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string
@@ -51,8 +28,8 @@ module Freeclimb
     # @param [String] The enum value in the form of the string
     # @return [String] The enum value
     def build_from_hash(value)
-      constantValues = SayStandardCulture.constants.select { |c| SayStandardCulture.const_get(c) == value }
-      raise "Invalid ENUM value #{value} for class #SayStandardCulture" if constantValues.empty?
+      constantValues = TTSEngineName.constants.select { |c| TTSEngineName.const_get(c) == value }
+      raise "Invalid ENUM value #{value} for class #TTSEngineName" if constantValues.empty?
       value
     end
   end

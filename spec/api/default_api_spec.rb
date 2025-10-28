@@ -522,18 +522,14 @@ describe "DefaultApi" do
   # Deletes a blob or specific keys from a blob. If no keys are specified in the request body, the entire blob is deleted (returns 204). If specific keys are provided, only those keys are removed and the remaining blob is returned (returns 200).
   # @param blob_id String that uniquely identifies this Blob resource.
   # @param [Hash] opts the optional parameters
-  # @option opts [Array<String>] :key key within blob to remove
   # @return [BlobResult]
   describe "delete_blob test" do
     it "should work" do
       blob_id = @blob_id_delete_blob_test_value
-      key = @key_delete_blob_test_value
 
       result = @api_instance.delete_blob(
         blob_id,
-        {
-          key: key
-        }
+        {}
       )
 
       expect(result).to be_a Freeclimb::BlobResult
@@ -1159,18 +1155,11 @@ describe "DefaultApi" do
   # List Blobs belonging to an account.
   # List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :_alias Filter blobs by alias
-  # @option opts [String] :cursor Used to reference pages of a list of blobs
   # @return [BlobListResponse]
   describe "list_blobs test" do
     it "should work" do
-      _alias = @_alias_list_blobs_test_value
-      cursor = @cursor_list_blobs_test_value
-
       result = @api_instance.list_blobs(
-        {
-          _alias: _alias, cursor: cursor
-        }
+        {}
       )
 
       expect(result).to be_a Freeclimb::BlobListResponse
@@ -1997,18 +1986,11 @@ describe "DefaultApi" do
   # List Blobs belonging to an account.
   # List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :_alias Filter blobs by alias
-  # @option opts [String] :cursor Used to reference pages of a list of blobs
   # @return [BlobListResponse]
   describe "list_blobs_get_next_page test" do
     it "should work" do
-      _alias = @_alias_list_blobs_test_value
-      cursor = @cursor_list_blobs_test_value
-
       result = @api_instance.list_blobs(
-        {
-          _alias: _alias, cursor: cursor
-        }
+        {}
       )
       result.next_page_uri = "/Accounts/{accountId}/Blobs?cursor=1".sub("{accountId}", @account_id_test_value)
       next_page_result = @api_instance.get_next_page(result)

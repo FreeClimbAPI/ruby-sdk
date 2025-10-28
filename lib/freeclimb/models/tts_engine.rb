@@ -12,27 +12,39 @@ require "date"
 require "time"
 
 module Freeclimb
-  # The `Say` command provides Text-To-Speech (TTS) support. It converts text to speech and then renders it in a female voice back to the caller. `Say` is useful in cases where it's difficult to pre-record a prompt for any reason. `Say` does not allow barge-in unless nested within a `GetSpeech` command. The file will always be played to completion unless nested.
-  class SayClassic
-    # The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.
-    attr_accessor :text
+  class TTSEngine
+    attr_accessor :name
 
-    # Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
-    attr_accessor :language
+    # Parameters for the TTS engine. The parameters are specific to the engine and are documented in the engine's documentation.
+    attr_accessor :parameters
 
-    # Number of times the text is said. Specifying '0' causes the `Say` action to loop until the Call is hung up.
-    attr_accessor :loop
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
 
-    # Parameter `privacyMode` will not log the `text` as required by PCI compliance.
-    attr_accessor :privacy_mode
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        text: :text,
-        language: :language,
-        loop: :loop,
-        privacy_mode: :privacyMode
+        name: :name,
+        parameters: :parameters
       }
     end
 
@@ -44,10 +56,8 @@ module Freeclimb
     # Attribute type mapping.
     def self.openapi_types
       {
-        text: :String,
-        language: :String,
-        loop: :Integer,
-        privacy_mode: :Boolean
+        name: :TTSEngineName,
+        parameters: :"Hash<String, Object>"
       }
     end
 
@@ -60,51 +70,38 @@ module Freeclimb
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if !attributes.is_a?(Hash)
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::SayClassic` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::TTSEngine` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if !self.class.attribute_map.key?(k.to_sym)
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::SayClassic`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::TTSEngine`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:text)
-        self.text = attributes[:text]
+      if attributes.key?(:name)
+        self.name = attributes[:name]
       end
 
-      if attributes.key?(:language)
-        self.language = attributes[:language]
-      end
-
-      self.loop = if attributes.key?(:loop)
-        attributes[:loop]
-      else
-        1
-      end
-
-      if attributes.key?(:privacy_mode)
-        self.privacy_mode = attributes[:privacy_mode]
+      if attributes.key?(:parameters)
+        if (value = attributes[:parameters]).is_a?(Hash)
+          self.parameters = value
+        end
       end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = []
-      if @text.nil?
-        invalid_properties.push('invalid value for "text", text cannot be nil.')
-      end
-
-      invalid_properties
+      []
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      if @text.nil?
+      if @name.nil?
         false
       else
         list_invalid_properties.length == 0
@@ -116,10 +113,8 @@ module Freeclimb
     def ==(other)
       return true if equal?(other)
       self.class == other.class &&
-        text == other.text &&
-        language == other.language &&
-        loop == other.loop &&
-        privacy_mode == other.privacy_mode
+        name == other.name &&
+        parameters == other.parameters
     end
 
     # @see the `==` method
@@ -131,7 +126,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [text, language, loop, privacy_mode].hash
+      [name, parameters].hash
     end
 
     # Builds the object from hash

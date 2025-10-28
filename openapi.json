@@ -2437,318 +2437,22 @@
           }
         ]
       },
-      "SayElevenLabs": {
-        "description": "The `SayElevenLabs` command provides Text-To-Speech (TTS) support using the ElevenLabs TTS engine. It converts text to speech and then renders it in a female voice back to the caller. `SayElevenLabs` is useful in cases where it's difficult to pre-record a prompt for any reason. `SayElevenLabs` does not allow barge-in unless nested within a `GetSpeech` command. The file will always be played to completion unless nested.",
-        "required": ["text", "engine"],
-        "type": "object",
-        "properties": {
-          "text": {
-            "description": "The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.",
-            "type": "string"
-          },
-          "loop": {
-            "description": "Number of times the text is said. Specifying '0' causes the `SayElevenLabs` action to loop until the Call is hung up.",
-            "type": "integer",
-            "default": 1
-          },
-          "privacyMode": {
-            "description": "Parameter `privacyMode` will not log the `text` as required by PCI compliance.",
-            "type": "boolean"
-          },
-          "engine": {
-            "description": "The engine to use for the TTS. The complete list of valid values for the engine attribute is shown below.",
-            "type": "object",
-            "properties": {
-              "name": {
-                "description": "The name of the TTS engine to use. Set to `elevenlabs.tts` to use the elevenlabs.tts TTS engine.",
-                "type": "string",
-                "default": "ElevenLabs"
-              },
-              "parameters": {
-                "$ref": "#/components/schemas/SayElevenLabsEngineParameters"
-              }
-            }
-          }
-        }
-      },
-      "SayElevenLabsEngineParameters": {
-        "description": "The parameters to use for the TTS. The complete list of valid values for the parameters attribute is shown below.",
-        "type": "object",
-        "properties": {
-          "model_id": {
-            "type": "string",
-            "description": "The ID of the ElevenLabs model to use for the TTS. The complete list of valid values for the model_id attribute is shown below.",
-            "default": "eleven_turbo_v2_5"
-          },
-          "voice_id": {
-            "type": "string",
-            "description": "The ID of the ElevenLabs voice to use for the TTS. The complete list of valid values for the voice_id attribute is shown below."
-          },
-          "language_code": {
-            "type": "string",
-            "description": "The language code to use for the TTS. The complete list of valid values for the language_code attribute is shown below.",
-            "default": "en"
-          },
-          "voice_settings": {
-            "type": "object",
-            "description": "The voice settings to use for the TTS. The complete list of valid values for the voice_settings attribute is shown below.",
-            "properties": {
-              "stability": {
-                "type": "number"
-              },
-              "use_speaker_boost": {
-                "type": "boolean"
-              },
-              "similarity_boost": {
-                "type": "number"
-              },
-              "style": {
-                "type": "number"
-              },
-              "speed": {
-                "type": "number"
-              }
-            }
-          },
-          "pronunciation_dictionary": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "pronunciation_dictionary_id": {
-                  "type": "string"
-                },
-                "version_id": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "seed": {
-            "type": "integer"
-          },
-          "previous_text": {
-            "type": "string"
-          },
-          "next_text": {
-            "type": "string"
-          },
-          "previous_request_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "next_request_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "apply_language_text_normalization": {
-            "type": "boolean"
-          }
-        }
-      },
-      "SayNeuralTextType": {
+      "TTSEngineName": {
+        "description": "The engine to use for the TTS. The complete list of valid values for the engine attribute is shown below.",
         "type": "string",
-        "enum": ["text", "ssml"],
-        "description": "The type of text to use for the TTS. The complete list of valid values for the text type attribute is shown below."
+        "enum": ["freeclimb.standard", "freeclimb.neural", "ElevenLabs"]
       },
-      "SayNeuralEngineParameters": {
-        "description": "The parameters to use for the TTS. The complete list of valid values for the parameters attribute is shown below.",
+      "TTSEngine": {
         "type": "object",
         "properties": {
-          "voice": {
-            "description": "The voice to use for the TTS. The complete list of valid values for the voice attribute is shown below.",
-            "type": "string",
-            "default": "Eve"
+          "name": {
+            "$ref": "#/components/schemas/TTSEngineName"
           },
-          "textType": {
-            "$ref": "#/components/schemas/SayNeuralTextType"
-          },
-          "language": {
-            "description": "The language to use for the TTS. The complete list of valid values for the language attribute is shown below.",
-            "type": "string",
-            "default": "en-US"
-          }
-        }
-      },
-      "SayNeural": {
-        "description": "The `SayNeural` command provides Text-To-Speech (TTS) support using the freeclimb.neural TTS engine. It converts text to speech and then renders it in a female voice back to the caller. `SayNeural` is useful in cases where it's difficult to pre-record a prompt for any reason. `SayNeural` does not allow barge-in unless nested within a `GetSpeech` command. The file will always be played to completion unless nested.",
-        "required": ["text", "engine"],
-        "type": "object",
-        "properties": {
-          "text": {
-            "description": "The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.",
-            "type": "string"
-          },
-          "loop": {
-            "description": "Number of times the text is said. Specifying '0' causes the `SayNeural` action to loop until the Call is hung up.",
-            "type": "integer",
-            "default": 1
-          },
-          "privacyMode": {
-            "description": "Parameter `privacyMode` will not log the `text` as required by PCI compliance.",
-            "type": "boolean",
-            "default": false
-          },
-          "engine": {
-            "description": "The engine to use for the TTS. The complete list of valid values for the engine attribute is shown below.",
+          "parameters": {
+            "description": "Parameters for the TTS engine. The parameters are specific to the engine and are documented in the engine's documentation.",
             "type": "object",
-            "properties": {
-              "name": {
-                "description": "The name of the TTS engine to use. Set to `freeclimb.neural` to use the freeclimb.neural TTS engine.",
-                "type": "string",
-                "default": "freeclimb.neural"
-              },
-              "parameters": {
-                "$ref": "#/components/schemas/SayNeuralEngineParameters"
-              }
-            }
-          }
-        }
-      },
-      "SayStandardVoice": {
-        "description": "The voice to use for the TTS. The complete list of valid values for the voice attribute is shown below.",
-        "type": "string",
-        "enum": [
-          "Herena",
-          "Helle",
-          "Hedda",
-          "Hayley",
-          "Heather",
-          "Hazel",
-          "Heera",
-          "Helen",
-          "ZiraPro",
-          "Helena",
-          "Hilda",
-          "Heidi",
-          "Harmonie",
-          "Hortense",
-          "Lucia",
-          "Harkua",
-          "Heami",
-          "Hulda",
-          "Hanna",
-          "Paulina",
-          "Helosia",
-          "Helia",
-          "Elena",
-          "Hedvig",
-          "HunYee",
-          "HanHan"
-        ]
-      },
-      "SayStandardCulture": {
-        "description": "The culture to use for the TTS. The complete list of valid values for the culture attribute is shown below.",
-        "type": "string",
-        "enum": [
-          "ca-ES",
-          "da-DK",
-          "de-DE",
-          "en-AU",
-          "en-CA",
-          "en-GB",
-          "en-IN",
-          "en-US",
-          "es-ES",
-          "es-MX",
-          "fi-FI",
-          "fr-CA",
-          "fr-FR",
-          "it-IT",
-          "ja-JP",
-          "ko-KR",
-          "nb-NO",
-          "nl-NL",
-          "pl-PL",
-          "pt-BR",
-          "pt-PT",
-          "ru-RU",
-          "sv-SE",
-          "zh-CN",
-          "zh-HK",
-          "zh-TW"
-        ]
-      },
-      "SayStandardContentType": {
-        "description": "The content type to use for the TTS. The complete list of valid values for the content type attribute is shown below.",
-        "type": "string",
-        "enum": ["text/plain", "application/ssml+xml"]
-      },
-      "SayStandardEngineParameters": {
-        "description": "The parameters to use for the TTS. The complete list of valid values for the parameters attribute is shown below.",
-        "type": "object",
-        "properties": {
-          "Voice": {
-            "$ref": "#/components/schemas/SayStandardVoice"
-          },
-          "Culture": {
-            "$ref": "#/components/schemas/SayStandardCulture"
-          },
-          "Content-Type": {
-            "$ref": "#/components/schemas/SayStandardContentType"
-          }
-        }
-      },
-      "SayStandard": {
-        "description": "The `Say` command provides Text-To-Speech (TTS) support using the freeclimb.standard  TTS engine. It converts text to speech and then renders it in a female voice back to the caller. `SayStandard` is useful in cases where it's difficult to pre-record a prompt for any reason. `SayStandard` does not allow barge-in unless nested within a `GetSpeech` command. The file will always be played to completion unless nested.",
-        "required": ["text", "engine"],
-        "type": "object",
-        "properties": {
-          "text": {
-            "description": "The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.",
-            "type": "string"
-          },
-          "loop": {
-            "description": "Number of times the text is said. Specifying '0' causes the `Say` action to loop until the Call is hung up.",
-            "type": "integer",
-            "default": 1
-          },
-          "privacyMode": {
-            "description": "Parameter `privacyMode` will not log the `text` as required by PCI compliance.",
-            "type": "boolean",
-            "default": false
-          },
-          "engine": {
-            "description": "Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.",
-            "type": "object",
-            "properties": {
-              "name": {
-                "description": "The name of the TTS engine to use. Set to `freeclimb.standard` for to use the standard freeclimb TTS engine.",
-                "type": "string",
-                "default": "freeclimb.standard"
-              },
-              "parameters": {
-                "$ref": "#/components/schemas/SayStandardEngineParameters"
-              }
-            }
-          }
-        }
-      },
-      "SayClassic": {
-        "description": "The `Say` command provides Text-To-Speech (TTS) support. It converts text to speech and then renders it in a female voice back to the caller. `Say` is useful in cases where it's difficult to pre-record a prompt for any reason. `Say` does not allow barge-in unless nested within a `GetSpeech` command. The file will always be played to completion unless nested.",
-        "required": ["text"],
-        "type": "object",
-        "properties": {
-          "text": {
-            "description": "The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.",
-            "type": "string"
-          },
-          "language": {
-            "description": "Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.",
-            "type": "string"
-          },
-          "loop": {
-            "description": "Number of times the text is said. Specifying '0' causes the `Say` action to loop until the Call is hung up.",
-            "type": "integer",
-            "default": 1
-          },
-          "privacyMode": {
-            "description": "Parameter `privacyMode` will not log the `text` as required by PCI compliance.",
-            "type": "boolean"
+            "properties": {},
+            "additionalProperties": true
           }
         }
       },
@@ -2759,20 +2463,29 @@
             "$ref": "#/components/schemas/PerclCommand"
           },
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/SayElevenLabs"
+            "required": ["text"],
+            "properties": {
+              "text": {
+                "description": "The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.",
+                "type": "string"
               },
-              {
-                "$ref": "#/components/schemas/SayNeural"
+              "language": {
+                "description": "Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.",
+                "type": "string"
               },
-              {
-                "$ref": "#/components/schemas/SayStandard"
+              "engine": {
+                "$ref": "#/components/schemas/TTSEngine"
               },
-              {
-                "$ref": "#/components/schemas/SayClassic"
+              "loop": {
+                "description": "Number of times the text is said. Specifying '0' causes the `Say` action to loop until the Call is hung up.",
+                "type": "integer",
+                "default": 1
+              },
+              "privacyMode": {
+                "description": "Parameter `privacyMode` will not log the `text` as required by PCI compliance.",
+                "type": "boolean"
               }
-            ]
+            }
           }
         ]
       },
@@ -5413,7 +5126,7 @@
           }
         ]
       },
-      "platformError": {
+      "PlatformError": {
         "description": "Standard error structure returned by platform.",
         "type": "object",
         "properties": {
@@ -5447,7 +5160,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/platformError"
+              "$ref": "#/components/schemas/PlatformError"
             },
             "example": {
               "code": 80,
@@ -5462,7 +5175,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/platformError"
+              "$ref": "#/components/schemas/PlatformError"
             },
             "example": {
               "code": 1,
@@ -5477,7 +5190,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/platformError"
+              "$ref": "#/components/schemas/PlatformError"
             },
             "example": {
               "code": 108,
@@ -5492,7 +5205,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/platformError"
+              "$ref": "#/components/schemas/PlatformError"
             },
             "example": {
               "code": 3,
@@ -5507,7 +5220,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/platformError"
+              "$ref": "#/components/schemas/PlatformError"
             },
             "example": {
               "code": 9,
@@ -5522,7 +5235,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/platformError"
+              "$ref": "#/components/schemas/PlatformError"
             },
             "example": {
               "code": 0,
@@ -5537,7 +5250,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/platformError"
+              "$ref": "#/components/schemas/PlatformError"
             },
             "example": {
               "code": 0,
@@ -8477,7 +8190,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/platformError"
+                  "$ref": "#/components/schemas/PlatformError"
                 },
                 "example": {
                   "code": 108,
@@ -8495,7 +8208,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/platformError"
+                  "$ref": "#/components/schemas/PlatformError"
                 },
                 "example": {
                   "code": 80,
@@ -8605,21 +8318,6 @@
           }
         },
         "operationId": "delete-blob",
-        "parameters": [
-          {
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "pattern": "^[a-zA-Z0-9_]{1,64}$"
-              }
-            },
-            "in": "query",
-            "name": "key",
-            "description": "key within blob to remove",
-            "required": false
-          }
-        ],
         "description": "Deletes a blob or specific keys from a blob. If no keys are specified in the request body, the entire blob is deleted (returns 204). If specific keys are provided, only those keys are removed and the remaining blob is returned (returns 200)."
       },
       "patch": {
