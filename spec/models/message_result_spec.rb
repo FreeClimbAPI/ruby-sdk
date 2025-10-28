@@ -380,7 +380,7 @@ describe Freeclimb::MessageResult do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_TFN = TFN.new
+      obj_tfn = Object.new
 
       instance_1 = Freeclimb::MessageResult.new(
         uri: "TS",
@@ -413,7 +413,7 @@ describe Freeclimb::MessageResult do
 
         media_urls: [],
 
-        tfn: obj_TFN,
+        tfn: obj_tfn,
 
         phone_number_id: "TS",
 
@@ -450,7 +450,7 @@ describe Freeclimb::MessageResult do
 
         media_urls: [],
 
-        tfn: obj_TFN,
+        tfn: obj_tfn,
 
         phone_number_id: "TS",
 

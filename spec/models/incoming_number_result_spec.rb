@@ -287,9 +287,9 @@ describe Freeclimb::IncomingNumberResult do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_Capabilities = Capabilities.new
+      obj_capabilities = Object.new
 
-      obj_TFN = TFN.new
+      obj_tfn = Object.new
 
       instance_1 = Freeclimb::IncomingNumberResult.new(
         uri: "TS",
@@ -300,7 +300,7 @@ describe Freeclimb::IncomingNumberResult do
 
         revision: 1,
 
-        capabilities: obj_Capabilities,
+        capabilities: obj_capabilities,
 
         campaign_id: "TS",
 
@@ -320,7 +320,7 @@ describe Freeclimb::IncomingNumberResult do
 
         offnet: true,
 
-        tfn: obj_TFN
+        tfn: obj_tfn
       )
       instance_2 = Freeclimb::IncomingNumberResult.new(
         uri: "TS",
@@ -331,7 +331,7 @@ describe Freeclimb::IncomingNumberResult do
 
         revision: 1,
 
-        capabilities: obj_Capabilities,
+        capabilities: obj_capabilities,
 
         campaign_id: "TS",
 
@@ -351,7 +351,7 @@ describe Freeclimb::IncomingNumberResult do
 
         offnet: true,
 
-        tfn: obj_TFN
+        tfn: obj_tfn
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end

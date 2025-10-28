@@ -129,27 +129,27 @@ describe Freeclimb::ExportRequest do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_ExportRequestOutput = ExportRequestOutput.new
+      obj_output = Object.new
 
-      obj_Object = Object.new
+      obj_query = Object.new
 
       instance_1 = Freeclimb::ExportRequest.new(
         resource_type: Freeclimb::ExportResourceType::MESSAGES,
 
         format: [],
 
-        output: obj_ExportRequestOutput,
+        output: obj_output,
 
-        query: obj_Object
+        query: obj_query
       )
       instance_2 = Freeclimb::ExportRequest.new(
         resource_type: Freeclimb::ExportResourceType::MESSAGES,
 
         format: [],
 
-        output: obj_ExportRequestOutput,
+        output: obj_output,
 
-        query: obj_Object
+        query: obj_query
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end

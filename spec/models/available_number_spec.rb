@@ -137,10 +137,10 @@ describe Freeclimb::AvailableNumber do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_Capabilities = Capabilities.new
+      obj_capabilities = Object.new
 
       instance_1 = Freeclimb::AvailableNumber.new(
-        capabilities: obj_Capabilities,
+        capabilities: obj_capabilities,
 
         campaign_id: "TS",
 
@@ -151,7 +151,7 @@ describe Freeclimb::AvailableNumber do
         country: "TS"
       )
       instance_2 = Freeclimb::AvailableNumber.new(
-        capabilities: obj_Capabilities,
+        capabilities: obj_capabilities,
 
         campaign_id: "TS",
 

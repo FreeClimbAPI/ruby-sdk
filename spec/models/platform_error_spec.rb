@@ -126,7 +126,7 @@ describe Freeclimb::PlatformError do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_Object = Object.new
+      obj_details = Object.new
 
       instance_1 = Freeclimb::PlatformError.new(
         code: 1,
@@ -135,7 +135,7 @@ describe Freeclimb::PlatformError do
 
         url: "TS",
 
-        details: obj_Object
+        details: obj_details
       )
       instance_2 = Freeclimb::PlatformError.new(
         code: 1,
@@ -144,7 +144,7 @@ describe Freeclimb::PlatformError do
 
         url: "TS",
 
-        details: obj_Object
+        details: obj_details
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end

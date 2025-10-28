@@ -152,14 +152,14 @@ describe Freeclimb::TranscribeUtterance do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_TranscribeUtteranceRecord = TranscribeUtteranceRecord.new
+      obj_record = Object.new
 
       instance_1 = Freeclimb::TranscribeUtterance.new(
         action_url: "TS",
 
         play_beep: true,
 
-        record: obj_TranscribeUtteranceRecord,
+        record: obj_record,
 
         privacy_for_logging: true,
 
@@ -172,7 +172,7 @@ describe Freeclimb::TranscribeUtterance do
 
         play_beep: true,
 
-        record: obj_TranscribeUtteranceRecord,
+        record: obj_record,
 
         privacy_for_logging: true,
 

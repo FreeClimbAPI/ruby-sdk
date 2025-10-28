@@ -114,21 +114,21 @@ describe Freeclimb::CreateBlobRequest do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_Object = Object.new
+      obj_blob = Object.new
 
       instance_1 = Freeclimb::CreateBlobRequest.new(
         _alias: "TS",
 
         expires_at: "TS",
 
-        blob: obj_Object
+        blob: obj_blob
       )
       instance_2 = Freeclimb::CreateBlobRequest.new(
         _alias: "TS",
 
         expires_at: "TS",
 
-        blob: obj_Object
+        blob: obj_blob
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end

@@ -137,14 +137,14 @@ describe Freeclimb::Say do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_TTSEngine = TTSEngine.new
+      obj_engine = Object.new
 
       instance_1 = Freeclimb::Say.new(
         text: "TS",
 
         language: "TS",
 
-        engine: obj_TTSEngine,
+        engine: obj_engine,
 
         loop: 1,
 
@@ -155,7 +155,7 @@ describe Freeclimb::Say do
 
         language: "TS",
 
-        engine: obj_TTSEngine,
+        engine: obj_engine,
 
         loop: 1,
 

@@ -99,15 +99,15 @@ describe Freeclimb::ModifyBlobRequest do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_Object = Object.new
+      obj_blob = Object.new
 
       instance_1 = Freeclimb::ModifyBlobRequest.new(
-        blob: obj_Object,
+        blob: obj_blob,
 
         _alias: "TS"
       )
       instance_2 = Freeclimb::ModifyBlobRequest.new(
-        blob: obj_Object,
+        blob: obj_blob,
 
         _alias: "TS"
       )
