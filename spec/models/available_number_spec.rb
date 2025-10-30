@@ -46,20 +46,6 @@ describe Freeclimb::AvailableNumber do
     end
   end
 
-  describe 'test attribute "voice_enabled"' do
-    it "should work" do
-      instance.voice_enabled = false
-      expect(instance.voice_enabled).to eq(false)
-    end
-  end
-
-  describe 'test attribute "sms_enabled"' do
-    it "should work" do
-      instance.sms_enabled = false
-      expect(instance.sms_enabled).to eq(false)
-    end
-  end
-
   describe 'test attribute "region"' do
     it "should work" do
       instance.region = "TEST_STRING"
@@ -84,10 +70,6 @@ describe Freeclimb::AvailableNumber do
 
           phone_number: "TS",
 
-          voice_enabled: true,
-
-          sms_enabled: true,
-
           region: "TS",
 
           country: "TS"
@@ -102,10 +84,6 @@ describe Freeclimb::AvailableNumber do
           campaign_id: "TS",
 
           phone_number: "TS",
-
-          voice_enabled: true,
-
-          sms_enabled: true,
 
           region: "TS",
 
@@ -123,10 +101,6 @@ describe Freeclimb::AvailableNumber do
           campaign_id: "TS",
 
           phone_number: "TS",
-
-          voice_enabled: true,
-
-          sms_enabled: true,
 
           region: "TS",
 
@@ -147,10 +121,6 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         region: "TS",
 
         country: "TS"
@@ -167,33 +137,25 @@ describe Freeclimb::AvailableNumber do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_Capabilities = Capabilities.new
+      obj_capabilities = Object.new
 
       instance_1 = Freeclimb::AvailableNumber.new(
-        capabilities: obj_Capabilities,
+        capabilities: obj_capabilities,
 
         campaign_id: "TS",
 
         phone_number: "TS",
-
-        voice_enabled: true,
-
-        sms_enabled: true,
 
         region: "TS",
 
         country: "TS"
       )
       instance_2 = Freeclimb::AvailableNumber.new(
-        capabilities: obj_Capabilities,
+        capabilities: obj_capabilities,
 
         campaign_id: "TS",
 
         phone_number: "TS",
-
-        voice_enabled: true,
-
-        sms_enabled: true,
 
         region: "TS",
 
@@ -210,10 +172,6 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         region: "TS",
 
         country: "TS"
@@ -224,10 +182,6 @@ describe Freeclimb::AvailableNumber do
         campaign_id: "ST",
 
         phone_number: "ST",
-
-        voice_enabled: false,
-
-        sms_enabled: false,
 
         region: "ST",
 
@@ -246,10 +200,6 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         region: "TS",
 
         country: "TS"
@@ -267,10 +217,6 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         region: "TS",
 
         country: "TS"
@@ -281,10 +227,6 @@ describe Freeclimb::AvailableNumber do
         campaign_id: "TS",
 
         phone_number: "TS",
-
-        voice_enabled: true,
-
-        sms_enabled: true,
 
         region: "TS",
 
@@ -303,10 +245,6 @@ describe Freeclimb::AvailableNumber do
 
       phone_number: "TS",
 
-      voice_enabled: true,
-
-      sms_enabled: true,
-
       region: "TS",
 
       country: "TS"
@@ -324,13 +262,6 @@ describe Freeclimb::AvailableNumber do
       expect(instance._deserialize("String", instance.phone_number)).to be_a_kind_of(String)
     end
 
-    it "deserializes the data of voice_enabled" do
-      expect(instance._deserialize("Boolean", instance.voice_enabled)).to be_a_kind_of(TrueClass)
-    end
-
-    it "deserializes the data of sms_enabled" do
-      expect(instance._deserialize("Boolean", instance.sms_enabled)).to be_a_kind_of(TrueClass)
-    end
     it "deserializes the data of region" do
       expect(instance._deserialize("String", instance.region)).to be_a_kind_of(String)
     end
@@ -349,10 +280,6 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         region: "TS",
 
         country: "TS"
@@ -370,10 +297,6 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         region: "TS",
 
         country: "TS"
@@ -390,10 +313,6 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
-        voice_enabled: true,
-
-        sms_enabled: true,
-
         region: "TS",
 
         country: "TS"
@@ -404,10 +323,6 @@ describe Freeclimb::AvailableNumber do
         campaign_id: "TS",
 
         phone_number: "TS",
-
-        voice_enabled: true,
-
-        sms_enabled: true,
 
         region: "TS",
 
@@ -423,10 +338,6 @@ describe Freeclimb::AvailableNumber do
 
       phone_number: "TS",
 
-      voice_enabled: true,
-
-      sms_enabled: true,
-
       region: "TS",
 
       country: "TS"
@@ -439,12 +350,6 @@ describe Freeclimb::AvailableNumber do
     end
     it "returns phone_number in the form of hash" do
       expect(instance._to_hash(instance.phone_number)).to eq(instance.phone_number)
-    end
-    it "returns voice_enabled in the form of hash" do
-      expect(instance._to_hash(instance.voice_enabled)).to eq(instance.voice_enabled)
-    end
-    it "returns sms_enabled in the form of hash" do
-      expect(instance._to_hash(instance.sms_enabled)).to eq(instance.sms_enabled)
     end
     it "returns region in the form of hash" do
       expect(instance._to_hash(instance.region)).to eq(instance.region)

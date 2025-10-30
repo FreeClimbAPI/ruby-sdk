@@ -545,7 +545,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_SMSTenDLCPartnerCampaignBrand = SMSTenDLCPartnerCampaignBrand.new
+      obj_brand = Object.new
 
       instance_1 = Freeclimb::SMSTenDLCPartnerCampaign.new(
         account_id: "TS",
@@ -602,7 +602,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
 
         optout_message: "TS",
 
-        brand: obj_SMSTenDLCPartnerCampaignBrand
+        brand: obj_brand
       )
       instance_2 = Freeclimb::SMSTenDLCPartnerCampaign.new(
         account_id: "TS",
@@ -659,7 +659,7 @@ describe Freeclimb::SMSTenDLCPartnerCampaign do
 
         optout_message: "TS",
 
-        brand: obj_SMSTenDLCPartnerCampaignBrand
+        brand: obj_brand
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end

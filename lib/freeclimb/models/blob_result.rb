@@ -12,46 +12,59 @@ require "date"
 require "time"
 
 module Freeclimb
-  # The `Say` command provides Text-To-Speech (TTS) support. It converts text to speech and then renders it in a female voice back to the caller. `Say` is useful in cases where it's difficult to pre-record a prompt for any reason. `Say` does not allow barge-in unless nested within a `GetSpeech` command. The file will always be played to completion unless nested.
-  class Say < PerclCommand
-    # The message to be played to the caller using TTS. The size of the string is limited to 4 KB (or 4,096 bytes). An empty string will cause the command to be skipped.
-    attr_accessor :text
+  class BlobResult
+    # Identifier which can be used to reference this blob in future interations.
+    attr_accessor :blob_id
 
-    # Language and (by implication) the locale to use. This implies the accent and pronunciations to be usde for the TTS. The complete list of valid values for the language attribute is shown below.
-    attr_accessor :language
+    attr_accessor :account_id
 
-    attr_accessor :engine
+    # Custom identifier for this blob that is unique for the owning account. It will be set to the blobId by default if not provided in the creation request.
+    attr_accessor :_alias
 
-    # Number of times the text is said. Specifying '0' causes the `Say` action to loop until the Call is hung up.
-    attr_accessor :loop
+    attr_accessor :revision
 
-    # Parameter `privacyMode` will not log the `text` as required by PCI compliance.
-    attr_accessor :privacy_mode
+    # An RFC3339 timestamp with millisecond resolution. It represents the time this blob was created.
+    attr_accessor :date_created
+
+    # An RFC3339 timestamp with millisecond resolution. It represents the time this blob was last modified, which at creation will always equal dateCreated.
+    attr_accessor :date_updated
+
+    # An RFC3339 timestamp with millisecond resolution. It represents the time at which this blob will expire and self delete.
+    attr_accessor :expires_at
+
+    # Blob content
+    attr_accessor :blob
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        text: :text,
-        language: :language,
-        engine: :engine,
-        loop: :loop,
-        privacy_mode: :privacyMode
+        blob_id: :blobId,
+        account_id: :accountId,
+        _alias: :alias,
+        revision: :revision,
+        date_created: :dateCreated,
+        date_updated: :dateUpdated,
+        expires_at: :expiresAt,
+        blob: :blob
       }
     end
 
-    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
+    # Returns all the JSON keys this model knows about
     def self.acceptable_attributes
-      attribute_map.values.concat(superclass.acceptable_attributes)
+      attribute_map.values
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        text: :String,
-        language: :String,
-        engine: :TTSEngine,
-        loop: :Integer,
-        privacy_mode: :Boolean
+        blob_id: :String,
+        account_id: :String,
+        _alias: :String,
+        revision: :Integer,
+        date_created: :Time,
+        date_updated: :Time,
+        expires_at: :Time,
+        blob: :Object
       }
     end
 
@@ -60,61 +73,70 @@ module Freeclimb
       Set.new([])
     end
 
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-        :PerclCommand
-      ]
-    end
-
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if !attributes.is_a?(Hash)
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::Say` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::BlobResult` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if !self.class.attribute_map.key?(k.to_sym)
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::Say`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::BlobResult`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      # call parent's initialize
-      super
-
-      if attributes.key?(:text)
-        self.text = attributes[:text]
+      if attributes.key?(:blob_id)
+        self.blob_id = attributes[:blob_id]
       end
 
-      if attributes.key?(:language)
-        self.language = attributes[:language]
+      if attributes.key?(:account_id)
+        self.account_id = attributes[:account_id]
       end
 
-      if attributes.key?(:engine)
-        self.engine = attributes[:engine]
+      if attributes.key?(:_alias)
+        self._alias = attributes[:_alias]
       end
 
-      self.loop = if attributes.key?(:loop)
-        attributes[:loop]
-      else
-        1
+      if attributes.key?(:revision)
+        self.revision = attributes[:revision]
       end
 
-      if attributes.key?(:privacy_mode)
-        self.privacy_mode = attributes[:privacy_mode]
+      if attributes.key?(:date_created)
+        self.date_created = attributes[:date_created]
       end
-      self.command = "Say"
+
+      if attributes.key?(:date_updated)
+        self.date_updated = attributes[:date_updated]
+      end
+
+      if attributes.key?(:expires_at)
+        self.expires_at = attributes[:expires_at]
+      end
+
+      if attributes.key?(:blob)
+        self.blob = attributes[:blob]
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
-      if @text.nil?
-        invalid_properties.push('invalid value for "text", text cannot be nil.')
+      invalid_properties = []
+      pattern = /BL[0-9a-fA-F]{40}/
+      if !@blob_id.nil? && @blob_id !~ pattern
+        invalid_properties.push("invalid value for \"blob_id\", must conform to the pattern #{pattern}.")
+      end
+
+      pattern = /AC[0-9a-fA-F]{40}/
+      if !@account_id.nil? && @account_id !~ pattern
+        invalid_properties.push("invalid value for \"account_id\", must conform to the pattern #{pattern}.")
+      end
+
+      if !@_alias.nil? && @_alias.to_s.length > 64
+        invalid_properties.push('invalid value for "_alias", the character length must be smaller than or equal to 64.')
       end
 
       invalid_properties
@@ -123,11 +145,43 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      if @text.nil?
+      if @blob_id.nil?
         false
       else
         list_invalid_properties.length == 0
       end
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] blob_id Value to be assigned
+    def blob_id=(blob_id)
+      pattern = /BL[0-9a-fA-F]{40}/
+      if !blob_id.nil? && blob_id !~ pattern
+        fail ArgumentError, "invalid value for \"blob_id\", must conform to the pattern #{pattern}."
+      end
+
+      @blob_id = blob_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] account_id Value to be assigned
+    def account_id=(account_id)
+      pattern = /AC[0-9a-fA-F]{40}/
+      if !account_id.nil? && account_id !~ pattern
+        fail ArgumentError, "invalid value for \"account_id\", must conform to the pattern #{pattern}."
+      end
+
+      @account_id = account_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] _alias Value to be assigned
+    def _alias=(_alias)
+      if !_alias.nil? && _alias.to_s.length > 64
+        fail ArgumentError, 'invalid value for "_alias", the character length must be smaller than or equal to 64.'
+      end
+
+      @_alias = _alias
     end
 
     # Checks equality by comparing each attribute.
@@ -135,11 +189,14 @@ module Freeclimb
     def ==(other)
       return true if equal?(other)
       self.class == other.class &&
-        text == other.text &&
-        language == other.language &&
-        engine == other.engine &&
-        loop == other.loop &&
-        privacy_mode == other.privacy_mode && super
+        blob_id == other.blob_id &&
+        account_id == other.account_id &&
+        _alias == other._alias &&
+        revision == other.revision &&
+        date_created == other.date_created &&
+        date_updated == other.date_updated &&
+        expires_at == other.expires_at &&
+        blob == other.blob
     end
 
     # @see the `==` method
@@ -151,7 +208,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [text, language, engine, loop, privacy_mode].hash
+      [blob_id, account_id, _alias, revision, date_created, date_updated, expires_at, blob].hash
     end
 
     # Builds the object from hash
@@ -166,7 +223,6 @@ module Freeclimb
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
-      super
       self.class.openapi_types.each_pair do |key, type|
         if attributes[self.class.attribute_map[key]].nil? && self.class.openapi_nullable.include?(key)
           send(:"#{key}=", nil)
@@ -242,7 +298,7 @@ module Freeclimb
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = super
+      hash = {}
       self.class.attribute_map.each_pair do |attr, param|
         value = send(attr)
         if value.nil?

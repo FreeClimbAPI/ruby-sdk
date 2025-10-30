@@ -12,6 +12,8 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**create_an_application**](DefaultApi.md#create_an_application) | **POST** /Accounts/{accountId}/Applications | Create an application |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
+| [**create_blob**](DefaultApi.md#create_blob) | **POST** /Accounts/{accountId}/Blobs | Create a Blob |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**create_export**](DefaultApi.md#create_export) | **POST** /Accounts/{accountId}/Exports | Create an Export |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**create_knowledge_base_completion**](DefaultApi.md#create_knowledge_base_completion) | **POST** /Accounts/{accountId}/KnowledgeBases/{knowledgeBaseId}/Completion | Query the knowledge base |
@@ -23,6 +25,8 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**delete_an_export**](DefaultApi.md#delete_an_export) | **DELETE** /Accounts/{accountId}/Exports/{exportId} | Delete an Export |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**delete_an_incoming_number**](DefaultApi.md#delete_an_incoming_number) | **DELETE** /Accounts/{accountId}/IncomingPhoneNumbers/{phoneNumberId} | Delete an Incoming Number |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
+| [**delete_blob**](DefaultApi.md#delete_blob) | **DELETE** /Accounts/{accountId}/Blobs/{blobId} | Delete Blob |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**dequeue_a_member**](DefaultApi.md#dequeue_a_member) | **POST** /Accounts/{accountId}/Queues/{queueId}/Members/{callId} | Dequeue a Member |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
@@ -56,6 +60,8 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_an_sms_message**](DefaultApi.md#get_an_sms_message) | **GET** /Accounts/{accountId}/Messages/{messageId} | Get an SMS Message |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
+| [**get_blob**](DefaultApi.md#get_blob) | **GET** /Accounts/{accountId}/Blobs/{blobId} | Get Blob |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_head_member**](DefaultApi.md#get_head_member) | **GET** /Accounts/{accountId}/Queues/{queueId}/Members/Front | Get Head Member |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**get_ten_dlc_sms_brand**](DefaultApi.md#get_ten_dlc_sms_brand) | **GET** /Accounts/{accountId}/Messages/10DLC/Brands/{brandId} | Get a 10DLC SMS Brand |
@@ -81,6 +87,8 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**list_applications**](DefaultApi.md#list_applications) | **GET** /Accounts/{accountId}/Applications | List applications |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_available_numbers**](DefaultApi.md#list_available_numbers) | **GET** /AvailablePhoneNumbers | List available numbers |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
+| [**list_blobs**](DefaultApi.md#list_blobs) | **GET** /Accounts/{accountId}/Blobs | List Blobs belonging to an account. |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**list_call_logs**](DefaultApi.md#list_call_logs) | **GET** /Accounts/{accountId}/Calls/{callId}/Logs | List Call Logs |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
@@ -108,7 +116,11 @@ All URIs are relative to *https://www.freeclimb.com/apiserver*
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**make_a_webrtc_jwt**](DefaultApi.md#make_a_webrtc_jwt) | **POST** /Accounts/{accountId}/Calls/WebRTC/Token | Make a JWT for WebRTC calling |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
+| [**modify_blob**](DefaultApi.md#modify_blob) | **PATCH** /Accounts/{accountId}/Blobs/{blobId} | Modify Blob |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**remove_a_participant**](DefaultApi.md#remove_a_participant) | **DELETE** /Accounts/{accountId}/Conferences/{conferenceId}/Participants/{callId} | Remove a Participant |
+| [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
+| [**replace_blob**](DefaultApi.md#replace_blob) | **PUT** /Accounts/{accountId}/Blobs/{blobId} | Replace Blob |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
 | [**send_an_sms_message**](DefaultApi.md#send_an_sms_message) | **POST** /Accounts/{accountId}/Messages | Send an SMS Message |
 | [**get_next_page**](DefaultApi.md#get_next_page) | **GET** | Get next page of paginated resource |
@@ -402,6 +414,78 @@ end
 ### Return type
 
 [**ApplicationResult**](ApplicationResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## create_blob
+
+Create a Blob
+
+Create a new Blob belonging to the requesting account.
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+create_blob_request = Freeclimb::CreateBlobRequest.new({blob: 3.56}) # CreateBlobRequest | An object defining a new blob. A request body must be provided but the blob may be empty.
+
+
+begin
+
+  # Create a Blob
+  result = api_instance.create_blob(create_blob_request)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->create_blob: #{e}"
+end
+```
+
+#### Using the create_blob_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BlobResult>, Integer, Hash)> create_blob_with_http_info(account_id, create_blob_request)
+
+```ruby
+begin
+  # Create a Blob
+  data, status_code, headers = api_instance.create_blob_with_http_info(create_blob_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BlobResult>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->create_blob_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **create_blob_request** | [**CreateBlobRequest**](CreateBlobRequest.md) | An object defining a new blob. A request body must be provided but the blob may be empty. |  |
+
+
+### Return type
+
+[**BlobResult**](BlobResult.md)
 
 ### Authorization
 
@@ -834,6 +918,78 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
+## delete_blob
+
+Delete Blob
+
+Deletes a blob or specific keys from a blob. If no keys are specified in the request body, the entire blob is deleted (returns 204). If specific keys are provided, only those keys are removed and the remaining blob is returned (returns 200).
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+blob_id = 'blob_id_example' # String | String that uniquely identifies this Blob resource.
+
+
+begin
+
+  # Delete Blob
+  result = api_instance.delete_blob(blob_id)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->delete_blob: #{e}"
+end
+```
+
+#### Using the delete_blob_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BlobResult>, Integer, Hash)> delete_blob_with_http_info(account_id, blob_id)
+
+```ruby
+begin
+  # Delete Blob
+  data, status_code, headers = api_instance.delete_blob_with_http_info(blob_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BlobResult>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->delete_blob_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **blob_id** | **String** | String that uniquely identifies this Blob resource. |  |
+
+
+### Return type
+
+[**BlobResult**](BlobResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## dequeue_a_member
 
 Dequeue a Member
@@ -1044,7 +1200,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: audio/x-wav
+- **Accept**: audio/wav
 
 
 ## download_an_export
@@ -1949,6 +2105,78 @@ end
 ### Return type
 
 [**MessageResult**](MessageResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_blob
+
+Get Blob
+
+Retrieves a specified blob
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+blob_id = 'blob_id_example' # String | String that uniquely identifies this Blob resource.
+
+
+begin
+
+  # Get Blob
+  result = api_instance.get_blob(blob_id)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_blob: #{e}"
+end
+```
+
+#### Using the get_blob_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BlobResult>, Integer, Hash)> get_blob_with_http_info(account_id, blob_id)
+
+```ruby
+begin
+  # Get Blob
+  data, status_code, headers = api_instance.get_blob_with_http_info(blob_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BlobResult>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->get_blob_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **blob_id** | **String** | String that uniquely identifies this Blob resource. |  |
+
+
+### Return type
+
+[**BlobResult**](BlobResult.md)
 
 ### Authorization
 
@@ -2884,6 +3112,75 @@ end
 - **Accept**: application/json
 
 
+## list_blobs
+
+List Blobs belonging to an account.
+
+List Blobs belonging to an account. Results are returned in paginated lists mirroring other listing features in the API.
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+
+begin
+
+  # List Blobs belonging to an account.
+  result = api_instance.list_blobs()
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->list_blobs: #{e}"
+end
+```
+
+#### Using the list_blobs_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BlobListResponse>, Integer, Hash)> list_blobs_with_http_info(account_id)
+
+```ruby
+begin
+  # List Blobs belonging to an account.
+  data, status_code, headers = api_instance.list_blobs_with_http_info()
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BlobListResponse>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->list_blobs_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+
+
+### Return type
+
+[**BlobListResponse**](BlobListResponse.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## list_call_logs
 
 List Call Logs
@@ -3368,8 +3665,6 @@ opts = {
   country: 'country_example', # String | Country of this phone number.
   application_id: 'application_id_example', # String | ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId.
   has_application: true, # Boolean | Indication of whether the phone number has an application linked to it.
-  voice_enabled: true, # Boolean | Indicates whether the phone number can handle Calls. Typically set to true for all numbers.
-  sms_enabled: true, # Boolean | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers.
   has_campaign: true, # Boolean | Indication of whether the phone number has a campaign associated with it
   capabilities_voice: true, # Boolean | 
   capabilities_sms: true, # Boolean | 
@@ -3418,8 +3713,6 @@ end
 | **country** | **String** | Country of this phone number. | [optional] |
 | **application_id** | **String** | ID of the Application that FreeClimb should contact if a Call or SMS arrives for this phone number or a Call from this number is placed. An incoming phone number is not useful until associated with an applicationId. | [optional] |
 | **has_application** | **Boolean** | Indication of whether the phone number has an application linked to it. | [optional][default to false] |
-| **voice_enabled** | **Boolean** | Indicates whether the phone number can handle Calls. Typically set to true for all numbers. | [optional][default to true] |
-| **sms_enabled** | **Boolean** | Indication of whether the phone number can handle sending and receiving SMS messages. Typically set to true for all numbers. | [optional][default to true] |
 | **has_campaign** | **Boolean** | Indication of whether the phone number has a campaign associated with it | [optional] |
 | **capabilities_voice** | **Boolean** |  | [optional] |
 | **capabilities_sms** | **Boolean** |  | [optional] |
@@ -3893,6 +4186,81 @@ end
 - **Accept**: text/plain
 
 
+## modify_blob
+
+Modify Blob
+
+Modifys a pre existing blob by either adding new fields, or modifying existing fields
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+blob_id = 'blob_id_example' # String | String that uniquely identifies this Blob resource.
+
+modify_blob_request = Freeclimb::ModifyBlobRequest.new({blob: 3.56}) # ModifyBlobRequest | Request body to specify keys to modify. Or new keys to add onto the already existing blob
+
+
+begin
+
+  # Modify Blob
+  result = api_instance.modify_blob(blob_id, modify_blob_request)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->modify_blob: #{e}"
+end
+```
+
+#### Using the modify_blob_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BlobResult>, Integer, Hash)> modify_blob_with_http_info(account_id, blob_id, modify_blob_request)
+
+```ruby
+begin
+  # Modify Blob
+  data, status_code, headers = api_instance.modify_blob_with_http_info(blob_id, modify_blob_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BlobResult>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->modify_blob_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **blob_id** | **String** | String that uniquely identifies this Blob resource. |  |
+| **modify_blob_request** | [**ModifyBlobRequest**](ModifyBlobRequest.md) | Request body to specify keys to modify. Or new keys to add onto the already existing blob |  |
+
+
+### Return type
+
+[**BlobResult**](BlobResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## remove_a_participant
 
 Remove a Participant
@@ -3963,6 +4331,81 @@ nil (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+
+## replace_blob
+
+Replace Blob
+
+Replaces the blob content with the provided values.
+
+### Examples
+
+```ruby
+require 'time'
+require 'freeclimb'
+# setup authorization
+Freeclimb.configure do |config|
+  # Configure HTTP basic authorization: fc
+  config.username = 'ACCOUNT_ID'
+  config.password = 'API_KEY'
+end
+
+api_instance = Freeclimb::DefaultApi.new
+
+blob_id = 'blob_id_example' # String | String that uniquely identifies this Blob resource.
+
+replace_blob_request = Freeclimb::ReplaceBlobRequest.new({blob: 3.56}) # ReplaceBlobRequest | JSON object containing blob key the contents of which will be used to override the enitre blob contents.
+
+
+begin
+
+  # Replace Blob
+  result = api_instance.replace_blob(blob_id, replace_blob_request)
+  p result
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->replace_blob: #{e}"
+end
+```
+
+#### Using the replace_blob_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BlobResult>, Integer, Hash)> replace_blob_with_http_info(account_id, blob_id, replace_blob_request)
+
+```ruby
+begin
+  # Replace Blob
+  data, status_code, headers = api_instance.replace_blob_with_http_info(blob_id, replace_blob_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BlobResult>
+rescue Freeclimb::ApiError => e
+  puts "Error when calling DefaultApi->replace_blob_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **blob_id** | **String** | String that uniquely identifies this Blob resource. |  |
+| **replace_blob_request** | [**ReplaceBlobRequest**](ReplaceBlobRequest.md) | JSON object containing blob key the contents of which will be used to override the enitre blob contents. |  |
+
+
+### Return type
+
+[**BlobResult**](BlobResult.md)
+
+### Authorization
+
+[fc](../README.md#fc)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## send_an_sms_message
@@ -4102,7 +4545,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: audio/x-wav
+- **Accept**: audio/wav
 
 
 ## update_a_conference

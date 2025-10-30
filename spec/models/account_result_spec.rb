@@ -242,7 +242,7 @@ describe Freeclimb::AccountResult do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_Object = Object.new
+      obj_subresource_uris = Object.new
 
       instance_1 = Freeclimb::AccountResult.new(
         uri: "TS",
@@ -265,7 +265,7 @@ describe Freeclimb::AccountResult do
 
         status: Freeclimb::AccountStatus::CLOSED,
 
-        subresource_uris: obj_Object
+        subresource_uris: obj_subresource_uris
       )
       instance_2 = Freeclimb::AccountResult.new(
         uri: "TS",
@@ -288,7 +288,7 @@ describe Freeclimb::AccountResult do
 
         status: Freeclimb::AccountStatus::CLOSED,
 
-        subresource_uris: obj_Object
+        subresource_uris: obj_subresource_uris
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end

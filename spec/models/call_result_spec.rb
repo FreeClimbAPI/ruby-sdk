@@ -404,7 +404,7 @@ describe Freeclimb::CallResult do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_Object = Object.new
+      obj_subresource_uris = Object.new
 
       instance_1 = Freeclimb::CallResult.new(
         uri: "TS",
@@ -443,7 +443,7 @@ describe Freeclimb::CallResult do
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-        subresource_uris: obj_Object,
+        subresource_uris: obj_subresource_uris,
 
         application_id: "TS"
       )
@@ -484,7 +484,7 @@ describe Freeclimb::CallResult do
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-        subresource_uris: obj_Object,
+        subresource_uris: obj_subresource_uris,
 
         application_id: "TS"
       )

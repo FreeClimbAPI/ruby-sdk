@@ -178,7 +178,7 @@ describe Freeclimb::LogResult do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
-      obj_Object = Object.new
+      obj_metadata = Object.new
 
       instance_1 = Freeclimb::LogResult.new(
         timestamp: 1,
@@ -193,7 +193,7 @@ describe Freeclimb::LogResult do
 
         message: "TS",
 
-        metadata: obj_Object
+        metadata: obj_metadata
       )
       instance_2 = Freeclimb::LogResult.new(
         timestamp: 1,
@@ -208,7 +208,7 @@ describe Freeclimb::LogResult do
 
         message: "TS",
 
-        metadata: obj_Object
+        metadata: obj_metadata
       )
       expect(instance_1.eql?(instance_2)).to eq(true)
     end

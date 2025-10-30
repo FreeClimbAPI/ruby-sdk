@@ -8,6 +8,29 @@
 # OpenAPI Generator version: 7.9.0
 #
 
+require "date"
+require "time"
+
 module Freeclimb
-  VERSION = "5.4.0"
+  class TTSEngineName
+    FREECLIMB_STANDARD = "freeclimb.standard".freeze
+    FREECLIMB_NEURAL = "freeclimb.neural".freeze
+    ELEVEN_LABS = "ElevenLabs".freeze
+
+    # Builds the enum from string
+    # @param [String] The enum value in the form of the string
+    # @return [String] The enum value
+    def self.build_from_hash(value)
+      new.build_from_hash(value)
+    end
+
+    # Builds the enum from string
+    # @param [String] The enum value in the form of the string
+    # @return [String] The enum value
+    def build_from_hash(value)
+      constantValues = TTSEngineName.constants.select { |c| TTSEngineName.const_get(c) == value }
+      raise "Invalid ENUM value #{value} for class #TTSEngineName" if constantValues.empty?
+      value
+    end
+  end
 end

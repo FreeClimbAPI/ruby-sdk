@@ -39,6 +39,13 @@ describe Freeclimb::Say do
     end
   end
 
+  describe 'test attribute "engine"' do
+    it "should work" do
+      instance.engine = TTSEngine.new
+      expect(instance.engine).to be_instance_of(TTSEngine)
+    end
+  end
+
   describe 'test attribute "loop"' do
     it "should work" do
       instance.loop = 1
@@ -61,6 +68,8 @@ describe Freeclimb::Say do
 
           language: "TS",
 
+          engine: TTSEngine.new,
+
           loop: 1,
 
           privacy_mode: true
@@ -73,6 +82,8 @@ describe Freeclimb::Say do
           text: "TS",
 
           language: "TS",
+
+          engine: TTSEngine.new,
 
           loop: 1,
 
@@ -88,6 +99,8 @@ describe Freeclimb::Say do
           text: "TS",
 
           language: "TS",
+
+          engine: TTSEngine.new,
 
           loop: 1,
 
@@ -106,6 +119,8 @@ describe Freeclimb::Say do
 
         language: "TS",
 
+        engine: TTSEngine.new,
+
         loop: 1,
 
         privacy_mode: true
@@ -122,10 +137,14 @@ describe Freeclimb::Say do
 
   describe 'test method "eql?"' do
     it "checks if objects are equal" do
+      obj_engine = Object.new
+
       instance_1 = Freeclimb::Say.new(
         text: "TS",
 
         language: "TS",
+
+        engine: obj_engine,
 
         loop: 1,
 
@@ -135,6 +154,8 @@ describe Freeclimb::Say do
         text: "TS",
 
         language: "TS",
+
+        engine: obj_engine,
 
         loop: 1,
 
@@ -149,6 +170,8 @@ describe Freeclimb::Say do
 
         language: "TS",
 
+        engine: TTSEngine.new,
+
         loop: 2,
 
         privacy_mode: true
@@ -157,6 +180,8 @@ describe Freeclimb::Say do
         text: "ST",
 
         language: "ST",
+
+        engine: TTSEngine.new,
 
         loop: 1,
 
@@ -173,6 +198,8 @@ describe Freeclimb::Say do
 
         language: "TS",
 
+        engine: TTSEngine.new,
+
         loop: 1,
 
         privacy_mode: true
@@ -188,6 +215,8 @@ describe Freeclimb::Say do
 
         language: "TS",
 
+        engine: TTSEngine.new,
+
         loop: 1,
 
         privacy_mode: true
@@ -196,6 +225,8 @@ describe Freeclimb::Say do
         text: "TS",
 
         language: "TS",
+
+        engine: TTSEngine.new,
 
         loop: 1,
 
@@ -212,6 +243,8 @@ describe Freeclimb::Say do
 
       language: "TS",
 
+      engine: TTSEngine.new,
+
       loop: 1,
 
       privacy_mode: true
@@ -222,6 +255,10 @@ describe Freeclimb::Say do
 
     it "deserializes the data of language" do
       expect(instance._deserialize("String", instance.language)).to be_a_kind_of(String)
+    end
+
+    it "deserializes the data of engine" do
+      expect(instance._deserialize("Object", instance.engine)).to be_a_kind_of(TTSEngine)
     end
 
     it "deserializes the data of loop" do
@@ -240,6 +277,8 @@ describe Freeclimb::Say do
 
         language: "TS",
 
+        engine: TTSEngine.new,
+
         loop: 1,
 
         privacy_mode: true
@@ -255,6 +294,8 @@ describe Freeclimb::Say do
 
         language: "TS",
 
+        engine: TTSEngine.new,
+
         loop: 1,
 
         privacy_mode: true
@@ -262,10 +303,14 @@ describe Freeclimb::Say do
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
     it "creates equal hash for two equal objects" do
+      obj = TTSEngine.new
+
       instance_1 = Freeclimb::Say.new(
         text: "TS",
 
         language: "TS",
+
+        engine: obj,
 
         loop: 1,
 
@@ -275,6 +320,8 @@ describe Freeclimb::Say do
         text: "TS",
 
         language: "TS",
+
+        engine: obj,
 
         loop: 1,
 
@@ -299,6 +346,9 @@ describe Freeclimb::Say do
     end
     it "returns language in the form of hash" do
       expect(instance._to_hash(instance.language)).to eq(instance.language)
+    end
+    it "returns engine in the form of hash" do
+      expect(instance._to_hash(instance.engine)).to eq(instance.engine)
     end
     it "returns loop in the form of hash" do
       expect(instance._to_hash(instance.loop)).to eq(instance.loop)
