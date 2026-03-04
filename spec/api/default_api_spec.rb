@@ -279,6 +279,20 @@ describe "DefaultApi" do
     @replace_blob_request_replace_blob_test_value = Freeclimb::ReplaceBlobRequest.new({blob: {}})
 
     @blob_id_replace_blob_test_value = "BL0123456789abcdefABCDEF0123456789abcdef00"
+
+    @start_time_list_call_recordings_test_value = "startTime_example"
+
+    @end_time_list_call_recordings_test_value = "endTime_example"
+
+    @used_audio_stream_list_calls_test_value = true
+
+    @start_time_list_recordings_test_value = "startTime_example"
+
+    @end_time_list_recordings_test_value = "endTime_example"
+
+    @start_time_list_conference_recordings_test_value = "startTime_example"
+
+    @end_time_list_conference_recordings_test_value = "endTime_example"
   end
 
   after do
@@ -1193,16 +1207,20 @@ describe "DefaultApi" do
   # @param call_id String that uniquely identifies this call resource.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
+  # @option opts [String] :start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+  # @option opts [String] :end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
   # @return [RecordingList]
   describe "list_call_recordings test" do
     it "should work" do
       call_id = @call_id_list_call_recordings_test_value
       date_created = @date_created_list_call_recordings_test_value
+      start_time = @start_time_list_call_recordings_test_value
+      end_time = @end_time_list_call_recordings_test_value
 
       result = @api_instance.list_call_recordings(
         call_id,
         {
-          date_created: date_created
+          date_created: date_created, start_time: start_time, end_time: end_time
         }
       )
 
@@ -1215,6 +1233,7 @@ describe "DefaultApi" do
   # unit tests for list_calls
   # List Calls
   # @param [Hash] opts the optional parameters
+  # @option opts [Boolean] :used_audio_stream If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned
   # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
   # @option opts [String] :to Only show Calls to this phone number.
   # @option opts [String] :from Only show Calls from this phone number.
@@ -1228,6 +1247,7 @@ describe "DefaultApi" do
   # @return [CallList]
   describe "list_calls test" do
     it "should work" do
+      used_audio_stream = @used_audio_stream_list_calls_test_value
       active = @active_list_calls_test_value
       to = @to_list_calls_test_value
       from = @from_list_calls_test_value
@@ -1241,7 +1261,7 @@ describe "DefaultApi" do
 
       result = @api_instance.list_calls(
         {
-          active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id, risk_score_min: risk_score_min, risk_score_max: risk_score_max
+          used_audio_stream: used_audio_stream, active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id, risk_score_min: risk_score_min, risk_score_max: risk_score_max
         }
       )
 
@@ -1257,17 +1277,21 @@ describe "DefaultApi" do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
   # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+  # @option opts [String] :start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+  # @option opts [String] :end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
   # @return [RecordingList]
   describe "list_conference_recordings test" do
     it "should work" do
       conference_id = @conference_id_list_conference_recordings_test_value
       call_id = @call_id_list_conference_recordings_test_value
       date_created = @date_created_list_conference_recordings_test_value
+      start_time = @start_time_list_conference_recordings_test_value
+      end_time = @end_time_list_conference_recordings_test_value
 
       result = @api_instance.list_conference_recordings(
         conference_id,
         {
-          call_id: call_id, date_created: date_created
+          call_id: call_id, date_created: date_created, start_time: start_time, end_time: end_time
         }
       )
 
@@ -1428,16 +1452,20 @@ describe "DefaultApi" do
   # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
   # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
   # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+  # @option opts [String] :start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+  # @option opts [String] :end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
   # @return [RecordingList]
   describe "list_recordings test" do
     it "should work" do
       call_id = @call_id_list_recordings_test_value
       conference_id = @conference_id_list_recordings_test_value
       date_created = @date_created_list_recordings_test_value
+      start_time = @start_time_list_recordings_test_value
+      end_time = @end_time_list_recordings_test_value
 
       result = @api_instance.list_recordings(
         {
-          call_id: call_id, conference_id: conference_id, date_created: date_created
+          call_id: call_id, conference_id: conference_id, date_created: date_created, start_time: start_time, end_time: end_time
         }
       )
 
@@ -2024,16 +2052,20 @@ describe "DefaultApi" do
   # @param call_id String that uniquely identifies this call resource.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
+  # @option opts [String] :start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+  # @option opts [String] :end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
   # @return [RecordingList]
   describe "list_call_recordings_get_next_page test" do
     it "should work" do
       call_id = @call_id_list_call_recordings_test_value
       date_created = @date_created_list_call_recordings_test_value
+      start_time = @start_time_list_call_recordings_test_value
+      end_time = @end_time_list_call_recordings_test_value
 
       result = @api_instance.list_call_recordings(
         call_id,
         {
-          date_created: date_created
+          date_created: date_created, start_time: start_time, end_time: end_time
         }
       )
       result.next_page_uri = "/Accounts/{accountId}/Calls/{callId}/Recordings?cursor=1".sub("{accountId}", @account_id_test_value)
@@ -2046,6 +2078,7 @@ describe "DefaultApi" do
   # unit tests for get_next_page list_calls
   # List Calls
   # @param [Hash] opts the optional parameters
+  # @option opts [Boolean] :used_audio_stream If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned
   # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
   # @option opts [String] :to Only show Calls to this phone number.
   # @option opts [String] :from Only show Calls from this phone number.
@@ -2059,6 +2092,7 @@ describe "DefaultApi" do
   # @return [CallList]
   describe "list_calls_get_next_page test" do
     it "should work" do
+      used_audio_stream = @used_audio_stream_list_calls_test_value
       active = @active_list_calls_test_value
       to = @to_list_calls_test_value
       from = @from_list_calls_test_value
@@ -2072,7 +2106,7 @@ describe "DefaultApi" do
 
       result = @api_instance.list_calls(
         {
-          active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id, risk_score_min: risk_score_min, risk_score_max: risk_score_max
+          used_audio_stream: used_audio_stream, active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id, risk_score_min: risk_score_min, risk_score_max: risk_score_max
         }
       )
       result.next_page_uri = "/Accounts/{accountId}/Calls?cursor=1".sub("{accountId}", @account_id_test_value)
@@ -2088,17 +2122,21 @@ describe "DefaultApi" do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
   # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+  # @option opts [String] :start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+  # @option opts [String] :end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
   # @return [RecordingList]
   describe "list_conference_recordings_get_next_page test" do
     it "should work" do
       conference_id = @conference_id_list_conference_recordings_test_value
       call_id = @call_id_list_conference_recordings_test_value
       date_created = @date_created_list_conference_recordings_test_value
+      start_time = @start_time_list_conference_recordings_test_value
+      end_time = @end_time_list_conference_recordings_test_value
 
       result = @api_instance.list_conference_recordings(
         conference_id,
         {
-          call_id: call_id, date_created: date_created
+          call_id: call_id, date_created: date_created, start_time: start_time, end_time: end_time
         }
       )
       result.next_page_uri = "/Accounts/{accountId}/Conferences/{conferenceId}/Recordings?cursor=1".sub("{accountId}", @account_id_test_value)
@@ -2259,16 +2297,20 @@ describe "DefaultApi" do
   # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
   # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
   # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+  # @option opts [String] :start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+  # @option opts [String] :end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
   # @return [RecordingList]
   describe "list_recordings_get_next_page test" do
     it "should work" do
       call_id = @call_id_list_recordings_test_value
       conference_id = @conference_id_list_recordings_test_value
       date_created = @date_created_list_recordings_test_value
+      start_time = @start_time_list_recordings_test_value
+      end_time = @end_time_list_recordings_test_value
 
       result = @api_instance.list_recordings(
         {
-          call_id: call_id, conference_id: conference_id, date_created: date_created
+          call_id: call_id, conference_id: conference_id, date_created: date_created, start_time: start_time, end_time: end_time
         }
       )
       result.next_page_uri = "/Accounts/{accountId}/Recordings?cursor=1".sub("{accountId}", @account_id_test_value)

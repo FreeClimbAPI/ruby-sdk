@@ -164,6 +164,13 @@ describe Freeclimb::CallResult do
     end
   end
 
+  describe 'test attribute "audio_stream_duration"' do
+    it "should work" do
+      instance.audio_stream_duration = 1
+      expect(instance.audio_stream_duration).to eq(1)
+    end
+  end
+
   describe 'test attribute "direction"' do
     it "assigns value INBOUND" do
       instance.direction = Freeclimb::CallDirection::INBOUND
@@ -243,6 +250,8 @@ describe Freeclimb::CallResult do
 
           connect_duration: 1,
 
+          audio_stream_duration: 1,
+
           direction: Freeclimb::CallDirection::INBOUND,
 
           answered_by: Freeclimb::AnsweredBy::HUMAN,
@@ -287,6 +296,8 @@ describe Freeclimb::CallResult do
           duration: 1,
 
           connect_duration: 1,
+
+          audio_stream_duration: 1,
 
           direction: Freeclimb::CallDirection::INBOUND,
 
@@ -334,6 +345,8 @@ describe Freeclimb::CallResult do
           duration: 1,
 
           connect_duration: 1,
+
+          audio_stream_duration: 1,
 
           direction: Freeclimb::CallDirection::INBOUND,
 
@@ -383,6 +396,8 @@ describe Freeclimb::CallResult do
         duration: 1,
 
         connect_duration: 1,
+
+        audio_stream_duration: 1,
 
         direction: Freeclimb::CallDirection::INBOUND,
 
@@ -439,6 +454,8 @@ describe Freeclimb::CallResult do
 
         connect_duration: 1,
 
+        audio_stream_duration: 1,
+
         direction: Freeclimb::CallDirection::INBOUND,
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
@@ -479,6 +496,8 @@ describe Freeclimb::CallResult do
         duration: 1,
 
         connect_duration: 1,
+
+        audio_stream_duration: 1,
 
         direction: Freeclimb::CallDirection::INBOUND,
 
@@ -525,6 +544,8 @@ describe Freeclimb::CallResult do
 
         connect_duration: 2,
 
+        audio_stream_duration: 2,
+
         direction: Freeclimb::CallDirection::INBOUND,
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
@@ -567,6 +588,8 @@ describe Freeclimb::CallResult do
         duration: 1,
 
         connect_duration: 1,
+
+        audio_stream_duration: 1,
 
         direction: nil,
 
@@ -615,6 +638,8 @@ describe Freeclimb::CallResult do
 
         connect_duration: 1,
 
+        audio_stream_duration: 1,
+
         direction: Freeclimb::CallDirection::INBOUND,
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
@@ -662,6 +687,8 @@ describe Freeclimb::CallResult do
 
         connect_duration: 1,
 
+        audio_stream_duration: 1,
+
         direction: Freeclimb::CallDirection::INBOUND,
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
@@ -702,6 +729,8 @@ describe Freeclimb::CallResult do
         duration: 1,
 
         connect_duration: 1,
+
+        audio_stream_duration: 1,
 
         direction: Freeclimb::CallDirection::INBOUND,
 
@@ -749,6 +778,8 @@ describe Freeclimb::CallResult do
       duration: 1,
 
       connect_duration: 1,
+
+      audio_stream_duration: 1,
 
       direction: Freeclimb::CallDirection::INBOUND,
 
@@ -818,6 +849,10 @@ describe Freeclimb::CallResult do
       expect(instance._deserialize("Integer", instance.connect_duration)).to be_a_kind_of(Integer)
     end
 
+    it "deserializes the data of audio_stream_duration" do
+      expect(instance._deserialize("Integer", instance.audio_stream_duration)).to be_a_kind_of(Integer)
+    end
+
     it "deserializes the data of subresource_uris" do
       expect(instance._deserialize("Object", instance.subresource_uris)).to be_a_kind_of(Object)
     end
@@ -861,6 +896,8 @@ describe Freeclimb::CallResult do
         duration: 1,
 
         connect_duration: 1,
+
+        audio_stream_duration: 1,
 
         direction: Freeclimb::CallDirection::INBOUND,
 
@@ -909,6 +946,8 @@ describe Freeclimb::CallResult do
 
         connect_duration: 1,
 
+        audio_stream_duration: 1,
+
         direction: Freeclimb::CallDirection::INBOUND,
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
@@ -955,6 +994,8 @@ describe Freeclimb::CallResult do
 
         connect_duration: 1,
 
+        audio_stream_duration: 1,
+
         direction: Freeclimb::CallDirection::INBOUND,
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
@@ -995,6 +1036,8 @@ describe Freeclimb::CallResult do
         duration: 1,
 
         connect_duration: 1,
+
+        audio_stream_duration: 1,
 
         direction: Freeclimb::CallDirection::INBOUND,
 
@@ -1041,6 +1084,8 @@ describe Freeclimb::CallResult do
       duration: 1,
 
       connect_duration: 1,
+
+      audio_stream_duration: 1,
 
       direction: Freeclimb::CallDirection::INBOUND,
 
@@ -1095,6 +1140,9 @@ describe Freeclimb::CallResult do
     end
     it "returns connect_duration in the form of hash" do
       expect(instance._to_hash(instance.connect_duration)).to eq(instance.connect_duration)
+    end
+    it "returns audio_stream_duration in the form of hash" do
+      expect(instance._to_hash(instance.audio_stream_duration)).to eq(instance.audio_stream_duration)
     end
     it "returns direction in the form of hash" do
       expect(instance._to_hash(instance.direction)).to eq(instance.direction)

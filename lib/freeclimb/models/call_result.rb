@@ -60,6 +60,9 @@ module Freeclimb
     # Length of time that the Call was connected in seconds. Measures time between connectTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls.
     attr_accessor :connect_duration
 
+    # Length of time that the Call used the audio stream in seconds. This value is empty or zero when the Call did not use the audio stream.
+    attr_accessor :audio_stream_duration
+
     attr_accessor :direction
 
     attr_accessor :answered_by
@@ -111,6 +114,7 @@ module Freeclimb
         end_time: :endTime,
         duration: :duration,
         connect_duration: :connectDuration,
+        audio_stream_duration: :audioStreamDuration,
         direction: :direction,
         answered_by: :answeredBy,
         subresource_uris: :subresourceUris,
@@ -142,6 +146,7 @@ module Freeclimb
         end_time: :String,
         duration: :Integer,
         connect_duration: :Integer,
+        audio_stream_duration: :Integer,
         direction: :CallDirection,
         answered_by: :AnsweredBy,
         subresource_uris: :Object,
@@ -164,6 +169,7 @@ module Freeclimb
         :end_time,
         :duration,
         :connect_duration,
+        :audio_stream_duration,
         :direction,
         :answered_by,
         :subresource_uris,
@@ -257,6 +263,10 @@ module Freeclimb
         self.connect_duration = attributes[:connect_duration]
       end
 
+      if attributes.key?(:audio_stream_duration)
+        self.audio_stream_duration = attributes[:audio_stream_duration]
+      end
+
       if attributes.key?(:direction)
         self.direction = attributes[:direction]
       end
@@ -311,6 +321,7 @@ module Freeclimb
         end_time == other.end_time &&
         duration == other.duration &&
         connect_duration == other.connect_duration &&
+        audio_stream_duration == other.audio_stream_duration &&
         direction == other.direction &&
         answered_by == other.answered_by &&
         subresource_uris == other.subresource_uris &&
@@ -326,7 +337,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, call_id, parent_call_id, account_id, from, to, phone_number_id, status, start_time, connect_time, end_time, duration, connect_duration, direction, answered_by, subresource_uris, application_id].hash
+      [uri, date_created, date_updated, revision, call_id, parent_call_id, account_id, from, to, phone_number_id, status, start_time, connect_time, end_time, duration, connect_duration, audio_stream_duration, direction, answered_by, subresource_uris, application_id].hash
     end
 
     # Builds the object from hash
