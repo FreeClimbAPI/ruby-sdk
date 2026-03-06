@@ -95,6 +95,13 @@ describe Freeclimb::QueueResult do
     end
   end
 
+  describe 'test attribute "average_wait_time"' do
+    it "should work" do
+      instance.average_wait_time = 1
+      expect(instance.average_wait_time).to eq(1)
+    end
+  end
+
   describe 'test attribute "subresource_uris"' do
     it "should work" do
       testObject = Object.new
@@ -130,6 +137,8 @@ describe Freeclimb::QueueResult do
 
           average_queue_removal_time: 1,
 
+          average_wait_time: 1,
+
           subresource_uris: Object.new
         )
       }.not_to raise_error
@@ -156,6 +165,8 @@ describe Freeclimb::QueueResult do
           current_size: 1,
 
           average_queue_removal_time: 1,
+
+          average_wait_time: 1,
 
           subresource_uris: Object.new,
 
@@ -185,6 +196,8 @@ describe Freeclimb::QueueResult do
           current_size: 1,
 
           average_queue_removal_time: 1,
+
+          average_wait_time: 1,
 
           subresource_uris: Object.new,
 
@@ -216,6 +229,8 @@ describe Freeclimb::QueueResult do
         current_size: 1,
 
         average_queue_removal_time: 1,
+
+        average_wait_time: 1,
 
         subresource_uris: Object.new
       )
@@ -254,6 +269,8 @@ describe Freeclimb::QueueResult do
 
         average_queue_removal_time: 1,
 
+        average_wait_time: 1,
+
         subresource_uris: obj_subresource_uris
       )
       instance_2 = Freeclimb::QueueResult.new(
@@ -276,6 +293,8 @@ describe Freeclimb::QueueResult do
         current_size: 1,
 
         average_queue_removal_time: 1,
+
+        average_wait_time: 1,
 
         subresource_uris: obj_subresource_uris
       )
@@ -304,6 +323,8 @@ describe Freeclimb::QueueResult do
 
         average_queue_removal_time: 2,
 
+        average_wait_time: 2,
+
         subresource_uris: Object.new,
 
         subresource_uris: Object.new
@@ -328,6 +349,8 @@ describe Freeclimb::QueueResult do
         current_size: 1,
 
         average_queue_removal_time: 1,
+
+        average_wait_time: 1,
 
         subresource_uris: Object.new
       )
@@ -358,6 +381,8 @@ describe Freeclimb::QueueResult do
 
         average_queue_removal_time: 1,
 
+        average_wait_time: 1,
+
         subresource_uris: Object.new
       )
       expect(instance.hash).to be_a_kind_of(Integer)
@@ -387,6 +412,8 @@ describe Freeclimb::QueueResult do
 
         average_queue_removal_time: 1,
 
+        average_wait_time: 1,
+
         subresource_uris: Object.new
       )
       instance_2 = Freeclimb::QueueResult.new(
@@ -409,6 +436,8 @@ describe Freeclimb::QueueResult do
         current_size: 1,
 
         average_queue_removal_time: 1,
+
+        average_wait_time: 1,
 
         subresource_uris: Object.new
       )
@@ -438,6 +467,8 @@ describe Freeclimb::QueueResult do
       current_size: 1,
 
       average_queue_removal_time: 1,
+
+      average_wait_time: 1,
 
       subresource_uris: Object.new
     )
@@ -481,6 +512,10 @@ describe Freeclimb::QueueResult do
       expect(instance._deserialize("Integer", instance.average_queue_removal_time)).to be_a_kind_of(Integer)
     end
 
+    it "deserializes the data of average_wait_time" do
+      expect(instance._deserialize("Integer", instance.average_wait_time)).to be_a_kind_of(Integer)
+    end
+
     it "deserializes the data of subresource_uris" do
       expect(instance._deserialize("Object", instance.subresource_uris)).to be_a_kind_of(Object)
     end
@@ -508,6 +543,8 @@ describe Freeclimb::QueueResult do
         current_size: 1,
 
         average_queue_removal_time: 1,
+
+        average_wait_time: 1,
 
         subresource_uris: Object.new
       )
@@ -538,6 +575,8 @@ describe Freeclimb::QueueResult do
 
         average_queue_removal_time: 1,
 
+        average_wait_time: 1,
+
         subresource_uris: Object.new
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
@@ -566,6 +605,8 @@ describe Freeclimb::QueueResult do
 
         average_queue_removal_time: 1,
 
+        average_wait_time: 1,
+
         subresource_uris: obj
       )
       instance_2 = Freeclimb::QueueResult.new(
@@ -588,6 +629,8 @@ describe Freeclimb::QueueResult do
         current_size: 1,
 
         average_queue_removal_time: 1,
+
+        average_wait_time: 1,
 
         subresource_uris: obj
       )
@@ -615,7 +658,9 @@ describe Freeclimb::QueueResult do
 
       current_size: 1,
 
-      average_queue_removal_time: 1
+      average_queue_removal_time: 1,
+
+      average_wait_time: 1
     )
     it "returns uri in the form of hash" do
       expect(instance._to_hash(instance.uri)).to eq(instance.uri)
@@ -646,6 +691,9 @@ describe Freeclimb::QueueResult do
     end
     it "returns average_queue_removal_time in the form of hash" do
       expect(instance._to_hash(instance.average_queue_removal_time)).to eq(instance.average_queue_removal_time)
+    end
+    it "returns average_wait_time in the form of hash" do
+      expect(instance._to_hash(instance.average_wait_time)).to eq(instance.average_wait_time)
     end
     it "returns subresource_uris in the form of hash" do
       expect(instance._to_hash(instance.subresource_uris)).to eq(instance.subresource_uris)

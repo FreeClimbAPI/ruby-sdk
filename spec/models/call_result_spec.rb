@@ -53,6 +53,20 @@ describe Freeclimb::CallResult do
     end
   end
 
+  describe 'test attribute "date_created_iso"' do
+    it "should work" do
+      instance.date_created_iso = "2022-07-05T15:17:05Z"
+      expect(instance.date_created_iso).to eq("2022-07-05T15:17:05Z")
+    end
+  end
+
+  describe 'test attribute "date_updated_iso"' do
+    it "should work" do
+      instance.date_updated_iso = "2022-07-05T15:17:05Z"
+      expect(instance.date_updated_iso).to eq("2022-07-05T15:17:05Z")
+    end
+  end
+
   describe 'test attribute "call_id"' do
     it "should work" do
       instance.call_id = "TEST_STRING"
@@ -136,6 +150,13 @@ describe Freeclimb::CallResult do
     end
   end
 
+  describe 'test attribute "start_time_iso"' do
+    it "should work" do
+      instance.start_time_iso = "2022-07-05T15:17:05Z"
+      expect(instance.start_time_iso).to eq("2022-07-05T15:17:05Z")
+    end
+  end
+
   describe 'test attribute "connect_time"' do
     it "should work" do
       instance.connect_time = "TEST_STRING"
@@ -143,10 +164,24 @@ describe Freeclimb::CallResult do
     end
   end
 
+  describe 'test attribute "connect_time_iso"' do
+    it "should work" do
+      instance.connect_time_iso = "2022-07-05T15:17:05Z"
+      expect(instance.connect_time_iso).to eq("2022-07-05T15:17:05Z")
+    end
+  end
+
   describe 'test attribute "end_time"' do
     it "should work" do
       instance.end_time = "TEST_STRING"
       expect(instance.end_time).to eq("TEST_STRING")
+    end
+  end
+
+  describe 'test attribute "end_time_iso"' do
+    it "should work" do
+      instance.end_time_iso = "2022-07-05T15:17:05Z"
+      expect(instance.end_time_iso).to eq("2022-07-05T15:17:05Z")
     end
   end
 
@@ -196,14 +231,24 @@ describe Freeclimb::CallResult do
       expect(instance.answered_by).to eq(Freeclimb::AnsweredBy::MACHINE)
     end
   end
+  describe 'test attribute "caller_name"' do
+    it "should work" do
+      instance.caller_name = "TEST_STRING"
+      expect(instance.caller_name).to eq("TEST_STRING")
+    end
+  end
+
+  describe 'test attribute "web_rtc"' do
+    it "should work" do
+      instance.web_rtc = false
+      expect(instance.web_rtc).to eq(false)
+    end
+  end
+
   describe 'test attribute "subresource_uris"' do
     it "should work" do
-      testObject = Object.new
-      instance.subresource_uris = testObject
-      expect(instance.subresource_uris).to eq(testObject)
-
-      instance.subresource_uris = Object.new
-      expect(instance.subresource_uris).to be_instance_of(Object)
+      instance.subresource_uris = CallResultAllOfSubresourceUris.new
+      expect(instance.subresource_uris).to be_instance_of(CallResultAllOfSubresourceUris)
     end
   end
 
@@ -226,6 +271,10 @@ describe Freeclimb::CallResult do
 
           revision: 1,
 
+          date_created_iso: "2022-07-05T15:17:05Z",
+
+          date_updated_iso: "2022-07-05T15:17:05Z",
+
           call_id: "TS",
 
           parent_call_id: "TS",
@@ -242,9 +291,15 @@ describe Freeclimb::CallResult do
 
           start_time: "TS",
 
+          start_time_iso: "2022-07-05T15:17:05Z",
+
           connect_time: "TS",
 
+          connect_time_iso: "2022-07-05T15:17:05Z",
+
           end_time: "TS",
+
+          end_time_iso: "2022-07-05T15:17:05Z",
 
           duration: 1,
 
@@ -256,7 +311,11 @@ describe Freeclimb::CallResult do
 
           answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-          subresource_uris: Object.new,
+          caller_name: "TS",
+
+          web_rtc: true,
+
+          subresource_uris: CallResultAllOfSubresourceUris.new,
 
           application_id: "TS"
         )
@@ -273,6 +332,10 @@ describe Freeclimb::CallResult do
 
           revision: 1,
 
+          date_created_iso: "2022-07-05T15:17:05Z",
+
+          date_updated_iso: "2022-07-05T15:17:05Z",
+
           call_id: "TS",
 
           parent_call_id: "TS",
@@ -289,9 +352,15 @@ describe Freeclimb::CallResult do
 
           start_time: "TS",
 
+          start_time_iso: "2022-07-05T15:17:05Z",
+
           connect_time: "TS",
 
+          connect_time_iso: "2022-07-05T15:17:05Z",
+
           end_time: "TS",
+
+          end_time_iso: "2022-07-05T15:17:05Z",
 
           duration: 1,
 
@@ -303,7 +372,11 @@ describe Freeclimb::CallResult do
 
           answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-          subresource_uris: Object.new,
+          caller_name: "TS",
+
+          web_rtc: true,
+
+          subresource_uris: CallResultAllOfSubresourceUris.new,
 
           application_id: "TS",
 
@@ -322,6 +395,10 @@ describe Freeclimb::CallResult do
 
           revision: 1,
 
+          date_created_iso: "2022-07-05T15:17:05Z",
+
+          date_updated_iso: "2022-07-05T15:17:05Z",
+
           call_id: "TS",
 
           parent_call_id: "TS",
@@ -338,9 +415,15 @@ describe Freeclimb::CallResult do
 
           start_time: "TS",
 
+          start_time_iso: "2022-07-05T15:17:05Z",
+
           connect_time: "TS",
 
+          connect_time_iso: "2022-07-05T15:17:05Z",
+
           end_time: "TS",
+
+          end_time_iso: "2022-07-05T15:17:05Z",
 
           duration: 1,
 
@@ -352,7 +435,11 @@ describe Freeclimb::CallResult do
 
           answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-          subresource_uris: Object.new,
+          caller_name: "TS",
+
+          web_rtc: true,
+
+          subresource_uris: CallResultAllOfSubresourceUris.new,
 
           application_id: "TS",
 
@@ -373,6 +460,10 @@ describe Freeclimb::CallResult do
 
         revision: 1,
 
+        date_created_iso: "2022-07-05T15:17:05Z",
+
+        date_updated_iso: "2022-07-05T15:17:05Z",
+
         call_id: "TS",
 
         parent_call_id: "TS",
@@ -389,9 +480,15 @@ describe Freeclimb::CallResult do
 
         start_time: "TS",
 
+        start_time_iso: "2022-07-05T15:17:05Z",
+
         connect_time: "TS",
 
+        connect_time_iso: "2022-07-05T15:17:05Z",
+
         end_time: "TS",
+
+        end_time_iso: "2022-07-05T15:17:05Z",
 
         duration: 1,
 
@@ -403,7 +500,11 @@ describe Freeclimb::CallResult do
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-        subresource_uris: Object.new,
+        caller_name: "TS",
+
+        web_rtc: true,
+
+        subresource_uris: CallResultAllOfSubresourceUris.new,
 
         application_id: "TS"
       )
@@ -460,6 +561,10 @@ describe Freeclimb::CallResult do
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
 
+        caller_name: "TS",
+
+        web_rtc: true,
+
         subresource_uris: obj_subresource_uris,
 
         application_id: "TS"
@@ -502,6 +607,10 @@ describe Freeclimb::CallResult do
         direction: Freeclimb::CallDirection::INBOUND,
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
+
+        caller_name: "TS",
+
+        web_rtc: true,
 
         subresource_uris: obj_subresource_uris,
 
@@ -550,9 +659,11 @@ describe Freeclimb::CallResult do
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-        subresource_uris: Object.new,
+        caller_name: "TS",
 
-        subresource_uris: Object.new,
+        web_rtc: true,
+
+        subresource_uris: CallResultAllOfSubresourceUris.new,
 
         application_id: "TS"
       )
@@ -595,7 +706,11 @@ describe Freeclimb::CallResult do
 
         answered_by: nil,
 
-        subresource_uris: Object.new,
+        caller_name: "ST",
+
+        web_rtc: false,
+
+        subresource_uris: CallResultAllOfSubresourceUris.new,
 
         application_id: "ST"
       )
@@ -614,6 +729,10 @@ describe Freeclimb::CallResult do
 
         revision: 1,
 
+        date_created_iso: "2022-07-05T15:17:05Z",
+
+        date_updated_iso: "2022-07-05T15:17:05Z",
+
         call_id: "TS",
 
         parent_call_id: "TS",
@@ -630,9 +749,15 @@ describe Freeclimb::CallResult do
 
         start_time: "TS",
 
+        start_time_iso: "2022-07-05T15:17:05Z",
+
         connect_time: "TS",
 
+        connect_time_iso: "2022-07-05T15:17:05Z",
+
         end_time: "TS",
+
+        end_time_iso: "2022-07-05T15:17:05Z",
 
         duration: 1,
 
@@ -644,7 +769,11 @@ describe Freeclimb::CallResult do
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-        subresource_uris: Object.new,
+        caller_name: "TS",
+
+        web_rtc: true,
+
+        subresource_uris: CallResultAllOfSubresourceUris.new,
 
         application_id: "TS"
       )
@@ -663,6 +792,10 @@ describe Freeclimb::CallResult do
 
         revision: 1,
 
+        date_created_iso: "2022-07-05T15:17:05Z",
+
+        date_updated_iso: "2022-07-05T15:17:05Z",
+
         call_id: "TS",
 
         parent_call_id: "TS",
@@ -679,9 +812,15 @@ describe Freeclimb::CallResult do
 
         start_time: "TS",
 
+        start_time_iso: "2022-07-05T15:17:05Z",
+
         connect_time: "TS",
 
+        connect_time_iso: "2022-07-05T15:17:05Z",
+
         end_time: "TS",
+
+        end_time_iso: "2022-07-05T15:17:05Z",
 
         duration: 1,
 
@@ -693,7 +832,11 @@ describe Freeclimb::CallResult do
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-        subresource_uris: Object.new,
+        caller_name: "TS",
+
+        web_rtc: true,
+
+        subresource_uris: CallResultAllOfSubresourceUris.new,
 
         application_id: "TS"
       )
@@ -706,6 +849,10 @@ describe Freeclimb::CallResult do
 
         revision: 1,
 
+        date_created_iso: "2022-07-05T15:17:05Z",
+
+        date_updated_iso: "2022-07-05T15:17:05Z",
+
         call_id: "TS",
 
         parent_call_id: "TS",
@@ -722,9 +869,15 @@ describe Freeclimb::CallResult do
 
         start_time: "TS",
 
+        start_time_iso: "2022-07-05T15:17:05Z",
+
         connect_time: "TS",
 
+        connect_time_iso: "2022-07-05T15:17:05Z",
+
         end_time: "TS",
+
+        end_time_iso: "2022-07-05T15:17:05Z",
 
         duration: 1,
 
@@ -736,7 +889,11 @@ describe Freeclimb::CallResult do
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-        subresource_uris: Object.new,
+        caller_name: "TS",
+
+        web_rtc: true,
+
+        subresource_uris: CallResultAllOfSubresourceUris.new,
 
         application_id: "TS"
       )
@@ -755,6 +912,10 @@ describe Freeclimb::CallResult do
 
       revision: 1,
 
+      date_created_iso: "2022-07-05T15:17:05Z",
+
+      date_updated_iso: "2022-07-05T15:17:05Z",
+
       call_id: "TS",
 
       parent_call_id: "TS",
@@ -771,9 +932,15 @@ describe Freeclimb::CallResult do
 
       start_time: "TS",
 
+      start_time_iso: "2022-07-05T15:17:05Z",
+
       connect_time: "TS",
 
+      connect_time_iso: "2022-07-05T15:17:05Z",
+
       end_time: "TS",
+
+      end_time_iso: "2022-07-05T15:17:05Z",
 
       duration: 1,
 
@@ -785,7 +952,11 @@ describe Freeclimb::CallResult do
 
       answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-      subresource_uris: Object.new,
+      caller_name: "TS",
+
+      web_rtc: true,
+
+      subresource_uris: CallResultAllOfSubresourceUris.new,
 
       application_id: "TS"
     )
@@ -803,6 +974,14 @@ describe Freeclimb::CallResult do
 
     it "deserializes the data of revision" do
       expect(instance._deserialize("Integer", instance.revision)).to be_a_kind_of(Integer)
+    end
+
+    it "deserializes the data of date_created_iso" do
+      expect(instance._deserialize("Time", instance.date_created_iso)).to be_a_kind_of(Time)
+    end
+
+    it "deserializes the data of date_updated_iso" do
+      expect(instance._deserialize("Time", instance.date_updated_iso)).to be_a_kind_of(Time)
     end
 
     it "deserializes the data of call_id" do
@@ -833,12 +1012,24 @@ describe Freeclimb::CallResult do
       expect(instance._deserialize("String", instance.start_time)).to be_a_kind_of(String)
     end
 
+    it "deserializes the data of start_time_iso" do
+      expect(instance._deserialize("Time", instance.start_time_iso)).to be_a_kind_of(Time)
+    end
+
     it "deserializes the data of connect_time" do
       expect(instance._deserialize("String", instance.connect_time)).to be_a_kind_of(String)
     end
 
+    it "deserializes the data of connect_time_iso" do
+      expect(instance._deserialize("Time", instance.connect_time_iso)).to be_a_kind_of(Time)
+    end
+
     it "deserializes the data of end_time" do
       expect(instance._deserialize("String", instance.end_time)).to be_a_kind_of(String)
+    end
+
+    it "deserializes the data of end_time_iso" do
+      expect(instance._deserialize("Time", instance.end_time_iso)).to be_a_kind_of(Time)
     end
 
     it "deserializes the data of duration" do
@@ -853,8 +1044,16 @@ describe Freeclimb::CallResult do
       expect(instance._deserialize("Integer", instance.audio_stream_duration)).to be_a_kind_of(Integer)
     end
 
+    it "deserializes the data of caller_name" do
+      expect(instance._deserialize("String", instance.caller_name)).to be_a_kind_of(String)
+    end
+
+    it "deserializes the data of web_rtc" do
+      expect(instance._deserialize("Boolean", instance.web_rtc)).to be_a_kind_of(TrueClass)
+    end
+
     it "deserializes the data of subresource_uris" do
-      expect(instance._deserialize("Object", instance.subresource_uris)).to be_a_kind_of(Object)
+      expect(instance._deserialize("Object", instance.subresource_uris)).to be_a_kind_of(CallResultAllOfSubresourceUris)
     end
 
     it "deserializes the data of application_id" do
@@ -873,6 +1072,10 @@ describe Freeclimb::CallResult do
 
         revision: 1,
 
+        date_created_iso: "2022-07-05T15:17:05Z",
+
+        date_updated_iso: "2022-07-05T15:17:05Z",
+
         call_id: "TS",
 
         parent_call_id: "TS",
@@ -889,9 +1092,15 @@ describe Freeclimb::CallResult do
 
         start_time: "TS",
 
+        start_time_iso: "2022-07-05T15:17:05Z",
+
         connect_time: "TS",
 
+        connect_time_iso: "2022-07-05T15:17:05Z",
+
         end_time: "TS",
+
+        end_time_iso: "2022-07-05T15:17:05Z",
 
         duration: 1,
 
@@ -903,7 +1112,11 @@ describe Freeclimb::CallResult do
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-        subresource_uris: Object.new,
+        caller_name: "TS",
+
+        web_rtc: true,
+
+        subresource_uris: CallResultAllOfSubresourceUris.new,
 
         application_id: "TS"
       )
@@ -922,6 +1135,10 @@ describe Freeclimb::CallResult do
 
         revision: 1,
 
+        date_created_iso: "2022-07-05T15:17:05Z",
+
+        date_updated_iso: "2022-07-05T15:17:05Z",
+
         call_id: "TS",
 
         parent_call_id: "TS",
@@ -938,9 +1155,15 @@ describe Freeclimb::CallResult do
 
         start_time: "TS",
 
+        start_time_iso: "2022-07-05T15:17:05Z",
+
         connect_time: "TS",
 
+        connect_time_iso: "2022-07-05T15:17:05Z",
+
         end_time: "TS",
+
+        end_time_iso: "2022-07-05T15:17:05Z",
 
         duration: 1,
 
@@ -952,14 +1175,18 @@ describe Freeclimb::CallResult do
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
 
-        subresource_uris: Object.new,
+        caller_name: "TS",
+
+        web_rtc: true,
+
+        subresource_uris: CallResultAllOfSubresourceUris.new,
 
         application_id: "TS"
       )
       expect(instance.to_hash).to be_a_kind_of(Hash)
     end
     it "creates equal hash for two equal objects" do
-      obj = Object.new
+      obj = CallResultAllOfSubresourceUris.new
 
       instance_1 = Freeclimb::CallResult.new(
         uri: "TS",
@@ -970,6 +1197,10 @@ describe Freeclimb::CallResult do
 
         revision: 1,
 
+        date_created_iso: "2022-07-05T15:17:05Z",
+
+        date_updated_iso: "2022-07-05T15:17:05Z",
+
         call_id: "TS",
 
         parent_call_id: "TS",
@@ -986,9 +1217,15 @@ describe Freeclimb::CallResult do
 
         start_time: "TS",
 
+        start_time_iso: "2022-07-05T15:17:05Z",
+
         connect_time: "TS",
 
+        connect_time_iso: "2022-07-05T15:17:05Z",
+
         end_time: "TS",
+
+        end_time_iso: "2022-07-05T15:17:05Z",
 
         duration: 1,
 
@@ -999,6 +1236,10 @@ describe Freeclimb::CallResult do
         direction: Freeclimb::CallDirection::INBOUND,
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
+
+        caller_name: "TS",
+
+        web_rtc: true,
 
         subresource_uris: obj,
 
@@ -1013,6 +1254,10 @@ describe Freeclimb::CallResult do
 
         revision: 1,
 
+        date_created_iso: "2022-07-05T15:17:05Z",
+
+        date_updated_iso: "2022-07-05T15:17:05Z",
+
         call_id: "TS",
 
         parent_call_id: "TS",
@@ -1029,9 +1274,15 @@ describe Freeclimb::CallResult do
 
         start_time: "TS",
 
+        start_time_iso: "2022-07-05T15:17:05Z",
+
         connect_time: "TS",
 
+        connect_time_iso: "2022-07-05T15:17:05Z",
+
         end_time: "TS",
+
+        end_time_iso: "2022-07-05T15:17:05Z",
 
         duration: 1,
 
@@ -1042,6 +1293,10 @@ describe Freeclimb::CallResult do
         direction: Freeclimb::CallDirection::INBOUND,
 
         answered_by: Freeclimb::AnsweredBy::HUMAN,
+
+        caller_name: "TS",
+
+        web_rtc: true,
 
         subresource_uris: obj,
 
@@ -1061,6 +1316,10 @@ describe Freeclimb::CallResult do
 
       revision: 1,
 
+      date_created_iso: "2022-07-05T15:17:05Z",
+
+      date_updated_iso: "2022-07-05T15:17:05Z",
+
       call_id: "TS",
 
       parent_call_id: "TS",
@@ -1077,9 +1336,15 @@ describe Freeclimb::CallResult do
 
       start_time: "TS",
 
+      start_time_iso: "2022-07-05T15:17:05Z",
+
       connect_time: "TS",
 
+      connect_time_iso: "2022-07-05T15:17:05Z",
+
       end_time: "TS",
+
+      end_time_iso: "2022-07-05T15:17:05Z",
 
       duration: 1,
 
@@ -1090,6 +1355,10 @@ describe Freeclimb::CallResult do
       direction: Freeclimb::CallDirection::INBOUND,
 
       answered_by: Freeclimb::AnsweredBy::HUMAN,
+
+      caller_name: "TS",
+
+      web_rtc: true,
 
       application_id: "TS"
     )
@@ -1104,6 +1373,12 @@ describe Freeclimb::CallResult do
     end
     it "returns revision in the form of hash" do
       expect(instance._to_hash(instance.revision)).to eq(instance.revision)
+    end
+    it "returns date_created_iso in the form of hash" do
+      expect(instance._to_hash(instance.date_created_iso)).to eq(instance.date_created_iso)
+    end
+    it "returns date_updated_iso in the form of hash" do
+      expect(instance._to_hash(instance.date_updated_iso)).to eq(instance.date_updated_iso)
     end
     it "returns call_id in the form of hash" do
       expect(instance._to_hash(instance.call_id)).to eq(instance.call_id)
@@ -1129,11 +1404,20 @@ describe Freeclimb::CallResult do
     it "returns start_time in the form of hash" do
       expect(instance._to_hash(instance.start_time)).to eq(instance.start_time)
     end
+    it "returns start_time_iso in the form of hash" do
+      expect(instance._to_hash(instance.start_time_iso)).to eq(instance.start_time_iso)
+    end
     it "returns connect_time in the form of hash" do
       expect(instance._to_hash(instance.connect_time)).to eq(instance.connect_time)
     end
+    it "returns connect_time_iso in the form of hash" do
+      expect(instance._to_hash(instance.connect_time_iso)).to eq(instance.connect_time_iso)
+    end
     it "returns end_time in the form of hash" do
       expect(instance._to_hash(instance.end_time)).to eq(instance.end_time)
+    end
+    it "returns end_time_iso in the form of hash" do
+      expect(instance._to_hash(instance.end_time_iso)).to eq(instance.end_time_iso)
     end
     it "returns duration in the form of hash" do
       expect(instance._to_hash(instance.duration)).to eq(instance.duration)
@@ -1149,6 +1433,12 @@ describe Freeclimb::CallResult do
     end
     it "returns answered_by in the form of hash" do
       expect(instance._to_hash(instance.answered_by)).to eq(instance.answered_by)
+    end
+    it "returns caller_name in the form of hash" do
+      expect(instance._to_hash(instance.caller_name)).to eq(instance.caller_name)
+    end
+    it "returns web_rtc in the form of hash" do
+      expect(instance._to_hash(instance.web_rtc)).to eq(instance.web_rtc)
     end
     it "returns subresource_uris in the form of hash" do
       expect(instance._to_hash(instance.subresource_uris)).to eq(instance.subresource_uris)

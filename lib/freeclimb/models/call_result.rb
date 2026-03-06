@@ -25,6 +25,12 @@ module Freeclimb
     # Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
     attr_accessor :revision
 
+    # The date that this resource was created in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z).
+    attr_accessor :date_created_iso
+
+    # The date that this resource was last updated in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z).
+    attr_accessor :date_updated_iso
+
     # String that uniquely identifies this Call resource.
     attr_accessor :call_id
 
@@ -48,11 +54,20 @@ module Freeclimb
     # Start time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed.
     attr_accessor :start_time
 
+    # Start time of the Call in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call has not yet been dialed.
+    attr_accessor :start_time_iso
+
     # Time the Call was answered (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call has not yet been dialed.
     attr_accessor :connect_time
 
+    # Time the Call was answered in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call has not yet been dialed.
+    attr_accessor :connect_time_iso
+
     # End time of the Call (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT). Empty if the Call did not complete successfully.
     attr_accessor :end_time
+
+    # End time of the Call in ISO 8601 format (e.g., 2022-01-01T00:00:00.000Z). Empty if the Call did not complete successfully.
+    attr_accessor :end_time_iso
 
     # Total length of the Call in seconds. Measures time between startTime and endTime. This value is empty for busy, failed, unanswered or ongoing Calls.
     attr_accessor :duration
@@ -67,7 +82,12 @@ module Freeclimb
 
     attr_accessor :answered_by
 
-    # The list of subresources for this Call. These include things like logs and recordings associated with the Call.
+    # The caller ID name (CNAM) for this Call. Empty if unavailable.
+    attr_accessor :caller_name
+
+    # Indicates whether this Call was initiated via WebRTC.
+    attr_accessor :web_rtc
+
     attr_accessor :subresource_uris
 
     # ApplicationId associated with the Call.
@@ -102,6 +122,8 @@ module Freeclimb
         date_created: :dateCreated,
         date_updated: :dateUpdated,
         revision: :revision,
+        date_created_iso: :dateCreatedISO,
+        date_updated_iso: :dateUpdatedISO,
         call_id: :callId,
         parent_call_id: :parentCallId,
         account_id: :accountId,
@@ -110,13 +132,18 @@ module Freeclimb
         phone_number_id: :phoneNumberId,
         status: :status,
         start_time: :startTime,
+        start_time_iso: :startTimeISO,
         connect_time: :connectTime,
+        connect_time_iso: :connectTimeISO,
         end_time: :endTime,
+        end_time_iso: :endTimeISO,
         duration: :duration,
         connect_duration: :connectDuration,
         audio_stream_duration: :audioStreamDuration,
         direction: :direction,
         answered_by: :answeredBy,
+        caller_name: :callerName,
+        web_rtc: :webRTC,
         subresource_uris: :subresourceUris,
         application_id: :applicationId
       }
@@ -134,6 +161,8 @@ module Freeclimb
         date_created: :String,
         date_updated: :String,
         revision: :Integer,
+        date_created_iso: :Time,
+        date_updated_iso: :Time,
         call_id: :String,
         parent_call_id: :String,
         account_id: :String,
@@ -142,14 +171,19 @@ module Freeclimb
         phone_number_id: :String,
         status: :CallStatus,
         start_time: :String,
+        start_time_iso: :Time,
         connect_time: :String,
+        connect_time_iso: :Time,
         end_time: :String,
+        end_time_iso: :Time,
         duration: :Integer,
         connect_duration: :Integer,
         audio_stream_duration: :Integer,
         direction: :CallDirection,
         answered_by: :AnsweredBy,
-        subresource_uris: :Object,
+        caller_name: :String,
+        web_rtc: :Boolean,
+        subresource_uris: :CallResultAllOfSubresourceUris,
         application_id: :String
       }
     end
@@ -157,6 +191,8 @@ module Freeclimb
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :date_created_iso,
+        :date_updated_iso,
         :call_id,
         :parent_call_id,
         :account_id,
@@ -165,13 +201,18 @@ module Freeclimb
         :phone_number_id,
         :status,
         :start_time,
+        :start_time_iso,
         :connect_time,
+        :connect_time_iso,
         :end_time,
+        :end_time_iso,
         :duration,
         :connect_duration,
         :audio_stream_duration,
         :direction,
         :answered_by,
+        :caller_name,
+        :web_rtc,
         :subresource_uris,
         :application_id
       ])
@@ -215,6 +256,14 @@ module Freeclimb
         self.revision = attributes[:revision]
       end
 
+      if attributes.key?(:date_created_iso)
+        self.date_created_iso = attributes[:date_created_iso]
+      end
+
+      if attributes.key?(:date_updated_iso)
+        self.date_updated_iso = attributes[:date_updated_iso]
+      end
+
       if attributes.key?(:call_id)
         self.call_id = attributes[:call_id]
       end
@@ -247,12 +296,24 @@ module Freeclimb
         self.start_time = attributes[:start_time]
       end
 
+      if attributes.key?(:start_time_iso)
+        self.start_time_iso = attributes[:start_time_iso]
+      end
+
       if attributes.key?(:connect_time)
         self.connect_time = attributes[:connect_time]
       end
 
+      if attributes.key?(:connect_time_iso)
+        self.connect_time_iso = attributes[:connect_time_iso]
+      end
+
       if attributes.key?(:end_time)
         self.end_time = attributes[:end_time]
+      end
+
+      if attributes.key?(:end_time_iso)
+        self.end_time_iso = attributes[:end_time_iso]
       end
 
       if attributes.key?(:duration)
@@ -273,6 +334,14 @@ module Freeclimb
 
       if attributes.key?(:answered_by)
         self.answered_by = attributes[:answered_by]
+      end
+
+      if attributes.key?(:caller_name)
+        self.caller_name = attributes[:caller_name]
+      end
+
+      if attributes.key?(:web_rtc)
+        self.web_rtc = attributes[:web_rtc]
       end
 
       if attributes.key?(:subresource_uris)
@@ -309,6 +378,8 @@ module Freeclimb
         date_created == other.date_created &&
         date_updated == other.date_updated &&
         revision == other.revision &&
+        date_created_iso == other.date_created_iso &&
+        date_updated_iso == other.date_updated_iso &&
         call_id == other.call_id &&
         parent_call_id == other.parent_call_id &&
         account_id == other.account_id &&
@@ -317,13 +388,18 @@ module Freeclimb
         phone_number_id == other.phone_number_id &&
         status == other.status &&
         start_time == other.start_time &&
+        start_time_iso == other.start_time_iso &&
         connect_time == other.connect_time &&
+        connect_time_iso == other.connect_time_iso &&
         end_time == other.end_time &&
+        end_time_iso == other.end_time_iso &&
         duration == other.duration &&
         connect_duration == other.connect_duration &&
         audio_stream_duration == other.audio_stream_duration &&
         direction == other.direction &&
         answered_by == other.answered_by &&
+        caller_name == other.caller_name &&
+        web_rtc == other.web_rtc &&
         subresource_uris == other.subresource_uris &&
         application_id == other.application_id
     end
@@ -337,7 +413,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, call_id, parent_call_id, account_id, from, to, phone_number_id, status, start_time, connect_time, end_time, duration, connect_duration, audio_stream_duration, direction, answered_by, subresource_uris, application_id].hash
+      [uri, date_created, date_updated, revision, date_created_iso, date_updated_iso, call_id, parent_call_id, account_id, from, to, phone_number_id, status, start_time, start_time_iso, connect_time, connect_time_iso, end_time, end_time_iso, duration, connect_duration, audio_stream_duration, direction, answered_by, caller_name, web_rtc, subresource_uris, application_id].hash
     end
 
     # Builds the object from hash

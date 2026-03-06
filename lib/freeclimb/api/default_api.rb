@@ -3049,6 +3049,7 @@ module Freeclimb
     # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
     # @option opts [Integer] :risk_score_min The minimum riskScore that should be included in the list.
     # @option opts [Integer] :risk_score_max The maximum riskScore that should be included in the list.
+    # @option opts [Boolean] :web_rtc Only show Calls that were originated via WebRTC. (default to false)
     # @return [CallList]
     def list_calls(opts = {})
       data, _status_code, _headers = list_calls_with_http_info(opts)
@@ -3068,6 +3069,7 @@ module Freeclimb
     # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
     # @option opts [Integer] :risk_score_min The minimum riskScore that should be included in the list.
     # @option opts [Integer] :risk_score_max The maximum riskScore that should be included in the list.
+    # @option opts [Boolean] :web_rtc Only show Calls that were originated via WebRTC.
     # @return [Array<(CallList, Integer, Hash)>] CallList data, response status code and response headers
     def list_calls_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -3098,6 +3100,7 @@ module Freeclimb
       query_params[:applicationId] = @api_client.build_collection_param(opts[:application_id], :multi) if !opts[:application_id].nil?
       query_params[:riskScoreMin] = opts[:risk_score_min] if !opts[:risk_score_min].nil?
       query_params[:riskScoreMax] = opts[:risk_score_max] if !opts[:risk_score_max].nil?
+      query_params[:webRTC] = opts[:web_rtc] if !opts[:web_rtc].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

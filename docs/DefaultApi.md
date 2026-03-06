@@ -3358,7 +3358,8 @@ opts = {
   parent_call_id: 'parent_call_id_example', # String | Only show Calls spawned by the call with this ID.
   application_id: ['inner_example'], # Array<String> | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
   risk_score_min: 56, # Integer | The minimum riskScore that should be included in the list.
-  risk_score_max: 56 # Integer | The maximum riskScore that should be included in the list.
+  risk_score_max: 56, # Integer | The maximum riskScore that should be included in the list.
+  web_rtc: true # Boolean | Only show Calls that were originated via WebRTC.
 }
 
 begin
@@ -3404,6 +3405,7 @@ end
 | **application_id** | [**Array&lt;String&gt;**](String.md) | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. | [optional] |
 | **risk_score_min** | **Integer** | The minimum riskScore that should be included in the list. | [optional] |
 | **risk_score_max** | **Integer** | The maximum riskScore that should be included in the list. | [optional] |
+| **web_rtc** | **Boolean** | Only show Calls that were originated via WebRTC. | [optional][default to false] |
 
 
 ### Return type

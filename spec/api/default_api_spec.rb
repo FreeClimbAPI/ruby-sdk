@@ -293,6 +293,8 @@ describe "DefaultApi" do
     @start_time_list_conference_recordings_test_value = "startTime_example"
 
     @end_time_list_conference_recordings_test_value = "endTime_example"
+
+    @web_rtc_list_calls_test_value = true
   end
 
   after do
@@ -1244,6 +1246,7 @@ describe "DefaultApi" do
   # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
   # @option opts [Integer] :risk_score_min The minimum riskScore that should be included in the list.
   # @option opts [Integer] :risk_score_max The maximum riskScore that should be included in the list.
+  # @option opts [Boolean] :web_rtc Only show Calls that were originated via WebRTC.
   # @return [CallList]
   describe "list_calls test" do
     it "should work" do
@@ -1258,10 +1261,11 @@ describe "DefaultApi" do
       application_id = @application_id_list_calls_test_value
       risk_score_min = @risk_score_min_list_calls_test_value
       risk_score_max = @risk_score_max_list_calls_test_value
+      web_rtc = @web_rtc_list_calls_test_value
 
       result = @api_instance.list_calls(
         {
-          used_audio_stream: used_audio_stream, active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id, risk_score_min: risk_score_min, risk_score_max: risk_score_max
+          used_audio_stream: used_audio_stream, active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id, risk_score_min: risk_score_min, risk_score_max: risk_score_max, web_rtc: web_rtc
         }
       )
 
@@ -2089,6 +2093,7 @@ describe "DefaultApi" do
   # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
   # @option opts [Integer] :risk_score_min The minimum riskScore that should be included in the list.
   # @option opts [Integer] :risk_score_max The maximum riskScore that should be included in the list.
+  # @option opts [Boolean] :web_rtc Only show Calls that were originated via WebRTC.
   # @return [CallList]
   describe "list_calls_get_next_page test" do
     it "should work" do
@@ -2103,10 +2108,11 @@ describe "DefaultApi" do
       application_id = @application_id_list_calls_test_value
       risk_score_min = @risk_score_min_list_calls_test_value
       risk_score_max = @risk_score_max_list_calls_test_value
+      web_rtc = @web_rtc_list_calls_test_value
 
       result = @api_instance.list_calls(
         {
-          used_audio_stream: used_audio_stream, active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id, risk_score_min: risk_score_min, risk_score_max: risk_score_max
+          used_audio_stream: used_audio_stream, active: active, to: to, from: from, status: status, start_time: start_time, end_time: end_time, parent_call_id: parent_call_id, application_id: application_id, risk_score_min: risk_score_min, risk_score_max: risk_score_max, web_rtc: web_rtc
         }
       )
       result.next_page_uri = "/Accounts/{accountId}/Calls?cursor=1".sub("{accountId}", @account_id_test_value)

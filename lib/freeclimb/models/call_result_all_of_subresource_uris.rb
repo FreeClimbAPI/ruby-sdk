@@ -12,58 +12,19 @@ require "date"
 require "time"
 
 module Freeclimb
-  class QueueResult
-    # The URI for this resource, relative to /apiserver.
-    attr_accessor :uri
+  # The list of subresources for this Call. These include things like logs and recordings associated with the Call.
+  class CallResultAllOfSubresourceUris
+    # The URI for the logs associated with this Call.
+    attr_accessor :logs
 
-    # The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
-    attr_accessor :date_created
-
-    # The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
-    attr_accessor :date_updated
-
-    # Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
-    attr_accessor :revision
-
-    # ID of the account that created this Queue.
-    attr_accessor :account_id
-
-    # A string that uniquely identifies this Queue resource.
-    attr_accessor :queue_id
-
-    # A description for this Queue.
-    attr_accessor :_alias
-
-    # The maximum number of Calls permitted in the Queue. Default is 100. Maximum is 1000.
-    attr_accessor :max_size
-
-    # Count of Calls currently in the Queue.
-    attr_accessor :current_size
-
-    # The average amount of time (in seconds) for a call to be removed from the queue.
-    attr_accessor :average_queue_removal_time
-
-    # The average wait time (in seconds) of all Calls in the Queue.
-    attr_accessor :average_wait_time
-
-    # List of subresources for this Queue (which includes Queue members).
-    attr_accessor :subresource_uris
+    # The URI for the recordings associated with this Call.
+    attr_accessor :recordings
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        uri: :uri,
-        date_created: :dateCreated,
-        date_updated: :dateUpdated,
-        revision: :revision,
-        account_id: :accountId,
-        queue_id: :queueId,
-        _alias: :alias,
-        max_size: :maxSize,
-        current_size: :currentSize,
-        average_queue_removal_time: :averageQueueRemovalTime,
-        average_wait_time: :averageWaitTime,
-        subresource_uris: :subresourceUris
+        logs: :logs,
+        recordings: :recordings
       }
     end
 
@@ -75,103 +36,37 @@ module Freeclimb
     # Attribute type mapping.
     def self.openapi_types
       {
-        uri: :String,
-        date_created: :String,
-        date_updated: :String,
-        revision: :Integer,
-        account_id: :String,
-        queue_id: :String,
-        _alias: :String,
-        max_size: :Integer,
-        current_size: :Integer,
-        average_queue_removal_time: :Integer,
-        average_wait_time: :Integer,
-        subresource_uris: :Object
+        logs: :String,
+        recordings: :String
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
-      Set.new([
-        :account_id,
-        :queue_id,
-        :_alias,
-        :max_size,
-        :current_size,
-        :average_queue_removal_time,
-        :average_wait_time,
-        :subresource_uris
-      ])
-    end
-
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-        :MutableResourceModel
-      ]
+      Set.new([])
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if !attributes.is_a?(Hash)
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::QueueResult` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::CallResultAllOfSubresourceUris` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if !self.class.attribute_map.key?(k.to_sym)
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::QueueResult`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::CallResultAllOfSubresourceUris`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:uri)
-        self.uri = attributes[:uri]
+      if attributes.key?(:logs)
+        self.logs = attributes[:logs]
       end
 
-      if attributes.key?(:date_created)
-        self.date_created = attributes[:date_created]
-      end
-
-      if attributes.key?(:date_updated)
-        self.date_updated = attributes[:date_updated]
-      end
-
-      if attributes.key?(:revision)
-        self.revision = attributes[:revision]
-      end
-
-      if attributes.key?(:account_id)
-        self.account_id = attributes[:account_id]
-      end
-
-      if attributes.key?(:queue_id)
-        self.queue_id = attributes[:queue_id]
-      end
-
-      if attributes.key?(:_alias)
-        self._alias = attributes[:_alias]
-      end
-
-      if attributes.key?(:max_size)
-        self.max_size = attributes[:max_size]
-      end
-
-      if attributes.key?(:current_size)
-        self.current_size = attributes[:current_size]
-      end
-
-      if attributes.key?(:average_queue_removal_time)
-        self.average_queue_removal_time = attributes[:average_queue_removal_time]
-      end
-
-      if attributes.key?(:average_wait_time)
-        self.average_wait_time = attributes[:average_wait_time]
-      end
-
-      if attributes.key?(:subresource_uris)
-        self.subresource_uris = attributes[:subresource_uris]
+      if attributes.key?(:recordings)
+        self.recordings = attributes[:recordings]
       end
     end
 
@@ -184,7 +79,7 @@ module Freeclimb
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      if @uri.nil?
+      if @logs.nil?
         false
       else
         list_invalid_properties.length == 0
@@ -196,18 +91,8 @@ module Freeclimb
     def ==(other)
       return true if equal?(other)
       self.class == other.class &&
-        uri == other.uri &&
-        date_created == other.date_created &&
-        date_updated == other.date_updated &&
-        revision == other.revision &&
-        account_id == other.account_id &&
-        queue_id == other.queue_id &&
-        _alias == other._alias &&
-        max_size == other.max_size &&
-        current_size == other.current_size &&
-        average_queue_removal_time == other.average_queue_removal_time &&
-        average_wait_time == other.average_wait_time &&
-        subresource_uris == other.subresource_uris
+        logs == other.logs &&
+        recordings == other.recordings
     end
 
     # @see the `==` method
@@ -219,7 +104,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, account_id, queue_id, _alias, max_size, current_size, average_queue_removal_time, average_wait_time, subresource_uris].hash
+      [logs, recordings].hash
     end
 
     # Builds the object from hash

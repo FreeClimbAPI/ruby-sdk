@@ -193,6 +193,7 @@ Class | Method | HTTP request | Description
  - [Freeclimb::CallEndedReason](docs/CallEndedReason.md)
  - [Freeclimb::CallList](docs/CallList.md)
  - [Freeclimb::CallResult](docs/CallResult.md)
+ - [Freeclimb::CallResultAllOfSubresourceUris](docs/CallResultAllOfSubresourceUris.md)
  - [Freeclimb::CallStatus](docs/CallStatus.md)
  - [Freeclimb::CallStatusWebhook](docs/CallStatusWebhook.md)
  - [Freeclimb::Capabilities](docs/Capabilities.md)

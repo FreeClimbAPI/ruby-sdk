@@ -26,6 +26,7 @@ docs/CallDirection.md
 docs/CallEndedReason.md
 docs/CallList.md
 docs/CallResult.md
+docs/CallResultAllOfSubresourceUris.md
 docs/CallStatus.md
 docs/CallStatusWebhook.md
 docs/Capabilities.md
@@ -189,6 +190,7 @@ lib/freeclimb/models/call_direction.rb
 lib/freeclimb/models/call_ended_reason.rb
 lib/freeclimb/models/call_list.rb
 lib/freeclimb/models/call_result.rb
+lib/freeclimb/models/call_result_all_of_subresource_uris.rb
 lib/freeclimb/models/call_status.rb
 lib/freeclimb/models/call_status_webhook.rb
 lib/freeclimb/models/capabilities.rb
@@ -346,6 +348,7 @@ spec/models/call_control_webhook_spec.rb
 spec/models/call_direction_spec.rb
 spec/models/call_ended_reason_spec.rb
 spec/models/call_list_spec.rb
+spec/models/call_result_all_of_subresource_uris_spec.rb
 spec/models/call_result_spec.rb
 spec/models/call_status_spec.rb
 spec/models/call_status_webhook_spec.rb

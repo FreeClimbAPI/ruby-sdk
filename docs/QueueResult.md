@@ -14,6 +14,7 @@
 | **max_size** | **Integer** | The maximum number of Calls permitted in the Queue. Default is 100. Maximum is 1000. | [optional] |
 | **current_size** | **Integer** | Count of Calls currently in the Queue. | [optional] |
 | **average_queue_removal_time** | **Integer** | The average amount of time (in seconds) for a call to be removed from the queue. | [optional] |
+| **average_wait_time** | **Integer** | The average wait time (in seconds) of all Calls in the Queue. | [optional] |
 | **subresource_uris** | **Object** | List of subresources for this Queue (which includes Queue members). | [optional] |
 
 ## Example
@@ -32,6 +33,7 @@ instance = Freeclimb::QueueResult.new(
   max_size: null,
   current_size: null,
   average_queue_removal_time: null,
+  average_wait_time: null,
   subresource_uris: null
 )
 ```
