@@ -26,6 +26,7 @@ module Freeclimb
     DEQUEUE = "dequeue".freeze
     QUEUE_WAIT = "queueWait".freeze
     ADD_TO_QUEUE_NOTIFICATION = "addToQueueNotification".freeze
+    AUDIO_STREAM = "audioStream".freeze
     REMOVE_FROM_QUEUE_NOTIFICATION = "removeFromQueueNotification".freeze
     CALL_STATUS = "callStatus".freeze
     CREATE_CONFERENCE = "createConference".freeze

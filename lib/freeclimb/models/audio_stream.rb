@@ -12,135 +12,59 @@ require "date"
 require "time"
 
 module Freeclimb
-  class ConferenceResult
-    # The URI for this resource, relative to /apiserver.
-    attr_accessor :uri
+  # The `AudioStream` command transfers control of the call to a gRPC session.  Upon completion of the gRPC session, if the actionUrl is specified, control can be returned to percl usage or the call will simply be hung up if the actionUrl is not specified.
+  class AudioStream < PerclCommand
+    # The gRPC server location that will receive the grpc stream as a uri and must be port 80 or 443.
+    attr_accessor :location
 
-    # The date that this resource was created (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
-    attr_accessor :date_created
-
-    # The date that this resource was last updated (GMT) in RFC 1123 format (e.g., Mon, 15 Jun 2009 20:45:30 GMT).
-    attr_accessor :date_updated
-
-    # Revision count for the resource. This count is set to 1 on creation and is incremented every time it is updated.
-    attr_accessor :revision
-
-    # A string that uniquely identifies this Conference resource.
-    attr_accessor :conference_id
-
-    # ID of the account that created this Conference.
-    attr_accessor :account_id
-
-    # A description for this Conference.
-    attr_accessor :_alias
-
-    # Setting that controls when a beep is played. One of: always, never, entryOnly, exitOnly. Defaults to always.
-    attr_accessor :play_beep
-
-    # Flag indicating whether recording is enabled for this Conference.
-    attr_accessor :record
-
-    attr_accessor :status
-
-    # URL referencing the audio file to be used as default wait music for the Conference when it is in the populated state.
-    attr_accessor :wait_url
-
-    # URL invoked once the Conference is successfully created.
+    # A request is made to this URL when the gRPC session is concluded. The PerCL script returned in response to the actionUrl will be executed on the call.
     attr_accessor :action_url
 
-    # URL to inform that the Conference status has changed.
-    attr_accessor :status_callback_url
+    # The type and sample rate of the audio being received over the channel must match the environmental sample rate.
+    attr_accessor :content_type
 
-    # The list of subresources for this Conference. This includes participants and/or recordings.
-    attr_accessor :subresource_uris
+    # An arbitrary array of strings passed through FC to the GRPC server can be used to pass state or other information about the call.
+    attr_accessor :meta_data
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    # Enables audio redaction with full call recording while gRPC session is running and blocks logging of any DTMFs received by FreeClimb.
+    attr_accessor :privacy_mode
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        uri: :uri,
-        date_created: :dateCreated,
-        date_updated: :dateUpdated,
-        revision: :revision,
-        conference_id: :conferenceId,
-        account_id: :accountId,
-        _alias: :alias,
-        play_beep: :playBeep,
-        record: :record,
-        status: :status,
-        wait_url: :waitUrl,
+        location: :location,
         action_url: :actionUrl,
-        status_callback_url: :statusCallbackUrl,
-        subresource_uris: :subresourceUris
+        content_type: :contentType,
+        meta_data: :metaData,
+        privacy_mode: :privacyMode
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        uri: :String,
-        date_created: :String,
-        date_updated: :String,
-        revision: :Integer,
-        conference_id: :String,
-        account_id: :String,
-        _alias: :String,
-        play_beep: :PlayBeep,
-        record: :Boolean,
-        status: :ConferenceStatus,
-        wait_url: :String,
+        location: :String,
         action_url: :String,
-        status_callback_url: :String,
-        subresource_uris: :Object
+        content_type: :String,
+        meta_data: :"Array<String>",
+        privacy_mode: :Boolean
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
-      Set.new([
-        :conference_id,
-        :account_id,
-        :_alias,
-        :play_beep,
-        :record,
-        :status,
-        :wait_url,
-        :action_url,
-        :status_callback_url,
-        :subresource_uris
-      ])
+      Set.new([])
     end
 
     # List of class defined in allOf (OpenAPI v3)
     def self.openapi_all_of
       [
-        :MutableResourceModel
+        :PerclCommand
       ]
     end
 
@@ -148,84 +72,59 @@ module Freeclimb
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if !attributes.is_a?(Hash)
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::ConferenceResult` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Freeclimb::AudioStream` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if !self.class.attribute_map.key?(k.to_sym)
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::ConferenceResult`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Freeclimb::AudioStream`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:uri)
-        self.uri = attributes[:uri]
-      end
+      # call parent's initialize
+      super
 
-      if attributes.key?(:date_created)
-        self.date_created = attributes[:date_created]
-      end
-
-      if attributes.key?(:date_updated)
-        self.date_updated = attributes[:date_updated]
-      end
-
-      if attributes.key?(:revision)
-        self.revision = attributes[:revision]
-      end
-
-      if attributes.key?(:conference_id)
-        self.conference_id = attributes[:conference_id]
-      end
-
-      if attributes.key?(:account_id)
-        self.account_id = attributes[:account_id]
-      end
-
-      if attributes.key?(:_alias)
-        self._alias = attributes[:_alias]
-      end
-
-      if attributes.key?(:play_beep)
-        self.play_beep = attributes[:play_beep]
-      end
-
-      if attributes.key?(:record)
-        self.record = attributes[:record]
-      end
-
-      if attributes.key?(:status)
-        self.status = attributes[:status]
-      end
-
-      if attributes.key?(:wait_url)
-        self.wait_url = attributes[:wait_url]
+      if attributes.key?(:location)
+        self.location = attributes[:location]
       end
 
       if attributes.key?(:action_url)
         self.action_url = attributes[:action_url]
       end
 
-      if attributes.key?(:status_callback_url)
-        self.status_callback_url = attributes[:status_callback_url]
+      if attributes.key?(:content_type)
+        self.content_type = attributes[:content_type]
       end
 
-      if attributes.key?(:subresource_uris)
-        self.subresource_uris = attributes[:subresource_uris]
+      if attributes.key?(:meta_data)
+        if (value = attributes[:meta_data]).is_a?(Array)
+          self.meta_data = value
+        end
       end
+
+      if attributes.key?(:privacy_mode)
+        self.privacy_mode = attributes[:privacy_mode]
+      end
+      self.command = "AudioStream"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      []
+      invalid_properties = super
+      if @location.nil?
+        invalid_properties.push('invalid value for "location", location cannot be nil.')
+      end
+
+      invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      if @uri.nil?
+      if @location.nil?
         false
       else
         list_invalid_properties.length == 0
@@ -237,20 +136,11 @@ module Freeclimb
     def ==(other)
       return true if equal?(other)
       self.class == other.class &&
-        uri == other.uri &&
-        date_created == other.date_created &&
-        date_updated == other.date_updated &&
-        revision == other.revision &&
-        conference_id == other.conference_id &&
-        account_id == other.account_id &&
-        _alias == other._alias &&
-        play_beep == other.play_beep &&
-        record == other.record &&
-        status == other.status &&
-        wait_url == other.wait_url &&
+        location == other.location &&
         action_url == other.action_url &&
-        status_callback_url == other.status_callback_url &&
-        subresource_uris == other.subresource_uris
+        content_type == other.content_type &&
+        meta_data == other.meta_data &&
+        privacy_mode == other.privacy_mode && super
     end
 
     # @see the `==` method
@@ -262,7 +152,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, conference_id, account_id, _alias, play_beep, record, status, wait_url, action_url, status_callback_url, subresource_uris].hash
+      [location, action_url, content_type, meta_data, privacy_mode].hash
     end
 
     # Builds the object from hash
@@ -277,6 +167,7 @@ module Freeclimb
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super
       self.class.openapi_types.each_pair do |key, type|
         if attributes[self.class.attribute_map[key]].nil? && self.class.openapi_nullable.include?(key)
           send(:"#{key}=", nil)
@@ -352,7 +243,7 @@ module Freeclimb
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = send(attr)
         if value.nil?

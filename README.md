@@ -182,6 +182,8 @@ Class | Method | HTTP request | Description
  - [Freeclimb::ApplicationList](docs/ApplicationList.md)
  - [Freeclimb::ApplicationRequest](docs/ApplicationRequest.md)
  - [Freeclimb::ApplicationResult](docs/ApplicationResult.md)
+ - [Freeclimb::AudioStream](docs/AudioStream.md)
+ - [Freeclimb::AudioStreamWebhook](docs/AudioStreamWebhook.md)
  - [Freeclimb::AvailableNumber](docs/AvailableNumber.md)
  - [Freeclimb::AvailableNumberList](docs/AvailableNumberList.md)
  - [Freeclimb::BargeInReason](docs/BargeInReason.md)
