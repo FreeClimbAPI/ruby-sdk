@@ -2965,6 +2965,8 @@ module Freeclimb
     # @param call_id [String] String that uniquely identifies this call resource.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
+    # @option opts [String] :start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+    # @option opts [String] :end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
     # @return [RecordingList]
     def list_call_recordings(call_id, opts = {})
       data, _status_code, _headers = list_call_recordings_with_http_info(call_id, opts)
@@ -2975,6 +2977,8 @@ module Freeclimb
     # @param call_id [String] String that uniquely identifies this call resource.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :date_created Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
+    # @option opts [String] :start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+    # @option opts [String] :end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
     # @return [Array<(RecordingList, Integer, Hash)>] RecordingList data, response status code and response headers
     def list_call_recordings_with_http_info(call_id, opts = {})
       if @api_client.config.debugging
@@ -2995,6 +2999,8 @@ module Freeclimb
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:dateCreated] = opts[:date_created] if !opts[:date_created].nil?
+      query_params[:startTime] = opts[:start_time] if !opts[:start_time].nil?
+      query_params[:endTime] = opts[:end_time] if !opts[:end_time].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -3032,6 +3038,7 @@ module Freeclimb
 
     # List Calls
     # @param [Hash] opts the optional parameters
+    # @option opts [Boolean] :used_audio_stream If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned  (default to false)
     # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. (default to false)
     # @option opts [String] :to Only show Calls to this phone number.
     # @option opts [String] :from Only show Calls from this phone number.
@@ -3042,6 +3049,7 @@ module Freeclimb
     # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
     # @option opts [Integer] :risk_score_min The minimum riskScore that should be included in the list.
     # @option opts [Integer] :risk_score_max The maximum riskScore that should be included in the list.
+    # @option opts [Boolean] :web_rtc Only show Calls that were originated via WebRTC. (default to false)
     # @return [CallList]
     def list_calls(opts = {})
       data, _status_code, _headers = list_calls_with_http_info(opts)
@@ -3050,6 +3058,7 @@ module Freeclimb
 
     # List Calls
     # @param [Hash] opts the optional parameters
+    # @option opts [Boolean] :used_audio_stream If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned
     # @option opts [Boolean] :active If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
     # @option opts [String] :to Only show Calls to this phone number.
     # @option opts [String] :from Only show Calls from this phone number.
@@ -3060,6 +3069,7 @@ module Freeclimb
     # @option opts [Array<String>] :application_id Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
     # @option opts [Integer] :risk_score_min The minimum riskScore that should be included in the list.
     # @option opts [Integer] :risk_score_max The maximum riskScore that should be included in the list.
+    # @option opts [Boolean] :web_rtc Only show Calls that were originated via WebRTC.
     # @return [Array<(CallList, Integer, Hash)>] CallList data, response status code and response headers
     def list_calls_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -3079,6 +3089,7 @@ module Freeclimb
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:usedAudioStream] = opts[:used_audio_stream] if !opts[:used_audio_stream].nil?
       query_params[:active] = opts[:active] if !opts[:active].nil?
       query_params[:to] = opts[:to] if !opts[:to].nil?
       query_params[:from] = opts[:from] if !opts[:from].nil?
@@ -3089,6 +3100,7 @@ module Freeclimb
       query_params[:applicationId] = @api_client.build_collection_param(opts[:application_id], :multi) if !opts[:application_id].nil?
       query_params[:riskScoreMin] = opts[:risk_score_min] if !opts[:risk_score_min].nil?
       query_params[:riskScoreMax] = opts[:risk_score_max] if !opts[:risk_score_max].nil?
+      query_params[:webRTC] = opts[:web_rtc] if !opts[:web_rtc].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -3129,6 +3141,8 @@ module Freeclimb
     # @param [Hash] opts the optional parameters
     # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
     # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+    # @option opts [String] :start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+    # @option opts [String] :end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
     # @return [RecordingList]
     def list_conference_recordings(conference_id, opts = {})
       data, _status_code, _headers = list_conference_recordings_with_http_info(conference_id, opts)
@@ -3140,6 +3154,8 @@ module Freeclimb
     # @param [Hash] opts the optional parameters
     # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
     # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+    # @option opts [String] :start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+    # @option opts [String] :end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
     # @return [Array<(RecordingList, Integer, Hash)>] RecordingList data, response status code and response headers
     def list_conference_recordings_with_http_info(conference_id, opts = {})
       if @api_client.config.debugging
@@ -3161,6 +3177,8 @@ module Freeclimb
       query_params = opts[:query_params] || {}
       query_params[:callId] = opts[:call_id] if !opts[:call_id].nil?
       query_params[:dateCreated] = opts[:date_created] if !opts[:date_created].nil?
+      query_params[:startTime] = opts[:start_time] if !opts[:start_time].nil?
+      query_params[:endTime] = opts[:end_time] if !opts[:end_time].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -3582,6 +3600,8 @@ module Freeclimb
     # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
     # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
     # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+    # @option opts [String] :start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+    # @option opts [String] :end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
     # @return [RecordingList]
     def list_recordings(opts = {})
       data, _status_code, _headers = list_recordings_with_http_info(opts)
@@ -3593,6 +3613,8 @@ module Freeclimb
     # @option opts [String] :call_id Show only Recordings made during the Call with this ID.
     # @option opts [String] :conference_id Show only Recordings made during the conference with this ID.
     # @option opts [String] :date_created Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+    # @option opts [String] :start_time Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+    # @option opts [String] :end_time Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
     # @return [Array<(RecordingList, Integer, Hash)>] RecordingList data, response status code and response headers
     def list_recordings_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -3611,6 +3633,8 @@ module Freeclimb
       query_params[:callId] = opts[:call_id] if !opts[:call_id].nil?
       query_params[:conferenceId] = opts[:conference_id] if !opts[:conference_id].nil?
       query_params[:dateCreated] = opts[:date_created] if !opts[:date_created].nil?
+      query_params[:startTime] = opts[:start_time] if !opts[:start_time].nil?
+      query_params[:endTime] = opts[:end_time] if !opts[:end_time].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

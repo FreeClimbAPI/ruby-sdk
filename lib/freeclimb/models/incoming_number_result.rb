@@ -114,7 +114,8 @@ module Freeclimb
         :_alias,
         :region,
         :country,
-        :offnet
+        :offnet,
+        :tfn
       ])
     end
 

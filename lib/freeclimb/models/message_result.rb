@@ -160,6 +160,7 @@ module Freeclimb
         :campaign_id,
         :segment_count,
         :media_urls,
+        :tfn,
         :phone_number_id,
         :application_id
       ])

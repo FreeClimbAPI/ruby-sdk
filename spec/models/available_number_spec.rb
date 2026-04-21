@@ -46,6 +46,13 @@ describe Freeclimb::AvailableNumber do
     end
   end
 
+  describe 'test attribute "_alias"' do
+    it "should work" do
+      instance._alias = "TEST_STRING"
+      expect(instance._alias).to eq("TEST_STRING")
+    end
+  end
+
   describe 'test attribute "region"' do
     it "should work" do
       instance.region = "TEST_STRING"
@@ -70,6 +77,8 @@ describe Freeclimb::AvailableNumber do
 
           phone_number: "TS",
 
+          _alias: "TS",
+
           region: "TS",
 
           country: "TS"
@@ -84,6 +93,8 @@ describe Freeclimb::AvailableNumber do
           campaign_id: "TS",
 
           phone_number: "TS",
+
+          _alias: "TS",
 
           region: "TS",
 
@@ -101,6 +112,8 @@ describe Freeclimb::AvailableNumber do
           campaign_id: "TS",
 
           phone_number: "TS",
+
+          _alias: "TS",
 
           region: "TS",
 
@@ -120,6 +133,8 @@ describe Freeclimb::AvailableNumber do
         campaign_id: "TS",
 
         phone_number: "TS",
+
+        _alias: "TS",
 
         region: "TS",
 
@@ -146,6 +161,8 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
+        _alias: "TS",
+
         region: "TS",
 
         country: "TS"
@@ -156,6 +173,8 @@ describe Freeclimb::AvailableNumber do
         campaign_id: "TS",
 
         phone_number: "TS",
+
+        _alias: "TS",
 
         region: "TS",
 
@@ -172,6 +191,8 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
+        _alias: "TS",
+
         region: "TS",
 
         country: "TS"
@@ -182,6 +203,8 @@ describe Freeclimb::AvailableNumber do
         campaign_id: "ST",
 
         phone_number: "ST",
+
+        _alias: "ST",
 
         region: "ST",
 
@@ -200,6 +223,8 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
+        _alias: "TS",
+
         region: "TS",
 
         country: "TS"
@@ -217,6 +242,8 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
+        _alias: "TS",
+
         region: "TS",
 
         country: "TS"
@@ -227,6 +254,8 @@ describe Freeclimb::AvailableNumber do
         campaign_id: "TS",
 
         phone_number: "TS",
+
+        _alias: "TS",
 
         region: "TS",
 
@@ -245,6 +274,8 @@ describe Freeclimb::AvailableNumber do
 
       phone_number: "TS",
 
+      _alias: "TS",
+
       region: "TS",
 
       country: "TS"
@@ -260,6 +291,10 @@ describe Freeclimb::AvailableNumber do
 
     it "deserializes the data of phone_number" do
       expect(instance._deserialize("String", instance.phone_number)).to be_a_kind_of(String)
+    end
+
+    it "deserializes the data of _alias" do
+      expect(instance._deserialize("String", instance._alias)).to be_a_kind_of(String)
     end
 
     it "deserializes the data of region" do
@@ -280,6 +315,8 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
+        _alias: "TS",
+
         region: "TS",
 
         country: "TS"
@@ -297,6 +334,8 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
+        _alias: "TS",
+
         region: "TS",
 
         country: "TS"
@@ -313,6 +352,8 @@ describe Freeclimb::AvailableNumber do
 
         phone_number: "TS",
 
+        _alias: "TS",
+
         region: "TS",
 
         country: "TS"
@@ -323,6 +364,8 @@ describe Freeclimb::AvailableNumber do
         campaign_id: "TS",
 
         phone_number: "TS",
+
+        _alias: "TS",
 
         region: "TS",
 
@@ -338,6 +381,8 @@ describe Freeclimb::AvailableNumber do
 
       phone_number: "TS",
 
+      _alias: "TS",
+
       region: "TS",
 
       country: "TS"
@@ -350,6 +395,9 @@ describe Freeclimb::AvailableNumber do
     end
     it "returns phone_number in the form of hash" do
       expect(instance._to_hash(instance.phone_number)).to eq(instance.phone_number)
+    end
+    it "returns _alias in the form of hash" do
+      expect(instance._to_hash(instance._alias)).to eq(instance._alias)
     end
     it "returns region in the form of hash" do
       expect(instance._to_hash(instance.region)).to eq(instance.region)

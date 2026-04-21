@@ -21,6 +21,9 @@ module Freeclimb
     # The phone number, in E.164 format (+ country code and phone number: +18003608245).
     attr_accessor :phone_number
 
+    # A nicely-formatted version of the phone number.
+    attr_accessor :_alias
+
     # The state or province of this phone number.
     attr_accessor :region
 
@@ -33,6 +36,7 @@ module Freeclimb
         capabilities: :capabilities,
         campaign_id: :campaignId,
         phone_number: :phoneNumber,
+        _alias: :alias,
         region: :region,
         country: :country
       }
@@ -49,6 +53,7 @@ module Freeclimb
         capabilities: :Capabilities,
         campaign_id: :String,
         phone_number: :String,
+        _alias: :String,
         region: :String,
         country: :String
       }
@@ -59,6 +64,7 @@ module Freeclimb
       Set.new([
         :campaign_id,
         :phone_number,
+        :_alias,
         :region,
         :country
       ])
@@ -89,6 +95,10 @@ module Freeclimb
 
       if attributes.key?(:phone_number)
         self.phone_number = attributes[:phone_number]
+      end
+
+      if attributes.key?(:_alias)
+        self._alias = attributes[:_alias]
       end
 
       if attributes.key?(:region)
@@ -124,6 +134,7 @@ module Freeclimb
         capabilities == other.capabilities &&
         campaign_id == other.campaign_id &&
         phone_number == other.phone_number &&
+        _alias == other._alias &&
         region == other.region &&
         country == other.country
     end
@@ -137,7 +148,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [capabilities, campaign_id, phone_number, region, country].hash
+      [capabilities, campaign_id, phone_number, _alias, region, country].hash
     end
 
     # Builds the object from hash

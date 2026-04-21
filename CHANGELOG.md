@@ -7,6 +7,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+<a name="5.5.0"></a>
+
+## [5.5.0] - 2026-04-06
+
+### Added
+
+- New parameters for fetching recordings (start time and end time)
+- Audio Streaming feature
+
 <a name="5.4.0"></a>
 
 ## [5.4.0] - 2025-10-24

@@ -15,6 +15,8 @@ docs/AnsweredBy.md
 docs/ApplicationList.md
 docs/ApplicationRequest.md
 docs/ApplicationResult.md
+docs/AudioStream.md
+docs/AudioStreamWebhook.md
 docs/AvailableNumber.md
 docs/AvailableNumberList.md
 docs/BargeInReason.md
@@ -26,6 +28,7 @@ docs/CallDirection.md
 docs/CallEndedReason.md
 docs/CallList.md
 docs/CallResult.md
+docs/CallResultAllOfSubresourceUris.md
 docs/CallStatus.md
 docs/CallStatusWebhook.md
 docs/Capabilities.md
@@ -178,6 +181,8 @@ lib/freeclimb/models/answered_by.rb
 lib/freeclimb/models/application_list.rb
 lib/freeclimb/models/application_request.rb
 lib/freeclimb/models/application_result.rb
+lib/freeclimb/models/audio_stream.rb
+lib/freeclimb/models/audio_stream_webhook.rb
 lib/freeclimb/models/available_number.rb
 lib/freeclimb/models/available_number_list.rb
 lib/freeclimb/models/barge_in_reason.rb
@@ -189,6 +194,7 @@ lib/freeclimb/models/call_direction.rb
 lib/freeclimb/models/call_ended_reason.rb
 lib/freeclimb/models/call_list.rb
 lib/freeclimb/models/call_result.rb
+lib/freeclimb/models/call_result_all_of_subresource_uris.rb
 lib/freeclimb/models/call_status.rb
 lib/freeclimb/models/call_status_webhook.rb
 lib/freeclimb/models/capabilities.rb
@@ -336,6 +342,8 @@ spec/models/answered_by_spec.rb
 spec/models/application_list_spec.rb
 spec/models/application_request_spec.rb
 spec/models/application_result_spec.rb
+spec/models/audio_stream_spec.rb
+spec/models/audio_stream_webhook_spec.rb
 spec/models/available_number_list_spec.rb
 spec/models/available_number_spec.rb
 spec/models/barge_in_reason_spec.rb
@@ -346,6 +354,7 @@ spec/models/call_control_webhook_spec.rb
 spec/models/call_direction_spec.rb
 spec/models/call_ended_reason_spec.rb
 spec/models/call_list_spec.rb
+spec/models/call_result_all_of_subresource_uris_spec.rb
 spec/models/call_result_spec.rb
 spec/models/call_status_spec.rb
 spec/models/call_status_webhook_spec.rb

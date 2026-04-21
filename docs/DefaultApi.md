@@ -3272,7 +3272,9 @@ api_instance = Freeclimb::DefaultApi.new
 call_id = 'call_id_example' # String | String that uniquely identifies this call resource.
 
 opts = {
-  date_created: 'date_created_example' # String | Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
+  date_created: 'date_created_example', # String | Only show recordings created on the specified date, in the form *YYYY-MM-DD*.
+  start_time: 'start_time_example', # String | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+  end_time: 'end_time_example' # String | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
 }
 
 begin
@@ -3309,6 +3311,8 @@ end
 | ---- | ---- | ----------- | ----- |
 | **call_id** | **String** | String that uniquely identifies this call resource. |  |
 | **date_created** | **String** | Only show recordings created on the specified date, in the form *YYYY-MM-DD*. | [optional] |
+| **start_time** | **String** | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
+| **end_time** | **String** | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
 
 
 ### Return type
@@ -3344,6 +3348,7 @@ end
 api_instance = Freeclimb::DefaultApi.new
 
 opts = {
+  used_audio_stream: true, # Boolean | If usedAudioStream is set to true then all calls that have a audioStreamDuration > 0 will be returned 
   active: true, # Boolean | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query.
   to: 'to_example', # String | Only show Calls to this phone number.
   from: 'from_example', # String | Only show Calls from this phone number.
@@ -3353,7 +3358,8 @@ opts = {
   parent_call_id: 'parent_call_id_example', # String | Only show Calls spawned by the call with this ID.
   application_id: ['inner_example'], # Array<String> | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
   risk_score_min: 56, # Integer | The minimum riskScore that should be included in the list.
-  risk_score_max: 56 # Integer | The maximum riskScore that should be included in the list.
+  risk_score_max: 56, # Integer | The maximum riskScore that should be included in the list.
+  web_rtc: true # Boolean | Only show Calls that were originated via WebRTC.
 }
 
 begin
@@ -3388,6 +3394,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **used_audio_stream** | **Boolean** | If usedAudioStream is set to true then all calls that have a audioStreamDuration &gt; 0 will be returned  | [optional][default to false] |
 | **active** | **Boolean** | If active is set to true then all calls of the nature queued, ringing, inProgress are returned in the query. | [optional][default to false] |
 | **to** | **String** | Only show Calls to this phone number. | [optional] |
 | **from** | **String** | Only show Calls from this phone number. | [optional] |
@@ -3398,6 +3405,7 @@ end
 | **application_id** | [**Array&lt;String&gt;**](String.md) | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications. | [optional] |
 | **risk_score_min** | **Integer** | The minimum riskScore that should be included in the list. | [optional] |
 | **risk_score_max** | **Integer** | The maximum riskScore that should be included in the list. | [optional] |
+| **web_rtc** | **Boolean** | Only show Calls that were originated via WebRTC. | [optional][default to false] |
 
 
 ### Return type
@@ -3436,7 +3444,9 @@ conference_id = 'conference_id_example' # String | Show only Recordings made dur
 
 opts = {
   call_id: 'call_id_example', # String | Show only Recordings made during the Call with this ID.
-  date_created: 'date_created_example' # String | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+  date_created: 'date_created_example', # String | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+  start_time: 'start_time_example', # String | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+  end_time: 'end_time_example' # String | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
 }
 
 begin
@@ -3474,6 +3484,8 @@ end
 | **conference_id** | **String** | Show only Recordings made during the conference with this ID. |  |
 | **call_id** | **String** | Show only Recordings made during the Call with this ID. | [optional] |
 | **date_created** | **String** | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] |
+| **start_time** | **String** | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
+| **end_time** | **String** | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
 
 
 ### Return type
@@ -3906,7 +3918,9 @@ api_instance = Freeclimb::DefaultApi.new
 opts = {
   call_id: 'call_id_example', # String | Show only Recordings made during the Call with this ID.
   conference_id: 'conference_id_example', # String | Show only Recordings made during the conference with this ID.
-  date_created: 'date_created_example' # String | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+  date_created: 'date_created_example', # String | Only show Recordings created on this date, formatted as *YYYY-MM-DD*.
+  start_time: 'start_time_example', # String | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss.
+  end_time: 'end_time_example' # String | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss.
 }
 
 begin
@@ -3944,6 +3958,8 @@ end
 | **call_id** | **String** | Show only Recordings made during the Call with this ID. | [optional] |
 | **conference_id** | **String** | Show only Recordings made during the conference with this ID. | [optional] |
 | **date_created** | **String** | Only show Recordings created on this date, formatted as *YYYY-MM-DD*. | [optional] |
+| **start_time** | **String** | Only show Recordings created at or after this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
+| **end_time** | **String** | Only show Recordings created at or before this time, given as YYYY-MM-DD hh:mm:ss. | [optional] |
 
 
 ### Return type

@@ -233,6 +233,22 @@ describe Freeclimb::RequestType do
     end
   end
 
+  describe 'test attribute "AUDIO_STREAM"' do
+    it "should work" do
+      expect { Freeclimb::RequestType::AUDIO_STREAM = "audioStream" }.not_to raise_error
+    end
+    it "should serialize to enum" do
+      expectedValue = Freeclimb::RequestType::AUDIO_STREAM
+      calculatedValue = Freeclimb::RequestType.build_from_hash("audioStream")
+      expect(expectedValue).to eq(calculatedValue)
+    end
+    it "should deserialize to string" do
+      expectedValue = "audioStream"
+      calculatedValue = Freeclimb::RequestType::AUDIO_STREAM
+      expect(expectedValue).to eq(calculatedValue)
+    end
+  end
+
   describe 'test attribute "REMOVE_FROM_QUEUE_NOTIFICATION"' do
     it "should work" do
       expect { Freeclimb::RequestType::REMOVE_FROM_QUEUE_NOTIFICATION = "removeFromQueueNotification" }.not_to raise_error

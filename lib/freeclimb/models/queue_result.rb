@@ -43,6 +43,9 @@ module Freeclimb
     # The average amount of time (in seconds) for a call to be removed from the queue.
     attr_accessor :average_queue_removal_time
 
+    # The average wait time (in seconds) of all Calls in the Queue.
+    attr_accessor :average_wait_time
+
     # List of subresources for this Queue (which includes Queue members).
     attr_accessor :subresource_uris
 
@@ -59,6 +62,7 @@ module Freeclimb
         max_size: :maxSize,
         current_size: :currentSize,
         average_queue_removal_time: :averageQueueRemovalTime,
+        average_wait_time: :averageWaitTime,
         subresource_uris: :subresourceUris
       }
     end
@@ -81,6 +85,7 @@ module Freeclimb
         max_size: :Integer,
         current_size: :Integer,
         average_queue_removal_time: :Integer,
+        average_wait_time: :Integer,
         subresource_uris: :Object
       }
     end
@@ -94,6 +99,7 @@ module Freeclimb
         :max_size,
         :current_size,
         :average_queue_removal_time,
+        :average_wait_time,
         :subresource_uris
       ])
     end
@@ -160,6 +166,10 @@ module Freeclimb
         self.average_queue_removal_time = attributes[:average_queue_removal_time]
       end
 
+      if attributes.key?(:average_wait_time)
+        self.average_wait_time = attributes[:average_wait_time]
+      end
+
       if attributes.key?(:subresource_uris)
         self.subresource_uris = attributes[:subresource_uris]
       end
@@ -196,6 +206,7 @@ module Freeclimb
         max_size == other.max_size &&
         current_size == other.current_size &&
         average_queue_removal_time == other.average_queue_removal_time &&
+        average_wait_time == other.average_wait_time &&
         subresource_uris == other.subresource_uris
     end
 
@@ -208,7 +219,7 @@ module Freeclimb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [uri, date_created, date_updated, revision, account_id, queue_id, _alias, max_size, current_size, average_queue_removal_time, subresource_uris].hash
+      [uri, date_created, date_updated, revision, account_id, queue_id, _alias, max_size, current_size, average_queue_removal_time, average_wait_time, subresource_uris].hash
     end
 
     # Builds the object from hash

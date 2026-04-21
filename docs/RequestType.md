@@ -17,6 +17,7 @@
 | **DEQUEUE** | **RequestType** |  | Represented in Ruby as "dequeue" |
 | **QUEUE_WAIT** | **RequestType** |  | Represented in Ruby as "queueWait" |
 | **ADD_TO_QUEUE_NOTIFICATION** | **RequestType** |  | Represented in Ruby as "addToQueueNotification" |
+| **AUDIO_STREAM** | **RequestType** |  | Represented in Ruby as "audioStream" |
 | **REMOVE_FROM_QUEUE_NOTIFICATION** | **RequestType** |  | Represented in Ruby as "removeFromQueueNotification" |
 | **CALL_STATUS** | **RequestType** |  | Represented in Ruby as "callStatus" |
 | **CREATE_CONFERENCE** | **RequestType** |  | Represented in Ruby as "createConference" |
