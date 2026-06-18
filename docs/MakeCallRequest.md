@@ -19,18 +19,22 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::MakeCallRequest.new(
-  from: null,
-  to: null,
-  application_id: null,
-  send_digits: null,
-  if_machine: null,
-  if_machine_url: null,
-  timeout: null,
-  parent_call_id: null,
-  privacy_mode: null,
-  call_connect_url: null
-)
+json = '{
+  "from": "+12025551234",
+  "to": "+13035559876",
+  "applicationId": "AP0123456789abcdefABCDEF0123456789abcdef03",
+  "sendDigits": "1234#",
+  "ifMachine": "redirect",
+  "ifMachineUrl": "https://www.myapp.com/ifMachine",
+  "timeout": 30,
+  "parentCallId": "CA0123456789abcdefABCDEF0123456789abcdef04",
+  "privacyMode": false,
+  "callConnectUrl": "https://www.myapp.com/callConnect"
+}'
+
+# create an instance of MakeCallRequest from a JSON string
+instance = Freeclimb::MakeCallRequest.build_from_hash(JSON.parse(json))
 ```
 

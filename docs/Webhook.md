@@ -10,9 +10,13 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::Webhook.new(
-  request_type: null
-)
+json = '{
+  "requestType": "string"
+}'
+
+# create an instance of Webhook from a JSON string
+instance = Freeclimb::Webhook.build_from_hash(JSON.parse(json))
 ```
 

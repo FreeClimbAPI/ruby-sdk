@@ -10,9 +10,14 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::Redirect.new(
-  action_url: null
-)
+json = '{
+  "command": "Redirect",
+  "actionUrl": "https://www.example.com"
+}'
+
+# create an instance of Redirect from a JSON string
+instance = Freeclimb::Redirect.build_from_hash(JSON.parse(json))
 ```
 

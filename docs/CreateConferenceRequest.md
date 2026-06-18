@@ -14,13 +14,17 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::CreateConferenceRequest.new(
-  _alias: null,
-  play_beep: null,
-  record: null,
-  wait_url: null,
-  status_callback_url: null
-)
+json = '{
+  "alias": "Customer Conference",
+  "playBeep": "always",
+  "record": false,
+  "waitUrl": "https://www.myapp.com/waitMusic",
+  "statusCallbackUrl": "https://www.myapp.com/conferenceStatus"
+}'
+
+# create an instance of CreateConferenceRequest from a JSON string
+instance = Freeclimb::CreateConferenceRequest.build_from_hash(JSON.parse(json))
 ```
 

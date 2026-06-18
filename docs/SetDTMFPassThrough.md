@@ -10,9 +10,14 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::SetDTMFPassThrough.new(
-  dtmf_pass_through: null
-)
+json = '{
+  "command": "SetDTMFPassThrough",
+  "dtmfPassThrough": false
+}'
+
+# create an instance of SetDTMFPassThrough from a JSON string
+instance = Freeclimb::SetDTMFPassThrough.build_from_hash(JSON.parse(json))
 ```
 

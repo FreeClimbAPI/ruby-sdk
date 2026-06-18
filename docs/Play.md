@@ -12,11 +12,16 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::Play.new(
-  file: null,
-  loop: null,
-  privacy_mode: null
-)
+json = '{
+  "command": "Play",
+  "file": "string",
+  "loop": 0,
+  "privacyMode": false
+}'
+
+# create an instance of Play from a JSON string
+instance = Freeclimb::Play.build_from_hash(JSON.parse(json))
 ```
 

@@ -9,7 +9,13 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::TerminateConference::[NAME OF ENUM]
+json = '{
+  "command": "TerminateConference"
+}'
+
+# create an instance of TerminateConference from a JSON string
+instance = Freeclimb::TerminateConference.build_from_hash(JSON.parse(json))
 ```
 

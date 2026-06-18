@@ -10,9 +10,14 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::PlayEarlyMedia.new(
-  file: null
-)
+json = '{
+  "command": "PlayEarlyMedia",
+  "file": "string"
+}'
+
+# create an instance of PlayEarlyMedia from a JSON string
+instance = Freeclimb::PlayEarlyMedia.build_from_hash(JSON.parse(json))
 ```
 

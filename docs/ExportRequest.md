@@ -13,12 +13,24 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::ExportRequest.new(
-  resource_type: null,
-  format: null,
-  output: null,
-  query: null
-)
+json = '{
+  "resourceType": "Messages",
+  "format": [
+    "messageId",
+    "dateUpdated",
+    "status"
+  ],
+  "output": {
+    "type": "csv"
+  },
+  "query": {
+    "direction": "inbound"
+  }
+}'
+
+# create an instance of ExportRequest from a JSON string
+instance = Freeclimb::ExportRequest.build_from_hash(JSON.parse(json))
 ```
 

@@ -20,7 +20,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::MessageStatus::[NAME OF ENUM]
 ```
 

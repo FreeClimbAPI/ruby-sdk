@@ -14,13 +14,17 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::CallControlWebhook.new(
-  request_type: null,
-  call_id: null,
-  account_id: null,
-  conference_id: null,
-  digits: null
-)
+json = '{
+  "requestType": "callControl",
+  "callId": "string",
+  "accountId": "string",
+  "conferenceId": "string",
+  "digits": "string"
+}'
+
+# create an instance of CallControlWebhook from a JSON string
+instance = Freeclimb::CallControlWebhook.build_from_hash(JSON.parse(json))
 ```
 

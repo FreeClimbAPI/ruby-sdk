@@ -20,19 +20,23 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::DequeueWebhook.new(
-  request_type: null,
-  call_id: null,
-  account_id: null,
-  from: null,
-  to: null,
-  call_status: null,
-  direction: null,
-  conference_id: null,
-  queue_id: null,
-  queue_result: null,
-  queue_time: null
-)
+json = '{
+  "requestType": "dequeue",
+  "callId": "string",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "queueResult": "string",
+  "queueTime": 0
+}'
+
+# create an instance of DequeueWebhook from a JSON string
+instance = Freeclimb::DequeueWebhook.build_from_hash(JSON.parse(json))
 ```
 

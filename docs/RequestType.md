@@ -33,7 +33,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::RequestType::[NAME OF ENUM]
 ```
 

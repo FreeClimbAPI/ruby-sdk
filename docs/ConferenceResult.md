@@ -23,22 +23,24 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::ConferenceResult.new(
-  uri: null,
-  date_created: null,
-  date_updated: null,
-  revision: null,
-  conference_id: null,
-  account_id: null,
-  _alias: null,
-  play_beep: null,
-  record: null,
-  status: null,
-  wait_url: null,
-  action_url: null,
-  status_callback_url: null,
-  subresource_uris: null
-)
+json = '{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "conferenceId": "string",
+  "accountId": "string",
+  "alias": "string",
+  "record": false,
+  "status": "empty",
+  "waitUrl": "https://www.example.com",
+  "actionUrl": "https://www.example.com",
+  "statusCallbackUrl": "https://www.example.com"
+}'
+
+# create an instance of ConferenceResult from a JSON string
+instance = Freeclimb::ConferenceResult.build_from_hash(JSON.parse(json))
 ```
 

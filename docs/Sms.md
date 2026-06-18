@@ -13,12 +13,17 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::Sms.new(
-  to: null,
-  from: null,
-  text: null,
-  notification_url: null
-)
+json = '{
+  "command": "Sms",
+  "to": "string",
+  "from": "string",
+  "text": "string",
+  "notificationUrl": "https://www.example.com"
+}'
+
+# create an instance of Sms from a JSON string
+instance = Freeclimb::Sms.build_from_hash(JSON.parse(json))
 ```
 

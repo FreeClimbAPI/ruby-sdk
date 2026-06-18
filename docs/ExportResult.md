@@ -21,20 +21,33 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::ExportResult.new(
-  account_id: null,
-  uri: null,
-  date_created: null,
-  date_updated: null,
-  revision: null,
-  export_id: null,
-  status: null,
-  size: null,
-  resource_type: null,
-  query: null,
-  format: null,
-  output: null
-)
+json = '{
+  "accountId": "AC0123456789abcdefABCDEF0123456789abcdef07",
+  "uri": "/Accounts/AC0123456789abcdefABCDEF0123456789abcdef07/Exports/EX0123456789abcdefABCDEF0123456789abcdef08",
+  "dateCreated": "Wed, 26 Jun 2024 15:45:06 UTC",
+  "dateUpdated": "Wed, 26 Jun 2024 15:45:06 UTC",
+  "revision": 1,
+  "exportId": "EX0123456789abcdefABCDEF0123456789abcdef08",
+  "status": "completed",
+  "size": 12893786,
+  "resourceType": "Messages",
+  "query": {
+    "direction": "inbound"
+  },
+  "format": [
+    "messageId",
+    "dateUpdated",
+    "segmentCount",
+    "status"
+  ],
+  "output": {
+    "type": "csv"
+  }
+}'
+
+# create an instance of ExportResult from a JSON string
+instance = Freeclimb::ExportResult.build_from_hash(JSON.parse(json))
 ```
 

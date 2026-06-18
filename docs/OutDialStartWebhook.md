@@ -20,19 +20,23 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::OutDialStartWebhook.new(
-  request_type: null,
-  account_id: null,
-  call_id: null,
-  from: null,
-  to: null,
-  call_status: null,
-  direction: null,
-  conference_id: null,
-  queue_id: null,
-  dial_call_id: null,
-  parent_call_id: null
-)
+json = '{
+  "requestType": "outDialStart",
+  "accountId": "string",
+  "callId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "dialCallId": "string",
+  "parentCallId": "string"
+}'
+
+# create an instance of OutDialStartWebhook from a JSON string
+instance = Freeclimb::OutDialStartWebhook.build_from_hash(JSON.parse(json))
 ```
 

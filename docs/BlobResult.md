@@ -17,16 +17,19 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::BlobResult.new(
-  blob_id: BL88615a9b4ca7e9aad57d9057773fc74268b9caf7,
-  account_id: AC0534faec6b32da45f36166674d65b3903f784141,
-  _alias: null,
-  revision: null,
-  date_created: null,
-  date_updated: null,
-  expires_at: null,
-  blob: null
-)
+json = '{
+  "blobId": "BL0123456789abcdefABCDEF0123456789abcdef02",
+  "accountId": "AC0123456789abcdefABCDEF0123456789abcdef01",
+  "alias": "string",
+  "revision": 0,
+  "dateCreated": "2022-01-01T00:00:00Z",
+  "dateUpdated": "2022-01-01T00:00:00Z",
+  "expiresAt": "2022-01-01T00:00:00Z"
+}'
+
+# create an instance of BlobResult from a JSON string
+instance = Freeclimb::BlobResult.build_from_hash(JSON.parse(json))
 ```
 

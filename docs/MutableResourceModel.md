@@ -13,12 +13,16 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::MutableResourceModel.new(
-  uri: null,
-  date_created: null,
-  date_updated: null,
-  revision: null
-)
+json = '{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0
+}'
+
+# create an instance of MutableResourceModel from a JSON string
+instance = Freeclimb::MutableResourceModel.build_from_hash(JSON.parse(json))
 ```
 

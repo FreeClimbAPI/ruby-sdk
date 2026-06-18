@@ -14,13 +14,20 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::AudioStream.new(
-  location: null,
-  action_url: null,
-  content_type: null,
-  meta_data: null,
-  privacy_mode: null
-)
+json = '{
+  "command": "AudioStream",
+  "location": "https://www.example.com",
+  "actionUrl": "https://www.example.com",
+  "contentType": "string",
+  "metaData": [
+    "string"
+  ],
+  "privacyMode": false
+}'
+
+# create an instance of AudioStream from a JSON string
+instance = Freeclimb::AudioStream.build_from_hash(JSON.parse(json))
 ```
 

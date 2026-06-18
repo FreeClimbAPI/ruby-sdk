@@ -10,9 +10,13 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::FilterLogsRequest.new(
-  pql: null
-)
+json = '{
+  "pql": "2020-06-22T19:42:53.376Z < timestamp < 2020-06-23T19:42:53.376Z"
+}'
+
+# create an instance of FilterLogsRequest from a JSON string
+instance = Freeclimb::FilterLogsRequest.build_from_hash(JSON.parse(json))
 ```
 

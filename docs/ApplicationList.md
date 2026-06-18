@@ -17,16 +17,36 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::ApplicationList.new(
-  total: null,
-  start: null,
-  _end: null,
-  page: null,
-  num_pages: null,
-  page_size: null,
-  next_page_uri: null,
-  applications: null
-)
+json = '{
+  "total": 0,
+  "start": 0,
+  "end": 0,
+  "page": 0,
+  "numPages": 0,
+  "pageSize": 0,
+  "nextPageUri": "string",
+  "applications": [
+    {
+      "uri": "string",
+      "dateCreated": "string",
+      "dateUpdated": "string",
+      "revision": 0,
+      "accountId": "string",
+      "applicationId": "string",
+      "alias": "string",
+      "voiceUrl": "https://www.example.com",
+      "voiceFallbackUrl": "https://www.example.com",
+      "callConnectUrl": "https://www.example.com",
+      "statusCallbackUrl": "https://www.example.com",
+      "smsUrl": "https://www.example.com",
+      "smsFallbackUrl": "https://www.example.com"
+    }
+  ]
+}'
+
+# create an instance of ApplicationList from a JSON string
+instance = Freeclimb::ApplicationList.build_from_hash(JSON.parse(json))
 ```
 

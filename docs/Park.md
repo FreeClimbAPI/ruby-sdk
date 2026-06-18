@@ -12,11 +12,16 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::Park.new(
-  wait_url: null,
-  action_url: null,
-  notification_url: null
-)
+json = '{
+  "command": "Park",
+  "waitUrl": "https://www.example.com",
+  "actionUrl": "https://www.example.com",
+  "notificationUrl": "https://www.example.com"
+}'
+
+# create an instance of Park from a JSON string
+instance = Freeclimb::Park.build_from_hash(JSON.parse(json))
 ```
 

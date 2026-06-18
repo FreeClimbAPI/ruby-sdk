@@ -17,16 +17,28 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::QueueMemberList.new(
-  total: null,
-  start: null,
-  _end: null,
-  page: null,
-  num_pages: null,
-  page_size: null,
-  next_page_uri: null,
-  queue_members: null
-)
+json = '{
+  "total": 0,
+  "start": 0,
+  "end": 0,
+  "page": 0,
+  "numPages": 0,
+  "pageSize": 0,
+  "nextPageUri": "string",
+  "queueMembers": [
+    {
+      "uri": "string",
+      "callId": "string",
+      "waitTime": 0,
+      "position": 0,
+      "dateEnqueued": "string"
+    }
+  ]
+}'
+
+# create an instance of QueueMemberList from a JSON string
+instance = Freeclimb::QueueMemberList.build_from_hash(JSON.parse(json))
 ```
 

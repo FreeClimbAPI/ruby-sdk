@@ -10,9 +10,13 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::PerclCommand.new(
-  command: null
-)
+json = '{
+  "command": "string"
+}'
+
+# create an instance of PerclCommand from a JSON string
+instance = Freeclimb::PerclCommand.build_from_hash(JSON.parse(json))
 ```
 

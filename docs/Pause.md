@@ -10,9 +10,14 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::Pause.new(
-  length: null
-)
+json = '{
+  "command": "Pause",
+  "length": 0
+}'
+
+# create an instance of Pause from a JSON string
+instance = Freeclimb::Pause.build_from_hash(JSON.parse(json))
 ```
 

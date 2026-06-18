@@ -36,7 +36,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::SMSTenDLCBrandStockExchange::[NAME OF ENUM]
 ```
 

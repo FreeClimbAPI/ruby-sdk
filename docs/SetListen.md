@@ -10,9 +10,14 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::SetListen.new(
-  listen: null
-)
+json = '{
+  "command": "SetListen",
+  "listen": false
+}'
+
+# create an instance of SetListen from a JSON string
+instance = Freeclimb::SetListen.build_from_hash(JSON.parse(json))
 ```
 

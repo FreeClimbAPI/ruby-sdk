@@ -12,11 +12,15 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::UpdateConferenceRequest.new(
-  _alias: null,
-  play_beep: null,
-  status: null
-)
+json = '{
+  "alias": "Customer Conference",
+  "playBeep": "always",
+  "status": "empty"
+}'
+
+# create an instance of UpdateConferenceRequest from a JSON string
+instance = Freeclimb::UpdateConferenceRequest.build_from_hash(JSON.parse(json))
 ```
 

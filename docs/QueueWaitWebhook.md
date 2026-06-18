@@ -21,20 +21,24 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::QueueWaitWebhook.new(
-  request_type: null,
-  account_id: null,
-  call_id: null,
-  from: null,
-  to: null,
-  call_status: null,
-  direction: null,
-  conference_id: null,
-  queue_id: null,
-  queue_position: null,
-  queue_time: null,
-  current_queue_size: null
-)
+json = '{
+  "requestType": "queueWait",
+  "accountId": "string",
+  "callId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "queuePosition": "string",
+  "queueTime": 0,
+  "currentQueueSize": 0
+}'
+
+# create an instance of QueueWaitWebhook from a JSON string
+instance = Freeclimb::QueueWaitWebhook.build_from_hash(JSON.parse(json))
 ```
 

@@ -20,19 +20,23 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::MachineDetectedWebhook.new(
-  request_type: null,
-  call_id: null,
-  account_id: null,
-  from: null,
-  to: null,
-  call_status: null,
-  direction: null,
-  conference_id: null,
-  queue_id: null,
-  parent_call_id: null,
-  machine_type: null
-)
+json = '{
+  "requestType": "machineDetected",
+  "callId": "string",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "parentCallId": "string",
+  "machineType": "answering machine"
+}'
+
+# create an instance of MachineDetectedWebhook from a JSON string
+instance = Freeclimb::MachineDetectedWebhook.build_from_hash(JSON.parse(json))
 ```
 

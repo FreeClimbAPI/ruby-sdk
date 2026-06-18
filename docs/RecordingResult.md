@@ -18,17 +18,21 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::RecordingResult.new(
-  uri: null,
-  date_created: null,
-  date_updated: null,
-  revision: null,
-  recording_id: null,
-  account_id: null,
-  call_id: null,
-  duration_sec: null,
-  conference_id: null
-)
+json = '{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "recordingId": "string",
+  "accountId": "string",
+  "callId": "string",
+  "durationSec": 0,
+  "conferenceId": "string"
+}'
+
+# create an instance of RecordingResult from a JSON string
+instance = Freeclimb::RecordingResult.build_from_hash(JSON.parse(json))
 ```
 

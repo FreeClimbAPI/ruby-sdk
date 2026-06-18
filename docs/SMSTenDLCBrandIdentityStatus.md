@@ -13,7 +13,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::SMSTenDLCBrandIdentityStatus::[NAME OF ENUM]
 ```
 

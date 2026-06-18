@@ -15,7 +15,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::ExportStatus::[NAME OF ENUM]
 ```
 

@@ -26,25 +26,29 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::RecordWebhook.new(
-  request_type: null,
-  account_id: null,
-  call_id: null,
-  from: null,
-  to: null,
-  call_status: null,
-  direction: null,
-  conference_id: null,
-  queue_id: null,
-  recording_id: null,
-  recording_url: null,
-  recording_size: null,
-  recording_format: null,
-  recording_duration_sec: null,
-  term_reason: null,
-  parent_call_id: null,
-  privacy_mode: null
-)
+json = '{
+  "requestType": "record",
+  "accountId": "string",
+  "callId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "recordingId": "string",
+  "recordingUrl": "https://www.example.com",
+  "recordingSize": "string",
+  "recordingFormat": "string",
+  "recordingDurationSec": 0,
+  "termReason": "finishKey",
+  "parentCallId": "string",
+  "privacyMode": false
+}'
+
+# create an instance of RecordWebhook from a JSON string
+instance = Freeclimb::RecordWebhook.build_from_hash(JSON.parse(json))
 ```
 

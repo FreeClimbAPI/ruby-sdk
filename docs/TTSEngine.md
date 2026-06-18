@@ -11,10 +11,13 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::TTSEngine.new(
-  name: null,
-  parameters: null
-)
+json = '{
+  "name": "freeclimb.standard"
+}'
+
+# create an instance of TTSEngine from a JSON string
+instance = Freeclimb::TTSEngine.build_from_hash(JSON.parse(json))
 ```
 

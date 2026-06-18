@@ -10,9 +10,13 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::ExportResultOutput.new(
-  type: null
-)
+json = '{
+  "type": "csv"
+}'
+
+# create an instance of ExportResultOutput from a JSON string
+instance = Freeclimb::ExportResultOutput.build_from_hash(JSON.parse(json))
 ```
 

@@ -10,9 +10,14 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::SetTalk.new(
-  talk: null
-)
+json = '{
+  "command": "SetTalk",
+  "talk": false
+}'
+
+# create an instance of SetTalk from a JSON string
+instance = Freeclimb::SetTalk.build_from_hash(JSON.parse(json))
 ```
 

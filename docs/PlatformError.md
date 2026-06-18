@@ -13,12 +13,15 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::PlatformError.new(
-  code: null,
-  call: null,
-  url: null,
-  details: null
-)
+json = '{
+  "code": 0,
+  "call": "Internal Failure",
+  "url": "https://docs.freeclimb.com/reference/error-and-warning-dictionary#0"
+}'
+
+# create an instance of PlatformError from a JSON string
+instance = Freeclimb::PlatformError.build_from_hash(JSON.parse(json))
 ```
 

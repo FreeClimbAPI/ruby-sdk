@@ -15,7 +15,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::GetSpeechReason::[NAME OF ENUM]
 ```
 

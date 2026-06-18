@@ -11,10 +11,14 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::AccountRequest.new(
-  _alias: null,
-  label: null
-)
+json = '{
+  "alias": "My Account",
+  "label": "My Label"
+}'
+
+# create an instance of AccountRequest from a JSON string
+instance = Freeclimb::AccountRequest.build_from_hash(JSON.parse(json))
 ```
 

@@ -20,19 +20,22 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.new(
-  account_id: null,
-  brand_id: null,
-  first_name: John,
-  last_name: Doe,
-  display_name: ABC Mobile,
-  company_name: ABC Inc.,
-  phone: +12024567890,
-  email: null,
-  website: http://www.abcmobile.com,
-  optional_attributes: null,
-  evp_vetting_score: null
-)
+json = '{
+  "accountId": "string",
+  "brandId": "string",
+  "firstName": "John",
+  "lastName": "Doe",
+  "displayName": "ABC Mobile",
+  "companyName": "ABC Inc.",
+  "phone": "+12024567890",
+  "email": "string",
+  "website": "http://www.abcmobile.com",
+  "evpVettingScore": 0
+}'
+
+# create an instance of SMSTenDLCPartnerCampaignBrand from a JSON string
+instance = Freeclimb::SMSTenDLCPartnerCampaignBrand.build_from_hash(JSON.parse(json))
 ```
 

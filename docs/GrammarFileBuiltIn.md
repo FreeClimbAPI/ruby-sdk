@@ -24,7 +24,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::GrammarFileBuiltIn::[NAME OF ENUM]
 ```
 

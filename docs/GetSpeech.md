@@ -22,21 +22,30 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::GetSpeech.new(
-  action_url: null,
-  grammar_type: null,
-  grammar_file: null,
-  grammar_rule: null,
-  play_beep: null,
-  prompts: null,
-  no_input_timeout_ms: null,
-  recognition_timeout_ms: null,
-  confidence_threshold: null,
-  sensitivity_level: null,
-  speech_complete_timeout_ms: null,
-  speech_incomplete_timeout_ms: null,
-  privacy_mode: null
-)
+json = '{
+  "command": "GetSpeech",
+  "actionUrl": "https://www.example.com",
+  "grammarType": "URL",
+  "grammarFile": "string",
+  "grammarRule": "string",
+  "playBeep": false,
+  "prompts": [
+    {
+      "command": "string"
+    }
+  ],
+  "noInputTimeoutMs": 0,
+  "recognitionTimeoutMs": 0,
+  "confidenceThreshold": 0,
+  "sensitivityLevel": 0,
+  "speechCompleteTimeoutMs": 0,
+  "speechIncompleteTimeoutMs": 0,
+  "privacyMode": false
+}'
+
+# create an instance of GetSpeech from a JSON string
+instance = Freeclimb::GetSpeech.build_from_hash(JSON.parse(json))
 ```
 

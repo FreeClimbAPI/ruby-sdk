@@ -12,11 +12,15 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::BuyIncomingNumberRequest.new(
-  phone_number: null,
-  _alias: null,
-  application_id: null
-)
+json = '{
+  "phoneNumber": "+12025551234",
+  "alias": "Main Office Line",
+  "applicationId": "AP0123456789abcdefABCDEF0123456789abcdef03"
+}'
+
+# create an instance of BuyIncomingNumberRequest from a JSON string
+instance = Freeclimb::BuyIncomingNumberRequest.build_from_hash(JSON.parse(json))
 ```
 

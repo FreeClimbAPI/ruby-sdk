@@ -32,31 +32,35 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::TranscribeWebhook.new(
-  request_type: null,
-  account_id: null,
-  call_id: null,
-  from: null,
-  to: null,
-  recording_id: null,
-  recording_url: null,
-  recording_size: null,
-  recording_format: null,
-  recording_duration_ms: null,
-  term_reason: null,
-  record_term_reason: null,
-  digit: null,
-  privacy_for_logging: null,
-  privacy_for_recording: null,
-  barge_in_reason: null,
-  barged_in_prompt_no: null,
-  barged_in_prompt_ms: null,
-  barged_in_prompt_loop_no: null,
-  barge_in_time_ms: null,
-  transcript: null,
-  transcribe_reason: null,
-  transcription_duration_ms: null
-)
+json = '{
+  "requestType": "transcribe",
+  "accountId": "string",
+  "callId": "string",
+  "from": "string",
+  "to": "string",
+  "recordingId": "string",
+  "recordingUrl": "https://www.example.com",
+  "recordingSize": 0,
+  "recordingFormat": "string",
+  "recordingDurationMs": 0,
+  "termReason": "error",
+  "recordTermReason": "finishKey",
+  "digit": "string",
+  "privacyForLogging": false,
+  "privacyForRecording": false,
+  "bargeInReason": "noBargeIn",
+  "bargedInPromptNo": 0,
+  "bargedInPromptMs": 0,
+  "bargedInPromptLoopNo": 0,
+  "bargeInTimeMs": 0,
+  "transcript": "string",
+  "transcribeReason": "internalError",
+  "transcriptionDurationMs": 0
+}'
+
+# create an instance of TranscribeWebhook from a JSON string
+instance = Freeclimb::TranscribeWebhook.build_from_hash(JSON.parse(json))
 ```
 
