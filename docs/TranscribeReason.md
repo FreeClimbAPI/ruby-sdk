@@ -14,7 +14,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::TranscribeReason::[NAME OF ENUM]
 ```
 

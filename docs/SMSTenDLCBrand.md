@@ -40,39 +40,41 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::SMSTenDLCBrand.new(
-  account_id: null,
-  entity_type: null,
-  csp_id: null,
-  brand_id: null,
-  first_name: John,
-  last_name: Doe,
-  display_name: ABC Mobile,
-  company_name: ABC Inc.,
-  ein: 111111111,
-  ein_issuing_country: US,
-  phone: +12024567890,
-  street: 123 6th Ave,
-  city: New York,
-  state: NY,
-  postal_code: 10001,
-  country: US,
-  email: null,
-  stock_symbol: ABC,
-  stock_exchange: null,
-  ip_address: null,
-  website: http://www.abcmobile.com,
-  brand_relationship: null,
-  vertical: null,
-  alt_business_id: null,
-  alt_business_id_type: null,
-  universal_ein: null,
-  reference_id: null,
-  optional_attributes: null,
-  mock: null,
-  identity_status: null,
-  create_date: null
-)
+json = '{
+  "mock": true,
+  "optionalAttributes": {},
+  "accountId": "AC0123456789abcdefABCDEF0123456789abcdef06",
+  "brandId": "BVCEBIJ",
+  "cspId": "SKGC6G0",
+  "firstName": "",
+  "lastName": "",
+  "displayName": "FreeClimb LLC(mock)",
+  "companyName": "FreeClimb LLC",
+  "ein": "843793747",
+  "einIssuingCountry": "US",
+  "phone": "+18475722071",
+  "street": "570 Lake Cook Rd Ste 400",
+  "city": "Deerfield",
+  "state": "IL",
+  "postalCode": "60015",
+  "country": "US",
+  "email": "bmabry@vailsys.com",
+  "stockSymbol": "",
+  "stockExchange": "NASDAQ",
+  "ipAddress": "127.0.0.1",
+  "website": "https://www.freeclimb.com/",
+  "vertical": "TECHNOLOGY",
+  "universalEin": "US_843793747",
+  "referenceId": "ACdeadbeef",
+  "entityType": "PRIVATE_PROFIT",
+  "brandRelationship": "SMALL_ACCOUNT",
+  "identityStatus": "VERIFIED",
+  "createDate": "2022-07-01T20:29:23Z"
+}'
+
+# create an instance of SMSTenDLCBrand from a JSON string
+instance = Freeclimb::SMSTenDLCBrand.build_from_hash(JSON.parse(json))
 ```
 

@@ -18,17 +18,21 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::TFNCampaign.new(
-  account_id: null,
-  campaign_id: cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a,
-  use_case: null,
-  registration_status: null,
-  date_created: null,
-  date_updated: null,
-  date_created_iso: null,
-  date_updated_iso: null,
-  revision: null
-)
+json = '{
+  "accountId": "string",
+  "campaignId": "cmptfn_387ec3f6e03b340553f35f29c8f118cdf3eae08a",
+  "useCase": "string",
+  "registrationStatus": "UNREGISTERED",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "dateCreatedISO": "string",
+  "dateUpdatedISO": "string",
+  "revision": 0
+}'
+
+# create an instance of TFNCampaign from a JSON string
+instance = Freeclimb::TFNCampaign.build_from_hash(JSON.parse(json))
 ```
 

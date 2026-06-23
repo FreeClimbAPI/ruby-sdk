@@ -18,17 +18,23 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::MessageRequest.new(
-  uri: null,
-  date_created: null,
-  date_updated: null,
-  revision: null,
-  from: null,
-  to: null,
-  text: null,
-  notification_url: null,
-  media_urls: null
-)
+json = '{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "from": "+12025551234",
+  "to": "+13035559876",
+  "text": "Hello from FreeClimb!",
+  "notificationUrl": "https://www.myapp.com/messageStatus",
+  "mediaUrls": [
+    "https://www.myapp.com/image.jpg"
+  ]
+}'
+
+# create an instance of MessageRequest from a JSON string
+instance = Freeclimb::MessageRequest.build_from_hash(JSON.parse(json))
 ```
 

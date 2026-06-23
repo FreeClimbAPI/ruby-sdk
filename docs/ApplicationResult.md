@@ -22,21 +22,25 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::ApplicationResult.new(
-  uri: null,
-  date_created: null,
-  date_updated: null,
-  revision: null,
-  account_id: null,
-  application_id: null,
-  _alias: null,
-  voice_url: null,
-  voice_fallback_url: null,
-  call_connect_url: null,
-  status_callback_url: null,
-  sms_url: null,
-  sms_fallback_url: null
-)
+json = '{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "accountId": "string",
+  "applicationId": "string",
+  "alias": "string",
+  "voiceUrl": "https://www.example.com",
+  "voiceFallbackUrl": "https://www.example.com",
+  "callConnectUrl": "https://www.example.com",
+  "statusCallbackUrl": "https://www.example.com",
+  "smsUrl": "https://www.example.com",
+  "smsFallbackUrl": "https://www.example.com"
+}'
+
+# create an instance of ApplicationResult from a JSON string
+instance = Freeclimb::ApplicationResult.build_from_hash(JSON.parse(json))
 ```
 

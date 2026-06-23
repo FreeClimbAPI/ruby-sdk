@@ -11,7 +11,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::IfMachine::[NAME OF ENUM]
 ```
 

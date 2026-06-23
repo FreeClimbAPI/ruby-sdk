@@ -13,7 +13,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::QueueResultStatus::[NAME OF ENUM]
 ```
 

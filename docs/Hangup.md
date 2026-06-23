@@ -10,9 +10,14 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::Hangup.new(
-  reason: null
-)
+json = '{
+  "command": "Hangup",
+  "reason": "string"
+}'
+
+# create an instance of Hangup from a JSON string
+instance = Freeclimb::Hangup.build_from_hash(JSON.parse(json))
 ```
 

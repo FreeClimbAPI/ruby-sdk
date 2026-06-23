@@ -13,12 +13,17 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::Enqueue.new(
-  action_url: null,
-  notification_url: null,
-  queue_id: null,
-  wait_url: null
-)
+json = '{
+  "command": "Enqueue",
+  "actionUrl": "https://www.example.com",
+  "notificationUrl": "https://www.example.com",
+  "queueId": "string",
+  "waitUrl": "https://www.example.com"
+}'
+
+# create an instance of Enqueue from a JSON string
+instance = Freeclimb::Enqueue.build_from_hash(JSON.parse(json))
 ```
 

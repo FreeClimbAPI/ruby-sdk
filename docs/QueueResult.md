@@ -21,20 +21,23 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::QueueResult.new(
-  uri: null,
-  date_created: null,
-  date_updated: null,
-  revision: null,
-  account_id: null,
-  queue_id: null,
-  _alias: null,
-  max_size: null,
-  current_size: null,
-  average_queue_removal_time: null,
-  average_wait_time: null,
-  subresource_uris: null
-)
+json = '{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "accountId": "string",
+  "queueId": "string",
+  "alias": "string",
+  "maxSize": 0,
+  "currentSize": 0,
+  "averageQueueRemovalTime": 0,
+  "averageWaitTime": 0
+}'
+
+# create an instance of QueueResult from a JSON string
+instance = Freeclimb::QueueResult.build_from_hash(JSON.parse(json))
 ```
 

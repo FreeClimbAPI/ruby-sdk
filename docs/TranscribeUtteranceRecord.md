@@ -12,11 +12,15 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::TranscribeUtteranceRecord.new(
-  save_recording: null,
-  max_length_sec: null,
-  rcrd_termination_silence_time_ms: null
-)
+json = '{
+  "saveRecording": false,
+  "maxLengthSec": 60,
+  "rcrdTerminationSilenceTimeMs": 0
+}'
+
+# create an instance of TranscribeUtteranceRecord from a JSON string
+instance = Freeclimb::TranscribeUtteranceRecord.build_from_hash(JSON.parse(json))
 ```
 

@@ -11,10 +11,14 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::QueueRequest.new(
-  _alias: null,
-  max_size: null
-)
+json = '{
+  "alias": "Support Queue",
+  "maxSize": 100
+}'
+
+# create an instance of QueueRequest from a JSON string
+instance = Freeclimb::QueueRequest.build_from_hash(JSON.parse(json))
 ```
 

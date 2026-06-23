@@ -10,9 +10,14 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::Reject.new(
-  reason: null
-)
+json = '{
+  "command": "Reject",
+  "reason": "string"
+}'
+
+# create an instance of Reject from a JSON string
+instance = Freeclimb::Reject.build_from_hash(JSON.parse(json))
 ```
 

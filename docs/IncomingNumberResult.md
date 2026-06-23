@@ -24,23 +24,35 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::IncomingNumberResult.new(
-  uri: null,
-  date_created: null,
-  date_updated: null,
-  revision: null,
-  capabilities: null,
-  campaign_id: null,
-  phone_number_id: null,
-  account_id: null,
-  application_id: null,
-  phone_number: null,
-  _alias: null,
-  region: null,
-  country: null,
-  offnet: null,
-  tfn: null
-)
+json = '{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "capabilities": {
+    "voice": false,
+    "sms": false,
+    "tollFree": false,
+    "tenDLC": false,
+    "shortCode": false
+  },
+  "campaignId": "string",
+  "phoneNumberId": "string",
+  "accountId": "string",
+  "applicationId": "string",
+  "phoneNumber": "string",
+  "alias": "string",
+  "region": "string",
+  "country": "string",
+  "offnet": false,
+  "tfn": {
+    "campaignId": "string"
+  }
+}'
+
+# create an instance of IncomingNumberResult from a JSON string
+instance = Freeclimb::IncomingNumberResult.build_from_hash(JSON.parse(json))
 ```
 

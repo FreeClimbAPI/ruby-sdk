@@ -12,11 +12,18 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::CreateBlobRequest.new(
-  _alias: null,
-  expires_at: 2006-01-02T15:04:05.000Z,
-  blob: null
-)
+json = '{
+  "alias": "customer-profile",
+  "expiresAt": "2006-01-02T15:04:05.000Z",
+  "blob": {
+    "firstName": "John",
+    "lastName": "Doe"
+  }
+}'
+
+# create an instance of CreateBlobRequest from a JSON string
+instance = Freeclimb::CreateBlobRequest.build_from_hash(JSON.parse(json))
 ```
 

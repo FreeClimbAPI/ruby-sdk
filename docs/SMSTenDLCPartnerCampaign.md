@@ -38,37 +38,52 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::SMSTenDLCPartnerCampaign.new(
-  account_id: null,
-  campaign_id: null,
-  status: null,
-  create_date: null,
-  brand_id: null,
-  usecase: null,
-  description: null,
-  embedded_link: null,
-  embedded_phone: null,
-  affiliate_marketing: null,
-  number_pool: null,
-  age_gated: null,
-  direct_lending: null,
-  subscriber_optin: null,
-  subscriber_optout: null,
-  subscriber_help: null,
-  sample1: null,
-  sample2: null,
-  sample3: null,
-  sample4: null,
-  sample5: null,
-  message_flow: null,
-  help_message: null,
-  optin_keywords: null,
-  optout_keywords: null,
-  help_keywords: null,
-  optin_message: null,
-  optout_message: null,
-  brand: null
-)
+json = '{
+  "campaignId": "CX56XX4",
+  "accountId": "AC0123456789abcdefABCDEF0123456789abcdef05",
+  "brandId": "BX56XX4",
+  "usecase": "2FA",
+  "description": "mock campaign.",
+  "sample1": "Your verification code from FreeClimb is 000000. It expires in 10 minutes.",
+  "sample2": null,
+  "sample3": null,
+  "sample4": null,
+  "sample5": null,
+  "messageFlow": null,
+  "helpMessage": null,
+  "status": "EXPIRED",
+  "embeddedLink": false,
+  "embeddedPhone": false,
+  "affiliateMarketing": false,
+  "numberPool": false,
+  "ageGated": false,
+  "directLending": false,
+  "subscriberOptin": true,
+  "subscriberOptout": false,
+  "subscriberHelp": true,
+  "createDate": "2022-07-05T15:17:05Z",
+  "optinKeywords": "START",
+  "optoutKeywords": "STOP",
+  "helpKeywords": "HELP",
+  "optinMessage": "",
+  "optoutMessage": "",
+  "brand": {
+    "optionalAttributes": {},
+    "brandId": "BVCEBIJ",
+    "firstName": "",
+    "lastName": "",
+    "displayName": "FreeClimb LLC(mock)",
+    "companyName": "FreeClimb LLC",
+    "phone": "+18475722071",
+    "email": "bmabry@vailsys.com",
+    "website": "https://www.freeclimb.com/",
+    "evpVettingScore": 22
+  }
+}'
+
+# create an instance of SMSTenDLCPartnerCampaign from a JSON string
+instance = Freeclimb::SMSTenDLCPartnerCampaign.build_from_hash(JSON.parse(json))
 ```
 

@@ -16,15 +16,19 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::PaginationModel.new(
-  total: null,
-  start: null,
-  _end: null,
-  page: null,
-  num_pages: null,
-  page_size: null,
-  next_page_uri: null
-)
+json = '{
+  "total": 0,
+  "start": 0,
+  "end": 0,
+  "page": 0,
+  "numPages": 0,
+  "pageSize": 0,
+  "nextPageUri": "string"
+}'
+
+# create an instance of PaginationModel from a JSON string
+instance = Freeclimb::PaginationModel.build_from_hash(JSON.parse(json))
 ```
 

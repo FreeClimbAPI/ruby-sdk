@@ -14,7 +14,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::SMSTenDLCBrandRelationship::[NAME OF ENUM]
 ```
 

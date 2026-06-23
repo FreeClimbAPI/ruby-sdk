@@ -16,15 +16,18 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::LogResult.new(
-  timestamp: null,
-  level: null,
-  request_id: null,
-  account_id: null,
-  call_id: null,
-  message: null,
-  metadata: null
-)
+json = '{
+  "timestamp": 0,
+  "level": "info",
+  "requestId": "string",
+  "accountId": "string",
+  "callId": "string",
+  "message": "string"
+}'
+
+# create an instance of LogResult from a JSON string
+instance = Freeclimb::LogResult.build_from_hash(JSON.parse(json))
 ```
 

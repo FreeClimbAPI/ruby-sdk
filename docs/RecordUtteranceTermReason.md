@@ -13,7 +13,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::RecordUtteranceTermReason::[NAME OF ENUM]
 ```
 

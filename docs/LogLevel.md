@@ -12,7 +12,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::LogLevel::[NAME OF ENUM]
 ```
 

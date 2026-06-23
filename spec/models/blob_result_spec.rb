@@ -27,15 +27,15 @@ describe Freeclimb::BlobResult do
 
   describe 'test attribute "blob_id"' do
     it "should work" do
-      instance.blob_id = "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7"
-      expect(instance.blob_id).to eq("BL88615a9b4ca7e9aad57d9057773fc74268b9caf7")
+      instance.blob_id = "BL0123456789abcdefABCDEF0123456789abcdef02"
+      expect(instance.blob_id).to eq("BL0123456789abcdefABCDEF0123456789abcdef02")
     end
   end
 
   describe 'test attribute "account_id"' do
     it "should work" do
-      instance.account_id = "AC0534faec6b32da45f36166674d65b3903f784141"
-      expect(instance.account_id).to eq("AC0534faec6b32da45f36166674d65b3903f784141")
+      instance.account_id = "AC0123456789abcdefABCDEF0123456789abcdef01"
+      expect(instance.account_id).to eq("AC0123456789abcdefABCDEF0123456789abcdef01")
     end
   end
 
@@ -92,9 +92,9 @@ describe Freeclimb::BlobResult do
     it "properly initializes with values" do
       expect {
         Freeclimb::BlobResult.new(
-          blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+          blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-          account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+          account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
           _alias: "TS",
 
@@ -113,9 +113,9 @@ describe Freeclimb::BlobResult do
     it "fails to initialize with input argument that is not a hash in Freeclimb::BlobResult" do
       expect {
         Freeclimb::BlobResult.new(
-          blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+          blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-          account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+          account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
           _alias: "TS",
 
@@ -136,9 +136,9 @@ describe Freeclimb::BlobResult do
     it "fails to initialize with invalid attribute" do
       expect {
         Freeclimb::BlobResult.new(
-          blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+          blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-          account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+          account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
           _alias: "TS",
 
@@ -161,9 +161,9 @@ describe Freeclimb::BlobResult do
   describe 'test method "valid"' do
     it "checks if properties are valid" do
       instance = Freeclimb::BlobResult.new(
-        blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+        blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-        account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+        account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
         _alias: "TS",
 
@@ -192,9 +192,9 @@ describe Freeclimb::BlobResult do
       obj_blob = Object.new
 
       instance_1 = Freeclimb::BlobResult.new(
-        blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+        blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-        account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+        account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
         _alias: "TS",
 
@@ -203,9 +203,9 @@ describe Freeclimb::BlobResult do
         blob: obj_blob
       )
       instance_2 = Freeclimb::BlobResult.new(
-        blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+        blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-        account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+        account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
         _alias: "TS",
 
@@ -218,9 +218,9 @@ describe Freeclimb::BlobResult do
 
     it "checks if objects are not equal" do
       instance_1 = Freeclimb::BlobResult.new(
-        blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+        blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-        account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+        account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
         _alias: "TS",
 
@@ -231,9 +231,9 @@ describe Freeclimb::BlobResult do
         blob: Object.new
       )
       instance_2 = Freeclimb::BlobResult.new(
-        blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf71",
+        blob_id: "BL0123456789abcdefABCDEF0123456789abcdef021",
 
-        account_id: "AC0534faec6b32da45f36166674d65b3903f7841411",
+        account_id: "AC0123456789abcdefABCDEF0123456789abcdef011",
 
         _alias: "ST",
 
@@ -248,9 +248,9 @@ describe Freeclimb::BlobResult do
   describe 'test method "hash"' do
     it "calculates hash code" do
       instance = Freeclimb::BlobResult.new(
-        blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+        blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-        account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+        account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
         _alias: "TS",
 
@@ -271,9 +271,9 @@ describe Freeclimb::BlobResult do
   describe 'test method "build_from_hash"' do
     it "builds equivalent model from hash code" do
       instance_1 = Freeclimb::BlobResult.new(
-        blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+        blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-        account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+        account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
         _alias: "TS",
 
@@ -288,9 +288,9 @@ describe Freeclimb::BlobResult do
         blob: Object.new
       )
       instance_2 = Freeclimb::BlobResult.new(
-        blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+        blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-        account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+        account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
         _alias: "TS",
 
@@ -311,9 +311,9 @@ describe Freeclimb::BlobResult do
 
   describe 'test method "_deserialize"' do
     instance = Freeclimb::BlobResult.new(
-      blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+      blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-      account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+      account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
       _alias: "TS",
 
@@ -363,9 +363,9 @@ describe Freeclimb::BlobResult do
   describe 'test method "to_s"' do
     it "returns the string representation of the object" do
       instance = Freeclimb::BlobResult.new(
-        blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+        blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-        account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+        account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
         _alias: "TS",
 
@@ -386,9 +386,9 @@ describe Freeclimb::BlobResult do
   describe 'test method "to_hash"' do
     it "returns the object in the form of hash" do
       instance = Freeclimb::BlobResult.new(
-        blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+        blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-        account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+        account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
         _alias: "TS",
 
@@ -408,9 +408,9 @@ describe Freeclimb::BlobResult do
       obj = Object.new
 
       instance_1 = Freeclimb::BlobResult.new(
-        blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+        blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-        account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+        account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
         _alias: "TS",
 
@@ -425,9 +425,9 @@ describe Freeclimb::BlobResult do
         blob: obj
       )
       instance_2 = Freeclimb::BlobResult.new(
-        blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+        blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-        account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+        account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
         _alias: "TS",
 
@@ -447,9 +447,9 @@ describe Freeclimb::BlobResult do
 
   describe 'test method "_to_hash"' do
     instance = Freeclimb::BlobResult.new(
-      blob_id: "BL88615a9b4ca7e9aad57d9057773fc74268b9caf7",
+      blob_id: "BL0123456789abcdefABCDEF0123456789abcdef02",
 
-      account_id: "AC0534faec6b32da45f36166674d65b3903f784141",
+      account_id: "AC0123456789abcdefABCDEF0123456789abcdef01",
 
       _alias: "TS",
 

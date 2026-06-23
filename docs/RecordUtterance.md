@@ -16,15 +16,20 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::RecordUtterance.new(
-  action_url: null,
-  silence_timeout_ms: null,
-  finish_on_key: null,
-  max_length_sec: null,
-  play_beep: null,
-  auto_start: null,
-  privacy_mode: null
-)
+json = '{
+  "command": "RecordUtterance",
+  "actionUrl": "https://www.example.com",
+  "silenceTimeoutMs": 0,
+  "finishOnKey": "string",
+  "maxLengthSec": 0,
+  "playBeep": false,
+  "autoStart": false,
+  "privacyMode": false
+}'
+
+# create an instance of RecordUtterance from a JSON string
+instance = Freeclimb::RecordUtterance.build_from_hash(JSON.parse(json))
 ```
 

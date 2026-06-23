@@ -20,19 +20,22 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::AccountResult.new(
-  uri: null,
-  date_created: null,
-  date_updated: null,
-  revision: null,
-  account_id: null,
-  api_key: null,
-  _alias: null,
-  label: null,
-  type: null,
-  status: null,
-  subresource_uris: null
-)
+json = '{
+  "uri": "string",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0,
+  "accountId": "string",
+  "apiKey": "string",
+  "alias": "string",
+  "label": "string",
+  "type": "trial",
+  "status": "closed"
+}'
+
+# create an instance of AccountResult from a JSON string
+instance = Freeclimb::AccountResult.build_from_hash(JSON.parse(json))
 ```
 

@@ -22,21 +22,25 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::ConferenceRecordingStatusWebhook.new(
-  request_type: null,
-  call_id: null,
-  account_id: null,
-  from: null,
-  to: null,
-  call_status: null,
-  direction: null,
-  conference_id: null,
-  queue_id: null,
-  status: null,
-  recording_url: null,
-  recording_id: null,
-  recording_duration_sec: null
-)
+json = '{
+  "requestType": "conferenceRecordingStatus",
+  "callId": "string",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "status": "empty",
+  "recordingUrl": "https://www.example.com",
+  "recordingId": "string",
+  "recordingDurationSec": 0
+}'
+
+# create an instance of ConferenceRecordingStatusWebhook from a JSON string
+instance = Freeclimb::ConferenceRecordingStatusWebhook.build_from_hash(JSON.parse(json))
 ```
 

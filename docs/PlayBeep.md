@@ -13,7 +13,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::PlayBeep::[NAME OF ENUM]
 ```
 

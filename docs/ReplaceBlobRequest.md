@@ -10,9 +10,16 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::ReplaceBlobRequest.new(
-  blob: null
-)
+json = '{
+  "blob": {
+    "firstName": "John",
+    "lastName": "Doe"
+  }
+}'
+
+# create an instance of ReplaceBlobRequest from a JSON string
+instance = Freeclimb::ReplaceBlobRequest.build_from_hash(JSON.parse(json))
 ```
 

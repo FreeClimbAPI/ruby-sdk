@@ -35,7 +35,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::Language::[NAME OF ENUM]
 ```
 

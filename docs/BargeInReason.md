@@ -12,7 +12,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::BargeInReason::[NAME OF ENUM]
 ```
 

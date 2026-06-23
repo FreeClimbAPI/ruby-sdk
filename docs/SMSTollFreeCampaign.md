@@ -16,15 +16,19 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::SMSTollFreeCampaign.new(
-  account_id: null,
-  campaign_id: null,
-  use_case: null,
-  registration_status: null,
-  date_created: null,
-  date_updated: null,
-  revision: null
-)
+json = '{
+  "accountId": "string",
+  "campaignId": "string",
+  "useCase": "string",
+  "registrationStatus": "UNREGISTERED",
+  "dateCreated": "string",
+  "dateUpdated": "string",
+  "revision": 0
+}'
+
+# create an instance of SMSTollFreeCampaign from a JSON string
+instance = Freeclimb::SMSTollFreeCampaign.build_from_hash(JSON.parse(json))
 ```
 

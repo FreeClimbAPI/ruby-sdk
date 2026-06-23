@@ -19,18 +19,23 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::AddToConference.new(
-  allow_call_control: null,
-  call_control_sequence: null,
-  call_control_url: null,
-  conference_id: null,
-  leave_conference_url: null,
-  listen: null,
-  notification_url: null,
-  start_conf_on_enter: null,
-  talk: null,
-  dtmf_pass_through: null
-)
+json = '{
+  "command": "AddToConference",
+  "allowCallControl": false,
+  "callControlSequence": "string",
+  "callControlUrl": "https://www.example.com",
+  "conferenceId": "string",
+  "leaveConferenceUrl": "https://www.example.com",
+  "listen": false,
+  "notificationUrl": "https://www.example.com",
+  "startConfOnEnter": false,
+  "talk": false,
+  "dtmfPassThrough": false
+}'
+
+# create an instance of AddToConference from a JSON string
+instance = Freeclimb::AddToConference.build_from_hash(JSON.parse(json))
 ```
 

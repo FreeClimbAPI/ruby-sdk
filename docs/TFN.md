@@ -10,9 +10,13 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::TFN.new(
-  campaign_id: null
-)
+json = '{
+  "campaignId": "string"
+}'
+
+# create an instance of TFN from a JSON string
+instance = Freeclimb::TFN.build_from_hash(JSON.parse(json))
 ```
 

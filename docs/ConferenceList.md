@@ -17,16 +17,35 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::ConferenceList.new(
-  total: null,
-  start: null,
-  _end: null,
-  page: null,
-  num_pages: null,
-  page_size: null,
-  next_page_uri: null,
-  conferences: null
-)
+json = '{
+  "total": 0,
+  "start": 0,
+  "end": 0,
+  "page": 0,
+  "numPages": 0,
+  "pageSize": 0,
+  "nextPageUri": "string",
+  "conferences": [
+    {
+      "uri": "string",
+      "dateCreated": "string",
+      "dateUpdated": "string",
+      "revision": 0,
+      "conferenceId": "string",
+      "accountId": "string",
+      "alias": "string",
+      "record": false,
+      "status": "empty",
+      "waitUrl": "https://www.example.com",
+      "actionUrl": "https://www.example.com",
+      "statusCallbackUrl": "https://www.example.com"
+    }
+  ]
+}'
+
+# create an instance of ConferenceList from a JSON string
+instance = Freeclimb::ConferenceList.build_from_hash(JSON.parse(json))
 ```
 

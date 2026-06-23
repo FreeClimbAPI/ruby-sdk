@@ -18,17 +18,26 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::GetDigits.new(
-  action_url: null,
-  digit_timeout_ms: null,
-  finish_on_key: null,
-  flush_buffer: null,
-  initial_timeout_ms: null,
-  max_digits: null,
-  min_digits: null,
-  prompts: null,
-  privacy_mode: null
-)
+json = '{
+  "command": "GetDigits",
+  "actionUrl": "https://www.example.com",
+  "digitTimeoutMs": 0,
+  "finishOnKey": "string",
+  "flushBuffer": false,
+  "initialTimeoutMs": 0,
+  "maxDigits": 0,
+  "minDigits": 0,
+  "prompts": [
+    {
+      "command": "string"
+    }
+  ],
+  "privacyMode": false
+}'
+
+# create an instance of GetDigits from a JSON string
+instance = Freeclimb::GetDigits.build_from_hash(JSON.parse(json))
 ```
 

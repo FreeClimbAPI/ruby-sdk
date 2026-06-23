@@ -12,11 +12,16 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::SendDigits.new(
-  digits: null,
-  pause_ms: null,
-  privacy_mode: null
-)
+json = '{
+  "command": "SendDigits",
+  "digits": "string",
+  "pauseMs": 0,
+  "privacyMode": false
+}'
+
+# create an instance of SendDigits from a JSON string
+instance = Freeclimb::SendDigits.build_from_hash(JSON.parse(json))
 ```
 

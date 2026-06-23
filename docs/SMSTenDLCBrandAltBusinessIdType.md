@@ -13,7 +13,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::SMSTenDLCBrandAltBusinessIdType::[NAME OF ENUM]
 ```
 

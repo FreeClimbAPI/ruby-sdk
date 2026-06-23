@@ -20,19 +20,23 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::RemoveFromQueueNotificationWebhook.new(
-  request_type: null,
-  account_id: null,
-  call_id: null,
-  from: null,
-  to: null,
-  call_status: null,
-  direction: null,
-  conference_id: null,
-  queue_id: null,
-  queue_result: null,
-  queue_time: null
-)
+json = '{
+  "requestType": "removeFromQueueNotification",
+  "accountId": "string",
+  "callId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "queueResult": "queueFull",
+  "queueTime": 0
+}'
+
+# create an instance of RemoveFromQueueNotificationWebhook from a JSON string
+instance = Freeclimb::RemoveFromQueueNotificationWebhook.build_from_hash(JSON.parse(json))
 ```
 

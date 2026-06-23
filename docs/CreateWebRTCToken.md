@@ -12,11 +12,15 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::CreateWebRTCToken.new(
-  to: null,
-  from: null,
-  uses: null
-)
+json = '{
+  "to": "string",
+  "from": "string",
+  "uses": 0
+}'
+
+# create an instance of CreateWebRTCToken from a JSON string
+instance = Freeclimb::CreateWebRTCToken.build_from_hash(JSON.parse(json))
 ```
 

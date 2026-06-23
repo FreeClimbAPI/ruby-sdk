@@ -10,7 +10,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::ExportOutputType::[NAME OF ENUM]
 ```
 

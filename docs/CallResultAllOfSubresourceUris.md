@@ -11,10 +11,14 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::CallResultAllOfSubresourceUris.new(
-  logs: null,
-  recordings: null
-)
+json = '{
+  "logs": "string",
+  "recordings": "string"
+}'
+
+# create an instance of CallResultAllOfSubresourceUris from a JSON string
+instance = Freeclimb::CallResultAllOfSubresourceUris.build_from_hash(JSON.parse(json))
 ```
 

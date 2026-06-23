@@ -32,7 +32,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::CallEndedReason::[NAME OF ENUM]
 ```
 

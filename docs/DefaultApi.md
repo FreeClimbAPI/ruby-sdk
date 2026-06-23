@@ -160,7 +160,7 @@ end
 
 api_instance = Freeclimb::DefaultApi.new
 
-buy_incoming_number_request = Freeclimb::BuyIncomingNumberRequest.new({phone_number: 'phone_number_example'}) # BuyIncomingNumberRequest | Incoming Number transaction details
+buy_incoming_number_request = Freeclimb::BuyIncomingNumberRequest.new({phone_number: '+12025551234'}) # BuyIncomingNumberRequest | Incoming Number transaction details
 
 
 begin
@@ -231,7 +231,7 @@ end
 api_instance = Freeclimb::DefaultApi.new
 
 opts = {
-  create_conference_request: Freeclimb::CreateConferenceRequest.new({status_callback_url: 'status_callback_url_example'}) # CreateConferenceRequest | Conference to create
+  create_conference_request: Freeclimb::CreateConferenceRequest.new({status_callback_url: 'https://www.myapp.com/conferenceStatus'}) # CreateConferenceRequest | Conference to create
 }
 
 begin
@@ -445,7 +445,7 @@ end
 
 api_instance = Freeclimb::DefaultApi.new
 
-create_blob_request = Freeclimb::CreateBlobRequest.new({blob: 3.56}) # CreateBlobRequest | An object defining a new blob. A request body must be provided but the blob may be empty.
+create_blob_request = Freeclimb::CreateBlobRequest.new({blob: {"firstName":"John","lastName":"Doe"}}) # CreateBlobRequest | An object defining a new blob. A request body must be provided but the blob may be empty.
 
 
 begin
@@ -589,7 +589,7 @@ api_instance = Freeclimb::DefaultApi.new
 knowledge_base_id = 'knowledge_base_id_example' # String | A string that uniquely identifies the KnowledgeBase resource.
 
 opts = {
-  completion_request: Freeclimb::CompletionRequest.new({query: 'query_example'}) # CompletionRequest | Completion request details
+  completion_request: Freeclimb::CompletionRequest.new({query: 'What are your business hours?'}) # CompletionRequest | Completion request details
 }
 
 begin
@@ -1291,7 +1291,7 @@ end
 
 api_instance = Freeclimb::DefaultApi.new
 
-filter_logs_request = Freeclimb::FilterLogsRequest.new({pql: 'pql_example'}) # FilterLogsRequest | Filter logs request paramters
+filter_logs_request = Freeclimb::FilterLogsRequest.new({pql: '2020-06-22T19:42:53.376Z < timestamp < 2020-06-23T19:42:53.376Z'}) # FilterLogsRequest | Filter logs request paramters
 
 
 begin
@@ -3356,7 +3356,7 @@ opts = {
   start_time: 'start_time_example', # String | Only show Calls that started at or after this time, given as YYYY-MM-DD hh:mm:ss.
   end_time: 'end_time_example', # String | Only show Calls that ended at or before this time, given as YYYY-MM- DD hh:mm:ss.
   parent_call_id: 'parent_call_id_example', # String | Only show Calls spawned by the call with this ID.
-  application_id: ['inner_example'], # Array<String> | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
+  application_id: ['AP0123456789abcdefABCDEF0123456789abcdef03'], # Array<String> | Only show calls belonging to the given applicationId. This parameter can be repeated to return calls from multiple Applications.
   risk_score_min: 56, # Integer | The minimum riskScore that should be included in the list.
   risk_score_max: 56, # Integer | The maximum riskScore that should be included in the list.
   web_rtc: true # Boolean | Only show Calls that were originated via WebRTC.
@@ -4080,7 +4080,7 @@ end
 api_instance = Freeclimb::DefaultApi.new
 
 opts = {
-  make_call_request: Freeclimb::MakeCallRequest.new({from: 'from_example', to: 'to_example'}) # MakeCallRequest | Call details for making a call
+  make_call_request: Freeclimb::MakeCallRequest.new({from: '+12025551234', to: '+13035559876'}) # MakeCallRequest | Call details for making a call
 }
 
 begin
@@ -4224,7 +4224,7 @@ api_instance = Freeclimb::DefaultApi.new
 
 blob_id = 'blob_id_example' # String | String that uniquely identifies this Blob resource.
 
-modify_blob_request = Freeclimb::ModifyBlobRequest.new({blob: 3.56}) # ModifyBlobRequest | Request body to specify keys to modify. Or new keys to add onto the already existing blob
+modify_blob_request = Freeclimb::ModifyBlobRequest.new({blob: {"firstName":"John","lastName":"Doe"}}) # ModifyBlobRequest | Request body to specify keys to modify. Or new keys to add onto the already existing blob
 
 
 begin
@@ -4371,7 +4371,7 @@ api_instance = Freeclimb::DefaultApi.new
 
 blob_id = 'blob_id_example' # String | String that uniquely identifies this Blob resource.
 
-replace_blob_request = Freeclimb::ReplaceBlobRequest.new({blob: 3.56}) # ReplaceBlobRequest | JSON object containing blob key the contents of which will be used to override the enitre blob contents.
+replace_blob_request = Freeclimb::ReplaceBlobRequest.new({blob: {"firstName":"John","lastName":"Doe"}}) # ReplaceBlobRequest | JSON object containing blob key the contents of which will be used to override the enitre blob contents.
 
 
 begin
@@ -4442,7 +4442,7 @@ end
 
 api_instance = Freeclimb::DefaultApi.new
 
-message_request = Freeclimb::MessageRequest.new({from: 'from_example', to: 'to_example', text: 'text_example'}) # MessageRequest | Details to create a message
+message_request = Freeclimb::MessageRequest.new({from: '+12025551234', to: '+13035559876', text: 'Hello from FreeClimb!'}) # MessageRequest | Details to create a message
 
 
 begin

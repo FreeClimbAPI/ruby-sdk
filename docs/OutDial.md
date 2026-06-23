@@ -19,18 +19,23 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::OutDial.new(
-  action_url: null,
-  call_connect_url: null,
-  calling_number: null,
-  destination: null,
-  if_machine: null,
-  if_machine_url: null,
-  send_digits: null,
-  status_callback_url: null,
-  timeout: null,
-  privacy_mode: null
-)
+json = '{
+  "command": "OutDial",
+  "actionUrl": "https://www.example.com",
+  "callConnectUrl": "https://www.example.com",
+  "callingNumber": "string",
+  "destination": "string",
+  "ifMachine": "redirect",
+  "ifMachineUrl": "https://www.example.com",
+  "sendDigits": "string",
+  "statusCallbackUrl": "https://www.example.com",
+  "timeout": 0,
+  "privacyMode": false
+}'
+
+# create an instance of OutDial from a JSON string
+instance = Freeclimb::OutDial.build_from_hash(JSON.parse(json))
 ```
 

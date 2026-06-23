@@ -16,15 +16,19 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::ApplicationRequest.new(
-  _alias: null,
-  voice_url: null,
-  voice_fallback_url: null,
-  call_connect_url: null,
-  status_callback_url: null,
-  sms_url: null,
-  sms_fallback_url: null
-)
+json = '{
+  "alias": "Customer Support Line",
+  "voiceUrl": "https://www.myapp.com/voice",
+  "voiceFallbackUrl": "https://www.myapp.com/voiceFallback",
+  "callConnectUrl": "https://www.myapp.com/callConnect",
+  "statusCallbackUrl": "https://www.myapp.com/status",
+  "smsUrl": "https://www.myapp.com/sms",
+  "smsFallbackUrl": "https://www.myapp.com/smsFallback"
+}'
+
+# create an instance of ApplicationRequest from a JSON string
+instance = Freeclimb::ApplicationRequest.build_from_hash(JSON.parse(json))
 ```
 

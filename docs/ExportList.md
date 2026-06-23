@@ -17,16 +17,44 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::ExportList.new(
-  total: null,
-  start: null,
-  _end: null,
-  page: null,
-  num_pages: null,
-  page_size: null,
-  next_page_uri: null,
-  exports: null
-)
+json = '{
+  "total": 0,
+  "start": 0,
+  "end": 0,
+  "page": 0,
+  "numPages": 0,
+  "pageSize": 0,
+  "nextPageUri": "string",
+  "exports": [
+    {
+      "accountId": "AC0123456789abcdefABCDEF0123456789abcdef07",
+      "uri": "/Accounts/AC0123456789abcdefABCDEF0123456789abcdef07/Exports/EX0123456789abcdefABCDEF0123456789abcdef08",
+      "dateCreated": "Wed, 26 Jun 2024 15:45:06 UTC",
+      "dateUpdated": "Wed, 26 Jun 2024 15:45:06 UTC",
+      "revision": 1,
+      "exportId": "EX0123456789abcdefABCDEF0123456789abcdef08",
+      "status": "completed",
+      "size": 12893786,
+      "resourceType": "Messages",
+      "query": {
+        "direction": "inbound"
+      },
+      "format": [
+        "messageId",
+        "dateUpdated",
+        "segmentCount",
+        "status"
+      ],
+      "output": {
+        "type": "csv"
+      }
+    }
+  ]
+}'
+
+# create an instance of ExportList from a JSON string
+instance = Freeclimb::ExportList.build_from_hash(JSON.parse(json))
 ```
 

@@ -14,13 +14,20 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::Say.new(
-  text: null,
-  language: null,
-  engine: null,
-  loop: null,
-  privacy_mode: null
-)
+json = '{
+  "command": "Say",
+  "text": "string",
+  "language": "string",
+  "engine": {
+    "name": "freeclimb.standard"
+  },
+  "loop": 1,
+  "privacyMode": false
+}'
+
+# create an instance of Say from a JSON string
+instance = Freeclimb::Say.build_from_hash(JSON.parse(json))
 ```
 

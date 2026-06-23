@@ -18,17 +18,21 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::AddToQueueNotificationWebhook.new(
-  request_type: null,
-  call_id: null,
-  account_id: null,
-  from: null,
-  to: null,
-  call_status: null,
-  direction: null,
-  conference_id: null,
-  queue_id: null
-)
+json = '{
+  "requestType": "addToQueueNotification",
+  "callId": "string",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string"
+}'
+
+# create an instance of AddToQueueNotificationWebhook from a JSON string
+instance = Freeclimb::AddToQueueNotificationWebhook.build_from_hash(JSON.parse(json))
 ```
 

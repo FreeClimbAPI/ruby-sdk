@@ -17,16 +17,29 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::LogList.new(
-  total: null,
-  start: null,
-  _end: null,
-  page: null,
-  num_pages: null,
-  page_size: null,
-  next_page_uri: null,
-  logs: null
-)
+json = '{
+  "total": 0,
+  "start": 0,
+  "end": 0,
+  "page": 0,
+  "numPages": 0,
+  "pageSize": 0,
+  "nextPageUri": "string",
+  "logs": [
+    {
+      "timestamp": 0,
+      "level": "info",
+      "requestId": "string",
+      "accountId": "string",
+      "callId": "string",
+      "message": "string"
+    }
+  ]
+}'
+
+# create an instance of LogList from a JSON string
+instance = Freeclimb::LogList.build_from_hash(JSON.parse(json))
 ```
 

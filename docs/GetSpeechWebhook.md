@@ -26,25 +26,29 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::GetSpeechWebhook.new(
-  request_type: null,
-  call_id: null,
-  account_id: null,
-  from: null,
-  to: null,
-  call_status: null,
-  direction: null,
-  conference_id: null,
-  queue_id: null,
-  reason: null,
-  recognition_result: null,
-  confidence: null,
-  parent_call_id: null,
-  completion_reason: null,
-  completion_cause: null,
-  mrcp_code: null,
-  mrcp_diagnostic: null
-)
+json = '{
+  "requestType": "getSpeech",
+  "callId": "string",
+  "accountId": "string",
+  "from": "string",
+  "to": "string",
+  "callStatus": "queued",
+  "direction": "inbound",
+  "conferenceId": "string",
+  "queueId": "string",
+  "reason": "error",
+  "recognitionResult": "string",
+  "confidence": 0,
+  "parentCallId": "string",
+  "completionReason": "string",
+  "completionCause": "string",
+  "mrcpCode": 0,
+  "mrcpDiagnostic": "string"
+}'
+
+# create an instance of GetSpeechWebhook from a JSON string
+instance = Freeclimb::GetSpeechWebhook.build_from_hash(JSON.parse(json))
 ```
 

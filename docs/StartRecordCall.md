@@ -9,7 +9,13 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::StartRecordCall::[NAME OF ENUM]
+json = '{
+  "command": "StartRecordCall"
+}'
+
+# create an instance of StartRecordCall from a JSON string
+instance = Freeclimb::StartRecordCall.build_from_hash(JSON.parse(json))
 ```
 

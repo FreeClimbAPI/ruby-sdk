@@ -15,14 +15,24 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::AvailableNumber.new(
-  capabilities: null,
-  campaign_id: null,
-  phone_number: null,
-  _alias: null,
-  region: null,
-  country: null
-)
+json = '{
+  "capabilities": {
+    "voice": false,
+    "sms": false,
+    "tollFree": false,
+    "tenDLC": false,
+    "shortCode": false
+  },
+  "campaignId": "string",
+  "phoneNumber": "string",
+  "alias": "string",
+  "region": "string",
+  "country": "string"
+}'
+
+# create an instance of AvailableNumber from a JSON string
+instance = Freeclimb::AvailableNumber.build_from_hash(JSON.parse(json))
 ```
 

@@ -11,10 +11,14 @@
 
 ```ruby
 require 'freeclimb'
+require 'json'
 
-instance = Freeclimb::CompletionResult.new(
-  response: null,
-  status: null
-)
+json = '{
+  "response": "string",
+  "status": "success"
+}'
+
+# create an instance of CompletionResult from a JSON string
+instance = Freeclimb::CompletionResult.build_from_hash(JSON.parse(json))
 ```
 

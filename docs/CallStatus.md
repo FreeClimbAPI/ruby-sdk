@@ -17,7 +17,6 @@
 
 ```ruby
 require 'freeclimb'
-
 instance = Freeclimb::CallStatus::[NAME OF ENUM]
 ```
 
